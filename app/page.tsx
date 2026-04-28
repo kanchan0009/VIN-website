@@ -176,16 +176,52 @@ export default function HomePage() {
 
   const data = [
     {
-      title: "Women’s Empowerment Program",
-      desc: "We Equip Rural Women With Non-Formal Education, Life Skills, Entrepreneurship Support, Microcredit Access, And Leadership Training — Helping Them Rise, Earn, And Live With Confidence And Dignity.",
+      title: "Women's Empowerment",
+      desc: "A center to empowerment & prosperity of a community.",
+      stats: "32,035",
+      statsLabel: "women we've empowered",
+      image:
+        "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80",
     },
     {
-      title: "Children’s Development Program",
-      desc: "Focused on providing education, health, and protection to children in marginalized communities.",
+      title: "Children's Development",
+      desc: "A center to empowerment & prosperity of a community.",
+      stats: "32,035",
+      statsLabel: "children educated",
+      image:
+        "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&q=80",
     },
     {
-      title: "Youth Empowerment Program",
-      desc: "Empowering youth through education, skills training, and leadership development.",
+      title: "Youth Empowerment",
+      desc: "A center to empowerment & prosperity of a community.",
+      stats: "33,835",
+      statsLabel: "youth empowered",
+      image:
+        "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=400&q=80",
+    },
+    {
+      title: "Public Health & Medical Care",
+      desc: "A center to empowerment & prosperity of a community.",
+      stats: "32,035",
+      statsLabel: "people served",
+      image:
+        "https://images.unsplash.com/photo-1607748862156-7c548e7e98f4?w=400&q=80",
+    },
+    {
+      title: "Environment & Conservation Projects",
+      desc: "A center to empowerment & prosperity of a community.",
+      stats: "32,035",
+      statsLabel: "projects completed",
+      image:
+        "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&q=80",
+    },
+    {
+      title: "Disaster Risk Reduction",
+      desc: "A center to empowerment & prosperity of a community.",
+      stats: "32,035",
+      statsLabel: "projects completed",
+      image:
+        "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=400&q=80",
     },
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -250,7 +286,7 @@ export default function HomePage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative h-[85vh] min-h-96 flex items-center overflow-hidden">
+      <section className="relative w-full min-h-[500px] flex items-center overflow-hidden">
         {/* Background Image */}
         <img
           src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=1600"
@@ -263,77 +299,116 @@ export default function HomePage() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to right, rgba(10, 5, 40, 0.85) 35%, rgba(0,0,0,0.2) 100%)",
+              "linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%)",
           }}
         />
 
-        {/* Content Container */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full flex items-center justify-between">
-          {/* LEFT CONTENT */}
-          <div className="max-w-xl">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
-              Women’s Empowerment Program
-            </h1>
+        {/* Left Arrow */}
+        <button className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 text-white/70 hover:text-white transition">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-10 h-10 md:w-14 md:h-14"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15.75 19.5L8.25 12l7.5-7.5"
+            />
+          </svg>
+        </button>
 
-            <p className="text-white/75 text-base md:text-lg leading-relaxed mb-6">
-              We Equip Rural Women With Non-Formal Education, Life Skills,
-              Entrepreneurship Support, Microcredit Access, And Leadership
-              Training — Helping Them Rise, Earn, And Live With Confidence And
-              Dignity.
-            </p>
+        {/* Right Arrow */}
+        <button className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 text-white/70 hover:text-white transition">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-10 h-10 md:w-14 md:h-14"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M8.25 4.5l7.5 7.5-7.5 7.5"
+            />
+          </svg>
+        </button>
 
-            <button className="px-8 py-4 rounded-lg text-base font-semibold text-white bg-indigo-600 hover:bg-indigo-500 transition">
-              View Program
-            </button>
-          </div>
+        <div className="relative z-10 w-full h-full pb-2.5 pt-24 min-h-[800px] flex flex-col">
+          <div className="max-w-7xl mx-auto w-full h-full flex flex-col justify-end flex-grow relative">
+            {/* Stats Grid */}
+            <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2">
+              <div className="bg-white p-3 rounded-xl shadow-2xl grid grid-cols-2 gap-3 w-[220px]">
+                {["53%", "53%", "53%", "53%"].map((item, index) => (
+                  <div
+                    key={index}
+                    className="bg-[#221C84] text-white rounded-lg flex flex-col items-center justify-center p-3 aspect-square"
+                  >
+                    <p className="text-xl font-bold mb-1">{item}</p>
+                    <p className="text-[10px] opacity-90 text-center leading-tight font-medium">
+                      Rural Women’s
+                      <br />
+                      Literacy
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
 
-          {/* RIGHT FLOATING STATS CARD */}
-          <div className="hidden md:block">
-            <div className="bg-white/10 backdrop-blur-md p-4 rounded-xl shadow-xl border border-white/20 grid grid-cols-2 gap-3">
-              {["53%", "53%", "53%", "53%"].map((item, index) => (
-                <div
-                  key={index}
-                  className="bg-indigo-700 text-white rounded-lg p-4 text-center"
-                >
-                  <p className="text-lg font-bold">{item}</p>
-                  <p className="text-[10px] opacity-80 mt-1">
-                    Dual Women’s Literacy
-                  </p>
-                </div>
-              ))}
+            {/* Bottom Content */}
+            <div className="mt-auto mb-8">
+              <h1 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-white leading-tight mb-4">
+                Women’s Empowerment Program
+              </h1>
+
+              <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <p className="text-white/90 text-sm md:text-base leading-relaxed max-w-3xl font-medium">
+                  We Equip Rural Women With Non-Formal Education, Life Skills,
+                  Entrepreneurship Support, Microcredit Access, And Leadership
+                  Training — Helping Them Rise, Earn, And Live With Confidence
+                  And Dignity.
+                </p>
+
+                <button className="shrink-0 px-8 py-3 rounded text-sm font-semibold text-white bg-[#221C84] hover:bg-indigo-700 transition shadow-lg">
+                  View Program
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      {/* About / Intro Section */}
-      <section className="w-full bg-[#f5f6f8] py-24">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          {/* Heading */}
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-snug mb-6">
+
+      <section className="w-full bg-white py-20">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h2 className="text-2xl md:text-3xl font-medium text-[#1a1a2e] leading-snug mb-6">
             A leader in implementing a complete holistic and integrated
             <br className="hidden md:block" />
             Approach to Community Development in Nepal
           </h2>
 
-          {/* Subtext */}
-          <p className="text-gray-600 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-10 font-light">
+          <p className="text-gray-600 text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-10">
             At our core, we strive to foster holistic, inclusive and equitable
             development in Nepal. Together, we envision a future where every
             community thrives through collaboration and empowerment.
           </p>
 
           {/* Buttons */}
-          <div className="flex items-center justify-center gap-4 flex-wrap">
+          <div className="flex items-center justify-center gap-4">
             {/* Primary Button */}
             <Link href="/our-story">
-              <button className="px-8 py-3 text-base font-semibold rounded-lg text-white bg-indigo-700 hover:bg-indigo-800 transition-all duration-300 shadow-md hover:shadow-lg">
+              <button className="px-8 py-2.5 text-sm font-semibold rounded text-white bg-[#221C84] hover:bg-indigo-800 transition-all duration-300">
                 Our Story
               </button>
             </Link>
 
             {/* Outline Button */}
             <Link href="/our-approach">
-              <button className="px-8 py-3 text-base font-semibold rounded-lg border-2 border-indigo-700 text-indigo-700 hover:bg-indigo-50 transition-all duration-300">
+              <button className="px-8 py-2.5 text-sm font-semibold rounded border border-[#221C84] text-[#221C84] hover:bg-indigo-50 transition-all duration-300">
                 Our Approach
               </button>
             </Link>
@@ -343,63 +418,64 @@ export default function HomePage() {
 
       {/* Welcome Section */}
       <section className="w-full bg-[#f5f6f8] py-24">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-          {/* LEFT CONTENT */}
-          <div>
-            {/* Heading */}
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-snug mb-6">
-              Welcome to{" "}
-              <span className="text-indigo-700">
-                Volunteers Initiative Nepal
-              </span>{" "}
-              ( VIN )
-            </h2>
+        <div className="max-w-7xl mx-auto">
+          {/* Heading */}
+          <h2 className="text-xl md:text-4xl font-bold text-gray-900 leading-snug mb-12 text-center">
+            Welcome to{" "}
+            <span className="text-[#221C84]">Volunteers Initiative</span>
+            <br />
+            <span className="text-[#221C84]">Nepal</span> ( VIN )
+          </h2>
 
-            {/* Paragraph */}
-            <p className="text-gray-700 text-base leading-relaxed mb-5 font-light">
-              Volunteers Initiative Nepal (VIN), established in 2005 by a
-              diverse group drawn from development workers, educationalists,
-              social activists and other professionals, is a non-religious,
-              non-political, non-profit, and non-governmental organization
-              (NGO). VIN focuses on community-based projects involving local
-              volunteers backed-up by international volunteers in Nepal.
-            </p>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* LEFT CONTENT */}
+            <div>
+              {/* Paragraph */}
+              <p className="text-gray-700 text-base leading-relaxed mb-5 font-light text-justify">
+                Volunteers Initiative Nepal (VIN), established in 2005 by a
+                diverse group drawn from development workers, educationalists,
+                social activists and other professionals, is a non-religious,
+                non-political, non-profit, and non-governmental organization
+                (NGO). VIN focuses on community-based projects involving local
+                volunteers backed-up by international volunteers in Nepal.
+              </p>
 
-            <p className="text-gray-700 text-base leading-relaxed mb-5 font-light">
-              Our mission is to empower marginalized communities through
-              equitable, inclusive and holistic development programs.
-            </p>
+              <p className="text-gray-700 text-base leading-relaxed mb-5 font-light text-justify">
+                Our mission is to empower marginalized communities through
+                equitable, inclusive and holistic development programs.
+              </p>
 
-            <p className="text-gray-500 text-sm leading-relaxed mb-6">
-              There are four pillars in our developmental approach: Education,
-              Health & Environment, Economy and Basic infrastructure
-              development. These four pillars of development are supported by
-              six major community empowerment programs namely Women’s
-              Empowerment Program, Children’s Development Program, Youth
-              Empowerment Program, Public Health & Medical Program, Environment
-              Conservation Program and Disaster Risk Reduction Program. All
-              VIN’s developmental and humanitarian programs are aligned with UN
-              Sustainable Development Goals (SDGs).
-            </p>
+              <p className="text-gray-500 text-sm leading-relaxed mb-6 text-justify">
+                There are four pillars in our developmental approach: Education,
+                Health & Environment, Economy and Basic infrastructure
+                development. These four pillars of development are supported by
+                six major community empowerment programs namely Women’s
+                Empowerment Program, Children’s Development Program, Youth
+                Empowerment Program, Public Health & Medical Program,
+                Environment Conservation Program and Disaster Risk Reduction
+                Program. All VIN’s developmental and humanitarian programs are
+                aligned with UN Sustainable Development Goals (SDGs).
+              </p>
 
-            {/* Button */}
-            <button className="px-8 py-3 text-base font-semibold rounded-lg text-white bg-indigo-700 hover:bg-indigo-800 transition-all duration-300 shadow-md hover:shadow-lg">
-              Learn More
-            </button>
-          </div>
+              {/* Button */}
+              <button className="px-8 py-3 text-base font-semibold rounded-lg text-white bg-[#221C84] hover:bg-[#221C84] transition-all duration-300 shadow-md hover:shadow-lg">
+                Learn More
+              </button>
+            </div>
 
-          {/* RIGHT IMAGE */}
-          <div className="flex justify-center">
-            <img
-              src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&q=80"
-              alt="VIN Model"
-              className="w-70 md:w-80 object-contain rounded-lg shadow-lg"
-            />
+            {/* RIGHT IMAGE */}
+            <div className="flex justify-center">
+              <img
+                src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&q=80"
+                alt="VIN Model"
+                className="w-70 md:w-80 object-contain rounded-lg shadow-lg"
+              />
+            </div>
           </div>
         </div>
       </section>
       <section className="w-full flex justify-center py-10 bg-gray-100">
-        <div className="relative w-full max-w-4xl h-96 rounded-xl overflow-hidden shadow-lg">
+        <div className="relative w-full max-w-4xl h-96 overflow-hidden shadow-lg translate-x-4 md:translate-x-12">
           {/* Background Image */}
           <img
             src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=900&q=80"
@@ -411,23 +487,23 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-black/40"></div>
 
           {/* Content */}
-          <div className="absolute inset-0 flex flex-col items-center justify-end pb-10 text-white text-center px-4">
+          <div className="absolute inset-0 flex flex-col items-center justify-end pb-8 text-white text-center px-4">
             <p className="text-sm md:text-base mb-3">
               “VIN has helped a lot for disable women like us”
             </p>
 
-            {/* Play Button */}
-            <button className="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full hover:scale-105 transition">
-              <span className="w-3 h-3 bg-black rounded-full inline-block"></span>
+            <div className="flex items-center space-x-2">
+              {/* Play Button */}
+              <button className="flex items-center justify-center w-8 h-8 bg-white text-black rounded-full hover:scale-105 transition"></button>
               <span className="text-sm font-medium">PLAY VIDEO</span>
-            </button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Programs grid */}
       <section className="bg-white py-24">
-        <div className="max-w-6xl mx-auto px-4 text-center">
+        <div className="max-w-7xl mx-auto text-center">
           {/* Heading */}
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
             What We Do
@@ -437,47 +513,29 @@ export default function HomePage() {
           </p>
 
           {/* Grid */}
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
+          <div className="grid md:grid-cols-3 gap-4 mt-10 px-70px-7">
             {data.map((item, index) => (
               <div
                 key={index}
-                className="bg-white rounded-md shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+                className="bg-white  shadow-md overflow-hidden hover:shadow-lg transition-shadow text-center max-w-sm"
               >
                 {/* Image */}
                 <div className="relative">
                   <img
-                    src={
-                      index === 0
-                        ? "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80"
-                        : index === 1
-                          ? "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&q=80"
-                          : "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=400&q=80"
-                    }
+                    src={item.image}
                     alt={item.title}
-                    className="w-full h-52 object-cover"
+                    className="w-full h-80 object-cover"
                   />
 
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-black/40 flex flex-col justify-end items-center pb-4 text-white">
-                    <p className="text-lg font-semibold">
-                      {index === 0
-                        ? "32,035"
-                        : index === 1
-                          ? "15,200"
-                          : "8,500"}
-                    </p>
-                    <p className="text-xs opacity-90">
-                      {index === 0
-                        ? "Women we've impacted"
-                        : index === 1
-                          ? "Children educated"
-                          : "Youth empowered"}
-                    </p>
+                    <p className="text-lg font-semibold">{item.stats}</p>
+                    <p className="text-xs opacity-90">{item.statsLabel}</p>
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-5 text-left">
+                <div className="p-5">
                   <h3 className="font-bold text-gray-900 text-base mb-3">
                     {item.title}
                   </h3>
@@ -491,7 +549,7 @@ export default function HomePage() {
         </div>
       </section>
       <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-24">
-        <div className="max-w-6xl mx-auto px-4 text-center">
+        <div className="max-w-7xl mx-auto text-center">
           {/* Heading */}
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
             Where We Work
@@ -542,7 +600,7 @@ export default function HomePage() {
             <div className="relative mt-8 flex items-center justify-center">
               {/* Map Image */}
               <img
-                src="/map.png" // replace with your map shape image
+                src="/map.png"
                 alt="Map"
                 className="opacity-60 max-h-[220px] object-contain"
               />
@@ -563,7 +621,7 @@ export default function HomePage() {
         </div>
       </section>
       <section className="bg-gradient-to-r from-blue-100 to-indigo-100 py-24 px-4 md:px-12">
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto text-center">
           {/* Title */}
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
             Learn More About Our Programs
@@ -571,7 +629,7 @@ export default function HomePage() {
 
           {/* Dropdown */}
           <div className="mb-12">
-            <select className="border-2 border-gray-300 px-6 py-3 rounded-lg bg-white text-gray-700 font-medium hover:border-indigo-500 transition-all duration-300 cursor-pointer">
+            <select className="border-2 border-black px-7 py-3  text-gray-700 font-medium hover:border-indigo-500 transition-all duration-300 cursor-pointer">
               <option>Choose a Program</option>
               <option>Women Empowerment</option>
               <option>Entrepreneurship</option>
@@ -581,7 +639,7 @@ export default function HomePage() {
 
           {/* Section Header */}
           <div className="text-left mb-6">
-            <h3 className="text-xl font-bold">Women’s Empowerment Projects</h3>
+            <h3 className="text-3xl font-bold">Women’s Empowerment Projects</h3>
             <p className="text-sm text-gray-600 mt-2 max-w-3xl">
               VIN aims to empower women socially and economically through
               education, life skills and income generation opportunities. By
@@ -594,13 +652,13 @@ export default function HomePage() {
           <div className="flex justify-end gap-3 mb-8">
             <button
               onClick={() => scroll("left")}
-              className="w-12 h-12 flex items-center justify-center border-2 border-gray-300 rounded-full bg-white hover:bg-gray-100 hover:border-indigo-500 transition-all duration-300 font-bold text-lg"
+              className="w-12 h-12 flex items-center justify-center border-2 border-black rounded-full hover:bg-gray-100 hover:(--blue)* 5,8848 transition-all duration-300 font-bold text-lg"
             >
               ←
             </button>
             <button
               onClick={() => scroll("right")}
-              className="w-12 h-12 flex items-center justify-center border-2 border-gray-300 rounded-full bg-white hover:bg-gray-100 hover:border-indigo-500 transition-all duration-300 font-bold text-lg"
+              className="w-12 h-12 flex items-center justify-center border-2 border-black rounded-full hover:bg-gray-100 hover:border-indigo-500 transition-all duration-300 font-bold text-lg"
             >
               →
             </button>
@@ -609,20 +667,21 @@ export default function HomePage() {
           {/* Cards */}
           <div
             ref={scrollRef}
-            className="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar"
+            className="flex gap-7 overflow-x-auto scroll-smooth no-scrollbar"
           >
             {/* Card 1 */}
-            <div className="min-w-[280px] md:min-w-[320px] bg-white shadow-md">
+            <div className="min-w-[280px] md:min-w-[190px] bg-white shadow-md overflow-hidden">
               <img
                 src="/images/img1.jpg"
                 alt="Trafficking Prevention"
-                className="w-full h-48 object-cover"
+                className="w-full h-56 object-cover"
               />
-              <div className="p-4 text-left">
-                <h4 className="font-semibold mb-2">
-                  Women’s Trafficking Prevention
+              <div className="p-5 text-left">
+                <h4 className="font-[700] text-[22px] mb-2 text-center">
+                  Women’s Trafficking
+                  <br/> Prevention
                 </h4>
-                <p className="text-sm text-gray-600">
+                <p className="font-[400] text-[16px] text-gray-600">
                   The ED project aims to ensure economic independence of women
                   by building their skills and providing the necessary support.
                 </p>
@@ -630,17 +689,19 @@ export default function HomePage() {
             </div>
 
             {/* Card 2 */}
-            <div className="min-w-[280px] md:min-w-[320px] bg-white shadow-md">
+            <div className="min-w-[280px] md:min-w-[190px] bg-white shadow-md overflow-hidden">
               <img
                 src="/images/img2.jpg"
                 alt="Entrepreneurship"
-                className="w-full h-48 object-cover"
+                className="w-full h-56 object-cover"
               />
               <div className="p-4 text-left">
-                <h4 className="font-semibold mb-2">
-                  Entrepreneurship Development
+                <h4 className="font-[700] text-[22px] mb-2 text-center">
+                  Entrepreneurship 
+                  <br/>
+                  Development
                 </h4>
-                <p className="text-sm text-gray-600">
+                <p className="font-[400] text-[16px] text-gray-600">
                   The ED project aims to ensure economic independence of women
                   by building their skills and facilitating entrepreneurship.
                 </p>
@@ -648,17 +709,17 @@ export default function HomePage() {
             </div>
 
             {/* Card 3 */}
-            <div className="min-w-[280px] md:min-w-[320px] bg-white shadow-md">
+            <div className="min-w-[280px] md:min-w-[190px] bg-white shadow-md overflow-hidden">
               <img
                 src="/images/img3.jpg"
                 alt="Education"
-                className="w-full h-48 object-cover"
+                className="w-full h-56 object-cover"
               />
               <div className="p-4 text-left">
-                <h4 className="font-semibold mb-2">
+                <h4 className="font-[700] text-[22px] mb-2 text-center">
                   Women’s Education and Life Skills
                 </h4>
-                <p className="text-sm text-gray-600">
+                <p className="font-[400] text-[16px] text-gray-600">
                   This project empowers women to become self-reliant and
                   resilient by providing relevant education and development.
                 </p>
@@ -668,7 +729,7 @@ export default function HomePage() {
 
           {/* View All */}
           <div className="mt-10">
-            <button className="bg-indigo-700 text-white px-6 py-2 rounded-md hover:bg-indigo-800">
+            <button className="bg-[#221C84] text-white px-6 py-2 rounded-md hover:bg-[#1a1560]">
               View All
             </button>
           </div>
@@ -856,7 +917,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 relative">
           {/* Heading */}
           <h2
-            className="text-4xl font-bold text-center mb-2"
+            className="text-7xl font-bold text-center mb-2"
             style={{ fontFamily: "Playfair Display, serif" }}
           >
             Testimonials

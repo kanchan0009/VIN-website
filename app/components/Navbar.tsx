@@ -28,11 +28,11 @@ export default function Navbar() {
   const [mediaOpen, setMediaOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm">
+    <header className="sticky top-0 z-50 w-full h-[48px] bg-[#F1F6FF] shadow-sm">
       {/* Top bar */}
       <div
-        style={{ background: "var(--navy)" }}
-        className="text-white text-sm py-1.5"
+        style={{ background: "background:#F1F6FF" }}
+        className="text-[3353535] text-sm py-1.5"
       >
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
           <div className="flex gap-6">
@@ -64,8 +64,8 @@ export default function Navbar() {
       </div>
 
       {/* Main nav */}
-      <nav className="bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+      <nav className="bg-[#FFFFFF] border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-[89px]">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <div
@@ -86,117 +86,52 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop links */}
-          <div className="hidden lg:flex items-center gap-8">
-            {[
-              { label: "About Us", href: "/about" },
-              { label: "Contact Us", href: "/contact" },
-              { label: "Blogs", href: "/blogs" },
-            ].map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-gray-700 hover:text-indigo-700 transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-
-            {/* Media dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setMediaOpen(true)}
-              onMouseLeave={() => setMediaOpen(false)}
-            >
-              <button className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-indigo-700 transition-colors">
-                Media <ChevronDown size={14} />
-              </button>
-              {mediaOpen && (
-                <div className="absolute top-full left-0 mt-1 w-56 bg-white rounded-xl shadow-xl border border-gray-100 py-2 z-50">
-                  {media.map((m) => (
-                    <Link
-                      key={m.href}
-                      href={m.href}
-                      className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition-colors"
-                    >
-                      {m.label}
-                    </Link>
-                  ))}
-                  <div className="border-t border-gray-100 mt-2 pt-2 px-4">
-                    <Link
-                      href="/media"
-                      className="text-sm font-semibold"
-                      style={{ color: "var(--indigo-btn)" }}
-                    >
-                      View All Media →
-                    </Link>
-                  </div>
-                </div>
-              )}
+          <div className="hidden lg:flex items-center gap-[30px]">
+            {/* Desktop links */}
+            <div className="hidden lg:flex items-center gap-8">
+              {[
+                { label: "About Us", href: "/about" },
+                { label: "Contact Us", href: "/contact" },
+                { label: "Blogs", href: "/blogs" },
+                { label: "Media", href: "/media" },
+                { label: "Programs", href: "/programs" },
+              ].map((link) => (
+                <Link key={link.href} href={link.href} className="btn nav-btn">
+                  {link.label}
+                </Link>
+              ))}
             </div>
 
-            {/* Programs dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setProgramsOpen(true)}
-              onMouseLeave={() => setProgramsOpen(false)}
-            >
-              <button className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-indigo-700 transition-colors">
-                Programs <ChevronDown size={14} />
-              </button>
-              {programsOpen && (
-                <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-xl border border-gray-100 py-2 z-50">
-                  {programs.map((p) => (
-                    <Link
-                      key={p.href}
-                      href={p.href}
-                      className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition-colors"
-                    >
-                      {p.label}
-                    </Link>
-                  ))}
-                  <div className="border-t border-gray-100 mt-2 pt-2 px-4">
-                    <Link
-                      href="/programs"
-                      className="text-sm font-semibold"
-                      style={{ color: "var(--indigo-btn)" }}
-                    >
-                      View All Programs →
-                    </Link>
-                  </div>
-                </div>
-              )}
-            </div>
+            
           </div>
 
           {/* CTA buttons */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className=" lg:flex items-center gap-3">
             <Link
               href="/donate"
-              className="px-5 py-2 rounded-lg text-sm font-semibold text-white transition-all"
-              style={{ background: "var(--indigo-btn)" }}
+              className="absolute  left-[1200px] h-[48px] px-[30px] py-[10px] rounded-[5px] text-sm font-semibold text-white bg-[#206673] flex items-center justify-center transition-all hover:bg-[#1b5a5f]"
               onMouseOver={(e) =>
-                (e.currentTarget.style.background = "var(--navy)")
+                (e.currentTarget.style.background = "background:#1b5a5f")
               }
               onMouseOut={(e) =>
-                (e.currentTarget.style.background = "var(--indigo-btn)")
+                (e.currentTarget.style.background = "background:#206673")
               }
             >
               Donate
             </Link>
             <Link
               href="/volunteer"
-              className="px-5 py-2 rounded-lg text-sm font-semibold border-2 transition-all"
+              className="absolute  left-[1320px] h-[48px] px-[30px] py-[10px] rounded-[2px] border border-[#206673] text-[#206673] flex items-center justify-center gap-[5px] transition-all hover:bg-[#206673] hover:text-white"
               style={{
-                borderColor: "var(--indigo-btn)",
-                color: "var(--indigo-btn)",
+                borderColor: "#221C84",
+                color: "#221C84",
               }}
               onMouseOver={(e) => {
-                e.currentTarget.style.background = "var(--indigo-btn)";
+                e.currentTarget.style.background = "background:#206673";
                 e.currentTarget.style.color = "white";
               }}
               onMouseOut={(e) => {
-                e.currentTarget.style.background = "transparent";
-                e.currentTarget.style.color = "var(--indigo-btn)";
+                e.currentTarget.style.color = "background:#206673";
               }}
             >
               Volunteer
@@ -263,8 +198,8 @@ export default function Navbar() {
               <Link
                 href="/donate"
                 onClick={() => setMobileOpen(false)}
-                className="flex-1 text-center py-2.5 rounded-lg text-white font-semibold text-sm"
-                style={{ background: "var(--indigo-btn)" }}
+                className="flex-1 text-center py-2.5 rounded-lg text-white  text-sm"
+                style={{ background: "#206673" }}
               >
                 Donate
               </Link>
