@@ -922,7 +922,7 @@ export default function HomePage() {
           >
             Testimonials
           </h2>
-          <div className="w-48 h-0.5 bg-gray-900 mx-auto mb-12 rounded-full"></div>
+         
 
           {/* Carousel Container */}
           <div className="flex items-center justify-center gap-4">
