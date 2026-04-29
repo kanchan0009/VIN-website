@@ -44,7 +44,7 @@ export default function FAQPage() {
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 pb-10 w-full">
           <p className="text-white/60 text-sm mb-2">Home / <span className="text-white">FAQ&apos;s</span></p>
-          <h1 className="text-5xl font-bold text-white mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>FAQ&apos;s</h1>
+          <h1 className="text-5xl font-bold text-white mb-2" style={{ }}>FAQ&apos;s</h1>
           <p className="text-white/70 text-sm">Lorem Ipsum Dipsum We Are Different Locations Lorem Ipsum Dipsum We Are Different Locations...</p>
         </div>
       </section>
@@ -52,7 +52,7 @@ export default function FAQPage() {
       {/* FAQ List */}
       <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-3" style={{ fontFamily: 'Playfair Display, serif' }}>FAQ&apos;s</h2>
+          <h2 className="text-4xl font-bold text-center mb-3" style={{ }}>FAQ&apos;s</h2>
           <p className="text-center text-gray-500 text-sm mb-12">Everything you need to know about Volunteering in Nepal with VIN</p>
 
           <div className="space-y-3">

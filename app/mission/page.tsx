@@ -25,7 +25,7 @@ export default function MissionPage() {
           </p>
           <h1
             className="text-5xl font-bold text-white"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            style={{ }}
           >
             Mission, Vision, Goal
           </h1>
@@ -37,7 +37,7 @@ export default function MissionPage() {
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2
             className="text-xl font-semibold mb-2"
-            style={{ fontFamily: "DM Sans, sans-serif" }}
+            style={{ }}
           >
             Volunteers Initiative Nepal (VIN)
           </h2>
@@ -96,7 +96,7 @@ export default function MissionPage() {
                 </div>
                 <h3
                   className="text-xl font-bold mb-3"
-                  style={{ fontFamily: "Playfair Display, serif" }}
+                  style={{ }}
                 >
                   {v.title}
                 </h3>

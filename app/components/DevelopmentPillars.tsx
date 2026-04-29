@@ -106,7 +106,6 @@ export default function DevelopmentPillars() {
             style={{
               padding: "10px 20px",
               fontSize: 14,
-              fontFamily: "inherit",
               fontWeight: activeTab === tab.id ? "700" : "400",
               color: activeTab === tab.id ? "#c0392b" : "#555",
               background: "none",

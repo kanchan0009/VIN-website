@@ -6,7 +6,7 @@ export default function GetInvolved() {
       <div className="max-w-4xl mx-auto px-4 text-center">
         <h2
           className="text-2xl font-bold mb-4"
-          style={{ fontFamily: "Playfair Display, serif" }}
+          style={{ }}
         >
           Get Involved
         </h2>

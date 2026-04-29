@@ -27,7 +27,7 @@ export default function OurApproachPage() {
           </p>
           <h1
             className="text-5xl font-bold text-white"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            style={{ }}
           >
             Our Approach
           </h1>
@@ -39,7 +39,7 @@ export default function OurApproachPage() {
         <div className="max-w-5xl mx-auto px-4 text-center">
           <h2
             className="text-4xl font-bold mb-4"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            style={{ }}
           >
             A Holistic Approach to Community Development
           </h2>

@@ -144,7 +144,7 @@ export default function CertificationsPage() {
           </p>
           <h1
             className="text-4xl font-bold text-white"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            style={{ }}
           >
             Certification, Membership, Partnership...
           </h1>
@@ -177,7 +177,6 @@ export default function CertificationsPage() {
               <h2
                 className="text-3xl font-bold text-center mb-3"
                 style={{
-                  fontFamily: "Playfair Display, serif",
                   color: section.textColor,
                 }}
               >

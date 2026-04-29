@@ -102,7 +102,7 @@ export default function CareersPage() {
           </p>
           <h1
             className="text-5xl font-bold text-white"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            style={{ }}
           >
             Careers
           </h1>
@@ -116,7 +116,7 @@ export default function CareersPage() {
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2
             className="text-2xl font-bold mb-4"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            style={{ }}
           >
             Join Our Team
           </h2>
@@ -139,7 +139,7 @@ export default function CareersPage() {
               <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
                 <h3
                   className="text-xl font-bold text-gray-900"
-                  style={{ fontFamily: "Playfair Display, serif" }}
+                  style={{ }}
                 >
                   {job.title}
                 </h3>

@@ -99,7 +99,7 @@ export default function MediaPage() {
           </p>
           <h1
             className="text-5xl font-bold text-white"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            style={{ }}
           >
             Media
           </h1>
@@ -135,7 +135,7 @@ export default function MediaPage() {
                       </div>
                       <h3
                         className="text-lg font-bold text-gray-900 group-hover:text-indigo-700 transition-colors"
-                        style={{ fontFamily: "Playfair Display, serif" }}
+                        style={{ }}
                       >
                         {section.label}
                       </h3>

@@ -1116,7 +1116,7 @@ export default function HomePage() {
                   <div className="flex-1 p-6 md:p-8 lg:p-10">
                     <h3
                       className="text-lg md:text-xl font-bold text-gray-900 mb-4"
-                      style={{ fontFamily: "Playfair Display, serif" }}
+                      style={{ }}
                     >
                       {currentMedia.title}
                     </h3>
@@ -1337,7 +1337,7 @@ export default function HomePage() {
           {/* Heading */}
           <h2
             className="text-4xl font-bold text-center mb-2"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            style={{ }}
           >
             Know <span className="text-[#1e3a5f]">Nepal</span>
           </h2>
@@ -1569,8 +1569,7 @@ export default function HomePage() {
                     fontSize: "28px",
                     fontWeight: 700,
                     marginBottom: "8px",
-                    fontFamily: "system-ui, -apple-system, sans-serif",
-                  }}
+                    }}
                 >
                   Any Question?
                 </h2>

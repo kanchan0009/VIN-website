@@ -26,7 +26,7 @@ export default function DonatePage() {
         <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=80" alt="Donate" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 pb-10 w-full">
-          <h1 className="text-5xl font-bold text-white mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Make a Difference Today</h1>
+          <h1 className="text-5xl font-bold text-white mb-2" style={{ }}>Make a Difference Today</h1>
           <p className="text-white/70 text-sm max-w-lg">Your donation directly supports families and communities in Nepal.</p>
         </div>
       </section>
@@ -80,7 +80,7 @@ export default function DonatePage() {
 
               <div className="rounded-2xl p-5 border border-gray-100 mb-6" style={{ background: 'var(--sky)' }}>
                 <p className="font-semibold text-sm mb-1">Your Donation Summary</p>
-                <p className="text-3xl font-bold" style={{ fontFamily: 'Playfair Display, serif', color: 'var(--navy)' }}>
+                <p className="text-3xl font-bold" style={{ color: 'var(--navy)' }}>
                   ${custom || selected} {frequency === 'monthly' && <span className="text-base text-gray-500">/month</span>}
                 </p>
                 {project && <p className="text-sm text-gray-500 mt-1">For: {project}</p>}
@@ -97,7 +97,7 @@ export default function DonatePage() {
 
             {/* Impact sidebar */}
             <div className="w-full lg:w-64 shrink-0">
-              <h3 className="text-xl font-bold mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>Your Impact</h3>
+              <h3 className="text-xl font-bold mb-6" style={{ }}>Your Impact</h3>
               <div className="space-y-4">
                 {impactItems.map(item => (
                   <div key={item.amount} className="flex gap-3 p-4 rounded-xl border border-gray-100 hover:shadow-sm transition-shadow">
@@ -108,7 +108,7 @@ export default function DonatePage() {
               </div>
               <div className="mt-6 p-4 rounded-2xl text-white" style={{ background: 'var(--navy)' }}>
                 <p className="text-xs font-semibold mb-1">Financial Transparency</p>
-                <p className="text-2xl font-bold" style={{ fontFamily: 'Playfair Display, serif' }}>84.2%</p>
+                <p className="text-2xl font-bold" style={{ }}>84.2%</p>
                 <p className="text-xs text-white/70 mt-1">of every dollar goes directly to programs</p>
               </div>
             </div>

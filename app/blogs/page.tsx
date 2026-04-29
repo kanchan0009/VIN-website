@@ -71,7 +71,7 @@ export default function BlogsPage() {
           </p>
           <h1
             className="text-5xl font-bold text-white mb-2"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            style={{ }}
           >
             Blogs
           </h1>
@@ -122,7 +122,7 @@ export default function BlogsPage() {
                         </p>
                         <h2
                           className="text-2xl sm:text-3xl font-semibold leading-tight mb-4"
-                          style={{ fontFamily: "Playfair Display, serif" }}
+                          style={{ }}
                         >
                           {post.title}
                         </h2>

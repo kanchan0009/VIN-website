@@ -40,7 +40,7 @@ export default function WomensEmpowermentPage() {
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 pb-10 w-full">
           <p className="text-white/60 text-sm mb-2">Home / All Programs / <span className="text-white">Women's Empowerment</span></p>
-          <h1 className="text-5xl font-bold text-white" style={{ fontFamily: 'Playfair Display, serif' }}>Women's Empowerment Program</h1>
+          <h1 className="text-5xl font-bold text-white" style={{ }}>Women's Empowerment Program</h1>
         </div>
       </section>
 
@@ -49,13 +49,13 @@ export default function WomensEmpowermentPage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-14">
             <div className="flex-1">
-              <h2 className="text-3xl font-bold mb-8" style={{ fontFamily: 'Playfair Display, serif' }}>Why Women Empowerment Programs</h2>
+              <h2 className="text-3xl font-bold mb-8" style={{ }}>Why Women Empowerment Programs</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {whyItems.map((item, i) => (
                   <div key={i} className="flex gap-4">
                     <span className="text-2xl shrink-0 mt-1">{item.icon}</span>
                     <div>
-                      <h4 className="font-bold text-sm mb-1" style={{ fontFamily: 'Playfair Display, serif' }}>{item.title}</h4>
+                      <h4 className="font-bold text-sm mb-1" style={{ }}>{item.title}</h4>
                       <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
@@ -64,7 +64,7 @@ export default function WomensEmpowermentPage() {
             </div>
             <div className="max-w-xs w-full">
               <div className="rounded-2xl p-6 border-2 text-center" style={{ borderColor: 'var(--indigo-btn)', background: 'var(--sky)' }}>
-                <h3 className="text-lg font-bold mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>Empowered women we envision to be</h3>
+                <h3 className="text-lg font-bold mb-4" style={{ }}>Empowered women we envision to be</h3>
                 <div className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl" style={{ background: 'var(--indigo-btn)' }}>
                   ♀
                 </div>
@@ -82,10 +82,10 @@ export default function WomensEmpowermentPage() {
       {/* Current Situation */}
       <section className="py-16" style={{ background: 'var(--sky)' }}>
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8" style={{ fontFamily: 'Playfair Display, serif' }}>Current Situation</h2>
+          <h2 className="text-3xl font-bold mb-8" style={{ }}>Current Situation</h2>
           <div className="flex flex-col lg:flex-row gap-10 items-center">
             <div className="shrink-0 text-center p-8 rounded-2xl text-white" style={{ background: 'var(--indigo-btn)' }}>
-              <div className="text-6xl font-bold mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>58%</div>
+              <div className="text-6xl font-bold mb-2" style={{ }}>58%</div>
               <div className="text-sm text-white/80">Women lack economic independence in rural areas</div>
             </div>
             <div className="flex-1 space-y-3">
@@ -106,7 +106,7 @@ export default function WomensEmpowermentPage() {
       {/* Video */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8" style={{ fontFamily: 'Playfair Display, serif' }}>What we're working toward</h2>
+          <h2 className="text-3xl font-bold text-center mb-8" style={{ }}>What we're working toward</h2>
           <div className="relative rounded-2xl overflow-hidden h-72 bg-red-600 flex items-center justify-center cursor-pointer group">
             <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80" alt="" className="absolute inset-0 w-full h-full object-cover opacity-50" />
             <div className="relative z-10 w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
@@ -119,13 +119,13 @@ export default function WomensEmpowermentPage() {
       {/* Goals */}
       <section className="py-16" style={{ background: 'var(--sky)' }}>
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-10" style={{ fontFamily: 'Playfair Display, serif' }}>Goals</h2>
+          <h2 className="text-3xl font-bold mb-10" style={{ }}>Goals</h2>
           <div className="space-y-6">
             {goals.map(g => (
               <div key={g.num} className="flex gap-6 bg-white rounded-xl p-6 border border-gray-100">
-                <div className="text-4xl font-bold shrink-0" style={{ color: 'var(--indigo-btn)', fontFamily: 'Playfair Display, serif', opacity: 0.3 }}>{g.num}</div>
+                <div className="text-4xl font-bold shrink-0" style={{ color: 'var(--indigo-btn)', opacity: 0.3 }}>{g.num}</div>
                 <div>
-                  <h4 className="font-bold text-base mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>{g.title}</h4>
+                  <h4 className="font-bold text-base mb-2" style={{ }}>{g.title}</h4>
                   <p className="text-sm text-gray-500 leading-relaxed">{g.desc}</p>
                 </div>
               </div>
@@ -137,11 +137,11 @@ export default function WomensEmpowermentPage() {
       {/* Achievements */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-10" style={{ fontFamily: 'Playfair Display, serif' }}>Our Achievements</h2>
+          <h2 className="text-3xl font-bold text-center mb-10" style={{ }}>Our Achievements</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {stats.map(s => (
               <div key={s.label} className="text-center p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
-                <div className="text-4xl font-bold mb-2" style={{ color: 'var(--navy)', fontFamily: 'Playfair Display, serif' }}>{s.value}</div>
+                <div className="text-4xl font-bold mb-2" style={{ color: 'var(--navy)', }}>{s.value}</div>
                 <div className="text-sm text-gray-500 leading-relaxed">{s.label}</div>
               </div>
             ))}
@@ -157,7 +157,7 @@ export default function WomensEmpowermentPage() {
       {/* Photos & Videos */}
       <section className="py-16" style={{ background: 'var(--sky)' }}>
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>Photos & Videos</h2>
+          <h2 className="text-3xl font-bold text-center mb-4" style={{ }}>Photos & Videos</h2>
           <p className="text-center text-gray-500 text-sm mb-8 max-w-xl mx-auto">VIN facilitates projects focused on the women and children of marginalized communities against this challenging separation. VIN believes that the women and children will bring about positive change.</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {['https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80', 'https://images.unsplash.com/photo-1607748862156-7c548e7e98f4?w=400&q=80', 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&q=80', 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&q=80'].map((src, i) => (
@@ -172,14 +172,14 @@ export default function WomensEmpowermentPage() {
       {/* Testimonials */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-10" style={{ fontFamily: 'Playfair Display, serif' }}>Testimonials</h2>
+          <h2 className="text-3xl font-bold text-center mb-10" style={{ }}>Testimonials</h2>
           <div className="max-w-3xl mx-auto rounded-2xl p-8 border border-gray-100 shadow-sm flex flex-col md:flex-row gap-6 items-start">
             <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&q=80" alt="" className="w-16 h-16 rounded-full object-cover shrink-0" />
             <div>
               <p className="text-gray-600 text-sm leading-relaxed italic mb-3">
                 "Namaste my name is Bharti Tamang. I am a 26-year-old farmer from Devisthan-Maharjganj. Two years ago, I had the opportunity to participate in a VIN English class offered in Thapatali, Kathmandu. At first I was skeptical that learning English would be useless for someone like me, a farmer and a housewife. I also wanted to earn more to assist my daily household activities. However, thanks to the encouragement of the women in my community, I decided to give it a try. Little did I know this decision would change my life in ways I never imagined."
               </p>
-              <p className="font-bold text-sm" style={{ fontFamily: 'Playfair Display, serif' }}>Bharjit Morsali</p>
+              <p className="font-bold text-sm" style={{ }}>Bharjit Morsali</p>
             </div>
           </div>
           <div className="text-center mt-6">
@@ -193,18 +193,18 @@ export default function WomensEmpowermentPage() {
       {/* Other Programs */}
       <section className="py-16" style={{ background: 'var(--sky)' }}>
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>Other Programs</h2>
+          <h2 className="text-2xl font-bold mb-6" style={{ }}>Other Programs</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
             {otherPrograms.map(p => (
               <Link href={p.href} key={p.title} className="group rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-shadow">
                 <div className="relative h-32 overflow-hidden">
                   <img src={p.img} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute bottom-2 left-2">
-                    <span className="text-base font-bold text-white" style={{ fontFamily: 'Playfair Display, serif' }}>{p.stat}</span>
+                    <span className="text-base font-bold text-white" style={{ }}>{p.stat}</span>
                   </div>
                 </div>
                 <div className="p-3">
-                  <p className="text-xs font-bold" style={{ fontFamily: 'Playfair Display, serif' }}>{p.title}</p>
+                  <p className="text-xs font-bold" style={{ }}>{p.title}</p>
                   <Link href={p.href} className="text-xs font-semibold mt-1 block" style={{ color: 'var(--indigo-btn)' }}>View Project →</Link>
                 </div>
               </Link>

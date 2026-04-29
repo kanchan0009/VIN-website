@@ -100,7 +100,7 @@ export default function SuccessStoriesPage() {
           </p>
           <h1
             className="text-5xl font-bold text-white"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            style={{ }}
           >
             Success Stories
           </h1>
@@ -128,7 +128,7 @@ export default function SuccessStoriesPage() {
                 <div className="mt-4 text-center">
                   <h3
                     className="font-bold text-lg"
-                    style={{ fontFamily: "Playfair Display, serif" }}
+                    style={{ }}
                   >
                     {story.name}
                   </h3>
@@ -143,7 +143,7 @@ export default function SuccessStoriesPage() {
                   <Quote className="text-indigo-300 mb-2" size={28} />
                   <p
                     className="text-gray-700 italic leading-relaxed"
-                    style={{ fontFamily: "Playfair Display, serif" }}
+                    style={{ }}
                   >
                     {story.quote}
                   </p>

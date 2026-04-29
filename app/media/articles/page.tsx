@@ -93,7 +93,7 @@ export default function ArticlesPage() {
           </p>
           <h1
             className="text-5xl font-bold text-white"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            style={{ }}
           >
             Articles
           </h1>
@@ -123,7 +123,7 @@ export default function ArticlesPage() {
                 </div>
                 <h3
                   className="text-lg font-bold text-gray-900 mb-2 group-hover:text-indigo-700 transition-colors"
-                  style={{ fontFamily: "Playfair Display, serif" }}
+                  style={{ }}
                 >
                   {article.title}
                 </h3>

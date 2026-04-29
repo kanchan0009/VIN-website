@@ -24,7 +24,7 @@ export default function VolunteerPage() {
           </p>
           <h1
             className="text-5xl font-bold text-white mb-3"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            style={{ }}
           >
             Volunteer in Nepal
           </h1>

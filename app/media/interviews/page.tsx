@@ -101,7 +101,7 @@ export default function InterviewsPage() {
           </p>
           <h1
             className="text-5xl font-bold text-white"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            style={{ }}
           >
             Interviews
           </h1>
@@ -115,7 +115,7 @@ export default function InterviewsPage() {
         <div className="max-w-6xl mx-auto px-4">
           <h2
             className="text-2xl font-bold mb-6"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            style={{ }}
           >
             Featured Interview
           </h2>
@@ -137,7 +137,7 @@ export default function InterviewsPage() {
               </span>
               <h3
                 className="text-xl md:text-2xl font-bold text-white mb-2"
-                style={{ fontFamily: "Playfair Display, serif" }}
+                style={{ }}
               >
                 {interviews[0].title}
               </h3>
@@ -155,7 +155,7 @@ export default function InterviewsPage() {
         <div className="max-w-6xl mx-auto px-4">
           <h2
             className="text-2xl font-bold mb-8"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            style={{ }}
           >
             All Interviews
           </h2>
@@ -184,7 +184,7 @@ export default function InterviewsPage() {
                 </div>
                 <h3
                   className="text-lg font-bold text-gray-900 mb-2 group-hover:text-indigo-700 transition-colors"
-                  style={{ fontFamily: "Playfair Display, serif" }}
+                  style={{ }}
                 >
                   {interview.title}
                 </h3>

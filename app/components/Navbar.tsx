@@ -77,7 +77,7 @@ export default function Navbar() {
             <div>
               <div
                 className="font-bold text-sm"
-                style={{ color: "var(--navy)", fontFamily: "DM Sans" }}
+                style={{ color: "var(--navy)", }}
               >
                 Volunteers Initiative
               </div>

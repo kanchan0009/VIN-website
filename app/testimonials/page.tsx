@@ -81,7 +81,7 @@ export default function TestimonialsPage() {
           <div className="flex items-center justify-center mb-12 gap-4">
             <h2
               className="text-3xl font-bold"
-              style={{ fontFamily: "Playfair Display, serif" }}
+              style={{ }}
             >
               Testimonials
             </h2>

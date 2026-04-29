@@ -100,7 +100,7 @@ export default function CaseStudiesPage() {
           </p>
           <h1
             className="text-5xl font-bold text-white"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            style={{ }}
           >
             Case Studies
           </h1>
@@ -136,7 +136,7 @@ export default function CaseStudiesPage() {
                   </div>
                   <h3
                     className="text-xl font-bold text-gray-900 mb-3"
-                    style={{ fontFamily: "Playfair Display, serif" }}
+                    style={{ }}
                   >
                     {study.title}
                   </h3>

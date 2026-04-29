@@ -40,7 +40,7 @@ export default function GalleryPage() {
           </p>
           <h1
             className="text-5xl font-bold text-white mb-2"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            style={{ }}
           >
             Gallery
           </h1>

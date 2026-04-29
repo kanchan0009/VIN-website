@@ -11,7 +11,7 @@ export default function ContactPage() {
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 pb-10 w-full">
           <p className="text-white/60 text-sm mb-2">Home / <span className="text-white">Contact Us</span></p>
-          <h1 className="text-5xl font-bold text-white mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Contact Us</h1>
+          <h1 className="text-5xl font-bold text-white mb-2" style={{ }}>Contact Us</h1>
           <p className="text-white/70 text-sm max-w-lg">Lorem Ipsum Dipsum We Are Different Locations Lorem Ipsum Dipsum We Are Different Locations Lorem Ipsum Dipsum We Are Different L</p>
         </div>
       </section>
@@ -21,7 +21,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row gap-14">
           {/* Form */}
           <div className="flex-1 max-w-lg">
-            <h2 className="text-3xl font-bold mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Stay In Touch!</h2>
+            <h2 className="text-3xl font-bold mb-2" style={{ }}>Stay In Touch!</h2>
             <p className="text-gray-500 text-sm mb-8">Learn More about your next tour destination and make the best decision with Tyrolean Adventures</p>
             <div className="space-y-4">
               {['Full Name', 'Address', 'Phone Number'].map(field => (
@@ -40,7 +40,7 @@ export default function ContactPage() {
           {/* Info */}
           <div className="flex-1">
             <div className="rounded-2xl p-8 h-full" style={{ background: 'var(--sky)' }}>
-              <h3 className="text-xl font-bold mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>How can we help you?</h3>
+              <h3 className="text-xl font-bold mb-6" style={{ }}>How can we help you?</h3>
               <div className="space-y-5 mb-8">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">Contact Us</p>

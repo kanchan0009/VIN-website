@@ -55,7 +55,7 @@ export default function BlogDetailPage({
 
               <h1
                 className="text-4xl font-semibold leading-tight tracking-tight mb-6"
-                style={{ fontFamily: "Playfair Display, serif" }}
+                style={{ }}
               >
                 Women's Development in Nepal: The Myth of Empowerment
               </h1>
@@ -70,7 +70,7 @@ export default function BlogDetailPage({
               <div className="prose prose-lg max-w-none text-gray-600 leading-8">
                 <h2
                   className="text-2xl font-semibold"
-                  style={{ fontFamily: "Playfair Display, serif" }}
+                  style={{ }}
                 >
                   Why do we use it?
                 </h2>
@@ -92,7 +92,7 @@ export default function BlogDetailPage({
 
                 <h2
                   className="text-2xl font-semibold"
-                  style={{ fontFamily: "Playfair Display, serif" }}
+                  style={{ }}
                 >
                   Where does it come from?
                 </h2>
@@ -127,7 +127,7 @@ export default function BlogDetailPage({
             <div className="rounded-2xl p-5 border border-gray-100">
               <h3
                 className="font-bold text-base mb-4"
-                style={{ fontFamily: "Playfair Display, serif" }}
+                style={{ }}
               >
                 Recent Blogs
               </h3>
@@ -158,7 +158,7 @@ export default function BlogDetailPage({
             <div className="rounded-2xl p-5 border border-gray-100">
               <h3
                 className="font-bold text-base mb-4"
-                style={{ fontFamily: "Playfair Display, serif" }}
+                style={{ }}
               >
                 Contact Us
               </h3>

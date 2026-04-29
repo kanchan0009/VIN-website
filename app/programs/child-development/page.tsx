@@ -11,21 +11,21 @@ export default function ChildDevelopmentPage() {
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 pb-10 w-full">
           <p className="text-white/60 text-sm mb-2">Home / All Programs / <span className="text-white">Child Development</span></p>
-          <h1 className="text-5xl font-bold text-white" style={{ fontFamily: 'Playfair Display, serif' }}>Child Development Program</h1>
+          <h1 className="text-5xl font-bold text-white" style={{ }}>Child Development Program</h1>
         </div>
       </section>
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-12">
             <div className="flex-1">
-              <h2 className="text-3xl font-bold mb-5" style={{ fontFamily: 'Playfair Display, serif' }}>Why Child Development Programs</h2>
+              <h2 className="text-3xl font-bold mb-5" style={{ }}>Why Child Development Programs</h2>
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
                 Children's life facilitates through children's basic rights awareness. VIN believes that every child deserves access to quality education, healthcare, and a safe environment to grow and flourish. Our Child Development program addresses barriers that prevent children from reaching their full potential.
               </p>
               <div className="grid grid-cols-3 gap-5 mb-8">
                 {[{ v: '18,400', l: 'Children Educated' }, { v: '250+', l: 'Schools Supported' }, { v: '95%', l: 'Attendance Rate' }].map(s => (
                   <div key={s.l} className="text-center p-5 rounded-2xl border border-gray-100">
-                    <div className="text-2xl font-bold" style={{ color: 'var(--navy)', fontFamily: 'Playfair Display, serif' }}>{s.v}</div>
+                    <div className="text-2xl font-bold" style={{ color: 'var(--navy)', }}>{s.v}</div>
                     <div className="text-xs text-gray-500 mt-1">{s.l}</div>
                   </div>
                 ))}
@@ -47,7 +47,7 @@ export default function ChildDevelopmentPage() {
       </section>
       <section className="py-16" style={{ background: 'var(--sky)' }}>
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8" style={{ fontFamily: 'Playfair Display, serif' }}>Our Goals</h2>
+          <h2 className="text-3xl font-bold mb-8" style={{ }}>Our Goals</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {['Ensure access to quality education for all children', 'Support children\'s health and nutritional needs', 'Create safe learning environments', 'Raise awareness of children\'s rights'].map((g, i) => (
               <div key={i} className="bg-white rounded-xl p-5 border border-gray-100 flex gap-4">

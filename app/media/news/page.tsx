@@ -87,7 +87,7 @@ export default function NewsUpdatePage() {
           </p>
           <h1
             className="text-5xl font-bold text-white"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            style={{ }}
           >
             News Update
           </h1>
@@ -120,7 +120,7 @@ export default function NewsUpdatePage() {
                 </div>
                 <h3
                   className="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-700 transition-colors"
-                  style={{ fontFamily: "Playfair Display, serif" }}
+                  style={{ }}
                 >
                   {news.title}
                 </h3>

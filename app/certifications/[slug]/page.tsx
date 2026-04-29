@@ -172,7 +172,7 @@ export default function CertificationDetailPage({
             <div>
               <h1
                 className="text-4xl font-bold text-white"
-                style={{ fontFamily: "Playfair Display, serif" }}
+                style={{ }}
               >
                 {org.name}
               </h1>
@@ -201,7 +201,7 @@ export default function CertificationDetailPage({
               <div>
                 <h1
                   className="text-3xl font-bold text-gray-900"
-                  style={{ fontFamily: "Playfair Display, serif" }}
+                  style={{ }}
                 >
                   {org.name}
                 </h1>
@@ -266,7 +266,7 @@ export default function CertificationDetailPage({
           <div className="mb-16">
             <h2
               className="text-3xl font-bold text-gray-900 mb-6"
-              style={{ fontFamily: "Playfair Display, serif" }}
+              style={{ }}
             >
               Our Commitment
             </h2>
@@ -310,7 +310,7 @@ export default function CertificationDetailPage({
         <div className="max-w-7xl mx-auto px-4">
           <h2
             className="text-3xl font-bold text-center mb-12"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            style={{ }}
           >
             Other Certifications & Memberships
           </h2>

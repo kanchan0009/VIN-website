@@ -2,7 +2,7 @@
 import Link from "next/link";
 import CTABanner from "../components/CTABanner";
 import DonationWidget from "../components/DonationWidget";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 type Milestone = {
   year: string;
@@ -16,31 +16,54 @@ const milestones: Milestone[] = [
   {
     year: "1998",
     title: "A Childhood Shaped by Hunger and Distance",
-    desc: "Every morning, Bhupi's mother Rupa would wake up at 5 am to cook rice and curry for the family. Then, she would set off on a 3-hour journey to the closest school.",
-    img: "/mnt/agents/upload/image.png",
+    desc: "Every morning, Bhupi's mother Rupa would wake up at 5 am to study before classes began. It was a one-kilometre vertical climb, equal to ten km uphill by road, and the journey took hours.\nHe reached school by 10 AM, long after the energy from breakfast had faded. There were no lunch boxes, no water bottles, no snacks. Children survived the entire day — and often until 6-7 PM — with nothing but willpower.\nHunger became his classroom companion. And hunger rarely allowed learning. He missed school many times. He failed Grade 8. Years later, he attempted SLC. Not because he lacked dedication, but because the path to education demanded more strength than any child should be expected to give. Very few children made it through high school in those days. The distance alone ended futures long before dreams could begin.",
+    img: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
   },
   {
     year: "1998",
     title: "The Story That Changed Everything",
-    desc: "One afternoon, while walking the 3-hour trek to get to school, Bhupi met a man who would alter the course of his life forever.",
-    img: "/mnt/agents/upload/image.png",
+    desc: "One afternoon, while taking the livestock out to graze, Bhupi's mother shared a story that cracked open his world. She had desperately wanted to go to school. But girls in her area were told, 'Your place is at home'.\nBut brothers studied. She stayed behind. At fifteen, she was married. Her dreams ended before they could breathe. Yet she never let this injustice define her. She encouraged her husband to start a school.\nHe completed high school. He became a teacher. Their family slowly rose because of the education she never received. Her voice this day was small, but it struck him like lightning: 'You must study. You are my chance.'\nThat moment reshaped his purpose. He returned to school. He persisted. He completed his SLC on the second attempt. He walked the same steep hill — but this time with determination steeper than the climb.",
+    img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80",
   },
   {
     year: "1998",
     title: "Bhupi's Initiation",
-    desc: "Bhupi's initiation into the world of education was difficult, yet ultimately rewarding. The transition from village life to a structured school environment was challenging.",
-    img: "/mnt/agents/upload/image.png",
+    desc: "This has been possible due to our dedicated staff, alliances with like-minded organisations and the efforts and contributions of local and international volunteers. We offer the most affordable international volunteering & internship placements in Nepal.\nVIN funds and runs mid to long-term sustainable community based volunteer service projects, focusing on those most disadvantaged communities with special focus on women, children and minority groups. Our holistic development model — education, health & environment, tools for economic well-being and the provision of basic infrastructure have proved to be effective to those disadvantaged communities.",
+    img: "https://images.unsplash.com/photo-1607748862156-7c548e7e98f4?w=800&q=80",
   },
   {
     year: "1998",
     title: "Bhupi's Initiation",
-    desc: "Bhupi persevered. He woke up every morning at 5 am to study before classes began. He stayed up late, practicing English by candlelight.",
-    img: "/mnt/agents/upload/image.png",
+    desc: "This has been possible due to our dedicated staff, alliances with like-minded organisations and the efforts and contributions of local and international volunteers. We offer the most affordable international volunteering & internship placements in Nepal.\nVIN funds and runs mid to long-term sustainable community based volunteer service projects, focusing on those most disadvantaged communities with special focus on women, children and minority groups. Our holistic development model — education, health & environment, tools for economic well-being and the provision of basic infrastructure have proved to be effective to those disadvantaged communities.",
+    img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80",
   },
 ];
 
 export default function OurStoryPage() {
-  const [activeIndex, setActiveIndex] = useState(0); // ❌ WAS OUTSIDE COMPONENT
+  const [activeIndex, setActiveIndex] = useState(0);
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = sectionRefs.current.indexOf(entry.target as HTMLDivElement);
+            if (index !== -1) {
+              setActiveIndex(index);
+            }
+          }
+        });
+      },
+      { threshold: 0.4, rootMargin: "-100px 0px -50% 0px" }
+    );
+
+    sectionRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <main>
@@ -70,7 +93,7 @@ export default function OurStoryPage() {
           </p>
           <h1
             className="text-5xl font-bold text-white"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            style={{ }}
           >
             Our Story
           </h1>
@@ -82,7 +105,7 @@ export default function OurStoryPage() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2
             className="text-4xl font-bold mb-3"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            style={{ }}
           >
             THE ORIGIN STORY OF VOLUNTEERS INITIATIVE NEPAL (VIN)
           </h2>
@@ -101,125 +124,71 @@ export default function OurStoryPage() {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="py-8 pb-20 bg-white">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="relative">
-            {/* Vertical line - base light color */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-[#d4c8b8] transform -translate-x-1/2 hidden lg:block transition-all duration-700" />
+      {/* Timeline Section */}
+      <section className="py-24 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 md:px-12 relative">
+          {/* Background Vertical Line (Light) */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-gray-100 transform -translate-x-1/2 hidden lg:block" />
 
-            {/* Active vertical line - darker shade up to active milestone */}
-            <div
-              className="absolute left-1/2 top-0 w-0.5 bg-[#8b7355] transform -translate-x-1/2 hidden lg:block transition-all duration-700 ease-out"
-              style={{
-                height:
-                  activeIndex === -1
-                    ? "0%"
-                    : activeIndex === 0
-                      ? "25%"
-                      : activeIndex === 1
-                        ? "50%"
-                        : activeIndex === 2
-                          ? "75%"
-                          : "100%",
-              }}
-            />
+          {/* Progress Vertical Line (Blue) */}
+          <div 
+            className="absolute left-1/2 top-0 w-[2px] bg-[#221C84] transform -translate-x-1/2 hidden lg:block transition-all duration-700 ease-out"
+            style={{ 
+              height: `${(activeIndex / (milestones.length - 1)) * 100}%`,
+              maxHeight: '100%' 
+            }}
+          />
 
+          <div className="space-y-32">
             {milestones.map((m, i) => (
               <div
                 key={i}
-                className={`relative flex flex-col lg:flex-row gap-8 mb-16 cursor-pointer transition-all duration-500 ${i % 2 === 1 ? "lg:flex-row-reverse" : ""}`}
-                onClick={() => setActiveIndex(i)}
+                ref={(el) => (sectionRefs.current[i] = el)}
+                onMouseEnter={() => setActiveIndex(i)}
+                className={`relative flex flex-col lg:flex-row items-center gap-12 lg:gap-24 transition-all duration-500 ${
+                  i % 2 === 1 ? "lg:flex-row-reverse" : ""
+                } ${activeIndex >= i ? "opacity-100" : "opacity-50"}`}
               >
-                {/* Year dot */}
-                <div
-                  className={`hidden lg:flex absolute left-1/2 top-8 transform -translate-x-1/2 w-10 h-10 rounded-full items-center justify-center text-white text-xs font-bold z-10 transition-all duration-500 ${activeIndex === i ? "scale-125 shadow-lg" : ""}`}
-                  style={{
-                    background: activeIndex === i ? "#6b5a45" : "#c4b5a0",
-                    boxShadow:
-                      activeIndex === i
-                        ? "0 0 0 6px rgba(107, 90, 69, 0.2)"
-                        : "none",
-                  }}
-                >
-                  {m.year.slice(2)}
-                </div>
+                {/* Timeline Dot */}
+                <div 
+                  className={`absolute left-1/2 top-10 w-5 h-5 rounded-full transform -translate-x-1/2 hidden lg:block border-4 border-white shadow-md z-10 transition-colors duration-500 ${
+                    activeIndex >= i ? "bg-[#221C84]" : "bg-gray-300"
+                  }`} 
+                />
 
-                {/* Content */}
-                <div
-                  className={`flex-1 max-w-sm transition-all duration-500 ${i % 2 === 0 ? "lg:pr-12" : "lg:pl-12"}`}
-                >
-                  <div
-                    className={`rounded-2xl overflow-hidden shadow-lg transition-all duration-500 relative ${activeIndex === i ? "shadow-2xl scale-[1.02]" : ""}`}
+                {/* Image Side */}
+                <div className="flex-1 w-full lg:w-[45%] flex justify-center">
+                  <div 
+                    className={`relative transition-transform duration-500 hover:rotate-0 hover:scale-110 ${
+                      i % 2 === 0 ? "-rotate-6" : "rotate-6"
+                    }`}
+                    style={{ maxWidth: "400px" }}
                   >
                     <img
-                      src={m.img}
+                      src={m.img.includes('upload') ? "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80" : m.img}
                       alt={m.title}
-                      className="w-full h-48 object-cover transition-transform duration-700 hover:scale-105"
-                    />
-                    {/* Darker shade overlay - appears when active */}
-                    <div
-                      className="absolute inset-0 pointer-events-none transition-opacity duration-500"
-                      style={{
-                        background:
-                          "linear-gradient(to bottom, rgba(60, 50, 40, 0.35) 0%, rgba(40, 30, 20, 0.55) 50%, rgba(60, 50, 40, 0.4) 100%)",
-                        opacity: activeIndex === i ? 1 : 0,
-                      }}
-                    />
-                    {/* Decorative corner accents */}
-                    <div
-                      className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 transition-all duration-500"
-                      style={{
-                        borderColor:
-                          activeIndex === i ? "#8b7355" : "transparent",
-                        opacity: activeIndex === i ? 1 : 0,
-                      }}
-                    />
-                    <div
-                      className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 transition-all duration-500"
-                      style={{
-                        borderColor:
-                          activeIndex === i ? "#8b7355" : "transparent",
-                        opacity: activeIndex === i ? 1 : 0,
-                      }}
+                      className="w-full aspect-[4/3] object-cover shadow-2xl"
                     />
                   </div>
                 </div>
-                <div
-                  className={`flex-1 max-w-sm flex flex-col justify-center ${i % 2 === 0 ? "lg:pl-12" : "lg:pr-12"}`}
-                >
-                  <span
-                    className="text-xs font-bold uppercase tracking-widest mb-2 block transition-colors duration-500"
-                    style={{ color: activeIndex === i ? "#6b5a45" : "#c4b5a0" }}
-                  >
-                    {m.year}
-                  </span>
-                  <h3
-                    className="text-xl font-bold mb-3 transition-colors duration-500"
-                    style={{
-                      fontFamily: "Playfair Display, serif",
-                      color: activeIndex === i ? "#2c2416" : "#4a3f32",
-                    }}
-                  >
-                    {m.title}
-                  </h3>
-                  <p
-                    className="text-sm leading-relaxed transition-colors duration-500"
-                    style={{ color: activeIndex === i ? "#3d3326" : "#8a7d6b" }}
-                  >
-                    {m.desc}
-                  </p>
-                  {m.note && (
-                    <blockquote
-                      className="mt-3 border-l-4 pl-4 italic text-sm transition-all duration-500"
-                      style={{
-                        borderColor: activeIndex === i ? "#8b7355" : "#d4c8b8",
-                        color: activeIndex === i ? "#6b5a45" : "#a89f91",
-                      }}
-                    >
-                      {m.note}
-                    </blockquote>
-                  )}
+
+                {/* Text Side */}
+                <div className={`flex-1 w-full lg:w-1/2 text-left`}>
+                  <div className="max-w-xl">
+                    <span className="text-[#221C84] font-bold text-xl mb-2 block">
+                      {m.year}
+                    </span>
+                    <h3 className="text-3xl font-bold text-gray-900 mb-6 leading-tight">
+                      {m.title}
+                    </h3>
+                    <div className="space-y-4 text-gray-600 text-[15px] leading-relaxed">
+                      {m.desc.split('\n').map((para, idx) => (
+                        <p key={idx} dangerouslySetInnerHTML={{ 
+                          __html: para.replace(/(\d+ AM|\d+ PM|\d+-kilometre vertical climb|ten km uphill|SLC|on the second attempt)/g, '<span class="text-[#221C84] font-bold">$1</span>') 
+                        }} />
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
@@ -235,7 +204,7 @@ export default function OurStoryPage() {
             <div className="flex-1 order-2 lg:order-1">
               <h2
                 className="text-4xl lg:text-5xl font-bold text-[#1a1a2e] mb-8"
-                style={{ fontFamily: "Playfair Display, Georgia, serif" }}
+                style={{ }}
               >
                 Founder&apos;s Message
               </h2>
@@ -311,7 +280,7 @@ export default function OurStoryPage() {
                 <div className="pt-6 border-t border-[#d0cce0] mt-6">
                   <p
                     className="font-bold text-lg text-[#1a1a2e]"
-                    style={{ fontFamily: "Playfair Display, Georgia, serif" }}
+                    style={{ }}
                   >
                     Bhupendra &quot;Bhupi&quot; Ghimire
                   </p>
