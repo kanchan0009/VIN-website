@@ -1,17 +1,1 @@
-# Media Dropdown & Tabs Implementation
-
-## Plan
-
-- [x] Review existing files (Navbar, media pages, gallery)
-- [x] Create reusable `MediaTabs` component
-- [x] Create `/media` landing page
-- [x] Update Navbar with Media dropdown
-- [x] Add MediaTabs to all media sub-pages
-  - [x] Gallery
-  - [x] Articles
-  - [x] News Update
-  - [x] Careers
-  - [x] Success Stories
-  - [x] Case Studies
-  - [x] Interviews
-- [x] Test navigation / build ✅
+# CTA Banner Fix Task\n\n## Steps to Complete:\n\n1. ✅ Create TODO.md with plan steps\n2. ✅ Add useRef import and fix scrollRef scope/image/Tailwind\n3. ✅ Implement slider with horizontal scroll/ref, clean duplicate nav\n4. ✅ Add scrollbar-hide CSS to globals.css\n5. ✅ Fix final TS errors and scrollbar class\n\n6. ✅ Test with `npm run dev` and verify no console/TS errors\n\n## Status\nAll code fixes complete. Remaining: verify no errors in dev server.

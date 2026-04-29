@@ -4,7 +4,7 @@
   --sky: #ebf4ff;
   --sky-mid: #daeeff;
   --red: #e8172c;
-  --blue:#221C84;
+  --blue: #221c84;
   --text: #1a1a2e;
   --muted: #6b7280;
   --white: #ffffff;
@@ -15,6 +15,16 @@
 *::after {
   box-sizing: border-box;
 }
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 html {
   scroll-behavior: smooth;
   font-family: var(--font-montserrat), "Montserrat", sans-serif;

@@ -1,57 +1,95 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
 const projects = [
   {
     title: "Women's Trafficking Prevention",
     desc: "The EID project aims to ensure economic independence of women by building their skills and providing the necessary support for facilitating women entrepreneurship.",
     img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80",
-    tag: "Women's Empowerment",
   },
   {
     title: "Entrepreneurship Development",
     desc: "The EID project aims to ensure economic independence of women by building their skills and providing the necessary support for facilitating women entrepreneurship.",
     img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&q=80",
-    tag: "Youth Empowerment",
   },
   {
     title: "Women's Education and Life Skills",
-    desc: "This project empowers women to become self-reliant and resilient by providing them access to relevant education and skills development to help them participate on...",
+    desc: "This project empowers women to become self-reliant and resilient by providing them access to relevant education and skills development.",
     img: "https://images.unsplash.com/photo-1607748862156-7c548e7e98f4?w=400&q=80",
-    tag: "Women's Empowerment",
   },
 ];
-
 export default function CTABanner() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (!scrollRef.current) return;
+    const scrollAmount = 320;
+
+    scrollRef.current.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
-      <section className="relative overflow-hidden py-14 bg-gradient-to-r from-white via-[#e6e6fa] to-[#7c78c9]">
+      {/* CTA SECTION */}
+      <section className="relative overflow-hidden py-14 bg-gradient-to-r from-[#221C84] to-[#CFCCFF]">
+        {/* 🔥 S-SHAPE VECTOR */}
+        <div className="absolute top-[-40px] right-[-40px] rotate-[5.9deg] opacity-40 pointer-events-none">
+          <svg
+            width="700"
+            height="350"
+            viewBox="0 0 700 350"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient id="sGradient" x1="0" y1="0" x2="700" y2="0">
+                <stop offset="0%" stopColor="#0A00AE" />
+                <stop offset="100%" stopColor="#CFCCFF" />
+              </linearGradient>
+            </defs>
+
+            <path
+              d="M50 250 
+                 C150 50, 350 50, 450 200 
+                 S650 350, 650 100"
+              stroke="url(#sGradient)"
+              strokeWidth="60"
+              strokeLinecap="round"
+            />
+          </svg>
+        </div>
+
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
           {/* LEFT CONTENT */}
           <div className="max-w-xl text-center md:text-left">
-            <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">
+            <h2 className="text-2xl md:text-3xl font-[600] text-white mb-3">
               Choose where your Impact Begins
             </h2>
 
-            <p className="text-gray-700 text-sm leading-relaxed mb-6">
+            <p className="text-white/80 text-sm leading-relaxed mb-6">
               Make a difference today! Choose to become a volunteer, sponsor a
               child, join an internship, or donate now, and help create lasting
               impact in lives and communities.
             </p>
 
             <div className="flex flex-wrap justify-center md:justify-start gap-3">
-              {/* Button 1 */}
               <Link
                 href="/get-involved"
-                className="px-5 py-2 text-sm font-medium bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition"
+                className="px-5 py-2 text-sm font-[700] bg-white text-[#221C84] rounded-md hover:bg-gray-100 transition"
               >
                 Get Involved With Us
               </Link>
 
-              {/* Button 2 */}
               <Link
                 href="/donate"
-                className="px-5 py-2 text-sm font-medium text-indigo-700 border border-indigo-500 rounded-md bg-white hover:bg-indigo-50 transition"
+                className="px-5 py-2 text-sm font-medium text-white border border-white rounded-md hover:bg-white/10 transition"
               >
                 Donate Now
               </Link>
@@ -60,57 +98,83 @@ export default function CTABanner() {
 
           {/* RIGHT IMAGE */}
           <div className="mt-10 md:mt-0 md:ml-10">
-            <img
-              src="/images/volunteers.png"
+            <Image
+              src="/customers.jpg"
               alt="Volunteers"
-              className="w-[280px] md:w-[360px] object-contain"
+              width={360}
+              height={300}
+              className="object-contain"
             />
           </div>
         </div>
       </section>
+
+      {/* PROJECT SECTION */}
       <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
-          Choose Ways To Get Involved With Us
-        </h2>
+        <div className="max-w-7xl mx-auto px-4 ">
+          <h2 className="text-3xl font-[500] text-center mb-4">
+            Choose Ways To Get Involved With Us
+          </h2>
 
-        {/* Filters */}
-        <div className="flex flex-wrap gap-3 justify-center mb-8">
-          {['Choose a Category', 'Program', 'Project'].map(f => (
-            <select key={f} className="border border-gray-200 rounded-lg px-4 py-2.5 text-sm bg-white text-gray-700 focus:outline-none pr-10">
-              <option>{f}</option>
-            </select>
-          ))}
-        </div>
-
-        {/* Cards */}
-        <div className="relative">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {projects.map((p, i) => (
-              <div key={i} className="rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow">
-                <div className="relative h-52 overflow-hidden">
-                  <img src={p.img} alt={p.title} className="w-full h-full object-cover" />
-                </div>
-                <div className="p-5">
-                  <h3 className="font-bold text-base mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>{p.title}</h3>
-                  <p className="text-sm text-gray-500 leading-relaxed mb-4">{p.desc}</p>
-                </div>
-              </div>
+          {/* FILTERS */}
+          <div className="flex flex-wrap gap-6 justify-center  mb-8">
+            {["Choose a Category", "Program", "Project"].map((f) => (
+              <select
+                key={f}
+                className="border-2 border-black mx-4 px-4 py-2.5 text-[13px] font-bold text-center bg-white text-gray-700 focus:outline-none w-[250px]"
+              >
+                <option>{f}</option>
+              </select>
             ))}
           </div>
-          {/* Navigation arrows */}
-          <div className="flex justify-end gap-2 mt-6">
-            {[ChevronLeft, ChevronRight].map((Icon, i) => (
-              <button key={i}
-                className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors">
-                <Icon size={16} />
+          <div className="w-full mt-8">
+            {/* Slider Controls */}
+            <div className="flex justify-end gap-3 mb-6">
+              <button
+                onClick={() => scroll("left")}
+                className="w-12 h-12 flex items-center justify-center border border-black rounded-full hover:bg-gray-100 hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-300 font-bold text-lg"
+              >
+                ←
               </button>
-            ))}
+              <button
+                onClick={() => scroll("right")}
+                className="w-12 h-12 flex items-center justify-center border border-black rounded-full hover:bg-gray-100 hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-300 font-bold text-lg"
+              >
+                →
+              </button>
+            </div>
+
+            {/* CARDS */}
+            <div className="relative w-full">
+              <div
+                ref={scrollRef}
+                className="scrollbar-hide flex overflow-x-auto gap-6 pb-4 snap-x snap-mandatory"
+              >
+                {projects.map((p, i) => (
+                  <div key={i} className="flex-1 min-w-[320px] overflow-hidden bg-white shadow-md">
+                    <div className="relative h-60 w-full">
+                      <Image
+                        src={p.img}
+                        alt={p.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+
+                    <div className="p-6 text-left">
+                      <h3 className="font-[700] text-xl mb-3 text-gray-900">{p.title}</h3>
+
+                      <p className="text-base text-gray-600 leading-relaxed">
+                        {p.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-      
+      </section>
     </>
   );
 }

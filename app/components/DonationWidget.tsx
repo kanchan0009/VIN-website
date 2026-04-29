@@ -13,8 +13,8 @@ export default function DonationSection() {
   const amounts = [25, 50, 100, 150];
 
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="py-16 bg-[#F6F6F6]  ">
+      <div className="max-w-7xl max-h-6xl  mx-auto px-4">
         <div
           style={{
             maxWidth: "2000px",
@@ -29,7 +29,7 @@ export default function DonationSection() {
           <div
             style={{
               flex: "0 0 62%",
-              minWidth: "280px",
+              width: "300px",
               display: "flex",
               flexDirection: "column",
               gap: "14px",
@@ -37,20 +37,20 @@ export default function DonationSection() {
               boxSizing: "border-box",
             }}
           >
-            <h2 className="text-3xl font-bold mb-4 font-serif">
+            <h2 className="text-3xl font-bold mb-4 ">
               Donate us to help empower the most marginalized rural communities
               in Nepal!
             </h2>
 
             {/* Image + overlapping stats */}
-            <div style={{ position: "relative", width: "72%" }}>
+            <div style={{ position: "relative", width: "72%" }}> 
               <img
                 src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=700&h=440&fit=crop"
                 alt="Child in rural Nepal"
                 style={{
                   display: "block",
                   width: "100%",
-                  height: "220px",
+                  height: "400px",
                   objectFit: "cover",
                   borderRadius: "4px",
                 }}
@@ -169,10 +169,12 @@ export default function DonationSection() {
               flex: "1 1 280px",
               border: "2px solid #3b5bdb",
               borderRadius: "6px",
-              padding: "24px 22px",
+              marginTop: "20px",
+              padding: "24px",
+              height:"450px",
               display: "flex",
               flexDirection: "column",
-              gap: "16px",
+              gap: "20px",
               backgroundColor: "#fff",
               boxSizing: "border-box",
             }}

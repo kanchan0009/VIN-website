@@ -502,7 +502,7 @@ export default function HomePage() {
       </section>
 
       {/* Programs grid */}
-      <section className="bg-white py-24">
+      <section className="bg-white py-24 mx-30">
         <div className="max-w-7xl mx-auto text-center">
           {/* Heading */}
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
@@ -623,14 +623,14 @@ export default function HomePage() {
       <section className="bg-gradient-to-r from-blue-100 to-indigo-100 py-24 px-4 md:px-12">
         <div className="max-w-7xl mx-auto text-center">
           {/* Title */}
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+          <h2 className="text-3xl md:text-4xl font-[500] text-gray-900 mb-8">
             Learn More About Our Programs
           </h2>
 
           {/* Dropdown */}
-          <div className="mb-12">
-            <select className="border-2 border-black px-7 py-3  text-gray-700 font-medium hover:border-indigo-500 transition-all duration-300 cursor-pointer">
-              <option>Choose a Program</option>
+          <div className="mb-12  ">
+            <select className="border-2 border-black px-10 py-3 mx-10 text-gray-700 font-medium hover: transition-all duration-300 cursor-pointer">
+              <option >Choose a Program</option>
               <option>Women Empowerment</option>
               <option>Entrepreneurship</option>
               <option>Education</option>
@@ -739,12 +739,12 @@ export default function HomePage() {
       </section>
       {/* Team Section */}
 
-      <section className="py-20 bg-[#e9e9e9]">
+      <section className="py-20 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-4">
           {/* Title */}
           <h2
-            className="text-3xl md:text-4xl text-center font-semibold mb-6"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            className="text-3xl md:text-4xl text-center font-[500] mb-6"
+            
           >
             Our Team
           </h2>
@@ -754,7 +754,7 @@ export default function HomePage() {
             <select
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
-              className="border border-gray-400 px-6 py-2 bg-white text-sm rounded-sm"
+              className="border border-gray-400 px-6 py-2 text-sm "
             >
               <option>Board of Directors</option>
               <option>Management Team</option>
@@ -763,9 +763,9 @@ export default function HomePage() {
           </div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 ">
             {filteredTeam.map((m, i) => (
-              <div key={i} className="bg-white shadow-sm">
+              <div key={i} className="bg-white shadow-sm h-[344] w-[310]">
                 {/* Image */}
                 <div className="w-full h-48 overflow-hidden">
                   <img
@@ -781,10 +781,13 @@ export default function HomePage() {
                   <p className="text-xs text-indigo-700 mt-1">{m.role}</p>
                 </div>
               </div>
+              
             ))}
           </div>
         </div>
       </section>
+
+      <DonationWidget/>
 
       <CTABanner />
 
@@ -792,7 +795,7 @@ export default function HomePage() {
       <section className="w-full bg-[#f3f3f3] py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
           {/* Heading */}
-          <h2 className="text-4xl font-bold  md:text-[28px] font-medium text-gray-800 mb-10">
+          <h2 className="text-7xl font-[500] md:text-[28px] font-medium text-gray-800 mb-10">
             Certification, Membership & Affiliation
           </h2>
 
