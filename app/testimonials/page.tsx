@@ -91,11 +91,12 @@ export default function TestimonialsPage() {
           </div>
 
           {/* Filter Dropdown */}
-          <div className="flex justify-center mb-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full max-w-[250px] mx-auto">
             <select
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
-              className="border border-gray-300 rounded-lg px-6 py-2 text-sm bg-white focus:outline-none"
+              className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center"
+              style={{ textAlignLast: "center" }}
             >
               <option>Beneficiary</option>
               <option>Volunteer</option>

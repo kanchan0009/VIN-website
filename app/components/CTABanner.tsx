@@ -117,11 +117,12 @@ export default function CTABanner() {
           </h2>
 
           {/* FILTERS */}
-          <div className="flex flex-wrap gap-6 justify-center  mb-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 w-full max-w-4xl mx-auto">
             {["Choose a Category", "Program", "Project"].map((f) => (
               <select
                 key={f}
-                className="border-2 border-black mx-4 px-4 py-2.5 text-[13px] font-bold text-center bg-white text-gray-700 focus:outline-none w-[250px]"
+                className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center"
+                style={{ textAlignLast: "center" }}
               >
                 <option>{f}</option>
               </select>
@@ -151,7 +152,7 @@ export default function CTABanner() {
                 className="scrollbar-hide flex overflow-x-auto gap-6 pb-4 snap-x snap-mandatory"
               >
                 {projects.map((p, i) => (
-                  <div key={i} className="flex-1 min-w-[320px] overflow-hidden bg-white shadow-md">
+                  <div key={i} className="flex-1 min-w-[320px] overflow-hidden bg-white ">
                     <div className="relative h-60 w-full">
                       <Image
                         src={p.img}

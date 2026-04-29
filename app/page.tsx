@@ -60,7 +60,7 @@ const mediaItems = [
     title: "Community Cleanup",
     type: "photo",
     description:
-      "Our volunteers working together to clean up local communities and create a better environment for everyone.",
+      "A short description for the blog and make it short and loreum ipsum and something better  short and starting of the blog...A short description for the blog and make it short and loreum ipsum and something better  short and starting of the blog...A short description for the blog and make it short and loreum ipsum and something better  short and starting of the blog...A short description for the blog and make it short and loreum ipsum and something better  short and starting of the blog...A short description for the blog and make it short and loreum ipsum and something better  short and starting of the blog......",
     readMoreLink: "/programs/environment",
     downloadLink: "/downloads/photo-1.jpg",
   },
@@ -628,8 +628,8 @@ export default function HomePage() {
           </h2>
 
           {/* Dropdown */}
-          <div className="mb-12  ">
-            <select className="border-2 border-black px-10 py-3 mx-10 text-gray-700 font-medium hover: transition-all duration-300 cursor-pointer">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full max-w-[250px] mx-auto">
+            <select className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center" style={{ textAlignLast: "center" }}>
               <option >Choose a Program</option>
               <option>Women Empowerment</option>
               <option>Entrepreneurship</option>
@@ -750,11 +750,12 @@ export default function HomePage() {
           </h2>
 
           {/* Dropdown */}
-          <div className="flex justify-center mb-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full max-w-[250px] mx-auto">
             <select
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
-              className="border border-gray-400 px-6 py-2 text-sm "
+              className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center"
+              style={{ textAlignLast: "center" }}
             >
               <option>Board of Directors</option>
               <option>Management Team</option>
@@ -871,12 +872,12 @@ export default function HomePage() {
           {/* Review Cards */}
           <div className="flex flex-wrap items-center justify-center gap-6">
             {/* Card 1 (highlighted) */}
-            <div className="bg-white rounded-lg shadow-md px-6 py-5 w-[160px] text-center">
+            <div className=" x-6 py-5 w-[160px] text-center">
               <div className="text-[20px] font-semibold text-gray-800">
                 4.5<span className="text-sm text-gray-500">/5</span>
               </div>
-              <div className="text-xs text-yellow-500 font-semibold mt-1">
-                ● GREAT
+              <div className="text-xs text-gray-500 font-semibold mt-1">
+                 GREAT
               </div>
               <div className="text-xs text-gray-500 mt-1">Great Non-profit</div>
             </div>
@@ -920,15 +921,15 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 relative">
           {/* Heading */}
           <h2
-            className="text-7xl font-bold text-center mb-2"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            className="text-5xl font-[700] text-center mb-2 py-4 mb-15"
+            
           >
             Testimonials
           </h2>
          
 
           {/* Carousel Container */}
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex items-center justify-center gap-2">
             {/* Left Arrow */}
             <button
               onClick={prevTestimonial}
@@ -953,16 +954,16 @@ export default function HomePage() {
             </button>
 
             {/* Testimonial Card */}
-            <div className="flex-1 max-w-5xl">
+            <div className="flex-1 max-w-10xl">
               <div className="flex flex-col md:flex-row items-start gap-8 md:gap-12">
                 {/* Text Content */}
                 <div className="flex-1 order-2 md:order-1">
-                  <p className="text-gray-700 text-sm md:text-base leading-relaxed mb-6 text-justify">
+                  <p className="text-gray-700 text-[10px]  font-[500] md:text-base leading-relaxed mb-6 text-justify">
                     {current.text}
                   </p>
                   <p
                     className="font-bold text-sm md:text-base text-gray-900"
-                    style={{ fontFamily: "Playfair Display, serif" }}
+                    
                   >
                     {current.signature}
                   </p>
@@ -1025,18 +1026,19 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           {/* Heading */}
           <h2
-            className="text-4xl font-bold text-center mb-8"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            className="text-4xl font-[500] text-center mb-8"
+            
           >
             Our Media
           </h2>
 
           {/* Filters */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 w-full max-w-lg mx-auto">
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="w-full sm:w-48 px-4 py-2.5 bg-white border border-gray-300 rounded text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer"
+              className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center"
+              style={{ textAlignLast: "center" }}
             >
               <option value="">Choose a category</option>
               <option value="news">News</option>
@@ -1048,8 +1050,9 @@ export default function HomePage() {
             <select
               value={selectedTopic}
               onChange={(e) => setSelectedTopic(e.target.value)}
-              className="w-full sm:w-48 px-4 py-2.5 bg-white border border-gray-300 rounded text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer"
-            >
+              className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[13px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center"
+              style={{ textAlignLast: "center" }}
+            >     
               <option value="">Topic</option>
               <option value="education">Education</option>
               <option value="health">Health</option>
@@ -1059,10 +1062,10 @@ export default function HomePage() {
           </div>
 
           {/* View All Link */}
-          <div className="flex justify-end mb-8 max-w-5xl mx-auto">
+          <div className="flex justify-end mb-8 mx-8 md:mx-16">
             <Link
               href="/media"
-              className="inline-flex items-center px-5 py-2 rounded text-white text-sm font-medium hover:opacity-90 transition-opacity"
+              className="inline-flex items-center px-5 py-2  text-white text-sm font-medium hover:opacity-90 transition-opacity"
               style={{ background: "var(--indigo-btn, #1e3a5f)" }}
             >
               View All
@@ -1095,8 +1098,8 @@ export default function HomePage() {
             </button>
 
             {/* Media Card */}
-            <div className="flex-1 max-w-5xl mx-8 md:mx-16">
-              <div className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200">
+            <div className="flex-1 max-w-7xl mx-8 md:mx-16">
+              <div className=" rounded-lg overflow-hidden  border border-gray-200">
                 <div className="flex flex-col md:flex-row">
                   {/* Image */}
                   <div className="w-full md:w-2/5 lg:w-1/3 shrink-0">
@@ -1104,7 +1107,7 @@ export default function HomePage() {
                       <img
                         src={currentMedia.image}
                         alt={currentMedia.title}
-                        className="w-full h-full object-cover grayscale"
+                        className="w-full h-[400px] object-cover grayscale"
                       />
                     </div>
                   </div>
@@ -1180,8 +1183,8 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           {/* Heading */}
           <h2
-            className="text-4xl font-bold text-center mb-4"
-            style={{ fontFamily: "Playfair Display, serif" }}
+            className="text-4xl font-[500] text-center mb-7"
+            
           >
             Photos & Videos
           </h2>
@@ -1340,11 +1343,12 @@ export default function HomePage() {
           </h2>
 
           {/* Filters */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full max-w-lg mx-auto">
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="w-full sm:w-48 px-4 py-2.5 bg-white border border-gray-300 rounded text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer"
+              className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center"
+              style={{ textAlignLast: "center" }}
             >
               <option value="">Choose a category</option>
               <option value="culture">Culture</option>
@@ -1356,7 +1360,8 @@ export default function HomePage() {
             <select
               value={selectedTopic}
               onChange={(e) => setSelectedTopic(e.target.value)}
-              className="w-full sm:w-48 px-4 py-2.5 bg-white border border-gray-300 rounded text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer"
+              className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center"
+              style={{ textAlignLast: "center" }}
             >
               <option value="">Topic</option>
               <option value="kathmandu">Kathmandu</option>
@@ -1372,7 +1377,7 @@ export default function HomePage() {
             <div className="lg:w-1/3 flex flex-col justify-center">
               <h3
                 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
-                style={{ fontFamily: "Playfair Display, serif" }}
+               
               >
                 {currentPlace.name}
               </h3>
@@ -1429,7 +1434,7 @@ export default function HomePage() {
               <div className="md:w-1/2">
                 <h4
                   className="text-lg md:text-xl font-bold text-gray-900 mb-4"
-                  style={{ fontFamily: "Playfair Display, serif" }}
+                  
                 >
                   Documentary video on Nepal Infography
                 </h4>
@@ -1514,7 +1519,7 @@ export default function HomePage() {
         style={{ width: "100%", backgroundColor: "#ffffff", padding: "40px 0" }}
       >
         <div
-          style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 20px" }}
+          style={{ maxWidth: "1300px",height:"277px", margin: "0 auto", padding: "0 20px" }}
         >
           <div
             style={{
@@ -1530,8 +1535,7 @@ export default function HomePage() {
                 left: "-20px",
                 bottom: "-40px",
                 zIndex: 10,
-                width: "400px",
-                height: "450px",
+                
               }}
             >
               <Image
@@ -1546,16 +1550,15 @@ export default function HomePage() {
             {/* Dark Blue Card */}
             <div
               style={{
-                marginLeft: "180px",
+                
                 width: "100%",
-                backgroundColor: "#060b2e",
-                borderRadius: "8px",
+                background:"linear-gradient(to right, #221C84, #08061E)",
+                borderRadius: "5px",
                 minHeight: "160px",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
                 padding: "30px 40px",
-                paddingLeft: "220px",
               }}
             >
               {/* Text */}
