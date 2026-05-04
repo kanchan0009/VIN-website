@@ -21,7 +21,7 @@ export default function GalleryPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative h-72 flex items-end overflow-hidden">
+      <section className="relative h-[670px] flex items-end overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=80"
           alt="Gallery"
@@ -106,3 +106,4 @@ export default function GalleryPage() {
     </main>
   );
 }
+

@@ -17,7 +17,7 @@ export default function ProgramPage() {
   const slug = 'environment';
   return (
     <main>
-      <section className="relative h-80 flex items-end overflow-hidden">
+      <section className="relative h-[670px] flex items-end overflow-hidden">
         <img src={imgs[slug]} alt={titles[slug]} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 pb-10 w-full">
@@ -46,3 +46,4 @@ export default function ProgramPage() {
     </main>
   );
 }
+

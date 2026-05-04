@@ -6,7 +6,7 @@ export default function MissionPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative h-72 flex items-end overflow-hidden">
+      <section className="relative h-[670px] flex items-end overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1600&q=80"
           alt="Mission"
@@ -20,9 +20,7 @@ export default function MissionPage() {
           }}
         />
         <div className="relative z-10 max-w-7xl mx-auto px-4 pb-10 w-full">
-          <p className="text-white/60 text-sm mb-2">
-            Home / <span className="text-white">Mission, Vision, Goal</span>
-          </p>
+          
           <h1
             className="text-5xl font-bold text-white"
             style={{ }}
@@ -115,3 +113,4 @@ export default function MissionPage() {
     </main>
   );
 }
+

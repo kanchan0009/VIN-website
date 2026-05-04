@@ -1,1 +1,13 @@
-# CTA Banner Fix Task\n\n## Steps to Complete:\n\n1. ✅ Create TODO.md with plan steps\n2. ✅ Add useRef import and fix scrollRef scope/image/Tailwind\n3. ✅ Implement slider with horizontal scroll/ref, clean duplicate nav\n4. ✅ Add scrollbar-hide CSS to globals.css\n5. ✅ Fix final TS errors and scrollbar class\n\n6. ✅ Test with `npm run dev` and verify no console/TS errors\n\n## Status\nAll code fixes complete. Remaining: verify no errors in dev server.
+# Task: Create location detail pages for where-we-work
+
+## Previous Task Status: Completed ✓
+
+## New Steps:
+
+- [x] 1. Update TODO.md
+- [x] 2. Create app/where-we-work/[slug]/page.tsx
+- [x] 3. Update app/where-we-work/page.tsx to link Explore buttons
+- [x] 4. Test navigation
+- [x] 5. Complete task
+
+Status: Completed ✓

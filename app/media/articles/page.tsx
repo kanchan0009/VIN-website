@@ -74,7 +74,7 @@ export default function ArticlesPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative h-72 flex items-end overflow-hidden">
+      <section className="relative h-[670px] flex items-end overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1600&q=80"
           alt="Articles"
@@ -143,3 +143,4 @@ export default function ArticlesPage() {
     </main>
   );
 }
+

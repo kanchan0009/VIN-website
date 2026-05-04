@@ -68,7 +68,7 @@ export default function NewsUpdatePage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative h-72 flex items-end overflow-hidden">
+      <section className="relative h-[670px] flex items-end overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1600&q=80"
           alt="News Update"
@@ -137,3 +137,4 @@ export default function NewsUpdatePage() {
     </main>
   );
 }
+

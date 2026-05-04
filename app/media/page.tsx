@@ -80,7 +80,7 @@ export default function MediaPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative h-72 flex items-end overflow-hidden">
+      <section className="relative h-[670px] flex items-end overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1600&q=80"
           alt="Media"
@@ -155,3 +155,4 @@ export default function MediaPage() {
     </main>
   );
 }
+

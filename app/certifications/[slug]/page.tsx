@@ -146,7 +146,7 @@ export default function CertificationDetailPage({
   return (
     <main className="bg-white">
       {/* Hero Section */}
-      <section className="relative h-72 flex items-end overflow-hidden">
+      <section className="relative h-[670px] flex items-end overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=1600&q=80"
           alt={org.name}
@@ -358,3 +358,4 @@ export default function CertificationDetailPage({
     </main>
   );
 }
+

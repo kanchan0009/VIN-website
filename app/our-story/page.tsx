@@ -68,7 +68,7 @@ export default function OurStoryPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative h-80 flex items-end overflow-hidden">
+      <section className="relative h-[670px] flex items-end overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1600&q=80"
           alt="Our Story"
@@ -93,7 +93,6 @@ export default function OurStoryPage() {
           </p>
           <h1
             className="text-5xl font-bold text-white"
-            style={{ }}
           >
             Our Story
           </h1>
@@ -105,7 +104,6 @@ export default function OurStoryPage() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2
             className="text-4xl font-bold mb-3"
-            style={{ }}
           >
             THE ORIGIN STORY OF VOLUNTEERS INITIATIVE NEPAL (VIN)
           </h2>
@@ -143,7 +141,7 @@ export default function OurStoryPage() {
             {milestones.map((m, i) => (
               <div
                 key={i}
-                ref={(el) => (sectionRefs.current[i] = el)}
+                ref={(el) => { sectionRefs.current[i] = el; }}
                 onMouseEnter={() => setActiveIndex(i)}
                 className={`relative flex flex-col lg:flex-row items-center gap-12 lg:gap-24 transition-all duration-500 ${
                   i % 2 === 1 ? "lg:flex-row-reverse" : ""
@@ -204,7 +202,6 @@ export default function OurStoryPage() {
             <div className="flex-1 order-2 lg:order-1">
               <h2
                 className="text-4xl lg:text-5xl font-bold text-[#1a1a2e] mb-8"
-                style={{ }}
               >
                 Founder&apos;s Message
               </h2>
@@ -280,7 +277,6 @@ export default function OurStoryPage() {
                 <div className="pt-6 border-t border-[#d0cce0] mt-6">
                   <p
                     className="font-bold text-lg text-[#1a1a2e]"
-                    style={{ }}
                   >
                     Bhupendra &quot;Bhupi&quot; Ghimire
                   </p>
@@ -318,3 +314,4 @@ export default function OurStoryPage() {
     </main>
   );
 }
+

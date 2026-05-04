@@ -613,9 +613,11 @@ export default function HomePage() {
 
             {/* Button */}
             <div className="absolute left-8 bottom-8">
-              <button className="bg-white text-black text-sm px-6 py-2.5 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-                Learn More
-              </button>
+<Link href="/where-we-work">
+  <button className="bg-white text-black text-sm px-6 py-2.5  font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+    Learn More
+  </button>
+</Link>
             </div>
           </div>
         </div>

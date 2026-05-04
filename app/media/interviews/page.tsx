@@ -82,7 +82,7 @@ export default function InterviewsPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative h-72 flex items-end overflow-hidden">
+      <section className="relative h-[670px] flex items-end overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=1600&q=80"
           alt="Interviews"
@@ -208,3 +208,4 @@ export default function InterviewsPage() {
     </main>
   );
 }
+

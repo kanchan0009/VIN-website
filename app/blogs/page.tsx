@@ -1,5 +1,8 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
-import { Search, ArrowRight } from "lucide-react";
+import { Search } from "lucide-react";
 import CTABanner from "../components/CTABanner";
 import DonationWidget from "../components/DonationWidget";
 
@@ -8,51 +11,70 @@ const posts = [
     title: "Women's Development in Nepal: The Myth of Empowerment",
     cat: "Women's Empowerment",
     img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80",
-    date: "Feb 2, 2026",
+    date: "February 26, 2024",
     slug: "womens-development-nepal",
   },
   {
     title: "Women's Development in Nepal: The Myth of Empowerment",
     cat: "Women's Empowerment",
     img: "https://images.unsplash.com/photo-1607748862156-7c548e7e98f4?w=400&q=80",
-    date: "Feb 2, 2026",
+    date: "February 26, 2024",
     slug: "womens-development-nepal-2",
   },
   {
     title: "Women's Development in Nepal: The Myth of Empowerment",
     cat: "Women's Empowerment",
     img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&q=80",
-    date: "Feb 2, 2026",
+    date: "February 26, 2024",
     slug: "womens-development-nepal-3",
   },
   {
-    title: "Child Education Programs Transforming Rural Communities",
-    cat: "Child Development",
+    title: "Women's Development in Nepal: The Myth of Empowerment",
+    cat: "Women's Empowerment",
     img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&q=80",
-    date: "Jan 18, 2026",
+    date: "February 26, 2024",
     slug: "child-education",
   },
   {
-    title: "Youth Leadership: Building Nepal's Next Generation",
-    cat: "Youth Empowerment",
+    title: "Women's Development in Nepal: The Myth of Empowerment",
+    cat: "Women's Empowerment",
     img: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=400&q=80",
-    date: "Jan 10, 2026",
+    date: "February 26, 2024",
     slug: "youth-leadership",
   },
   {
-    title: "Environmental Conservation Efforts in Himalayan Communities",
-    cat: "Environment",
+    title: "Women's Development in Nepal: The Myth of Empowerment",
+    cat: "Women's Empowerment",
     img: "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=400&q=80",
-    date: "Dec 22, 2025",
+    date: "February 26, 2024",
     slug: "environmental-conservation",
   },
 ];
 
+const recentPosts = [
+  { title: "Volunteering Announcement", month: "May 2021", date: "June 29, 2021" },
+  { title: "Volunteering Announcement", month: "May 2021", date: "June 29, 2021" },
+  { title: "Volunteering Announcement", month: "May 2021", date: "June 29, 2021" },
+  { title: "Volunteering Announcement", month: "May 2021", date: "June 29, 2021" },
+  { title: "Volunteering Announcement", month: "May 2021", date: "June 29, 2021" },
+];
+
 export default function BlogsPage() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 3;
+
+  // Calculate pagination indices
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+  const totalPages = Math.ceil(posts.length / postsPerPage);
+
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+
   return (
-    <main>
+    <main className="font-montserrat">
       {/* Hero */}
-      <section className="relative h-72 flex items-end overflow-hidden">
+      <section className="relative h-[670px] flex items-end overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80"
           alt="Blogs"
@@ -65,125 +87,111 @@ export default function BlogsPage() {
               "linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)",
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 pb-10 w-full">
-          <p className="text-white/60 text-sm mb-2">
-            Home / <span className="text-white">Blogs</span>
-          </p>
-          <h1
-            className="text-5xl font-bold text-white mb-2"
-            style={{ }}
-          >
-            Blogs
-          </h1>
-          <p className="text-white/70 text-sm">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 pb-16 w-full text-center lg:text-left">
+          <h1 className="text-5xl lg:text-6xl font-bold text-white mb-4">Blogs</h1>
+          <p className="text-white/80 max-w-xl text-lg mx-auto lg:mx-0">
             Lorem Ipsum Dipsum We Are Different Locations Lorem Ipsum Dipsum We
             Are...
           </p>
         </div>
       </section>
 
-      {/* Search + Blog list with sidebar */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10">
-            <div>
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 mb-10">
-                <div className="relative w-full max-w-sm">
-                  <Search
-                    size={16}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Search blogs..."
-                    className="w-full pl-10 pr-4 py-3 rounded-full border border-gray-200 text-sm focus:outline-none focus:border-indigo-400"
-                  />
-                </div>
-                <Link
-                  href="#"
-                  className="inline-flex items-center justify-center text-sm font-semibold px-6 py-3 rounded-full text-white"
-                  style={{ background: "var(--indigo-btn)" }}
-                >
-                  View All
-                </Link>
-              </div>
+          
+          {/* Search Bar centered at top */}
+          <div className="flex justify-center mb-16">
+            <div className="relative w-full max-w-md">
+              <Search
+                size={18}
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+              />
+              <input
+                type="text"
+                placeholder="Search"
+                className="w-full pl-12 pr-4 py-2 border border-gray-400 rounded focus:outline-none focus:border-black transition-colors text-gray-700"
+              />
+            </div>
+          </div>
 
-              <div className="space-y-7">
-                {posts.map((post) => (
-                  <Link
-                    href={`/blogs/${post.slug}`}
-                    key={post.slug}
-                    className="group block rounded-4xl border border-gray-100 bg-white p-6 shadow-sm transition hover:shadow-2xl"
-                  >
-                    <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_240px] items-center">
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#d8162f] mb-4">
-                          {post.date}
-                        </p>
-                        <h2
-                          className="text-2xl sm:text-3xl font-semibold leading-tight mb-4"
-                          style={{ }}
-                        >
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-16">
+            {/* Blog List */}
+            <div className="space-y-10">
+              {currentPosts.map((post, idx) => (
+                <div key={idx} className="group border-b border-gray-100 pb-12 last:border-0">
+                  <div className="flex flex-col md:flex-row gap-8 items-start">
+                    <div className="flex-1">
+                      <p className="text-[#e33e33] text-sm font-semibold mb-3">{post.date}</p>
+                      <Link href={`/blogs/${post.slug}`}>
+                        <h2 className="text-2xl lg:text-3xl font-bold text-[#1a1a1a] mb-4 hover:text-[#e33e33] transition-colors leading-tight">
                           {post.title}
                         </h2>
-                        <p className="text-sm text-gray-600 leading-7">
-                          With this news, we are delighted and deeply satisfied
-                          to confirm that following BSc (Hons) Computing
-                          students have been awarded with the IMS Academic
-                          Excellence.
-                        </p>
-                      </div>
-                      <div className="overflow-hidden rounded-[30px] bg-gray-100">
-                        <img
-                          src={post.img}
-                          alt={post.title}
-                          className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                      </div>
+                      </Link>
+                      <p className="text-gray-500 leading-relaxed text-[15px]">
+                        With this news, we are delighted and deeply satisfied
+                        to confirm that following BSc (Hons) Computing
+                        students have been awarded with the IMS Academic
+                        Excellence.
+                      </p>
                     </div>
-                  </Link>
-                ))}
-              </div>
+                    <div className="w-full md:w-[220px] shrink-0">
+                      <img
+                        src={post.img}
+                        alt={post.title}
+                        className="w-full h-40 object-cover rounded shadow-sm"
+                      />
+                    </div>
+                  </div>
+                </div>
+              ))}
 
-              <div className="flex justify-center items-center gap-3 mt-12">
-                <button className="w-11 h-11 rounded-full border border-gray-200 flex items-center justify-center text-sm text-gray-500 hover:bg-gray-50">
+              {/* Pagination */}
+              <div className="flex items-center gap-4 pt-8">
+                <button 
+                  onClick={() => paginate(Math.max(1, currentPage - 1))}
+                  disabled={currentPage === 1}
+                  className={`text-gray-600 transition-colors ${currentPage === 1 ? 'opacity-30 cursor-not-allowed' : 'hover:text-black focus:text-[#221C84]'}`}
+                >
                   ←
                 </button>
-                {[1, 2, 3, 4].map((n) => (
-                  <button
-                    key={n}
-                    className={`w-11 h-11 rounded-full text-sm font-semibold transition ${n === 2 ? "bg-[#2421a0] text-white" : "border border-gray-200 text-gray-600 hover:bg-gray-50"}`}
-                  >
-                    {n}
-                  </button>
-                ))}
-                <button className="w-11 h-11 rounded-full border border-gray-200 flex items-center justify-center text-sm text-gray-500 hover:bg-gray-50">
+                <div className="flex gap-2">
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map(n => (
+                    <button
+                      key={n}
+                      onClick={() => paginate(n)}
+                      className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-medium transition-all outline-none ${
+                        n === currentPage 
+                        ? "bg-[#221C84] text-white shadow-lg" 
+                        : "border border-gray-300 text-gray-600 hover:bg-[#221C84] hover:text-white hover:border-[#221C84] focus:bg-[#221C84] focus:text-white focus:border-[#221C84]"
+                      }`}
+                    >
+                      {n}
+                    </button>
+                  ))}
+                </div>
+                <button 
+                  onClick={() => paginate(Math.min(totalPages, currentPage + 1))}
+                  disabled={currentPage === totalPages}
+                  className={`text-gray-600 transition-colors ${currentPage === totalPages ? 'opacity-30 cursor-not-allowed' : 'hover:text-black focus:text-[#221C84]'}`}
+                >
                   →
                 </button>
               </div>
             </div>
 
-            <aside className="w-full">
-              <div className="sticky top-24 space-y-6">
-                <div className="rounded-4xl border border-gray-100 bg-[#f9fafb] p-6">
-                  <h2 className="text-lg font-semibold mb-4">Recent Blogs</h2>
-                  <div className="space-y-4">
-                    {posts.slice(0, 5).map((post) => (
-                      <Link
-                        key={post.slug}
-                        href={`/blogs/${post.slug}`}
-                        className="block rounded-3xl border border-transparent bg-white p-4 transition hover:border-gray-200"
-                      >
-                        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#d8162f] mb-2">
-                          {post.date}
-                        </p>
-                        <p className="text-sm font-semibold leading-snug">
-                          {post.title}
-                        </p>
-                      </Link>
-                    ))}
+            {/* Sidebar */}
+            <aside>
+              <h2 className="text-2xl font-bold text-[#1a1a1a] mb-8">Recent Blogs</h2>
+              <div className="space-y-0">
+                {recentPosts.map((post, i) => (
+                  <div key={i} className="py-6 border-b border-gray-100 last:border-0 first:pt-0">
+                    <h3 className="font-bold text-[#1a1a1a] mb-1 leading-snug cursor-pointer hover:text-[#e33e33]">
+                      {post.title}
+                    </h3>
+                    <p className="text-gray-500 text-sm mb-1">{post.month}</p>
+                    <p className="text-[#e33e33] text-sm font-medium">{post.date}</p>
                   </div>
-                </div>
+                ))}
               </div>
             </aside>
           </div>

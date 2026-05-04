@@ -1,82 +1,113 @@
-import { Phone, Mail, MapPin, Share2 } from 'lucide-react';
+import { Send } from 'lucide-react';
 import CTABanner from '../components/CTABanner';
 
 
+const FacebookIcon = ({ size = 22 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" stroke="none">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+  </svg>
+);
+
+const InstagramIcon = ({ size = 22 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+  </svg>
+);
+
+const TikTokIcon = ({ size = 22 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+  </svg>
+);
+
 export default function ContactPage() {
   return (
-    <main>
+    <main className="font-montserrat">
       {/* Hero */}
-      <section className="relative h-72 flex items-end overflow-hidden">
+      <section className="relative h-[670px] flex items-end overflow-hidden">
         <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1600&q=80" alt="Contact Us" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)' }} />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 pb-10 w-full">
-          <p className="text-white/60 text-sm mb-2">Home / <span className="text-white">Contact Us</span></p>
-          <h1 className="text-5xl font-bold text-white mb-2" style={{ }}>Contact Us</h1>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 pb-12 w-full">
+          <h1 className="text-5xl font-bold text-white mb-2" >Contact Us</h1>
           <p className="text-white/70 text-sm max-w-lg">Lorem Ipsum Dipsum We Are Different Locations Lorem Ipsum Dipsum We Are Different Locations Lorem Ipsum Dipsum We Are Different L</p>
         </div>
       </section>
 
       {/* Contact Form + Info */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row gap-14">
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row gap-16 items-start">
           {/* Form */}
-          <div className="flex-1 max-w-lg">
-            <h2 className="text-3xl font-bold mb-2" style={{ }}>Stay In Touch!</h2>
-            <p className="text-gray-500 text-sm mb-8">Learn More about your next tour destination and make the best decision with Tyrolean Adventures</p>
-            <div className="space-y-4">
+          <div className="flex-1 w-full max-w-xl">
+            <h2 className="text-4xl font-bold mb-4 text-[#1a1a1a]">Stay In Touch!</h2>
+            <p className="text-gray-600 text-lg mb-10 leading-relaxed">
+              Learn More about your next tour destination and make the best decision with Tyrolean Adventures
+            </p>
+            <div className="space-y-6">
               {['Full Name', 'Address', 'Phone Number'].map(field => (
-                <input key={field} type="text" placeholder={field}
-                  className="w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-indigo-400 transition-colors" />
+                <input 
+                  key={field} 
+                  type="text" 
+                  placeholder={field}
+                  className="w-full bg-[#F5F7F9] border-none rounded-lg px-6 py-5 text-gray-700 placeholder-gray-400 focus:ring-2 focus:ring-[#221C84]/20 outline-none transition-all" 
+                />
               ))}
-              <textarea placeholder="Message" rows={4}
-                className="w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-indigo-400 transition-colors resize-none" />
-              <button className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-white text-sm transition-all"
-                style={{ background: 'var(--indigo-btn)' }}>
-                Send Message
+              <textarea 
+                placeholder="Message" 
+                rows={6}
+                className="w-full bg-[#F5F7F9] border-none rounded-lg px-6 py-5 text-gray-700 placeholder-gray-400 focus:ring-2 focus:ring-[#221C84]/20 outline-none transition-all resize-none" 
+              />
+              <button className="flex items-center gap-2 px-8 py-4 rounded-full font-bold text-white transition-all hover:opacity-90 active:scale-95"
+                style={{ background: '#221C84' }}>
+                <Send size={18} className="rotate-[-20deg]" />
+                <span>Send Message</span>
               </button>
             </div>
           </div>
 
-          {/* Info */}
-          <div className="flex-1">
-            <div className="rounded-2xl p-8 h-full" style={{ background: 'var(--sky)' }}>
-              <h3 className="text-xl font-bold mb-6" style={{ }}>How can we help you?</h3>
-              <div className="space-y-5 mb-8">
+          {/* Info Section */}
+          <div className="lg:w-[600px] w-full flex-none">
+            <div className="bg-[#EBF5FF] rounded-none p-12 lg:p-16">
+              <h3 className="text-3xl font-bold mb-12 text-[#1a1a1a]">How can we help you?</h3>
+              
+              <div className="space-y-10">
+                {/* Contact Us */}
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">Contact Us</p>
-                  <div className="flex items-center gap-2 text-sm text-gray-700">
-                    <Phone size={14} style={{ color: 'var(--indigo-btn)' }} />
-                    <div>
-                      <div>01-123456 (Office)</div>
-                      <div>+977 1 4362560</div>
-                    </div>
+                  <p className="text-sm text-gray-700 mb-2">Contact Us</p>
+                  <div className="text-[#221C84] font-bold text-base space-y-1">
+                    <p>01-123456 (Office)</p>
+                    <p>+977 1 4362560</p>
                   </div>
                 </div>
+
+                {/* Email Us */}
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">Email Us</p>
-                  <div className="flex items-center gap-2 text-sm text-gray-700">
-                    <Mail size={14} style={{ color: 'var(--indigo-btn)' }} />
-                    <a href="mailto:support@vin.org.np" className="hover:underline">support@vin.org.np</a>
-                  </div>
+                  <p className="text-sm text-gray-700 mb-2">Email Us</p>
+                  <p className="text-[#1a1a1a] font-bold text-base">support@vin.org.np</p>
                 </div>
+
+                {/* Address */}
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">Address</p>
-                  <div className="flex items-center gap-2 text-sm text-gray-700">
-                    <MapPin size={14} style={{ color: 'var(--indigo-btn)' }} />
-                    <span>Nayabazaar Khusibu, Kathmandu</span>
-                  </div>
+                  <p className="text-sm text-gray-700 mb-2">Address</p>
+                  <p className="text-[#1a1a1a] font-bold text-base leading-snug">
+                    Nayabazaar Khusibu, Kathmandu
+                  </p>
                 </div>
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Follow Us</p>
-                  <div className="flex gap-3">
-                    {[Share2].map((Icon, i) => (
-                      <a key={i} href="#"
-                        className="w-9 h-9 rounded-full flex items-center justify-center text-white transition-colors"
-                        style={{ background: 'var(--indigo-btn)' }}>
-                        <Icon size={15} />
-                      </a>
-                    ))}
-                    <a href="#" className="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-xs transition-colors" style={{ background: 'var(--indigo-btn)' }}>TK</a>
+
+                {/* Follow Us */}
+                <div className="flex items-center gap-6 pt-4">
+                  <p className="text-xm text-gray-700">Follow Us :</p>
+                  <div className="flex items-center gap-5">
+                    <a href="#" className="text-[#221C84] hover:opacity-70 transition-opacity">
+                      <FacebookIcon />
+                    </a>
+                    <a href="#" className="text-[#221C84] hover:opacity-70 transition-opacity">
+                      <InstagramIcon />
+                    </a>
+                    <a href="#" className="text-[#221C84] hover:opacity-70 transition-opacity">
+                      <TikTokIcon />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -85,15 +116,14 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map */}
-      <section className="py-6 bg-white">
+      {/* Map Section */}
+      <section className="pb-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="rounded-2xl overflow-hidden h-80 border border-gray-100 flex items-center justify-center" style={{ background: '#f0f4ff' }}>
-            {/* Map placeholder – in production integrate Google Maps */}
+          <div className="rounded-2xl overflow-hidden h-[400px] border border-gray-100 flex items-center justify-center bg-[#F8FAFC]">
             <div className="text-center">
-              <div className="text-6xl mb-4">🗺️</div>
-              <p className="text-gray-500 font-medium">Interactive Map of Nepal</p>
-              <p className="text-gray-400 text-sm">VIN field offices across 20+ districts</p>
+              <div className="text-6xl mb-6">📍</div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">Our Location</h3>
+              <p className="text-gray-500">Nayabazaar Khusibu, Kathmandu, Nepal</p>
             </div>
           </div>
         </div>

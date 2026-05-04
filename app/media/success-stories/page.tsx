@@ -81,7 +81,7 @@ export default function SuccessStoriesPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative h-72 flex items-end overflow-hidden">
+      <section className="relative h-[670px] flex items-end overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=1600&q=80"
           alt="Success Stories"
@@ -176,3 +176,4 @@ export default function SuccessStoriesPage() {
     </main>
   );
 }
+
