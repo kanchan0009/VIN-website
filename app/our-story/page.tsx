@@ -82,9 +82,7 @@ export default function OurStoryPage() {
           }}
         />
         <div className="relative z-10 max-w-7xl mx-auto px-4 pb-10 w-full">
-          <p className="text-white/60 text-sm mb-2">
-            Home / <span className="text-white">Our Story</span>
-          </p>
+          
           <p className="text-white/60 text-xs mb-2">
             The Boys Are Packed And We&apos;re Ready to Go — Facebook Has An
             Audience Of Over 1b. Beside An Image Of A Car, Best Loaded With

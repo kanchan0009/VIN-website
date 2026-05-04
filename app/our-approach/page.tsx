@@ -22,9 +22,7 @@ export default function OurApproachPage() {
           }}
         />
         <div className="relative z-10 max-w-7xl mx-auto px-4 pb-10 w-full">
-          <p className="text-white/60 text-sm mb-2">
-            Home / <span className="text-white">Our Approach</span>
-          </p>
+          
           <h1
             className="text-5xl font-bold text-white"
             style={{ }}

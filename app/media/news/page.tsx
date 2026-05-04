@@ -82,9 +82,7 @@ export default function NewsUpdatePage() {
           }}
         />
         <div className="relative z-10 max-w-7xl mx-auto px-4 pb-10 w-full">
-          <p className="text-white/60 text-sm mb-2">
-            Home / Media / <span className="text-white">News Update</span>
-          </p>
+          
           <h1
             className="text-5xl font-bold text-white"
             style={{ }}

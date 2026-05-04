@@ -10,7 +10,7 @@ export default function ChildDevelopmentPage() {
         <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=80" alt="Child Development" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 pb-10 w-full">
-          <p className="text-white/60 text-sm mb-2">Home / All Programs / <span className="text-white">Child Development</span></p>
+          
           <h1 className="text-5xl font-bold text-white" style={{ }}>Child Development Program</h1>
         </div>
       </section>

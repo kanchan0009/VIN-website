@@ -226,7 +226,7 @@ export default function CertificationsPage() {
                       </div>
 
                       {/* Action */}
-                      <button className="mt-10 w-full bg-[#221C84] hover:bg-[#1a1563] text-white py-3 rounded-md font-bold text-sm transition-all shadow-lg active:scale-95">
+                      <button className="mt-10 w-40 mx-auto bg-[#221C84] hover:bg-[#1a1563] text-white py-3 rounded-md font-bold text-sm transition-all shadow-lg active:scale-95">
                         Explore More
                       </button>
                     </div>
