@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 interface Opportunity {
   id: string;
@@ -91,11 +92,11 @@ const opportunities: Opportunity[] = [
 
 function OpportunityCard({ item }: { item: Opportunity }) {
   return (
-    <div className="bg-[#ddeeff] rounded-xl p-5 md:p-6 flex flex-col gap-3 md:gap-4">
+    <div className="bg-[#ddeeff] rounded-xl p-5 md:p-6 flex flex-col gap-3 md:gap-4 border-l-3 border-black">
       {/* Title */}
       <h3
         className="text-lg md:text-xl font-bold text-[#111]"
-        style={{ fontFamily: "'Playfair Display', serif" }}
+        
       >
         {item.title}
       </h3>
@@ -114,12 +115,13 @@ function OpportunityCard({ item }: { item: Opportunity }) {
 
       {/* Explore More button */}
       <div>
-        <button
-          className="bg-[#1a237e] hover:bg-[#283593] text-white border-none rounded-md px-5 py-2 text-sm font-semibold transition-colors duration-200"
+        <Link
+          href="/certifications/european-commission"
+          className="bg-[#1a237e] hover:bg-[#283593] text-white border-none rounded-md px-5 py-2 text-sm font-semibold transition-colors duration-200 inline-block"
           style={{ fontFamily: "'DM Sans', sans-serif" }}
         >
           Explore More
-        </button>
+        </Link>
       </div>
     </div>
   );
@@ -128,15 +130,15 @@ function OpportunityCard({ item }: { item: Opportunity }) {
 export default function VolunteerOpportunities() {
   return (
     <section
-      className="min-h-screen bg-white py-8 md:py-12 px-4 sm:px-6 lg:px-8"
-      style={{ fontFamily: "'DM Sans', sans-serif" }}
+      className="min-h-screen bg-white py-8 md:py-12"
+      
     >
       {/* Outer bordered container */}
-      <div className="max-w-7xl mx-auto  rounded p-6 md:p-8 lg:p-10">
+      <div className="max-w-7xl mx-auto px-4">
         {/* Page Title */}
         <h1
-          className="text-center text-xl md:text-2xl font-bold text-[#111] mb-6 md:mb-8"
-          style={{ fontFamily: "'Playfair Display', serif" }}
+          className="text-center text-xl md:text-4xl font-bold text-[#111] mb-8 md:mb-12"
+          
         >
           Volunteer Opportunities
         </h1>

@@ -86,23 +86,60 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop links */}
-          <div className="hidden lg:flex items-center gap-[30px]">
-            {/* Desktop links */}
-            <div className="hidden lg:flex items-center gap-8">
-              {[
-                { label: "About Us", href: "/about" },
-                { label: "Contact Us", href: "/contact" },
-                { label: "Blogs", href: "/blogs" },
-                { label: "Media", href: "/media" },
-                { label: "Programs", href: "/programs" },
-              ].map((link) => (
-                <Link key={link.href} href={link.href} className="btn nav-btn">
-                  {link.label}
-                </Link>
-              ))}
+          <div className="hidden lg:flex items-center gap-8">
+            <Link href="/about" className="btn nav-btn">About Us</Link>
+            
+            {/* Programs Dropdown */}
+            <div 
+              className="relative group h-full flex items-center"
+              onMouseEnter={() => setProgramsOpen(true)}
+              onMouseLeave={() => setProgramsOpen(false)}
+            >
+              <Link href="/programs" className="btn nav-btn flex items-center gap-1">
+                Programs <ChevronDown size={14} className={`transition-transform duration-200 ${programsOpen ? "rotate-180" : ""}`} />
+              </Link>
+              
+              {/* Dropdown Menu */}
+              <div className={`absolute top-full left-0 w-64 bg-white shadow-xl border-t-2 border-[#206673] py-2 transition-all duration-200 ${programsOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2"}`}>
+                {programs.map((prog) => (
+                  <Link 
+                    key={prog.href} 
+                    href={prog.href}
+                    className="block px-6 py-3 text-sm text-gray-700 hover:bg-[#F1F6FF] hover:text-[#206673] transition-colors"
+                  >
+                    {prog.label}
+                  </Link>
+                ))}
+              </div>
             </div>
 
+            <Link href="/blogs" className="btn nav-btn">Blogs</Link>
             
+            {/* Media Dropdown */}
+            <div 
+              className="relative group h-full flex items-center"
+              onMouseEnter={() => setMediaOpen(true)}
+              onMouseLeave={() => setMediaOpen(false)}
+            >
+              <Link href="/media" className="btn nav-btn flex items-center gap-1">
+                Media <ChevronDown size={14} className={`transition-transform duration-200 ${mediaOpen ? "rotate-180" : ""}`} />
+              </Link>
+              
+              {/* Dropdown Menu */}
+              <div className={`absolute top-full left-0 w-64 bg-white shadow-xl border-t-2 border-[#206673] py-2 transition-all duration-200 ${mediaOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2"}`}>
+                {media.map((m) => (
+                  <Link 
+                    key={m.href} 
+                    href={m.href}
+                    className="block px-6 py-3 text-sm text-gray-700 hover:bg-[#F1F6FF] hover:text-[#206673] transition-colors"
+                  >
+                    {m.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <Link href="/contact" className="btn nav-btn">Contact Us</Link>
           </div>
 
           {/* CTA buttons */}
@@ -150,48 +187,62 @@ export default function Navbar() {
         {/* Mobile menu */}
         {mobileOpen && (
           <div className="lg:hidden border-t border-gray-100 bg-white px-4 py-4 flex flex-col gap-3">
-            {[
-              { label: "About Us", href: "/about" },
-              { label: "Programs", href: "/programs" },
-              { label: "Contact Us", href: "/contact" },
-              { label: "Blogs", href: "/blogs" },
-              { label: "FAQ", href: "/faq" },
-            ].map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="text-base font-medium py-1.5 border-b border-gray-100 text-gray-700"
-              >
-                {link.label}
-              </Link>
-            ))}
-
-            {/* Mobile Media links */}
-            <div className="py-1">
-              <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
-                Media
-              </p>
-              <div className="flex flex-col gap-2 pl-2">
-                {media.map((m) => (
-                  <Link
-                    key={m.href}
-                    href={m.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="text-sm text-gray-600 hover:text-indigo-700 transition-colors"
-                  >
-                    {m.label}
-                  </Link>
-                ))}
-                <Link
-                  href="/media"
-                  onClick={() => setMobileOpen(false)}
-                  className="text-sm font-semibold"
-                  style={{ color: "var(--indigo-btn)" }}
+            {/* Mobile links */}
+            <div className="flex flex-col gap-1">
+              <Link href="/about" onClick={() => setMobileOpen(false)} className="text-base font-medium py-2.5 border-b border-gray-50 text-gray-700">About Us</Link>
+              
+              {/* Mobile Programs Dropdown */}
+              <div className="border-b border-gray-50">
+                <button 
+                  onClick={() => setProgramsOpen(!programsOpen)}
+                  className="w-full flex items-center justify-between text-base font-medium py-2.5 text-gray-700"
                 >
-                  View All Media →
-                </Link>
+                  Programs <ChevronDown size={18} className={`transition-transform duration-200 ${programsOpen ? "rotate-180" : ""}`} />
+                </button>
+                {programsOpen && (
+                  <div className="pl-4 pb-3 flex flex-col gap-2">
+                    {programs.map((prog) => (
+                      <Link 
+                        key={prog.href} 
+                        href={prog.href}
+                        onClick={() => setMobileOpen(false)}
+                        className="text-sm text-gray-600 py-1"
+                      >
+                        {prog.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
+
+              <Link href="/blogs" onClick={() => setMobileOpen(false)} className="text-base font-medium py-2.5 border-b border-gray-50 text-gray-700">Blogs</Link>
+              
+              {/* Mobile Media Dropdown */}
+              <div className="border-b border-gray-50">
+                <button 
+                  onClick={() => setMediaOpen(!mediaOpen)}
+                  className="w-full flex items-center justify-between text-base font-medium py-2.5 text-gray-700"
+                >
+                  Media <ChevronDown size={18} className={`transition-transform duration-200 ${mediaOpen ? "rotate-180" : ""}`} />
+                </button>
+                {mediaOpen && (
+                  <div className="pl-4 pb-3 flex flex-col gap-2">
+                    {media.map((m) => (
+                      <Link 
+                        key={m.href} 
+                        href={m.href}
+                        onClick={() => setMobileOpen(false)}
+                        className="text-sm text-gray-600 py-1"
+                      >
+                        {m.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <Link href="/contact" onClick={() => setMobileOpen(false)} className="text-base font-medium py-2.5 border-b border-gray-50 text-gray-700">Contact Us</Link>
+              <Link href="/faq" onClick={() => setMobileOpen(false)} className="text-base font-medium py-2.5 border-b border-gray-50 text-gray-700">FAQ</Link>
             </div>
 
             <div className="flex gap-3 mt-2">

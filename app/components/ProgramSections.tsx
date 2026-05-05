@@ -1,5 +1,12 @@
 "use client";
 
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+});
+
 interface SectionData {
   id: string;
   title: string;
@@ -15,31 +22,31 @@ const sections: SectionData[] = [
     id: "womens-empowerment",
     title: "Women's empowerment",
     image:
-      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=500&q=80",
+      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80",
     imageLeft: true,
-    bgColor: "#fff",
-    text: "We work to empower women through transformative programs that address the social, economic, and health dimensions of their lives.",
+    bgColor: "#ffffff",
+    text: "The goal is to empower women socially and economically through education, life skills and income generative initiatives. Women of 20-59 years are included in the program.",
     bullets: [
       "Education and Life Skills (ELS)",
-      "Maternal Health Programme (MHP)",
+      "Micro Credit Cooperative (MCC)",
       "Women's Entrepreneurship Development (WED)",
-      "Women's Empowerment through Education (WEE) and",
-      "Continuous Innovative Gender Issues",
+      "Women's Trafficking Prevention Education (WTPE) and",
+      "Continuous research on Gender Issues",
     ],
   },
   {
     id: "youth-empowerment",
     title: "Youth empowerment",
     image:
-      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=500&q=80",
+      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80",
     imageLeft: false,
-    bgColor: "#f9f9f9",
-    text: "We recognize youth as agents of change. Our youth programs focus on skill building, leadership, and active community participation so young people can drive sustainable development.",
+    bgColor: "#f8faff",
+    text: "The goal is to empower youth social and economically through education, life skills and entrepreneurship development. Youth of 16-30 age groups are included in the program.",
     bullets: [
       "Youth Club & Life Skills Facilitation",
       "Youth Entrepreneurship Development",
-      "Leadership & Team Building",
-      "Volunteering in the community programs and",
+      "English, IT & Career Development",
+      "Volunteering in the community projects and",
       "Research on youth issues",
     ],
   },
@@ -47,19 +54,18 @@ const sections: SectionData[] = [
     id: "childrens-development",
     title: "Children's Development",
     image:
-      "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=500&q=80",
+      "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800&q=80",
     imageLeft: true,
-    bgColor: "#fff",
-    text: "The goal of Children's Development is achieved by coordinating and managing the following areas.",
+    bgColor: "#ffffff",
+    text: "The goal of Children's Development is achieved by coordinating and managing the following holistic areas to ensure every child reaches their full potential.",
     bullets: [
       "Children's Life-skills Facilitation (CLF) through children's clubs",
-      "Child Protection",
+      "Child Protection & Rights Advocacy",
       "Early Childhood Development Education (ECDE)",
-      "",
-      "Children's Education Sponsorship",
+      "Children's Education Sponsorship Program",
       "School Infrastructure Development (SID)",
-      "Teachers' Development (TD)",
-      "Children's innovation (CI)",
+      "Teachers' Professional Development (TD)",
+      "Children's innovation & Creativity",
       "Research on children's issues",
     ],
   },
@@ -67,66 +73,62 @@ const sections: SectionData[] = [
     id: "public-health",
     title: "Public Health and Medical Care",
     image:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&q=80",
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
     imageLeft: false,
-    bgColor: "#f9f9f9",
-    text: "Through primary health and medical interventions from community level, we aim to provide accessible, preventive, and curative health services to underserved communities.",
+    bgColor: "#f8faff",
+    text: "Through primary health and medical interventions at the community level, we aim to provide accessible, preventive, and curative health services to underserved communities.",
     bullets: [
-      "Community Health Education for community at critical wellness topics: Harm reduction, Sanitation & Hygiene (WASH), Education on health (SHED), Psycho-social support",
-      "Yoga, Meditattion, Morming exercise, Fitness",
+      "Community Health Education: Sanitation & Hygiene (WASH)",
+      "Psycho-social support and Wellness Programs",
+      "Yoga, Meditation, and Fitness Initiatives",
+      "Medical Camps and Primary Care Services",
       "Research on public health issues",
     ],
   },
   {
     id: "environment",
-    title: "Environment conservation:",
+    title: "Environment conservation",
     image:
-      "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=500&q=80",
+      "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=800&q=80",
     imageLeft: true,
-    bgColor: "#fff",
-    text: "We aim to promote practices that protect and restore the natural environment across our working communities.",
+    bgColor: "#ffffff",
+    text: "We aim to promote practices that protect and restore the natural environment across our working communities through sustainable systems.",
     bullets: [
-      "Permaculture agricultural systems for sustainable and self-sufficient food production",
-      "Conservation and protection of forests and other natural resources within the working communities",
-      "Research on nature, climate change, air, dirt and water pollution",
+      "Permaculture systems for sustainable food production",
+      "Conservation and protection of forest resources",
+      "Community-led waste management initiatives",
+      "Research on climate change and pollution control",
     ],
   },
   {
     id: "disaster-risk",
     title: "Disaster Risk Reduction (DRR)",
     image:
-      "https://images.unsplash.com/photo-1569427759983-6b3c4a9cba0c?w=500&q=80",
+      "https://images.unsplash.com/photo-1569427759983-6b3c4a9cba0c?w=800&q=80",
     imageLeft: false,
-    bgColor: "#f9f9f9",
+    bgColor: "#f8faff",
     text: "Nepal is highly vulnerable to natural disasters. Our DRR programs build community resilience through education, preparedness, and response planning.",
     bullets: [
-      "Disaster risk reduction preparedness training",
-      "Disaster Life reduction preparedness, Earthquake Risk and disaster planning stations",
-      "Reconstruction & volunteerism",
-      "Research on disaster risk and identified issues",
+      "Disaster preparedness training and simulation",
+      "Community-based risk assessment and planning",
+      "Post-disaster reconstruction & volunteer coordination",
+      "Research on regional disaster risks",
     ],
   },
 ];
 
 function BulletList({ items }: { items: string[] }) {
   return (
-    <ul style={{ margin: "1px 0 0 0", padding: 0, listStyle: "none" }}>
+    <ul className="mt-6 space-y-2">
       {items.filter(Boolean).map((item, i) => (
         <li
           key={i}
-          style={{
-            display: "flex",
-            gap: 8,
-            marginBottom: 5,
-            fontSize: 13.5,
-            color: "#333",
-            lineHeight: 1.5,
-          }}
+          className="flex items-start gap-1 text-gray-700 text-[13px] leading-relaxed"
         >
-          <span style={{ color: "#c0392b", marginTop: 2, flexShrink: 0 }}>
-            •
+          <span className="text-[#333] mt-1.5 flex-shrink-0 text-[10px]">
+            ●
           </span>
-          <span>{item}</span>
+          <span className="font-[600]">{item}</span>
         </li>
       ))}
     </ul>
@@ -137,71 +139,53 @@ function Section({ section }: { section: SectionData }) {
   const { title, image, imageLeft, bgColor, text, bullets } = section;
 
   return (
-    <div
-      style={{
-        background: bgColor,
-        padding: "40px 24px",
-      }}
+    <section 
+      style={{ backgroundColor: bgColor }}
+      className={`py-12 md:py-20 ${montserrat.className}`}
     >
-      <div
-        style={{
-          maxWidth: 1280,
-          margin: "0 auto",
-          display: "flex",
-          flexDirection: imageLeft ? "row" : "row-reverse",
-          gap: 32,
-          alignItems: "flex-start",
-        }}
-      >
-        {/* Image */}
-        <div style={{ flexShrink: 0, width: 220 }}>
-          <img
-            src={image}
-            alt={title}
-            style={{
-              width: 220,
-              height: 160,
-              objectFit: "cover",
-              borderRadius: 6,
-              display: "block",
-            }}
-          />
-        </div>
+      <div className="max-w-7xl mx-auto px-6">
+        <div 
+          className={`flex flex-col ${
+            imageLeft ? "md:flex-row" : "md:flex-row-reverse"
+          } gap-12 lg:gap-24 items-center`}
+        >
+          {/* Image */}
+          <div className="w-full md:w-1/2">
+            <div className="relative aspect-[1/1] overflow-hidden shadow-xl">
+              <img
+                src={image}
+                alt={title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
 
-        {/* Text */}
-        <div style={{ flex: 1 }}>
-          <h2
-            style={{
-              fontFamily: "'Playfair Display', serif",
-              fontSize: 20,
-              fontWeight: "700",
-              color: "#111",
-              margin: "0 0 10px 0",
-            }}
-          >
-            {title}
-          </h2>
-          <p
-            style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontSize: 13.5,
-              color: "#444",
-              lineHeight: 1.7,
-              margin: 0,
-            }}
-          >
-            {text}
-          </p>
-          <BulletList items={bullets} />
+          {/* Text */}
+          <div className="w-full md:w-1/2">
+            <h2 className="text-4xl lg:text-3xl font-[800] text-[#1a1a1a] mb-4 leading-tight">
+              {title}
+            </h2>
+            <div className="space-y-0">
+              <p className="text-gray-600 text-[14px] leading-relaxed font-[400]">
+                {text}
+              </p>
+              <div>
+                <p className="text-gray-600 text-[14px] leading-relaxed font-[400]">
+                  We achieve the goal of {title.toLowerCase()} program by implementing the following holistic projects:
+                </p>
+                <BulletList items={bullets} />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
 export default function ProgramSections() {
   return (
-    <div style={{ fontFamily: "'DM Sans', sans-serif", background: "#fff" }}>
+    <div className="bg-white">
       {sections.map((section) => (
         <Section key={section.id} section={section} />
       ))}

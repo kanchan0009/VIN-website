@@ -26,8 +26,8 @@ export default function GetInvolved() {
             href="/donate"
             className="px-6 py-3 rounded-lg text-sm font-semibold border-2 transition-all"
             style={{
-              borderColor: "var(--indigo-btn)",
-              color: "var(--indigo-btn)",
+              borderColor: "var(--blue-btn)",
+              color: "var(--blue-btn)",
             }}
           >
             Donate

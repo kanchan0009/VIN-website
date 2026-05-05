@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Users } from "lucide-react";
 import CTABanner from "../../components/CTABanner";
 import DonationWidget from "../../components/DonationWidget";
 
@@ -115,12 +115,12 @@ const orgs = [
   },
 ];
 
-export default function CertificationDetailPage({
-  params,
-}: {
-  params: { slug: string };
+export default async function CertificationDetailPage(props: {
+  params: Promise<{ slug: string }> | { slug: string };
 }) {
-  const org = orgs.find((o) => o.slug === params.slug);
+  const resolvedParams = "then" in props.params ? await props.params : props.params;
+  const { slug } = resolvedParams;
+  const org = orgs.find((o) => o.slug === slug);
 
   if (!org) {
     return (
@@ -128,227 +128,165 @@ export default function CertificationDetailPage({
         <div className="max-w-7xl mx-auto px-4 py-20 text-center">
           <h1 className="text-4xl font-bold mb-4">Certification Not Found</h1>
           <p className="text-gray-600 mb-8">
-            The certification you are looking for does not exist.
+            Could not find certification for slug: <span className="font-mono font-bold text-red-500">{slug}</span>
           </p>
-          <Link
-            href="/certifications"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-white"
-            style={{ background: "var(--indigo-btn)" }}
-          >
-            <ArrowLeft size={18} />
-            Back to Certifications
-          </Link>
         </div>
       </main>
     );
   }
 
   return (
-    <main className="bg-white">
+    <main className="bg-white font-montserrat">
       {/* Hero Section */}
       <section className="relative h-[670px] flex items-end overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=1600&q=80"
-          alt={org.name}
+          src="https://images.unsplash.com/photo-1594932224828-b4b059b8fe0e?w=1600&q=80"
+          alt="Certified By"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div
           className="absolute inset-0"
           style={{
-            background:
-              "linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)",
+            background: "linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 100%)",
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 pb-10 w-full">
-          <Link
-            href="/certifications"
-            className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-4 text-sm transition-colors"
-          >
-            <ArrowLeft size={16} />
-            Back to Certifications
-          </Link>
-          <div className="flex items-center gap-4 mb-4">
-            <div className="text-5xl">{org.logo}</div>
-            <div>
-              <h1
-                className="text-4xl font-bold text-white"
-                style={{ }}
-              >
-                {org.name}
-              </h1>
-              <p className="text-white/70 text-sm">
-                {org.country} • {org.from} to {org.to}
+        <div className="relative z-10 max-w-7xl mx-auto px-3 pb-8 w-full text-left">
+          <h1 className="text-[56px] font-[800] text-white mb-3">
+            Certified By
+          </h1>
+          <p className="text-white/90 text-[20px] max-w-6xl font-[400] leading-tight">
+            Volunteer Initiative Nepal (VIN) Is Proud To Be Recognized And Certified By The Highest Global Standards.
+            We Are Committed To Transparency, Accountability, And Impactful Community Development.
+          </p>
+        </div>
+      </section>
+
+      {/* Logo Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col items-center">
+          {/* Main Logo Container */}
+          <div className="flex items-center justify-center mb-10 w-full">
+            <img 
+              src="/european-commission-logo.png" 
+              alt={org.name}
+              className="h-48 object-contain"
+            />
+          </div>
+
+          <h2 className="text-5xl font-[600] text-[#333] mb-12 text-center">
+            {org.name}
+          </h2>
+
+          <div className="w-full text-center space-y-6">
+            <p className="text-black text-xl  text-left leading-relaxed">
+              Volunteer Initiative Nepal (VIN) Is Proud To Be Recognized And Certified By The {org.name}, 
+              Reflecting Our Commitment To Transparency, Accountability, And Impactful Community Development.
+            </p>
+            <p className="text-black text-xl text-left leading-relaxed">
+              This Certification Acknowledges VIN&apos;s Dedication To Delivering Ethical, Sustainable, And Community-Driven 
+              Programs Across Nepal. Through Consistent Efforts In Education, Women&apos;s Empowerment, Child Protection, 
+              And Disaster Resilience, VIN Has Aligned Its Operations With International Standards Of Social Impact And Organizational Governance.
+            </p>
+            <p className="text-black text-xl text-left leading-relaxed">
+              Being Certified By The {org.name} Strengthens Our Credibility As A Trusted Organization Working At The Grassroots Level. 
+              It Also Enables Us To Collaborate With Global Partners, Expand Our Outreach, And Ensure That Every Initiative We Undertake Creates Meaningful And Measurable Change.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats and Image Section */}
+      <section className="pb-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_0.9fr] gap-12 items-start">
+            {/* Left: Stats */}
+            <div className="space-y-6">
+              {/* Stat 1 */}
+              <div className="bg-[#DFF0FF] h-[255px] p-8 flex items-center gap-6 border border-blue-50/50">
+                <div className="w-16 h-16 rounded-full border-2 border-dashed border-[#221C84] flex items-center justify-center shrink-0">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#221C84" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-[#221C84] mb-2">19+ Years of Service</h3>
+                  <p className="text-gray-900 text-[12px] leading-relaxed">
+                    For Over 19 Years, VIN Has Been Actively Working To Uplift Marginalized Communities In Nepal Through 
+                    Volunteer-Driven Programs And Sustainable Development Initiatives.
+                  </p>
+                </div>
+              </div>
+
+              {/* Stat 2 */}
+              <div className="bg-[#DFF0FF] h-[255px] p-8 flex items-center gap-6 border border-blue-50/50">
+                <div className="w-16 h-16 bg-[#221C84] rounded-full flex items-center justify-center shrink-0">
+                  <Users className="text-white" size={28} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-[#221C84] mb-2">20,000+ Lives Impacted</h3>
+                  <p className="text-gray-900 text-[12px] leading-relaxed">
+                    Thousands Of Individuals And Families Have Directly Benefited From Our Programs In Education, Healthcare, 
+                    Women&apos;s Empowerment, And Community Development.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Image */}
+            <div className="relative h-[535px]">
+              <img 
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80" 
+                alt="Community Impact" 
+                className="w-full h-full object-cover shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      {/* Our Commitment Section */}
+      <section className="pt-0 pb-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="w-full text-left mb-16">
+            <h2 className="text-5xl font-[600] text-[#1a1a1a] mb-10 text-center">Our Commitment</h2>
+            <div className="space-y-5 text-black text-xl leading-relaxed font-[400]">
+              <p className="text-left">
+                At VIN, We Believe In Empowering Communities Rather Than Creating Dependency. Our 
+                Projects Are Designed To Build Local Capacity, Promote Inclusivity, And Create Long-Term 
+                Solutions That Continue To Benefit Communities Even After Project Completion.
+              </p>
+              <p className="text-left">
+                With International Recognition From The European Commission, We Continue To Uphold 
+                The Highest Standards In Delivering Impactful, Ethical, And Sustainable Development Work 
+                In Nepal.
               </p>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Content Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          {/* Header with Logo and Text */}
-          <div className="mb-16 flex flex-col lg:flex-row gap-8 items-start">
-            <div
-              className="flex-1 flex items-center gap-6 pb-6 border-b-4"
-              style={{ borderColor: "#2421a0" }}
-            >
-              <img
-                src="https://images.unsplash.com/photo-1470114716159-e389f8712fda?w=200&q=80"
-                alt={org.name}
-                className="w-32 h-32 object-contain"
+          <div className="flex flex-col md:flex-row justify-center gap-8">
+            <div className="w-full md:w-[365px] h-[450px] overflow-hidden shadow-sm">
+              <img 
+                src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80" 
+                alt="Community capacity" 
+                className="w-full h-full object-cover"
               />
-              <div>
-                <h1
-                  className="text-3xl font-bold text-gray-900"
-                  style={{ }}
-                >
-                  {org.name}
-                </h1>
-                <p className="text-gray-500 text-sm mt-2">{org.country}</p>
-              </div>
             </div>
-          </div>
-
-          {/* Description */}
-          <div className="mb-12">
-            <p className="text-gray-700 text-base leading-relaxed mb-4">
-              Volunteer Initiative Nepal (VIN) Is Proud To Be Recognised And
-              Certified By The {org.name}. This Certification Reflects Our
-              Commitment To Excellence In Community Development And Our
-              Dedication To Delivering Transparent, Accountable, And Sustainable
-              Services That Foster Positive Social Change.
-            </p>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              {org.fullDescription}
-            </p>
-          </div>
-
-          {/* Stats Section */}
-          <div className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="flex gap-4">
-              <div className="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center shrink-0 text-2xl">
-                ⏱️
-              </div>
-              <div>
-                <p className="text-gray-500 text-xs mb-1">Experience Since</p>
-                <h3 className="text-2xl font-bold text-gray-900">19+ Years</h3>
-                <p className="text-gray-600 text-xs mt-2">
-                  Working together with communities to create sustainable
-                  development solutions
-                </p>
-              </div>
+            <div className="w-full md:w-[365px] h-[450px] overflow-hidden shadow-sm">
+              <img 
+                src="https://images.unsplash.com/photo-1524062794003-ddce336032bb?w=800&q=80" 
+                alt="Local empowerment" 
+                className="w-full h-full object-cover"
+              />
             </div>
-            <div className="flex gap-4">
-              <div className="w-16 h-16 rounded-2xl bg-purple-100 flex items-center justify-center shrink-0 text-2xl">
-                👥
-              </div>
-              <div>
-                <p className="text-gray-500 text-xs mb-1">Lives Impacted</p>
-                <h3 className="text-2xl font-bold text-gray-900">20,000+</h3>
-                <p className="text-gray-600 text-xs mt-2">
-                  Individuals have benefited from our programs and initiatives
-                </p>
-              </div>
+            <div className="w-full md:w-[365px] h-[450px] overflow-hidden shadow-sm">
+              <img 
+                src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&q=80" 
+                alt="Sustainable impact" 
+                className="w-full h-full object-cover"
+              />
             </div>
-          </div>
-
-          {/* Image Section */}
-          <div className="mb-16">
-            <img
-              src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80"
-              alt="Community work"
-              className="w-full h-80 object-cover rounded-2xl"
-            />
-          </div>
-
-          {/* Our Commitment Section */}
-          <div className="mb-16">
-            <h2
-              className="text-3xl font-bold text-gray-900 mb-6"
-              style={{ }}
-            >
-              Our Commitment
-            </h2>
-            <p className="text-gray-700 text-base leading-relaxed mb-6">
-              As VIN, We Believe In Empowering Communities Rather Than Creating
-              Dependency. Our Collaborative Approach Ensures That Communities
-              Are Active Participants In Designing Solutions That Fit Their
-              Needs. Through Consistent Efforts And Accountability, We Strive To
-              Create Lasting Change.
-            </p>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              With International Recognition From The {org.name}, We Continue To
-              Uphold The Highest Standards In Delivering Impactful, Ethical, And
-              Sustainable Development Work In Nepal.
-            </p>
-          </div>
-
-          {/* Image Gallery */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <img
-              src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&q=80"
-              alt="Community 1"
-              className="w-full h-48 object-cover rounded-xl"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&q=80"
-              alt="Community 2"
-              className="w-full h-48 object-cover rounded-xl"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80"
-              alt="Community 3"
-              className="w-full h-48 object-cover rounded-xl"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Related Certifications */}
-      <section className="py-16" style={{ background: "var(--sky)" }}>
-        <div className="max-w-7xl mx-auto px-4">
-          <h2
-            className="text-3xl font-bold text-center mb-12"
-            style={{ }}
-          >
-            Other Certifications & Memberships
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            {orgs
-              .filter((o) => o.slug !== params.slug)
-              .slice(0, 3)
-              .map((relatedOrg) => (
-                <Link
-                  key={relatedOrg.slug}
-                  href={`/certifications/${relatedOrg.slug}`}
-                  className="p-6 rounded-2xl bg-white border border-gray-200 hover:shadow-lg transition-all"
-                >
-                  <div className="text-4xl mb-3">{relatedOrg.logo}</div>
-                  <h3 className="font-bold text-lg mb-2">{relatedOrg.name}</h3>
-                  <p className="text-sm text-gray-600 mb-4">
-                    {relatedOrg.country}
-                  </p>
-                  <p className="text-sm text-gray-700 line-clamp-2 mb-4">
-                    {relatedOrg.desc}
-                  </p>
-                  <span
-                    className="inline-flex items-center gap-1 text-sm font-semibold"
-                    style={{ color: "var(--indigo-btn)" }}
-                  >
-                    Learn More →
-                  </span>
-                </Link>
-              ))}
-          </div>
-          <div className="text-center">
-            <Link
-              href="/certifications"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-white"
-              style={{ background: "var(--indigo-btn)" }}
-            >
-              View All Certifications
-            </Link>
           </div>
         </div>
       </section>

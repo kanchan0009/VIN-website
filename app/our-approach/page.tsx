@@ -1,7 +1,6 @@
 "use client";
 
 import CTABanner from "../components/CTABanner";
-import DevelopmentPillars from "../components/DevelopmentPillars";
 import ProgramSections from "../components/ProgramSections";
 
 export default function OurApproachPage() {
@@ -34,82 +33,36 @@ export default function OurApproachPage() {
 
       {/* House of VIN */}
       <section className="py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-4 text-center">
-          <h2
-            className="text-4xl font-bold mb-4"
-            style={{ }}
-          >
-            A Holistic Approach to Community Development
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h2 className="text-4xl lg:text-4xl font-[700] text-[#1a1a1a] mb-16 leading-tight">
+            A Holistic Approach to Community <br/> Development
           </h2>
-          <p className="text-gray-500 text-sm mb-12 max-w-xl mx-auto leading-relaxed">
-            House of VIN represents our integrated development philosophy — four
-            pillars of community empowerment that together support a thriving
-            community.
-          </p>
 
-          {/* House diagram */}
-          <div className="max-w-lg mx-auto mb-16">
-            <div
-              className="rounded-t-3xl py-4 text-white font-bold text-lg"
-              style={{ background: "var(--navy)" }}
-            >
-              HOUSE OF VIN
-            </div>
-            <div
-              className="py-3 text-white font-semibold text-sm"
-              style={{ background: "var(--indigo-btn)" }}
-            >
-              EMPOWERED COMMUNITY
-            </div>
-            <div className="grid grid-cols-4 border border-gray-200">
-              {[
-                "EDUCATION",
-                "HEALTH & ENVIRONMENT",
-                "ECONOMY",
-                "BASIC INFRASTRUCTURE",
-              ].map((pillar, i) => (
-                <div
-                  key={pillar}
-                  className={`p-3 text-xs font-semibold text-center border-r border-gray-200 last:border-0 ${i % 2 === 0 ? "bg-indigo-50" : "bg-blue-50"}`}
-                >
-                  {pillar}
-                </div>
-              ))}
-            </div>
-            <div className="grid grid-cols-6 border border-t-0 border-gray-200">
-              {[
-                "Womens",
-                "Youth",
-                "Children",
-                "Public Health",
-                "Environment",
-                "DRR",
-              ].map((p, i) => (
-                <div
-                  key={p}
-                  className="py-2 px-1 text-xs text-center text-gray-500 border-r border-gray-100 last:border-0"
-                >
-                  {p}
-                </div>
-              ))}
-            </div>
+          {/* House Diagram Image */}
+          <div className="max-w-4xl mx-auto mb-16">
+            <img 
+              src="/house-of-vin.png" 
+              alt="House of VIN - Community Empowerment Strategy" 
+              className="w-full h-auto"
+            />
           </div>
 
-          <p className="text-gray-600 text-sm leading-relaxed max-w-3xl mx-auto mb-4">
-            House of VIN represents our community empowerment strategy as a
-            house. A house is built on four strong pillars — representing the
-            four areas of development that VIN focuses on. The four areas of
-            development resembling pillars of the house are Education, Health &
-            Environment, Economy and Basic Infrastructure.
-          </p>
+          {/* Explanatory Text */}
+          <div className="max-w-6xl mx-auto space-y-8">
+            <p className="text-gray-600 text-[15px] lg:text-[16px] leading-relaxed font-[400]">
+              &quot;House of VIN&quot; resembles the community empowerment strategy adopted by us. Here, different units representing the part of house signifies the importance of those in community empowerment. As for the strength of the house foundation and pillars have strong role, introduced programs and sectors have similar role in empowering communities. Six development programs signifies foundation of community empowerment and four pillars signify development areas. The ultimate outcome from the intervention is an empowered community like a strong house is an outcome of the strong foundation and pillars.
+            </p>
+            <p className="text-gray-600 text-[15px] lg:text-[16px] leading-relaxed font-[400]">
+              Six development programs resembling foundation of a house in the pictures are: Women&apos;s Empowerment, Youth empowerment, Children&apos;s Development, Public Health and Medical Care, Environment Conservation and Disaster Risk Reduction (DRR). These programs are collectively presented as a holistic approach of community empowerment.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Programs */}
       <ProgramSections />
 
-      {/* Four Pillars detail */}
-      <DevelopmentPillars />
+      
 
       <CTABanner />
     </main>
