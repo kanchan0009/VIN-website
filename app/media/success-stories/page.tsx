@@ -1,174 +1,108 @@
 import CTABanner from "../../components/CTABanner";
 import MediaTabs from "../../components/MediaTabs";
-import { Quote } from "lucide-react";
+import Link from "next/link";
 
 const stories = [
   {
     id: 1,
-    name: "Sita Devi Sharma",
-    role: "Entrepreneur & Community Leader",
-    location: "Okhaldhunga District",
-    image:
-      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80",
-    quote:
-      "Before VIN, I had no income of my own. Today, I run a successful tailoring business and employ three other women from my village. VIN gave me skills, confidence, and hope.",
-    story:
-      "Sita joined VIN's women's empowerment program in 2019. Through skills training in tailoring and business management, she started her own enterprise. Within two years, she expanded her business and now mentors other women in her community. She has also become an active member of the local women's cooperative.",
-    impact: [
-      "Started own tailoring business",
-      "Employs 3 women from her village",
-      "Mentors 15+ aspiring entrepreneurs",
-      "Active member of women's cooperative",
-    ],
+    name: "Dagruel Mamulo",
+    location: "Sydney, Australia",
+    image: "https://images.unsplash.com/photo-1503917988258-f19772042ee6?w=600&q=80",
+    text: "Namaste! My name is Shanti Tamang, I am a 34-year-old farmer from Devidhan, Tarakeshwar Municipality. Two years ago, I had the opportunity to participate in an English class offered by Volunteers Initiative Nepal (VIN) at the Women's Business Center (WBC) in Tinpipple, Tarakeshwar. At first, I hesitated to join because I thought learning English would be useless for someone like me, a farmer and a housewife. I was also worried it would interfere with my daily household activities. However, thanks to the encouragement of the women in my community, I decided to give it a try. Little did I know this decision would change my life in ways I never imagined."
   },
   {
     id: 2,
-    name: "Ramesh Gurung",
-    role: "Youth Leader & Change Maker",
-    location: "Nuwakot District",
-    image:
-      "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=400&q=80",
-    quote:
-      "VIN's youth program showed me that young people can be leaders. I now run workshops on climate action and have mobilized over 50 youth volunteers in my district.",
-    story:
-      "Ramesh was a quiet student when he first joined VIN's youth club. Through leadership training and life skills sessions, he discovered his passion for community organizing. He now leads environmental initiatives and has become a role model for other young people in his community.",
-    impact: [
-      "Leads district youth climate network",
-      "Mobilized 50+ youth volunteers",
-      "Conducted 20+ awareness workshops",
-      "Recognized by local government",
-    ],
+    name: "Dagruel Mamulo",
+    location: "Sydney, Australia",
+    image: "https://images.unsplash.com/photo-1503917988258-f19772042ee6?w=600&q=80",
+    text: "Namaste! My name is Shanti Tamang, I am a 34-year-old farmer from Devidhan, Tarakeshwar Municipality. Two years ago, I had the opportunity to participate in an English class offered by Volunteers Initiative Nepal (VIN) at the Women's Business Center (WBC) in Tinpipple, Tarakeshwar. At first, I hesitated to join because I thought learning English would be useless for someone like me, a farmer and a housewife. I was also worried it would interfere with my daily household activities. However, thanks to the encouragement of the women in my community, I decided to give it a try. Little did I know this decision would change my life in ways I never imagined."
   },
   {
     id: 3,
-    name: "Maya Tamang",
-    role: "Community Health Volunteer",
-    location: "Kavre District",
-    image:
-      "https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&q=80",
-    quote:
-      "I am the first person in my family to receive health training. Now I help my entire village access better health information and services.",
-    story:
-      "Maya became a community health volunteer through VIN's public health program. She received training in basic healthcare, first aid, and health education. She now organizes monthly health awareness sessions in her village and coordinates with local health posts for medical camps.",
-    impact: [
-      "Trained community health volunteer",
-      "Serves 200+ households",
-      "Organizes monthly health sessions",
-      "Reduced waterborne diseases by 60%",
-    ],
+    name: "Dagruel Mamulo",
+    location: "Sydney, Australia",
+    image: "https://images.unsplash.com/photo-1503917988258-f19772042ee6?w=600&q=80",
+    text: "Namaste! My name is Shanti Tamang, I am a 34-year-old farmer from Devidhan, Tarakeshwar Municipality. Two years ago, I had the opportunity to participate in an English class offered by Volunteers Initiative Nepal (VIN) at the Women's Business Center (WBC) in Tinpipple, Tarakeshwar. At first, I hesitated to join because I thought learning English would be useless for someone like me, a farmer and a housewife. I was also worried it would interfere with my daily household activities. However, thanks to the encouragement of the women in my community, I decided to give it a try. Little did I know this decision would change my life in ways I never imagined."
   },
   {
     id: 4,
-    name: "Hari Bahadur Thapa",
-    role: "Organic Farmer & Trainer",
-    location: "Okhaldhunga District",
-    image:
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&q=80",
-    quote:
-      "VIN taught me that farming can be both sustainable and profitable. My organic produce now fetches better prices, and I train other farmers in my region.",
-    story:
-      "Hari attended VIN's permaculture and organic farming training in 2020. He transformed his traditional farm into an organic operation using agroforestry techniques. His success has inspired many neighboring farmers to adopt sustainable practices.",
-    impact: [
-      "Converted 3 acres to organic farming",
-      "Income increased by 40%",
-      "Trains 25+ farmers annually",
-      "Established seed bank for community",
-    ],
+    name: "Dagruel Mamulo",
+    location: "Sydney, Australia",
+    image: "https://images.unsplash.com/photo-1503917988258-f19772042ee6?w=600&q=80",
+    text: "Namaste! My name is Shanti Tamang, I am a 34-year-old farmer from Devidhan, Tarakeshwar Municipality. Two years ago, I had the opportunity to participate in an English class offered by Volunteers Initiative Nepal (VIN) at the Women's Business Center (WBC) in Tinpipple, Tarakeshwar. At first, I hesitated to join because I thought learning English would be useless for someone like me, a farmer and a housewife. I was also worried it would interfere with my daily household activities. However, thanks to the encouragement of the women in my community, I decided to give it a try. Little did I know this decision would change my life in ways I never imagined."
   },
+  {
+    id: 5,
+    name: "Dagruel Mamulo",
+    location: "Sydney, Australia",
+    image: "https://images.unsplash.com/photo-1503917988258-f19772042ee6?w=600&q=80",
+    text: "Namaste! My name is Shanti Tamang, I am a 34-year-old farmer from Devidhan, Tarakeshwar Municipality. Two years ago, I had the opportunity to participate in an English class offered by Volunteers Initiative Nepal (VIN) at the Women's Business Center (WBC) in Tinpipple, Tarakeshwar. At first, I hesitated to join because I thought learning English would be useless for someone like me, a farmer and a housewife. I was also worried it would interfere with my daily household activities. However, thanks to the encouragement of the women in my community, I decided to give it a try. Little did I know this decision would change my life in ways I never imagined."
+  }
 ];
 
 export default function SuccessStoriesPage() {
   return (
-    <main>
-      {/* Hero */}
-      <section className="relative h-[670px] flex items-end overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=1600&q=80"
-          alt="Success Stories"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)",
-          }}
-        />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 pb-10 w-full">
-          <p className="text-white/60 text-sm mb-2">
-            Home / Media / <span className="text-white">Success Stories</span>
-          </p>
-          <h1
-            className="text-5xl font-bold text-white"
-            style={{ }}
-          >
-            Success Stories
-          </h1>
-        </div>
-      </section>
+    <main className="font-montserrat">
 
-      <MediaTabs />
+      {/* Main Content */}
+      <section className="py-18 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          {/* Section Title */}
+          <h2 className="text-center text-4xl lg:text-[45px] font-[800] text-[#1D1E20] mb-20 tracking-tight">
+            Success Story
+          </h2>
 
-      {/* Stories */}
-      <section className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4 space-y-16">
-          {stories.map((story, i) => (
-            <div
-              key={story.id}
-              className={`flex flex-col ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} gap-10 items-center`}
-            >
-              <div className="w-full md:w-80 shrink-0">
-                <div className="rounded-2xl overflow-hidden">
-                  <img
-                    src={story.image}
-                    alt={story.name}
-                    className="w-full h-80 object-cover"
-                  />
-                </div>
-                <div className="mt-4 text-center">
-                  <h3
-                    className="font-bold text-lg"
-                    style={{ }}
-                  >
-                    {story.name}
-                  </h3>
-                  <p className="text-sm text-indigo-700 font-medium">
-                    {story.role}
+          {/* Stories List */}
+          <div className="space-y-4">
+            {stories.map((story, i) => (
+              <div 
+                key={story.id} 
+                className={`p-8 md:p-10 border border-gray-300 rounded-[5px] flex flex-col md:flex-row gap-10 lg:gap-16 items-center ${
+                  i % 2 !== 0 ? "md:flex-row-reverse" : ""
+                }`}
+              >
+                {/* Text Content */}
+                <div className="flex-1 space-y-4">
+                  <p className="text-[15px] text-[#4A4A4A] leading-[1.8] font-[400]">
+                    {story.text}
                   </p>
-                  <p className="text-xs text-gray-500">{story.location}</p>
+                  <div>
+                    <h4 className="text-[16px] font-[700] text-[#1D1E20]">{story.name}</h4>
+                    <p className="text-[13px] text-[#9EA1A6] font-[600]">{story.location}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex-1">
-                <div className="bg-indigo-50 rounded-xl p-6 mb-6 relative">
-                  <Quote className="text-indigo-300 mb-2" size={28} />
-                  <p
-                    className="text-gray-700 italic leading-relaxed"
-                    style={{ }}
-                  >
-                    {story.quote}
-                  </p>
-                </div>
-                <p className="text-sm text-gray-600 leading-relaxed mb-6">
-                  {story.story}
-                </p>
-                <div>
-                  <h4 className="text-sm font-semibold text-gray-900 mb-3">
-                    Key Impact:
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {story.impact.map((item, j) => (
-                      <span
-                        key={j}
-                        className="px-3 py-1.5 rounded-full bg-green-50 text-green-700 text-xs font-medium"
-                      >
-                        {item}
-                      </span>
-                    ))}
+
+                {/* Image */}
+                <div className="w-full md:w-[300px] lg:w-[320px] shrink-0">
+                  <div className="aspect-square overflow-hidden rounded-[5px] shadow-sm">
+                    <img
+                      src={story.image}
+                      alt={story.name}
+                      className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                    />
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Pagination */}
+          <div className="mt-16 flex items-center justify-center gap-3">
+            <button className="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-[#221C84] transition-colors">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M15 18l-6-6 6-6"/>
+              </svg>
+            </button>
+            <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[15px] font-[700] text-[#4A4A4A] hover:border-[#221C84] transition-colors">1</button>
+            <button className="w-10 h-10 rounded-full bg-[#221C84] flex items-center justify-center text-[15px] font-[700] text-white">2</button>
+            <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[15px] font-[700] text-[#4A4A4A] hover:border-[#221C84] transition-colors">3</button>
+            <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[15px] font-[700] text-[#4A4A4A] hover:border-[#221C84] transition-colors">4</button>
+            <button className="w-10 h-10 flex items-center justify-center text-[#221C84] hover:opacity-70 transition-opacity">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </button>
+          </div>
         </div>
       </section>
 
