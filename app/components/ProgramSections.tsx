@@ -119,13 +119,13 @@ const sections: SectionData[] = [
 
 function BulletList({ items }: { items: string[] }) {
   return (
-    <ul className="mt-6 space-y-2">
+    <ul className="mt-8 space-y-3">
       {items.filter(Boolean).map((item, i) => (
         <li
           key={i}
-          className="flex items-start gap-1 text-gray-700 text-[13px] leading-relaxed"
+          className="flex items-start gap-3 text-gray-700 text-[14px] lg:text-[15px] leading-relaxed group"
         >
-          <span className="text-[#333] mt-1.5 flex-shrink-0 text-[10px]">
+          <span className="text-[#221C84] mt-1.5 flex-shrink-0 text-[10px] group-hover:scale-125 transition-transform">
             ●
           </span>
           <span className="font-[600]">{item}</span>
@@ -141,36 +141,36 @@ function Section({ section }: { section: SectionData }) {
   return (
     <section 
       style={{ backgroundColor: bgColor }}
-      className={`py-12 md:py-20 ${montserrat.className}`}
+      className={`py-16 lg:py-24 ${montserrat.className}`}
     >
       <div className="max-w-7xl mx-auto px-6">
         <div 
           className={`flex flex-col ${
-            imageLeft ? "md:flex-row" : "md:flex-row-reverse"
+            imageLeft ? "lg:flex-row" : "lg:flex-row-reverse"
           } gap-12 lg:gap-24 items-center`}
         >
           {/* Image */}
-          <div className="w-full md:w-1/2">
-            <div className="relative aspect-[1/1] overflow-hidden shadow-xl">
+          <div className="w-full lg:w-1/2">
+            <div className="relative aspect-square lg:aspect-[4/3] rounded-[30px] overflow-hidden shadow-2xl">
               <img
                 src={image}
                 alt={title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               />
             </div>
           </div>
 
           {/* Text */}
-          <div className="w-full md:w-1/2">
-            <h2 className="text-4xl lg:text-3xl font-[800] text-[#1a1a1a] mb-4 leading-tight">
+          <div className="w-full lg:w-1/2">
+            <h2 className="text-2xl lg:text-4xl font-[800] text-[#1D1E20] mb-6 leading-tight">
               {title}
             </h2>
-            <div className="space-y-0">
-              <p className="text-gray-600 text-[14px] leading-relaxed font-[400]">
+            <div className="space-y-6">
+              <p className="text-gray-600 text-[15px] lg:text-[16px] leading-relaxed font-[400]">
                 {text}
               </p>
-              <div>
-                <p className="text-gray-600 text-[14px] leading-relaxed font-[400]">
+              <div className="bg-[#F1F6FF] p-6 lg:p-8 rounded-2xl border-l-4 border-[#221C84]">
+                <p className="text-[#221C84] text-[14px] lg:text-[15px] leading-relaxed font-[700] mb-2">
                   We achieve the goal of {title.toLowerCase()} program by implementing the following holistic projects:
                 </p>
                 <BulletList items={bullets} />

@@ -631,7 +631,7 @@ export default function HomePage() {
 
           {/* Dropdown */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full max-w-[250px] mx-auto">
-            <select className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center" style={{ textAlignLast: "center" }}>
+            <select className="flex-1 w-full px-4 py-2.5 border border-black text-[15px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center" style={{ textAlignLast: "center" }}>
               <option >Choose a Program</option>
               <option>Women Empowerment</option>
               <option>Entrepreneurship</option>
@@ -756,7 +756,7 @@ export default function HomePage() {
             <select
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
-              className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center"
+              className="flex-1 w-full px-4 py-2.5 border border-black text-[15px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center"
               style={{ textAlignLast: "center" }}
             >
               <option>Board of Directors</option>
@@ -768,7 +768,7 @@ export default function HomePage() {
           {/* Cards Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 ">
             {filteredTeam.map((m, i) => (
-              <div key={i} className="bg-white shadow-sm h-[344] w-[310]">
+              <div key={i} className="bg-white shadow-sm h-[300px] w-[310px]">
                 {/* Image */}
                 <div className="w-full h-48 overflow-hidden">
                   <img

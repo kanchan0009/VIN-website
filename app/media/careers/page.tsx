@@ -1,89 +1,79 @@
+"use client";
+
+import { useState } from "react";
 import CTABanner from "../../components/CTABanner";
 import MediaTabs from "../../components/MediaTabs";
+import DonationWidget from "@/app/components/DonationWidget";
 
 const openings = [
   {
     id: 1,
+    title: "Sales Executive / Senior Sales Executive",
+    vacancy: "1",
+    type: "Full Time",
+    location: "Sundhara, Kathmandu",
+    salary: "Negotiable",
+    deadline: "Jan 12, 2025",
+    description: [
+      "Drive secondary sales generation across the assigned territory",
+      "Manage and strengthen relationships with dealers",
+      "Ensure product availability, visibility, and execution of sales plans",
+      "Use SFA tools to track daily sales, orders, and market activities",
+      "Conduct regular market visits and share competitor and market insights"
+    ],
+    requirements: [
+      "Graduate with min 3 years of experience in field sales, preferably in building materials or allied industries",
+      "Hands-on experience in secondary sales generation and dealer/retailer management",
+      "Familiarity with using SFA/CRM tools for sales tracking and reporting",
+      "Strong communication, negotiation, and relationship-management skills",
+      "Willingness to travel extensively within the assigned territory and work in the field"
+    ],
+    skills: [
+      "Bachelor's degree in Business, Marketing, or a related field.",
+      "Proven experience in business development, sales, or a related role within the electrical or cable industry.",
+      "Strong understanding of electrical wires and cable products, market dynamics, and industry regulations.",
+      "Excellent communication and interpersonal skills to establish and maintain client relationships.",
+      "Strategic thinking and problem-solving abilities to drive business growth.",
+      "Ability to work independently and collaboratively within a team.",
+      "Results-oriented with a proven track record of meeting or exceeding sales targets."
+    ]
+  },
+  {
+    id: 2,
     title: "Program Coordinator - Women's Empowerment",
-    department: "Programs",
-    location: "Kathmandu / Field",
-    type: "Full-time",
-    description:
-      "Lead and coordinate women's empowerment programs across multiple communities. Develop training modules, manage field staff, and monitor program outcomes.",
+    vacancy: "1",
+    type: "Full Time",
+    location: "Okhaldhunga District",
+    salary: "Negotiable",
+    deadline: "Feb 05, 2025",
+    description: [
+      "Lead and coordinate women's empowerment programs in rural communities",
+      "Develop training modules for entrepreneurship and financial literacy",
+      "Manage field staff and monitor program outcomes",
+      "Collaborate with local government bodies and stakeholders"
+    ],
     requirements: [
       "Master's in Social Work, Development Studies, or related field",
       "3+ years experience in NGO/development sector",
       "Fluent in Nepali and English",
-      "Strong leadership and communication skills",
+      "Strong leadership and facilitation skills"
     ],
-  },
-  {
-    id: 2,
-    title: "Public Health Officer",
-    department: "Health",
-    location: "Okhaldhunga / Nuwakot",
-    type: "Full-time",
-    description:
-      "Implement public health programs in rural communities. Organize health camps, conduct health education sessions, and coordinate with local health facilities.",
-    requirements: [
-      "Bachelor's in Public Health or Nursing",
-      "2+ years relevant experience",
-      "Willingness to travel to remote areas",
-      "Knowledge of WASH programs preferred",
-    ],
-  },
-  {
-    id: 3,
-    title: "Finance and Admin Manager",
-    department: "Administration",
-    location: "Kathmandu",
-    type: "Full-time",
-    description:
-      "Manage organizational finances, prepare budgets, ensure compliance with donor requirements, and oversee administrative operations.",
-    requirements: [
-      "Bachelor's in Accounting, Finance, or Business Administration",
-      "5+ years experience in NGO finance",
-      "Proficiency in accounting software",
-      "Knowledge of FDRA and tax regulations",
-    ],
-  },
-  {
-    id: 4,
-    title: "Youth Program Facilitator",
-    department: "Youth Empowerment",
-    location: "Kavre / Okhaldhunga",
-    type: "Full-time",
-    description:
-      "Facilitate youth empowerment programs including life skills training, leadership development, and entrepreneurship workshops.",
-    requirements: [
-      "Bachelor's in Education, Social Sciences, or related field",
-      "Experience working with youth groups",
-      "Excellent facilitation skills",
-      "Creative and energetic personality",
-    ],
-  },
-  {
-    id: 5,
-    title: "Monitoring and Evaluation Officer",
-    department: "M&E",
-    location: "Kathmandu / Field",
-    type: "Full-time",
-    description:
-      "Develop M&E frameworks, collect and analyze program data, prepare reports, and ensure evidence-based program improvements.",
-    requirements: [
-      "Master's in Statistics, Economics, or Development Studies",
-      "3+ years M&E experience",
-      "Proficiency in data analysis tools",
-      "Strong report writing skills",
-    ],
-  },
+    skills: [
+      "Project management and coordination",
+      "Training and capacity building",
+      "Report writing and documentation",
+      "Community mobilization"
+    ]
+  }
 ];
 
 export default function CareersPage() {
+  const [expandedId, setExpandedId] = useState<number | null>(1);
+
   return (
-    <main>
+    <main className="font-montserrat">
       {/* Hero */}
-      <section className="relative h-[670px] flex items-end overflow-hidden">
+      <section className="relative h-[550px] flex items-end overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&q=80"
           alt="Careers"
@@ -92,93 +82,122 @@ export default function CareersPage() {
         <div
           className="absolute inset-0"
           style={{
-            background:
-              "linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)",
+            background: "linear-gradient(to top, rgba(20,10,70,0.85) 40%, rgba(0,0,0,0.2) 100%)",
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 pb-10 w-full">
-          
-          <h1
-            className="text-5xl font-bold text-white"
-            style={{ }}
-          >
-            Careers
-          </h1>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 pb-12 w-full">
+          <h1 className="text-5xl lg:text-6xl font-[800] text-white">Careers</h1>
+          <p className="text-xl text-white/90 mt-5 max-w-3xl font-[400] leading-relaxed">
+            Join our mission to empower marginalized communities in Nepal. 
+            We offer meaningful careers where your work creates lasting impact.
+          </p>
         </div>
       </section>
 
       <MediaTabs />
 
-      {/* Intro */}
-      <section className="py-12 bg-white">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2
-            className="text-2xl font-bold mb-4"
-            style={{ }}
-          >
-            Join Our Team
+      {/* Open Positions Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 className="text-4xl lg:text-[42px] font-[600] text-[#1D1E20] text-center mb-16">
+            Open Positions
           </h2>
-          <p className="text-gray-600 leading-relaxed">
-            Be part of a dedicated team working to create lasting change in
-            Nepal's marginalized communities. We offer meaningful work,
-            professional growth, and the opportunity to make a real difference.
-          </p>
-        </div>
-      </section>
 
-      {/* Job Openings */}
-      <section className="py-12 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-4 space-y-6">
-          {openings.map((job) => (
-            <div
-              key={job.id}
-              className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-100"
-            >
-              <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                <h3
-                  className="text-xl font-bold text-gray-900"
-                  style={{ }}
+          <div className="space-y-4">
+            {openings.map((job) => (
+              <div key={job.id} className="border border-gray-200 overflow-hidden transition-all duration-300">
+                {/* Accordion Header */}
+                <button
+                  onClick={() => setExpandedId(expandedId === job.id ? null : job.id)}
+                  className={`w-full flex items-center justify-between px-8 py-3.5 transition-all duration-300 ${
+                    expandedId === job.id 
+                      ? "bg-[#221C84] text-white" 
+                      : "bg-white text-[#1D1E20] hover:bg-gray-50"
+                  }`}
                 >
-                  {job.title}
-                </h3>
-                <div className="flex gap-2 mt-2 md:mt-0">
-                  <span className="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-medium">
-                    {job.type}
-                  </span>
-                  <span className="px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-xs font-medium">
-                    {job.department}
-                  </span>
+                  <span className="text-xl lg:text-xl font-[600]">{job.title}</span>
+                  <div className={`transition-transform duration-300 ${expandedId === job.id ? "rotate-180" : ""}`}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                  </div>
+                </button>
+
+                {/* Accordion Content */}
+                <div 
+                  className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                    expandedId === job.id ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <div className="p-8 lg:p-12 bg-white space-y-8">
+                    {/* Info Table */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2 max-w-2xl">
+                      {[
+                        { label: "No. of Vacancy", value: job.vacancy },
+                        { label: "Employment Type", value: job.type },
+                        { label: "Job Location", value: job.location },
+                        { label: "Offered Salary", value: job.salary },
+                        { label: "Apply Before (Deadline)", value: job.deadline },
+                      ].map((info, idx) => (
+                        <div key={idx} className="flex gap-4 text-[15px]">
+                          <span className="w-48 font-[600] text-[#4A4A4A]">{info.label}</span>
+                          <span className="font-[600] text-[#4A4A4A] flex items-center">
+                            <span className="mr-4">:</span>
+                            {info.value}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Job Details Lists */}
+                    <div className="space-y-10">
+                      {/* Job Description */}
+                      <div className="space-y-2">
+                        <h4 className="text-[18px] font-[700] text-[#221C84]">Job Description</h4>
+                        <ul className="space-y-2 pl-2">
+                          {job.description.map((item, idx) => (
+                            <li key={idx} className="flex items-start gap-3 text-[15px] text-[#4A4A4A] font-[500]">
+                              <span className="mt-2 w-1.5 h-1.5 bg-[#4A4A4A] rounded-full shrink-0"></span>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Job Requirement */}
+                      <div className="space-y-2">
+                        <h4 className="text-[18px] font-[700] text-[#221C84]">Job Requirement</h4>
+                        <ul className="space-y-2 pl-2">
+                          {job.requirements.map((item, idx) => (
+                            <li key={idx} className="flex items-start gap-3 text-[15px] text-[#4A4A4A] font-[500]">
+                              <span className="mt-2 w-1.5 h-1.5 bg-[#4A4A4A] rounded-full shrink-0"></span>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Qualifications & Skills */}
+                      <div className="space-y-2">
+                        <h4 className="text-[18px] font-[700] text-[#221C84]">Qualifications & Skills</h4>
+                        <ul className="space-y-2 pl-2">
+                          {job.skills.map((item, idx) => (
+                            <li key={idx} className="flex items-start gap-3 text-[15px] text-[#4A4A4A] font-[500]">
+                              <span className="mt-2 w-1.5 h-1.5 bg-[#4A4A4A] rounded-full shrink-0"></span>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <p className="text-sm text-gray-500 mb-3 flex items-center gap-1">
-                <span>Location: {job.location}</span>
-              </p>
-              <p className="text-sm text-gray-600 leading-relaxed mb-4">
-                {job.description}
-              </p>
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-gray-900 mb-2">
-                  Requirements:
-                </h4>
-                <ul className="space-y-1">
-                  {job.requirements.map((req, i) => (
-                    <li key={i} className="text-sm text-gray-600 flex gap-2">
-                      <span className="text-indigo-600 mt-1">•</span>
-                      {req}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <button
-                className="px-6 py-2.5 rounded-lg text-sm font-semibold text-white transition-all hover:opacity-90"
-                style={{ background: "var(--indigo-btn)" }}
-              >
-                Apply Now
-              </button>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
+      <DonationWidget/>
 
       <CTABanner />
     </main>

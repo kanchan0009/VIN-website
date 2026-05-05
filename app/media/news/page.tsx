@@ -1,3 +1,4 @@
+import Link from "next/link";
 import CTABanner from "../../components/CTABanner";
 import MediaTabs from "../../components/MediaTabs";
 
@@ -84,50 +85,82 @@ export default function NewsUpdatePage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 pb-10 w-full">
           
           <h1
-            className="text-5xl font-bold text-white"
-            style={{ }}
+            className="text-5xl font-[800] text-white"
           >
             News Update
           </h1>
+          <p className="text-xl text-white/90 mt-5 max-w-6xl font-[400] leading-relaxed">
+            Stay updated with our latest stories, impact reports, and community developments from across Nepal. 
+            Discover how your support is making a real difference.
+          </p>
         </div>
       </section>
 
       <MediaTabs />
 
-      {/* News List */}
+      {/* News Grid Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4 space-y-10">
-          {newsItems.map((news) => (
-            <div
-              key={news.id}
-              className="flex flex-col md:flex-row gap-6 items-start group cursor-pointer"
-            >
-              <div className="w-full md:w-64 shrink-0 rounded-xl overflow-hidden">
-                <img
-                  src={news.image}
-                  alt={news.title}
-                  className="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="px-3 py-1 rounded-full bg-red-50 text-red-700 text-xs font-medium">
-                    {news.tag}
-                  </span>
-                  <span className="text-xs text-gray-400">{news.date}</span>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-14">
+            {[...newsItems, ...newsItems].slice(0, 9).map((news, i) => (
+              <div key={i} className="flex flex-col group">
+                {/* Image */}
+                <div className="relative aspect-[16/10] overflow-hidden rounded-[5px] mb-5 shadow-sm">
+                  <img
+                    src={news.image}
+                    alt={news.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
                 </div>
-                <h3
-                  className="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-700 transition-colors"
-                  style={{ }}
-                >
-                  {news.title}
-                </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {news.summary}
-                </p>
+                
+                {/* Content */}
+                <div className="space-y-4 pr-4">
+                  <h3 className="text-[17px] font-[800] text-[#1D1E20] leading-[1.3] group-hover:text-[#221C84] transition-colors">
+                    {news.title}
+                  </h3>
+                  <p className="text-[15px] text-[#4A4A4A] leading-[1.6] font-[500] line-clamp-3">
+                    {news.summary}
+                  </p>
+                  <Link 
+                    href={`/media/news/${news.id}`}
+                    className="inline-flex items-center gap-2 text-[#221C84] text-[14px] font-[600] hover:underline pt-2"
+                  >
+                    Read Full News →
+                  </Link>
+                </div>
               </div>
+            ))}
+          </div>
+
+          {/* Pagination */}
+          <div className="mt-24 flex items-center justify-start gap-5">
+            <button className="text-gray-400 hover:text-[#221C84] transition-colors">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+              </svg>
+            </button>
+            
+            <div className="flex items-center gap-4">
+              {[1, 2, 3, 4].map((page) => (
+                <button
+                  key={page}
+                  className={`w-11 h-11 flex items-center justify-center rounded-full text-[15px] font-[700] transition-all ${
+                    page === 2 
+                      ? "bg-[#221C84] text-white" 
+                      : "border border-gray-300 text-gray-600 hover:border-[#221C84] hover:text-[#221C84]"
+                  }`}
+                >
+                  {page}
+                </button>
+              ))}
             </div>
-          ))}
+
+            <button className="text-gray-400 hover:text-[#221C84] transition-colors">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
         </div>
       </section>
 

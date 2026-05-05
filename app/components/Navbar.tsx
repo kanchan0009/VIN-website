@@ -26,86 +26,83 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [programsOpen, setProgramsOpen] = useState(false);
   const [mediaOpen, setMediaOpen] = useState(false);
+  const [mobileProgramsOpen, setMobileProgramsOpen] = useState(false);
+  const [mobileMediaOpen, setMobileMediaOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full h-[48px] bg-[#F1F6FF] shadow-sm">
-      {/* Top bar */}
-      <div
-        style={{ background: "background:#F1F6FF" }}
-        className="text-[3353535] text-sm py-1.5"
-      >
-        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
-          <div className="flex gap-6">
-            <Link href="/volunteer" className="hover:underline opacity-90">
-              Volunteer
-            </Link>
-            <Link href="/partner" className="hover:underline opacity-90">
-              Partner with Us
-            </Link>
-            <Link href="/sponsor" className="hover:underline opacity-90">
-              Sponsor a Child
-            </Link>
-            <Link href="/faq" className="hover:underline opacity-90">
-              FAQ
-            </Link>
+    <header className="sticky top-0 z-50 w-full shadow-sm font-montserrat bg-white">
+      {/* Top bar - Hidden on mobile */}
+      <div className="hidden lg:block bg-[#F1F6FF] text-[#353535] text-[16px] py-1.5">
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+          <div className="flex gap-6 font-[500]">
+            <Link href="/volunteer" className="hover:text-[#221C84] transition-colors">Volunteer</Link>
+            <Link href="/partner" className="hover:text-[#221C84] transition-colors">Partner with Us</Link>
+            <Link href="/sponsor" className="hover:text-[#221C84] transition-colors">Sponsor a Child</Link>
+            <Link href="/faq" className="hover:text-[#221C84] transition-colors">FAQ</Link>
           </div>
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-1.5">
-              <Globe size={14} />
-              <span>NP</span>
-              <ChevronDown size={12} />
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-1.5 cursor-pointer hover:text-[#221C84] transition-colors">
+              <Globe size={13} />
+              <span className="font-[600]">NP</span>
+              <ChevronDown size={11} />
             </div>
             <div className="flex items-center gap-1.5">
-              <Phone size={14} />
-              <span>+977 (1) 4362560</span>
+              <Phone size={13} className="text-[#221C84]" />
+              <span className="font-[600]">+977 (1) 4362560</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Main nav */}
-      <nav className="bg-[#FFFFFF] border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-[89px]">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
-            <div
-              style={{ background: "var(--navy)" }}
-              className="w-10 h-10 rounded-full flex items-center justify-center"
-            >
-              <span className="text-white font-bold text-sm">VIN</span>
+      <nav className="border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6 flex items-center justify-between h-[75px] lg:h-[85px]">
+          {/* Logo Section */}
+          <Link href="/" className="flex items-center gap-3 shrink-0">
+            <div className="relative w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center">
+              <div className="absolute inset-0 bg-[#221C84] opacity-10 rounded-full scale-110"></div>
+              <svg viewBox="0 0 100 100" className="w-full h-full text-[#221C84]">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="2" />
+                <path d="M50 5 L50 95 M5 50 L95 50" stroke="currentColor" strokeWidth="1" />
+                <path d="M15 30 C35 30 65 30 85 30 M15 70 C35 70 65 70 85 70" stroke="currentColor" strokeWidth="1" fill="none" />
+                <path d="M30 15 C30 35 30 65 30 85 M70 15 C70 35 70 65 70 85" stroke="currentColor" strokeWidth="1" fill="none" />
+                <path d="M40 50 C40 40 60 40 60 50 C60 60 40 60 40 50" fill="currentColor" opacity="0.8" />
+              </svg>
             </div>
-            <div>
-              <div
-                className="font-bold text-sm"
-                style={{ color: "var(--navy)", }}
-              >
-                Volunteers Initiative
-              </div>
-              <div className="text-xs text-gray-500">Nepal (VIN)</div>
+            <div className="flex flex-col">
+              <span className="text-[10px] lg:text-[11px] font-[700] text-[#00AEEF] leading-none mb-0.5 uppercase tracking-wider">
+                Empowering Marginalized Communities
+              </span>
+              <span className="text-[14px] lg:text-[18px] font-[800] text-[#221C84] leading-tight flex items-center gap-1">
+                स्वयंसेवी अभियान नेपाल
+              </span>
+              <span className="text-[11px] lg:text-[13px] font-[700] text-[#221C84] opacity-80 leading-tight">
+                Volunteers Initiative Nepal
+              </span>
             </div>
           </Link>
 
-          {/* Desktop links */}
-          <div className="hidden lg:flex items-center gap-8">
-            <Link href="/about" className="btn nav-btn">About Us</Link>
+          {/* Desktop Links */}
+          <div className="hidden xl:flex items-center gap-6 px-4">
+            <Link href="/" className="text-[15px] font-[600] text-[#4A4A4A] hover:text-[#221C84] transition-colors">Home</Link>
+            <Link href="/about" className="text-[15px] font-[600] text-[#4A4A4A] hover:text-[#221C84] transition-colors whitespace-nowrap">About Us</Link>
             
             {/* Programs Dropdown */}
             <div 
-              className="relative group h-full flex items-center"
+              className="relative h-full flex items-center group"
               onMouseEnter={() => setProgramsOpen(true)}
               onMouseLeave={() => setProgramsOpen(false)}
             >
-              <Link href="/programs" className="btn nav-btn flex items-center gap-1">
-                Programs <ChevronDown size={14} className={`transition-transform duration-200 ${programsOpen ? "rotate-180" : ""}`} />
-              </Link>
+              <button className="text-[15px] font-[600] text-[#4A4A4A] group-hover:text-[#221C84] transition-colors flex items-center gap-1 py-4">
+                Programs <ChevronDown size={14} className={`transition-transform duration-300 ${programsOpen ? "rotate-180" : ""}`} />
+              </button>
               
-              {/* Dropdown Menu */}
-              <div className={`absolute top-full left-0 w-64 bg-white shadow-xl border-t-2 border-[#206673] py-2 transition-all duration-200 ${programsOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2"}`}>
+              <div className={`absolute top-full left-0 w-72 bg-white shadow-2xl border-t-2 border-[#221C84] py-3 transition-all duration-300 ${programsOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2"}`}>
                 {programs.map((prog) => (
                   <Link 
                     key={prog.href} 
                     href={prog.href}
-                    className="block px-6 py-3 text-sm text-gray-700 hover:bg-[#F1F6FF] hover:text-[#206673] transition-colors"
+                    className="block px-6 py-3 text-sm text-[#4A4A4A] font-[500] hover:bg-[#F1F6FF] hover:text-[#221C84] transition-all"
                   >
                     {prog.label}
                   </Link>
@@ -113,25 +110,21 @@ export default function Navbar() {
               </div>
             </div>
 
-            <Link href="/blogs" className="btn nav-btn">Blogs</Link>
-            
-            {/* Media Dropdown */}
             <div 
-              className="relative group h-full flex items-center"
+              className="relative h-full flex items-center group"
               onMouseEnter={() => setMediaOpen(true)}
               onMouseLeave={() => setMediaOpen(false)}
             >
-              <Link href="/media" className="btn nav-btn flex items-center gap-1">
-                Media <ChevronDown size={14} className={`transition-transform duration-200 ${mediaOpen ? "rotate-180" : ""}`} />
-              </Link>
+              <button className="text-[15px] font-[600] text-[#4A4A4A] group-hover:text-[#221C84] transition-colors flex items-center gap-1 py-4">
+                Media <ChevronDown size={14} className={`transition-transform duration-300 ${mediaOpen ? "rotate-180" : ""}`} />
+              </button>
               
-              {/* Dropdown Menu */}
-              <div className={`absolute top-full left-0 w-64 bg-white shadow-xl border-t-2 border-[#206673] py-2 transition-all duration-200 ${mediaOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2"}`}>
+              <div className={`absolute top-full left-0 w-64 bg-white shadow-2xl border-t-2 border-[#221C84] py-3 transition-all duration-300 ${mediaOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2"}`}>
                 {media.map((m) => (
                   <Link 
                     key={m.href} 
                     href={m.href}
-                    className="block px-6 py-3 text-sm text-gray-700 hover:bg-[#F1F6FF] hover:text-[#206673] transition-colors"
+                    className="block px-6 py-3 text-sm text-[#4A4A4A] font-[500] hover:bg-[#F1F6FF] hover:text-[#221C84] transition-all"
                   >
                     {m.label}
                   </Link>
@@ -139,135 +132,108 @@ export default function Navbar() {
               </div>
             </div>
 
-            <Link href="/contact" className="btn nav-btn">Contact Us</Link>
+            <Link href="/contact" className="text-[15px] font-[600] text-[#4A4A4A] hover:text-[#221C84] transition-colors whitespace-nowrap">Contact Us</Link>
+            <Link href="/blogs" className="text-[15px] font-[600] text-[#4A4A4A] hover:text-[#221C84] transition-colors">Blogs</Link>
           </div>
 
-          {/* CTA buttons */}
-          <div className=" lg:flex items-center gap-3">
+          {/* Action Buttons */}
+          <div className="flex items-center gap-3 lg:gap-4">
             <Link
               href="/donate"
-              className="absolute  left-[1200px] h-[48px] px-[30px] py-[10px] rounded-[5px] text-sm font-semibold text-white bg-[#206673] flex items-center justify-center transition-all hover:bg-[#1b5a5f]"
-              onMouseOver={(e) =>
-                (e.currentTarget.style.background = "background:#1b5a5f")
-              }
-              onMouseOut={(e) =>
-                (e.currentTarget.style.background = "background:#206673")
-              }
+              className="bg-[#2A6F7C] text-white px-5 lg:px-9 py-2.5 lg:py-3.5 rounded-[4px] font-[700] text-[13px] lg:text-[15px] hover:bg-[#1e525c] transition-all shadow-md active:scale-95 whitespace-nowrap"
             >
               Donate
             </Link>
             <Link
               href="/volunteer"
-              className="absolute  left-[1320px] h-[48px] px-[30px] py-[10px] rounded-[2px] border border-[#206673] text-[#206673] flex items-center justify-center gap-[5px] transition-all hover:bg-[#206673] hover:text-white"
-              style={{
-                borderColor: "#221C84",
-                color: "#221C84",
-              }}
-              onMouseOver={(e) => {
-                e.currentTarget.style.background = "background:#206673";
-                e.currentTarget.style.color = "white";
-              }}
-              onMouseOut={(e) => {
-                e.currentTarget.style.color = "background:#206673";
-              }}
+              className="hidden sm:flex border-2 border-[#221C84] text-[#221C84] px-5 lg:px-9 py-2 lg:py-3 rounded-[4px] font-[700] text-[13px] lg:text-[15px] hover:bg-[#221C84] hover:text-white transition-all active:scale-95 whitespace-nowrap"
             >
               Volunteer
             </Link>
-          </div>
 
-          {/* Mobile toggle */}
-          <button
-            className="lg:hidden p-2"
-            onClick={() => setMobileOpen(!mobileOpen)}
-          >
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+            {/* Mobile Menu Toggle */}
+            <button
+              className="xl:hidden w-10 h-10 flex items-center justify-center text-[#221C84] hover:bg-gray-50 rounded-lg transition-colors ml-1"
+              onClick={() => setMobileOpen(!mobileOpen)}
+            >
+              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
-        {/* Mobile menu */}
-        {mobileOpen && (
-          <div className="lg:hidden border-t border-gray-100 bg-white px-4 py-4 flex flex-col gap-3">
-            {/* Mobile links */}
-            <div className="flex flex-col gap-1">
-              <Link href="/about" onClick={() => setMobileOpen(false)} className="text-base font-medium py-2.5 border-b border-gray-50 text-gray-700">About Us</Link>
-              
-              {/* Mobile Programs Dropdown */}
-              <div className="border-b border-gray-50">
-                <button 
-                  onClick={() => setProgramsOpen(!programsOpen)}
-                  className="w-full flex items-center justify-between text-base font-medium py-2.5 text-gray-700"
-                >
-                  Programs <ChevronDown size={18} className={`transition-transform duration-200 ${programsOpen ? "rotate-180" : ""}`} />
-                </button>
-                {programsOpen && (
-                  <div className="pl-4 pb-3 flex flex-col gap-2">
-                    {programs.map((prog) => (
-                      <Link 
-                        key={prog.href} 
-                        href={prog.href}
-                        onClick={() => setMobileOpen(false)}
-                        className="text-sm text-gray-600 py-1"
-                      >
-                        {prog.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
+        {/* Mobile menu Overlay */}
+        <div className={`xl:hidden fixed inset-0 top-[75px] bg-white z-[100] transition-transform duration-500 transform ${mobileOpen ? "translate-x-0" : "translate-x-full"}`}>
+          <div className="h-full overflow-y-auto px-6 py-8 flex flex-col gap-2">
+            <Link href="/" onClick={() => setMobileOpen(false)} className="text-lg font-[700] text-[#1D1E20] py-4 border-b border-gray-50">Home</Link>
+            <Link href="/about" onClick={() => setMobileOpen(false)} className="text-lg font-[700] text-[#1D1E20] py-4 border-b border-gray-50">About Us</Link>
+            
+            <div className="border-b border-gray-50">
+              <button 
+                onClick={() => setMobileProgramsOpen(!mobileProgramsOpen)}
+                className="w-full flex items-center justify-between text-lg font-[700] text-[#1D1E20] py-4"
+              >
+                Programs <ChevronDown size={20} className={`transition-transform duration-300 ${mobileProgramsOpen ? "rotate-180" : ""}`} />
+              </button>
+              <div className={`overflow-hidden transition-all duration-300 ${mobileProgramsOpen ? "max-h-[500px] mb-4" : "max-h-0"}`}>
+                <div className="flex flex-col gap-3 pl-4">
+                  {programs.map((prog) => (
+                    <Link 
+                      key={prog.href} 
+                      href={prog.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="text-[#555] font-[500] text-base py-1 hover:text-[#221C84]"
+                    >
+                      {prog.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
-
-              <Link href="/blogs" onClick={() => setMobileOpen(false)} className="text-base font-medium py-2.5 border-b border-gray-50 text-gray-700">Blogs</Link>
-              
-              {/* Mobile Media Dropdown */}
-              <div className="border-b border-gray-50">
-                <button 
-                  onClick={() => setMediaOpen(!mediaOpen)}
-                  className="w-full flex items-center justify-between text-base font-medium py-2.5 text-gray-700"
-                >
-                  Media <ChevronDown size={18} className={`transition-transform duration-200 ${mediaOpen ? "rotate-180" : ""}`} />
-                </button>
-                {mediaOpen && (
-                  <div className="pl-4 pb-3 flex flex-col gap-2">
-                    {media.map((m) => (
-                      <Link 
-                        key={m.href} 
-                        href={m.href}
-                        onClick={() => setMobileOpen(false)}
-                        className="text-sm text-gray-600 py-1"
-                      >
-                        {m.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              <Link href="/contact" onClick={() => setMobileOpen(false)} className="text-base font-medium py-2.5 border-b border-gray-50 text-gray-700">Contact Us</Link>
-              <Link href="/faq" onClick={() => setMobileOpen(false)} className="text-base font-medium py-2.5 border-b border-gray-50 text-gray-700">FAQ</Link>
             </div>
 
-            <div className="flex gap-3 mt-2">
+            <div className="border-b border-gray-50">
+              <button 
+                onClick={() => setMobileMediaOpen(!mobileMediaOpen)}
+                className="w-full flex items-center justify-between text-lg font-[700] text-[#1D1E20] py-4"
+              >
+                Media <ChevronDown size={20} className={`transition-transform duration-300 ${mobileMediaOpen ? "rotate-180" : ""}`} />
+              </button>
+              <div className={`overflow-hidden transition-all duration-300 ${mobileMediaOpen ? "max-h-[500px] mb-4" : "max-h-0"}`}>
+                <div className="flex flex-col gap-3 pl-4">
+                  {media.map((m) => (
+                    <Link 
+                      key={m.href} 
+                      href={m.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="text-[#555] font-[500] text-base py-1 hover:text-[#221C84]"
+                    >
+                      {m.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <Link href="/contact" onClick={() => setMobileOpen(false)} className="text-lg font-[700] text-[#1D1E20] py-4 border-b border-gray-50">Contact Us</Link>
+            <Link href="/blogs" onClick={() => setMobileOpen(false)} className="text-lg font-[700] text-[#1D1E20] py-4 border-b border-gray-50">Blogs</Link>
+
+            <div className="grid grid-cols-2 gap-4 mt-8 pb-12">
               <Link
                 href="/donate"
                 onClick={() => setMobileOpen(false)}
-                className="flex-1 text-center py-2.5 rounded-lg text-white  text-sm"
-                style={{ background: "#206673" }}
+                className="bg-[#2A6F7C] text-white py-4 rounded-xl font-[700] text-center shadow-lg"
               >
                 Donate
               </Link>
               <Link
                 href="/volunteer"
                 onClick={() => setMobileOpen(false)}
-                className="flex-1 text-center py-2.5 rounded-lg font-semibold text-sm border-2"
-                style={{
-                  borderColor: "var(--indigo-btn)",
-                  color: "var(--indigo-btn)",
-                }}
+                className="border-2 border-[#221C84] text-[#221C84] py-4 rounded-xl font-[700] text-center"
               >
                 Volunteer
               </Link>
             </div>
           </div>
-        )}
+        </div>
       </nav>
     </header>
   );
