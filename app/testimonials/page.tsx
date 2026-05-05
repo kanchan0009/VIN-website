@@ -6,7 +6,7 @@ import { useState } from "react";
 import DonationWidget from "../components/DonationWidget";
 import CTABanner from "../components/CTABanner";
 
-const testimonials = [
+const stories = [
   {
     id: 1,
     name: "Shanti Tamang",
@@ -80,14 +80,12 @@ export default function TestimonialsPage() {
           {/* Header with Filter */}
           <div className="flex items-center justify-center mb-12 gap-4">
             <h2
-              className="text-3xl font-bold"
+              className="text-5xl font-[700]"
               style={{ }}
             >
               Testimonials
             </h2>
-            <div className="relative bg-yellow-400 rounded-full w-10 h-10 flex items-center justify-center">
-              <span className="text-xl">😊</span>
-            </div>
+            
           </div>
 
           {/* Filter Dropdown */}
@@ -104,79 +102,56 @@ export default function TestimonialsPage() {
             </select>
           </div>
 
-          {/* Testimonials Grid - Alternating Layout */}
-          <div className="space-y-12">
-            {testimonials.map((t, idx) => (
-              <div key={t.id}>
-                {idx % 2 === 0 ? (
-                  /* Text Left, Image Right */
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div className="border-l-4 border-[#c97a5c] pl-6">
-                      <p className="text-gray-700 text-sm leading-relaxed mb-6">
-                        {t.text}
-                      </p>
-                      <div className="border-t border-gray-200 pt-4">
-                        <p className="font-bold text-sm text-gray-900">
-                          {t.signature}
-                        </p>
-                        <p className="text-gray-500 text-xs mt-1">
-                          {t.signatureTitle}
-                        </p>
-                      </div>
-                    </div>
-                    <div>
-                      <img
-                        src={t.image}
-                        alt={t.name}
-                        className="w-full h-64 object-cover rounded-lg"
-                      />
-                    </div>
+          {/* Stories List */}
+          <div className="space-y-4">
+            {stories.map((story, i) => (
+              <div 
+                key={story.id} 
+                className={`p-8 md:p-10 border border-gray-300 rounded-[5px] flex flex-col md:flex-row gap-10 lg:gap-16 items-center ${
+                  i % 2 !== 0 ? "md:flex-row-reverse" : ""
+                }`}
+              >
+                {/* Text Content */}
+                <div className="flex-1 space-y-4">
+                  <p className="text-[15px] text-[#4A4A4A] leading-[1.8] font-[400]">
+                    {story.text}
+                  </p>
+                  <div>
+                    <h4 className="text-[16px] font-[700] text-[#1D1E20]">{story.name}</h4>
+                    <p className="text-[13px] text-[#9EA1A6] font-[600]">{story.role}</p>
                   </div>
-                ) : (
-                  /* Image Left, Text Right */
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div>
-                      <img
-                        src={t.image}
-                        alt={t.name}
-                        className="w-full h-64 object-cover rounded-lg"
-                      />
-                    </div>
-                    <div className="border-l-4 border-[#c97a5c] pl-6">
-                      <p className="text-gray-700 text-sm leading-relaxed mb-6">
-                        {t.text}
-                      </p>
-                      <div className="border-t border-gray-200 pt-4">
-                        <p className="font-bold text-sm text-gray-900">
-                          {t.signature}
-                        </p>
-                        <p className="text-gray-500 text-xs mt-1">
-                          {t.signatureTitle}
-                        </p>
-                      </div>
-                    </div>
+                </div>
+
+                {/* Image */}
+                <div className="w-full md:w-[300px] lg:w-[320px] shrink-0">
+                  <div className="aspect-square overflow-hidden rounded-[5px] shadow-sm">
+                    <img
+                      src={story.image}
+                      alt={story.name}
+                      className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                    />
                   </div>
-                )}
+                </div>
               </div>
             ))}
           </div>
 
           {/* Pagination */}
-          <div className="flex justify-center items-center gap-2 mt-12">
-            <button className="text-gray-400 hover:text-gray-600">←</button>
-            {[1, 2, 3].map((num) => (
-              <button
-                key={num}
-                className={`w-8 h-8 rounded-full text-sm ${
-                  num === 1
-                    ? "bg-[#2421a0] text-white"
-                    : "border border-gray-300 text-gray-600"
-                }`}
-              >
-                {num}
-              </button>
-            ))}
-            <button className="text-gray-400 hover:text-gray-600">→</button>
+          <div className="mt-16 flex items-center justify-center gap-3">
+            <button className="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-[#221C84] transition-colors">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M15 18l-6-6 6-6"/>
+              </svg>
+            </button>
+            <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[15px] font-[700] text-[#4A4A4A] hover:border-[#221C84] transition-colors">1</button>
+            <button className="w-10 h-10 rounded-full bg-[#221C84] flex items-center justify-center text-[15px] font-[700] text-white">2</button>
+            <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[15px] font-[700] text-[#4A4A4A] hover:border-[#221C84] transition-colors">3</button>
+            <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[15px] font-[700] text-[#4A4A4A] hover:border-[#221C84] transition-colors">4</button>
+            <button className="w-10 h-10 flex items-center justify-center text-[#221C84] hover:opacity-70 transition-opacity">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </button>
           </div>
         </div>
       </section>
