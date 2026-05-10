@@ -35,7 +35,7 @@ export default function DonationSection() {
               <div className="absolute -bottom-6 lg:-bottom-10 left-1/2 -translate-x-1/2 w-[97%] lg:w-[500px] bg-white p-6 lg:p-8 shadow-2xl flex items-center justify-between border border-gray-100 ">
                 {/* Stat 1 */}
                 <div className="flex flex-col items-center gap-3 text-center px-2">
-                  <div className="text-[#221C84]">
+                  <div className="text-[var(--blue)]">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.4-1.4 1"/>
                       <path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-5.4a2 2 0 0 0-3-2.7L15 13"/>
@@ -53,7 +53,7 @@ export default function DonationSection() {
 
                 {/* Stat 2 */}
                 <div className="flex flex-col items-center gap-3 text-center px-2">
-                  <div className="text-[#221C84]">
+                  <div className="text-[var(--blue)]">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
                       <polyline points="9 22 9 12 15 12 15 22"/>
@@ -174,3 +174,4 @@ export default function DonationSection() {
     </section>
   );
 }
+

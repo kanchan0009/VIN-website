@@ -174,7 +174,7 @@ const steps = [
     num: "1",
     title: "Apply Online",
     desc: "Begin by completing our easy online application form. Share your interests, background, and reasons for wanting to contribute. We value your passion and look forward to matching you with the right program.",
-    color: "bg-[#221C84]"
+    color: "bg-[var(--blue)]"
   },
   {
     num: "2",
@@ -698,5 +698,6 @@ export default function VolunteerDetailsPage() {
     </main>
   );
 }
+
 
 

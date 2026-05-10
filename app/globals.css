@@ -4,13 +4,11 @@
   --sky: #ebf4ff;
   --sky-mid: #daeeff;
   --red: #e8172c;
-  --blue: #221c84;
+  --blue: #221C84;
   --navy: #0a0e27;
   --text: #1a1a2e;
   --muted: #6b7280;
   --white: #ffffff;
-  --font-lora: "Lora", serif;
-  --font-plus-jakarta-sans: "Plus Jakarta Sans", sans-serif;
 }
 
 *,
@@ -76,4 +74,8 @@ section {
 
 .font-plus-jakarta-sans {
   font-family: var(--font-plus-jakarta-sans), sans-serif;
+}
+
+.font-inter {
+  font-family: var(--font-inter), sans-serif;
 }

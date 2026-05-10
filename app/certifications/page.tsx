@@ -179,7 +179,7 @@ export default function CertificationsPage() {
 
                       {/* Content */}
                       <div className="flex-grow">
-                        <h4 className="text-[#221C84] text-xl font-[600] mb-2 leading-tight min-h-[2.5rem]">
+                        <h4 className="text-[var(--blue)] text-xl font-[600] mb-2 leading-tight min-h-[2.5rem]">
                           {org.name}
                         </h4>
 
@@ -228,7 +228,7 @@ export default function CertificationsPage() {
                       {/* Action */}
                       <Link 
                         href="/certifications/european-commission"
-                        className="mt-10 w-40 mx-auto bg-[#221C84] hover:bg-[#1a1563] text-white py-3 rounded-md font-bold text-sm transition-all shadow-lg active:scale-95 flex items-center justify-center"
+                        className="mt-10 w-40 mx-auto bg-[var(--blue)] hover:bg-[#1a1563] text-white py-3 rounded-md font-bold text-sm transition-all shadow-lg active:scale-95 flex items-center justify-center"
                       >
                         Explore More
                       </Link>
@@ -253,3 +253,4 @@ export default function CertificationsPage() {
     </main>
   );
 }
+

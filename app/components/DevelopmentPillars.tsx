@@ -88,8 +88,8 @@ export default function DevelopmentPillars() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`text-sm lg:text-[16px] transition-all duration-300 font-[800] border-b-2 pb-4 px-4 lg:px-0 ${
                   activeTab === tab.id 
-                  ? "text-[#221C84] border-[#221C84]" 
-                  : "text-gray-400 border-transparent hover:text-[#221C84]"
+                  ? "text-[var(--blue)] border-[var(--blue)]" 
+                  : "text-gray-400 border-transparent hover:text-[var(--blue)]"
                 }`}
               >
                 {tab.label}
@@ -130,3 +130,4 @@ export default function DevelopmentPillars() {
     </section>
   );
 }
+

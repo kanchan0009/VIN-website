@@ -58,7 +58,7 @@ export default function FAQPage() {
           <div className="space-y-3">
             {faqs.map((faq, i) => (
               <div key={i} className="rounded-2xl border overflow-hidden transition-all"
-                style={{ borderColor: openIdx === i ? 'var(--indigo-btn)' : '#e5e7eb' }}>
+                style={{ borderColor: openIdx === i ? 'var(--blue)' : '#e5e7eb' }}>
                 <button
                   onClick={() => setOpenIdx(openIdx === i ? null : i)}
                   className="w-full flex items-center justify-between px-6 py-4 text-left"
@@ -66,7 +66,7 @@ export default function FAQPage() {
                   <span className="text-sm font-semibold text-gray-800">{faq.q}</span>
                   <span className="w-7 h-7 rounded-full flex items-center justify-center text-lg shrink-0 ml-4 transition-transform"
                     style={{
-                      background: openIdx === i ? 'var(--indigo-btn)' : '#f3f4f6',
+                      background: openIdx === i ? 'var(--blue)' : '#f3f4f6',
                       color: openIdx === i ? 'white' : '#6b7280',
                       transform: openIdx === i ? 'rotate(45deg)' : 'rotate(0deg)',
                     }}>
@@ -89,4 +89,5 @@ export default function FAQPage() {
     </main>
   );
 }
+
 

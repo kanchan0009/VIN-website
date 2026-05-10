@@ -169,7 +169,7 @@ export default function CaseStudiesPage() {
 
                   <button
                     className="mt-5 px-5 py-2 rounded-lg text-sm font-semibold text-white transition-all hover:opacity-90"
-                    style={{ background: "var(--indigo-btn)" }}
+                    style={{ background: "var(--blue)" }}
                   >
                     Read Full Report
                   </button>
@@ -184,4 +184,5 @@ export default function CaseStudiesPage() {
     </main>
   );
 }
+
 

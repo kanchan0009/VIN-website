@@ -125,7 +125,7 @@ function BulletList({ items }: { items: string[] }) {
           key={i}
           className="flex items-start gap-3 text-gray-700 text-[14px] lg:text-[15px] leading-relaxed group"
         >
-          <span className="text-[#221C84] mt-1.5 flex-shrink-0 text-[10px] group-hover:scale-125 transition-transform">
+          <span className="text-[var(--blue)] mt-1.5 flex-shrink-0 text-[10px] group-hover:scale-125 transition-transform">
             ●
           </span>
           <span className="font-[600]">{item}</span>
@@ -169,8 +169,8 @@ function Section({ section }: { section: SectionData }) {
               <p className="text-gray-600 text-[15px] lg:text-[16px] leading-relaxed font-[400]">
                 {text}
               </p>
-              <div className="bg-[#F1F6FF] p-6 lg:p-8 rounded-2xl border-l-4 border-[#221C84]">
-                <p className="text-[#221C84] text-[14px] lg:text-[15px] leading-relaxed font-[700] mb-2">
+              <div className="bg-[#F1F6FF] p-6 lg:p-8 rounded-2xl border-l-4 border-[var(--blue)]">
+                <p className="text-[var(--blue)] text-[14px] lg:text-[15px] leading-relaxed font-[700] mb-2">
                   We achieve the goal of {title.toLowerCase()} program by implementing the following holistic projects:
                 </p>
                 <BulletList items={bullets} />
@@ -192,3 +192,4 @@ export default function ProgramSections() {
     </div>
   );
 }
+

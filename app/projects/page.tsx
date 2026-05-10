@@ -42,7 +42,7 @@ export default function DonatePage() {
                 {(['once', 'monthly'] as const).map(f => (
                   <button key={f} onClick={() => setFrequency(f)}
                     className="flex-1 py-3 rounded-xl text-sm font-semibold transition-all capitalize"
-                    style={frequency === f ? { background: 'var(--indigo-btn)', color: 'white' } : { background: '#f3f4f6', color: '#6b7280' }}>
+                    style={frequency === f ? { background: 'var(--blue)', color: 'white' } : { background: '#f3f4f6', color: '#6b7280' }}>
                     Donate {f === 'once' ? 'Once' : 'Monthly'}
                   </button>
                 ))}
@@ -54,8 +54,8 @@ export default function DonatePage() {
                   <button key={a} onClick={() => { setSelected(a); setCustom(''); }}
                     className="py-3 rounded-xl text-sm font-semibold border-2 transition-all"
                     style={{
-                      borderColor: selected === a && !custom ? 'var(--indigo-btn)' : '#e5e7eb',
-                      background: selected === a && !custom ? 'var(--indigo-btn)' : 'white',
+                      borderColor: selected === a && !custom ? 'var(--blue)' : '#e5e7eb',
+                      background: selected === a && !custom ? 'var(--blue)' : 'white',
                       color: selected === a && !custom ? 'white' : 'var(--text)',
                     }}>
                     ${a}
@@ -71,7 +71,7 @@ export default function DonatePage() {
               <div className="grid grid-cols-1 gap-2 mb-8">
                 {projects.map(p => (
                   <label key={p} className="flex items-center gap-3 p-3 rounded-xl cursor-pointer border transition-all"
-                    style={{ borderColor: project === p ? 'var(--indigo-btn)' : '#e5e7eb', background: project === p ? 'var(--sky)' : 'white' }}>
+                    style={{ borderColor: project === p ? 'var(--blue)' : '#e5e7eb', background: project === p ? 'var(--sky)' : 'white' }}>
                     <input type="radio" name="project" value={p} checked={project === p} onChange={() => setProject(p)} className="accent-indigo-600" />
                     <span className="text-sm">{p}</span>
                   </label>
@@ -87,9 +87,9 @@ export default function DonatePage() {
               </div>
 
               <button className="w-full py-4 rounded-xl font-bold text-white text-base transition-all"
-                style={{ background: 'var(--indigo-btn)' }}
+                style={{ background: 'var(--blue)' }}
                 onMouseOver={e => (e.currentTarget.style.background = 'var(--navy)')}
-                onMouseOut={e => (e.currentTarget.style.background = 'var(--indigo-btn)')}>
+                onMouseOut={e => (e.currentTarget.style.background = 'var(--blue)')}>
                 Donate ${custom || selected} {frequency === 'monthly' ? 'Monthly' : 'Now'}
               </button>
               <p className="text-xs text-center text-gray-400 mt-3">🔒 Secure payment. Your data is protected.</p>
@@ -101,7 +101,7 @@ export default function DonatePage() {
               <div className="space-y-4">
                 {impactItems.map(item => (
                   <div key={item.amount} className="flex gap-3 p-4 rounded-xl border border-gray-100 hover:shadow-sm transition-shadow">
-                    <div className="font-bold text-sm shrink-0 w-12 text-center py-1 rounded-lg text-white" style={{ background: 'var(--indigo-btn)' }}>{item.amount}</div>
+                    <div className="font-bold text-sm shrink-0 w-12 text-center py-1 rounded-lg text-white" style={{ background: 'var(--blue)' }}>{item.amount}</div>
                     <p className="text-xs text-gray-600 leading-relaxed">{item.impact}</p>
                   </div>
                 ))}
@@ -120,4 +120,5 @@ export default function DonatePage() {
     </main>
   );
 }
+
 

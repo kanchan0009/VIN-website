@@ -38,7 +38,7 @@ export default function ChildDevelopmentPage() {
               <div className="relative rounded-2xl overflow-hidden h-72 bg-red-600 flex items-center justify-center cursor-pointer group">
                 <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80" alt="" className="absolute inset-0 w-full h-full object-cover opacity-50" />
                 <div className="relative z-10 w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
-                  <Play size={22} fill="var(--indigo-btn)" stroke="var(--indigo-btn)" className="ml-1" />
+                  <Play size={22} fill="var(--blue)" stroke="var(--blue)" className="ml-1" />
                 </div>
               </div>
             </div>
@@ -51,7 +51,7 @@ export default function ChildDevelopmentPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {['Ensure access to quality education for all children', 'Support children\'s health and nutritional needs', 'Create safe learning environments', 'Raise awareness of children\'s rights'].map((g, i) => (
               <div key={i} className="bg-white rounded-xl p-5 border border-gray-100 flex gap-4">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-bold shrink-0" style={{ background: 'var(--indigo-btn)' }}>{i + 1}</div>
+                <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-bold shrink-0" style={{ background: 'var(--blue)' }}>{i + 1}</div>
                 <p className="text-sm text-gray-600 leading-relaxed">{g}</p>
               </div>
             ))}
@@ -63,4 +63,5 @@ export default function ChildDevelopmentPage() {
     </main>
   );
 }
+
 

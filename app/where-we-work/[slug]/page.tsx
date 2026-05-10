@@ -254,7 +254,7 @@ export default function LocationDetail() {
                 <div className="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center mb-4">
                   <PenTool
                     size={20}
-                    className="text-[#221C84] rotate-[-45deg]"
+                    className="text-[var(--blue)] rotate-[-45deg]"
                   />
                 </div>
                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">
@@ -299,21 +299,21 @@ export default function LocationDetail() {
                 {location.programs.map((prog, idx) => (
                   <div
                     key={idx}
-                    className="bg-white border border-gray-200 rounded-2xl p-6 flex items-center justify-between hover:shadow-lg hover:border-[#221C84]/10 transition-all cursor-pointer group"
+                    className="bg-white border border-gray-200 rounded-2xl p-6 flex items-center justify-between hover:shadow-lg hover:border-[var(--blue)]/10 transition-all cursor-pointer group"
                   >
                     <div className="flex items-center gap-6">
                       <div
                         className={`w-14 h-14 ${prog.color} rounded-xl flex-shrink-0`}
                       />
                       <div>
-                        <h4 className="font-bold text-[#1a1a1a] text-xm mb-0.5 group-hover:text-[#221C84] transition-colors">
+                        <h4 className="font-bold text-[#1a1a1a] text-xm mb-0.5 group-hover:text-[var(--blue)] transition-colors">
                           {prog.name}
                         </h4>
                         <p className="text-gray-400 text-sm">{prog.desc}</p>
                       </div>
                     </div>
                     <ChevronRight
-                      className="text-gray-500 group-hover:text-[#221C84] transition-all"
+                      className="text-gray-500 group-hover:text-[var(--blue)] transition-all"
                       size={20}
                     />
                   </div>
@@ -324,7 +324,7 @@ export default function LocationDetail() {
             {/* Volunteer Guidelines Section */}
             <div className="bg-[#E8E7F3] rounded-[1.5rem] p-12 border border-gray-100">
               <div className="flex items-center gap-3 mb-10">
-                <ClipboardList className="text-[#221C84]" size={24} />
+                <ClipboardList className="text-[var(--blue)]" size={24} />
                 <h3 className="text-[19px] font-[800] text-[#0F0D40]">
                   Volunteer Guidelines at This Site
                 </h3>
@@ -338,7 +338,7 @@ export default function LocationDetail() {
                   "VIN maintains a culture of continuous feedback — work constructively, cooperatively, and uphold VIN's reputation at all times.",
                 ].map((text, idx) => (
                   <div key={idx} className="flex gap-6 items-start">
-                    <div className="w-8 h-8 bg-[#221C84] rounded-lg flex items-center justify-center text-white font-bold text-sm shrink-0 mt-0.5 shadow-lg">
+                    <div className="w-8 h-8 bg-[var(--blue)] rounded-lg flex items-center justify-center text-white font-bold text-sm shrink-0 mt-0.5 shadow-lg">
                       {idx + 1}
                     </div>
                     <p className="text-gray-500 text-[15px] leading-relaxed">
@@ -353,7 +353,7 @@ export default function LocationDetail() {
           {/* Right Column (Sidebar) */}
           <div className="lg:pt-2 space-y-8">
             {/* Apply Now Card */}
-            <div className="bg-[#221C84] rounded-[2rem] p-10 flex flex-col items-start text-left border border-white/10">
+            <div className="bg-[var(--blue)] rounded-[2rem] p-10 flex flex-col items-start text-left border border-white/10">
               <h3 className="text-2xl font-bold text-white mb-6">
                 Volunteer at This Site
               </h3>
@@ -446,7 +446,7 @@ export default function LocationDetail() {
             </div>
 
             {/* Testimonial Card */}
-            <div className="bg-[#221C84] rounded-[1.5rem] p-10  relative overflow-hidden">
+            <div className="bg-[var(--blue)] rounded-[1.5rem] p-10  relative overflow-hidden">
               <span className="text-4xl text-[#f39c12] absolute top-8 left-8">
                 &quot;
               </span>
@@ -505,7 +505,7 @@ export default function LocationDetail() {
                       <h4 className="text-white text-[16px] lg:text-[24px] font-bold mb-8 leading-tight ">
                         {album.title}
                       </h4>
-                      <button className="bg-[#221C84] text-white px-10 py-4 rounded-xl font-bold text-sm hover:bg-white hover:text-[#221C84] transition-all shadow-lg active:scale-95">
+                      <button className="bg-[var(--blue)] text-white px-10 py-4 rounded-xl font-bold text-sm hover:bg-white hover:text-[var(--blue)] transition-all shadow-lg active:scale-95">
                         Explore Album
                       </button>
                     </div>

@@ -128,7 +128,7 @@ export default function OurStoryPage() {
 
           {/* Progress Vertical Line (Blue) */}
           <div 
-            className="absolute left-1/2 top-0 w-[2px] bg-[#221C84] transform -translate-x-1/2 hidden lg:block transition-all duration-700 ease-out"
+            className="absolute left-1/2 top-0 w-[2px] bg-[var(--blue)] transform -translate-x-1/2 hidden lg:block transition-all duration-700 ease-out"
             style={{ 
               height: `${(activeIndex / (milestones.length - 1)) * 100}%`,
               maxHeight: '100%' 
@@ -148,7 +148,7 @@ export default function OurStoryPage() {
                 {/* Timeline Dot */}
                 <div 
                   className={`absolute left-1/2 top-10 w-5 h-5 rounded-full transform -translate-x-1/2 hidden lg:block border-4 border-white shadow-md z-10 transition-colors duration-500 ${
-                    activeIndex >= i ? "bg-[#221C84]" : "bg-gray-300"
+                    activeIndex >= i ? "bg-[var(--blue)]" : "bg-gray-300"
                   }`} 
                 />
 
@@ -171,7 +171,7 @@ export default function OurStoryPage() {
                 {/* Text Side */}
                 <div className={`flex-1 w-full lg:w-1/2 text-left`}>
                   <div className="max-w-xl">
-                    <span className="text-[#221C84] font-bold text-xl mb-2 block">
+                    <span className="text-[var(--blue)] font-bold text-xl mb-2 block">
                       {m.year}
                     </span>
                     <h3 className="text-3xl font-bold text-gray-900 mb-6 leading-tight">
@@ -180,7 +180,7 @@ export default function OurStoryPage() {
                     <div className="space-y-4 text-gray-600 text-[15px] leading-relaxed">
                       {m.desc.split('\n').map((para, idx) => (
                         <p key={idx} dangerouslySetInnerHTML={{ 
-                          __html: para.replace(/(\d+ AM|\d+ PM|\d+-kilometre vertical climb|ten km uphill|SLC|on the second attempt)/g, '<span class="text-[#221C84] font-bold">$1</span>') 
+                          __html: para.replace(/(\d+ AM|\d+ PM|\d+-kilometre vertical climb|ten km uphill|SLC|on the second attempt)/g, '<span class="text-[var(--blue)] font-bold">$1</span>') 
                         }} />
                       ))}
                     </div>
@@ -312,4 +312,5 @@ export default function OurStoryPage() {
     </main>
   );
 }
+
 

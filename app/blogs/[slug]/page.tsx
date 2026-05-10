@@ -93,10 +93,10 @@ export default function BlogDetailPage({
                       className="w-20 h-16 rounded object-cover shrink-0"
                     />
                     <div>
-                      <p className="text-[13px] font-bold text-[#1a1a1a] leading-tight group-hover:text-[#221C84] transition-colors mb-1">
+                      <p className="text-[13px] font-bold text-[#1a1a1a] leading-tight group-hover:text-[var(--blue)] transition-colors mb-1">
                         {post.title}
                       </p>
-                      <p className="text-[11px] font-bold text-[#221C84] uppercase tracking-wider">
+                      <p className="text-[11px] font-bold text-[var(--blue)] uppercase tracking-wider">
                         {post.date}
                       </p>
                     </div>
@@ -107,33 +107,33 @@ export default function BlogDetailPage({
 
             {/* Contact Us Sidebar Form */}
             <div>
-              <h3 className="font-bold text-2xl mb-8 text-[#221C84]">
+              <h3 className="font-bold text-2xl mb-8 text-[var(--blue)]">
                 Contact Us
               </h3>
               <div className="space-y-4">
                 <input
                   type="text"
                   placeholder="Full Name"
-                  className="w-full bg-[#F5F7F9] border-none rounded-md px-4 py-3 text-sm outline-none focus:ring-1 focus:ring-[#221C84]/20"
+                  className="w-full bg-[#F5F7F9] border-none rounded-md px-4 py-3 text-sm outline-none focus:ring-1 focus:ring-[var(--blue)]/20"
                 />
                 <input
                   type="text"
                   placeholder="Address"
-                  className="w-full bg-[#F5F7F9] border-none rounded-md px-4 py-3 text-sm outline-none focus:ring-1 focus:ring-[#221C84]/20"
+                  className="w-full bg-[#F5F7F9] border-none rounded-md px-4 py-3 text-sm outline-none focus:ring-1 focus:ring-[var(--blue)]/20"
                 />
                 <input
                   type="text"
                   placeholder="Phone Number"
-                  className="w-full bg-[#F5F7F9] border-none rounded-md px-4 py-3 text-sm outline-none focus:ring-1 focus:ring-[#221C84]/20"
+                  className="w-full bg-[#F5F7F9] border-none rounded-md px-4 py-3 text-sm outline-none focus:ring-1 focus:ring-[var(--blue)]/20"
                 />
                 <textarea
                   placeholder="Message"
                   rows={4}
-                  className="w-full bg-[#F5F7F9] border-none rounded-md px-4 py-3 text-sm outline-none focus:ring-1 focus:ring-[#221C84]/20 resize-none"
+                  className="w-full bg-[#F5F7F9] border-none rounded-md px-4 py-3 text-sm outline-none focus:ring-1 focus:ring-[var(--blue)]/20 resize-none"
                 />
                 <button
                   className="w-fit h-[40px] flex items-center justify-center gap-2 px-6 py-3  text-sm  text-white transition-opacity hover:opacity-90"
-                  style={{ background: "#221C84" }}
+                  style={{ background: "var(--blue)" }}
                 >
                   <Send size={14} className="rotate-[-20deg]" />
                   <span>Send Message</span>

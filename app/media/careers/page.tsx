@@ -111,7 +111,7 @@ export default function CareersPage() {
                   onClick={() => setExpandedId(expandedId === job.id ? null : job.id)}
                   className={`w-full flex items-center justify-between px-8 py-3.5 transition-all duration-300 ${
                     expandedId === job.id 
-                      ? "bg-[#221C84] text-white" 
+                      ? "bg-[var(--blue)] text-white" 
                       : "bg-white text-[#1D1E20] hover:bg-gray-50"
                   }`}
                 >
@@ -153,7 +153,7 @@ export default function CareersPage() {
                     <div className="space-y-10">
                       {/* Job Description */}
                       <div className="space-y-2">
-                        <h4 className="text-[18px] font-[700] text-[#221C84]">Job Description</h4>
+                        <h4 className="text-[18px] font-[700] text-[var(--blue)]">Job Description</h4>
                         <ul className="space-y-2 pl-2">
                           {job.description.map((item, idx) => (
                             <li key={idx} className="flex items-start gap-3 text-[15px] text-[#4A4A4A] font-[500]">
@@ -166,7 +166,7 @@ export default function CareersPage() {
 
                       {/* Job Requirement */}
                       <div className="space-y-2">
-                        <h4 className="text-[18px] font-[700] text-[#221C84]">Job Requirement</h4>
+                        <h4 className="text-[18px] font-[700] text-[var(--blue)]">Job Requirement</h4>
                         <ul className="space-y-2 pl-2">
                           {job.requirements.map((item, idx) => (
                             <li key={idx} className="flex items-start gap-3 text-[15px] text-[#4A4A4A] font-[500]">
@@ -179,7 +179,7 @@ export default function CareersPage() {
 
                       {/* Qualifications & Skills */}
                       <div className="space-y-2">
-                        <h4 className="text-[18px] font-[700] text-[#221C84]">Qualifications & Skills</h4>
+                        <h4 className="text-[18px] font-[700] text-[var(--blue)]">Qualifications & Skills</h4>
                         <ul className="space-y-2 pl-2">
                           {job.skills.map((item, idx) => (
                             <li key={idx} className="flex items-start gap-3 text-[15px] text-[#4A4A4A] font-[500]">
@@ -203,4 +203,5 @@ export default function CareersPage() {
     </main>
   );
 }
+
 

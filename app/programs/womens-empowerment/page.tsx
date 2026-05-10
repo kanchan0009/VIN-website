@@ -84,7 +84,7 @@ export default function WomensEmpowermentPage() {
             <p className="text-gray-600 text-[14px] lg:text-[15px] leading-relaxed font-[400] mb-2">
               VIN aims to empower women socially and economically through education, life skills and income generation opportunities. By 2030, VIN aims to benefit at least 80% of the total women in the marginalized communities of the target areas (Kavresthali, Nuwakot and Okhaldhunga).
             </p>
-            <Link href="/programs/womens-empowerment/overview" className="text-[#221C84] text-[14px] font-[600] hover:underline">
+            <Link href="/programs/womens-empowerment/overview" className="text-[var(--blue)] text-[14px] font-[600] hover:underline">
               Read More..
             </Link>
           </div>
@@ -115,7 +115,7 @@ export default function WomensEmpowermentPage() {
                 {[1, 2, 3, 4].map((item) => (
                   <div key={item} className="h-[325px] p-10 rounded-[15px] border border-gray-50 shadow-sm hover:shadow-md transition-all duration-300 bg-white">
                     <div className="w-12 h-12 rounded-lg bg-[#E6F4FE] flex items-center justify-center mb-4">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#221C84" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
                       </svg>
                     </div>
@@ -167,7 +167,7 @@ export default function WomensEmpowermentPage() {
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-32">
             {/* Left Stat Card */}
             <div className="w-full lg:w-[400px] h-[350px] bg-[#BFD9FF] rounded-[15px] flex flex-col items-center justify-center p-12 text-center shadow-sm">
-              <div className="text-7xl lg:text-7xl font-[700] text-[#221C84] mb-8">
+              <div className="text-7xl lg:text-7xl font-[700] text-[var(--blue)] mb-8">
                 58 %
               </div>
               <p className="text-xl lg:text-2xl font-[600] text-[#1a1a1a] leading-snug">
@@ -182,7 +182,7 @@ export default function WomensEmpowermentPage() {
                   key={i} 
                   className={`flex gap-8 py-4 items-start ${i !== 4 ? 'border-b border-gray-300' : ''}`}
                 >
-                  <div className="w-4 h-4 rounded-full bg-[#221C84] mt-2 shrink-0" />
+                  <div className="w-4 h-4 rounded-full bg-[var(--blue)] mt-2 shrink-0" />
                   <p className="text-gray-700 text-[15px] lg:text-[16px] leading-relaxed">
                     We empower women both socially and economically by providing them access to education, life skills and income generation opportunities.
                   </p>
@@ -200,7 +200,7 @@ export default function WomensEmpowermentPage() {
           <div className="relative  overflow-hidden h-[400px] bg-red-600 flex items-center justify-center cursor-pointer group">
             <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80" alt="" className="absolute inset-0 w-full h-full object-cover opacity-50" />
             <div className="relative z-10 w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
-              <Play size={22} fill="var(--indigo-btn)" stroke="var(--indigo-btn)" className="ml-1" />
+              <Play size={22} fill="var(--blue)" stroke="var(--blue)" className="ml-1" />
             </div>
           </div>
         </div>
@@ -270,7 +270,7 @@ export default function WomensEmpowermentPage() {
                 key={idx} 
                 className="flex items-center gap-8 px-8 py-5 lg:px-10 lg:py-6 rounded-[20px] border border-gray-100 shadow-sm hover:shadow-md transition-shadow bg-white"
               >
-                <div className="text-4xl lg:text-5xl font-[800] text-[#221C84] shrink-0 w-20">
+                <div className="text-4xl lg:text-5xl font-[800] text-[var(--blue)] shrink-0 w-20">
                   {goal.num}
                 </div>
                 <div>
@@ -300,7 +300,7 @@ export default function WomensEmpowermentPage() {
                 key={idx} 
                 className="bg-[#BFD9FF] p-8 rounded-[20px] text-center flex flex-col items-center justify-center min-h-[180px] shadow-sm"
               >
-                <div className="text-5xl font-[800] text-[#221C84] mb-2">
+                <div className="text-5xl font-[800] text-[var(--blue)] mb-2">
                   {stat.value}
                 </div>
                 <p className="text-gray-700 text-[14px] lg:text-[15px] font-[500] leading-snug max-w-[200px]">
@@ -367,14 +367,14 @@ export default function WomensEmpowermentPage() {
                   className="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-700"
                 />
                 {/* Overlay for numbering */}
-                <div className="absolute top-4 left-4 w-8 h-8 rounded-full bg-white flex items-center justify-center text-[#221C84] font-bold text-xs shadow-sm">
+                <div className="absolute top-4 left-4 w-8 h-8 rounded-full bg-white flex items-center justify-center text-[var(--blue)] font-bold text-xs shadow-sm">
                   {item.id}
                 </div>
                 {/* Play Button for Video */}
                 {item.type === 'video' && (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-xl group-hover/item:scale-110 transition-transform">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="#221C84" stroke="#221C84" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--blue)" stroke="var(--blue)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <polygon points="5 3 19 12 5 21 5 3"/>
                       </svg>
                     </div>
@@ -421,7 +421,7 @@ export default function WomensEmpowermentPage() {
                       alt="Project" 
                       className="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute top-4 right-4 bg-[#221C84] text-white text-[10px] uppercase font-bold px-4 py-1.5 rounded-sm">
+                    <div className="absolute top-4 right-4 bg-[var(--blue)] text-white text-[10px] uppercase font-bold px-4 py-1.5 rounded-sm">
                       Women Empowerment
                     </div>
                   </div>
@@ -606,7 +606,7 @@ export default function WomensEmpowermentPage() {
                 </div>
                 {/* Bottom: Content */}
                 <div className="p-8 flex flex-col items-center text-center flex-1">
-                  <h3 className="text-[#1a1a1a] font-[700] text-lg mb-4 leading-tight group-hover:text-[#221C84] transition-colors">{p.title}</h3>
+                  <h3 className="text-[#1a1a1a] font-[700] text-lg mb-4 leading-tight group-hover:text-[var(--blue)] transition-colors">{p.title}</h3>
                   <p className="text-gray-500 text-[13px] leading-relaxed">
                     {p.desc}
                   </p>
@@ -628,4 +628,5 @@ export default function WomensEmpowermentPage() {
     </main>
   );
 }
+
 

@@ -203,13 +203,13 @@ export default async function CertificationDetailPage(props: {
             <div className="space-y-6">
               {/* Stat 1 */}
               <div className="bg-[#DFF0FF] h-[255px] p-8 flex items-center gap-6 border border-blue-50/50">
-                <div className="w-16 h-16 rounded-full border-2 border-dashed border-[#221C84] flex items-center justify-center shrink-0">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#221C84" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <div className="w-16 h-16 rounded-full border-2 border-dashed border-[var(--blue)] flex items-center justify-center shrink-0">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-[#221C84] mb-2">19+ Years of Service</h3>
+                  <h3 className="text-2xl font-bold text-[var(--blue)] mb-2">19+ Years of Service</h3>
                   <p className="text-gray-900 text-[12px] leading-relaxed">
                     For Over 19 Years, VIN Has Been Actively Working To Uplift Marginalized Communities In Nepal Through 
                     Volunteer-Driven Programs And Sustainable Development Initiatives.
@@ -219,11 +219,11 @@ export default async function CertificationDetailPage(props: {
 
               {/* Stat 2 */}
               <div className="bg-[#DFF0FF] h-[255px] p-8 flex items-center gap-6 border border-blue-50/50">
-                <div className="w-16 h-16 bg-[#221C84] rounded-full flex items-center justify-center shrink-0">
+                <div className="w-16 h-16 bg-[var(--blue)] rounded-full flex items-center justify-center shrink-0">
                   <Users className="text-white" size={28} />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-[#221C84] mb-2">20,000+ Lives Impacted</h3>
+                  <h3 className="text-2xl font-bold text-[var(--blue)] mb-2">20,000+ Lives Impacted</h3>
                   <p className="text-gray-900 text-[12px] leading-relaxed">
                     Thousands Of Individuals And Families Have Directly Benefited From Our Programs In Education, Healthcare, 
                     Women&apos;s Empowerment, And Community Development.

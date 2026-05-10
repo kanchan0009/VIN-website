@@ -91,7 +91,7 @@ export default function WhereWeWork() {
                 
                 {/* Item 1 */}
                 <div className="flex gap-5 pb-10">
-                  <div className="w-12 h-12 bg-[#221C84] rounded-xl flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 bg-[var(--blue)] rounded-xl flex items-center justify-center shrink-0">
                     <Briefcase className="text-white" size={24} />
                   </div>
                   <div>
@@ -104,7 +104,7 @@ export default function WhereWeWork() {
 
                 {/* Item 2 */}
                 <div className="flex gap-5 py-10">
-                  <div className="w-12 h-12 bg-[#221C84] rounded-xl flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 bg-[var(--blue)] rounded-xl flex items-center justify-center shrink-0">
                     <Home className="text-white" size={24} />
                   </div>
                   <div>
@@ -117,7 +117,7 @@ export default function WhereWeWork() {
 
                 {/* Item 3 */}
                 <div className="flex gap-5 pt-10">
-                  <div className="w-12 h-12 bg-[#221C84] rounded-xl flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 bg-[var(--blue)] rounded-xl flex items-center justify-center shrink-0">
                     <Calendar className="text-white" size={24} />
                   </div>
                   <div>
@@ -138,7 +138,7 @@ export default function WhereWeWork() {
       <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
-            <h2 className="text-[36px] font-[700] text-[#221C84]">Our Working Sites</h2>
+            <h2 className="text-[36px] font-[700] text-[var(--blue)]">Our Working Sites</h2>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -152,7 +152,7 @@ export default function WhereWeWork() {
                     className="w-full h-full object-cover"
                   />
                   {/* Top Badge */}
-                  <div className="absolute top-4 left-4 bg-[#221C84] text-white text-[10px] font-bold py-1.5 px-3 rounded-full flex items-center gap-1.5 tracking-wider">
+                  <div className="absolute top-4 left-4 bg-[var(--blue)] text-white text-[10px] font-bold py-1.5 px-3 rounded-full flex items-center gap-1.5 tracking-wider">
                     <Star size={10} fill="white" />
                     {loc.badge}
                   </div>
@@ -179,7 +179,7 @@ export default function WhereWeWork() {
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 mb-3">
                     {loc.tags.map(tag => (
-                      <span key={tag} className="bg-[#f1f5f9] text-[#221C84] text-[10px] font-bold px-3 py-1.5 rounded-full whitespace-nowrap">
+                      <span key={tag} className="bg-[#f1f5f9] text-[var(--blue)] text-[10px] font-bold px-3 py-1.5 rounded-full whitespace-nowrap">
                         {tag}
                       </span>
                     ))}
@@ -193,7 +193,7 @@ export default function WhereWeWork() {
                     </div>
                     <Link 
                       href={`/where-we-work/${loc.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '').replace(/^-|-$/g, '')}`}
-                      className="bg-[#f1f5f9] text-[#221C84] text-[11px] font-bold py-2 px-5 rounded-lg hover:bg-[#221C84] hover:text-white transition-all flex items-center gap-1"
+                      className="bg-[#f1f5f9] text-[var(--blue)] text-[11px] font-bold py-2 px-5 rounded-lg hover:bg-[var(--blue)] hover:text-white transition-all flex items-center gap-1"
                     >
                       Explore →
                     </Link>
@@ -210,3 +210,4 @@ export default function WhereWeWork() {
     </main>
   );
 }
+

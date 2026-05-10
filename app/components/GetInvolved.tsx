@@ -18,7 +18,7 @@ export default function GetInvolved() {
           <Link
             href="/volunteer"
             className="px-6 py-3 rounded-lg text-sm font-semibold text-white transition-all hover:opacity-90"
-            style={{ background: "var(--indigo-btn)" }}
+            style={{ background: "var(--blue)" }}
           >
             Volunteer
           </Link>
@@ -37,3 +37,4 @@ export default function GetInvolved() {
     </section>
   );
 }
+

@@ -81,7 +81,7 @@ export default function ProgramsPage() {
           <p className="text-gray-500 text-sm max-w-3xl mx-auto leading-relaxed mb-8">
             Volunteers Initiative Nepal (VIN), established in 2002 by a diverse group drawn from development workers, educationalists, social activists and other professionals. VIN is officially registered under the Society Act with the District Administration Office, Kathmandu (Reg. No. 140/062/63), and affiliated with the Social Welfare Council (SWC) (Affiliation No. 20993). VIN focuses on community-based projects involving local volunteers backed-up by international volunteers in Nepal.
           </p>
-          <Link href="/about" className="inline-flex items-center gap-2 px-7 py-3 rounded-xl font-semibold text-white text-sm" style={{ background: 'var(--indigo-btn)' }}>
+          <Link href="/about" className="inline-flex items-center gap-2 px-7 py-3 rounded-xl font-semibold text-white text-sm" style={{ background: 'var(--blue)' }}>
             Read More <ArrowRight size={15} />
           </Link>
         </div>
@@ -104,7 +104,7 @@ export default function ProgramsPage() {
                 <div className="p-6">
                   <h3 className="text-lg font-bold mb-2" style={{ }}>{p.title}</h3>
                   <p className="text-sm text-gray-500 leading-relaxed mb-4">{p.desc}</p>
-                  <Link href={p.href} className="text-sm font-semibold flex items-center gap-1" style={{ color: 'var(--indigo-btn)' }}>
+                  <Link href={p.href} className="text-sm font-semibold flex items-center gap-1" style={{ color: 'var(--blue)' }}>
                     View Program <ArrowRight size={13} />
                   </Link>
                 </div>
@@ -139,4 +139,5 @@ export default function ProgramsPage() {
     </main>
   );
 }
+
 

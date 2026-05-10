@@ -131,7 +131,7 @@ export default function AboutPage() {
                   />
                 </div>
                 {/* Title Bar Section */}
-                <div className="bg-[#221C84] py-3 px-4 text-center">
+                <div className="bg-[var(--blue)] py-3 px-4 text-center">
                   <span className="text-white text-[15px] font-medium tracking-wide">
                     {p.title}
                   </span>
@@ -201,7 +201,7 @@ export default function AboutPage() {
                 <Link
                   href="/volunteer"
                   className="inline-flex items-center gap-2 px-6 py-3  font-semibold text-white text-sm hover:scale-105 transition-transform"
-                  style={{ background: "var(--blue, #221c84)" }}
+                  style={{ background: "var(--blue, var(--blue))" }}
                 >
                   Volunteer in Nepal <ArrowRight size={15} />
                 </Link>
@@ -212,7 +212,7 @@ export default function AboutPage() {
       </section>
 
       {/* Most Trusted */}
-      <section className="py-16" style={{ background: "var(--blue, #221c84)" }}>
+      <section className="py-16" style={{ background: "var(--blue, var(--blue))" }}>
         <div className="max-w-7xl mx-auto px-4 md:px-12 text-center">
           <h2
             className="text-3xl font-bold text-white mb-3"
@@ -402,7 +402,7 @@ export default function AboutPage() {
       </section>
 
       {/* Financial Transparency */}
-      <section className="py-16 mb-30" style={{ background: "var(--blue, #221c84)" }}>
+      <section className="py-16 mb-30" style={{ background: "var(--blue, var(--blue))" }}>
         <div className="max-w-7xl mx-auto px-4 md:px-12 flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1">
             <h2
@@ -435,4 +435,5 @@ export default function AboutPage() {
     </main>
   );
 }
+
 

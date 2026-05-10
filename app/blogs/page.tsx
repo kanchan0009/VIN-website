@@ -150,7 +150,7 @@ export default function BlogsPage() {
                 <button 
                   onClick={() => paginate(Math.max(1, currentPage - 1))}
                   disabled={currentPage === 1}
-                  className={`text-gray-600 transition-colors ${currentPage === 1 ? 'opacity-30 cursor-not-allowed' : 'hover:text-black focus:text-[#221C84]'}`}
+                  className={`text-gray-600 transition-colors ${currentPage === 1 ? 'opacity-30 cursor-not-allowed' : 'hover:text-black focus:text-[var(--blue)]'}`}
                 >
                   ←
                 </button>
@@ -161,8 +161,8 @@ export default function BlogsPage() {
                       onClick={() => paginate(n)}
                       className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-medium transition-all outline-none ${
                         n === currentPage 
-                        ? "bg-[#221C84] text-white shadow-lg" 
-                        : "border border-gray-300 text-gray-600 hover:bg-[#221C84] hover:text-white hover:border-[#221C84] focus:bg-[#221C84] focus:text-white focus:border-[#221C84]"
+                        ? "bg-[var(--blue)] text-white shadow-lg" 
+                        : "border border-gray-300 text-gray-600 hover:bg-[var(--blue)] hover:text-white hover:border-[var(--blue)] focus:bg-[var(--blue)] focus:text-white focus:border-[var(--blue)]"
                       }`}
                     >
                       {n}
@@ -172,7 +172,7 @@ export default function BlogsPage() {
                 <button 
                   onClick={() => paginate(Math.min(totalPages, currentPage + 1))}
                   disabled={currentPage === totalPages}
-                  className={`text-gray-600 transition-colors ${currentPage === totalPages ? 'opacity-30 cursor-not-allowed' : 'hover:text-black focus:text-[#221C84]'}`}
+                  className={`text-gray-600 transition-colors ${currentPage === totalPages ? 'opacity-30 cursor-not-allowed' : 'hover:text-black focus:text-[var(--blue)]'}`}
                 >
                   →
                 </button>
@@ -203,3 +203,4 @@ export default function BlogsPage() {
     </main>
   );
 }
+

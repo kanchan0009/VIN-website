@@ -38,7 +38,7 @@ export default function CTABanner() {
   return (
     <>
       {/* CTA SECTION */}
-      <section className="relative overflow-hidden py-14 bg-gradient-to-r from-[#221C84] to-[#CFCCFF]">
+      <section className="relative overflow-hidden py-14 bg-gradient-to-r from-[var(--blue)] to-[#CFCCFF]">
         {/* 🔥 S-SHAPE VECTOR */}
         <div className="absolute top-[-40px] right-[-40px] rotate-[5.9deg] opacity-40 pointer-events-none">
           <svg
@@ -82,7 +82,7 @@ export default function CTABanner() {
             <div className="flex flex-wrap justify-center md:justify-start gap-3">
               <Link
                 href="/get-involved"
-                className="px-5 py-2 text-sm font-[700] bg-white text-[#221C84] rounded-md hover:bg-gray-100 transition"
+                className="px-5 py-2 text-sm font-[700] bg-white text-[var(--blue)] rounded-md hover:bg-gray-100 transition"
               >
                 Get Involved With Us
               </Link>
@@ -179,3 +179,4 @@ export default function CTABanner() {
     </>
   );
 }
+

@@ -107,7 +107,7 @@ const topics = [
 
 export default function ArticlesPage() {
   return (
-    <main className="bg-[#fcfcfc] min-h-screen">
+    <main className="bg-[#fcfcfc] min-h-screen font-inter">
       {/* Hero Header */}
       <section className="relative h-[670px] flex items-end overflow-hidden">
         <img
@@ -131,9 +131,9 @@ export default function ArticlesPage() {
           <div className="lg:w-3/4 space-y-12">
             
             {/* Featured Article Card */}
-            <div className="bg-white rounded-[30px] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex flex-col md:flex-row">
+            <div className="bg-white rounded-[20px] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex flex-col md:flex-row">
               <div className="md:w-1/2 p-6 lg:p-8 flex flex-col justify-center">
-                <span className="text-[10px] uppercase font-[700] tracking-widest text-[#221C84] mb-3">Featured Article</span>
+                <span className="text-[10px] uppercase font-[700] tracking-widest text-[var(--blue)] mb-3">Featured Article</span>
                 <h2 className="text-2xl lg:text-3xl font-[700] text-[#1D1E20] mb-4 leading-tight">
                   Permaculture Design: A Pathway to Regenerative Communities
                 </h2>
@@ -156,7 +156,7 @@ export default function ArticlesPage() {
                 </div>
                 <Link 
                   href="/articles/featured" 
-                  className="inline-flex items-center justify-center gap-2 bg-[#221C84] text-white px-6 py-2.5 rounded-lg font-[600] text-xs hover:bg-[#15196d] transition-all w-fit"
+                  className="inline-flex items-center justify-center gap-2 bg-[var(--blue)] text-white px-6 py-3 rounded-lg font-[600] text-xs hover:bg-[#15196d] transition-all w-fit"
                 >
                   Read Article →
                 </Link>
@@ -172,8 +172,8 @@ export default function ArticlesPage() {
 
             {/* Latest Articles Header */}
             <div className="flex items-center justify-between">
-              <h2 className="text-2xl lg:text-3xl font-[700] text-[#221C84]">Latest Articles</h2>
-              <Link href="/articles/all" className="text-[#221C84] font-[700] text-sm flex items-center gap-2 hover:translate-x-1 transition-transform">
+              <h2 className="text-2xl lg:text-3xl font-[700] text-[var(--blue)]">Latest Articles</h2>
+              <Link href="/articles/all" className="text-[var(--blue)] font-[700] text-sm flex items-center gap-2 hover:translate-x-1 transition-transform">
                 View all articles →
               </Link>
             </div>
@@ -193,7 +193,7 @@ export default function ArticlesPage() {
                     <span className={`text-[9px] uppercase font-[700] tracking-wider mb-2 ${article.categoryColor}`}>
                       {article.category}
                     </span>
-                    <h3 className="text-base font-[700] text-[#1D1E20] mb-2 leading-snug group-hover:text-[#221C84] transition-colors">
+                    <h3 className="text-base font-[700] text-[#1D1E20] mb-2 leading-snug group-hover:text-[var(--blue)] transition-colors">
                       {article.title}
                     </h3>
                     <p className="text-gray-500 text-[11px] leading-relaxed mb-4 line-clamp-2">
@@ -210,7 +210,7 @@ export default function ArticlesPage() {
 
             {/* Load More */}
             <div className="text-center pt-8">
-              <button className="px-10 py-3 rounded-xl border border-[#221C84] text-[#221C84] font-[700] text-sm hover:bg-[#221C84] hover:text-white transition-all active:scale-95">
+              <button className="px-10 py-3 rounded-xl border border-[var(--blue)] text-[var(--blue)] font-[700] text-sm hover:bg-[var(--blue)] hover:text-white transition-all active:scale-95">
                 Load More Articles →
               </button>
             </div>
@@ -227,7 +227,7 @@ export default function ArticlesPage() {
                       {topic.icon}
                     </div>
                     <div>
-                      <h4 className="text-sm font-[700] text-[#1D1E20] group-hover:text-[#221C84] transition-colors">{topic.name}</h4>
+                      <h4 className="text-sm font-[700] text-[#1D1E20] group-hover:text-[var(--blue)] transition-colors">{topic.name}</h4>
                       <p className="text-[10px] text-gray-400">{topic.desc}</p>
                     </div>
                   </div>
@@ -253,4 +253,5 @@ export default function ArticlesPage() {
     </main>
   );
 }
+
 

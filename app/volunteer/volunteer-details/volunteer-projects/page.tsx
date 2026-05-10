@@ -13,7 +13,7 @@ import CTABanner from "../../../components/CTABanner";
 
 export default function VolunteerProjectsPage() {
   return (
-    <main className="bg-white min-h-screen">
+    <main className="bg-white min-h-screen font-plus-jakarta-sans">
       {/* Hero Section */}
       <section className="relative h-[670px] flex items-end bg-[#1a237e] overflow-hidden">
         <div className="absolute inset-0">
@@ -43,7 +43,7 @@ export default function VolunteerProjectsPage() {
             {/* Right Card */}
             <div className="lg:col-span-5 pt-24 pl-45">
               <div className="bg-white rounded-t-[20px] p-8 shadow-2xl">
-                <h2 className="text-[#0D0A35] text-[20px] font-[900] mb-2">Ready to apply?</h2>
+                <h2   className="font-lora text-[#0D0A35] text-[20px] font-[700] mb-2">Ready to apply?</h2>
                 <p className="text-gray-500 text-[12px] mb-6">Secure your placement — spots fill fast.</p>
                 
                 <div className="bg-[#E6F6EC] border border-[#B7E4C7] rounded-[8px] p-3 mb-6 flex items-center gap-2 text-[#2D6A4F] text-[12px] font-semibold">
@@ -67,10 +67,10 @@ export default function VolunteerProjectsPage() {
                 </div>
 
                 <div className="space-y-3">
-                  <button className="w-full bg-[#221C84] text-white py-4 rounded-[10px]  text-[15px] hover:bg-[#1a237e] transition-colors">
+                  <button className="w-full bg-[var(--blue)] text-white py-4 rounded-[10px]  text-[15px] hover:bg-[#1a237e] transition-colors">
                     Apply for This Internship
                   </button>
-                  <button className="w-full bg-white border-2 border-gray-100 text-[#221C84] py-4 rounded-[12px] font-semibold text-[15px] hover:border-[#221C84] transition-all">
+                  <button className="w-full bg-white border-2 border-gray-100 text-[var(--blue)] py-4 rounded-[12px] font-semibold text-[15px] hover:border-[var(--blue)] transition-all">
                     Ask a Question
                   </button>
                 </div>
@@ -134,18 +134,18 @@ export default function VolunteerProjectsPage() {
           {/* Left Side: Content and Stats */}
           <div className="lg:col-span-7">
             <div className="mb-12">
-              <span className="text-[#221C84] font-bold font-plus-jakarta-sans text-[11px] tracking-[0.15em] uppercase mb-4 block">
+              <span className="text-[var(--blue)] font-bold  text-[11px] tracking-[0.15em] uppercase mb-4 block">
                 PROJECT OVERVIEW
               </span>
-              <h2 className="text-[30px] font-lora font-[700] text-[#0D0A35] leading-[1.2] mb-8">
+              <h2   className="text-[30px] font-lora font-[700] text-[#0D0A35] leading-[1.2] mb-8">
                 Internship on{" "}
-                <span className="text-[#221C84] font-bold">
+                <span className="text-[var(--blue)] font-bold">
                   Child Development
                 </span>{" "}
                 in Nepal
               </h2>
 
-              <div className="space-y-10 text-[#44403C] font-plus-jakarta-sans text-[18px] leading-relaxed">
+              <div className="space-y-10 text-[#44403C]  text-[18px] leading-relaxed">
                 <p>
                   In developed countries, an internship is a very crucial part of
                   a student's academic career. In Nepal, the practice of
@@ -170,7 +170,7 @@ export default function VolunteerProjectsPage() {
                   Development is a major programme of VIN's approach to holistic
                   and integrated community empowerment, following the guiding
                   principles of the{" "}
-                  <strong className="font-plus-jakarta-sans text-[#1D1E2C]">
+                  <strong className=" text-[#1D1E2C]">
                     Convention on the Rights of the Child (1989)
                   </strong>
                   : right to Survival, Protection, Development, and
@@ -202,10 +202,10 @@ export default function VolunteerProjectsPage() {
                     idx !== 3 ? "border-r border-[#E5E7EB]" : ""
                   }`}
                 >
-                  <div className="text-[32px]  font-lora font-bold text-[#221C84] mb-2">
+                  <div className="text-[32px]  font-lora font-bold text-[var(--blue)] mb-2">
                     {stat.number}
                   </div>
-                  <div className="text-[14px]  font-plus-jakarta-sans text-[#6B7280] font-medium leading-tight">
+                  <div className="text-[14px]   text-[#6B7280] font-medium leading-tight">
                     {stat.label}
                   </div>
                 </div>
@@ -217,10 +217,10 @@ export default function VolunteerProjectsPage() {
           <div className="lg:col-span-5 space-y-8">
             {/* Program Fees Card */}
             <div className="bg-white rounded-[20px] border border-[#E5E7EB] p-8 ">
-              <h3 className="text-[16px] font-plus-jakarta-sans font-[700] text-[#44403C] mb-8">
+              <h3 className="text-[16px]  font-[700] text-[#44403C] mb-8">
                 Program Fees
               </h3>
-              <div className="space-y-2 mb-8 font-plus-jakarta-sans">
+              <div className="space-y-2 mb-8 ">
                 <div className="flex justify-between items-center">
                   <span className="text-[#78716C] text-[16px]">
                     University Internship (4 weeks)
@@ -254,14 +254,14 @@ export default function VolunteerProjectsPage() {
                 </p>
               </div>
 
-              <button className="w-full bg-[#221C84] font-plus-jakarta-sans text-white py-4 px-4 rounded-[12px] font-semibold text-[15px] hover:bg-opacity-90 transition-all">
+              <button className="w-full bg-[var(--blue)]  text-white py-4 px-4 rounded-[12px] font-semibold text-[15px] hover:bg-opacity-90 transition-all">
                 Apply for This Internship
               </button>
             </div>
 
             {/* Program Details Card */}
             <div className="bg-white rounded-[20px] border border-[#E5E7EB] p-8 ">
-              <h3 className="text-[18px] font-plus-jakarta-sans font-bold text-[#1D1E2C] mb-6">
+              <h3 className="text-[18px]  font-bold text-[#1D1E2C] mb-6">
                 Program Details
               </h3>
               <div className="space-y-0 divide-y divide-[#E5E7EB]">
@@ -285,10 +285,10 @@ export default function VolunteerProjectsPage() {
                     key={idx}
                     className="flex justify-between items-start text-[14px] py-4 first:pt-0 last:pb-0"
                   >
-                    <span className="text-[#6B7280] text-[14px] font-[500] font-plus-jakarta-sans">
+                    <span className="text-[#6B7280] text-[14px] font-[500] ">
                       {detail.label}
                     </span>
-                    <span className="text-[#1D1E2C] font-plus-jakarta-sans font-[700] text-right max-w-[200px]">
+                    <span className="text-[#1D1E2C]  font-[700] text-right max-w-[200px]">
                       {detail.value}
                     </span>
                   </div>
@@ -305,12 +305,12 @@ export default function VolunteerProjectsPage() {
           {/* Left Side: Content */}
           <div className="lg:col-span-7">
             <div className="mb-12">
-              <span className="text-[#221C84] font-bold text-[11px] tracking-[0.15em] uppercase mb-4 block">
+              <span className="text-[var(--blue)] font-bold text-[11px] tracking-[0.15em] uppercase mb-4 block">
                 THE CHALLENGE
               </span>
-              <h2 className="text-[30px] font-[700]  font-loratext-[#0D0A35] leading-[1.2] mb-8">
+              <h2   className="text-[30px] font-[700] font-lora text-[#0D0A35] leading-[1.2] mb-8">
                 Why This Work{" "}
-                <span className="text-[#221C84] font-[700] font-lora  ">
+                <span className="text-[var(--blue)] font-[700] font-lora">
                   Matters
                 </span>
               </h2>
@@ -352,25 +352,25 @@ export default function VolunteerProjectsPage() {
           <div className="lg:col-span-5 space-y-4">
             {/* Get in Touch Card */}
             <div className="bg-white rounded-[20px] border border-[#E5E7EB] p-4">
-              <h3 className="text-[20px]  font-plus-jakarta-sans font-bold text-[#1D1E2C] mb-8">
+              <h3 className="text-[20px]   font-bold text-[#1D1E2C] mb-8">
                 Get in Touch
               </h3>
 
               <div className="space-y-4 mb-1">
                 <div className="flex items-center gap-1">
-                  <div className="w-10 h-8 rounded-full bg-[#F3F4F6] flex items-center justify-center text-[#221C84]">
+                  <div className="w-10 h-8 rounded-full bg-[#F3F4F6] flex items-center justify-center text-[var(--blue)]">
                     <Mail size={18} />
                   </div>
                   <a
                     href="mailto:support@vin.org.np"
-                    className="text-[#221C84] text-[14px] font-medium hover:text-[#221C84]"
+                    className="text-[var(--blue)] text-[14px] font-medium hover:text-[var(--blue)]"
                   >
                     support@vin.org.np
                   </a>
                 </div>
 
                 <div className="flex items-center gap-4 border-t border-[#F3F4F6] pt-6">
-                  <div className="w-10 h-10 rounded-full bg-[#F3F4F6] flex items-center justify-center text-[#221C84]">
+                  <div className="w-10 h-10 rounded-full bg-[#F3F4F6] flex items-center justify-center text-[var(--blue)]">
                     <Phone size={18} />
                   </div>
                   <span className="text-[#4E4E5E] text-[14px] font-medium">
@@ -379,7 +379,7 @@ export default function VolunteerProjectsPage() {
                 </div>
 
                 <div className="flex items-center gap-4 border-t border-[#F3F4F6] pt-6">
-                  <div className="w-10 h-10 rounded-full bg-[#F3F4F6] flex items-center justify-center text-[#221C84]">
+                  <div className="w-10 h-10 rounded-full bg-[#F3F4F6] flex items-center justify-center text-[var(--blue)]">
                     <MapPin size={18} />
                   </div>
                   <span className="text-[#4E4E5E] text-[14px] font-medium">
@@ -388,7 +388,7 @@ export default function VolunteerProjectsPage() {
                 </div>
               </div>
 
-              <button className="w-full border-2 border-[#221C84] text-[#221C84] mt-4 py-2 rounded-[10px] font-[500] text-[16px] hover:bg-[#221C84] hover:text-white transition-all">
+              <button className="w-full border-2 border-[var(--blue)] text-[var(--blue)] mt-4 py-2 rounded-[10px] font-[500] text-[16px] hover:bg-[var(--blue)] hover:text-white transition-all">
                 Send a Message
               </button>
             </div>
@@ -398,10 +398,10 @@ export default function VolunteerProjectsPage() {
               <div className="mb-4 text-[#F7941D]">
                 <Medal size={32} fill="currentColor" />
               </div>
-              <h4 className="text-[20px] font-bold text-[#221C84] font-lora mb-4">
+              <h4 className="text-[20px] font-bold text-[var(--blue)] font-lora mb-4">
                 Recommended by Lonely Planet
               </h4>
-              <p className="text-[#4E4E5E] text-[16px] font-plus-jakarta-sans leading-[24px]">
+              <p className="text-[#4E4E5E] text-[16px]  leading-[24px]">
                 VIN is a certified CCIVS member maintaining official relations
                 with UNESCO. Operating sustainably since 2005.
               </p>
@@ -416,12 +416,12 @@ export default function VolunteerProjectsPage() {
           {/* Left Side: Content (Aligned with upper sections) */}
           <div className="lg:col-span-7">
             <div className="mb-12">
-              <span className="text-[#221C84] font-bold text-[11px] tracking-[0.15em] uppercase mb-4 block">
+              <span className="text-[var(--blue)] font-bold text-[11px] tracking-[0.15em] uppercase mb-4 block">
                 YOUR ROLE
               </span>
-              <h2 className="text-[30px] font-[700] text-[#0D0A35] leading-[1.2] mb-8">
+              <h2   className="font-lora text-[30px] font-[700] text-[#0D0A35] leading-[1.2] mb-8">
                 What Will{" "}
-                <span className="text-[#221C84] font-[700] font-lora">
+                <span className="text-[var(--blue)] font-[700] font-lora">
                   You
                 </span>{" "}
                 Do?
@@ -472,7 +472,7 @@ export default function VolunteerProjectsPage() {
                     key={idx}
                     className="bg-white rounded-[18px] border border-[#E5E7EB] p-10 hover: transition-shadow group"
                   >
-                    <div className="w-10 h-10 rounded-full bg-[#F3F4F6] flex items-center justify-center text-[#221C84] mb-6 group-hover:bg-[#221C84] group-hover:text-white transition-colors">
+                    <div className="w-10 h-10 rounded-full bg-[#F3F4F6] flex items-center justify-center text-[var(--blue)] mb-6 group-hover:bg-[var(--blue)] group-hover:text-white transition-colors">
                       {item.icon}
                     </div>
                     <h3 className="text-[16px] font-bold text-[#1D1E2C] mb-2">
@@ -498,12 +498,12 @@ export default function VolunteerProjectsPage() {
           <div className="lg:col-span-7">
             {/* UN Alignment */}
             <div className="mb-24">
-              <span className="text-[#221C84] font-[700] text-[11px] tracking-[0.15em] uppercase mb-4 block">
+              <span className="text-[var(--blue)] font-[700] text-[11px] tracking-[0.15em] uppercase mb-4 block">
                 UN ALIGNMENT
               </span>
-              <h2 className="text-[36px] font-[700] font-lora text-[#0D0A35] leading-[1.2] mb-8">
+              <h2   className="text-[36px] font-[700] font-lora text-[#0D0A35] leading-[1.2] mb-8">
                 Sustainable Development{" "}
-                <span className="text-[#221C84] font-[700] font-lora">
+                <span className="text-[var(--blue)] font-[700] font-lora">
                   Goals
                 </span>
               </h2>
@@ -539,12 +539,12 @@ export default function VolunteerProjectsPage() {
 
             {/* Eligibility */}
             <div>
-              <span className="text-[#221C84] font-bold text-[11px] tracking-[0.15em] uppercase mb-4 block">
+              <span className="text-[var(--blue)] font-bold text-[11px] tracking-[0.15em] uppercase mb-4 block">
                 ELIGIBILITY
               </span>
-              <h2 className="text-[36px] font-[700]  font-lora text-[#0D0A35] leading-[1.2] mb-8">
+              <h2   className="text-[36px] font-[700]  font-lora text-[#0D0A35] leading-[1.2] mb-8">
                 Who Should{" "}
-                <span className="text-[#221C84]  text-[36px] font-[700] font-lora">
+                <span className="text-[var(--blue)]  text-[36px] font-[700] font-lora">
                   Apply?
                 </span>
               </h2>
@@ -585,9 +585,9 @@ export default function VolunteerProjectsPage() {
                 ].map((item, idx) => (
                   <div
                     key={idx}
-                    className="flex items-center gap-4 bg-white border border-[#E5E7EB] rounded-[16px] p-5 hover:border-[#221C84] transition-colors group"
+                    className="flex items-center gap-4 bg-white border border-[#E5E7EB] rounded-[16px] p-5 hover:border-[var(--blue)] transition-colors group"
                   >
-                    <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-[#F3F4F6] flex items-center justify-center text-[#221C84] group-hover:bg-[#221C84] group-hover:text-white transition-colors">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-[#F3F4F6] flex items-center justify-center text-[var(--blue)] group-hover:bg-[var(--blue)] group-hover:text-white transition-colors">
                       {item.icon}
                     </div>
                     <p className="text-[#4E4E5E] text-[13px] font-medium leading-snug">
@@ -607,12 +607,12 @@ export default function VolunteerProjectsPage() {
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-7">
-            <span className="text-[#221C84] font-bold text-[11px] tracking-[0.15em] uppercase mb-4 block">
+            <span className="text-[var(--blue)] font-bold text-[11px] tracking-[0.15em] uppercase mb-4 block">
               PROGRAM FEES
             </span>
-            <h2 className="text-[36px] font-[700] font-lora text-[#0D0A35] leading-[1.2] mb-8">
+            <h2   className="text-[36px] font-[700] font-lora text-[#0D0A35] leading-[1.2] mb-8">
               What's{" "}
-              <span className="text-[#221C84] font-[700] font-lora">
+              <span className="text-[var(--blue)] font-[700] font-lora">
                 Included?
               </span>
             </h2>
@@ -690,12 +690,12 @@ export default function VolunteerProjectsPage() {
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-7">
-            <span className="text-[#221C84] font-bold text-[11px] tracking-[0.15em] uppercase mb-4 block">
+            <span className="text-[var(--blue)] font-bold text-[11px] tracking-[0.15em] uppercase mb-4 block">
               YOUR JOURNEY
             </span>
-            <h2 className="text-[36px] font-[700] font-lora text-[#0D0A35] leading-[1.2] mb-12">
+            <h2   className="text-[36px] font-[700] font-lora text-[#0D0A35] leading-[1.2] mb-12">
               How{" "}
-              <span className="text-[#221C84] font-[700] font-lora">
+              <span className="text-[var(--blue)] font-[700] font-lora">
                 It Works
               </span>
             </h2>
@@ -748,7 +748,7 @@ export default function VolunteerProjectsPage() {
                   )}
 
                   {/* Icon Circle */}
-                  <div className="absolute left-0 top-0 w-10 h-10 rounded-full border-2 border-[#221C84] bg-white flex items-center justify-center text-[#221C84] z-10">
+                  <div className="absolute left-0 top-0 w-10 h-10 rounded-full border-2 border-[var(--blue)] bg-white flex items-center justify-center text-[var(--blue)] z-10">
                     {step.icon}
                   </div>
 
@@ -771,13 +771,13 @@ export default function VolunteerProjectsPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-14 bg-[#221C84] text-white">
+      <section className="py-14 bg-[var(--blue)] text-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16">
             <span className="text-white/60 font-bold text-[11px] tracking-[0.15em] uppercase mb-4 block">
               WHAT INTERNS SAY
             </span>
-            <h2 className="text-[42px] font-[900] text-white leading-[1.2]">
+            <h2   className="font-lora text-[42px] font-[700] text-white leading-[1.2]">
               Real Experiences, Real Impact
             </h2>
           </div>
@@ -845,12 +845,12 @@ export default function VolunteerProjectsPage() {
       {/* Final CTA Section */}
       <section className="py-14 bg-[#F8F9FA] text-center">
         <div className="max-w-4xl mx-auto px-6">
-          <span className="text-[#221C84] font-bold text-[11px] tracking-[0.15em] uppercase mb-6 block">
+          <span className="text-[var(--blue)] font-bold text-[11px] tracking-[0.15em] uppercase mb-6 block">
             READY TO MAKE A DIFFERENCE?
           </span>
-          <h2 className="text-[48px] font-[800] text-[#0D0A35] leading-tight mb-8">
+          <h2   className="font-lora text-[48px] font-[700] text-[#0D0A35] leading-tight mb-8">
             Start Your Journey in{" "}
-            <span className="text-[#221C84] font-normal">
+            <span className="text-[var(--blue)] font-[700]">
               Nepal
             </span>{" "}
             Today
@@ -862,14 +862,14 @@ export default function VolunteerProjectsPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="bg-[#221C84] text-white px-8 py-4 rounded-[12px] font-bold text-[16px] flex items-center gap-2 hover:bg-opacity-90 transition-all group shadow-lg shadow-blue-900/10">
+            <button className="bg-[var(--blue)] text-white px-8 py-4 rounded-[12px] font-bold text-[16px] flex items-center gap-2 hover:bg-opacity-90 transition-all group shadow-lg shadow-blue-900/10">
               Apply Now for This Internship
               <ArrowRight
                 size={18}
                 className="group-hover:translate-x-1 transition-transform"
               />
             </button>
-            <button className="bg-white border-2 border-[#E5E7EB] text-[#0D0A35] px-8 py-4 rounded-[12px] font-bold text-[16px] hover:border-[#221C84] transition-all">
+            <button className="bg-white border-2 border-[#E5E7EB] text-[#0D0A35] px-8 py-4 rounded-[12px] font-bold text-[16px] hover:border-[var(--blue)] transition-all">
               Contact VIN
             </button>
           </div>
@@ -881,10 +881,10 @@ export default function VolunteerProjectsPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-end mb-12">
             <div>
-              <span className="text-[#221C84] font-bold text-[11px] tracking-[0.15em] uppercase mb-4 block">
+              <span className="text-[var(--blue)] font-bold text-[11px] tracking-[0.15em] uppercase mb-4 block">
                 EXPLORE MORE
               </span>
-              <h2 className="text-[42px] font-[800] text-[#0D0A35] leading-[1.2]">
+              <h2   className="font-lora text-[42px] font-[700] text-[#0D0A35] leading-[1.2]">
                 Related Programs at VIN
               </h2>
             </div>
@@ -944,7 +944,7 @@ export default function VolunteerProjectsPage() {
                     </p>
                     <Link
                       href="#"
-                      className="text-[#221C84] font-bold text-[13px] flex items-center gap-2 hover:gap-3 transition-all"
+                      className="text-[var(--blue)] font-bold text-[13px] flex items-center gap-2 hover:gap-3 transition-all"
                     >
                       Explore program <ArrowRight size={14} />
                     </Link>
@@ -955,7 +955,7 @@ export default function VolunteerProjectsPage() {
 
             {/* Carousel Navigation Button (Positioned in the whitespace) */}
             <div className="absolute top-1/2 right-0 -translate-y-1/2 hidden xl:block z-10">
-              <button className="w-12 h-12 rounded-full bg-[#FBFBFC] border border-gray-200 flex items-center justify-center text-gray-600 shadow-sm hover:border-[#221C84] hover:text-[#221C84] transition-all">
+              <button className="w-12 h-12 rounded-full bg-[#FBFBFC] border border-gray-200 flex items-center justify-center text-gray-600 shadow-sm hover:border-[var(--blue)] hover:text-[var(--blue)] transition-all">
                 <ArrowRight size={20} />
               </button>
             </div>
@@ -967,3 +967,4 @@ export default function VolunteerProjectsPage() {
     </main>
   );
 }
+

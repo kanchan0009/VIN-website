@@ -67,7 +67,7 @@ export default function MissionPage() {
                 icon: "👁️",
                 title: "Vision",
                 desc: "Creating inclusive and equitable local communities of Nepal.",
-                color: "var(--indigo-btn)",
+                color: "var(--blue)",
               },
               {
                 icon: "🎯",
@@ -113,4 +113,5 @@ export default function MissionPage() {
     </main>
   );
 }
+
 

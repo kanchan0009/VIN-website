@@ -347,7 +347,7 @@ export default function HomePage() {
                 {["53%", "53%", "53%", "53%"].map((item, index) => (
                   <div
                     key={index}
-                    className="bg-[#221C84] text-white rounded-lg flex flex-col items-center justify-center p-3 aspect-square"
+                    className="bg-[var(--blue)] text-white rounded-lg flex flex-col items-center justify-center p-3 aspect-square"
                   >
                     <p className="text-xl font-bold mb-1">{item}</p>
                     <p className="text-[10px] opacity-90 text-center leading-tight font-medium">
@@ -374,7 +374,7 @@ export default function HomePage() {
                   And Dignity.
                 </p>
 
-                <button className="shrink-0 px-8 py-3 rounded text-sm font-semibold text-white bg-[#221C84] hover:bg-indigo-700 transition shadow-lg">
+                <button className="shrink-0 px-8 py-3 rounded text-sm font-semibold text-white bg-[var(--blue)] hover:bg-indigo-700 transition shadow-lg">
                   View Program
                 </button>
               </div>
@@ -401,14 +401,14 @@ export default function HomePage() {
           <div className="flex items-center justify-center gap-4">
             {/* Primary Button */}
             <Link href="/our-story">
-              <button className="px-8 py-2.5 text-sm font-semibold rounded text-white bg-[#221C84] hover:bg-indigo-800 transition-all duration-300">
+              <button className="px-8 py-2.5 text-sm font-semibold rounded text-white bg-[var(--blue)] hover:bg-indigo-800 transition-all duration-300">
                 Our Story
               </button>
             </Link>
 
             {/* Outline Button */}
             <Link href="/our-approach">
-              <button className="px-8 py-2.5 text-sm font-semibold rounded border border-[#221C84] text-[#221C84] hover:bg-indigo-50 transition-all duration-300">
+              <button className="px-8 py-2.5 text-sm font-semibold rounded border border-[var(--blue)] text-[var(--blue)] hover:bg-indigo-50 transition-all duration-300">
                 Our Approach
               </button>
             </Link>
@@ -420,11 +420,11 @@ export default function HomePage() {
       <section className="w-full bg-[#f5f6f8] py-24">
         <div className="max-w-7xl mx-auto">
           {/* Heading */}
-          <h2 className="text-xl md:text-4xl font-bold text-gray-900 leading-snug mb-12 text-center">
+          <h2 className="text-xl md:text-5xl font-bold text-gray-900 leading-snug mb-12 text-center">
             Welcome to{" "}
-            <span className="text-[#221C84]">Volunteers Initiative</span>
+            <span className="text-[var(--blue)]">Volunteers Initiative</span>
             <br />
-            <span className="text-[#221C84]">Nepal</span> ( VIN )
+            <span className="text-[var(--blue)]">Nepal</span> ( VIN )
           </h2>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -458,7 +458,7 @@ export default function HomePage() {
               </p>
 
               {/* Button */}
-              <button className="px-8 py-3 text-base font-semibold rounded-lg text-white bg-[#221C84] hover:bg-[#221C84] transition-all duration-300 shadow-md hover:shadow-lg">
+              <button className="px-8 py-3 text-base font-semibold rounded-lg text-white bg-[var(--blue)] hover:bg-[var(--blue)] transition-all duration-300 shadow-md hover:shadow-lg">
                 Learn More
               </button>
             </div>
@@ -731,7 +731,7 @@ export default function HomePage() {
 
           {/* View All */}
           <div className="mt-10">
-            <button className="bg-[#221C84] text-white px-6 py-2 rounded-md hover:bg-[#1a1560]">
+            <button className="bg-[var(--blue)] text-white px-6 py-2 rounded-md hover:bg-[#1a1560]">
               View All
             </button>
           </div>
@@ -1554,7 +1554,7 @@ export default function HomePage() {
               style={{
                 
                 width: "100%",
-                background:"linear-gradient(to right, #221C84, #08061E)",
+                background:"linear-gradient(to right, var(--blue), #08061E)",
                 borderRadius: "5px",
                 minHeight: "160px",
                 display: "flex",
@@ -1612,3 +1612,4 @@ export default function HomePage() {
     </main>
   );
 }
+

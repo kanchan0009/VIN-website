@@ -167,7 +167,7 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
             {/* Left: Navy Card */}
-            <div className="bg-[#221C84] rounded-[6px] p-10 lg:py-24 lg:px-16 relative overflow-hidden w-120">
+            <div className="bg-[var(--blue)] rounded-[6px] p-10 lg:py-24 lg:px-16 relative overflow-hidden w-120">
               {/* Decorative Circles */}
               <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-white/5 rounded-full" />
               <div className="absolute bottom-24 right-24 w-32 h-32 bg-white/5 rounded-full" />
@@ -181,7 +181,7 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
                   {["Rights Awareness", "Literacy", "Life Skills", "Livelihoods"].map((skill) => (
                     <div 
                       key={skill} 
-                      className="px-6 py-3 rounded-xl border border-white/30 text-white font-[600] text-sm hover:bg-white hover:text-[#221C84] transition-all cursor-default"
+                      className="px-6 py-3 rounded-xl border border-white/30 text-white font-[600] text-sm hover:bg-white hover:text-[var(--blue)] transition-all cursor-default"
                     >
                       {skill}
                     </div>
@@ -198,7 +198,7 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
               
               <div className="bg-white rounded-[20px] p-8 lg:p-10 shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-gray-50">
                 <p className="text-gray-600 text-xm leading-relaxed">
-                  <span className="text-[#221C84] font-[700]">2030 Target:</span> At least 80% of targeted women develop awareness of their rights and necessary life skills for economic independence.
+                  <span className="text-[var(--blue)] font-[700]">2030 Target:</span> At least 80% of targeted women develop awareness of their rights and necessary life skills for economic independence.
                 </p>
               </div>
             </div>
@@ -227,7 +227,7 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
               { num: "05", title: "Small-Scale Vocational Skills", desc: "Income-generating skills training including candle-making, agro-farming, animal rearing, and soap production — creating real pathways to economic independence." }
             ].map((step, i) => (
               <div key={i} className="flex flex-col md:flex-row items-center md:items-start gap-6 lg:gap-10 bg-white border border-gray-300 rounded-[10px] p-4 lg:p-6 transition-all hover:shadow-xl hover:border-transparent group">
-                <div className="text-[#221C84] text-4xl lg:text-5xl font-[700] opacity-90 group-hover:opacity-100 transition-opacity">
+                <div className="text-[var(--blue)] text-4xl lg:text-5xl font-[700] opacity-90 group-hover:opacity-100 transition-opacity">
                   {step.num}
                 </div>
                 <div className="flex-1 text-center md:text-left">
@@ -253,7 +253,7 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
 
           <div className="flex flex-col gap-4 max-w-5xl mx-auto">
             {/* Main Highlight Card */}
-            <div className="bg-[#221C84] rounded-[20px] p-8 lg:py-10 lg:px-12 text-center text-white shadow-xl relative overflow-hidden">
+            <div className="bg-[var(--blue)] rounded-[20px] p-8 lg:py-10 lg:px-12 text-center text-white shadow-xl relative overflow-hidden">
               <div className="relative z-10">
                 <div className="text-4xl lg:text-6xl font-[700] mb-2 tracking-tight">10,055</div>
                 <div className="text-xl lg:text-2xl font-[600] mb-2 max-w-2xl mx-auto leading-relaxed">
@@ -273,7 +273,7 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
                 { stat: "2030", label: "Target year for SDG4 alignment" }
               ].map((item, i) => (
                 <div key={i} className="bg-white rounded-[20px] p-6 text-center shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-white">
-                  <div className="text-[#221C84] text-3xl lg:text-4xl font-[700] mb-2">
+                  <div className="text-[var(--blue)] text-3xl lg:text-4xl font-[700] mb-2">
                     {item.stat}
                   </div>
                   <div className="text-gray-500 text-xs lg:text-sm leading-relaxed font-[400] max-w-[180px] mx-auto">
@@ -321,7 +321,7 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
                       alt="Project" 
                       className="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute top-4 right-4 bg-[#221C84] text-white text-[10px] uppercase font-bold px-4 py-1.5 rounded-sm">
+                    <div className="absolute top-4 right-4 bg-[var(--blue)] text-white text-[10px] uppercase font-bold px-4 py-1.5 rounded-sm">
                       Women Empowerment
                     </div>
                   </div>

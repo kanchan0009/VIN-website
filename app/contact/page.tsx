@@ -50,16 +50,16 @@ export default function ContactPage() {
                   key={field} 
                   type="text" 
                   placeholder={field}
-                  className="w-full bg-[#F5F7F9] border-none rounded-lg px-6 py-5 text-gray-700 placeholder-gray-400 focus:ring-2 focus:ring-[#221C84]/20 outline-none transition-all" 
+                  className="w-full bg-[#F5F7F9] border-none rounded-lg px-6 py-5 text-gray-700 placeholder-gray-400 focus:ring-2 focus:ring-[var(--blue)]/20 outline-none transition-all" 
                 />
               ))}
               <textarea 
                 placeholder="Message" 
                 rows={6}
-                className="w-full bg-[#F5F7F9] border-none rounded-lg px-6 py-5 text-gray-700 placeholder-gray-400 focus:ring-2 focus:ring-[#221C84]/20 outline-none transition-all resize-none" 
+                className="w-full bg-[#F5F7F9] border-none rounded-lg px-6 py-5 text-gray-700 placeholder-gray-400 focus:ring-2 focus:ring-[var(--blue)]/20 outline-none transition-all resize-none" 
               />
               <button className="flex items-center gap-2 px-8 py-4 rounded-full font-bold text-white transition-all hover:opacity-90 active:scale-95"
-                style={{ background: '#221C84' }}>
+                style={{ background: 'var(--blue)' }}>
                 <Send size={18} className="rotate-[-20deg]" />
                 <span>Send Message</span>
               </button>
@@ -75,7 +75,7 @@ export default function ContactPage() {
                 {/* Contact Us */}
                 <div>
                   <p className="text-sm text-gray-700 mb-2">Contact Us</p>
-                  <div className="text-[#221C84] font-bold text-base space-y-1">
+                  <div className="text-[var(--blue)] font-bold text-base space-y-1">
                     <p>01-123456 (Office)</p>
                     <p>+977 1 4362560</p>
                   </div>
@@ -99,13 +99,13 @@ export default function ContactPage() {
                 <div className="flex items-center gap-6 pt-4">
                   <p className="text-xm text-gray-700">Follow Us :</p>
                   <div className="flex items-center gap-5">
-                    <a href="#" className="text-[#221C84] hover:opacity-70 transition-opacity">
+                    <a href="#" className="text-[var(--blue)] hover:opacity-70 transition-opacity">
                       <FacebookIcon />
                     </a>
-                    <a href="#" className="text-[#221C84] hover:opacity-70 transition-opacity">
+                    <a href="#" className="text-[var(--blue)] hover:opacity-70 transition-opacity">
                       <InstagramIcon />
                     </a>
-                    <a href="#" className="text-[#221C84] hover:opacity-70 transition-opacity">
+                    <a href="#" className="text-[var(--blue)] hover:opacity-70 transition-opacity">
                       <TikTokIcon />
                     </a>
                   </div>
@@ -133,3 +133,4 @@ export default function ContactPage() {
     </main>
   );
 }
+

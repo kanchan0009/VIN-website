@@ -42,7 +42,7 @@ export default function MediaTabs() {
                     : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
                 }`}
                 style={
-                  isActive ? { background: "var(--indigo-btn)" } : undefined
+                  isActive ? { background: "var(--blue)" } : undefined
                 }
               >
                 <Icon size={16} />
@@ -55,3 +55,4 @@ export default function MediaTabs() {
     </div>
   );
 }
+

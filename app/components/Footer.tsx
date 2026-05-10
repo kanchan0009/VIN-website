@@ -24,7 +24,7 @@ export default function Footer() {
               "Public Health and Medical Care", "Environment and Conservation", "Disaster Risk Reduction"
             ].map(p => (
               <li key={p}>
-                <Link href="#" className="text-[15px] text-gray-700 font-medium hover:text-[#221c84] transition-colors">{p}</Link>
+                <Link href="#" className="text-[15px] text-gray-700 font-medium hover:text-[var(--blue)] transition-colors">{p}</Link>
               </li>
             ))}
           </ul>
@@ -38,7 +38,7 @@ export default function Footer() {
               "Volunteering Nepal", "Volunteer Buddhist Monasteries", "Trek for Nepal", "Community Learning Center"
             ].map(l => (
               <li key={l}>
-                <Link href="#" className="text-[15px] text-gray-700 font-medium hover:text-[#221c84] transition-colors">{l}</Link>
+                <Link href="#" className="text-[15px] text-gray-700 font-medium hover:text-[var(--blue)] transition-colors">{l}</Link>
               </li>
             ))}
           </ul>
@@ -64,7 +64,7 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-3">
               <Mail size={18} fill="currentColor" className="text-gray-700 shrink-0" />
-              <a href="mailto:support@vin.org.np" className="text-[15px] text-gray-700 font-medium hover:text-[#221c84]">support@vin.org.np</a>
+              <a href="mailto:support@vin.org.np" className="text-[15px] text-gray-700 font-medium hover:text-[var(--blue)]">support@vin.org.np</a>
             </div>
           </div>
         </div>
@@ -92,3 +92,4 @@ export default function Footer() {
     </footer>
   );
 }
+

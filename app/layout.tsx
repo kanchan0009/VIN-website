@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Lora, Plus_Jakarta_Sans } from "next/font/google";
+import { Montserrat, Lora, Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -23,6 +23,12 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   weight: ["400", "500", "600", "700", "800"],
 });
 
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: ["300", "400", "500", "600", "700", "800"],
+});
+
 export const metadata: Metadata = {
   title: "Volunteers Initiative Nepal (VIN)",
   description:
@@ -35,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${lora.variable} ${plusJakartaSans.variable} ${montserrat.className}`}>
+    <html lang="en" className={`${montserrat.variable} ${lora.variable} ${plusJakartaSans.variable} ${inter.variable} ${montserrat.className}`}>
       <body>
         <Navbar />
         <Breadcrumbs />
@@ -45,3 +51,4 @@ export default function RootLayout({
     </html>
   );
 }
+
