@@ -72,7 +72,7 @@ export default function DevelopmentPillars() {
 
   return (
     <section className={`bg-[#DFF0FF] py-12 lg:py-24 ${montserrat.className}`}>
-      <div className="max-w-7xl mx-auto px-6">
+      <div className=" mx-auto px-6">
         {/* Header */}
         <h1 className="text-2xl lg:text-4xl font-[800] text-[#1D1E20] mb-12 lg:mb-16 leading-tight lg:leading-[1.1] max-w-5xl text-center mx-auto">
           Four areas of development resembling pillars of the house are Education,

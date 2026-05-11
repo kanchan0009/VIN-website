@@ -27,7 +27,7 @@ export default function MediaTabs() {
 
   return (
     <div className="bg-white border-b border-gray-100 sticky top-[64px] z-40">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className=" mx-auto px-6 lg:px-8">
         <div className="flex gap-1 overflow-x-auto py-3 no-scrollbar">
           {tabs.map((tab) => {
             const isActive = pathname === tab.href;

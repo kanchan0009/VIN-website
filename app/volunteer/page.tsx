@@ -18,15 +18,14 @@ export default function VolunteerPage() {
               "linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)",
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 pb-10 w-full">
-          
+        <div className="relative z-10  mx-auto px-4 pb-10 w-full">
           <h1
             className="text-5xl font-bold text-white mb-3"
             style={{ }}
           >
             Volunteer in Nepal
           </h1>
-          <p className="text-white/80 text-base max-w-lg">
+          <p className="text-white/80 text-lg max-w-4xl">
             Join thousands of volunteers who have made a lasting difference in
             Nepal's communities.
           </p>

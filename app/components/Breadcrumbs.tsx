@@ -59,7 +59,7 @@ export default function Breadcrumbs() {
 
   return (
     <nav aria-label="Breadcrumb" className="breadcrumbs">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className=" mx-auto px-4">
         <ol className="flex items-center space-x-2 text-sm text-gray-500">
           {crumbs.map((crumb, index) => (
             <li key={crumb.href} className="flex items-center">

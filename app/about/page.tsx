@@ -90,13 +90,13 @@ export default function AboutPage() {
               "linear-gradient(to top, rgba(20,10,70,0.85) 50%, rgba(0,0,0,0.2) 100%)",
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 pb-16 w-full">
+        <div className="relative z-10  mx-auto px-4 pb-10 w-full">
           <h1
             className="text-5xl font-bold text-white mb-2"
           >
             About Us
           </h1>
-          <p className="text-white/80 max-w-xl text-lg">
+          <p className="text-white/80 max-w-4xl text-lg">
             Empowering marginalized communities through sustainable development.
           </p>
         </div>
@@ -104,9 +104,9 @@ export default function AboutPage() {
 
       {/* Mission */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-12">
+        <div className=" mx-auto px-4">
           <h2
-            className="text-4xl md:text-5xl font-bold text-gray-900 text-left mb-4"
+            className="text-4xl md:text-[56px] font-[600] text-gray-900 text-left mb-4"
           >
             Our Mission
           </h2>
@@ -168,25 +168,25 @@ export default function AboutPage() {
 
       {/* Volunteer Programs */}
       <section className="py-24" >
-        <div className="max-w-7xl mx-auto px-4 md:px-12">
+        <div className=" mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             {/* Left Image */}
             <div className="flex-1">
               <img
                 src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80"
                 alt="Volunteer in Nepal"
-                className="rounded-2xl w-full h-[500px] object-cover shadow-xl"
+                className=" w-full h-[700px] object-cover shadow-xl"
               />
             </div>
 
             {/* Right Content */}
             <div className="flex-1">
               <h2
-                className="text-4xl font-bold text-gray-900 mb-6"
+                className="text-[36px] font-[700] text-gray-900 mb-6"
               >
                 Volunteer programs
               </h2>
-              <div className="space-y-6 text-gray-700 text-base leading-relaxed">
+              <div className="space-y-6 text-[#454545AD] text-base leading-relaxed">
                 <p>
                   This has been possible due to our dedicated staff, alliances with like-minded organisations and the efforts and contributions of local and international volunteers. We offer the most affordable international volunteering & internship placements in Nepal. VIN funds and runs mid to long-term sustainable community based volunteer service projects, focusing on those most disadvantaged communities with special focus on women, children and minority groups.
                 </p>
@@ -203,7 +203,7 @@ export default function AboutPage() {
                   className="inline-flex items-center gap-2 px-6 py-3  font-semibold text-white text-sm hover:scale-105 transition-transform"
                   style={{ background: "var(--blue, var(--blue))" }}
                 >
-                  Volunteer in Nepal <ArrowRight size={15} />
+                  Volunteer in Nepal 
                 </Link>
               </div>
             </div>
@@ -212,54 +212,44 @@ export default function AboutPage() {
       </section>
 
       {/* Most Trusted */}
-      <section className="py-16" style={{ background: "var(--blue, var(--blue))" }}>
-        <div className="max-w-7xl mx-auto px-4 md:px-12 text-center">
-          <h2
-            className="text-3xl font-bold text-white mb-3"
-          >
-            Volunteer in Nepal with the most trusted local volunteer
-            organization
+      <section className="relative h-[422px] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <img
+          src="/images/volunteers_trusted.png"
+          alt="Trusted Organization"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/* Blue Overlay */}
+        <div className="absolute inset-0 bg-[#221C84]/85" />
+        
+        {/* Content */}
+        <div className="relative z-10 max-w-6xl mx-auto px-4 text-center text-white">
+          <h2 className="text-[32px] md:text-[42px] font-bold mb-10 leading-tight">
+            Volunteer in Nepal with the most trusted <br className="hidden md:block" /> local volunteer organization
           </h2>
-          <p className="text-white/70 text-sm max-w-2xl mx-auto mb-6 leading-relaxed">
-            We are partnered with most of the top volunteer-sending
-            organizations in the world. Our experienced local team comprises
-            over 1,200 highly trained full-time staff and volunteers. We are
-            VIN, FORUM, CCIVS, NVDA, AVSO, NetHope members.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {[
-              "FORUM",
-              "CCIVS",
-              "NVDA",
-              "AVSO",
-              "European Commission",
-              "NetHope",
-            ].map((org) => (
-              <span
-                key={org}
-                className="px-4 py-2 rounded-full text-xs font-semibold text-white border border-white/30"
-                style={{ background: "rgba(255,255,255,0.1)" }}
-              >
-                {org}
-              </span>
-            ))}
+          
+          <div className="space-y-6 text-[16px] md:text-[16px] font-light leading-relaxed max-w-4xl mx-auto">
+            <p>
+              VIN is a non profit, secular, charitable volunteer organisation based in Kathmandu, Nepal founded in 2005. We are also a member of international voluntary networks worldwide like <strong className="text-[18px] font-bold">CCIVS, NVDA, ALLIANCE, FoVIN-NL, US, UK, Australia.</strong>
+            </p>
+            <p>
+              Our overall focus is empowering the most marginalised / disadvantaged communities in rural and remote area in Nepal. However, we also run teaching, research, administrative, journalism and public interest volunteering projects in and around Kathmandu.
+            </p>
           </div>
         </div>
       </section>
 
       {/* 10 best programs */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-12">
+        <div className=" mx-auto px-4">
           <h2
-            className="text-5xl font-[500] text-gray-900 text-center mb-3"
+            className="text-[56px] font-[500] text-gray-900 text-center mb-3"
             
           >
             10 best volunteer programs in <br />Nepal includes 
           </h2>
-          <p className="text-center text-gray-700 text-base mb-12 max-w-2xl mx-auto">
-            Thanks to our volunteer friends for providing us with their support.
-            We are a non-profit, non-governmental organization working at the
-            end of the world with real people.
+          <p className="text-center text-gray-700 text-base mb-12 max-w-5xl mx-auto">
+            Thanks to our dedicated staff, VIN can ensure these projects run consistently, building the trust of the communities and relationships with our partners.  However, our international and national volunteers are a huge asset to our projects. You may participate in our sustainable development programmes as a volunteer or intern.  We also organise group volunteering, family volunteering, work-camp opportunities and Adventure Volunteer Projects.  All that we ask is adaptability, flexibility & positive attitude. Apply to volunteer today and be part of making a real difference.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
             {[
@@ -301,7 +291,7 @@ export default function AboutPage() {
                 className="overflow-hidden group cursor-pointer bg-white shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col text-center"
               >
                 {/* Image Section with Overlay */}
-                <div className="h-48 overflow-hidden relative">
+                <div className="h-52 overflow-hidden relative">
                   <img
                     src={p.img}
                     alt={p.title}
@@ -309,17 +299,17 @@ export default function AboutPage() {
                   />
                   {/* Bottom Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end pb-3">
-                    <p className="text-white font-bold text-lg leading-none">32,035</p>
-                    <p className="text-white/80 text-[10px] uppercase tracking-tighter mt-1">Women's Life Impacted</p>
+                    <p className="text-white font-bold text-[30px] leading-none">32,035</p>
+                    <p className="text-white/80 text-[16px] uppercase tracking-tighter mt-1">Women's Life Impacted</p>
                   </div>
                 </div>
 
                 {/* Content Section */}
                 <div className="p-6 flex-grow flex flex-col justify-center gap-3">
-                  <h3 className="text-[15px] font-bold text-gray-900 leading-tight">
+                  <h3 className="text-[18px] font-bold text-gray-900 leading-tight">
                     {p.title}
                   </h3>
-                  <p className="text-[12px] text-gray-500 leading-relaxed font-medium px-2">
+                  <p className="text-[13px] text-black leading-relaxed font-medium px-2">
                     Is central to empowerment & prosperity of a community.
                   </p>
                 </div>
@@ -331,17 +321,16 @@ export default function AboutPage() {
 
       {/* Nepal's Challenge */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-12">
-          <h2
-            className="text-5xl font-bold text-gray-900 text-left mb-10"
-            
-          >
-            Nepal's Challenge
-          </h2>
-          
+        <div className=" mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-12 mb-10">
             {/* Left Content (Part 1) */}
-            <div className="flex-1 space-y-6 text-gray-700 text-[15px] leading-relaxed">
+            <div className="flex-1">
+              <h2
+                className="text-5xl font-bold text-gray-900 text-left mb-10"
+              >
+                Nepal's Challenge
+              </h2>
+              <div className="space-y-6 text-[#212121] text-[15px] leading-relaxed">
               <p>
                 Despite Nepal's popular appeal to tourists, it is one of the poorest and least
                 developed countries in the world, with over 25% of its population living below
@@ -362,14 +351,15 @@ export default function AboutPage() {
                 there are periods in the year where families have no source of either income
                 nor subsistence.
               </p>
+              </div>
             </div>
             
             {/* Right Image */}
-            <div className="lg:w-[450px] shrink-0">
+            <div className="lg:w-[430px] shrink-0">
               <img
                 src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80"
                 alt="Nepal landscape"
-                className="rounded-lg w-full h-[350px] object-cover shadow-sm"
+                className=" w-full h-[430px] object-cover shadow-sm"
               />
             </div>
           </div>
@@ -402,30 +392,29 @@ export default function AboutPage() {
       </section>
 
       {/* Financial Transparency */}
-      <section className="py-16 mb-30" style={{ background: "var(--blue, var(--blue))" }}>
-        <div className="max-w-7xl mx-auto px-4 md:px-12 flex flex-col md:flex-row items-center gap-8">
-          <div className="flex-1">
-            <h2
-              className="text-3xl font-bold text-white mb-3"
-             
-            >
+      <section className="relative min-h-[400px] flex items-center overflow-hidden py-16 mb-24">
+        {/* Background Image */}
+        <img
+          src="/images/financial_transparency.png"
+          alt="Financial Transparency"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1B1464] via-[#1B1464]/95 to-transparent" />
+        
+        <div className="relative z-10  mx-auto px-4 w-full">
+          <div className="max-w-5xl">
+            <h2 className="text-[52px] font-[500] text-white mb-6">
               Financial transparency
             </h2>
-            <p className="text-white/70 text-sm leading-relaxed">
-              The IRS has determined that VIN is an exempt public charity under
-              IRC Section 501(c)(3). There are many "1%" or "5%" non-profits.
-              Those are 990. Yes, we have a high rate. Our ratio is 84.2% funds
-              go directly to programs and 15.8% administrative costs. You will
-              find our detailed financial reports and annual budgets
-              transparently available on our website.
-            </p>
-          </div>
-          <div className="shrink-0">
-            <img
-              src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&q=80"
-              alt="Financial transparency"
-              className="rounded-2xl h-48 w-72 object-cover"
-            />
+            <div className="space-y-4 text-white text-base leading-relaxed">
+              <p>
+                VIN believes in financial transparency. The project fees paid by our volunteers is the main source of income to fund our community projects. VIN receives no funds from government or foreign agencies. However, we are mindful to ensure our costs and the resulting fees are kept to a minimum and to maintain that transparency on how the fee you pay to us is spent. These fees allow VIN to continue our work in the community. We think you will find the fees affordable but are happy to answer any questions you may have.
+              </p>
+              <p className="font-medium">
+                Thank you for taking the time to read about our work.
+              </p>
+            </div>
           </div>
         </div>
       </section>

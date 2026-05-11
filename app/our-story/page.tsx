@@ -81,35 +81,32 @@ export default function OurStoryPage() {
               "linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.25) 100%)",
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 pb-10 w-full">
-          
-          <p className="text-white/60 text-xs mb-2">
-            The Boys Are Packed And We&apos;re Ready to Go — Facebook Has An
-            Audience Of Over 1b. Beside An Image Of A Car, Best Loaded With
-            Luggage, Scrolls Under Mt. Tenpura. The Meaning But Not Quite Good
-            Enough To Live The Guilty State.
-          </p>
+        <div className="relative z-10  mx-auto px-4 pb-10 w-full">
           <h1
-            className="text-5xl font-bold text-white"
+            className="text-[56px] font-bold text-white"
           >
             Our Story
           </h1>
+          <p className="text-white/60  text-[16px] font-[400] ">
+            The bags are packed and we’re ready to go!’  Facebook tells an audience of over 11k, beside an image of a 4×4; roof loaded with luggage secured under red tarpaulin, the morning sun not quite high enough to light the dusty street.
+          </p>
+          
         </div>
       </section>
 
       {/* Origin Story Intro */}
       <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+        <div className=" mx-auto px-4 text-center">
           <h2
-            className="text-4xl font-bold mb-3"
+            className="text-[56px] font-[600] text-gray-900 mb-3"
           >
             THE ORIGIN STORY OF VOLUNTEERS INITIATIVE NEPAL (VIN)
           </h2>
-          <p className="text-gray-500 text-sm italic mb-2">
+          <p className="text-[#221C84] text-[20px]  font-[500] mb-2">
             A human story of hunger, heartbreak, vision, and a movement built
             from the ground up
           </p>
-          <p className="text-gray-600 text-sm leading-relaxed max-w-2xl mx-auto">
+          <p className="text-gray-600 text-[16px] leading-relaxed max-w-4xl mx-auto">
             In the mountain village of Sindhuli, Nepal, the 1990s were defined
             by two things: extraordinary natural beauty, and extraordinary
             hardship. In this village was born a boy — Bhupi Ghimire — who would
@@ -122,16 +119,16 @@ export default function OurStoryPage() {
 
       {/* Timeline Section */}
       <section className="py-24 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 md:px-12 relative">
+        <div className=" mx-auto px-4 relative">
           {/* Background Vertical Line (Light) */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-gray-100 transform -translate-x-1/2 hidden lg:block" />
+          <div className="absolute left-1/2 top-[40px] bottom-[40px] w-[2px] bg-gray-100 transform -translate-x-1/2 hidden lg:block" />
 
           {/* Progress Vertical Line (Blue) */}
           <div 
-            className="absolute left-1/2 top-0 w-[2px] bg-[var(--blue)] transform -translate-x-1/2 hidden lg:block transition-all duration-700 ease-out"
+            className="absolute left-1/2 top-[40px] w-[2px] bg-[var(--blue)] transform -translate-x-1/2 hidden lg:block transition-all duration-700 ease-out"
             style={{ 
               height: `${(activeIndex / (milestones.length - 1)) * 100}%`,
-              maxHeight: '100%' 
+              maxHeight: 'calc(100% - 80px)' 
             }}
           />
 
@@ -158,7 +155,7 @@ export default function OurStoryPage() {
                     className={`relative transition-transform duration-500 hover:rotate-0 hover:scale-110 ${
                       i % 2 === 0 ? "-rotate-6" : "rotate-6"
                     }`}
-                    style={{ maxWidth: "400px" }}
+                    style={{ maxWidth: "500px" }}
                   >
                     <img
                       src={m.img.includes('upload') ? "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80" : m.img}
@@ -193,111 +190,76 @@ export default function OurStoryPage() {
       </section>
 
       {/* Founder's Message */}
-      <section className="py-16 pb-24" style={{ background: "#e8e4f3" }}>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
+      <section className="py-16 pb-24" style={{ background: "#DFF0FF" }}>
+        <div className=" mx-auto px-4">
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-start">
             {/* Left Content */}
             <div className="flex-1 order-2 lg:order-1">
-              <h2
-                className="text-4xl lg:text-5xl font-bold text-[#1a1a2e] mb-8"
-              >
+              <h2 className="text-[56px] font-bold text-gray-900 mb-2 leading-tight">
                 Founder&apos;s Message
               </h2>
+              <p className="text-[20px] font-medium text-[#221C84] mb-8">From Bhupi</p>
 
-              <div className="space-y-5 text-[#4a4a5a] text-sm leading-[1.8]">
+              <div className="space-y-6 text-[#212121] text-[16px] leading-[1.7] font-[400]">
                 <p>
-                  Thank you for taking the time to read the story behind
-                  Volunteers Initiative Nepal.
-                </p>
-
-                <p>
-                  It is never easy for me to reduce these memories — the hunger,
-                  the distance, the exhaustion of being unseen — and my wish
-                  that no child must continue.
+                  Thank you for taking the time to read the story behind Volunteers Initiative Nepal.
                 </p>
 
                 <p>
-                  Every person, no matter where they are born, deserves dignity,
-                  opportunity, and hope.
+                  It is never easy for me to revisit these memories — the hunger, the distance, the failures, the heartbreaks — but they remind me why VIN exists, and why our work must continue. I founded VIN with one simple belief:
+                </p>
+
+                <p className="text-[#221C84] font-semibold text-[18px]">
+                  Every person, no matter where they are born, deserves dignity, opportunity, and hope.
                 </p>
 
                 <p>
-                  In my own childhood I saw how deeply poverty can shape a life.
-                  I watched as those around me — children with talent and desire
-                  — were never given the chance to grow. That reality, and my
-                  early belief that change was possible, is what drives me
-                  still.
+                  My own childhood taught me how deeply poverty can shape a life. My mother&apos;s sacrifices reminded me of the dreams many people are never allowed to pursue. And the children I met during my early career showed me the painful truth: Temporary help is not enough.
                 </p>
 
                 <p>
-                  Community-led health, empowerment, education, food,
-                  livelihoods, and social mobilization bring together. When
-                  people have all of these, they don&apos;t just survive.
-                </p>
-
-                <p className="font-semibold text-[#1a1a2e]">They lead.</p>
-
-                <p>
-                  A better future for generations. VIN was born from this
-                  vision. But VIN grew because people like you believed that
-                  change is possible — not through charity alone, but through
-                  shared responsibility, service, and compassion. Today, when I
-                  look at the thousands of children and families we have
-                  reached, and the communities we have nurtured, what began as a
-                  dream in a small village in Sindhuli has evolved into a global
-                  family dedicated to empowerment.
-                </p>
-
-                <p className="font-semibold text-[#1a1a2e]">
-                  To everyone who has walked with us — thank you.
-                </p>
-
-                <p className="font-semibold text-[#1a1a2e]">
-                  To everyone we have yet to meet — I welcome you.
+                  Communities need holistic empowerment — education, health, livelihoods, infrastructure, and social inclusion rising together. When people have all of these, they don&apos;t just survive.
+                  <br />They thrive.
+                  <br /><span className="text-[#221C84] font-semibold">They lead.</span>
                 </p>
 
                 <p>
-                  Together, we can build communities where children don&apos;t
-                  walk uphill hungry, where women are not denied opportunity,
-                  and where no one is forgotten.
+                  They build a better future for generations. VIN was born from this vision. But VIN grew because people like you believed that change is possible — not through charity alone, but through shared responsibility, service, and compassion. Today, when I look at the thousands of volunteers, partners, supporters, and community members who stand with VIN, I am humbled. What began as a dream in a small village in Okhaldhunga has evolved into a global family dedicated to empowerment.
                 </p>
 
-                <div className="pt-4 space-y-1">
-                  <p className="font-semibold text-[#1a1a2e]">With purpose,</p>
-                  <p className="font-semibold text-[#1a1a2e]">
-                    With gratitude,
-                  </p>
-                  <p className="text-[#4a4a5a]">
-                    And the journey has only just begun.
-                  </p>
+                <p>
+                  To everyone who has walked with us — <span className="text-[#221C84] font-bold">thank you.</span><br />
+                  To everyone new to our story — <span className="text-[#221C84] font-bold">I welcome you.</span>
+                </p>
+
+                <p>
+                  Whether you volunteer, partner, donate, advocate, or share our vision, you become part of this movement. Together, we can build communities where children don&apos;t walk uphill hungry, where women are not denied opportunity, and where no family feels forgotten.
+                </p>
+
+                <div className="space-y-1 text-[#221C84] font-bold text-[18px]">
+                  <p>This is my promise.</p>
+                  <p>This is VIN&apos;s purpose.</p>
+                  <p>And this journey has only just begun.</p>
                 </div>
 
-                <div className="pt-6 border-t border-[#d0cce0] mt-6">
-                  <p
-                    className="font-bold text-lg text-[#1a1a2e]"
-                  >
-                    Bhupendra &quot;Bhupi&quot; Ghimire
-                  </p>
-                  <p className="text-xs text-[#6a6a7a] mt-1">
-                    Founder / President
-                  </p>
-                  <p className="text-xs text-[#6a6a7a]">
-                    Volunteers Initiative Nepal (VIN)
-                  </p>
+                <div className="pt-8">
+                  <p className="text-gray-600 mb-1">Warm regards,</p>
+                  <p className="font-bold text-[20px] text-[#221C84] mb-0">Bhupendra &quot;Bhupi&quot; Ghimire</p>
+                  <p className="text-gray-500 text-sm">Founder / President</p>
+                  <p className="text-gray-500 text-sm">Volunteers Initiative Nepal (VIN)</p>
                 </div>
               </div>
             </div>
 
             {/* Right Image */}
-            <div className="flex-shrink-0 order-1 lg:order-2 lg:w-[380px]">
-              <div className="relative">
+            <div className="lg:w-[480px] shrink-0 order-1 lg:order-2 mt-4 lg:mt-12 sticky top-10">
+              <div className="relative group">
                 <img
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&q=80"
+                  src="/images/founder_bhupi.png"
                   alt="Bhupi Ghimire - Founder of VIN Nepal"
-                  className="w-full h-auto rounded-lg shadow-xl object-cover"
-                  style={{ maxHeight: "480px" }}
+                  className="w-full h-auto shadow-2xl object-cover"
+                  style={{ maxHeight: "500px" }}
                 />
-                <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-[#1a1a2e]/10 to-transparent pointer-events-none" />
               </div>
             </div>
           </div>

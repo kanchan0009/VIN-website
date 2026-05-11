@@ -75,16 +75,16 @@ export default function WomensEmpowermentPage() {
   return (
     <main>
       {/* Header Section */}
-      <section className="bg-white pt-16 pb-12">
-        <div className="max-w-7xl mx-auto px-6">
-          <h1 className="text-4xl lg:text-5xl font-[700] text-[#1a1a1a] mb-6 leading-tight">
+      <section className="bg-white pt-10 pb-6">
+        <div className=" mx-auto px-6">
+          <h1 className="text-4xl lg:text-5xl font-[700] text-[#1a1a1a] mb-3 leading-tight">
             Women's Empowerment Program
           </h1>
-          <div className="max-w-6xl">
-            <p className="text-gray-600 text-[14px] lg:text-[15px] leading-relaxed font-[400] mb-2">
+          <div className="">
+            <p className="text-gray-600 text-[14px] lg:text-[16px] leading-relaxed font-[400] mb-2">
               VIN aims to empower women socially and economically through education, life skills and income generation opportunities. By 2030, VIN aims to benefit at least 80% of the total women in the marginalized communities of the target areas (Kavresthali, Nuwakot and Okhaldhunga).
             </p>
-            <Link href="/programs/womens-empowerment/overview" className="text-[var(--blue)] text-[14px] font-[600] hover:underline">
+            <Link href="/programs/womens-empowerment/overview" className="text-[var(--blue)] text-[16px] font-[600] hover:underline">
               Read More..
             </Link>
           </div>
@@ -92,7 +92,7 @@ export default function WomensEmpowermentPage() {
       </section>
 
       {/* Hero Image */}
-      <section className="my-2 p-0 !px-0">
+      <section className="mb-10 p-0 !px-0">
         <div className="w-full h-[500px] overflow-hidden">
           <img 
             src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1600&q=80" 
@@ -104,16 +104,16 @@ export default function WomensEmpowermentPage() {
 
       {/* Why + Empowered Vision Section */}
       <section className="pb-10 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col lg:flex-row gap-8">
+        <div className=" mx-auto px-6">
+          <div className="flex flex-col lg:flex-row gap-6">
             {/* Left Content: Why Section */}
             <div className="lg:w-2/3">
-              <h2 className="text-3xl lg:text-4xl font-[700] text-[#1a1a1a] mb-6">
+              <h2 className="text-3xl lg:text-[40px] font-[600] text-[#1a1a1a] mb-6">
                 Why Women Empowerment Programs
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl">
                 {[1, 2, 3, 4].map((item) => (
-                  <div key={item} className="h-[325px] p-10 rounded-[15px] border border-gray-50 shadow-sm hover:shadow-md transition-all duration-300 bg-white">
+                  <div key={item} className="h-[325px] p-10 rounded-[10px] border border-[#D9D9D9] shadow-sm hover:shadow-md transition-all duration-300 bg-white">
                     <div className="w-12 h-12 rounded-lg bg-[#E6F4FE] flex items-center justify-center mb-4">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
@@ -129,15 +129,15 @@ export default function WomensEmpowermentPage() {
             </div>
 
             {/* Right Sidebar */}
-            <div className="lg:w-[35%] space-y-8">
+            <div className="lg:w-[35%] space-y-6">
               {/* Vision Box */}
-              <div className="bg-[#E6F4FE] pt-10 pb-8 px-6 rounded-[15px] text-center shadow-sm">
-                <h3 className="text-xl lg:text-2xl font-[700] text-[#1a1a1a] mb-6 leading-tight">
+              <div className="bg-[#DFF0FF] pt-10 pb-8 px-6 rounded-[10px] text-center shadow-sm">
+                <h3 className="text-xl lg:text-[32px] font-[700] text-[#1a1a1a] mb-6 leading-tight">
                   Empowered women <br /> we envision to be
                 </h3>
                 <div className="relative w-full max-w-[300px] mx-auto aspect-[356/375]">
                   <img 
-                    src="/envision-diagram.png" 
+                    src="/women.png" 
                     alt="Envision Diagram" 
                     className="w-full h-full object-contain"
                   />
@@ -145,7 +145,7 @@ export default function WomensEmpowermentPage() {
               </div>
 
               {/* Sidebar Image */}
-              <div className="rounded-[15px] overflow-hidden shadow-lg aspect-[4/3]">
+              <div className="rounded-[10px] overflow-hidden shadow-lg aspect-[4/3]">
                 <img 
                   src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80" 
                   alt="Community group in mountains" 
@@ -159,14 +159,14 @@ export default function WomensEmpowermentPage() {
 
       {/* Current Situation */}
       <section className="py-12 bg-[#E6F4FE]">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className=" mx-auto px-6">
           <h2 className="text-3xl lg:text-4xl font-[700] text-[#1a1a1a] mb-8">
             Current Situation
           </h2>
           
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-32">
             {/* Left Stat Card */}
-            <div className="w-full lg:w-[400px] h-[350px] bg-[#BFD9FF] rounded-[15px] flex flex-col items-center justify-center p-12 text-center shadow-sm">
+            <div className="w-full lg:w-[400px] h-[350px] bg-[#B2D2FF] rounded-[10px] flex flex-col items-center justify-center p-12 text-center shadow-sm">
               <div className="text-7xl lg:text-7xl font-[700] text-[var(--blue)] mb-8">
                 58 %
               </div>
@@ -195,12 +195,20 @@ export default function WomensEmpowermentPage() {
 
       {/* Video */}
       <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
+        <div className="max-w-5xl mx-auto px-4">
           
-          <div className="relative  overflow-hidden h-[400px] bg-red-600 flex items-center justify-center cursor-pointer group">
+          <div className="relative  rounded-[10px] overflow-hidden h-[450px] bg-red-600 flex items-center justify-center cursor-pointer group">
             <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80" alt="" className="absolute inset-0 w-full h-full object-cover opacity-50" />
-            <div className="relative z-10 w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
-              <Play size={22} fill="var(--blue)" stroke="var(--blue)" className="ml-1" />
+            <div className="relative z-10 w-20 h-20 group-hover:scale-110 transition-transform drop-shadow-2xl">
+              <svg viewBox="0 0 80 80" className="w-full h-full">
+                <defs>
+                  <mask id="play-mask">
+                    <rect width="80" height="80" fill="white" rx="40" ry="40" />
+                    <path d="M55 40L35 53V27L55 40Z" fill="black" />
+                  </mask>
+                </defs>
+                <rect width="80" height="80" fill="white" mask="url(#play-mask)" />
+              </svg>
             </div>
           </div>
         </div>
@@ -208,7 +216,7 @@ export default function WomensEmpowermentPage() {
 
       {/* Album Gallery Section */}
       <section className="py-20 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 relative">
+        <div className=" mx-auto px-6 relative">
           <h2 className="text-3xl lg:text-4xl font-[700] text-[#1a1a1a] text-center mb-16">
             Album Gallery
           </h2>
@@ -256,7 +264,7 @@ export default function WomensEmpowermentPage() {
 
       {/* What we're working toward */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className=" mx-auto px-6">
           <h2 className="text-3xl lg:text-4xl font-[700] text-[#1a1a1a] mb-4">
             What we're working toward
           </h2>
@@ -289,7 +297,7 @@ export default function WomensEmpowermentPage() {
 
       {/* Our Achievements */}
       <section className="py-12 bg-[#E6F4FE]">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className=" mx-auto px-6">
           <h2 className="text-3xl lg:text-4xl font-[700] text-[#1a1a1a] mb-12">
             Our Achievements
           </h2>
@@ -310,7 +318,7 @@ export default function WomensEmpowermentPage() {
             ))}
           </div>
 
-          <div className="bg-white p-8 lg:p-12 rounded-[25px] shadow-sm border border-gray-100">
+          <div className="bg-white p-8 lg:p-12 rounded-[25px] shadow-sm border-l-2 border-[#221C84]">
             <p className="text-gray-600 text-[15px] lg:text-[17px] leading-relaxed max-w-5xl mx-auto text-center">
               Since 2010, the women's Empowerment Program has partnered with local governments, NGO's and international donors to deliver a holistic model of change - from front-line service delivery to policy advocacy at the national level.
             </p>
@@ -319,14 +327,14 @@ export default function WomensEmpowermentPage() {
       </section>
 
       {/* Related Media Section */}
-      <section className="py-20 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 text-center mb-16">
-          <h2 className="text-3xl lg:text-5xl font-[500] text-[#1a1a1a] mb-8">
+      <section className="py-10 bg-white overflow-hidden">
+        <div className=" mx-auto px-6 text-center mb-10">
+          <h2 className="text-3xl lg:text-[50px] font-[500] text-[#1a1a1a] mb-5">
             Related Media
           </h2>
           
           {/* Filter Dropdown */}
-          <div className="inline-block relative mb-10">
+          <div className="inline-block relative mb-5">
             <button className="flex items-center gap-4 px-10 py-3 border border-gray-400 rounded-[5px] text-gray-700 font-[500] hover:bg-gray-50 transition-all">
               Types of Media
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -335,7 +343,7 @@ export default function WomensEmpowermentPage() {
             </button>
           </div>
 
-          <p className="text-gray-500 text-[14px] lg:text-[16px] max-w-4xl mx-auto leading-relaxed">
+          <p className="text-[#555555] text-[16px]  font-[400] lg:text-[17px] max-w-4xl mx-auto leading-relaxed">
             VIN facilitates projects focused on the women and children of marginalized communities against this challenging backdrop. VIN believes that the empowerment of women and children will bring about positive change so desperately needed in Nepal.
           </p>
         </div>
@@ -353,7 +361,7 @@ export default function WomensEmpowermentPage() {
             </svg>
           </button>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4">
             {[
               { id: '01', type: 'image', img: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80' },
               { id: '02', type: 'image', img: 'https://images.unsplash.com/photo-1607748862156-7c548e7e98f4?w=600&q=80' },
@@ -388,15 +396,14 @@ export default function WomensEmpowermentPage() {
 
       {/* Women's Empowerment Projects */}
       <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-6 relative">
-          <div className="mb-8">
-            <h2 className="text-3xl lg:text-5xl font-[600] text-[#1a1a1a] mb-6">
-              Women's Empowerment Projects
-            </h2>
-            <p className="text-gray-600 text-[14px] lg:text-[16px] max-w-3xl leading-relaxed">
-              We empower women both socially and economically by providing them access to education, life skills and income generation opportunities.
-            </p>
-          </div>
+        <div className=" mx-auto px-6 relative">
+           <h2 className="text-3xl lg:text-4xl font-[700] text-[#1a1a1a] mb-4">
+            Women's Empowerment Projects
+          </h2>
+          <p className="text-gray-600 text-[14px] lg:text-[15px] max-w-3xl mb-12">
+            We empower women both socially and economically by providing them access to education, life skills and income generation opportunities.
+          </p>
+          
 
           <div className="relative group">
             {/* Navigation Arrows */}
@@ -421,19 +428,19 @@ export default function WomensEmpowermentPage() {
                       alt="Project" 
                       className="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute top-4 right-4 bg-[var(--blue)] text-white text-[10px] uppercase font-bold px-4 py-1.5 rounded-sm">
+                    <div className="absolute top-4 right-0 bg-[var(--blue)] text-white text-[12px] uppercase font-bold px-4 py-1.5 rounded-sm">
                       Women Empowerment
                     </div>
                   </div>
                   {/* Bottom Content */}
                   <div className="bg-[#1e238f] p-6 flex-1 flex flex-col">
-                    <h4 className="text-white text-lg lg:text-xl font-[700] mb-3 leading-tight">
+                    <h4 className="text-white text-[18px] lg:text-xl font-[500] mb-3 leading-tight">
                       Women’s Development in Nepal: The Myth of Empowerment
                     </h4>
                     <p className="text-white/80 text-[13px] lg:text-[14px] leading-relaxed mb-4 line-clamp-2">
                       Loreum ipsum dipsum lorem ipsum dipsum Loreum ipsum dipsum lorem ..
                     </p>
-                    <Link href="#" className="mt-auto text-white text-sm font-bold flex items-center gap-2 hover:translate-x-2 transition-transform">
+                    <Link href="#" className="mt-auto text-white text-sm font-[600] flex items-center gap-2 hover:translate-x-2 transition-transform">
                       Read More 
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -449,54 +456,96 @@ export default function WomensEmpowermentPage() {
 
       {/* Testimonials Section */}
       <section className="py-12 bg-white border-t border-gray-50">
-        <div className="max-w-7xl mx-auto px-6 relative">
+        <div className=" mx-auto px-6 relative">
           <h2 className="text-3xl lg:text-5xl font-[700] text-[#1a1a1a] text-center mb-12">
             Testimonials
           </h2>
 
-          <div className="relative">
-            {/* Navigation Arrows */}
-            <button className="absolute -left-4 lg:-left-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#1e238f] flex items-center justify-center shadow-lg hover:bg-[#15196d] transition-all z-10">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="m15 18-6-6 6-6"/>
-              </svg>
-            </button>
-            <button className="absolute -right-4 lg:-right-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#1e238f] flex items-center justify-center shadow-lg hover:bg-[#15196d] transition-all z-10">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="m9 18 6-6-6-6"/>
+          <div className="relative flex items-center gap-4 md:gap-8  mx-auto">
+            {/* Left Arrow */}
+            <button
+              onClick={prevTestimonial}
+              className="shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full text-white hover:opacity-90 transition-opacity"
+              style={{ background: "var(--indigo-btn, #1e3a5f)" }}
+              aria-label="Previous testimonial"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2.5}
+                stroke="currentColor"
+                className="w-5 h-5 md:w-6 md:h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                />
               </svg>
             </button>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-              {/* Left Column: Text */}
-              <div className="order-2 lg:order-1">
-                <p className="text-black text-[15px] font-[400] lg:text-[17px] leading-relaxed mb-6">
-                  Namaste! My name is Shanti Tamang, I am a 34-year-old farmer from Devisthan, Tarkeshwar Municipality. Two years ago, I had the opportunity to participate in an English class offered by Volunteers Initiative Nepal (VIN) at the Women's Business Center (WBC) in Tinpiple, Tarkeshwar. At first, I hesitated to join because I thought learning English would be useless for someone like me, a farmer and a housewife. I was also worried it would interfere with my daily household activities. However, thanks to the encouragement of the women in my community, I decided to give it a try. Little did I know this decision would change my life in ways I never imagined.
-                </p>
-                <div>
-                  <h4 className="text-[#1a1a1a] text-xl font-[700] mb-1">Dagruel Manulo</h4>
-                  <p className="text-gray-400 text-sm">Sydney, Australia</p>
+            <div className="flex-1 max-w-10xl">
+              <div className="flex flex-col md:flex-row items-start gap-8 md:gap-12">
+                {/* Text Content */}
+                <div className="flex-1 order-2 md:order-1">
+                  <p className="text-gray-700 text-[10px] font-[500] md:text-base leading-relaxed mb-6 text-justify">
+                    {current.text}
+                  </p>
+                  <p className="font-bold text-sm md:text-base text-gray-900">
+                    {current.signature}
+                  </p>
+                  <p className="text-gray-500 text-xs md:text-sm mt-1">
+                    {current.signatureTitle}
+                  </p>
                 </div>
-              </div>
 
-              {/* Right Column: Image */}
-              <div className="order-1 lg:order-2">
-                <div className=" overflow-hidden shadow-xl w-full max-w-[400px] h-[380px] ml-auto">
-                  <img 
-                    src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=800&q=80" 
-                    alt="Testimonial Author" 
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                  />
+                {/* Image */}
+                <div className="w-full md:w-80 lg:w-96 shrink-0 order-1 md:order-2">
+                  <div className="relative w-full aspect-[4/3] overflow-hidden rounded-sm">
+                    <img
+                      src={current.image}
+                      alt={current.name}
+                      className="w-full h-full object-cover grayscale"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* View All Button */}
-            <div className="flex justify-end mt-8">
-              <button className="bg-[#1e238f] text-white px-8 py-3 rounded-md font-[600] text-sm hover:bg-[#15196d] transition-all shadow-lg active:scale-95">
-                View All Testimonials
-              </button>
-            </div>
+            {/* Right Arrow */}
+            <button
+              onClick={nextTestimonial}
+              className="shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full text-white hover:opacity-90 transition-opacity"
+              style={{ background: "var(--indigo-btn, #1e3a5f)" }}
+              aria-label="Next testimonial"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2.5}
+                stroke="currentColor"
+                className="w-5 h-5 md:w-6 md:h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </div>
+
+          {/* View All Button */}
+          <div className="flex justify-end mt-8 md:mt-12  mx-auto px-4 md:pr-16">
+            <Link
+              href="/testimonials"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] font-[700] text-white text-base hover:opacity-90 transition-opacity"
+              style={{ background: "var(--blue)" }}
+            >
+              View All Testimonials
+            </Link>
           </div>
         </div>
       </section>
@@ -506,9 +555,9 @@ export default function WomensEmpowermentPage() {
       
       {/* Google Review Wall of Love */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="   mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-6xl font-[600] text-[#1a1a1a] mb-4">
+            <h2 className="text-3xl lg:text-[50px] font-[700] text-[#1a1a1a] mb-4">
               Google Review Wall of Love
             </h2>
             <p className="text-gray-500 text-lg">
@@ -517,7 +566,7 @@ export default function WomensEmpowermentPage() {
           </div>
 
           {/* Rating Header */}
-          <div className="bg-[#F8F9FA] rounded-[15px] p-6 mb-16 flex flex-col md:flex-row items-center justify-between gap-6 border border-gray-100">
+          <div className="bg-[#F2F2F2] rounded-[15px] p-6 mb-16 flex flex-col md:flex-row items-center justify-between gap-6 border border-gray-100">
             <div className="flex flex-col md:flex-row items-center gap-4">
               <div className="flex items-center gap-2">
                 <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google" className="h-6" />
@@ -561,7 +610,7 @@ export default function WomensEmpowermentPage() {
                 { name: "Michael Brown", title: "Founder, Brown & Co.", initial: "M", date: "January 10, 2024", text: "A fantastic experience from start to finish. Highly recommended for anyone looking for quality work!" },
                 { name: "Emily Davis", title: "HR Director, Global Enterprises", initial: "E", date: "December 20, 2023", text: "Great customer support and seamless service. The team truly cares about their clients." }
               ].map((review, i) => (
-                <div key={i} className="bg-[#F8F9FA] rounded-[20px] p-8 flex flex-col items-center text-center shadow-sm border border-gray-50 hover:shadow-md transition-all">
+                <div key={i} className="bg-[#F2F2F2] rounded-[20px] p-8 flex flex-col items-center text-center shadow-sm border border-gray-50 hover:shadow-md transition-all">
                   <div className="flex gap-1 mb-6">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <svg key={star} width="16" height="16" viewBox="0 0 24 24" fill="#FFC107">
@@ -587,7 +636,7 @@ export default function WomensEmpowermentPage() {
       </section>
       {/* Other Programs */}
       <section className="py-20 bg-[#e6f4fe]">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className=" mx-auto px-6">
           <div className="mb-12">
             <h2 className="text-4xl font-[700] text-[#1a1a1a] mb-2">Other Programs</h2>
             <p className="text-gray-600">Our other featuring programs that you might be interested</p>

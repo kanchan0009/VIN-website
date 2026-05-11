@@ -20,7 +20,7 @@ export default function ProgramPage() {
       <section className="relative h-[670px] flex items-end overflow-hidden">
         <img src={imgs[slug]} alt={titles[slug]} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)' }} />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 pb-10 w-full">
+        <div className="relative z-10  mx-auto px-4 pb-10 w-full">
           <p className="text-white/60 text-sm mb-2">Home / All Programs / <span className="text-white">{titles[slug]}</span></p>
           <h1 className="text-5xl font-bold text-white" style={{ }}>{titles[slug]}</h1>
         </div>

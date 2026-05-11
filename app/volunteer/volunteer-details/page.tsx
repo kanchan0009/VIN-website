@@ -227,32 +227,23 @@ export default function VolunteerDetailsPage() {
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full p-5 md:p-8 md:pb-8">
-          <div className="max-w-7xl mx-auto">
-            <h1 className="text-white text-[42px] md:text-[60px] font-[700] mb-0 leading-tight">
+        <div className="absolute bottom-0 left-0 w-full p-5 md:p-10 md:pb-10">
+          <div className=" mx-auto">
+            <h1 className="text-white text-5xl md:text-[60px] font-bold mb-2 leading-tight">
               Childcare Volunteer Opportunities In Nepal
             </h1>
-            <p className="text-white/90 text-lg md:text-xl max-w-3xl leading-relaxed">
+            <p className="text-white/80 text-lg md:text-xl max-w-4xl leading-relaxed">
               Loreum Ipsum Dipsum We Are Different Locations Loreum Ipsum Dipsum We
             </p>
           </div>
         </div>
       </section>
 
-      {/* Breadcrumb Section */}
-      <div className="bg-[#f3f4ff] py-3">
-        <div className="max-w-7xl mx-auto px-6 md:px-16 flex items-center text-sm">
-          <Link href="/" className="text-gray-600 hover:text-[#1a237e]">Home</Link>
-          <span className="mx-2 text-gray-400">/</span>
-          <Link href="/volunteer" className="text-gray-600 hover:text-[#1a237e]">Volunteer</Link>
-          <span className="mx-2 text-gray-400">/</span>
-          <span className="text-[#1a237e] font-bold">Program</span>
-        </div>
-      </div>
+      
 
       {/* Features Bar */}
       <div className="bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 md:px-16 py-8">
+        <div className=" mx-auto px-6 md:px-16 py-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {features.map((feature, idx) => (
               <div key={idx} className="flex items-start gap-3">
@@ -269,7 +260,7 @@ export default function VolunteerDetailsPage() {
 
       {/* Main Content Section */}
       <section className="py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-16">
+        <div className=" mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             
             {/* Left Column */}
@@ -362,7 +353,7 @@ export default function VolunteerDetailsPage() {
 
       {/* Mission & Vision Section */}
       <section className="bg-[#f8faff] py-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-16 text-center">
+        <div className=" mx-auto px-6 md:px-10 text-center">
           <p className="text-[#f15b2d] text-[11px] font-bold tracking-[0.2em] uppercase mb-4">
             OUR MISSION & VISION
           </p>
@@ -398,7 +389,7 @@ export default function VolunteerDetailsPage() {
 
       {/* Life on the Ground Gallery Section */}
       <section className="bg-[#1a237e] py-15 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 md:px-16 text-center">
+        <div className=" mx-auto px-6 md:px-10 text-center">
           <p className="text-[#f15b2d] text-[11px] font-bold tracking-[0.2em] uppercase mb-4">
             LIFE ON THE GROUND
           </p>
@@ -466,7 +457,7 @@ export default function VolunteerDetailsPage() {
 
       {/* Explore Volunteer Programs Section */}
       <section className="bg-white py-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-16 text-center">
+        <div className=" mx-auto px-6 md:px-10 text-center">
           <p className="text-[#f15b2d] text-[11px] font-bold tracking-[0.2em] uppercase mb-4">
             VOLUNTEER PROGRAMS
           </p>
@@ -513,7 +504,7 @@ export default function VolunteerDetailsPage() {
 
       {/* Additional Offerings Section */}
       <section className="bg-white pb-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-16">
+        <div className=" mx-auto px-6 md:px-10">
           <div className="bg-[#F7F7FC] border-1 border-[#E5E2F0] rounded-[32px] p-10 md:p-16">
             <h2 className="text-[#0D0A35] text-[24px] md:text-[28px] font-[700] mb-6">
               Additional Offerings
@@ -538,7 +529,7 @@ export default function VolunteerDetailsPage() {
 
       {/* Impact & Testimonials Section */}
       <section className="bg-white py-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-16">
+        <div className=" mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
             
             {/* Left Column - Impact & Benefits */}
@@ -635,14 +626,14 @@ export default function VolunteerDetailsPage() {
 
       {/* How It Works Section */}
       <section className="bg-white py-12">
-        <div className="max-w-7xl mx-auto px-6 md:px-16 text-center">
+        <div className=" mx-auto px-6 md:px-16 text-center">
           <p className="text-[#f15b2d] text-[11px] font-bold tracking-[0.2em] uppercase mb-4">
             GET INVOLVED TODAY
           </p>
-          <h2 className="text-[#0D0A35] text-[40px] md:text-[44px] font-[900] leading-[1.1] mb-6">
+          <h2 className="text-[#0D0A35] text-[40px] md:text-[50px] font-[700] leading-[1.1] mb-6">
             How It Works
           </h2>
-          <p className="text-[#4E4A72] text-[17px] max-w-xl mx-auto mb-18 leading-relaxed">
+          <p className="text-[#4E4A72] text-[17px] max-w-2xl mx-auto mb-18 leading-relaxed">
             Becoming a part of our volunteer programs is straightforward. We have designed an inclusive and supportive process to ensure your journey is smooth and impactful.
           </p>
 

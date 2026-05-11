@@ -19,7 +19,7 @@ export default function MissionPage() {
               "linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)",
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 pb-10 w-full">
+        <div className="relative z-10  mx-auto px-4 pb-10 w-full">
           
           <h1
             className="text-5xl font-bold text-white"
@@ -51,7 +51,7 @@ export default function MissionPage() {
 
       {/* Vision Mission Values */}
       <section className="py-10 pb-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className=" mx-auto px-4">
           <h2 className="text-2xl font-semibold mb-2 text-center">
             Introducing
           </h2>

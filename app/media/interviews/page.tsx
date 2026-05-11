@@ -95,7 +95,7 @@ export default function InterviewsPage() {
               "linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)",
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 pb-10 w-full">
+        <div className="relative z-10  mx-auto px-4 pb-10 w-full">
           
           <h1
             className="text-5xl font-bold text-white"

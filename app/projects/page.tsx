@@ -25,7 +25,7 @@ export default function DonatePage() {
       <section className="relative h-[670px] flex items-end overflow-hidden">
         <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=80" alt="Donate" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)' }} />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 pb-10 w-full">
+        <div className="relative z-10  mx-auto px-4 pb-10 w-full">
           <h1 className="text-5xl font-bold text-white mb-2" style={{ }}>Make a Difference Today</h1>
           <p className="text-white/70 text-sm max-w-lg">Your donation directly supports families and communities in Nepal.</p>
         </div>

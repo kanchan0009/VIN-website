@@ -76,7 +76,7 @@ export default function TestimonialsPage() {
     <main>
       {/* Testimonials Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className=" mx-auto px-4">
           {/* Header with Filter */}
           <div className="flex items-center justify-center mb-12 gap-4">
             <h2

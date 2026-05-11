@@ -74,7 +74,7 @@ function OpportunityCard({ item }: { item: Opportunity }) {
   return (
     <div className="bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col group hover:shadow-md transition-all duration-300">
       {/* Image */}
-      <div className="relative aspect-[16/9.5] overflow-hidden">
+      <div className="relative aspect-[16/10] overflow-hidden">
         <img
           src={item.image}
           alt={item.title}
@@ -107,7 +107,7 @@ function OpportunityCard({ item }: { item: Opportunity }) {
 export default function VolunteerOpportunities() {
   return (
     <section className="py-14 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className=" mx-auto px-6">
         {/* Page Title */}
         <h2 className="text-center text-3xl lg:text-[38px] font-[600] text-[#1D1E20] mb-12 font-montserrat tracking-tight">
           Volunteer Opportunities

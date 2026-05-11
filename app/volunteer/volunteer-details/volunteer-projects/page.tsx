@@ -30,12 +30,12 @@ export default function VolunteerProjectsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 items-end">
             {/* Left Content */}
             <div className="lg:col-span-7">
-              <h1 className="text-white text-[40px] md:text-[56px] font-[900] leading-[1.1]">
+              <h1 className="text-white text-4xl md:text-5xl font-bold leading-[1.1]">
                 Internship on <br />
                 <span className="text-[#F7941D]">Child Development</span> <br />
                 Nepal
               </h1>
-              <p className="text-white/80 text-[16px] max-w-5xl leading-relaxed font-medium py-4">
+              <p className="text-white/80 text-lg max-w-4xl leading-relaxed font-medium py-4">
                 Lorem Ipsum Dipsum We Are Different Locations Lorem Ipsum Dipsum We Are Different Locations Lorem Ipsum Dipsum We
               </p>
             </div>
@@ -87,7 +87,7 @@ export default function VolunteerProjectsPage() {
 
       {/* Image Gallery Section */}
       <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className=" mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 h-[300px] lg:h-[420px]">
             {/* Left: Large Feature Image */}
             <div className="relative rounded-l-[32px] overflow-hidden shadow-sm group">
@@ -130,7 +130,7 @@ export default function VolunteerProjectsPage() {
 
       {/* Project Overview Section */}
       <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16">
+        <div className=" mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16">
           {/* Left Side: Content and Stats */}
           <div className="lg:col-span-7">
             <div className="mb-12">
@@ -301,7 +301,7 @@ export default function VolunteerProjectsPage() {
 
       {/* The Challenge Section */}
       <section className="py-12 ">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16">
+        <div className=" mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16">
           {/* Left Side: Content */}
           <div className="lg:col-span-7">
             <div className="mb-12">
@@ -412,7 +412,7 @@ export default function VolunteerProjectsPage() {
 
       {/* Your Role Section */}
       <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16">
+        <div className=" mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16">
           {/* Left Side: Content (Aligned with upper sections) */}
           <div className="lg:col-span-7">
             <div className="mb-12">
@@ -494,7 +494,7 @@ export default function VolunteerProjectsPage() {
 
       {/* UN Alignment & Eligibility Sections */}
       <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16">
+        <div className=" mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-7">
             {/* UN Alignment */}
             <div className="mb-24">
@@ -605,7 +605,7 @@ export default function VolunteerProjectsPage() {
 
       {/* What's Included Section */}
       <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16">
+        <div className=" mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-7">
             <span className="text-[var(--blue)] font-bold text-[11px] tracking-[0.15em] uppercase mb-4 block">
               PROGRAM FEES
@@ -688,7 +688,7 @@ export default function VolunteerProjectsPage() {
 
       {/* How It Works Section */}
       <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16">
+        <div className=" mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-7">
             <span className="text-[var(--blue)] font-bold text-[11px] tracking-[0.15em] uppercase mb-4 block">
               YOUR JOURNEY
@@ -772,7 +772,7 @@ export default function VolunteerProjectsPage() {
 
       {/* Testimonials Section */}
       <section className="py-14 bg-[var(--blue)] text-white">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className=" mx-auto px-6">
           <div className="mb-16">
             <span className="text-white/60 font-bold text-[11px] tracking-[0.15em] uppercase mb-4 block">
               WHAT INTERNS SAY
@@ -878,7 +878,7 @@ export default function VolunteerProjectsPage() {
 
       {/* Related Programs Section */}
       <section className="py-14 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className=" mx-auto px-6">
           <div className="flex justify-between items-end mb-12">
             <div>
               <span className="text-[var(--blue)] font-bold text-[11px] tracking-[0.15em] uppercase mb-4 block">

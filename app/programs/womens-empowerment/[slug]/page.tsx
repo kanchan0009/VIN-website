@@ -25,7 +25,7 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
   const { slug } = use(params);
   const title = slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
   const [activeIndex, setActiveIndex] = useState(0);
-  const currentTestimonial = testimonials[activeIndex];
+  const current = testimonials[activeIndex];
 
   const nextTestimonial = () => {
     setActiveIndex((prev) => (prev + 1) % testimonials.length);
@@ -38,7 +38,7 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
   return (
     <main>
       {/* Hero Image Section */}
-      <section className="w-full h-[670px] m-0 !px-0 overflow-hidden">
+      <section className="w-full h-[545px] m-0 !px-0 overflow-hidden">
         <img 
           src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1600&q=80" 
           alt="Women's Empowerment" 
@@ -48,7 +48,7 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
 
       {/* Info Card Section */}
       <section className="py-6 lg:py-10 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className=" mx-auto px-6">
           <div className="bg-[#DFF0FF] border border-[#1D1E20]/10 rounded-[20px] p-6 lg:p-10 text-center shadow-sm">
             <h1 className="text-3xl lg:text-5xl font-[600] text-[#1D1E20] mb-4">
               Women's Education & Life Skills
@@ -68,7 +68,7 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
 
       {/* The Reality Section */}
       <section className="py-10 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className=" mx-auto px-6">
           <div className="max-w-3xl mb-8">
             <h2 className="text-4xl lg:text-[50px] font-[600] text-[#1D1E20] mb-4 leading-tight">
               The Reality Nepalese Women Face Today
@@ -159,13 +159,13 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
       </section>
 
       {/* Resilient Women Section */}
-      <section className="py-12 lg:py-16 bg-[#eef8ff]">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-12 lg:py-16 bg-[#DFF0FF]">
+        <div className=" mx-auto px-6">
           <h2 className="text-3xl lg:text-[40px] font-[700] text-[#1a1a1a] mb-12 leading-tight">
             Building Self-Reliant, Resilient Women
           </h2>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-5 items-center">
             {/* Left: Navy Card */}
             <div className="bg-[var(--blue)] rounded-[6px] p-10 lg:py-24 lg:px-16 relative overflow-hidden w-120">
               {/* Decorative Circles */}
@@ -196,7 +196,7 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
                 The Women Education and Life Skills project empowers women to become self-reliant and resilient by providing access to relevant education and skills development — enabling them to participate on equal footing with men across all sectors of Nepali society.
               </p>
               
-              <div className="bg-white rounded-[20px] p-8 lg:p-10 shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-gray-50">
+              <div className="bg-white rounded-[20px] p-8 lg:p-10 shadow-[0_10px_40px_rgba(0,0,0,0.04)] border-l-2 border-[#221C84]">
                 <p className="text-gray-600 text-xm leading-relaxed">
                   <span className="text-[var(--blue)] font-[700]">2030 Target:</span> At least 80% of targeted women develop awareness of their rights and necessary life skills for economic independence.
                 </p>
@@ -208,7 +208,7 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
 
       {/* How We Deliver Change Section */}
       <section className="py-8 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className=" mx-auto px-6">
           <div className="max-w-3xl mb-6">
             <h2 className="text-4xl lg:text-[46px] font-[600] text-[#1a1a1a] mb-4 leading-tight">
               How We Deliver Change
@@ -246,8 +246,8 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
       
       {/* Our Impact Section */}
       <section className="py-8 bg-[#eef8ff]">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl lg:text-[46px] font-[600] text-[#1a1a1a] mb-6 leading-tight">
+        <div className=" mx-auto px-6">
+          <h2 className="text-[50px] lg:text-[46px] font-[600] text-[#1a1a1a] mb-8 leading-tight">
             Our Impact So Far
           </h2>
 
@@ -255,8 +255,8 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
             {/* Main Highlight Card */}
             <div className="bg-[var(--blue)] rounded-[20px] p-8 lg:py-10 lg:px-12 text-center text-white shadow-xl relative overflow-hidden">
               <div className="relative z-10">
-                <div className="text-4xl lg:text-6xl font-[700] mb-2 tracking-tight">10,055</div>
-                <div className="text-xl lg:text-2xl font-[600] mb-2 max-w-2xl mx-auto leading-relaxed">
+                <div className="text-4xl lg:text-6xl font-[700] mb-8 tracking-tight">10,055</div>
+                <div className="text-xl lg:text-2xl font-[600] mb-3 max-w-3xl mx-auto leading-relaxed">
                   Women trained through facilitated workshops & programs
                 </div>
                 <div className="text-white/60 text-sm lg:text-base font-[400]">
@@ -288,7 +288,7 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
 
       {/* Women's Empowerment Projects */}
       <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-6 relative">
+        <div className=" mx-auto px-6 relative">
           <div className="mb-8">
             <h2 className="text-3xl lg:text-5xl font-[600] text-[#1a1a1a] mb-6">
               Women's Empowerment Projects
@@ -347,69 +347,108 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-12 bg-white border-t border-gray-50">
-        <div className="max-w-7xl mx-auto px-6 relative">
-          <h2 className="text-3xl lg:text-5xl font-[700] text-[#1a1a1a] text-center mb-12">
+      {/* Testimonials */}
+      <section className="py-20 bg-white">
+        <div className=" mx-auto px-4 relative">
+          {/* Heading */}
+          <h2 className="text-[56px] font-[600] text-center mb-15 py-4">
             Testimonials
           </h2>
 
-          <div className="relative">
-            {/* Navigation Arrows */}
-            <button 
+          {/* Carousel Container */}
+          <div className="flex items-center justify-center gap-2">
+            {/* Left Arrow */}
+            <button
               onClick={prevTestimonial}
-              className="absolute -left-4 lg:-left-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#1e238f] flex items-center justify-center shadow-lg hover:bg-[#15196d] transition-all z-10"
+              className="shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full text-white hover:opacity-90 transition-opacity"
+              style={{ background: "var(--indigo-btn, #1e3a5f)" }}
+              aria-label="Previous testimonial"
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="m15 18-6-6 6-6"/>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2.5}
+                stroke="currentColor"
+                className="w-5 h-5 md:w-6 md:h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                />
               </svg>
             </button>
-            <button 
+
+            {/* Testimonial Card */}
+            <div className="flex-1 max-w-10xl">
+              <div className="flex flex-col md:flex-row items-start gap-8 md:gap-12">
+                {/* Text Content */}
+                <div className="flex-1 order-2 md:order-1">
+                  <p className="text-gray-700 text-[10px] font-[500] md:text-base leading-relaxed mb-6 text-justify">
+                    {current.text}
+                  </p>
+                  <p className="font-bold text-sm md:text-base text-gray-900">
+                    {current.signature}
+                  </p>
+                  <p className="text-gray-500 text-xs md:text-sm mt-1">
+                    {current.signatureTitle}
+                  </p>
+                </div>
+
+                {/* Image */}
+                <div className="w-full md:w-80 lg:w-96 shrink-0 order-1 md:order-2">
+                  <div className="relative w-full aspect-[4/3] overflow-hidden rounded-sm">
+                    <img
+                      src={current.image}
+                      alt={current.signature}
+                      className="w-full h-full object-cover grayscale"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Arrow */}
+            <button
               onClick={nextTestimonial}
-              className="absolute -right-4 lg:-right-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#1e238f] flex items-center justify-center shadow-lg hover:bg-[#15196d] transition-all z-10"
+              className="shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full text-white hover:opacity-90 transition-opacity"
+              style={{ background: "var(--indigo-btn, #1e3a5f)" }}
+              aria-label="Next testimonial"
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="m9 18 6-6-6-6"/>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2.5}
+                stroke="currentColor"
+                className="w-5 h-5 md:w-6 md:h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                />
               </svg>
             </button>
+          </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-              {/* Left Column: Text */}
-              <div className="order-2 lg:order-1">
-                <p className="text-black text-[15px] font-[400] lg:text-[17px] leading-relaxed mb-6">
-                  {currentTestimonial.text}
-                </p>
-                <div>
-                  <h4 className="text-[#1a1a1a] text-xl font-[700] mb-1">{currentTestimonial.name}</h4>
-                  <p className="text-gray-400 text-sm">{currentTestimonial.signatureTitle}</p>
-                </div>
-              </div>
-
-              {/* Right Column: Image */}
-              <div className="order-1 lg:order-2">
-                <div className=" overflow-hidden shadow-xl w-full max-w-[400px] h-[380px] ml-auto">
-                  <img 
-                    src={currentTestimonial.image}
-                    alt="Testimonial Author" 
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* View All Button */}
-            <div className="flex justify-end mt-8">
-              <button className="bg-[#1e238f] text-white px-8 py-3 rounded-md font-[600] text-sm hover:bg-[#15196d] transition-all shadow-lg active:scale-95">
-                View All Testimonials
-              </button>
-            </div>
+          {/* View All Button */}
+          <div className="flex justify-end mt-8 md:mt-12  mx-auto px-4 md:pr-16">
+            <Link
+              href="/testimonials"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] font-[700] text-white text-base hover:opacity-90 transition-opacity"
+              style={{ background: "var(--blue)" }}
+            >
+              View All Testimonials
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Google Review Wall of Love */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className=" mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-6xl font-[600] text-[#1a1a1a] mb-4">
               Google Review Wall of Love

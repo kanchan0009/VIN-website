@@ -46,7 +46,7 @@ export default function SuccessStoriesPage() {
 
       {/* Main Content */}
       <section className="py-18 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className=" mx-auto px-6 lg:px-8">
           {/* Section Title */}
           <h2 className="text-center text-4xl lg:text-[45px] font-[800] text-[#1D1E20] mb-20 tracking-tight">
             Success Story

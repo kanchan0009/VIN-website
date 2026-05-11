@@ -55,11 +55,11 @@ export default function WhereWeWork() {
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)' }} />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 pb-16 w-full">
-          <h1 className="text-5xl lg:text-6xl font-bold text-white mb-4">
+        <div className="relative z-10  mx-auto px-4 pb-16 w-full">
+          <h1 className="text-5xl lg:text-5xl font-bold text-white mb-2">
             Our Working Sites
           </h1>
-          <p className="text-white/80 max-w-2xl text-lg leading-relaxed">
+          <p className="text-white/80 max-w-4xl text-lg leading-relaxed">
             Loreum Ipsum Dipsum We Are Different Locations Loreum Ipsum Dipsum We Are Different Locations Loreum Ipsum Dipsum We Are Different L
           </p>
         </div>
@@ -67,7 +67,7 @@ export default function WhereWeWork() {
 
       {/* Info Section */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className=" mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-16 items-start">
             
             {/* Left Content */}
@@ -136,7 +136,7 @@ export default function WhereWeWork() {
 
       {/* Locations Grid */}
       <section className="py-20 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
+        <div className=" mx-auto">
           <div className="mb-16">
             <h2 className="text-[36px] font-[700] text-[var(--blue)]">Our Working Sites</h2>
           </div>

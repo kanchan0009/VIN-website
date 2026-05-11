@@ -134,7 +134,7 @@ export default function ProgramGalleryPage() {
 
         {/* Middle Row - Max Global Width */}
         <section className="p-0 !px-0">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className=" mx-auto px-6">
             <div className="grid grid-cols-2 gap-6 md:gap-5">
               {midItems.map((item, i) => (
                 <div 

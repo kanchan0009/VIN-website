@@ -9,13 +9,13 @@ export default function ChildDevelopmentPage() {
       <section className="relative h-[670px] flex items-end overflow-hidden">
         <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=80" alt="Child Development" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)' }} />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 pb-10 w-full">
+        <div className="relative z-10  mx-auto px-4 pb-10 w-full">
           
           <h1 className="text-5xl font-bold text-white" style={{ }}>Child Development Program</h1>
         </div>
       </section>
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className=" mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-12">
             <div className="flex-1">
               <h2 className="text-3xl font-bold mb-5" style={{ }}>Why Child Development Programs</h2>
@@ -46,7 +46,7 @@ export default function ChildDevelopmentPage() {
         </div>
       </section>
       <section className="py-16" style={{ background: 'var(--sky)' }}>
-        <div className="max-w-7xl mx-auto px-4">
+        <div className=" mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8" style={{ }}>Our Goals</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {['Ensure access to quality education for all children', 'Support children\'s health and nutritional needs', 'Create safe learning environments', 'Raise awareness of children\'s rights'].map((g, i) => (

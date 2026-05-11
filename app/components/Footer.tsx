@@ -4,7 +4,7 @@ import { Phone, Mail } from 'lucide-react';
 export default function Footer() {
   return (
     <footer className="bg-[#fcfcfc] text-gray-800 border-t border-gray-200 font-sans">
-      <div className="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div className=" mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
         {/* Brand */}
         <div>
           <div className="mb-8">
@@ -71,7 +71,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col lg:flex-row items-center justify-between gap-6 text-[13px] text-gray-500">
+        <div className=" mx-auto px-4 py-6 flex flex-col lg:flex-row items-center justify-between gap-6 text-[13px] text-gray-500">
           <div className="flex items-center gap-3">
             <span className="font-medium text-gray-700">Recommended By</span>
             {/* Replace with actual lonely planet logo path */}

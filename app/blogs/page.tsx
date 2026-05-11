@@ -87,9 +87,9 @@ export default function BlogsPage() {
               "linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)",
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 pb-16 w-full text-center lg:text-left">
+        <div className="relative z-10  mx-auto px-4 pb-10 w-full text-center lg:text-left">
           <h1 className="text-5xl lg:text-6xl font-bold text-white mb-4">Blogs</h1>
-          <p className="text-white/80 max-w-xl text-lg mx-auto lg:mx-0">
+          <p className="text-white/80 text-lg max-w-4xl mx-auto lg:mx-0">
             Lorem Ipsum Dipsum We Are Different Locations Lorem Ipsum Dipsum We
             Are...
           </p>
@@ -97,7 +97,7 @@ export default function BlogsPage() {
       </section>
 
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className=" mx-auto px-4">
           
           {/* Search Bar centered at top */}
           <div className="flex justify-center mb-16">

@@ -211,7 +211,7 @@ export default function LocationDetail() {
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 pb-5 w-full">
+        <div className="relative z-10  mx-auto px-4 pb-5 w-full">
           <h1 className="text-[32px] lg:text-[50px] font-[800] text-white mb-3 drop-shadow-lg">
             {location.name}
           </h1>
@@ -222,7 +222,7 @@ export default function LocationDetail() {
       </section>
 
       {/* Main Content Area */}
-      <div className="max-w-7xl mx-auto px-4 py-24">
+      <div className=" mx-auto px-4 py-24">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-20">
           {/* Left Column */}
           <div className="space-y-16">

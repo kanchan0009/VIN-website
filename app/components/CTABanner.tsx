@@ -66,7 +66,7 @@ export default function CTABanner() {
           </svg>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+        <div className=" mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
           {/* LEFT CONTENT */}
           <div className="max-w-xl text-center md:text-left">
             <h2 className="text-2xl md:text-3xl font-[600] text-white mb-3">
@@ -111,8 +111,8 @@ export default function CTABanner() {
 
       {/* PROJECT SECTION */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 ">
-          <h2 className="text-3xl font-[500] text-center mb-4">
+        <div className=" mx-auto px-4 ">
+          <h2 className="text-[50px] font-[500] text-center mb-4">
             Choose Ways To Get Involved With Us
           </h2>
 

@@ -125,7 +125,7 @@ export default async function CertificationDetailPage(props: {
   if (!org) {
     return (
       <main className="min-h-screen bg-white">
-        <div className="max-w-7xl mx-auto px-4 py-20 text-center">
+        <div className=" mx-auto px-4 py-20 text-center">
           <h1 className="text-4xl font-bold mb-4">Certification Not Found</h1>
           <p className="text-gray-600 mb-8">
             Could not find certification for slug: <span className="font-mono font-bold text-red-500">{slug}</span>
@@ -150,7 +150,7 @@ export default async function CertificationDetailPage(props: {
             background: "linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 100%)",
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-3 pb-8 w-full text-left">
+        <div className="relative z-10  mx-auto px-3 pb-8 w-full text-left">
           <h1 className="text-[56px] font-[800] text-white mb-3">
             Certified By
           </h1>
@@ -163,7 +163,7 @@ export default async function CertificationDetailPage(props: {
 
       {/* Logo Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col items-center">
+        <div className=" mx-auto px-4 flex flex-col items-center">
           {/* Main Logo Container */}
           <div className="flex items-center justify-center mb-10 w-full">
             <img 

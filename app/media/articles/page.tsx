@@ -116,7 +116,7 @@ export default function ArticlesPage() {
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 pb-16 w-full">
+        <div className="relative z-10  mx-auto px-6 pb-16 w-full">
           <h1 className="text-5xl lg:text-7xl font-[800] text-white tracking-tight">
             Articles
           </h1>
@@ -125,7 +125,7 @@ export default function ArticlesPage() {
 
       <MediaTabs />
 
-      <div className="max-w-7xl mx-auto px-6 py-12 lg:py-16">
+      <div className=" mx-auto px-6 py-12 lg:py-16">
         <div className="flex flex-col lg:flex-row gap-10">
           {/* Main Content Area */}
           <div className="lg:w-3/4 space-y-12">

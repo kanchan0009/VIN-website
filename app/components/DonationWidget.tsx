@@ -14,12 +14,12 @@ export default function DonationSection() {
 
   return (
     <section className="py-12 lg:py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-2 items-center">
+      <div className=" mx-auto px-6">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-2 items-center">
           
           {/* ── LEFT COLUMN ── */}
           <div className="w-full lg:w-1/2 space-y-3">
-            <h2 className="text-2xl lg:text-[36px] font-[700] text-[#1D1E20] leading-[1.1] tracking-tight">
+            <h2 className="text-2xl lg:text-[36px] font-[700] text-[#1D1E20] leading-[1.1] tracking-tight lg:w-[115%] relative z-10">
               Donate us to help empower the most marginalized rural communities in Nepal!
             </h2>
 

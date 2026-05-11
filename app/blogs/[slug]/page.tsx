@@ -31,7 +31,7 @@ export default function BlogDetailPage({
 }) {
   return (
     <main className="font-montserrat">
-      <div className="max-w-7xl mx-auto px-2 py-20">
+      <section className=" mx-auto py-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-16">
           
           {/* Main content */}
@@ -142,7 +142,7 @@ export default function BlogDetailPage({
             </div>
           </aside>
         </div>
-      </div>
+      </section>
 
       <DonationWidget />
       <CTABanner />

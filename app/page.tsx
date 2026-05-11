@@ -38,9 +38,10 @@ const places = [
     description:
       "Lorem ipsum dipsum we are different locations Lorem ipsum dipsum we are different locations Lorem ipsum dipsum we are different locations Lorem ipsum dipsum we are different locations Lorem ipsum dipsum we are different locationsLorem ipsum dipsum we are different locationsLorem ipsum dipsum we are different locations",
     images: [
-      "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=400&q=80",
-      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80",
-      "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&q=80",
+      "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=800&q=80",
+      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80",
+      "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80",
+      "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=800&q=80",
     ],
     exploreLink: "/nepal/place-name",
     videoDescription:
@@ -340,7 +341,7 @@ export default function HomePage() {
         </button>
 
         <div className="relative z-10 w-full h-full pb-2.5 pt-24 min-h-[800px] flex flex-col">
-          <div className="max-w-7xl mx-auto w-full h-full flex flex-col justify-end flex-grow relative">
+          <div className=" mx-auto w-full h-full flex flex-col justify-end flex-grow relative">
             {/* Stats Grid */}
             <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2">
               <div className="bg-white p-3 rounded-xl shadow-2xl grid grid-cols-2 gap-3 w-[220px]">
@@ -418,7 +419,7 @@ export default function HomePage() {
 
       {/* Welcome Section */}
       <section className="w-full bg-[#ffffff] py-24">
-        <div className="max-w-7xl mx-auto">
+        <div className=" mx-auto">
           {/* Heading */}
           <h2 className="text-xl md:text-5xl font-bold text-gray-900 leading-snug mb-12 text-center">
             Welcome to{" "}
@@ -505,7 +506,7 @@ export default function HomePage() {
 
       {/* Programs grid */}
       <section className="bg-white py-24 mx-30">
-        <div className="max-w-7xl mx-auto text-center">
+        <div className=" mx-auto text-center">
           {/* Heading */}
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
             What We Do
@@ -551,7 +552,7 @@ export default function HomePage() {
         </div>
       </section>
       <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-24">
-        <div className="max-w-7xl mx-auto text-center">
+        <div className=" mx-auto text-center">
           {/* Heading */}
           <h2 className="text-4xl md:text-5xl font-[600] text-gray-900 mb-3">
             Where We Work
@@ -625,7 +626,7 @@ export default function HomePage() {
         </div>
       </section>
       <section className="bg-[#DFF0FF] py-24 px-4 md:px-12">
-        <div className="max-w-7xl mx-auto text-center">
+        <div className=" mx-auto text-center">
           {/* Title */}
           <h2 className="text-3xl md:text-4xl font-[500] text-gray-900 mb-8">
             Learn More About Our Programs
@@ -744,7 +745,7 @@ export default function HomePage() {
       {/* Team Section */}
 
       <section className="py-20 bg-[#ffffff]">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className=" mx-auto px-4">
           {/* Title */}
           <h2
             className="text-3xl md:text-4xl text-center font-[500] mb-6"
@@ -922,7 +923,7 @@ export default function HomePage() {
 
       {/* Testimonials */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 relative">
+        <div className=" mx-auto px-4 relative">
           {/* Heading */}
           <h2
             className="text-[56px] font-[600] text-center mb-2 py-4 mb-15"
@@ -1014,7 +1015,7 @@ export default function HomePage() {
           </div>
 
           {/* View All Button */}
-          <div className="flex justify-end mt-8 md:mt-12 max-w-7xl mx-auto px-4 md:pr-16">
+          <div className="flex justify-end mt-8 md:mt-12  mx-auto px-4 md:pr-16">
             <Link
               href="/testimonials"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] font-[700] text-white text-base hover:opacity-90 transition-opacity"
@@ -1027,7 +1028,7 @@ export default function HomePage() {
       </section>
       {/* Our Media */}
       <section className="py-20 bg-[#e8f0fe]">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className=" mx-auto px-4">
           {/* Heading */}
           <h2
             className="text-4xl font-[500] text-center mb-8"
@@ -1102,7 +1103,7 @@ export default function HomePage() {
             </button>
 
             {/* Media Card */}
-            <div className="flex-1 max-w-7xl mx-8 md:mx-16">
+            <div className="flex-1  mx-8 md:mx-16">
               <div className=" rounded-lg overflow-hidden  border border-gray-200">
                 <div className="flex flex-col md:flex-row">
                   {/* Image */}
@@ -1337,7 +1338,7 @@ export default function HomePage() {
       </section>
       {/* Know Nepal */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className=" mx-auto px-4">
           {/* Heading */}
           <h2
             className="text-[56px] font-bold text-center mb-2"
@@ -1400,31 +1401,39 @@ export default function HomePage() {
             </div>
 
             {/* Right Gallery */}
-            <div className="lg:w-2/3">
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {/* Large Image */}
-                <div className="col-span-2 row-span-2 relative rounded-lg overflow-hidden">
+            <div className="lg:w-2/3 grid grid-cols-2 gap-4">
+              {/* Left Column of Gallery */}
+              <div className="flex flex-col gap-4">
+                <div className="relative  overflow-hidden aspect-[21/9]">
                   <img
                     src={currentPlace.images[0]}
                     alt={currentPlace.name}
-                    className="w-full h-full object-cover min-h-[300px] md:min-h-[400px]"
+                    className="w-full h-full object-cover"
                   />
                 </div>
-
-                {/* Side Images */}
-                <div className="relative rounded-lg overflow-hidden">
+                <div className="relative  overflow-hidden aspect-[4/3]">
                   <img
                     src={currentPlace.images[1]}
                     alt={currentPlace.name}
-                    className="w-full h-full object-cover min-h-[145px] md:min-h-[195px]"
+                    className="w-full h-full object-cover"
                   />
                 </div>
+              </div>
 
-                <div className="relative rounded-lg overflow-hidden">
+              {/* Right Column of Gallery */}
+              <div className="flex flex-col gap-4 pt-8 md:pt-12">
+                <div className="relative overflow-hidden aspect-[4/3]">
                   <img
                     src={currentPlace.images[2]}
                     alt={currentPlace.name}
-                    className="w-full h-full object-cover min-h-[145px] md:min-h-[195px]"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="relative overflow-hidden aspect-[21/9]">
+                  <img
+                    src={currentPlace.images[3] || currentPlace.images[0]}
+                    alt={currentPlace.name}
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>
@@ -1548,7 +1557,7 @@ export default function HomePage() {
               
               <Link
                 href="/faq"
-                className="bg-white text-[#1B1464] px-10 py-4 rounded-lg font-bold text-lg md:text-xl hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95"
+                className="bg-white text-[#1B1464] px-8 py-3 rounded-lg font-bold text-[20px] md:text-xl hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95"
               >
                 Visit FAQ
               </Link>

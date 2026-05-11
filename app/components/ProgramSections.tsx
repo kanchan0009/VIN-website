@@ -24,7 +24,7 @@ const sections: SectionData[] = [
     image:
       "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80",
     imageLeft: true,
-    bgColor: "#ffffff",
+    bgColor: "#F2F1FF",
     text: "The goal is to empower women socially and economically through education, life skills and income generative initiatives. Women of 20-59 years are included in the program.",
     bullets: [
       "Education and Life Skills (ELS)",
@@ -40,7 +40,7 @@ const sections: SectionData[] = [
     image:
       "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80",
     imageLeft: false,
-    bgColor: "#f8faff",
+    bgColor: "#FFFFFF",
     text: "The goal is to empower youth social and economically through education, life skills and entrepreneurship development. Youth of 16-30 age groups are included in the program.",
     bullets: [
       "Youth Club & Life Skills Facilitation",
@@ -56,7 +56,7 @@ const sections: SectionData[] = [
     image:
       "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800&q=80",
     imageLeft: true,
-    bgColor: "#ffffff",
+    bgColor: "#F2F1FF",
     text: "The goal of Children's Development is achieved by coordinating and managing the following holistic areas to ensure every child reaches their full potential.",
     bullets: [
       "Children's Life-skills Facilitation (CLF) through children's clubs",
@@ -75,7 +75,7 @@ const sections: SectionData[] = [
     image:
       "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
     imageLeft: false,
-    bgColor: "#f8faff",
+    bgColor: "#FFFFFF",
     text: "Through primary health and medical interventions at the community level, we aim to provide accessible, preventive, and curative health services to underserved communities.",
     bullets: [
       "Community Health Education: Sanitation & Hygiene (WASH)",
@@ -91,7 +91,7 @@ const sections: SectionData[] = [
     image:
       "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=800&q=80",
     imageLeft: true,
-    bgColor: "#ffffff",
+    bgColor: "#F2F1FF",
     text: "We aim to promote practices that protect and restore the natural environment across our working communities through sustainable systems.",
     bullets: [
       "Permaculture systems for sustainable food production",
@@ -106,7 +106,7 @@ const sections: SectionData[] = [
     image:
       "https://images.unsplash.com/photo-1569427759983-6b3c4a9cba0c?w=800&q=80",
     imageLeft: false,
-    bgColor: "#f8faff",
+    bgColor: "#FFFFFF",
     text: "Nepal is highly vulnerable to natural disasters. Our DRR programs build community resilience through education, preparedness, and response planning.",
     bullets: [
       "Disaster preparedness training and simulation",
@@ -119,7 +119,7 @@ const sections: SectionData[] = [
 
 function BulletList({ items }: { items: string[] }) {
   return (
-    <ul className="mt-8 space-y-3">
+    <ul className="mt-8 space-y-2">
       {items.filter(Boolean).map((item, i) => (
         <li
           key={i}
@@ -141,9 +141,9 @@ function Section({ section }: { section: SectionData }) {
   return (
     <section 
       style={{ backgroundColor: bgColor }}
-      className={`py-16 lg:py-24 ${montserrat.className}`}
+      className={`py-10 lg:py-12 ${montserrat.className}`}
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className=" mx-auto px-6">
         <div 
           className={`flex flex-col ${
             imageLeft ? "lg:flex-row" : "lg:flex-row-reverse"
@@ -151,7 +151,7 @@ function Section({ section }: { section: SectionData }) {
         >
           {/* Image */}
           <div className="w-full lg:w-1/2">
-            <div className="relative aspect-square lg:aspect-[4/3] rounded-[30px] overflow-hidden shadow-2xl">
+            <div className="relative aspect-square lg:aspect-[4/4.5] overflow-hidden shadow-2xl">
               <img
                 src={image}
                 alt={title}
@@ -162,15 +162,15 @@ function Section({ section }: { section: SectionData }) {
 
           {/* Text */}
           <div className="w-full lg:w-1/2">
-            <h2 className="text-2xl lg:text-4xl font-[800] text-[#1D1E20] mb-6 leading-tight">
+            <h2 className="text-2xl lg:text-[32px] font-[700] text-[#1D1E20] mb-1 leading-tight">
               {title}
             </h2>
-            <div className="space-y-6">
-              <p className="text-gray-600 text-[15px] lg:text-[16px] leading-relaxed font-[400]">
+            <div className="space-y-2">
+              <p className="text-[#212121] text-[15px] lg:text-[16px] leading-relaxed font-[400]">
                 {text}
               </p>
-              <div className="bg-[#F1F6FF] p-6 lg:p-8 rounded-2xl border-l-4 border-[var(--blue)]">
-                <p className="text-[var(--blue)] text-[14px] lg:text-[15px] leading-relaxed font-[700] mb-2">
+              <div className="mt-3">
+                <p className="text-[#212121] text-[14px] lg:text-[18px] leading-relaxed font-[700] ">
                   We achieve the goal of {title.toLowerCase()} program by implementing the following holistic projects:
                 </p>
                 <BulletList items={bullets} />

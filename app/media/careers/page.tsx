@@ -85,7 +85,7 @@ export default function CareersPage() {
             background: "linear-gradient(to top, rgba(20,10,70,0.85) 40%, rgba(0,0,0,0.2) 100%)",
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 pb-12 w-full">
+        <div className="relative z-10  mx-auto px-6 pb-12 w-full">
           <h1 className="text-5xl lg:text-6xl font-[800] text-white">Careers</h1>
           <p className="text-xl text-white/90 mt-5 max-w-3xl font-[400] leading-relaxed">
             Join our mission to empower marginalized communities in Nepal. 
@@ -98,7 +98,7 @@ export default function CareersPage() {
 
       {/* Open Positions Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className=" mx-auto px-6 lg:px-8">
           <h2 className="text-4xl lg:text-[42px] font-[600] text-[#1D1E20] text-center mb-16">
             Open Positions
           </h2>

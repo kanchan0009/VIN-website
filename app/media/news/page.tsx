@@ -82,7 +82,7 @@ export default function NewsUpdatePage() {
               "linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)",
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 pb-10 w-full">
+        <div className="relative z-10  mx-auto px-4 pb-10 w-full">
           
           <h1
             className="text-5xl font-[800] text-white"
@@ -100,7 +100,7 @@ export default function NewsUpdatePage() {
 
       {/* News Grid Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className=" mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-14">
             {[...newsItems, ...newsItems].slice(0, 9).map((news, i) => (
               <div key={i} className="flex flex-col group">

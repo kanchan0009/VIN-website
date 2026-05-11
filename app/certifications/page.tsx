@@ -105,7 +105,7 @@ export default function CertificationsPage() {
           className="absolute inset-0"
           
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 pb-12 w-full">
+        <div className="relative z-10  mx-auto px-4 pb-12 w-full">
           <h1 className="text-5xl font-[800] text-white leading-tight">
             Certification, Membership,& Partnership
           </h1>
@@ -129,7 +129,7 @@ export default function CertificationsPage() {
 
         return (
           <section key={sIdx} className={`${section.bg} py-24 relative overflow-hidden`}>
-            <div className="max-w-7xl mx-auto px-4">
+            <div className=" mx-auto px-4">
               {/* Header */}
               <div className="text-center mb-16">
                 <h2 className={`text-[42px] font-[700] ${section.textColor} mb-8`}>

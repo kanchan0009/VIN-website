@@ -34,7 +34,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full shadow-sm font-montserrat bg-white">
       {/* Top bar - Hidden on mobile */}
       <div className="hidden lg:block bg-[#F1F6FF] text-[#353535] text-[16px] py-1.5">
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        <div className=" mx-auto px-6 flex items-center justify-between">
           <div className="flex gap-6 font-[500]">
             <Link href="/volunteer" className="hover:text-[var(--blue)] transition-colors">Volunteer</Link>
             <Link href="/partner" className="hover:text-[var(--blue)] transition-colors">Partner with Us</Link>
@@ -57,7 +57,7 @@ export default function Navbar() {
 
       {/* Main nav */}
       <nav className="border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 lg:px-6 flex items-center justify-between h-[75px] lg:h-[85px]">
+        <div className=" mx-auto px-4 lg:px-6 flex items-center justify-between h-[75px] lg:h-[85px]">
           {/* Logo Section */}
           <Link href="/" className="flex items-center shrink-0 py-2">
             <div className="relative h-[50px] w-[155px] lg:h-[65px] lg:w-[210px]">
