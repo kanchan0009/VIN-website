@@ -417,7 +417,7 @@ export default function HomePage() {
       </section>
 
       {/* Welcome Section */}
-      <section className="w-full bg-[#f5f6f8] py-24">
+      <section className="w-full bg-[#ffffff] py-24">
         <div className="max-w-7xl mx-auto">
           {/* Heading */}
           <h2 className="text-xl md:text-5xl font-bold text-gray-900 leading-snug mb-12 text-center">
@@ -427,9 +427,9 @@ export default function HomePage() {
             <span className="text-[var(--blue)]">Nepal</span> ( VIN )
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-stretch">
             {/* LEFT CONTENT */}
-            <div>
+            <div className="flex flex-col justify-center">
               {/* Paragraph */}
               <p className="text-gray-700 text-base leading-relaxed mb-5 font-light text-justify">
                 Volunteers Initiative Nepal (VIN), established in 2005 by a
@@ -458,17 +458,19 @@ export default function HomePage() {
               </p>
 
               {/* Button */}
-              <button className="px-8 py-3 text-base font-semibold rounded-lg text-white bg-[var(--blue)] hover:bg-[var(--blue)] transition-all duration-300 shadow-md hover:shadow-lg">
-                Learn More
-              </button>
+              <div>
+                <button className="px-8 py-3 text-base font-semibold rounded-lg text-white bg-[var(--blue)] hover:bg-[var(--blue)] transition-all duration-300 shadow-md hover:shadow-lg">
+                  Learn More
+                </button>
+              </div>
             </div>
 
             {/* RIGHT IMAGE */}
-            <div className="flex justify-center">
+            <div className="flex justify-center items-center">
               <img
-                src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&q=80"
-                alt="VIN Model"
-                className="w-70 md:w-80 object-contain rounded-lg shadow-lg"
+                src="/pillar.png"
+                alt="VIN Pillars"
+                className="h-full w-auto object-contain"
               />
             </div>
           </div>
@@ -551,7 +553,7 @@ export default function HomePage() {
       <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-24">
         <div className="max-w-7xl mx-auto text-center">
           {/* Heading */}
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
+          <h2 className="text-4xl md:text-5xl font-[600] text-gray-900 mb-3">
             Where We Work
           </h2>
 
@@ -622,7 +624,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="bg-gradient-to-r from-blue-100 to-indigo-100 py-24 px-4 md:px-12">
+      <section className="bg-[#DFF0FF] py-24 px-4 md:px-12">
         <div className="max-w-7xl mx-auto text-center">
           {/* Title */}
           <h2 className="text-3xl md:text-4xl font-[500] text-gray-900 mb-8">
@@ -640,9 +642,9 @@ export default function HomePage() {
           </div>
 
           {/* Section Header */}
-          <div className="text-left mb-6">
-            <h3 className="text-3xl font-bold">Women’s Empowerment Projects</h3>
-            <p className="text-sm text-gray-600 mt-2 max-w-3xl">
+          <div className="text-left mb-5">
+            <h3 className="text-3xl font-[700]">Women’s Empowerment Projects</h3>
+            <p className="text-[16px] text-[#454545AD] mt-2 max-w-3xl">
               VIN aims to empower women socially and economically through
               education, life skills and income generation opportunities. By
               2030, VIN aims to benefit at least 80% of the total women in the
@@ -756,7 +758,7 @@ export default function HomePage() {
             <select
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
-              className="flex-1 w-full px-4 py-2.5 border border-black text-[15px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center"
+              className="flex-1 w-full px-4 py-2.5 border-1 border-black text-[15px] text-[#212121] focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center"
               style={{ textAlignLast: "center" }}
             >
               <option>Board of Directors</option>
@@ -768,9 +770,9 @@ export default function HomePage() {
           {/* Cards Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 ">
             {filteredTeam.map((m, i) => (
-              <div key={i} className="bg-white shadow-sm h-[300px] w-[310px]">
+              <div key={i} className="bg-white  border-1 border-[#9FA0A3]shadow-sm h-[344px] w-[310px]">
                 {/* Image */}
-                <div className="w-full h-48 overflow-hidden">
+                <div className="w-full h-[230px] overflow-hidden">
                   <img
                     src={m.img}
                     alt={m.name}
@@ -780,8 +782,8 @@ export default function HomePage() {
 
                 {/* Text */}
                 <div className="p-4 text-left">
-                  <h4 className="text-sm font-semibold">{m.name}</h4>
-                  <p className="text-xs text-indigo-700 mt-1">{m.role}</p>
+                  <h4 className="text-[18px] font-[600]">{m.name}</h4>
+                  <p className="text-[14px] text-[#221C84] mt-1">{m.role}</p>
                 </div>
               </div>
               
@@ -798,7 +800,7 @@ export default function HomePage() {
       <section className="w-full bg-[#f3f3f3] py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
           {/* Heading */}
-          <h2 className="text-7xl font-[500] md:text-[28px] font-medium text-gray-800 mb-10">
+          <h2 className="text-7xl font-[500] md:text-[28px] font-medium text-[#1D1E20] mb-10">
             Certification, Membership & Affiliation
           </h2>
 
@@ -839,17 +841,17 @@ export default function HomePage() {
           {/* Button */}
           <Link
             href="/certifications"
-            className="bg-[#2f2c7a] text-white text-sm px-6 py-2 rounded-md hover:opacity-90 transition inline-block"
+            className="bg-[#221C84] text-white text-[18px] font-[700] px-6 py-2 rounded-[5px] hover:opacity-90 transition inline-block"
           >
             View All
           </Link>
         </div>
       </section>
       {/* Affiliate program */}
-      <section className="w-full bg-[#a9c7d3] py-16 px-4">
+      <section className="w-full bg-[#D5F5FF] py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
           {/* Heading */}
-          <h2 className="text-[26px] md:text-[30px] font-semibold text-gray-900 mb-4">
+          <h2 className="text-[26px] md:text-[56px] font-bold text-gray-900 mb-4">
             Reviews About Us
           </h2>
 
@@ -859,60 +861,60 @@ export default function HomePage() {
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
-                  size={16}
-                  className="text-yellow-400 fill-yellow-400"
+                  size={24}
+                  className="text-[#FFB300] fill-[#FFB300]"
                 />
               ))}
             </div>
-            <span className="text-[18px] font-semibold text-gray-800">
-              4.4<span className="text-gray-500 text-sm">/5</span>
+            <span className="text-[42px] font-[600] text-[#283449]">
+              4.4<span className="text-gray-800 text-[18px]">/5</span>
             </span>
-            <span className="text-gray-500 text-sm ml-2">|</span>
-            <span className="text-gray-500 text-sm">200+ Review</span>
+            <span className="text-[#283449] text-[18px] ml-2">|</span>
+            <span className="text-[#283449] text-[20px] font-[400]">200+ Review</span>
           </div>
 
           {/* Review Cards */}
-          <div className="flex flex-wrap items-center justify-center gap-6">
+          <div className="flex flex-wrap items-center justify-between">
             {/* Card 1 (highlighted) */}
-            <div className=" x-6 py-5 w-[160px] text-center">
-              <div className="text-[20px] font-semibold text-gray-800">
-                4.5<span className="text-sm text-gray-500">/5</span>
+            <div className="px-6 py-5 w-[220px] text-center">
+              <div className="text-[41px] font-semibold text-gray-800">
+                4.5<span className="text-[20px] text-gray-500">/5</span>
               </div>
               <div className="text-xs text-gray-500 font-semibold mt-1">
                  GREAT
               </div>
-              <div className="text-xs text-gray-500 mt-1">Great Non-profit</div>
+              <div className="text-[21px] text-gray-500 mt-1 font-quando">Great Non-profit</div>
             </div>
 
             {/* Card 2 */}
-            <div className="text-center w-[140px]">
-              <div className="text-[18px] font-semibold text-gray-800">
-                4.2<span className="text-sm text-gray-500">/5</span>
+            <div className="text-center w-[220px]">
+              <div className="text-[41px] font-semibold text-gray-800">
+                4.2<span className="text-[20px] text-gray-500">/5</span>
               </div>
               <div className="text-sm font-medium text-gray-600 mt-1">
                 Google
               </div>
-              <div className="text-xs text-gray-500">Google Reviews</div>
+              <div className="text-[21px] text-gray-500 font-quando">Google Reviews</div>
             </div>
 
             {/* Card 3 */}
-            <div className="text-center w-[140px]">
-              <div className="text-[18px] font-semibold text-gray-800">
-                4.2<span className="text-sm text-gray-500">/5</span>
+            <div className="text-center w-[220px]">
+              <div className="text-[41px] font-semibold text-gray-800">
+                4.2<span className="text-[20px] text-gray-500">/5</span>
               </div>
               <div className="text-sm font-medium text-gray-600 mt-1">GO</div>
-              <div className="text-xs text-gray-500">go overseas</div>
+              <div className="text-[21px] text-gray-500 font-quando">go overseas</div>
             </div>
 
             {/* Card 4 */}
-            <div className="text-center w-[140px]">
-              <div className="text-[18px] font-semibold text-gray-800">
-                4.2<span className="text-sm text-gray-500">/5</span>
+            <div className="text-center w-[220px]">
+              <div className="text-[41px] font-semibold text-gray-800">
+                4.2<span className="text-[20px] text-gray-500">/5</span>
               </div>
               <div className="text-sm font-medium text-gray-600 mt-1">
                 review centre
               </div>
-              <div className="text-xs text-gray-500">Review Center</div>
+              <div className="text-[21px] text-gray-500 font-quando">Review Center</div>
             </div>
           </div>
         </div>
@@ -923,7 +925,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 relative">
           {/* Heading */}
           <h2
-            className="text-5xl font-[700] text-center mb-2 py-4 mb-15"
+            className="text-[56px] font-[600] text-center mb-2 py-4 mb-15"
             
           >
             Testimonials
@@ -1012,11 +1014,11 @@ export default function HomePage() {
           </div>
 
           {/* View All Button */}
-          <div className="flex justify-end mt-8 md:mt-12 max-w-5xl mx-auto md:pr-8">
+          <div className="flex justify-end mt-8 md:mt-12 max-w-7xl mx-auto px-4 md:pr-16">
             <Link
               href="/testimonials"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-md font-semibold text-white text-sm hover:opacity-90 transition-opacity"
-              style={{ background: "var(--indigo-btn, #1e3a5f)" }}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] font-[700] text-white text-base hover:opacity-90 transition-opacity"
+              style={{ background: "var(--blue)" }}
             >
               View All Testimonials
             </Link>
@@ -1067,8 +1069,8 @@ export default function HomePage() {
           <div className="flex justify-end mb-8 mx-8 md:mx-16">
             <Link
               href="/media"
-              className="inline-flex items-center px-5 py-2  text-white text-sm font-medium hover:opacity-90 transition-opacity"
-              style={{ background: "var(--indigo-btn, #1e3a5f)" }}
+              className="inline-flex items-center px-5 py-2  text-white text-base font-[700] hover:opacity-90 transition-opacity"
+              style={{ background: "var(--blue)" }}
             >
               View All
             </Link>
@@ -1080,7 +1082,7 @@ export default function HomePage() {
             <button
               onClick={prevMedia}
               className="absolute left-0 z-10 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full text-white hover:opacity-90 transition-opacity -translate-x-2 md:-translate-x-6"
-              style={{ background: "var(--indigo-btn, #1e3a5f)" }}
+              style={{ background: "var(--blue)" }}
               aria-label="Previous media"
             >
               <svg
@@ -1131,7 +1133,7 @@ export default function HomePage() {
                       <Link
                         href={currentMedia.readMoreLink}
                         className="inline-flex items-center px-5 py-2 rounded text-white text-xs md:text-sm font-medium hover:opacity-90 transition-opacity"
-                        style={{ background: "var(--indigo-btn, #1e3a5f)" }}
+                        style={{ background: "var(--blue)" }}
                       >
                         Read More
                       </Link>
@@ -1142,8 +1144,8 @@ export default function HomePage() {
                         }
                         className="inline-flex items-center px-5 py-2 rounded border text-xs md:text-sm font-medium hover:bg-gray-50 transition-colors"
                         style={{
-                          borderColor: "var(--indigo-btn, #1e3a5f)",
-                          color: "var(--indigo-btn, #1e3a5f)",
+                          borderColor: "var(--blue)",
+                          color: "var(--blue)",
                         }}
                       >
                         Download
@@ -1158,7 +1160,7 @@ export default function HomePage() {
             <button
               onClick={nextMedia}
               className="absolute right-0 z-10 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full text-white hover:opacity-90 transition-opacity translate-x-2 md:translate-x-6"
-              style={{ background: "var(--indigo-btn, #1e3a5f)" }}
+              style={{ background: "var(--blue)" }}
               aria-label="Next media"
             >
               <svg
@@ -1182,10 +1184,10 @@ export default function HomePage() {
 
       {/* Photos & Videos */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-[1400px] mx-auto px-4">
           {/* Heading */}
           <h2
-            className="text-4xl font-[500] text-center mb-7"
+            className="text-[56px] font-[500] text-center mb-6"
             
           >
             Photos & Videos
@@ -1224,7 +1226,7 @@ export default function HomePage() {
             </button>
 
             {/* Cards Grid */}
-            <div className="flex-1 mx-6 md:mx-12 overflow-hidden">
+            <div className="flex-1 mx-2 md:mx-4 overflow-hidden">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                 {visibleItems.map((item, index) => (
                   <div
@@ -1338,10 +1340,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           {/* Heading */}
           <h2
-            className="text-4xl font-bold text-center mb-2"
+            className="text-[56px] font-bold text-center mb-2"
             style={{ }}
           >
-            Know <span className="text-[#1e3a5f]">Nepal</span>
+            Know <span className="text-[#221C84]">Nepal</span>
           </h2>
 
           {/* Filters */}
@@ -1378,7 +1380,7 @@ export default function HomePage() {
             {/* Left Content */}
             <div className="lg:w-1/3 flex flex-col justify-center">
               <h3
-                className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+                className="text-[54px] font-[600] text-gray-900 mb-6"
                
               >
                 {currentPlace.name}
@@ -1391,7 +1393,7 @@ export default function HomePage() {
               <Link
                 href={currentPlace.exploreLink}
                 className="inline-flex items-center px-6 py-2.5 rounded text-white text-sm font-medium hover:opacity-90 transition-opacity w-fit"
-                style={{ background: "var(--indigo-btn, #1e3a5f)" }}
+                style={{ background: "var(--blue)" }}
               >
                 Explore More
               </Link>
@@ -1430,12 +1432,12 @@ export default function HomePage() {
           </div>
 
           {/* Documentary Video Section */}
-          <div className="bg-[#e0f7ff] rounded-lg p-6 md:p-10">
+          <div className="bg-[#D5F5FF] rounded-lg p-6 md:p-10">
             <div className="flex flex-col md:flex-row items-center gap-8">
               {/* Text Content */}
               <div className="md:w-1/2">
                 <h4
-                  className="text-lg md:text-xl font-bold text-gray-900 mb-4"
+                  className="text-[24px] md:text-xl font-bold text-gray-900 mb-4"
                   
                 >
                   Documentary video on Nepal Infography
@@ -1516,92 +1518,37 @@ export default function HomePage() {
           </div>
         )}
       </section>
+      {/*FAQ section*/}
 
-      <section
-        style={{ width: "100%", backgroundColor: "#ffffff", padding: "40px 0" }}
-      >
-        <div
-          style={{ maxWidth: "1300px",height:"277px", margin: "0 auto", padding: "0 20px" }}
-        >
-          <div
-            style={{
-              position: "relative",
-              display: "flex",
-              alignItems: "flex-end",
-            }}
-          >
-            {/* Image - exact overlap positioning */}
-            <div
-              style={{
-                position: "absolute",
-                left: "-20px",
-                bottom: "-40px",
-                zIndex: 10,
-                
-              }}
-            >
-              <Image
-                src="/images/volunteers.png"
-                alt="Volunteers"
-                fill
-                style={{ objectFit: "contain", objectPosition: "bottom" }}
-                priority
+      <section className="w-full bg-white py-24">
+        <div className="max-w-[1400px] mx-auto px-4">
+          <div className="relative flex items-end pt-32">
+            {/* FAQ Image - Overlapping at the top */}
+            <div className="absolute left-4 md:left-12 bottom-0 z-10 w-[300px] md:w-[480px] h-[350px] md:h-[500px]">
+              <img
+                src="/faq.png"
+                alt="FAQ Volunteers"
+                className="w-full h-full object-contain object-bottom"
               />
             </div>
 
             {/* Dark Blue Card */}
             <div
-              style={{
-                
-                width: "100%",
-                background:"linear-gradient(to right, var(--blue), #08061E)",
-                borderRadius: "5px",
-                minHeight: "160px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                padding: "30px 40px",
-              }}
+              className="w-full flex flex-col md:flex-row items-center justify-between p-10 md:p-16 md:pl-[520px] rounded-[20px] shadow-2xl"
+              style={{ background: "linear-gradient(to right, #1B1464, #08061E)" }}
             >
-              {/* Text */}
-              <div>
-                <h2
-                  style={{
-                    color: "#ffffff",
-                    fontSize: "28px",
-                    fontWeight: 700,
-                    marginBottom: "8px",
-                    }}
-                >
+              <div className="text-center md:text-left mb-8 md:mb-0">
+                <h2 className="text-white text-[36px] md:text-[40px] font-bold mb-4">
                   Any Question?
                 </h2>
-                <p
-                  style={{
-                    color: "#9ca3af",
-                    fontSize: "13px",
-                    maxWidth: "260px",
-                    lineHeight: "1.5",
-                    margin: 0,
-                  }}
-                >
-                  Any queries check out our FAQ page and get your answer.
+                <p className="text-gray-300 text-[14px] md:text-[14px] font-light">
+                  Any queries check our FAQ page and get your answer.
                 </p>
               </div>
-
-              {/* Button */}
+              
               <Link
                 href="/faq"
-                style={{
-                  backgroundColor: "#ffffff",
-                  color: "#060b2e",
-                  fontSize: "14px",
-                  fontWeight: 600,
-                  padding: "10px 24px",
-                  borderRadius: "6px",
-                  textDecoration: "none",
-                  whiteSpace: "nowrap",
-                  marginLeft: "20px",
-                }}
+                className="bg-white text-[#1B1464] px-10 py-4 rounded-lg font-bold text-lg md:text-xl hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95"
               >
                 Visit FAQ
               </Link>

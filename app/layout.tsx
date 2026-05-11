@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
-import { Montserrat, Lora, Plus_Jakarta_Sans, Inter } from "next/font/google";
+import { Montserrat, Lora, Plus_Jakarta_Sans, Inter, Quando } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Breadcrumbs from "./components/Breadcrumbs";
+
+const quando = Quando({
+  subsets: ["latin"],
+  variable: "--font-quando",
+  weight: ["400"],
+});
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -41,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${lora.variable} ${plusJakartaSans.variable} ${inter.variable} ${montserrat.className}`}>
+    <html lang="en" className={`${quando.variable} ${montserrat.variable} ${lora.variable} ${plusJakartaSans.variable} ${inter.variable} ${montserrat.className}`}>
       <body>
         <Navbar />
         <Breadcrumbs />

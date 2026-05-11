@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@theme {
+  --font-quando: var(--font-quando);
+  --font-montserrat: var(--font-montserrat);
+  --font-lora: var(--font-lora);
+  --font-plus-jakarta-sans: var(--font-plus-jakarta-sans);
+  --font-inter: var(--font-inter);
+}
+
+
 :root {
   --sky: #ebf4ff;
   --sky-mid: #daeeff;
@@ -78,4 +87,8 @@ section {
 
 .font-inter {
   font-family: var(--font-inter), sans-serif;
+}
+
+.font-quando {
+  font-family: var(--font-quando), serif;
 }
