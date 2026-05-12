@@ -287,7 +287,7 @@ export default function HomePage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative w-full min-h-[500px] flex items-center overflow-hidden">
+      <section className="relative w-full min-h-[500px] flex items-center !px-0">
         {/* Background Image */}
         <img
           src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=1600"
@@ -305,7 +305,7 @@ export default function HomePage() {
         />
 
         {/* Left Arrow */}
-        <button className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 text-white/70 hover:text-white transition">
+        <button className="absolute left-0 md:left-2 top-1/2 -translate-y-1/2 z-20 text-white/70 hover:text-white transition">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -323,7 +323,7 @@ export default function HomePage() {
         </button>
 
         {/* Right Arrow */}
-        <button className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 text-white/70 hover:text-white transition">
+        <button className="absolute right-0 md:right-2 top-1/2 -translate-y-1/2 z-20 text-white/70 hover:text-white transition">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -340,7 +340,7 @@ export default function HomePage() {
           </svg>
         </button>
 
-        <div className="relative z-10 w-full h-full pb-2.5 pt-24 min-h-[800px] flex flex-col">
+        <div className="relative z-10 w-full h-full pb-2.5 pt-24 min-h-[800px] flex flex-col px-[60px]">
           <div className=" mx-auto w-full h-full flex flex-col justify-end flex-grow relative">
             {/* Stats Grid */}
             <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2">
@@ -629,7 +629,7 @@ export default function HomePage() {
       </section>
       <section className="bg-[#DFF0FF] py-24 px-4 md:px-12">
         <div className=" mx-auto text-center">
-          {/* Title */}
+          {/* learn more section */}
           <h2 className="text-3xl md:text-4xl font-[500] text-gray-900 mb-8">
             Learn More About Our Programs
           </h2>
@@ -736,9 +736,11 @@ export default function HomePage() {
 
           {/* View All */}
           <div className="mt-10">
-            <button className="bg-[var(--blue)] text-white px-6 py-2 rounded-md hover:bg-[#1a1560]">
-              View All
-            </button>
+            <Link href="/all-programs">
+              <button className="bg-[var(--blue)] text-white px-6 py-2 rounded-md hover:bg-[#1a1560]">
+                View All
+              </button>
+            </Link>
           </div>
         </div>
 

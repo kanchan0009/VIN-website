@@ -38,7 +38,7 @@ export default function CTABanner() {
   return (
     <>
       {/* CTA SECTION */}
-      <section className="relative overflow-hidden py-14 bg-gradient-to-r from-[var(--blue)] to-[#CFCCFF]">
+      <section className="relative mt-32 py-20 bg-gradient-to-r from-[var(--blue)] to-[#CFCCFF]">
         {/* 🔥 S-SHAPE VECTOR */}
         <div className="absolute top-[-40px] right-[-40px] rotate-[5.9deg] opacity-40 pointer-events-none">
           <svg
@@ -96,14 +96,12 @@ export default function CTABanner() {
             </div>
           </div>
 
-          {/* RIGHT IMAGE */}
-          <div className="mt-10 md:mt-0 md:ml-10">
-            <Image
-              src="/customers.jpg"
+          {/* RIGHT IMAGE - Positioned absolutely to not affect section height */}
+          <div className="hidden lg:block absolute bottom-0 right-[5%] z-20 pointer-events-none">
+            <img
+              src="/cta-banner.png"
               alt="Volunteers"
-              width={360}
-              height={300}
-              className="object-contain"
+              className="h-[500px] object-contain"
             />
           </div>
         </div>
