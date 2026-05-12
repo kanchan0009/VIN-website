@@ -375,9 +375,11 @@ export default function HomePage() {
                   And Dignity.
                 </p>
 
-                <button className="shrink-0 px-8 py-3 rounded text-sm font-semibold text-white bg-[var(--blue)] hover:bg-indigo-700 transition shadow-lg">
-                  View Program
-                </button>
+                <Link href="/programs-details">
+                  <button className="shrink-0 px-8 py-3 rounded text-sm font-semibold text-white bg-[var(--blue)] hover:bg-indigo-700 transition shadow-lg">
+                    View Program
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
