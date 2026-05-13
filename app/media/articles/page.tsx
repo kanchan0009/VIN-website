@@ -154,7 +154,7 @@ export default function ArticlesPage() {
                   </div>
                 </div>
                 <Link 
-                  href="/articles/featured" 
+                  href="/article-blogs" 
                   className="inline-flex items-center justify-center gap-2 bg-[var(--blue)] text-white px-6 py-3 rounded-lg font-[600] text-xs hover:bg-[#15196d] transition-all w-fit"
                 >
                   Read Article →
@@ -172,7 +172,7 @@ export default function ArticlesPage() {
             {/* Latest Articles Header */}
             <div className="flex items-center justify-between">
               <h2 className="text-2xl lg:text-3xl font-[700] text-[var(--blue)]">Latest Articles</h2>
-              <Link href="/articles/all" className="text-[var(--blue)] font-[700] text-sm flex items-center gap-2 hover:translate-x-1 transition-transform">
+              <Link href="/article-blogs" className="text-[var(--blue)] font-[700] text-sm flex items-center gap-2 hover:translate-x-1 transition-transform">
                 View all articles →
               </Link>
             </div>

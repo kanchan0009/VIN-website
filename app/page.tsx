@@ -350,8 +350,8 @@ export default function HomePage() {
                     key={index}
                     className="bg-[var(--blue)] text-white rounded-lg flex flex-col items-center justify-center p-3 aspect-square"
                   >
-                    <p className="text-xl font-bold mb-1">{item}</p>
-                    <p className="text-[10px] opacity-90 text-center leading-tight font-medium">
+                    <p className="text-[24px] font-[600] mb-1">{item}</p>
+                    <p className="text-[10px]  font-[400]  text-center leading-tight">
                       Rural Women’s
                       <br />
                       Literacy
@@ -462,9 +462,11 @@ export default function HomePage() {
 
               {/* Button */}
               <div>
-                <button className="px-8 py-3 text-base font-semibold rounded-lg text-white bg-[var(--blue)] hover:bg-[var(--blue)] transition-all duration-300 shadow-md hover:shadow-lg">
-                  Learn More
-                </button>
+                <Link href="/about">
+                  <button className="px-8 py-3 text-base font-semibold rounded-lg text-white bg-[var(--blue)] hover:bg-[var(--blue)] transition-all duration-300 shadow-md hover:shadow-lg">
+                    Learn More
+                  </button>
+                </Link>
               </div>
             </div>
 

@@ -13,7 +13,7 @@ export default function DonationSection() {
   const amounts = [25, 50, 100, 150];
 
   return (
-    <section className="py-12 lg:py-16 bg-white">
+    <section id="donation-widget" className="py-12 lg:py-16 bg-white">
       <div className=" mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-2 items-center">
           

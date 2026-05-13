@@ -1,5 +1,7 @@
+"use client";
 import Link from "next/link";
 import CTABanner from "../../components/CTABanner";
+import DonationWidget from "../../components/DonationWidget";
 
 const newsItems = [
   {
@@ -66,9 +68,9 @@ const newsItems = [
 
 export default function NewsUpdatePage() {
   return (
-    <main>
+    <main className="text-[#1a1a2e]">
       {/* Hero */}
-      <section className="relative h-[670px] flex items-end overflow-hidden">
+      <section className="relative h-[500px] flex items-end overflow-hidden full-width-bg">
         <img
           src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1600&q=80"
           alt="News Update"
@@ -81,91 +83,65 @@ export default function NewsUpdatePage() {
               "linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)",
           }}
         />
-        <div className="relative z-10  mx-auto px-4 pb-10 w-full">
-          
-          <h1
-            className="text-5xl font-[800] text-white"
-          >
+        <div className="relative z-10 mx-auto px-4 md:px-[60px] pb-10 w-full">
+          <h1 className="text-5xl md:text-6xl font-bold text-white">
             News Update
           </h1>
-          <p className="text-xl text-white/90 mt-5 max-w-6xl font-[400] leading-relaxed">
-            Stay updated with our latest stories, impact reports, and community developments from across Nepal. 
-            Discover how your support is making a real difference.
+          <p className="text-white/80 max-w-4xl text-lg mt-4">
+            Stay updated with our latest stories, impact reports, and community developments from across Nepal.
           </p>
         </div>
       </section>
 
-
-
       {/* News Grid Section */}
-      <section className="py-16 bg-white">
-        <div className=" mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-14">
+      <section className="py-20 bg-white">
+        <div className="mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
             {[...newsItems, ...newsItems].slice(0, 9).map((news, i) => (
-              <div key={i} className="flex flex-col group">
-                {/* Image */}
-                <div className="relative aspect-[16/10] overflow-hidden rounded-[5px] mb-5 shadow-sm">
+              <div key={i} className="group flex flex-col">
+                <div className="relative aspect-[4/3] overflow-hidden mb-6">
                   <img
                     src={news.image}
                     alt={news.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
-                
-                {/* Content */}
-                <div className="space-y-4 pr-4">
-                  <h3 className="text-[17px] font-[800] text-[#1D1E20] leading-[1.3] group-hover:text-[var(--blue)] transition-colors">
-                    {news.title}
-                  </h3>
-                  <p className="text-[15px] text-[#4A4A4A] leading-[1.6] font-[500] line-clamp-3">
-                    {news.summary}
-                  </p>
-                  <Link 
-                    href={`/media/news/${news.id}`}
-                    className="inline-flex items-center gap-2 text-[var(--blue)] text-[14px] font-[600] hover:underline pt-2"
-                  >
-                    Read Full News →
-                  </Link>
-                </div>
+                <h3 className="text-[20px] font-[600] text-[#212121] mb-2 group-hover:text-[var(--blue)] transition-colors">
+                  {news.title}
+                </h3>
+                <p className="text-[#4b5563] text-[16px] leading-relaxed mb-2 line-clamp-3">
+                  {news.summary}
+                </p>
+                <Link 
+                  href={`/media/news/${news.id}`}
+                  className="text-[var(--blue)] font-[600] flex items-center gap-2 hover:gap-3 transition-all mt-auto"
+                >
+                  Read Full News <span className="text-xl">→</span>
+                </Link>
               </div>
             ))}
           </div>
 
           {/* Pagination */}
-          <div className="mt-24 flex items-center justify-start gap-5">
-            <button className="text-gray-400 hover:text-[var(--blue)] transition-colors">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M19 12H5M12 19l-7-7 7-7"/>
-              </svg>
+          <div className="mt-24 flex items-center justify-start gap-4">
+            <button className="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-[var(--blue)] transition-colors">
+              <span className="text-2xl">←</span>
             </button>
-            
-            <div className="flex items-center gap-4">
-              {[1, 2, 3, 4].map((page) => (
-                <button
-                  key={page}
-                  className={`w-11 h-11 flex items-center justify-center rounded-full text-[15px] font-[700] transition-all ${
-                    page === 2 
-                      ? "bg-[var(--blue)] text-white" 
-                      : "border border-gray-300 text-gray-600 hover:border-[var(--blue)] hover:text-[var(--blue)]"
-                  }`}
-                >
-                  {page}
-                </button>
-              ))}
+            <div className="flex gap-2">
+              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 text-sm font-medium hover:bg-gray-50">1</button>
+              <button className="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--blue)] text-white text-sm font-medium">2</button>
+              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 text-sm font-medium hover:bg-gray-50">3</button>
+              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 text-sm font-medium hover:bg-gray-50">4</button>
             </div>
-
-            <button className="text-gray-400 hover:text-[var(--blue)] transition-colors">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
+            <button className="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-[var(--blue)] transition-colors">
+              <span className="text-2xl">→</span>
             </button>
           </div>
         </div>
       </section>
+      <DonationWidget/>
 
       <CTABanner />
     </main>
   );
 }
-
-
