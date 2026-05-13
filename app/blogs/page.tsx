@@ -109,7 +109,7 @@ export default function BlogsPage() {
               <input
                 type="text"
                 placeholder="Search"
-                className="w-full pl-12 pr-4 py-2 border border-gray-400 rounded focus:outline-none focus:border-black transition-colors text-gray-700"
+                className="w-full pl-12 pr-4 py-2 border-1 border-gray-400 rounded focus:outline-none focus:border-black transition-colors text-gray-700"
               />
             </div>
           </div>
@@ -118,27 +118,27 @@ export default function BlogsPage() {
             {/* Blog List */}
             <div className="space-y-10">
               {currentPosts.map((post, idx) => (
-                <div key={idx} className="group border-b border-gray-100 pb-12 last:border-0">
+                <div key={idx} className="group border-b-1 border-[#D9D9D9] pb-12 last:border-0">
                   <div className="flex flex-col md:flex-row gap-8 items-start">
                     <div className="flex-1">
-                      <p className="text-[#e33e33] text-sm font-semibold mb-3">{post.date}</p>
+                      <p className="text-[#C3161C] text-[16px] font-[500] mb-3">{post.date}</p>
                       <Link href={`/blogs/${post.slug}`}>
-                        <h2 className="text-2xl lg:text-3xl font-bold text-[#1a1a1a] mb-4 hover:text-[#e33e33] transition-colors leading-tight">
+                        <h2 className="text-2xl lg:text-[32px] font-[600] text-[#1a1a1a] mb-4 hover:text-[#e33e33] transition-colors leading-tight">
                           {post.title}
                         </h2>
                       </Link>
-                      <p className="text-gray-500 leading-relaxed text-[15px]">
+                      <p className="text-gray-500 leading-relaxed text-[17px]">
                         With this news, we are delighted and deeply satisfied
                         to confirm that following BSc (Hons) Computing
                         students have been awarded with the IMS Academic
                         Excellence.
                       </p>
                     </div>
-                    <div className="w-full md:w-[220px] shrink-0">
+                    <div className="w-full md:w-[225px] shrink-0">
                       <img
                         src={post.img}
                         alt={post.title}
-                        className="w-full h-40 object-cover rounded shadow-sm"
+                        className="w-full h-42 object-cover"
                       />
                     </div>
                   </div>
@@ -181,15 +181,15 @@ export default function BlogsPage() {
 
             {/* Sidebar */}
             <aside>
-              <h2 className="text-2xl font-bold text-[#1a1a1a] mb-8">Recent Blogs</h2>
+              <h2 className="text-[30px] font-[800] text-[#333333] mb-8">Recent Blogs</h2>
               <div className="space-y-0">
                 {recentPosts.map((post, i) => (
-                  <div key={i} className="py-6 border-b border-gray-100 last:border-0 first:pt-0">
-                    <h3 className="font-bold text-[#1a1a1a] mb-1 leading-snug cursor-pointer hover:text-[#e33e33]">
+                  <div key={i} className="py-6 border-b border-[#D9D9D9] last:border-0 first:pt-0">
+                    <h3 className="font-semibold text-[#333333] text-[18px] mb-1 leading-snug cursor-pointer hover:text-[#e33e33]">
                       {post.title}
                     </h3>
-                    <p className="text-gray-500 text-sm mb-1">{post.month}</p>
-                    <p className="text-[#e33e33] text-sm font-medium">{post.date}</p>
+                    <p className="text-[#333333] text-[18px] font-semibold mb-1">{post.month}</p>
+                    <p className="text-[#C3161C] text-[16px] font-[400]">{post.date}</p>
                   </div>
                 ))}
               </div>

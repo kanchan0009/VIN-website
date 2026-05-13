@@ -1,5 +1,4 @@
 import CTABanner from "../../components/CTABanner";
-import MediaTabs from "../../components/MediaTabs";
 import { Play } from "lucide-react";
 
 const interviews = [
@@ -106,7 +105,7 @@ export default function InterviewsPage() {
         </div>
       </section>
 
-      <MediaTabs />
+
 
       {/* Featured Interview */}
       <section className="py-12 bg-white border-b border-gray-100">

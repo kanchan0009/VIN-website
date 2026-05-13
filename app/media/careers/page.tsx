@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import CTABanner from "../../components/CTABanner";
-import MediaTabs from "../../components/MediaTabs";
 import DonationWidget from "@/app/components/DonationWidget";
 
 const openings = [
@@ -94,7 +93,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <MediaTabs />
+
 
       {/* Open Positions Section */}
       <section className="py-20 bg-white">

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import CTABanner from "../../components/CTABanner";
-import MediaTabs from "../../components/MediaTabs";
 
 const newsItems = [
   {
@@ -96,7 +95,7 @@ export default function NewsUpdatePage() {
         </div>
       </section>
 
-      <MediaTabs />
+
 
       {/* News Grid Section */}
       <section className="py-16 bg-white">

@@ -23,12 +23,20 @@ const media = [
   { label: "Interviews", href: "/media/interviews" },
 ];
 
+const aboutLinks = [
+  { label: "Our Story", href: "/our-story" },
+  { label: "Our Approach", href: "/our-approach" },
+  { label: "Our Mission", href: "/mission" },
+];
+
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [programsOpen, setProgramsOpen] = useState(false);
   const [mediaOpen, setMediaOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
   const [mobileProgramsOpen, setMobileProgramsOpen] = useState(false);
   const [mobileMediaOpen, setMobileMediaOpen] = useState(false);
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full shadow-sm font-montserrat bg-white">
@@ -74,7 +82,35 @@ export default function Navbar() {
           {/* Desktop Links */}
           <div className="hidden xl:flex items-center gap-6 px-4">
             <Link href="/" className="text-[15px] font-[600] text-[#4A4A4A] hover:text-[var(--blue)] transition-colors">Home</Link>
-            <Link href="/about" className="text-[15px] font-[600] text-[#4A4A4A] hover:text-[var(--blue)] transition-colors whitespace-nowrap">About Us</Link>
+            
+            {/* About Us Dropdown */}
+            <div 
+              className="relative h-full flex items-center group"
+              onMouseEnter={() => setAboutOpen(true)}
+              onMouseLeave={() => setAboutOpen(false)}
+            >
+              <button className="text-[15px] font-[600] text-[#4A4A4A] group-hover:text-[var(--blue)] transition-colors flex items-center gap-1 py-4">
+                About Us <ChevronDown size={14} className={`transition-transform duration-300 ${aboutOpen ? "rotate-180" : ""}`} />
+              </button>
+              
+              <div className={`absolute top-full left-0 w-64 bg-white shadow-2xl border-t-2 border-[var(--blue)] py-3 transition-all duration-300 ${aboutOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2"}`}>
+                <Link 
+                  href="/about"
+                  className="block px-6 py-3 text-sm text-[#4A4A4A] font-[700] hover:bg-[#F1F6FF] hover:text-[var(--blue)] transition-all border-b border-gray-50"
+                >
+                  Overview
+                </Link>
+                {aboutLinks.map((link) => (
+                  <Link 
+                    key={link.href} 
+                    href={link.href}
+                    className="block px-6 py-3 text-sm text-[#4A4A4A] font-[500] hover:bg-[#F1F6FF] hover:text-[var(--blue)] transition-all"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
             
             {/* Programs Dropdown */}
             <div 
@@ -154,7 +190,37 @@ export default function Navbar() {
         <div className={`xl:hidden fixed inset-0 top-[75px] bg-white z-[100] transition-transform duration-500 transform ${mobileOpen ? "translate-x-0" : "translate-x-full"}`}>
           <div className="h-full overflow-y-auto px-6 py-8 flex flex-col gap-2">
             <Link href="/" onClick={() => setMobileOpen(false)} className="text-lg font-[700] text-[#1D1E20] py-4 border-b border-gray-50">Home</Link>
-            <Link href="/about" onClick={() => setMobileOpen(false)} className="text-lg font-[700] text-[#1D1E20] py-4 border-b border-gray-50">About Us</Link>
+            
+            {/* Mobile About Us */}
+            <div className="border-b border-gray-50">
+              <button 
+                onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
+                className="w-full flex items-center justify-between text-lg font-[700] text-[#1D1E20] py-4"
+              >
+                About Us <ChevronDown size={20} className={`transition-transform duration-300 ${mobileAboutOpen ? "rotate-180" : ""}`} />
+              </button>
+              <div className={`overflow-hidden transition-all duration-300 ${mobileAboutOpen ? "max-h-[500px] mb-4" : "max-h-0"}`}>
+                <div className="flex flex-col gap-3 pl-4">
+                  <Link 
+                    href="/about"
+                    onClick={() => setMobileOpen(false)}
+                    className="text-[#555] font-[700] text-base py-1 hover:text-[var(--blue)]"
+                  >
+                    Overview
+                  </Link>
+                  {aboutLinks.map((link) => (
+                    <Link 
+                      key={link.href} 
+                      href={link.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="text-[#555] font-[500] text-base py-1 hover:text-[var(--blue)]"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
             
             <div className="border-b border-gray-50">
               <button 

@@ -1,5 +1,4 @@
 import CTABanner from "../../components/CTABanner";
-import MediaTabs from "../../components/MediaTabs";
 import Link from "next/link";
 
 const stories = [

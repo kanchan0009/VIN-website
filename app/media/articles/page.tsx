@@ -10,7 +10,6 @@ import {
   Users 
 } from "lucide-react";
 import CTABanner from "../../components/CTABanner";
-import MediaTabs from "../../components/MediaTabs";
 import DonationWidget from "@/app/components/DonationWidget";
 
 const articles = [
@@ -123,7 +122,7 @@ export default function ArticlesPage() {
         </div>
       </section>
 
-      <MediaTabs />
+
 
       <div className=" mx-auto px-6 py-12 lg:py-16">
         <div className="flex flex-col lg:flex-row gap-10">

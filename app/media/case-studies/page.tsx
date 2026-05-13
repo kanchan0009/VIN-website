@@ -1,5 +1,4 @@
 import CTABanner from "../../components/CTABanner";
-import MediaTabs from "../../components/MediaTabs";
 
 const caseStudies = [
   {
@@ -105,7 +104,7 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      <MediaTabs />
+
 
       {/* Case Studies */}
       <section className="py-16 bg-white">

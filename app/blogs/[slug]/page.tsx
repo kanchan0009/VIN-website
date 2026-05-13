@@ -93,10 +93,10 @@ export default function BlogDetailPage({
                       className="w-20 h-16 rounded object-cover shrink-0"
                     />
                     <div>
-                      <p className="text-[13px] font-bold text-[#1a1a1a] leading-tight group-hover:text-[var(--blue)] transition-colors mb-1">
+                      <p className="text-[14px] font-[500] text-[#1a1a1a] leading-tight group-hover:text-[var(--blue)] transition-colors mb-1">
                         {post.title}
                       </p>
-                      <p className="text-[11px] font-bold text-[var(--blue)] uppercase tracking-wider">
+                      <p className="text-[14px] font-[500] text-[var(--blue)] uppercase tracking-wider">
                         {post.date}
                       </p>
                     </div>
