@@ -695,12 +695,12 @@ export default function VolunteerDetailsPage() {
                   </div>
                   <div>
                     <div className="w-full h-[1px] bg-gray-100 mb-4" />
-                    <button 
-                      onClick={() => handleProgramSelect(program)}
+                    <Link 
+                      href={`/programs-projects?topic=${program.id}`}
                       className="text-[#1a237e] text-xs font-bold flex items-center gap-1 hover:gap-2 transition-all"
                     >
                       Learn More <span className="text-lg leading-none">→</span>
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>

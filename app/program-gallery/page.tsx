@@ -48,7 +48,7 @@ export default function ProgramGalleryPage() {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState("Videos");
 
-  const options = ["All", "Videos", "Photos", "Articles"];
+  const options = ["All", "Videos", "Images"];
 
   const topItems = mediaItems.slice(0, 2);
   const midItems = mediaItems.slice(2, 4);
@@ -77,18 +77,19 @@ export default function ProgramGalleryPage() {
               {isOpen && (
                 <div className="absolute left-0 right-0 mt-1 bg-white border border-gray-200 rounded shadow-lg z-50 overflow-hidden animate-in fade-in slide-in-from-top-1 duration-200">
                   {options.map((option) => (
-                    <button
+                    <Link
                       key={option}
+                      href={option === "Images" ? "/program-image" : (option === "Videos" ? "/program-gallery" : "#")}
                       onClick={() => {
                         setSelected(option);
                         setIsOpen(false);
                       }}
-                      className={`w-full text-left px-4 py-2.5 text-sm hover:bg-gray-50 transition-colors ${
+                      className={`block w-full text-left px-4 py-2.5 text-sm hover:bg-gray-50 transition-colors ${
                         selected === option ? "text-[var(--blue)] font-semibold bg-gray-50" : "text-gray-600"
                       }`}
                     >
                       {option}
-                    </button>
+                    </Link>
                   ))}
                 </div>
               )}

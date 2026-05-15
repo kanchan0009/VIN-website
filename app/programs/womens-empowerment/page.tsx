@@ -59,6 +59,30 @@ const testimonials = [
   }
 ];
 
+const projects = [
+  {
+    id: 1,
+    title: "Women’s Development in Nepal: The Myth of Empowerment",
+    slug: "myth-of-empowerment",
+    image: "https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=800&q=80",
+    desc: "Loreum ipsum dipsum lorem ipsum dipsum Loreum ipsum dipsum lorem .."
+  },
+  {
+    id: 2,
+    title: "Income Generation through Micro-credit",
+    slug: "micro-credit-income",
+    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80",
+    desc: "Loreum ipsum dipsum lorem ipsum dipsum Loreum ipsum dipsum lorem .."
+  },
+  {
+    id: 3,
+    title: "Education & Life Skills for Rural Women",
+    slug: "education-life-skills",
+    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80",
+    desc: "Loreum ipsum dipsum lorem ipsum dipsum Loreum ipsum dipsum lorem .."
+  }
+];
+
 export default function WomensEmpowermentPage() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -439,13 +463,13 @@ export default function WomensEmpowermentPage() {
           <div className="relative group">
             {/* Navigation Arrows */}
             <button 
-              onClick={() => setProjectIndex((prev) => (prev - 1 + 3) % 3)}
+              onClick={() => setProjectIndex((prev) => (prev - 1 + projects.length) % projects.length)}
               className="absolute -left-4 lg:-left-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10"
             >
               <ChevronLeft size={20} className="text-gray-600" />
             </button>
             <button 
-              onClick={() => setProjectIndex((prev) => (prev + 1) % 3)}
+              onClick={() => setProjectIndex((prev) => (prev + 1) % projects.length)}
               className="absolute -right-4 lg:-right-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10"
             >
               <ChevronRight size={20} className="text-gray-600" />
@@ -456,13 +480,13 @@ export default function WomensEmpowermentPage() {
                 className="flex transition-transform duration-500 ease-in-out gap-8"
                 style={{ transform: `translateX(-${projectIndex * (100 / visibleProjectCount)}%)` }}
               >
-                {[1, 2, 3].map((item) => (
-                  <div key={item} className="min-w-full sm:min-w-[calc(50%-16px)] lg:min-w-[calc(33.333%-22px)] rounded-[10px] overflow-hidden shadow-xl flex flex-col group/card">
+                {projects.map((project) => (
+                  <div key={project.id} className="min-w-full sm:min-w-[calc(50%-16px)] lg:min-w-[calc(33.333%-22px)] rounded-[10px] overflow-hidden shadow-xl flex flex-col group/card">
                   {/* Top Image */}
                   <div className="relative h-[220px] overflow-hidden">
                     <img 
-                      src="https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=800&q=80" 
-                      alt="Project" 
+                      src={project.image} 
+                      alt={project.title} 
                       className="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-700"
                     />
                     <div className="absolute top-4 right-0 bg-[var(--blue)] text-white text-[12px] uppercase font-bold px-4 py-1.5 rounded-sm">
@@ -472,12 +496,12 @@ export default function WomensEmpowermentPage() {
                   {/* Bottom Content */}
                   <div className="bg-[#1e238f] p-6 flex-1 flex flex-col">
                     <h4 className="text-white text-[18px] lg:text-xl font-[500] mb-3 leading-tight">
-                      Women’s Development in Nepal: The Myth of Empowerment
+                      {project.title}
                     </h4>
                     <p className="text-white/80 text-[13px] lg:text-[14px] leading-relaxed mb-4 line-clamp-2">
-                      Loreum ipsum dipsum lorem ipsum dipsum Loreum ipsum dipsum lorem ..
+                      {project.desc}
                     </p>
-                    <Link href="#" className="mt-auto text-white text-sm font-[600] flex items-center gap-2 hover:translate-x-2 transition-transform">
+                    <Link href={`/programs/womens-empowerment/${project.slug}`} className="mt-auto text-white text-sm font-[600] flex items-center gap-2 hover:translate-x-2 transition-transform">
                       Read More 
                       <ArrowRight size={16} />
                     </Link>
