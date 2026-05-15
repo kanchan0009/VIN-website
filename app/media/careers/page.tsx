@@ -85,7 +85,7 @@ export default function CareersPage() {
             background: "linear-gradient(to top, rgba(20,10,70,0.85) 40%, rgba(0,0,0,0.2) 100%)",
           }}
         />
-        <div className="relative z-10  mx-auto px-6 pb-12 w-full">
+        <div className="relative z-10  mx-auto px-6 pb-10 w-full">
           <h1 className="text-5xl lg:text-6xl font-[800] text-white">Careers</h1>
           <p className="text-xl text-white/90 mt-5 max-w-3xl font-[400] leading-relaxed">
             Join our mission to empower marginalized communities in Nepal. 

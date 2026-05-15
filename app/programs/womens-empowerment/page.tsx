@@ -2,8 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle, Play, ChevronLeft, ChevronRight, ChevronDown, Star, Users } from 'lucide-react';
-import CTABanner from '../../components/CTABanner';
-import GetInvolved from '../../components/GetInvolved';
+import CTABanner from '../../components/CTABanner'
 import DonationWidget from '../../components/DonationWidget';
 
 const stats = [
@@ -593,9 +592,7 @@ export default function WomensEmpowermentPage() {
                 <span className="text-gray-500 text-sm">420 reviews</span>
               </div>
             </div>
-            <button className="bg-[#1e40af] text-white px-8 py-3 rounded-md font-[600] text-sm hover:bg-[#1e3a8a] transition-all shadow-md active:scale-95">
-              Write A Review
-            </button>
+            
           </div>
 
           {/* Review Cards Carousel */}

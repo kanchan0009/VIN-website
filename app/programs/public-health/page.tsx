@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle, Play, ChevronLeft, ChevronRight, ChevronDown, Stethoscope, Droplets, Heart, Hammer } from 'lucide-react';
 import CTABanner from '../../components/CTABanner';
-import GetInvolved from '../../components/GetInvolved';
 import DonationWidget from '../../components/DonationWidget';
 
 const stats = [
@@ -592,7 +591,6 @@ export default function PublicHealthPage() {
       </section>
 
       <CTABanner />
-      <GetInvolved />
     </main>
   );
 }

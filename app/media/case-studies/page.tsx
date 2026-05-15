@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import Link from "next/link";
 import CTABanner from "../../components/CTABanner";
 
@@ -37,29 +38,40 @@ const caseStudies = [
     id: 6,
     title: "Case Study Heading",
     summary: "Lorem ipsum dipsum lorem ipsum dipsum Loreum ipsum dipsum lorem ..",
-    image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&q=80",
   },
   {
     id: 7,
-    title: "Case Study Heading",
-    summary: "Lorem ipsum dipsum lorem ipsum dipsum Loreum ipsum dipsum lorem ..",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80",
+    title: "Community Outreach",
+    summary: "How VIN reached 5000 families with essential supplies and healthcare education.",
+    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80",
   },
   {
     id: 8,
-    title: "Case Study Heading",
-    summary: "Lorem ipsum dipsum lorem ipsum dipsum Loreum ipsum dipsum lorem ..",
-    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80",
+    title: "Women's Literacy",
+    summary: "Impact report on our 12-month literacy program for rural women in Okhaldhunga.",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80",
   },
   {
     id: 9,
-    title: "Case Study Heading",
-    summary: "Lorem ipsum dipsum lorem ipsum dipsum Loreum ipsum dipsum lorem ..",
-    image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&q=80",
+    title: "Eco-Enterprises",
+    summary: "Supporting sustainable livelihoods through organic farming and local market access.",
+    image: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&q=80",
   },
 ];
 
 export default function CaseStudiesPage() {
+  const itemsPerPage = 6;
+  const [currentPage, setCurrentPage] = useState(1);
+  
+  const totalPages = Math.ceil(caseStudies.length / itemsPerPage);
+  const currentItems = caseStudies.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
+  const goToPage = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <main className="text-[#1a1a2e]">
       {/* Hero */}
@@ -90,7 +102,7 @@ export default function CaseStudiesPage() {
       <section className="py-20 bg-white">
         <div className="mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
-            {caseStudies.map((study) => (
+            {currentItems.map((study) => (
               <div key={study.id} className="group flex flex-col">
                 <div className="relative aspect-[4/3] overflow-hidden mb-6">
                   <img
@@ -117,16 +129,33 @@ export default function CaseStudiesPage() {
 
           {/* Pagination */}
           <div className="mt-24 flex items-center justify-start gap-4">
-            <button className="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-[var(--blue)] transition-colors">
+            <button 
+              onClick={() => goToPage(Math.max(1, currentPage - 1))}
+              disabled={currentPage === 1}
+              className={`w-10 h-10 flex items-center justify-center transition-colors ${currentPage === 1 ? 'text-gray-200 cursor-not-allowed' : 'text-gray-400 hover:text-[var(--blue)]'}`}
+            >
               <span className="text-2xl">←</span>
             </button>
             <div className="flex gap-2">
-              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 text-sm font-medium hover:bg-gray-50">1</button>
-              <button className="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--blue)] text-white text-sm font-medium">2</button>
-              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 text-sm font-medium hover:bg-gray-50">3</button>
-              <button className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 text-sm font-medium hover:bg-gray-50">4</button>
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <button 
+                  key={page}
+                  onClick={() => goToPage(page)}
+                  className={`w-10 h-10 flex items-center justify-center rounded-full border text-sm font-medium transition-all ${
+                    currentPage === page 
+                      ? "bg-[var(--blue)] text-white border-[var(--blue)]" 
+                      : "border-gray-200 text-gray-600 hover:bg-gray-50"
+                  }`}
+                >
+                  {page}
+                </button>
+              ))}
             </div>
-            <button className="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-[var(--blue)] transition-colors">
+            <button 
+              onClick={() => goToPage(Math.min(totalPages, currentPage + 1))}
+              disabled={currentPage === totalPages}
+              className={`w-10 h-10 flex items-center justify-center transition-colors ${currentPage === totalPages ? 'text-gray-200 cursor-not-allowed' : 'text-gray-400 hover:text-[var(--blue)]'}`}
+            >
               <span className="text-2xl">→</span>
             </button>
           </div>

@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle, Play, ChevronLeft, ChevronRight, ChevronDown, Rocket, TrendingUp, Globe, Wrench } from 'lucide-react';
 import CTABanner from '../../components/CTABanner';
-import GetInvolved from '../../components/GetInvolved';
 import DonationWidget from '../../components/DonationWidget';
 
 const stats = [
@@ -590,9 +589,7 @@ export default function YouthEmpowermentPage() {
           </div>
         </div>
       </section>
-
       <CTABanner />
-      <GetInvolved />
     </main>
   );
 }

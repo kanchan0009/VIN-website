@@ -115,137 +115,142 @@ export default function ArticlesPage() {
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10  mx-auto px-6 pb-16 w-full">
+        <div className="relative z-10 max-w-[1440px] mx-auto px-6 pb-10 w-full">
           <h1 className="text-5xl lg:text-7xl font-[800] text-white tracking-tight">
             Articles
           </h1>
+          <p className="text-white/80 max-w-4xl text-lg mt-4">
+            Stay updated with our latest stories, impact reports, and community developments from across Nepal.
+          </p>
         </div>
       </section>
 
 
 
-      <div className=" mx-auto px-6 py-12 lg:py-16">
-        <div className="flex flex-col lg:flex-row gap-10">
-          {/* Main Content Area */}
-          <div className="lg:w-3/4 space-y-12">
-            
-            {/* Featured Article Card */}
-            <div className="bg-white rounded-[20px] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex flex-col md:flex-row">
-              <div className="md:w-1/2 p-6 lg:p-8 flex flex-col justify-center">
-                <span className="text-[10px] uppercase font-[700] tracking-widest text-[var(--blue)] mb-3">Featured Article</span>
-                <h2 className="text-2xl lg:text-3xl font-[700] text-[#1D1E20] mb-4 leading-tight">
-                  Permaculture Design: A Pathway to Regenerative Communities
-                </h2>
-                <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                  Explore how permaculture principles can transform the way we grow food, manage water, and live in harmony with nature.
-                </p>
-                <div className="flex items-center gap-6 text-gray-400 text-[11px] mb-6">
-                  <div className="flex items-center gap-2">
-                    <Leaf size={12} className="text-green-600" />
-                    <span>Permaculture</span>
+      <section className="py-12 lg:py-16">
+        <div className="max-w-[1440px] mx-auto px-6">
+          <div className="flex flex-col lg:flex-row gap-10">
+            {/* Main Content Area */}
+            <div className="lg:w-3/4 space-y-12">
+              
+              {/* Featured Article Card */}
+              <div className="bg-white rounded-[20px] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex flex-col md:flex-row">
+                <div className="md:w-1/2 p-6 lg:p-8 flex flex-col justify-center">
+                  <span className="text-[10px] uppercase font-[700] tracking-widest text-[var(--blue)] mb-3">Featured Article</span>
+                  <h2 className="text-2xl lg:text-3xl font-[700] text-[#1D1E20] mb-4 leading-tight">
+                    Permaculture Design: A Pathway to Regenerative Communities
+                  </h2>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-6">
+                    Explore how permaculture principles can transform the way we grow food, manage water, and live in harmony with nature.
+                  </p>
+                  <div className="flex items-center gap-6 text-gray-400 text-[11px] mb-6">
+                    <div className="flex items-center gap-2">
+                      <Leaf size={12} className="text-green-600" />
+                      <span>Permaculture</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Calendar size={12} />
+                      <span>May 6, 2024</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Clock size={12} />
+                      <span>8 min read</span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Calendar size={12} />
-                    <span>May 6, 2024</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Clock size={12} />
-                    <span>8 min read</span>
-                  </div>
+                  <Link 
+                    href="/article-blogs" 
+                    className="inline-flex items-center justify-center gap-2 bg-[var(--blue)] text-white px-6 py-3 rounded-lg font-[600] text-xs hover:bg-[#15196d] transition-all w-fit"
+                  >
+                    Read Article →
+                  </Link>
                 </div>
-                <Link 
-                  href="/article-blogs" 
-                  className="inline-flex items-center justify-center gap-2 bg-[var(--blue)] text-white px-6 py-3 rounded-lg font-[600] text-xs hover:bg-[#15196d] transition-all w-fit"
-                >
-                  Read Article →
+                <div className="md:w-1/2 relative h-[250px] md:h-auto">
+                  <img 
+                    src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=1000&q=80" 
+                    alt="Permaculture vegetables" 
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Latest Articles Header */}
+              <div className="flex items-center justify-between">
+                <h2 className="text-2xl lg:text-3xl font-[700] text-[var(--blue)]">Latest Articles</h2>
+                <Link href="/article-blogs" className="text-[var(--blue)] font-[700] text-sm flex items-center gap-2 hover:translate-x-1 transition-transform">
+                  View all articles →
                 </Link>
               </div>
-              <div className="md:w-1/2 relative h-[250px] md:h-auto">
-                <img 
-                  src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=1000&q=80" 
-                  alt="Permaculture vegetables" 
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
-            </div>
 
-            {/* Latest Articles Header */}
-            <div className="flex items-center justify-between">
-              <h2 className="text-2xl lg:text-3xl font-[700] text-[var(--blue)]">Latest Articles</h2>
-              <Link href="/article-blogs" className="text-[var(--blue)] font-[700] text-sm flex items-center gap-2 hover:translate-x-1 transition-transform">
-                View all articles →
-              </Link>
-            </div>
-
-            {/* Articles Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {articles.map((article) => (
-                <article key={article.id} className="group bg-white rounded-[20px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-gray-100 flex flex-col hover:shadow-xl transition-all duration-500">
-                  <div className="relative h-40 overflow-hidden">
-                    <img 
-                      src={article.image} 
-                      alt={article.title} 
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
-                    />
-                  </div>
-                  <div className="p-5 flex flex-col flex-1">
-                    <span className={`text-[9px] uppercase font-[700] tracking-wider mb-2 ${article.categoryColor}`}>
-                      {article.category}
-                    </span>
-                    <h3 className="text-base font-[700] text-[#1D1E20] mb-2 leading-snug group-hover:text-[var(--blue)] transition-colors">
-                      {article.title}
-                    </h3>
-                    <p className="text-gray-500 text-[11px] leading-relaxed mb-4 line-clamp-2">
-                      {article.excerpt}
-                    </p>
-                    <div className="mt-auto flex items-center justify-between text-[10px] text-gray-400 font-[500] pt-3 border-t border-gray-500">
-                      <span>{article.date}</span>
-                      <span>{article.readTime}</span>
+              {/* Articles Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {articles.map((article) => (
+                  <article key={article.id} className="group bg-white rounded-[20px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-gray-100 flex flex-col hover:shadow-xl transition-all duration-500">
+                    <div className="relative h-40 overflow-hidden">
+                      <img 
+                        src={article.image} 
+                        alt={article.title} 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                      />
                     </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-
-            {/* Load More */}
-            <div className="text-center pt-8">
-              <button className="px-10 py-3 rounded-xl border border-[var(--blue)] text-[var(--blue)] font-[700] text-sm hover:bg-[var(--blue)] hover:text-white transition-all active:scale-95">
-                Load More Articles →
-              </button>
-            </div>
-          </div>
-
-          {/* Sidebar */}
-          <div className="lg:w-1/4 space-y-8">
-            <div className="bg-[#E7E2D8] rounded-[20px] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-gray-50">
-              <h3 className="text-xl font-[700] text-[#1D1E20] mb-8">Explore Topics</h3>
-              <div className="space-y-4">
-                {topics.map((topic, i) => (
-                  <div key={i} className="flex items-center gap-4 cursor-pointer group pb-4 border-b border-gray-300 last:border-0 last:pb-0">
-                    <div className={`w-10 h-10 rounded-xl ${topic.bg} flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                      {topic.icon}
+                    <div className="p-5 flex flex-col flex-1">
+                      <span className={`text-[9px] uppercase font-[700] tracking-wider mb-2 ${article.categoryColor}`}>
+                        {article.category}
+                      </span>
+                      <h3 className="text-base font-[700] text-[#1D1E20] mb-2 leading-snug group-hover:text-[var(--blue)] transition-colors">
+                        {article.title}
+                      </h3>
+                      <p className="text-gray-500 text-[11px] leading-relaxed mb-4 line-clamp-2">
+                        {article.excerpt}
+                      </p>
+                      <div className="mt-auto flex items-center justify-between text-[10px] text-gray-400 font-[500] pt-3 border-t border-gray-500">
+                        <span>{article.date}</span>
+                        <span>{article.readTime}</span>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-sm font-[700] text-[#1D1E20] group-hover:text-[var(--blue)] transition-colors">{topic.name}</h4>
-                      <p className="text-[10px] text-gray-400">{topic.desc}</p>
-                    </div>
-                  </div>
+                  </article>
                 ))}
               </div>
 
-              {/* Learning Quote Box */}
-              <div className="mt-12 bg-[#F2F7E9] rounded-[20px] p-6 border border-[#d1fae5]">
-                <h4 className="text-[#065f46] font-[700] text-lg mb-2 leading-tight">
-                  Knowledge shared is impact multiplied.
-                </h4>
-                <p className="text-[#059669] text-xs font-[500]">
-                  — VIN Learning Philosophy
-                </p>
+              {/* Load More */}
+              <div className="text-center pt-8">
+                <button className="px-10 py-3 rounded-xl border border-[var(--blue)] text-[var(--blue)] font-[700] text-sm hover:bg-[var(--blue)] hover:text-white transition-all active:scale-95">
+                  Load More Articles →
+                </button>
+              </div>
+            </div>
+
+            {/* Sidebar */}
+            <div className="lg:w-1/4 space-y-8">
+              <div className="bg-[#E7E2D8] rounded-[20px] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-gray-50">
+                <h3 className="text-xl font-[700] text-[#1D1E20] mb-8">Explore Topics</h3>
+                <div className="space-y-4">
+                  {topics.map((topic, i) => (
+                    <div key={i} className="flex items-center gap-4 cursor-pointer group pb-4 border-b border-gray-300 last:border-0 last:pb-0">
+                      <div className={`w-10 h-10 rounded-xl ${topic.bg} flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                        {topic.icon}
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-[700] text-[#1D1E20] group-hover:text-[var(--blue)] transition-colors">{topic.name}</h4>
+                        <p className="text-[10px] text-gray-400">{topic.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Learning Quote Box */}
+                <div className="mt-12 bg-[#F2F7E9] rounded-[20px] p-6 border border-[#d1fae5]">
+                  <h4 className="text-[#065f46] font-[700] text-lg mb-2 leading-tight">
+                    Knowledge shared is impact multiplied.
+                  </h4>
+                  <p className="text-[#059669] text-xs font-[500]">
+                    — VIN Learning Philosophy
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
       <DonationWidget/>
 
       <CTABanner />

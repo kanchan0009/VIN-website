@@ -22,7 +22,7 @@ import {
 import { useRef, useState, useCallback, useEffect } from "react";
 import DonationWidget from "./components/DonationWidget";
 import CTABanner from "./components/CTABanner";
-import GetInvolved from "./components/GetInvolved";
+
 const testimonials = [
   {
     id: 1,
@@ -470,8 +470,8 @@ export default function HomePage() {
       </section>
 
       {/* Welcome Section */}
-      <section className="w-full bg-[#ffffff] py-24">
-        <div className=" mx-auto">
+      <section className="w-full bg-[#ffffff] py-10 md:py-24">
+        <div className="max-w-[1440px] mx-auto px-0 md:px-[60px]">
           {/* Heading */}
           <h2 className="text-xl md:text-5xl font-bold text-gray-900 leading-snug mb-12 text-center">
             Welcome to{" "}
@@ -559,8 +559,8 @@ export default function HomePage() {
       </section>
 
       {/* Programs grid */}
-      <section className="bg-white py-24 mx-30">
-        <div className=" mx-auto text-center">
+      <section className="bg-white py-10 md:py-24">
+        <div className="max-w-[1440px] mx-auto px-0 md:px-[60px] text-center">
           {/* Heading */}
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
             What We Do
@@ -570,34 +570,34 @@ export default function HomePage() {
           </p>
 
           {/* Grid */}
-          <div className="grid md:grid-cols-3 gap-4 mt-10 px-7">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             {data.map((item, index) => (
               <Link
                 key={index}
                 href={item.href}
-                className="bg-white shadow-md overflow-hidden hover:shadow-lg transition-shadow text-center max-w-sm block"
+                className="bg-white shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 text-center mx-auto w-full max-w-sm group block"
               >
                 {/* Image */}
-                <div className="relative">
+                <div className="relative overflow-hidden">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-80 object-cover"
+                    className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700"
                   />
 
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-black/40 flex flex-col justify-end items-center pb-4 text-white">
-                    <p className="text-lg font-semibold">{item.stats}</p>
-                    <p className="text-xs opacity-90">{item.statsLabel}</p>
+                  <div className="absolute inset-0 bg-black/30 flex flex-col justify-end items-center pb-6 text-white translate-y-1 group-hover:translate-y-0 transition-transform">
+                    <p className="text-2xl font-bold">{item.stats}</p>
+                    <p className="text-xs font-medium uppercase tracking-wider opacity-90">{item.statsLabel}</p>
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-5">
-                  <h3 className="font-bold text-gray-900 text-base mb-3">
+                <div className="p-8">
+                  <h3 className="font-bold text-gray-900 text-lg mb-3 group-hover:text-[var(--blue)] transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed font-light">
+                  <p className="text-gray-600 text-sm leading-relaxed font-light line-clamp-2">
                     {item.desc}
                   </p>
                 </div>
@@ -606,8 +606,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-24">
-        <div className=" mx-auto text-center">
+      <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-10 md:py-24">
+        <div className="max-w-[1440px] mx-auto px-0 md:px-[60px] text-center">
           {/* Heading */}
           <h2 className="text-4xl md:text-5xl font-[600] text-gray-900 mb-3">
             Where We Work

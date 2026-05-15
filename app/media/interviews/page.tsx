@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import Link from "next/link";
 import CTABanner from "../../components/CTABanner";
 import DonationWidget from "../../components/DonationWidget";
@@ -35,12 +36,54 @@ const mediaItems = [
     src: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=800&q=80",
     aspect: "aspect-[4/5]",
   },
+  // Additional items for pagination
+  {
+    type: "video",
+    src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
+    aspect: "aspect-[4/5]",
+  },
+  {
+    type: "video",
+    src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80",
+    aspect: "aspect-[4/5]",
+  },
+  {
+    type: "video",
+    src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80",
+    aspect: "aspect-video",
+  },
+  {
+    type: "video",
+    src: "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=800&q=80",
+    aspect: "aspect-video",
+  },
+  {
+    type: "video",
+    src: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
+    aspect: "aspect-[4/5]",
+  },
+  {
+    type: "video",
+    src: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&q=80",
+    aspect: "aspect-[4/5]",
+  },
 ];
 
 export default function InterviewsPage() {
-  const topItems = mediaItems.slice(0, 2);
-  const midItems = mediaItems.slice(2, 4);
-  const botItems = mediaItems.slice(4, 6);
+  const itemsPerPage = 6;
+  const [currentPage, setCurrentPage] = useState(1);
+  
+  const totalPages = Math.ceil(mediaItems.length / itemsPerPage);
+  const currentItems = mediaItems.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+  
+  const topItems = currentItems.slice(0, 2);
+  const midItems = currentItems.slice(2, 4);
+  const botItems = currentItems.slice(4, 6);
+
+  const goToPage = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <main className="text-[#1a1a2e]">
@@ -147,16 +190,33 @@ export default function InterviewsPage() {
 
         {/* Pagination */}
         <div className="mt-24 px-4 md:px-[60px] flex items-center justify-start gap-4">
-          <button className="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-[var(--blue)] transition-colors">
+          <button 
+            onClick={() => goToPage(Math.max(1, currentPage - 1))}
+            disabled={currentPage === 1}
+            className={`w-10 h-10 flex items-center justify-center transition-colors ${currentPage === 1 ? 'text-gray-200 cursor-not-allowed' : 'text-gray-400 hover:text-[var(--blue)]'}`}
+          >
             <ChevronLeft size={24} />
           </button>
           <div className="flex gap-2">
-            <button className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 text-sm font-medium hover:bg-gray-50">1</button>
-            <button className="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--blue)] text-white text-sm font-medium">2</button>
-            <button className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 text-sm font-medium hover:bg-gray-50">3</button>
-            <button className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 text-sm font-medium hover:bg-gray-50">4</button>
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button 
+                key={page}
+                onClick={() => goToPage(page)}
+                className={`w-10 h-10 flex items-center justify-center rounded-full border text-sm font-medium transition-all ${
+                  currentPage === page 
+                    ? "bg-[var(--blue)] text-white border-[var(--blue)]" 
+                    : "border-gray-200 text-gray-600 hover:bg-gray-50"
+                }`}
+              >
+                {page}
+              </button>
+            ))}
           </div>
-          <button className="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-[var(--blue)] transition-colors">
+          <button 
+            onClick={() => goToPage(Math.min(totalPages, currentPage + 1))}
+            disabled={currentPage === totalPages}
+            className={`w-10 h-10 flex items-center justify-center transition-colors ${currentPage === totalPages ? 'text-gray-200 cursor-not-allowed' : 'text-gray-400 hover:text-[var(--blue)]'}`}
+          >
             <ChevronRight size={24} />
           </button>
         </div>
