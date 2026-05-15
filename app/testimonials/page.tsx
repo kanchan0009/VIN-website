@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Quote } from "lucide-react";
+import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import DonationWidget from "../components/DonationWidget";
 import CTABanner from "../components/CTABanner";
@@ -139,18 +139,14 @@ export default function TestimonialsPage() {
           {/* Pagination */}
           <div className="mt-16 flex items-center justify-center gap-3">
             <button className="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-[var(--blue)] transition-colors">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M15 18l-6-6 6-6"/>
-              </svg>
+              <ChevronLeft size={20} />
             </button>
             <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[15px] font-[700] text-[#4A4A4A] hover:border-[var(--blue)] transition-colors">1</button>
             <button className="w-10 h-10 rounded-full bg-[var(--blue)] flex items-center justify-center text-[15px] font-[700] text-white">2</button>
             <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[15px] font-[700] text-[#4A4A4A] hover:border-[var(--blue)] transition-colors">3</button>
             <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[15px] font-[700] text-[#4A4A4A] hover:border-[var(--blue)] transition-colors">4</button>
             <button className="w-10 h-10 flex items-center justify-center text-[var(--blue)] hover:opacity-70 transition-opacity">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M9 18l6-6-6-6"/>
-              </svg>
+              <ChevronRight size={20} />
             </button>
           </div>
         </div>

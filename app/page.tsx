@@ -14,8 +14,12 @@ import {
   Download,
   MapPin,
   Quote,
+  ChevronLeft,
+  ChevronRight,
+  Play,
+  X,
 } from "lucide-react";
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useCallback, useEffect } from "react";
 import DonationWidget from "./components/DonationWidget";
 import CTABanner from "./components/CTABanner";
 import GetInvolved from "./components/GetInvolved";
@@ -29,6 +33,24 @@ const testimonials = [
       "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80",
     signature: "Dagrur Manalo",
     signatureTitle: "Volunteer, VIN",
+  },
+  {
+    id: 2,
+    name: "Ram Bahadur",
+    role: "Community Leader",
+    text: "Working with VIN has been a transformative experience for our village. The focus on holistic development, from education to infrastructure, has empowered us to take charge of our own future. We are grateful for the dedication and passion the volunteers bring to every project.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80",
+    signature: "Ram Bahadur",
+    signatureTitle: "Community Leader",
+  },
+  {
+    id: 3,
+    name: "Anita Kumari",
+    role: "Teacher",
+    text: "As a teacher, I've seen firsthand the impact of VIN's educational programs. The children are more engaged, and the resources provided have greatly enhanced our learning environment. It's inspiring to see the community coming together for the sake of the next generation.",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80",
+    signature: "Anita Kumari",
+    signatureTitle: "Primary School Teacher",
   },
 ];
 const places = [
@@ -178,6 +200,7 @@ export default function HomePage() {
   const data = [
     {
       title: "Women's Empowerment",
+      href: "/programs/womens-empowerment",
       desc: "A center to empowerment & prosperity of a community.",
       stats: "32,035",
       statsLabel: "women we've empowered",
@@ -186,6 +209,7 @@ export default function HomePage() {
     },
     {
       title: "Children's Development",
+      href: "/programs/child-development",
       desc: "A center to empowerment & prosperity of a community.",
       stats: "32,035",
       statsLabel: "children educated",
@@ -194,6 +218,7 @@ export default function HomePage() {
     },
     {
       title: "Youth Empowerment",
+      href: "/programs/youth-empowerment",
       desc: "A center to empowerment & prosperity of a community.",
       stats: "33,835",
       statsLabel: "youth empowered",
@@ -202,6 +227,7 @@ export default function HomePage() {
     },
     {
       title: "Public Health & Medical Care",
+      href: "/programs/public-health",
       desc: "A center to empowerment & prosperity of a community.",
       stats: "32,035",
       statsLabel: "people served",
@@ -210,6 +236,7 @@ export default function HomePage() {
     },
     {
       title: "Environment & Conservation Projects",
+      href: "/programs/environment",
       desc: "A center to empowerment & prosperity of a community.",
       stats: "32,035",
       statsLabel: "projects completed",
@@ -218,6 +245,7 @@ export default function HomePage() {
     },
     {
       title: "Disaster Risk Reduction",
+      href: "/programs/disaster-risk",
       desc: "A center to empowerment & prosperity of a community.",
       stats: "32,035",
       statsLabel: "projects completed",
@@ -241,17 +269,42 @@ export default function HomePage() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedTopic, setSelectedTopic] = useState("");
   const [currentPlace, setCurrentPlace] = useState(places[0]);
+  const [activeReview, setActiveReview] = useState(0);
+  const [learnMoreIndex, setLearnMoreIndex] = useState(0);
+  const [showAllPrograms, setShowAllPrograms] = useState(false);
+  const [heroIndex, setHeroIndex] = useState(0);
+
+  const heroItems = [
+    {
+      title: "Women’s Empowerment Program",
+      desc: "We Equip Rural Women With Non-Formal Education, Life Skills, Entrepreneurship Support, Microcredit Access, And Leadership Training — Helping Them Rise, Earn, And Live With Confidence And Dignity.",
+      image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=1600",
+    },
+    {
+      title: "Children’s Development Program",
+      desc: "Ensuring every child has access to quality education, health care, and a safe environment to grow and thrive in their community.",
+      image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1600",
+    },
+    {
+      title: "Youth Leadership Initiative",
+      desc: "Empowering the next generation with skills and opportunities to become leaders and positive change-makers in their societies.",
+      image: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1600",
+    }
+  ];
+  const currentHero = heroItems[heroIndex];
 
   const currentMedia = mediaItems[currentMediaIndex];
 
   const nextMedia = () => {
     setCurrentMediaIndex((prev) => (prev + 1) % mediaItems.length);
+    setIsMediaExpanded(false);
   };
 
   const prevMedia = () => {
     setCurrentMediaIndex(
       (prev) => (prev - 1 + mediaItems.length) % mediaItems.length,
     );
+    setIsMediaExpanded(false);
   };
 
   const handleDownload = (url: string) => {
@@ -264,7 +317,18 @@ export default function HomePage() {
   };
   const [startIndex, setStartIndex] = useState(0);
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
+  const [isMediaExpanded, setIsMediaExpanded] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(4);
   const itemsPerPage = 4;
+
+  useEffect(() => {
+    const updateCount = () => {
+      setVisibleCount(window.innerWidth >= 1024 ? 4 : window.innerWidth >= 640 ? 2 : 1);
+    };
+    updateCount();
+    window.addEventListener("resize", updateCount);
+    return () => window.removeEventListener("resize", updateCount);
+  }, []);
 
   const visibleItems = mediaItems.slice(startIndex, startIndex + itemsPerPage);
 
@@ -288,16 +352,25 @@ export default function HomePage() {
     <main>
       {/* Hero */}
       <section className="relative w-full min-h-[500px] flex items-center !px-0">
-        {/* Background Image */}
-        <img
-          src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=1600"
-          alt="Women Empowerment"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+        {/* Background Images Cross-fade */}
+        {heroItems.map((item, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === heroIndex ? "opacity-100 z-0" : "opacity-0 z-[-1]"
+            }`}
+          >
+            <img
+              src={item.image}
+              alt={item.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
 
         {/* Gradient Overlay */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 z-10"
           style={{
             background:
               "linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%)",
@@ -305,39 +378,19 @@ export default function HomePage() {
         />
 
         {/* Left Arrow */}
-        <button className="absolute left-0 md:left-2 top-1/2 -translate-y-1/2 z-20 text-white/70 hover:text-white transition">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="w-10 h-10 md:w-14 md:h-14"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M15.75 19.5L8.25 12l7.5-7.5"
-            />
-          </svg>
+        <button 
+          onClick={() => setHeroIndex((prev) => (prev - 1 + heroItems.length) % heroItems.length)}
+          className="absolute left-0 md:left-2 top-1/2 -translate-y-1/2 z-20 text-white/70 hover:text-white transition"
+        >
+          <ChevronLeft className="w-10 h-10 md:w-14 md:h-14" />
         </button>
 
         {/* Right Arrow */}
-        <button className="absolute right-0 md:right-2 top-1/2 -translate-y-1/2 z-20 text-white/70 hover:text-white transition">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="w-10 h-10 md:w-14 md:h-14"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M8.25 4.5l7.5 7.5-7.5 7.5"
-            />
-          </svg>
+        <button 
+          onClick={() => setHeroIndex((prev) => (prev + 1) % heroItems.length)}
+          className="absolute right-0 md:right-2 top-1/2 -translate-y-1/2 z-20 text-white/70 hover:text-white transition"
+        >
+          <ChevronRight className="w-10 h-10 md:w-14 md:h-14" />
         </button>
 
         <div className="relative z-10 w-full h-full pb-2.5 pt-24 min-h-[800px] flex flex-col px-[60px]">
@@ -363,16 +416,13 @@ export default function HomePage() {
 
             {/* Bottom Content */}
             <div className="mt-auto mb-8">
-              <h1 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-white leading-tight mb-4">
-                Women’s Empowerment Program
+              <h1 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-white leading-tight mb-4 transition-all duration-500">
+                {currentHero.title}
               </h1>
 
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-                <p className="text-white/90 text-sm md:text-base leading-relaxed max-w-3xl font-medium">
-                  We Equip Rural Women With Non-Formal Education, Life Skills,
-                  Entrepreneurship Support, Microcredit Access, And Leadership
-                  Training — Helping Them Rise, Earn, And Live With Confidence
-                  And Dignity.
+                <p className="text-white/90 text-sm md:text-base leading-relaxed max-w-3xl font-medium transition-all duration-500">
+                  {currentHero.desc}
                 </p>
 
                 <Link href="/programs-details">
@@ -520,11 +570,12 @@ export default function HomePage() {
           </p>
 
           {/* Grid */}
-          <div className="grid md:grid-cols-3 gap-4 mt-10 px-70px-7">
+          <div className="grid md:grid-cols-3 gap-4 mt-10 px-7">
             {data.map((item, index) => (
-              <div
+              <Link
                 key={index}
-                className="bg-white  shadow-md overflow-hidden hover:shadow-lg transition-shadow text-center max-w-sm"
+                href={item.href}
+                className="bg-white shadow-md overflow-hidden hover:shadow-lg transition-shadow text-center max-w-sm block"
               >
                 {/* Image */}
                 <div className="relative">
@@ -550,7 +601,7 @@ export default function HomePage() {
                     {item.desc}
                   </p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -632,117 +683,118 @@ export default function HomePage() {
       <section className="bg-[#DFF0FF] py-24 px-4 md:px-12">
         <div className=" mx-auto text-center">
           {/* learn more section */}
-          <h2 className="text-3xl md:text-4xl font-[500] text-gray-900 mb-8">
+          <h2 className="text-4xl md:text-[50px] font-[500] text-gray-900 mb-8">
             Learn More About Our Programs
           </h2>
 
-          {/* Dropdown */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full max-w-[250px] mx-auto">
-            <select className="flex-1 w-full px-4 py-2.5 border border-black text-[15px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center" style={{ textAlignLast: "center" }}>
-              <option >Choose a Program</option>
-              <option>Women Empowerment</option>
-              <option>Entrepreneurship</option>
-              <option>Education</option>
-            </select>
-          </div>
+          {/* Projects Data */}
+          {(() => {
+            const projectsList = [
+              {
+                title: "Women’s Trafficking Prevention",
+                img: "/images/img1.jpg",
+                desc: "The ED project aims to ensure economic independence of women by building their skills and providing the necessary support."
+              },
+              {
+                title: "Entrepreneurship Development",
+                img: "/images/img2.jpg",
+                desc: "The ED project aims to ensure economic independence of women by building their skills and facilitating entrepreneurship."
+              },
+              {
+                title: "Women’s Education and Life Skills",
+                img: "/images/img3.jpg",
+                desc: "This project empowers women to become self-reliant and resilient by providing relevant education and development."
+              },
+              {
+                title: "Youth Empowerment Projects",
+                img: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=400&q=80",
+                desc: "Engaging youth in community development and providing them with vocational training."
+              },
+              {
+                title: "Public Health & Sanitation",
+                img: "https://images.unsplash.com/photo-1607748862156-7c548e7e98f4?w=400&q=80",
+                desc: "Improving health outcomes through sanitation projects and medical outreach."
+              },
+              {
+                title: "Environment & Conservation",
+                img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&q=80",
+                desc: "Promoting environmental sustainability and conservation through community action."
+              }
+            ];
+            return (
+              <>
+                {/* Dropdown */}
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full max-w-[300px] mx-auto">
+                  <select className="flex-1 w-full px-3 py-2.5 border border-black text-[15px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center" style={{ textAlignLast: "center" }}>
+                    <option >Choose a Program</option>
+                    <option>Women Empowerment</option>
+                    <option>Youth Empowerment</option>
+                    <option>Public Health and Sanitation</option>
+                    <option>Education and Career Development</option>
+                    <option>Environment & Conservation Projects</option>
+                    <option>Disaster Risk Reduction</option>
+                  </select>
+                </div>
 
-          {/* Section Header */}
-          <div className="text-left mb-5">
-            <h3 className="text-3xl font-[700]">Women’s Empowerment Projects</h3>
-            <p className="text-[16px] text-[#454545AD] mt-2 max-w-3xl">
-              VIN aims to empower women socially and economically through
-              education, life skills and income generation opportunities. By
-              2030, VIN aims to benefit at least 80% of the total women in the
-              marginalized communities of the target areas.
-            </p>
-          </div>
+                {/* Section Header */}
+                <div className="text-left mb-5">
+                  <h3 className="text-3xl font-[700]">Women’s Empowerment Projects</h3>
+                  <p className="text-[16px] text-[#454545AD] mt-2 max-w-3xl">
+                    VIN aims to empower women socially and economically through
+                    education, life skills and income generation opportunities. By
+                    2030, VIN aims to benefit at least 80% of the total women in the
+                    marginalized communities of the target areas.
+                  </p>
+                </div>
 
-          {/* Slider Controls */}
-          <div className="flex justify-end gap-3 mb-8">
-            <button
-              onClick={() => scroll("left")}
-              className="w-12 h-12 flex items-center justify-center border-2 border-black rounded-full hover:bg-gray-100 hover:(--blue)* 5,8848 transition-all duration-300 font-bold text-lg"
-            >
-              ←
-            </button>
-            <button
-              onClick={() => scroll("right")}
-              className="w-12 h-12 flex items-center justify-center border-2 border-black rounded-full hover:bg-gray-100 hover:border-indigo-500 transition-all duration-300 font-bold text-lg"
-            >
-              →
-            </button>
-          </div>
+                {/* Slider Controls */}
+                <div className="flex justify-end gap-3 mb-8">
+                  <button
+                    onClick={() => setLearnMoreIndex(prev => Math.max(0, prev - 1))}
+                    className="w-12 h-12 flex items-center justify-center border-2 border-black rounded-full hover:bg-gray-100 transition-all duration-300 font-bold text-lg"
+                  >
+                    ←
+                  </button>
+                  <button
+                    onClick={() => setLearnMoreIndex(prev => Math.min(projectsList.length - 3, prev + 1))}
+                    className="w-12 h-12 flex items-center justify-center border-2 border-black rounded-full hover:bg-gray-100 transition-all duration-300 font-bold text-lg"
+                  >
+                    →
+                  </button>
+                </div>
 
-          {/* Cards */}
-          <div
-            ref={scrollRef}
-            className="flex gap-7 overflow-x-auto scroll-smooth no-scrollbar"
-          >
-            {/* Card 1 */}
-            <div className="min-w-[280px] md:min-w-[190px] bg-white shadow-md overflow-hidden">
-              <img
-                src="/images/img1.jpg"
-                alt="Trafficking Prevention"
-                className="w-full h-56 object-cover"
-              />
-              <div className="p-5 text-left">
-                <h4 className="font-[700] text-[22px] mb-2 text-center">
-                  Women’s Trafficking
-                  <br/> Prevention
-                </h4>
-                <p className="font-[400] text-[16px] text-gray-600">
-                  The ED project aims to ensure economic independence of women
-                  by building their skills and providing the necessary support.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div className="min-w-[280px] md:min-w-[190px] bg-white shadow-md overflow-hidden">
-              <img
-                src="/images/img2.jpg"
-                alt="Entrepreneurship"
-                className="w-full h-56 object-cover"
-              />
-              <div className="p-4 text-left">
-                <h4 className="font-[700] text-[22px] mb-2 text-center">
-                  Entrepreneurship 
-                  <br/>
-                  Development
-                </h4>
-                <p className="font-[400] text-[16px] text-gray-600">
-                  The ED project aims to ensure economic independence of women
-                  by building their skills and facilitating entrepreneurship.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div className="min-w-[280px] md:min-w-[190px] bg-white shadow-md overflow-hidden">
-              <img
-                src="/images/img3.jpg"
-                alt="Education"
-                className="w-full h-56 object-cover"
-              />
-              <div className="p-4 text-left">
-                <h4 className="font-[700] text-[22px] mb-2 text-center">
-                  Women’s Education and Life Skills
-                </h4>
-                <p className="font-[400] text-[16px] text-gray-600">
-                  This project empowers women to become self-reliant and
-                  resilient by providing relevant education and development.
-                </p>
-              </div>
-            </div>
-          </div>
+                {/* Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+                  {(showAllPrograms ? projectsList : projectsList.slice(learnMoreIndex, learnMoreIndex + 3)).map((p, i) => (
+                    <div key={i} className="bg-white shadow-md overflow-hidden">
+                      <img
+                        src={p.img}
+                        alt={p.title}
+                        className="w-full h-56 object-cover"
+                      />
+                      <div className="p-5 text-left">
+                        <h4 className="font-[700] text-[22px] mb-2 text-center">
+                          {p.title}
+                        </h4>
+                        <p className="font-[400] text-[16px] text-gray-600">
+                          {p.desc}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </>
+            );
+          })()}
 
           {/* View All */}
           <div className="mt-10">
-            <Link href="/all-programs">
-              <button className="bg-[var(--blue)] text-white px-6 py-2 rounded-md hover:bg-[#1a1560]">
-                View All
-              </button>
-            </Link>
+            <button 
+              onClick={() => setShowAllPrograms(!showAllPrograms)}
+              className="bg-[var(--blue)] text-white px-6 py-2 rounded-md hover:bg-[#1a1560] transition-colors"
+            >
+              {showAllPrograms ? "Show Less" : "View All"}
+            </button>
           </div>
         </div>
 
@@ -883,7 +935,10 @@ export default function HomePage() {
           {/* Review Cards */}
           <div className="flex flex-wrap items-center justify-between">
             {/* Card 1 (highlighted) */}
-            <div className="px-6 py-5 w-[220px] text-center">
+            <div 
+              onClick={() => setActiveReview(0)}
+              className={`px-6 py-5 w-[220px] text-center cursor-pointer transition-all duration-300 rounded-[10px] ${activeReview === 0 ? 'bg-white shadow-md' : ''}`}
+            >
               <div className="text-[41px] font-semibold text-gray-800">
                 4.5<span className="text-[20px] text-gray-500">/5</span>
               </div>
@@ -894,7 +949,10 @@ export default function HomePage() {
             </div>
 
             {/* Card 2 */}
-            <div className="text-center w-[220px]">
+            <div 
+              onClick={() => setActiveReview(1)}
+              className={`px-6 py-5 w-[220px] text-center cursor-pointer transition-all duration-300 rounded-[10px] ${activeReview === 1 ? 'bg-white shadow-md' : ''}`}
+            >
               <div className="text-[41px] font-semibold text-gray-800">
                 4.2<span className="text-[20px] text-gray-500">/5</span>
               </div>
@@ -905,7 +963,10 @@ export default function HomePage() {
             </div>
 
             {/* Card 3 */}
-            <div className="text-center w-[220px]">
+            <div 
+              onClick={() => setActiveReview(2)}
+              className={`px-6 py-5 w-[220px] text-center cursor-pointer transition-all duration-300 rounded-[10px] ${activeReview === 2 ? 'bg-white shadow-md' : ''}`}
+            >
               <div className="text-[41px] font-semibold text-gray-800">
                 4.2<span className="text-[20px] text-gray-500">/5</span>
               </div>
@@ -914,7 +975,10 @@ export default function HomePage() {
             </div>
 
             {/* Card 4 */}
-            <div className="text-center w-[220px]">
+            <div 
+              onClick={() => setActiveReview(3)}
+              className={`px-6 py-5 w-[220px] text-center cursor-pointer transition-all duration-300 rounded-[10px] ${activeReview === 3 ? 'bg-white shadow-md' : ''}`}
+            >
               <div className="text-[41px] font-semibold text-gray-800">
                 4.2<span className="text-[20px] text-gray-500">/5</span>
               </div>
@@ -945,23 +1009,10 @@ export default function HomePage() {
             <button
               onClick={prevTestimonial}
               className="shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full text-white hover:opacity-90 transition-opacity"
-              style={{ background: "var(--indigo-btn, #1e3a5f)" }}
+              style={{ background: "var(--blue)" }}
               aria-label="Previous testimonial"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2.5}
-                stroke="currentColor"
-                className="w-5 h-5 md:w-6 md:h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15.75 19.5L8.25 12l7.5-7.5"
-                />
-              </svg>
+              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
             </button>
 
             {/* Testimonial Card */}
@@ -1000,23 +1051,10 @@ export default function HomePage() {
             <button
               onClick={nextTestimonial}
               className="shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full text-white hover:opacity-90 transition-opacity"
-              style={{ background: "var(--indigo-btn, #1e3a5f)" }}
+              style={{ background: "var(--blue)" }}
               aria-label="Next testimonial"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2.5}
-                stroke="currentColor"
-                className="w-5 h-5 md:w-6 md:h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                />
-              </svg>
+              <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
             </button>
           </div>
 
@@ -1052,10 +1090,13 @@ export default function HomePage() {
               style={{ textAlignLast: "center" }}
             >
               <option value="">Choose a category</option>
-              <option value="news">News</option>
-              <option value="press">Press Release</option>
               <option value="gallery">Gallery</option>
-              <option value="video">Video</option>
+              <option value="articles">Articles</option>
+              <option value="news">News Update</option>
+              <option value="careers">Careers</option>
+              <option value="stories">Success Stories</option>
+              <option value="case-studies">Case Studies</option>
+              <option value="interviews">Interviews</option>
             </select>
 
             <select
@@ -1092,20 +1133,7 @@ export default function HomePage() {
               style={{ background: "var(--blue)" }}
               aria-label="Previous media"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2.5}
-                stroke="currentColor"
-                className="w-5 h-5 md:w-6 md:h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15.75 19.5L8.25 12l7.5-7.5"
-                />
-              </svg>
+              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
             </button>
 
             {/* Media Card */}
@@ -1132,18 +1160,26 @@ export default function HomePage() {
                       {currentMedia.title}
                     </h3>
 
-                    <p className="text-gray-600 text-xs md:text-sm leading-relaxed mb-6 line-clamp-6">
+                    <p className={`text-gray-600 text-xs md:text-sm leading-relaxed mb-6 ${isMediaExpanded ? "" : "line-clamp-6"}`}>
                       {currentMedia.description}
+                      {isMediaExpanded && (
+                        <>
+                          <br /><br />
+                          This initiative is part of our broader commitment to sustainable community development. By providing targeted resources and professional guidance, we ensure that every project creates a lasting impact on the lives of the people we serve.
+                          <br /><br />
+                          We continue to monitor the progress of these programs and adapt our strategies to meet the evolving needs of marginalized rural communities in Nepal.
+                        </>
+                      )}
                     </p>
 
                     <div className="flex items-center gap-4">
-                      <Link
-                        href={currentMedia.readMoreLink}
+                      <button
+                        onClick={() => setIsMediaExpanded(!isMediaExpanded)}
                         className="inline-flex items-center px-5 py-2 rounded text-white text-xs md:text-sm font-medium hover:opacity-90 transition-opacity"
                         style={{ background: "var(--blue)" }}
                       >
-                        Read More
-                      </Link>
+                        {isMediaExpanded ? "Read Less" : "Read More"}
+                      </button>
 
                       <button
                         onClick={() =>
@@ -1170,20 +1206,7 @@ export default function HomePage() {
               style={{ background: "var(--blue)" }}
               aria-label="Next media"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2.5}
-                stroke="currentColor"
-                className="w-5 h-5 md:w-6 md:h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                />
-              </svg>
+              <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
             </button>
           </div>
         </div>
@@ -1216,33 +1239,23 @@ export default function HomePage() {
               className="absolute left-0 z-10 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full border border-gray-300 bg-white text-gray-600 hover:bg-gray-50 transition-colors -translate-x-2 md:-translate-x-5"
               aria-label="Previous slide"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-4 h-4 md:w-5 md:h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15.75 19.5L8.25 12l7.5-7.5"
-                />
-              </svg>
+              <ChevronLeft className="w-4 h-4 md:w-5 md:h-5" />
             </button>
 
-            {/* Cards Grid */}
+            {/* Cards Slider */}
             <div className="flex-1 mx-2 md:mx-4 overflow-hidden">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-                {visibleItems.map((item, index) => (
+              <div 
+                className="flex transition-transform duration-500 ease-in-out gap-4 md:gap-6"
+                style={{ transform: `translateX(-${startIndex * (100 / visibleCount)}%)` }}
+              >
+                {mediaItems.map((item, index) => (
                   <div
                     key={item.id}
-                    className="relative rounded-lg overflow-hidden shadow-sm group cursor-pointer"
+                    className="flex-none w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] relative rounded-lg overflow-hidden shadow-sm group cursor-pointer"
                   >
                     {/* Number Badge */}
                     <div className="absolute top-3 left-3 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/90 backdrop-blur-sm text-xs font-bold text-gray-700 shadow-sm">
-                      {String(startIndex + index + 1).padStart(2, "0")}
+                      {String(index + 1).padStart(2, "0")}
                     </div>
 
                     {/* Image/Video Container */}
@@ -1262,14 +1275,7 @@ export default function HomePage() {
                             }
                             className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full bg-white/90 backdrop-blur-sm shadow-lg hover:scale-110 transition-transform"
                           >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="currentColor"
-                              viewBox="0 0 24 24"
-                              className="w-5 h-5 md:w-6 md:h-6 text-gray-800 ml-0.5"
-                            >
-                              <path d="M8 5v14l11-7z" />
-                            </svg>
+                            <Play size={24} fill="currentColor" className="text-gray-800 ml-0.5" />
                           </button>
                         </div>
                       )}
@@ -1285,20 +1291,7 @@ export default function HomePage() {
               className="absolute right-0 z-10 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full border border-gray-300 bg-white text-gray-600 hover:bg-gray-50 transition-colors translate-x-2 md:translate-x-5"
               aria-label="Next slide"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-4 h-4 md:w-5 md:h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                />
-              </svg>
+              <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />
             </button>
           </div>
         </div>
@@ -1323,20 +1316,7 @@ export default function HomePage() {
                 onClick={() => setActiveVideo(null)}
                 className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
+                <X className="w-6 h-6" />
               </button>
             </div>
           </div>
@@ -1478,14 +1458,7 @@ export default function HomePage() {
                       onClick={() => setActiveVideo(currentPlace.videoUrl)}
                       className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-red-600 text-white shadow-lg hover:scale-110 transition-transform"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                        className="w-6 h-6 md:w-7 md:h-7 ml-1"
-                      >
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
+                      <Play size={28} fill="currentColor" className="text-white ml-1" />
                     </button>
                   </div>
                 </div>
@@ -1514,20 +1487,7 @@ export default function HomePage() {
                 onClick={() => setActiveVideo(null)}
                 className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
+                <X className="w-6 h-6" />
               </button>
             </div>
           </div>

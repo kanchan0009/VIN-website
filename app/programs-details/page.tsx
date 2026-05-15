@@ -2,7 +2,7 @@
 
 import { useRef, useState, useCallback } from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Play, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Play, X, ChevronLeft, ChevronRight } from "lucide-react";
 import CTABanner from "../components/CTABanner";
 
 const testimonialsData = [
@@ -329,20 +329,7 @@ export default function ProgramsDetailsPage() {
               style={{ background: "var(--indigo-btn, #1e3a5f)" }}
               aria-label="Previous testimonial"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2.5}
-                stroke="currentColor"
-                className="w-5 h-5 md:w-6 md:h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15.75 19.5L8.25 12l7.5-7.5"
-                />
-              </svg>
+              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
             </button>
 
             {/* Testimonial Card */}
@@ -381,20 +368,7 @@ export default function ProgramsDetailsPage() {
               style={{ background: "var(--indigo-btn, #1e3a5f)" }}
               aria-label="Next testimonial"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2.5}
-                stroke="currentColor"
-                className="w-5 h-5 md:w-6 md:h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                />
-              </svg>
+              <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
             </button>
           </div>
 
@@ -432,20 +406,7 @@ export default function ProgramsDetailsPage() {
               className="absolute left-0 z-10 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full border border-gray-300 bg-white text-gray-600 hover:bg-gray-50 transition-colors -translate-x-2 md:-translate-x-5"
               aria-label="Previous slide"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-4 h-4 md:w-5 md:h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15.75 19.5L8.25 12l7.5-7.5"
-                />
-              </svg>
+              <ChevronLeft className="w-4 h-4 md:w-5 md:h-5" />
             </button>
 
             {/* Cards Grid */}
@@ -476,14 +437,7 @@ export default function ProgramsDetailsPage() {
                             onClick={() => item.videoUrl && openVideo(item.videoUrl)}
                             className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full bg-white/90 backdrop-blur-sm shadow-lg hover:scale-110 transition-transform"
                           >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="currentColor"
-                              viewBox="0 0 24 24"
-                              className="w-5 h-5 md:w-6 md:h-6 text-gray-800 ml-0.5"
-                            >
-                              <path d="M8 5v14l11-7z" />
-                            </svg>
+                            <Play size={24} fill="currentColor" className="text-gray-800 ml-0.5" />
                           </button>
                         </div>
                       )}
@@ -499,20 +453,7 @@ export default function ProgramsDetailsPage() {
               className="absolute right-0 z-10 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full border border-gray-300 bg-white text-gray-600 hover:bg-gray-50 transition-colors translate-x-2 md:translate-x-5"
               aria-label="Next slide"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-4 h-4 md:w-5 md:h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                />
-              </svg>
+              <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />
             </button>
           </div>
         </div>
@@ -537,20 +478,7 @@ export default function ProgramsDetailsPage() {
                 onClick={() => setActiveVideo(null)}
                 className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
+                <X className="w-6 h-6" />
               </button>
             </div>
           </div>

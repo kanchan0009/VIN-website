@@ -505,9 +505,11 @@ export default function LocationDetail() {
                       <h4 className="text-white text-[16px] lg:text-[24px] font-bold mb-8 leading-tight ">
                         {album.title}
                       </h4>
-                      <button className="bg-[var(--blue)] text-white px-10 py-4 rounded-xl font-bold text-sm hover:bg-white hover:text-[var(--blue)] transition-all shadow-lg active:scale-95">
-                        Explore Album
-                      </button>
+                      <Link href="/program-gallery">
+                        <button className="bg-[var(--blue)] text-white px-10 py-4 rounded-xl font-bold text-sm hover:bg-white hover:text-[var(--blue)] transition-all shadow-lg active:scale-95">
+                          Explore Album
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 ))}

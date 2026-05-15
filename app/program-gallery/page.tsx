@@ -114,17 +114,9 @@ export default function ProgramGalleryPage() {
                     className="w-full h-full object-cover  group-hover: transition-all duration-700"
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-14 h-14 md:w-16 md:h-16 relative group-hover:scale-110 transition-transform duration-300 drop-shadow-xl">
-                      <svg viewBox="0 0 64 64" className="w-full h-full">
-                        <defs>
-                          <mask id={`play-mask-top-${i}`}>
-                            <rect width="64" height="64" fill="white" />
-                            <polygon points="26,18 26,46 48,32" fill="black" />
-                          </mask>
-                        </defs>
-                        <circle cx="32" cy="32" r="32" fill="white" mask={`url(#play-mask-top-${i})`} />
-                      </svg>
-                    </div>
+                      <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+                        <Play size={32} fill="currentColor" className="text-gray-900 ml-1" />
+                      </div>
                   </div>
                 </div>
               ))}
@@ -147,17 +139,9 @@ export default function ProgramGalleryPage() {
                     className="w-full h-full object-cover  group-hover: transition-all duration-700"
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-14 h-14 md:w-16 md:h-16 relative group-hover:scale-110 transition-transform duration-300 drop-shadow-xl">
-                      <svg viewBox="0 0 64 64" className="w-full h-full">
-                        <defs>
-                          <mask id={`play-mask-mid-${i}`}>
-                            <rect width="64" height="64" fill="white" />
-                            <polygon points="26,18 26,46 48,32" fill="black" />
-                          </mask>
-                        </defs>
-                        <circle cx="32" cy="32" r="32" fill="white" mask={`url(#play-mask-mid-${i})`} />
-                      </svg>
-                    </div>
+                      <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+                        <Play size={32} fill="currentColor" className="text-gray-900 ml-1" />
+                      </div>
                   </div>
                 </div>
               ))}
@@ -180,17 +164,9 @@ export default function ProgramGalleryPage() {
                     className="w-full h-full object-cover group-hover: transition-all duration-700"
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-14 h-14 md:w-16 md:h-16 relative group-hover:scale-110 transition-transform duration-300 drop-shadow-xl">
-                      <svg viewBox="0 0 64 64" className="w-full h-full">
-                        <defs>
-                          <mask id={`play-mask-${i}`}>
-                            <rect width="64" height="64" fill="white" />
-                            <polygon points="26,18 26,46 48,32" fill="black" />
-                          </mask>
-                        </defs>
-                        <circle cx="32" cy="32" r="32" fill="white" mask={`url(#play-mask-${i})`} />
-                      </svg>
-                    </div>
+                      <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+                        <Play size={32} fill="currentColor" className="text-gray-900 ml-1" />
+                      </div>
                   </div>
                 </div>
               ))}

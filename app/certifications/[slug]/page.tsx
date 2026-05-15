@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, Users } from "lucide-react";
+import { ArrowLeft, Users, Clock } from "lucide-react";
 import CTABanner from "../../components/CTABanner";
 import DonationWidget from "../../components/DonationWidget";
 
@@ -178,16 +178,16 @@ export default async function CertificationDetailPage(props: {
           </h2>
 
           <div className="w-full text-center space-y-6">
-            <p className="text-black text-xl  text-left leading-relaxed">
+            <p className="text-black text-[18px]  text-left leading-relaxed">
               Volunteer Initiative Nepal (VIN) Is Proud To Be Recognized And Certified By The {org.name}, 
               Reflecting Our Commitment To Transparency, Accountability, And Impactful Community Development.
             </p>
-            <p className="text-black text-xl text-left leading-relaxed">
+            <p className="text-black text-[18px] text-left leading-relaxed">
               This Certification Acknowledges VIN&apos;s Dedication To Delivering Ethical, Sustainable, And Community-Driven 
               Programs Across Nepal. Through Consistent Efforts In Education, Women&apos;s Empowerment, Child Protection, 
               And Disaster Resilience, VIN Has Aligned Its Operations With International Standards Of Social Impact And Organizational Governance.
             </p>
-            <p className="text-black text-xl text-left leading-relaxed">
+            <p className="text-black text-[18px] text-left leading-relaxed">
               Being Certified By The {org.name} Strengthens Our Credibility As A Trusted Organization Working At The Grassroots Level. 
               It Also Enables Us To Collaborate With Global Partners, Expand Our Outreach, And Ensure That Every Initiative We Undertake Creates Meaningful And Measurable Change.
             </p>
@@ -204,13 +204,11 @@ export default async function CertificationDetailPage(props: {
               {/* Stat 1 */}
               <div className="bg-[#DFF0FF] h-[255px] p-8 flex items-center gap-6 border border-blue-50/50">
                 <div className="w-16 h-16 rounded-full border-2 border-dashed border-[var(--blue)] flex items-center justify-center shrink-0">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                  </svg>
+                  <Clock size={24} className="text-[var(--blue)]" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-[var(--blue)] mb-2">19+ Years of Service</h3>
-                  <p className="text-gray-900 text-[12px] leading-relaxed">
+                  <p className="text-gray-900 text-[15px] leading-relaxed">
                     For Over 19 Years, VIN Has Been Actively Working To Uplift Marginalized Communities In Nepal Through 
                     Volunteer-Driven Programs And Sustainable Development Initiatives.
                   </p>
@@ -224,7 +222,7 @@ export default async function CertificationDetailPage(props: {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-[var(--blue)] mb-2">20,000+ Lives Impacted</h3>
-                  <p className="text-gray-900 text-[12px] leading-relaxed">
+                  <p className="text-gray-900 text-[15px] leading-relaxed">
                     Thousands Of Individuals And Families Have Directly Benefited From Our Programs In Education, Healthcare, 
                     Women&apos;s Empowerment, And Community Development.
                   </p>
@@ -251,7 +249,7 @@ export default async function CertificationDetailPage(props: {
         <div className="max-w-7xl mx-auto px-4">
           <div className="w-full text-left mb-16">
             <h2 className="text-5xl font-[600] text-[#1a1a1a] mb-10 text-center">Our Commitment</h2>
-            <div className="space-y-5 text-black text-xl leading-relaxed font-[400]">
+            <div className="space-y-5 text-black text-[18px] leading-relaxed font-[400]">
               <p className="text-left">
                 At VIN, We Believe In Empowering Communities Rather Than Creating Dependency. Our 
                 Projects Are Designed To Build Local Capacity, Promote Inclusivity, And Create Long-Term 

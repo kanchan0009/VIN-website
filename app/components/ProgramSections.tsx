@@ -151,7 +151,7 @@ function Section({ section }: { section: SectionData }) {
         >
           {/* Image */}
           <div className="w-full lg:w-1/2">
-            <div className="relative aspect-square lg:aspect-[4/4.5] overflow-hidden shadow-2xl">
+            <div className="relative aspect-square lg:aspect-[4/3] overflow-hidden shadow-2xl">
               <img
                 src={image}
                 alt={title}

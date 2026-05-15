@@ -1,7 +1,7 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle, Play } from 'lucide-react';
+import { ArrowRight, CheckCircle, Play, ChevronLeft, ChevronRight, ChevronDown, Leaf, ThermometerSun, Droplets, GraduationCap } from 'lucide-react';
 import CTABanner from '../../components/CTABanner';
 import GetInvolved from '../../components/GetInvolved';
 import DonationWidget from '../../components/DonationWidget';
@@ -20,10 +20,10 @@ const goals = [
 ];
 
 const whyItems = [
-  { title: 'Ecological Balance', icon: '🌳', desc: "Preserving Nepal's unique biodiversity is essential for the health of both the environment and the people." },
-  { title: 'Climate Action', icon: '🌡️', desc: "Taking local steps to address the global climate crisis through reforestation and sustainable living." },
-  { title: 'Sustainable Resources', icon: '💧', desc: "Ensuring that future generations have access to clean water, fertile soil, and healthy forests." },
-  { title: 'Eco-Education', icon: '🎓', desc: "Building a culture of environmental stewardship among the youth and community leaders." },
+  { title: 'Ecological Balance', icon: <Leaf size={32} className="text-[var(--blue)]" />, desc: "Preserving Nepal's unique biodiversity is essential for the health of both the environment and the people." },
+  { title: 'Climate Action', icon: <ThermometerSun size={32} className="text-[var(--blue)]" />, desc: "Taking local steps to address the global climate crisis through reforestation and sustainable living." },
+  { title: 'Sustainable Resources', icon: <Droplets size={32} className="text-[var(--blue)]" />, desc: "Ensuring that future generations have access to clean water, fertile soil, and healthy forests." },
+  { title: 'Eco-Education', icon: <GraduationCap size={32} className="text-[var(--blue)]" />, desc: "Building a culture of environmental stewardship among the youth and community leaders." },
 ];
 
 const otherPrograms = [
@@ -63,7 +63,31 @@ const testimonials = [
 
 export default function EnvironmentPage() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [albumIndex, setAlbumIndex] = useState(0);
+  const [mediaIndex, setMediaIndex] = useState(0);
+  const [projectIndex, setProjectIndex] = useState(0);
+  const [visibleMediaCount, setVisibleMediaCount] = useState(1);
+  const [visibleProjectCount, setVisibleProjectCount] = useState(1);
   const current = testimonials[activeIndex];
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setVisibleMediaCount(4);
+        setVisibleProjectCount(3);
+      } else if (window.innerWidth >= 640) {
+        setVisibleMediaCount(2);
+        setVisibleProjectCount(2);
+      } else {
+        setVisibleMediaCount(1);
+        setVisibleProjectCount(1);
+      }
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const nextTestimonial = () => {
     setActiveIndex((prev) => (prev + 1) % testimonials.length);
@@ -84,10 +108,21 @@ export default function EnvironmentPage() {
           <div className="">
             <p className="text-gray-600 text-[14px] lg:text-[16px] leading-relaxed font-[400] mb-2">
               Our Environment & Conservation program is dedicated to protecting Nepal's natural heritage and promoting sustainable living. We work with local communities to restore forests, manage waste, and implement eco-friendly agricultural practices to ensure a resilient and healthy ecosystem for future generations.
+              {isExpanded && (
+                <>
+                  <br /><br />
+                  Our initiatives include large-scale reforestation drives, the establishment of community-led waste management systems, and training in climate-resilient organic farming. We believe that environmental protection is intrinsically linked to community wellbeing.
+                  <br /><br />
+                  By educating the younger generation and empowering local leaders with sustainable tools, we are creating a model of conservation that is both ecologically sound and economically viable for rural Nepal.
+                </>
+              )}
             </p>
-            <Link href="/programs/environment/overview" className="text-[var(--blue)] text-[16px] font-[600] hover:underline">
-              Read More..
-            </Link>
+            <button 
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="text-[var(--blue)] text-[16px] font-[600] hover:underline"
+            >
+              {isExpanded ? "Read Less" : "Read More.."}
+            </button>
           </div>
         </div>
       </section>
@@ -207,16 +242,8 @@ export default function EnvironmentPage() {
               alt="Program Video Thumbnail" 
               className="absolute inset-0 w-full h-full object-cover opacity-60" 
             />
-            <div className="relative z-10 w-20 h-20 group-hover:scale-110 transition-transform drop-shadow-2xl">
-              <svg viewBox="0 0 80 80" className="w-full h-full">
-                <defs>
-                  <mask id="play-mask-env">
-                    <rect width="80" height="80" fill="white" rx="40" ry="40" />
-                    <path d="M55 40L35 53V27L55 40Z" fill="black" />
-                  </mask>
-                </defs>
-                <rect width="80" height="80" fill="white" mask="url(#play-mask-env)" />
-              </svg>
+            <div className="relative z-10 w-20 h-20 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform drop-shadow-2xl">
+              <Play size={32} fill="currentColor" className="text-gray-900 ml-1" />
             </div>
           </div>
         </div>
@@ -231,15 +258,17 @@ export default function EnvironmentPage() {
 
           <div className="relative group">
             {/* Navigation Arrows */}
-            <button className="absolute -left-4 lg:-left-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="m15 18-6-6 6-6"/>
-              </svg>
+            <button 
+              onClick={() => setAlbumIndex((prev) => (prev - 1 + albums.length) % albums.length)}
+              className="absolute -left-4 lg:-left-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10"
+            >
+              <ChevronLeft size={20} className="text-gray-600" />
             </button>
-            <button className="absolute -right-4 lg:-right-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="m9 18 6-6-6-6"/>
-              </svg>
+            <button 
+              onClick={() => setAlbumIndex((prev) => (prev + 1) % albums.length)}
+              className="absolute -right-4 lg:-right-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10"
+            >
+              <ChevronRight size={20} className="text-gray-600" />
             </button>
 
             {/* Album Grid */}
@@ -259,9 +288,11 @@ export default function EnvironmentPage() {
                     <h4 className="text-white text-lg lg:text-xl font-[600] mb-6 leading-tight">
                       {album.title}
                     </h4>
-                    <button className="bg-[#1e238f] text-white px-8 py-3 rounded-md font-[600] text-sm hover:bg-[#15196d] transition-all active:scale-95 shadow-lg">
-                      Explore Album
-                    </button>
+                    <Link href="/program-gallery">
+                      <button className="bg-[#1e238f] text-white px-8 py-3 rounded-md font-[600] text-sm hover:bg-[#15196d] transition-all active:scale-95 shadow-lg">
+                        Explore Album
+                      </button>
+                    </Link>
                   </div>
                 </div>
               ))}
@@ -344,9 +375,7 @@ export default function EnvironmentPage() {
           <div className="inline-block relative mb-5">
             <button className="flex items-center gap-4 px-10 py-3 border border-gray-400 rounded-[5px] text-gray-700 font-[500] hover:bg-gray-50 transition-all">
               Types of Media
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="m6 9 6 6 6-6"/>
-              </svg>
+              <ChevronDown size={16} />
             </button>
           </div>
 
@@ -356,25 +385,31 @@ export default function EnvironmentPage() {
         </div>
 
         <div className="max-w-[1500px] mx-auto px-6 relative group">
-          <button className="absolute -left-2 lg:left-0 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="m15 18-6-6 6-6"/>
-            </svg>
+          <button 
+            onClick={() => setMediaIndex((prev) => (prev - 1 + 4) % 4)}
+            className="absolute -left-2 lg:left-0 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10"
+          >
+            <ChevronLeft size={20} className="text-gray-600" />
           </button>
-          <button className="absolute -right-2 lg:right-0 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="m9 18 6-6-6-6"/>
-            </svg>
+          <button 
+            onClick={() => setMediaIndex((prev) => (prev + 1) % 4)}
+            className="absolute -right-2 lg:right-0 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10"
+          >
+            <ChevronRight size={20} className="text-gray-600" />
           </button>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4">
-            {[
-              { id: '01', type: 'image', img: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80' },
-              { id: '02', type: 'image', img: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&q=80' },
-              { id: '03', type: 'video', img: 'https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=600&q=80' },
-              { id: '04', type: 'image', img: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80' },
-            ].map((item) => (
-              <div key={item.id} className="relative aspect-[4/5] rounded-[10px] overflow-hidden shadow-lg group/item">
+          <div className="overflow-hidden px-4">
+            <div 
+              className="flex transition-transform duration-500 ease-in-out gap-6"
+              style={{ transform: `translateX(-${mediaIndex * (100 / visibleMediaCount)}%)` }}
+            >
+              {[
+                { id: '01', type: 'image', img: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80' },
+                { id: '02', type: 'image', img: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&q=80' },
+                { id: '03', type: 'video', img: 'https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=600&q=80' },
+                { id: '04', type: 'image', img: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80' },
+              ].map((item) => (
+                <div key={item.id} className="min-w-full sm:min-w-[calc(50%-12px)] lg:min-w-[calc(25%-18px)] relative aspect-[4/5] rounded-[10px] overflow-hidden shadow-lg group/item">
                 <img 
                   src={item.img} 
                   alt={`Media ${item.id}`} 
@@ -386,14 +421,13 @@ export default function EnvironmentPage() {
                 {item.type === 'video' && (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-xl group-hover/item:scale-110 transition-transform">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--blue)" stroke="var(--blue)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <polygon points="5 3 19 12 5 21 5 3"/>
-                      </svg>
+                      <Play size={24} fill="var(--blue)" className="text-[var(--blue)]" />
                     </div>
                   </div>
                 )}
               </div>
             ))}
+            </div>
           </div>
         </div>
       </section>
@@ -409,20 +443,26 @@ export default function EnvironmentPage() {
           </p>
 
           <div className="relative group">
-            <button className="absolute -left-4 lg:-left-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="m15 18-6-6 6-6"/>
-              </svg>
+            <button 
+              onClick={() => setProjectIndex((prev) => (prev - 1 + 3) % 3)}
+              className="absolute -left-4 lg:-left-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10"
+            >
+              <ChevronLeft size={20} className="text-gray-600" />
             </button>
-            <button className="absolute -right-4 lg:-right-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="m9 18 6-6-6-6"/>
-              </svg>
+            <button 
+              onClick={() => setProjectIndex((prev) => (prev + 1) % 3)}
+              className="absolute -right-4 lg:-right-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10"
+            >
+              <ChevronRight size={20} className="text-gray-600" />
             </button>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[1, 2, 3].map((item) => (
-                <div key={item} className="rounded-[10px] overflow-hidden shadow-xl flex flex-col group/card">
+            <div className="overflow-hidden">
+              <div 
+                className="flex transition-transform duration-500 ease-in-out gap-8"
+                style={{ transform: `translateX(-${projectIndex * (100 / visibleProjectCount)}%)` }}
+              >
+                {[1, 2, 3].map((item) => (
+                  <div key={item} className="min-w-full sm:min-w-[calc(50%-16px)] lg:min-w-[calc(33.333%-22px)] rounded-[10px] overflow-hidden shadow-xl flex flex-col group/card">
                   <div className="relative h-[220px] overflow-hidden">
                     <img 
                       src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80" 
@@ -442,13 +482,12 @@ export default function EnvironmentPage() {
                     </p>
                     <Link href="#" className="mt-auto text-white text-sm font-[600] flex items-center gap-2 hover:translate-x-2 transition-transform">
                       Read More 
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                      </svg>
+                      <ArrowRight size={16} />
                     </Link>
                   </div>
                 </div>
               ))}
+              </div>
             </div>
           </div>
         </div>
@@ -465,11 +504,9 @@ export default function EnvironmentPage() {
             <button
               onClick={prevTestimonial}
               className="shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full text-white hover:opacity-90 transition-opacity"
-              style={{ background: "var(--indigo-btn, #1e3a5f)" }}
+              style={{ background: "var(--blue)" }}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 md:w-6 md:h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-              </svg>
+              <ChevronLeft size={24} />
             </button>
 
             <div className="flex-1 max-w-10xl">
@@ -500,11 +537,9 @@ export default function EnvironmentPage() {
             <button
               onClick={nextTestimonial}
               className="shrink-0 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full text-white hover:opacity-90 transition-opacity"
-              style={{ background: "var(--indigo-btn, #1e3a5f)" }}
+              style={{ background: "var(--blue)" }}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 md:w-6 md:h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-              </svg>
+              <ChevronRight size={24} />
             </button>
           </div>
 

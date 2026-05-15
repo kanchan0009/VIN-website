@@ -1,7 +1,7 @@
 'use client';
 import { useState, use } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, CheckCircle } from 'lucide-react';
+import { ArrowLeft, CheckCircle, Play, ChevronLeft, ChevronRight, Star, ArrowRight } from 'lucide-react';
 import CTABanner from '../../../components/CTABanner';
 
 const testimonials = [
@@ -112,9 +112,7 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
             {/* Video Player */}
             <div className="relative aspect-video bg-red-600 rounded-[10px] overflow-hidden flex items-center justify-center cursor-pointer group shadow-2xl">
               <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-500">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="#e8172c" stroke="#e8172c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <polygon points="5 3 19 12 5 21 5 3"/>
-                </svg>
+                <Play size={32} fill="#e8172c" className="text-[#e8172c] ml-1" />
               </div>
             </div>
 
@@ -301,14 +299,10 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
           <div className="relative group">
             {/* Navigation Arrows */}
             <button className="absolute -left-4 lg:-left-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="m15 18-6-6 6-6"/>
-              </svg>
+              <ChevronLeft size={20} className="text-gray-600" />
             </button>
             <button className="absolute -right-4 lg:-right-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="m9 18 6-6-6-6"/>
-              </svg>
+              <ChevronRight size={20} className="text-gray-600" />
             </button>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -335,9 +329,7 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
                     </p>
                     <Link href="#" className="mt-auto text-white text-sm font-bold flex items-center gap-2 hover:translate-x-2 transition-transform">
                       Read More 
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                      </svg>
+                      <ArrowRight size={16} />
                     </Link>
                   </div>
                 </div>
@@ -364,20 +356,7 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
               style={{ background: "var(--indigo-btn, #1e3a5f)" }}
               aria-label="Previous testimonial"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2.5}
-                stroke="currentColor"
-                className="w-5 h-5 md:w-6 md:h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15.75 19.5L8.25 12l7.5-7.5"
-                />
-              </svg>
+              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
             </button>
 
             {/* Testimonial Card */}
@@ -416,20 +395,7 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
               style={{ background: "var(--indigo-btn, #1e3a5f)" }}
               aria-label="Next testimonial"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2.5}
-                stroke="currentColor"
-                className="w-5 h-5 md:w-6 md:h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                />
-              </svg>
+              <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
             </button>
           </div>
 
@@ -469,9 +435,7 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
                 <span className="text-xl font-[600] text-gray-900">5.0</span>
                 <div className="flex gap-1">
                   {[1, 2, 3, 4, 5].map((star) => (
-                    <svg key={star} width="20" height="20" viewBox="0 0 24 24" fill="#FFC107">
-                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-                    </svg>
+                    <Star key={star} size={20} fill="#FFC107" className="text-[#FFC107]" />
                   ))}
                 </div>
                 <span className="text-gray-500 text-sm">420 reviews</span>
@@ -486,14 +450,10 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
           <div className="relative group">
             {/* Navigation Arrows */}
             <button className="absolute -left-4 lg:-left-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#1e238f] flex items-center justify-center shadow-lg hover:bg-[#15196d] transition-all z-10">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="m15 18-6-6 6-6"/>
-              </svg>
+              <ChevronLeft size={24} className="text-white" />
             </button>
             <button className="absolute -right-4 lg:-right-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#1e238f] flex items-center justify-center shadow-lg hover:bg-[#15196d] transition-all z-10">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="m9 18 6-6-6-6"/>
-              </svg>
+              <ChevronRight size={24} className="text-white" />
             </button>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -506,9 +466,7 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
                 <div key={i} className="bg-[#F8F9FA] rounded-[20px] p-8 flex flex-col items-center text-center shadow-sm border border-gray-50 hover:shadow-md transition-all">
                   <div className="flex gap-1 mb-6">
                     {[1, 2, 3, 4, 5].map((star) => (
-                      <svg key={star} width="16" height="16" viewBox="0 0 24 24" fill="#FFC107">
-                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-                      </svg>
+                      <Star key={star} size={16} fill="#FFC107" className="text-[#FFC107]" />
                     ))}
                   </div>
                   <p className="text-gray-700 text-sm leading-relaxed mb-8 h-[80px]">

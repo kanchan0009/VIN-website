@@ -2,6 +2,7 @@
 import Link from "next/link";
 import CTABanner from "../../components/CTABanner";
 import DonationWidget from "../../components/DonationWidget";
+import { Play, ChevronLeft, ChevronRight } from "lucide-react";
 
 const mediaItems = [
   {
@@ -84,16 +85,8 @@ export default function InterviewsPage() {
                     className="w-full h-full object-cover  group-hover: transition-all duration-700"
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-14 h-14 md:w-16 md:h-16 relative group-hover:scale-110 transition-transform duration-300 drop-shadow-xl">
-                      <svg viewBox="0 0 64 64" className="w-full h-full">
-                        <defs>
-                          <mask id={`play-mask-top-${i}`}>
-                            <rect width="64" height="64" fill="white" />
-                            <polygon points="26,18 26,46 48,32" fill="black" />
-                          </mask>
-                        </defs>
-                        <circle cx="32" cy="32" r="32" fill="white" mask={`url(#play-mask-top-${i})`} />
-                      </svg>
+                    <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-white flex items-center justify-center group-hover:scale-110 transition-transform duration-300 drop-shadow-xl">
+                      <Play size={24} fill="currentColor" className="text-gray-900 ml-1" />
                     </div>
                   </div>
                 </div>
@@ -117,16 +110,8 @@ export default function InterviewsPage() {
                     className="w-full h-full object-cover  group-hover: transition-all duration-700"
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-14 h-14 md:w-16 md:h-16 relative group-hover:scale-110 transition-transform duration-300 drop-shadow-xl">
-                      <svg viewBox="0 0 64 64" className="w-full h-full">
-                        <defs>
-                          <mask id={`play-mask-mid-${i}`}>
-                            <rect width="64" height="64" fill="white" />
-                            <polygon points="26,18 26,46 48,32" fill="black" />
-                          </mask>
-                        </defs>
-                        <circle cx="32" cy="32" r="32" fill="white" mask={`url(#play-mask-mid-${i})`} />
-                      </svg>
+                    <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-white flex items-center justify-center group-hover:scale-110 transition-transform duration-300 drop-shadow-xl">
+                      <Play size={24} fill="currentColor" className="text-gray-900 ml-1" />
                     </div>
                   </div>
                 </div>
@@ -150,16 +135,8 @@ export default function InterviewsPage() {
                     className="w-full h-full object-cover group-hover: transition-all duration-700"
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-14 h-14 md:w-16 md:h-16 relative group-hover:scale-110 transition-transform duration-300 drop-shadow-xl">
-                      <svg viewBox="0 0 64 64" className="w-full h-full">
-                        <defs>
-                          <mask id={`play-mask-${i}`}>
-                            <rect width="64" height="64" fill="white" />
-                            <polygon points="26,18 26,46 48,32" fill="black" />
-                          </mask>
-                        </defs>
-                        <circle cx="32" cy="32" r="32" fill="white" mask={`url(#play-mask-${i})`} />
-                      </svg>
+                    <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-white flex items-center justify-center group-hover:scale-110 transition-transform duration-300 drop-shadow-xl">
+                      <Play size={24} fill="currentColor" className="text-gray-900 ml-1" />
                     </div>
                   </div>
                 </div>
@@ -171,7 +148,7 @@ export default function InterviewsPage() {
         {/* Pagination */}
         <div className="mt-24 px-4 md:px-[60px] flex items-center justify-start gap-4">
           <button className="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-[var(--blue)] transition-colors">
-            <span className="text-2xl">←</span>
+            <ChevronLeft size={24} />
           </button>
           <div className="flex gap-2">
             <button className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 text-sm font-medium hover:bg-gray-50">1</button>
@@ -180,7 +157,7 @@ export default function InterviewsPage() {
             <button className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 text-sm font-medium hover:bg-gray-50">4</button>
           </div>
           <button className="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-[var(--blue)] transition-colors">
-            <span className="text-2xl">→</span>
+            <ChevronRight size={24} />
           </button>
         </div>
       </div>

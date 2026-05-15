@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import CTABanner from "../../components/CTABanner";
 import DonationWidget from "@/app/components/DonationWidget";
 
@@ -116,9 +117,7 @@ export default function CareersPage() {
                 >
                   <span className="text-xl lg:text-xl font-[600]">{job.title}</span>
                   <div className={`transition-transform duration-300 ${expandedId === job.id ? "rotate-180" : ""}`}>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M6 9l6 6 6-6"/>
-                    </svg>
+                    <ChevronDown size={24} />
                   </div>
                 </button>
 

@@ -21,14 +21,29 @@ const projects = [
     desc: "This project empowers women to become self-reliant and resilient by providing them access to relevant education and skills development.",
     img: "https://images.unsplash.com/photo-1607748862156-7c548e7e98f4?w=400&q=80",
   },
+  {
+    title: "Children's Health Program",
+    desc: "Ensuring every child has access to basic healthcare and nutrition in the most remote areas of Nepal.",
+    img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&q=80",
+  },
+  {
+    title: "Organic Farming Initiative",
+    desc: "Supporting local farmers to transition to sustainable organic methods for better yield and health.",
+    img: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=400&q=80",
+  },
+  {
+    title: "Youth Leadership Training",
+    desc: "Empowering the next generation with the skills and confidence to lead their communities.",
+    img: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=400&q=80",
+  },
 ];
 export default function CTABanner() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
-    const scrollAmount = 320;
-
+    const scrollAmount = scrollRef.current.clientWidth / (window.innerWidth >= 1024 ? 3 : window.innerWidth >= 640 ? 2 : 1);
+    
     scrollRef.current.scrollBy({
       left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth",
@@ -81,14 +96,14 @@ export default function CTABanner() {
 
             <div className="flex flex-wrap justify-center md:justify-start gap-3">
               <Link
-                href="/get-involved"
+                href="/volunteer"
                 className="px-5 py-2 text-sm font-[700] bg-white text-[var(--blue)] rounded-md hover:bg-gray-100 transition"
               >
                 Get Involved With Us
               </Link>
 
               <Link
-                href="/donate"
+                href="/#donation-widget"
                 className="px-5 py-2 text-sm font-medium text-white border border-white rounded-md hover:bg-white/10 transition"
               >
                 Donate Now
@@ -116,15 +131,29 @@ export default function CTABanner() {
 
           {/* FILTERS */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 w-full max-w-4xl mx-auto">
-            {["Choose a Category", "Program", "Project"].map((f) => (
-              <select
-                key={f}
-                className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center"
-                style={{ textAlignLast: "center" }}
-              >
-                <option>{f}</option>
-              </select>
-            ))}
+            <select className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center" style={{ textAlignLast: "center" }}>
+              <option>Choose a Category</option>
+              <option>Volunteer</option>
+              <option>Internship</option>
+              <option>Sponsor a Child</option>
+            </select>
+
+            <select className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center" style={{ textAlignLast: "center" }}>
+              <option>Program</option>
+              <option>Women Empowerment</option>
+              <option>Children Development</option>
+              <option>Youth Empowerment</option>
+              <option>Public Health & Medical</option>
+              <option>Environment Conservation</option>
+              <option>Disaster Risk Reduction</option>
+            </select>
+
+            <select className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center" style={{ textAlignLast: "center" }}>
+              <option>Project</option>
+              <option>Women's Trafficking Prevention</option>
+              <option>Entrepreneurship Development</option>
+              <option>Women's Education and Life Skills</option>
+            </select>
           </div>
           <div className="w-full mt-8">
             {/* Slider Controls */}
@@ -147,10 +176,10 @@ export default function CTABanner() {
             <div className="relative w-full">
               <div
                 ref={scrollRef}
-                className="scrollbar-hide flex overflow-x-auto gap-6 pb-4 snap-x snap-mandatory"
+                className="scrollbar-hide flex overflow-x-auto pb-4 snap-x snap-mandatory"
               >
                 {projects.map((p, i) => (
-                  <div key={i} className="flex-1 min-w-[320px] overflow-hidden bg-white ">
+                  <div key={i} className="flex-none w-full sm:w-1/2 lg:w-1/3 px-3 overflow-hidden bg-white snap-start">
                     <div className="relative h-60 w-full">
                       <Image
                         src={p.img}
