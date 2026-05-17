@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 const projects = [
@@ -143,29 +143,44 @@ export default function CTABanner() {
 
           {/* FILTERS */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 w-full max-w-4xl mx-auto">
-            <select className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none  focus:ring-[#1e3a5f] cursor-pointer text-center" style={{ textAlignLast: "center" }}>
-              <option>Choose a Category</option>
-              <option>Volunteer</option>
-              <option>Internship</option>
-              <option>Sponsor a Child</option>
-            </select>
+            <div className="relative w-full flex-1">
+              <select className="w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none cursor-pointer text-center appearance-none bg-white" style={{ textAlignLast: "center" }}>
+                <option>Choose a Category</option>
+                <option>Volunteer</option>
+                <option>Internship</option>
+                <option>Sponsor a Child</option>
+              </select>
+              <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-gray-600">
+                <ChevronDown size={16} />
+              </div>
+            </div>
 
-            <select className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none focus:ring-[#1e3a5f] cursor-pointer text-center" style={{ textAlignLast: "center" }}>
-              <option>Program</option>
-              <option>Women Empowerment</option>
-              <option>Children Development</option>
-              <option>Youth Empowerment</option>
-              <option>Public Health & Medical</option>
-              <option>Environment Conservation</option>
-              <option>Disaster Risk Reduction</option>
-            </select>
+            <div className="relative w-full flex-1">
+              <select className="w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none cursor-pointer text-center appearance-none bg-white" style={{ textAlignLast: "center" }}>
+                <option>Program</option>
+                <option>Women Empowerment</option>
+                <option>Children Development</option>
+                <option>Youth Empowerment</option>
+                <option>Public Health & Medical</option>
+                <option>Environment Conservation</option>
+                <option>Disaster Risk Reduction</option>
+              </select>
+              <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-gray-600">
+                <ChevronDown size={16} />
+              </div>
+            </div>
 
-            <select className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none  focus:ring-[#1e3a5f] cursor-pointer text-center" style={{ textAlignLast: "center" }}>
-              <option>Project</option>
-              <option>Women's Trafficking Prevention</option>
-              <option>Entrepreneurship Development</option>
-              <option>Women's Education and Life Skills</option>
-            </select>
+            <div className="relative w-full flex-1">
+              <select className="w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none cursor-pointer text-center appearance-none bg-white" style={{ textAlignLast: "center" }}>
+                <option>Project</option>
+                <option>Women's Trafficking Prevention</option>
+                <option>Entrepreneurship Development</option>
+                <option>Women's Education and Life Skills</option>
+              </select>
+              <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-gray-600">
+                <ChevronDown size={16} />
+              </div>
+            </div>
           </div>
           <div className="w-full mt-8">
             {/* Slider Controls */}

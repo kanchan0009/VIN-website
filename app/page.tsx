@@ -18,6 +18,7 @@ import {
   ChevronRight,
   Play,
   X,
+  ChevronDown,
 } from "lucide-react";
 import { useRef, useState, useCallback, useEffect } from "react";
 import DonationWidget from "./components/DonationWidget";
@@ -729,15 +730,20 @@ export default function HomePage() {
               <>
                 {/* Dropdown */}
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full max-w-[300px] mx-auto">
-                  <select className="flex-1 w-full px-3 py-2.5 border border-black text-[15px] text-black focus:outline-none  focus:ring-[#1e3a5f] cursor-pointer text-center" style={{ textAlignLast: "center" }}>
-                    <option >Choose a Program</option>
-                    <option>Women Empowerment</option>
-                    <option>Youth Empowerment</option>
-                    <option>Public Health and Sanitation</option>
-                    <option>Education and Career Development</option>
-                    <option>Environment & Conservation Projects</option>
-                    <option>Disaster Risk Reduction</option>
-                  </select>
+                  <div className="relative w-full">
+                    <select className="flex-1 w-full px-3 py-2.5 border border-black text-[15px] text-black focus:outline-none cursor-pointer text-center appearance-none bg-white" style={{ textAlignLast: "center" }}>
+                      <option >Choose a Program</option>
+                      <option>Women Empowerment</option>
+                      <option>Youth Empowerment</option>
+                      <option>Public Health and Sanitation</option>
+                      <option>Education and Career Development</option>
+                      <option>Environment & Conservation Projects</option>
+                      <option>Disaster Risk Reduction</option>
+                    </select>
+                    <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-gray-600">
+                      <ChevronDown size={16} />
+                    </div>
+                  </div>
                 </div>
 
                 {/* Section Header */}
@@ -820,16 +826,21 @@ export default function HomePage() {
 
           {/* Dropdown */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full max-w-[250px] mx-auto">
-            <select
-              value={filter}
-              onChange={(e) => setFilter(e.target.value)}
-              className="flex-1 w-full px-4 py-2.5 border-1 border-black text-[15px] text-[#212121] focus:outline-none  focus:ring-[#1e3a5f] cursor-pointer text-center"
-              style={{ textAlignLast: "center" }}
-            >
-              <option>Board of Directors</option>
-              <option>Management Team</option>
-              <option>Volunteers</option>
-            </select>
+            <div className="relative w-full">
+              <select
+                value={filter}
+                onChange={(e) => setFilter(e.target.value)}
+                className="w-full px-4 py-2.5 border border-black text-[15px] text-[#212121] focus:outline-none cursor-pointer text-center appearance-none bg-white"
+                style={{ textAlignLast: "center" }}
+              >
+                <option>Board of Directors</option>
+                <option>Management Team</option>
+                <option>Volunteers</option>
+              </select>
+              <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-gray-600">
+                <ChevronDown size={16} />
+              </div>
+            </div>
           </div>
 
           {/* Cards Grid */}
@@ -1077,36 +1088,46 @@ export default function HomePage() {
 
           {/* Filters */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 w-full max-w-lg mx-auto">
-            <select
-              value={selectedCategory}
-              onChange={(e) => setSelectedCategory(e.target.value)}
-              className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center"
-              style={{ textAlignLast: "center" }}
-            >
-              <option value="">Choose a category</option>
-              <option value="gallery">Gallery</option>
-              <option value="articles">Articles</option>
-              <option value="news">News Update</option>
-              <option value="careers">Careers</option>
-              <option value="success-stories">Success Stories</option>
-              <option value="case-studies">Case Studies</option>
-              <option value="interviews">Interviews</option>
-            </select>
+            <div className="relative w-full flex-1">
+              <select
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+                className="w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none cursor-pointer text-center appearance-none bg-white"
+                style={{ textAlignLast: "center" }}
+              >
+                <option value="">Choose a category</option>
+                <option value="gallery">Gallery</option>
+                <option value="articles">Articles</option>
+                <option value="news">News Update</option>
+                <option value="careers">Careers</option>
+                <option value="success-stories">Success Stories</option>
+                <option value="case-studies">Case Studies</option>
+                <option value="interviews">Interviews</option>
+              </select>
+              <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-gray-600">
+                <ChevronDown size={16} />
+              </div>
+            </div>
 
-            <select
-              value={selectedTopic}
-              onChange={(e) => setSelectedTopic(e.target.value)}
-              className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[13px] text-black focus:outline-none focus:ring-[#1e3a5f] cursor-pointer text-center"
-              style={{ textAlignLast: "center" }}
-            >     
-              <option value="">Topic</option>
-              <option value="womens-empowerment">Women's Empowerment</option>
-              <option value="child-development">Children's Development</option>
-              <option value="youth-empowerment">Youth Empowerment</option>
-              <option value="public-health">Public Health & Medical Care</option>
-              <option value="environment">Environment & Conservation Projects</option>
-              <option value="disaster-risk">Disaster Risk Reduction</option>
-            </select>
+            <div className="relative w-full flex-1">
+              <select
+                value={selectedTopic}
+                onChange={(e) => setSelectedTopic(e.target.value)}
+                className="w-full px-4 py-2.5 border-2 border-black text-[13px] text-black focus:outline-none cursor-pointer text-center appearance-none bg-white"
+                style={{ textAlignLast: "center" }}
+              >     
+                <option value="">Topic</option>
+                <option value="womens-empowerment">Women's Empowerment</option>
+                <option value="child-development">Children's Development</option>
+                <option value="youth-empowerment">Youth Empowerment</option>
+                <option value="public-health">Public Health & Medical Care</option>
+                <option value="environment">Environment & Conservation Projects</option>
+                <option value="disaster-risk">Disaster Risk Reduction</option>
+              </select>
+              <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-gray-600">
+                <ChevronDown size={16} />
+              </div>
+            </div>
           </div>
 
           {/* View All Link */}
@@ -1356,31 +1377,41 @@ export default function HomePage() {
 
           {/* Filters */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full max-w-lg mx-auto">
-            <select
-              value={selectedCategory}
-              onChange={(e) => setSelectedCategory(e.target.value)}
-              className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center"
-              style={{ textAlignLast: "center" }}
-            >
-              <option value="">Choose a category</option>
-              <option value="culture">Culture</option>
-              <option value="heritage">Heritage</option>
-              <option value="nature">Nature</option>
-              <option value="adventure">Adventure</option>
-            </select>
+            <div className="relative w-full flex-1">
+              <select
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+                className="w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none cursor-pointer text-center appearance-none bg-white"
+                style={{ textAlignLast: "center" }}
+              >
+                <option value="">Choose a category</option>
+                <option value="culture">Culture</option>
+                <option value="heritage">Heritage</option>
+                <option value="nature">Nature</option>
+                <option value="adventure">Adventure</option>
+              </select>
+              <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-gray-600">
+                <ChevronDown size={11} />
+              </div>
+            </div>
 
-            <select
-              value={selectedTopic}
-              onChange={(e) => setSelectedTopic(e.target.value)}
-              className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center"
-              style={{ textAlignLast: "center" }}
-            >
-              <option value="">Topic</option>
-              <option value="kathmandu">Kathmandu</option>
-              <option value="pokhara">Pokhara</option>
-              <option value="lumbini">Lumbini</option>
-              <option value="everest">Everest</option>
-            </select>
+            <div className="relative w-full flex-1">
+              <select
+                value={selectedTopic}
+                onChange={(e) => setSelectedTopic(e.target.value)}
+                className="w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none cursor-pointer text-center appearance-none bg-white"
+                style={{ textAlignLast: "center" }}
+              >
+                <option value="">Topic</option>
+                <option value="kathmandu">Kathmandu</option>
+                <option value="pokhara">Pokhara</option>
+                <option value="lumbini">Lumbini</option>
+                <option value="everest">Everest</option>
+              </select>
+              <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-gray-600">
+                <ChevronDown size={11} />
+              </div>
+            </div>
           </div>
 
           {/* Place Info + Gallery */}

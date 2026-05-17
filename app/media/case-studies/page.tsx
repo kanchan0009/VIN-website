@@ -75,7 +75,7 @@ export default function CaseStudiesPage() {
   return (
     <main className="text-[#1a1a2e]">
       {/* Hero */}
-      <section className="relative flex items-end overflow-hidden full-width-bg h-[100vh] min-h-[600px] max-h-[800px]">
+      <section className="relative flex items-end overflow-hidden full-width-bg h-[90vh] min-h-[600px] max-h-[800px]">
         <img
           src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&q=80"
           alt="Case Studies"
@@ -103,26 +103,28 @@ export default function CaseStudiesPage() {
         <div className="mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
             {currentItems.map((study) => (
-              <div key={study.id} className="group flex flex-col">
-                <div className="relative aspect-[4/3] overflow-hidden mb-6">
+              <div key={study.id} className="group flex flex-col border border-gray-200 shadow-sm hover:shadow-md rounded-lg overflow-hidden h-full transition-shadow bg-white">
+                <div className="relative aspect-[4/3] overflow-hidden">
                   <img
                     src={study.image}
                     alt={study.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
-                <h3 className="text-[24px] font-[600] text-[#212121] mb-2">
-                  {study.title}
-                </h3>
-                <p className="text-[#4b5563] text-[16px] leading-relaxed mb-3">
-                  {study.summary}
-                </p>
-                <Link 
-                  href={`/media/case-studies/${study.id}`}
-                  className="text-[var(--blue)] font-[600] flex items-center gap-2 hover:gap-3 transition-all mt-auto"
-                >
-                  Read Case Study <span className="text-xl">→</span>
-                </Link>
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="text-[24px] font-[600] text-[#212121] mb-2 group-hover:text-[var(--blue)] transition-colors">
+                    {study.title}
+                  </h3>
+                  <p className="text-[#4b5563] text-[16px] leading-relaxed mb-4 line-clamp-3">
+                    {study.summary}
+                  </p>
+                  <Link 
+                    href={`/media/case-studies/${study.id}`}
+                    className="text-[var(--blue)] font-[600] flex items-center gap-2 hover:gap-3 transition-all mt-auto"
+                  >
+                    Read Case Study <span className="text-xl">→</span>
+                  </Link>
+                </div>
               </div>
             ))}
           </div>

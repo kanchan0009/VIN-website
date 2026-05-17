@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Quote, ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { Quote, ChevronLeft, ChevronRight, Play, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import DonationWidget from "../components/DonationWidget";
 import CTABanner from "../components/CTABanner";
@@ -122,20 +122,25 @@ export default function TestimonialsPage() {
 
           {/* Filter Dropdown */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full max-w-[300px] mx-auto">
-            <select
-              value={filter}
-              onChange={(e) => setFilter(e.target.value)}
-              className="flex-1 w-full px-4 py-2.5 border-1 border-black text-[15px] text-[#212121] focus:outline-none  focus:ring-[#1e3a5f] cursor-pointer text-center"
-              style={{ textAlignLast: "center" }}
-            >
-              <option value="Beneficiary">Beneficiary</option>
-              <option value="Partners">Partners</option>
-              <option value="Volunteers">Volunteers</option>
-              <option value="Local Government">Local Government</option>
-              <option value="Community Leader">Community Leader</option>
-              <option value="Program">Program</option>
-              <option value="Video Testimonial">Video Testimonial</option>
-            </select>
+            <div className="relative w-full">
+              <select
+                value={filter}
+                onChange={(e) => setFilter(e.target.value)}
+                className="w-full px-4 py-2.5 border border-black text-[15px] text-[#212121]  cursor-pointer text-center appearance-none bg-white"
+                style={{ textAlignLast: "center" }}
+              >
+                <option value="Beneficiary">Beneficiary</option>
+                <option value="Partners">Partners</option>
+                <option value="Volunteers">Volunteers</option>
+                <option value="Local Government">Local Government</option>
+                <option value="Community Leader">Community Leader</option>
+                <option value="Program">Program</option>
+                <option value="Video Testimonial">Video Testimonial</option>
+              </select>
+              <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-gray-600">
+                <ChevronDown size={16} />
+              </div>
+            </div>
           </div>
 
           {/* Stories List */}

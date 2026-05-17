@@ -123,26 +123,28 @@ export default function NewsUpdatePage() {
         <div className="mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
             {currentItems.map((news, i) => (
-              <div key={news.id} className="group flex flex-col">
-                <div className="relative aspect-[4/3] overflow-hidden mb-6">
+              <div key={news.id} className="group flex flex-col border border-gray-200 shadow-sm hover:shadow-md rounded-lg overflow-hidden h-full transition-shadow bg-white">
+                <div className="relative aspect-[4/3] overflow-hidden">
                   <img
                     src={news.image}
                     alt={news.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
-                <h3 className="text-[20px] font-[600] text-[#212121] mb-2 group-hover:text-[var(--blue)] transition-colors">
-                  {news.title}
-                </h3>
-                <p className="text-[#4b5563] text-[16px] leading-relaxed mb-2 line-clamp-3">
-                  {news.summary}
-                </p>
-                <Link 
-                  href={`/media/news/${news.id}`}
-                  className="text-[var(--blue)] font-[600] flex items-center gap-2 hover:gap-3 transition-all mt-auto"
-                >
-                  Read Full News <span className="text-xl">→</span>
-                </Link>
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="text-[20px] font-[600] text-[#212121] mb-2 group-hover:text-[var(--blue)] transition-colors">
+                    {news.title}
+                  </h3>
+                  <p className="text-[#4b5563] text-[16px] leading-relaxed mb-4 line-clamp-3">
+                    {news.summary}
+                  </p>
+                  <Link 
+                    href={`/media/news/${news.id}`}
+                    className="text-[var(--blue)] font-[600] flex items-center gap-2 hover:gap-3 transition-all mt-auto"
+                  >
+                    Read Full News <span className="text-xl">→</span>
+                  </Link>
+                </div>
               </div>
             ))}
           </div>

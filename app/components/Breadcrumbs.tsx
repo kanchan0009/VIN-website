@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronRight, Home } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { useMemo } from "react";
 
 // Map of slug to display name for certifications
@@ -58,29 +58,28 @@ export default function Breadcrumbs() {
   }, [pathname, pathSegments]);
 
   return (
-    <nav aria-label="Breadcrumb" className="breadcrumbs">
-      <div className=" mx-auto px-4">
-        <ol className="flex items-center space-x-2 text-sm text-gray-500">
+    <nav aria-label="Breadcrumb" className="breadcrumbs py-4 md:py-5 min-h-[60px] flex items-center">
+      <div className=" mx-auto px-4 md:px-[60px] w-full">
+        <ol className="flex items-center flex-wrap gap-y-2 space-x-2.5 text-[17px] text-[var(--blue)] font-medium">
           {crumbs.map((crumb, index) => (
             <li key={crumb.href} className="flex items-center">
               {index === 0 ? (
                 <Link
                   href={crumb.href}
-                  className="flex items-center gap-1 hover:text-gray-700 transition-colors"
+                  className="hover:opacity-80 transition-opacity"
                 >
-                  <Home size={16} />
                   <span>{crumb.label}</span>
                 </Link>
               ) : (
                 <>
                   <ChevronRight
                     size={16}
-                    className="shrink-0 text-gray-400"
+                    className="shrink-0 text-[var(--blue)] opacity-70"
                     aria-hidden="true"
                   />
                   {index === crumbs.length - 1 ? (
                     <span
-                      className="font-medium text-gray-900"
+                      className="font-semibold"
                       aria-current="page"
                     >
                       {crumb.label}
@@ -88,7 +87,7 @@ export default function Breadcrumbs() {
                   ) : (
                     <Link
                       href={crumb.href}
-                      className="hover:text-gray-700 transition-colors"
+                      className="hover:opacity-80 transition-opacity"
                     >
                       {crumb.label}
                     </Link>

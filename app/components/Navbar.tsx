@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronDown, Phone, Globe, Menu, X } from "lucide-react";
+import { ChevronDown, Phone, Map, Menu, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 const programs = [
@@ -64,10 +64,20 @@ export default function Navbar() {
             <Link href="/faq" className="hover:text-[var(--blue)] transition-colors">FAQ</Link>
           </div>
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-1.5 cursor-pointer hover:text-[var(--blue)] transition-colors">
-              <Globe size={13} />
-              <span className="font-[600]">NP</span>
-              <ChevronDown size={11} />
+            <div className="relative group cursor-pointer">
+              <div className="flex items-center gap-1.5 hover:text-[var(--blue)] transition-colors py-1">
+                <Map size={13} />
+                <span className="font-[600]">NP</span>
+                <ChevronDown size={11} />
+              </div>
+              
+              {/* Dropdown Menu */}
+              <div className="absolute top-full right-0 w-32 bg-white rounded-md shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="py-2 text-sm text-[#353535] font-medium">
+                  <div className="px-4 py-2 hover:bg-gray-50 hover:text-[var(--blue)] transition-colors">NP - Nepali</div>
+                  <div className="px-4 py-2 hover:bg-gray-50 hover:text-[var(--blue)] transition-colors">EN - English</div>
+                </div>
+              </div>
             </div>
             <div className="flex items-center gap-1.5">
               <Phone size={13} className="text-[var(--blue)]" />
