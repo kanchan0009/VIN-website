@@ -143,14 +143,14 @@ export default function CTABanner() {
 
           {/* FILTERS */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 w-full max-w-4xl mx-auto">
-            <select className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center" style={{ textAlignLast: "center" }}>
+            <select className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none  focus:ring-[#1e3a5f] cursor-pointer text-center" style={{ textAlignLast: "center" }}>
               <option>Choose a Category</option>
               <option>Volunteer</option>
               <option>Internship</option>
               <option>Sponsor a Child</option>
             </select>
 
-            <select className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center" style={{ textAlignLast: "center" }}>
+            <select className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none focus:ring-[#1e3a5f] cursor-pointer text-center" style={{ textAlignLast: "center" }}>
               <option>Program</option>
               <option>Women Empowerment</option>
               <option>Children Development</option>
@@ -160,7 +160,7 @@ export default function CTABanner() {
               <option>Disaster Risk Reduction</option>
             </select>
 
-            <select className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center" style={{ textAlignLast: "center" }}>
+            <select className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none  focus:ring-[#1e3a5f] cursor-pointer text-center" style={{ textAlignLast: "center" }}>
               <option>Project</option>
               <option>Women's Trafficking Prevention</option>
               <option>Entrepreneurship Development</option>

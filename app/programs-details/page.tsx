@@ -78,6 +78,7 @@ export default function ProgramsDetailsPage() {
   // Media State & Logic
   const [startIndex, setStartIndex] = useState(0);
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
+  const [activeImage, setActiveImage] = useState<string | null>(null);
   const itemsPerPage = 4;
   const visibleItems = mediaItems.slice(startIndex, startIndex + itemsPerPage);
 
@@ -91,6 +92,10 @@ export default function ProgramsDetailsPage() {
 
   const openVideo = (url: string) => {
     setActiveVideo(url);
+  };
+
+  const openImage = (url: string) => {
+    setActiveImage(url);
   };
 
   return (
@@ -423,7 +428,7 @@ export default function ProgramsDetailsPage() {
                     </div>
 
                     {/* Image/Video Container */}
-                    <div className="relative aspect-[3/4] overflow-hidden">
+                    <div className="relative aspect-[3/4] overflow-hidden group cursor-pointer" onClick={() => { if(item.type !== "video") openImage(item.image); }}>
                       <img
                         src={item.image}
                         alt={item.title}
@@ -476,6 +481,31 @@ export default function ProgramsDetailsPage() {
               />
               <button
                 onClick={() => setActiveVideo(null)}
+                className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Image Modal */}
+        {activeImage && (
+          <div
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 p-4"
+            onClick={() => setActiveImage(null)}
+          >
+            <div
+              className="relative max-w-5xl max-h-[90vh] rounded-lg overflow-hidden flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={activeImage}
+                alt="Zoomed media"
+                className="w-[95vw] max-w-[1200px] h-[85vh] max-h-[850px] object-cover rounded-lg shadow-2xl"
+              />
+              <button
+                onClick={() => setActiveImage(null)}
                 className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors"
               >
                 <X className="w-6 h-6" />

@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { 
   ArrowRight, 
@@ -105,6 +108,12 @@ const topics = [
 ];
 
 export default function ArticlesPage() {
+  const [visibleCount, setVisibleCount] = useState(6);
+
+  const handleLoadMore = () => {
+    setVisibleCount(prev => prev + 6);
+  };
+
   return (
     <main className="bg-[#fcfcfc] min-h-screen font-inter">
       {/* Hero Header */}
@@ -176,14 +185,12 @@ export default function ArticlesPage() {
               {/* Latest Articles Header */}
               <div className="flex items-center justify-between">
                 <h2 className="text-2xl lg:text-3xl font-[700] text-[var(--blue)]">Latest Articles</h2>
-                <Link href="/article-blogs" className="text-[var(--blue)] font-[700] text-sm flex items-center gap-2 hover:translate-x-1 transition-transform">
-                  View all articles →
-                </Link>
+
               </div>
 
               {/* Articles Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {articles.map((article) => (
+                {articles.slice(0, visibleCount).map((article) => (
                   <article key={article.id} className="group bg-white rounded-[20px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-gray-100 flex flex-col hover:shadow-xl transition-all duration-500">
                     <div className="relative h-40 overflow-hidden">
                       <img 
@@ -212,11 +219,16 @@ export default function ArticlesPage() {
               </div>
 
               {/* Load More */}
-              <div className="text-center pt-8">
-                <button className="px-10 py-3 rounded-xl border border-[var(--blue)] text-[var(--blue)] font-[700] text-sm hover:bg-[var(--blue)] hover:text-white transition-all active:scale-95">
-                  Load More Articles →
-                </button>
-              </div>
+              {visibleCount < articles.length && (
+                <div className="text-center pt-8">
+                  <button 
+                    onClick={handleLoadMore}
+                    className="px-10 py-3 rounded-xl border border-[var(--blue)] text-[var(--blue)] font-[700] text-sm hover:bg-[var(--blue)] hover:text-white transition-all active:scale-95"
+                  >
+                    Load More Articles →
+                  </button>
+                </div>
+              )}
             </div>
 
             {/* Sidebar */}

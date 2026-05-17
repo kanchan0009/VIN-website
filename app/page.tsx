@@ -316,6 +316,7 @@ export default function HomePage() {
   };
   const [startIndex, setStartIndex] = useState(0);
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
+  const [activeImage, setActiveImage] = useState<string | null>(null);
   const [isMediaExpanded, setIsMediaExpanded] = useState(false);
   const [visibleCount, setVisibleCount] = useState(4);
 
@@ -339,6 +340,10 @@ export default function HomePage() {
 
   const openVideo = (url: string) => {
     setActiveVideo(url);
+  };
+
+  const openImage = (url: string) => {
+    setActiveImage(url);
   };
 
   return (
@@ -724,7 +729,7 @@ export default function HomePage() {
               <>
                 {/* Dropdown */}
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full max-w-[300px] mx-auto">
-                  <select className="flex-1 w-full px-3 py-2.5 border border-black text-[15px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center" style={{ textAlignLast: "center" }}>
+                  <select className="flex-1 w-full px-3 py-2.5 border border-black text-[15px] text-black focus:outline-none  focus:ring-[#1e3a5f] cursor-pointer text-center" style={{ textAlignLast: "center" }}>
                     <option >Choose a Program</option>
                     <option>Women Empowerment</option>
                     <option>Youth Empowerment</option>
@@ -818,7 +823,7 @@ export default function HomePage() {
             <select
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
-              className="flex-1 w-full px-4 py-2.5 border-1 border-black text-[15px] text-[#212121] focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center"
+              className="flex-1 w-full px-4 py-2.5 border-1 border-black text-[15px] text-[#212121] focus:outline-none  focus:ring-[#1e3a5f] cursor-pointer text-center"
               style={{ textAlignLast: "center" }}
             >
               <option>Board of Directors</option>
@@ -1083,7 +1088,7 @@ export default function HomePage() {
               <option value="articles">Articles</option>
               <option value="news">News Update</option>
               <option value="careers">Careers</option>
-              <option value="stories">Success Stories</option>
+              <option value="success-stories">Success Stories</option>
               <option value="case-studies">Case Studies</option>
               <option value="interviews">Interviews</option>
             </select>
@@ -1091,21 +1096,29 @@ export default function HomePage() {
             <select
               value={selectedTopic}
               onChange={(e) => setSelectedTopic(e.target.value)}
-              className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[13px] text-black focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] cursor-pointer text-center"
+              className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[13px] text-black focus:outline-none focus:ring-[#1e3a5f] cursor-pointer text-center"
               style={{ textAlignLast: "center" }}
             >     
               <option value="">Topic</option>
-              <option value="education">Education</option>
-              <option value="health">Health</option>
-              <option value="environment">Environment</option>
-              <option value="community">Community</option>
+              <option value="womens-empowerment">Women's Empowerment</option>
+              <option value="child-development">Children's Development</option>
+              <option value="youth-empowerment">Youth Empowerment</option>
+              <option value="public-health">Public Health & Medical Care</option>
+              <option value="environment">Environment & Conservation Projects</option>
+              <option value="disaster-risk">Disaster Risk Reduction</option>
             </select>
           </div>
 
           {/* View All Link */}
           <div className="flex justify-end mb-8 mx-8 md:mx-16">
             <Link
-              href="/media"
+              href={(() => {
+                let path = "/media";
+                if (selectedCategory === "gallery") path = "/gallery";
+                else if (selectedCategory) path = `/media/${selectedCategory}`;
+                if (selectedTopic) path += `?topic=${selectedTopic}`;
+                return path;
+              })()}
               className="inline-flex items-center px-5 py-2  text-white text-base font-[700] hover:opacity-90 transition-opacity"
               style={{ background: "var(--blue)" }}
             >
@@ -1242,7 +1255,7 @@ export default function HomePage() {
                     </div>
 
                     {/* Image/Video Container */}
-                    <div className="relative aspect-[3/4] overflow-hidden">
+                    <div className="relative aspect-[3/4] overflow-hidden group cursor-pointer" onClick={() => { if(item.type !== "video") openImage(item.image); }}>
                       <img
                         src={item.image}
                         alt={item.title}
@@ -1282,7 +1295,7 @@ export default function HomePage() {
         {/* Video Modal */}
         {activeVideo && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 p-4"
             onClick={() => setActiveVideo(null)}
           >
             <div
@@ -1297,6 +1310,31 @@ export default function HomePage() {
               />
               <button
                 onClick={() => setActiveVideo(null)}
+                className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Image Modal */}
+        {activeImage && (
+          <div
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 p-4"
+            onClick={() => setActiveImage(null)}
+          >
+            <div
+              className="relative max-w-5xl max-h-[90vh] rounded-lg overflow-hidden flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={activeImage}
+                alt="Zoomed media"
+                className="w-[95vw] max-w-[1200px] h-[85vh] max-h-[850px] object-cover rounded-lg shadow-2xl"
+              />
+              <button
+                onClick={() => setActiveImage(null)}
                 className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors"
               >
                 <X className="w-6 h-6" />

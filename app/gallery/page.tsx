@@ -41,8 +41,8 @@ export default function GalleryPage() {
 
       {/* Album Grid */}
       <section className="pb-16">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12">
+        <div className="max-w-[1440px] mx-auto px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
             {albums.map((album, idx) => (
               <div
                 key={idx}

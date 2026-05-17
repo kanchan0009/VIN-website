@@ -125,7 +125,7 @@ export default function TestimonialsPage() {
             <select
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
-              className="flex-1 w-full px-4 py-2.5 border-2 border-black text-[15px] font-semibold text-black focus:outline-none focus:ring-2 focus:ring-[var(--blue)] cursor-pointer text-center appearance-none"
+              className="flex-1 w-full px-4 py-2.5 border-1 border-black text-[15px] text-[#212121] focus:outline-none  focus:ring-[#1e3a5f] cursor-pointer text-center"
               style={{ textAlignLast: "center" }}
             >
               <option value="Beneficiary">Beneficiary</option>

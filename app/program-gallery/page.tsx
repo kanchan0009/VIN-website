@@ -24,7 +24,7 @@ const mediaItems = [
   {
     type: "video",
     src: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80",
-    aspect: "aspect-video",
+    aspect: "aspect-[4/5]",
     gridClass: "col-span-3",
   },
   {
@@ -36,14 +36,26 @@ const mediaItems = [
   {
     type: "video",
     src: "https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=800&q=80",
-    aspect: "aspect-[4/5]",
+    aspect: "aspect-video",
     gridClass: "col-start-2 col-span-2",
   },
   {
     type: "video",
     src: "https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=800&q=80",
-    aspect: "aspect-[4/5]",
+    aspect: "aspect-video",
     gridClass: "col-span-2",
+  },
+  {
+    type: "video",
+    src: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80",
+    aspect: "aspect-[4/5]",
+    gridClass: "col-span-3",
+  },
+  {
+    type: "video",
+    src: "https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=800&q=80",
+    aspect: "aspect-[4/5]",
+    gridClass: "col-span-3",
   },
 ];
 
@@ -57,9 +69,9 @@ function ProgramGalleryContent() {
 
   const options = ["All", "Videos", "Images"];
 
-  const topItems = mediaItems.slice(0, 2);
-  const midItems = mediaItems.slice(2, 4);
-  const botItems = mediaItems.slice(4, 6);
+  const topItems = mediaItems.slice(0, 3);
+  const midItems = mediaItems.slice(3, 6);
+  const botItems = mediaItems.slice(6, 8);
 
   return (
     <main className="bg-white min-h-screen">
@@ -109,8 +121,8 @@ function ProgramGalleryContent() {
       <div className="flex flex-col gap-6 md:gap-10 pb-24">
         {/* Top Row - Slightly Smaller */}
         <section className="p-0 !px-0">
-          <div className="max-w-5xl mx-auto px-6">
-            <div className="grid grid-cols-2 gap-6 md:gap-10">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
               {topItems.map((item, i) => (
                 <div 
                   key={i} 
@@ -134,8 +146,8 @@ function ProgramGalleryContent() {
 
         {/* Middle Row - Max Global Width */}
         <section className="p-0 !px-0">
-          <div className=" mx-auto px-6">
-            <div className="grid grid-cols-2 gap-6 md:gap-5">
+          <div className=" max-w-[1440px] mx-auto px-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {midItems.map((item, i) => (
                 <div 
                   key={i} 
@@ -159,8 +171,8 @@ function ProgramGalleryContent() {
 
         {/* Bottom Row - Slightly Smaller */}
         <section className="p-0 !px-0">
-          <div className="max-w-5xl mx-auto px-6">
-            <div className="grid grid-cols-2 gap-6 md:gap-10">
+          <div className="max-w-4xl mx-auto px-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10">
               {botItems.map((item, i) => (
                 <div 
                   key={i} 
