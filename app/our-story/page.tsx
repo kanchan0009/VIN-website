@@ -68,7 +68,7 @@ export default function OurStoryPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative h-[670px] flex items-end overflow-hidden">
+      <section className="relative flex items-end overflow-hidden h-[100vh] min-h-[600px] max-h-[800px]">
         <img
           src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1600&q=80"
           alt="Our Story"

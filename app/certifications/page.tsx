@@ -95,7 +95,7 @@ export default function CertificationsPage() {
   return (
     <main className="font-montserrat">
       {/* Hero Section */}
-      <section className="relative h-[670px] flex items-end overflow-hidden">
+      <section className="relative flex items-end overflow-hidden h-[100vh] min-h-[600px] max-h-[800px]">
         <img
           src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=1600&q=80"
           alt="Certifications"

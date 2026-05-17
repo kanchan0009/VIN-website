@@ -43,6 +43,13 @@ const albums = [
   },
 ];
 
+const mediaItems = [
+  { id: '01', type: 'image', img: 'https://images.unsplash.com/photo-1531260796528-af05fbb3f695?w=600&q=80' },
+  { id: '02', type: 'image', img: 'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=600&q=80' },
+  { id: '03', type: 'video', img: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=600&q=80' },
+  { id: '04', type: 'image', img: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&q=80' },
+];
+
 const testimonials = [
   {
     name: "Kancha Lama",
@@ -66,9 +73,23 @@ export default function DisasterRiskPage() {
   const [albumIndex, setAlbumIndex] = useState(0);
   const [mediaIndex, setMediaIndex] = useState(0);
   const [projectIndex, setProjectIndex] = useState(0);
+  const [isMediaDropdownOpen, setIsMediaDropdownOpen] = useState(false);
+  const [selectedMedia, setSelectedMedia] = useState('Types of Media');
   const [visibleMediaCount, setVisibleMediaCount] = useState(1);
   const [visibleProjectCount, setVisibleProjectCount] = useState(1);
+
+  const filteredMedia = mediaItems.filter(item => {
+    if (selectedMedia === 'Types of Media') return true;
+    if (selectedMedia === 'Images') return item.type === 'image';
+    if (selectedMedia === 'Videos') return item.type === 'video';
+    return true;
+  });
+
   const current = testimonials[activeIndex];
+
+  useEffect(() => {
+    setMediaIndex(0);
+  }, [selectedMedia]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -127,8 +148,8 @@ export default function DisasterRiskPage() {
       </section>
 
       {/* Hero Image */}
-      <section className="mb-10 p-0 !px-0">
-        <div className="w-full h-[500px] overflow-hidden">
+      <section className="mb-10 p-0 !px-0 h-[100vh] min-h-[600px] max-h-[800px]">
+        <div className="w-full overflow-hidden h-full">
           <img 
             src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1600&q=80" 
             alt="Disaster resilience training" 
@@ -287,7 +308,7 @@ export default function DisasterRiskPage() {
                     <h4 className="text-white text-lg lg:text-xl font-[600] mb-6 leading-tight">
                       {album.title}
                     </h4>
-                    <Link href="/program-gallery">
+                    <Link href="/program-gallery?topic=disaster-risk">
                       <button className="bg-[#1e238f] text-white px-8 py-3 rounded-md font-[600] text-sm hover:bg-[#15196d] transition-all active:scale-95 shadow-lg">
                         Explore Album
                       </button>
@@ -371,11 +392,34 @@ export default function DisasterRiskPage() {
             Related Media
           </h2>
           
+          {/* Filter Dropdown */}
           <div className="inline-block relative mb-5">
-            <button className="flex items-center gap-4 px-10 py-3 border border-gray-400 rounded-[5px] text-gray-700 font-[500] hover:bg-gray-50 transition-all">
-              Types of Media
-              <ChevronDown size={16} />
+            <button 
+              onClick={() => setIsMediaDropdownOpen(!isMediaDropdownOpen)}
+              className="flex items-center gap-4 px-10 py-3 border border-gray-400 rounded-[5px] text-gray-700 font-[500] hover:bg-gray-50 transition-all min-w-[200px] justify-between"
+            >
+              {selectedMedia}
+              <ChevronDown size={16} className={`transition-transform duration-300 ${isMediaDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
+
+            {isMediaDropdownOpen && (
+              <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-[5px] shadow-lg z-50 overflow-hidden py-1 animate-in fade-in slide-in-from-top-2 duration-200">
+                {['Images', 'Videos'].map((option) => (
+                  <button
+                    key={option}
+                    onClick={() => {
+                      setSelectedMedia(option);
+                      setIsMediaDropdownOpen(false);
+                    }}
+                    className={`w-full text-left px-6 py-2.5 text-sm transition-colors hover:bg-gray-50 ${
+                      selectedMedia === option ? 'text-[var(--blue)] font-semibold' : 'text-gray-600'
+                    }`}
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           <p className="text-[#555555] text-[16px] font-[400] lg:text-[17px] max-w-4xl mx-auto leading-relaxed">
@@ -384,48 +428,48 @@ export default function DisasterRiskPage() {
         </div>
 
         <div className="max-w-[1500px] mx-auto px-6 relative group">
-          <button 
-            onClick={() => setMediaIndex((prev) => (prev - 1 + 4) % 4)}
-            className="absolute -left-2 lg:left-0 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10"
-          >
-            <ChevronLeft size={20} className="text-gray-600" />
-          </button>
-          <button 
-            onClick={() => setMediaIndex((prev) => (prev + 1) % 4)}
-            className="absolute -right-2 lg:right-0 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10"
-          >
-            <ChevronRight size={20} className="text-gray-600" />
-          </button>
+          {/* Navigation Arrows */}
+          {filteredMedia.length > visibleMediaCount && (
+            <>
+              <button 
+                onClick={() => setMediaIndex((prev) => (prev - 1 + filteredMedia.length) % filteredMedia.length)}
+                className="absolute -left-2 lg:left-0 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10"
+              >
+                <ChevronLeft size={20} className="text-gray-600" />
+              </button>
+              <button 
+                onClick={() => setMediaIndex((prev) => (prev + 1) % filteredMedia.length)}
+                className="absolute -right-2 lg:right-0 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10"
+              >
+                <ChevronRight size={20} className="text-gray-600" />
+              </button>
+            </>
+          )}
 
           <div className="overflow-hidden px-4">
             <div 
               className="flex transition-transform duration-500 ease-in-out gap-6"
               style={{ transform: `translateX(-${mediaIndex * (100 / visibleMediaCount)}%)` }}
             >
-              {[
-                { id: '01', type: 'image', img: 'https://images.unsplash.com/photo-1531260796528-af05fbb3f695?w=600&q=80' },
-                { id: '02', type: 'image', img: 'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=600&q=80' },
-                { id: '03', type: 'video', img: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=600&q=80' },
-                { id: '04', type: 'image', img: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&q=80' },
-              ].map((item) => (
-                <div key={item.id} className="min-w-full sm:min-w-[calc(50%-12px)] lg:min-w-[calc(25%-18px)] relative aspect-[4/5] rounded-[10px] overflow-hidden shadow-lg group/item">
-                <img 
-                  src={item.img} 
-                  alt={`Media ${item.id}`} 
-                  className="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute top-4 left-4 w-8 h-8 rounded-full bg-white flex items-center justify-center text-[var(--blue)] font-bold text-xs shadow-sm">
-                  {item.id}
-                </div>
-                {item.type === 'video' && (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-xl group-hover/item:scale-110 transition-transform">
-                      <Play size={24} fill="var(--blue)" className="text-[var(--blue)]" />
-                    </div>
+              {filteredMedia.map((item) => (
+                <div key={item.id} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] min-w-full sm:min-w-[calc(50%-12px)] lg:min-w-[calc(25%-18px)] shrink-0 relative aspect-[4/5] rounded-[10px] overflow-hidden shadow-lg group/item">
+                  <img 
+                    src={item.img} 
+                    alt={`Media ${item.id}`} 
+                    className="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute top-4 left-4 w-8 h-8 rounded-full bg-white flex items-center justify-center text-[var(--blue)] font-bold text-xs shadow-sm">
+                    {item.id}
                   </div>
-                )}
-              </div>
-            ))}
+                  {item.type === 'video' && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-xl group-hover/item:scale-110 transition-transform">
+                        <Play size={24} fill="var(--blue)" className="text-[var(--blue)]" />
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>

@@ -269,7 +269,6 @@ export default function HomePage() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedTopic, setSelectedTopic] = useState("");
   const [currentPlace, setCurrentPlace] = useState(places[0]);
-  const [activeReview, setActiveReview] = useState(0);
   const [learnMoreIndex, setLearnMoreIndex] = useState(0);
   const [showAllPrograms, setShowAllPrograms] = useState(false);
   const [heroIndex, setHeroIndex] = useState(0);
@@ -319,7 +318,6 @@ export default function HomePage() {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
   const [isMediaExpanded, setIsMediaExpanded] = useState(false);
   const [visibleCount, setVisibleCount] = useState(4);
-  const itemsPerPage = 4;
 
   useEffect(() => {
     const updateCount = () => {
@@ -329,20 +327,15 @@ export default function HomePage() {
     window.addEventListener("resize", updateCount);
     return () => window.removeEventListener("resize", updateCount);
   }, []);
-
-  const visibleItems = mediaItems.slice(startIndex, startIndex + itemsPerPage);
+  const maxStartIndex = Math.max(0, mediaItems.length - visibleCount);
 
   const nextSlide = useCallback(() => {
-    setStartIndex((prev) =>
-      prev + itemsPerPage >= mediaItems.length ? 0 : prev + 1,
-    );
-  }, []);
+    setStartIndex((prev) => (prev >= maxStartIndex ? 0 : prev + 1));
+  }, [maxStartIndex]);
 
   const prevSlide = useCallback(() => {
-    setStartIndex((prev) =>
-      prev === 0 ? Math.max(0, mediaItems.length - itemsPerPage) : prev - 1,
-    );
-  }, []);
+    setStartIndex((prev) => (prev <= 0 ? maxStartIndex : prev - 1));
+  }, [maxStartIndex]);
 
   const openVideo = (url: string) => {
     setActiveVideo(url);
@@ -351,7 +344,7 @@ export default function HomePage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative w-full min-h-[500px] flex items-center !px-0">
+      <section className="relative w-full h-[100vh] min-h-[600px] max-h-[800px] flex items-center !px-0">
         {/* Background Images Cross-fade */}
         {heroItems.map((item, index) => (
           <div
@@ -393,7 +386,7 @@ export default function HomePage() {
           <ChevronRight className="w-10 h-10 md:w-14 md:h-14" />
         </button>
 
-        <div className="relative z-10 w-full h-full pb-2.5 pt-24 min-h-[800px] flex flex-col px-[60px]">
+        <div className="relative z-10 w-full h-full pb-2.5 pt-24 flex flex-col px-[60px]">
           <div className=" mx-auto w-full h-full flex flex-col justify-end flex-grow relative">
             {/* Stats Grid */}
             <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2">
@@ -693,32 +686,38 @@ export default function HomePage() {
               {
                 title: "Women’s Trafficking Prevention",
                 img: "/images/img1.jpg",
-                desc: "The ED project aims to ensure economic independence of women by building their skills and providing the necessary support."
+                desc: "The ED project aims to ensure economic independence of women by building their skills and providing the necessary support.",
+                href: "/programs-projects?topic=womens-empowerment"
               },
               {
                 title: "Entrepreneurship Development",
                 img: "/images/img2.jpg",
-                desc: "The ED project aims to ensure economic independence of women by building their skills and facilitating entrepreneurship."
+                desc: "The ED project aims to ensure economic independence of women by building their skills and facilitating entrepreneurship.",
+                href: "/programs-projects?topic=womens-empowerment"
               },
               {
                 title: "Women’s Education and Life Skills",
                 img: "/images/img3.jpg",
-                desc: "This project empowers women to become self-reliant and resilient by providing relevant education and development."
+                desc: "This project empowers women to become self-reliant and resilient by providing relevant education and development.",
+                href: "/programs-projects?topic=womens-empowerment"
               },
               {
                 title: "Youth Empowerment Projects",
                 img: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=400&q=80",
-                desc: "Engaging youth in community development and providing them with vocational training."
+                desc: "Engaging youth in community development and providing them with vocational training.",
+                href: "/programs-projects?topic=youth-empowerment"
               },
               {
                 title: "Public Health & Sanitation",
                 img: "https://images.unsplash.com/photo-1607748862156-7c548e7e98f4?w=400&q=80",
-                desc: "Improving health outcomes through sanitation projects and medical outreach."
+                desc: "Improving health outcomes through sanitation projects and medical outreach.",
+                href: "/programs-projects?topic=public-health"
               },
               {
                 title: "Environment & Conservation",
                 img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&q=80",
-                desc: "Promoting environmental sustainability and conservation through community action."
+                desc: "Promoting environmental sustainability and conservation through community action.",
+                href: "/programs-projects?topic=environment"
               }
             ];
             return (
@@ -766,21 +765,23 @@ export default function HomePage() {
                 {/* Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
                   {(showAllPrograms ? projectsList : projectsList.slice(learnMoreIndex, learnMoreIndex + 3)).map((p, i) => (
-                    <div key={i} className="bg-white shadow-md overflow-hidden">
-                      <img
-                        src={p.img}
-                        alt={p.title}
-                        className="w-full h-56 object-cover"
-                      />
+                    <Link href={p.href} key={i} className="bg-white shadow-md overflow-hidden group block hover:shadow-xl transition-shadow duration-300">
+                      <div className="relative h-56 overflow-hidden">
+                        <img
+                          src={p.img}
+                          alt={p.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                      </div>
                       <div className="p-5 text-left">
-                        <h4 className="font-[700] text-[22px] mb-2 text-center">
+                        <h4 className="font-[700] text-[22px] mb-2 text-center group-hover:text-[var(--blue)] transition-colors">
                           {p.title}
                         </h4>
                         <p className="font-[400] text-[16px] text-gray-600">
                           {p.desc}
                         </p>
                       </div>
-                    </div>
+                    </Link>
                   ))}
                 </div>
               </>
@@ -935,10 +936,7 @@ export default function HomePage() {
           {/* Review Cards */}
           <div className="flex flex-wrap items-center justify-between">
             {/* Card 1 (highlighted) */}
-            <div 
-              onClick={() => setActiveReview(0)}
-              className={`px-6 py-5 w-[220px] text-center cursor-pointer transition-all duration-300 rounded-[10px] ${activeReview === 0 ? 'bg-white shadow-md' : ''}`}
-            >
+            <div className="px-6 py-5 w-[220px] text-center cursor-pointer transition-all duration-300 rounded-[10px] hover:bg-white hover:shadow-md">
               <div className="text-[41px] font-semibold text-gray-800">
                 4.5<span className="text-[20px] text-gray-500">/5</span>
               </div>
@@ -949,10 +947,7 @@ export default function HomePage() {
             </div>
 
             {/* Card 2 */}
-            <div 
-              onClick={() => setActiveReview(1)}
-              className={`px-6 py-5 w-[220px] text-center cursor-pointer transition-all duration-300 rounded-[10px] ${activeReview === 1 ? 'bg-white shadow-md' : ''}`}
-            >
+            <div className="px-6 py-5 w-[220px] text-center cursor-pointer transition-all duration-300 rounded-[10px] hover:bg-white hover:shadow-md">
               <div className="text-[41px] font-semibold text-gray-800">
                 4.2<span className="text-[20px] text-gray-500">/5</span>
               </div>
@@ -963,10 +958,7 @@ export default function HomePage() {
             </div>
 
             {/* Card 3 */}
-            <div 
-              onClick={() => setActiveReview(2)}
-              className={`px-6 py-5 w-[220px] text-center cursor-pointer transition-all duration-300 rounded-[10px] ${activeReview === 2 ? 'bg-white shadow-md' : ''}`}
-            >
+            <div className="px-6 py-5 w-[220px] text-center cursor-pointer transition-all duration-300 rounded-[10px] hover:bg-white hover:shadow-md">
               <div className="text-[41px] font-semibold text-gray-800">
                 4.2<span className="text-[20px] text-gray-500">/5</span>
               </div>
@@ -975,10 +967,7 @@ export default function HomePage() {
             </div>
 
             {/* Card 4 */}
-            <div 
-              onClick={() => setActiveReview(3)}
-              className={`px-6 py-5 w-[220px] text-center cursor-pointer transition-all duration-300 rounded-[10px] ${activeReview === 3 ? 'bg-white shadow-md' : ''}`}
-            >
+            <div className="px-6 py-5 w-[220px] text-center cursor-pointer transition-all duration-300 rounded-[10px] hover:bg-white hover:shadow-md">
               <div className="text-[41px] font-semibold text-gray-800">
                 4.2<span className="text-[20px] text-gray-500">/5</span>
               </div>
@@ -1129,7 +1118,8 @@ export default function HomePage() {
             {/* Left Arrow */}
             <button
               onClick={prevMedia}
-              className="absolute left-0 z-10 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full text-white hover:opacity-90 transition-opacity -translate-x-2 md:-translate-x-6"
+              type="button"
+              className="absolute left-2 md:left-0 z-50 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full text-white hover:opacity-90 transition-opacity cursor-pointer md:-translate-x-6 shadow-md hover:shadow-lg"
               style={{ background: "var(--blue)" }}
               aria-label="Previous media"
             >
@@ -1160,26 +1150,18 @@ export default function HomePage() {
                       {currentMedia.title}
                     </h3>
 
-                    <p className={`text-gray-600 text-xs md:text-sm leading-relaxed mb-6 ${isMediaExpanded ? "" : "line-clamp-6"}`}>
+                    <p className="text-gray-600 text-xs md:text-sm leading-relaxed mb-6 line-clamp-6">
                       {currentMedia.description}
-                      {isMediaExpanded && (
-                        <>
-                          <br /><br />
-                          This initiative is part of our broader commitment to sustainable community development. By providing targeted resources and professional guidance, we ensure that every project creates a lasting impact on the lives of the people we serve.
-                          <br /><br />
-                          We continue to monitor the progress of these programs and adapt our strategies to meet the evolving needs of marginalized rural communities in Nepal.
-                        </>
-                      )}
                     </p>
 
                     <div className="flex items-center gap-4">
-                      <button
-                        onClick={() => setIsMediaExpanded(!isMediaExpanded)}
+                      <Link
+                        href={currentMedia.readMoreLink.replace('/programs/', '/programs-projects?topic=')}
                         className="inline-flex items-center px-5 py-2 rounded text-white text-xs md:text-sm font-medium hover:opacity-90 transition-opacity"
                         style={{ background: "var(--blue)" }}
                       >
-                        {isMediaExpanded ? "Read Less" : "Read More"}
-                      </button>
+                        Read More
+                      </Link>
 
                       <button
                         onClick={() =>
@@ -1202,7 +1184,8 @@ export default function HomePage() {
             {/* Right Arrow */}
             <button
               onClick={nextMedia}
-              className="absolute right-0 z-10 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full text-white hover:opacity-90 transition-opacity translate-x-2 md:translate-x-6"
+              type="button"
+              className="absolute right-2 md:right-0 z-50 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full text-white hover:opacity-90 transition-opacity cursor-pointer md:translate-x-6 shadow-md hover:shadow-lg"
               style={{ background: "var(--blue)" }}
               aria-label="Next media"
             >
@@ -1495,15 +1478,14 @@ export default function HomePage() {
       </section>
       {/*FAQ section*/}
 
-      <section className="w-full bg-white py-24">
+      <section className="w-full bg-white pt-24">
         <div className="max-w-[1400px] mx-auto px-4">
           <div className="relative flex items-end pt-32">
-            {/* FAQ Image - Overlapping at the top */}
-            <div className="absolute left-4 md:left-12 bottom-0 z-10 w-[300px] md:w-[480px] h-[350px] md:h-[500px]">
+            <div className="absolute left-4 md:left-12 bottom-0 translate-y-[9px] md:translate-y-[13px] z-10 w-[300px] md:w-[480px] h-[350px] md:h-[500px]">
               <img
                 src="/faq.png"
                 alt="FAQ Volunteers"
-                className="w-full h-full object-contain object-bottom"
+                className="w-full h-full object-contain object-bottom block"
               />
             </div>
 

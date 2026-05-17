@@ -4,6 +4,9 @@ import Link from "next/link";
 import { ChevronDown, Play } from "lucide-react";
 import DonationWidget from "../components/DonationWidget";
 import CTABanner from "../components/CTABanner";
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
+import { topicContent } from "../data/programData";
 
 const mediaItems = [
   {
@@ -44,7 +47,11 @@ const mediaItems = [
   },
 ];
 
-export default function ProgramGalleryPage() {
+function ProgramGalleryContent() {
+  const searchParams = useSearchParams();
+  const topic = searchParams.get('topic') || 'default';
+  const content = topicContent[topic] || topicContent['default'];
+  
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState("Videos");
 
@@ -60,7 +67,7 @@ export default function ProgramGalleryPage() {
       <section className="pt-16 pb-4 text-center">
         <div className="max-w-4xl mx-auto px-6">
           <h1 className="text-3xl md:text-5xl font-extrabold text-[#1a1a1a] leading-tight mb-8">
-            Women&apos;s Trafficking Prevention<br />Gallery
+            {content.title}<br />Gallery
           </h1>
           
           {/* Filter Dropdown */}
@@ -79,7 +86,7 @@ export default function ProgramGalleryPage() {
                   {options.map((option) => (
                     <Link
                       key={option}
-                      href={option === "Images" ? "/program-image" : (option === "Videos" ? "/program-gallery" : "#")}
+                      href={option === "Images" ? `/program-image?topic=${topic}` : (option === "Videos" ? `/program-gallery?topic=${topic}` : "#")}
                       onClick={() => {
                         setSelected(option);
                         setIsOpen(false);
@@ -179,6 +186,14 @@ export default function ProgramGalleryPage() {
       <DonationWidget />
       <CTABanner />
     </main>
+  );
+}
+
+export default function ProgramGalleryPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+      <ProgramGalleryContent />
+    </Suspense>
   );
 }
 

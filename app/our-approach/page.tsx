@@ -7,7 +7,7 @@ export default function OurApproachPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative h-[670px] flex items-end overflow-hidden">
+      <section className="relative flex items-end overflow-hidden h-[100vh] min-h-[600px] max-h-[800px]">
         <img
           src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1600&q=80"
           alt="Our Approach"

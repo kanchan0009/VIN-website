@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const projects = [
   {
@@ -39,6 +40,17 @@ const projects = [
 ];
 export default function CTABanner() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+
+  const handleDonateClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const widget = document.getElementById("donation-widget");
+    if (widget) {
+      widget.scrollIntoView({ behavior: "smooth" });
+    } else {
+      router.push("/#donation-widget");
+    }
+  };
 
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
@@ -102,12 +114,12 @@ export default function CTABanner() {
                 Get Involved With Us
               </Link>
 
-              <Link
-                href="/#donation-widget"
+              <button
+                onClick={handleDonateClick}
                 className="px-5 py-2 text-sm font-medium text-white border border-white rounded-md hover:bg-white/10 transition"
               >
                 Donate Now
-              </Link>
+              </button>
             </div>
           </div>
 
@@ -179,22 +191,24 @@ export default function CTABanner() {
                 className="scrollbar-hide flex overflow-x-auto pb-4 snap-x snap-mandatory"
               >
                 {projects.map((p, i) => (
-                  <div key={i} className="flex-none w-full sm:w-1/2 lg:w-1/3 px-3 overflow-hidden bg-white snap-start">
-                    <div className="relative h-60 w-full">
-                      <Image
-                        src={p.img}
-                        alt={p.title}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
+                  <div key={i} className="flex-none w-full sm:w-1/2 lg:w-1/3 px-3 snap-start">
+                    <div className="bg-white border border-gray-200 shadow-md hover:shadow-xl rounded-xl overflow-hidden transition-all duration-300 h-full flex flex-col">
+                      <div className="relative h-60 w-full flex-shrink-0">
+                        <Image
+                          src={p.img}
+                          alt={p.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
 
-                    <div className="p-6 text-left">
-                      <h3 className="font-[700] text-xl mb-3 text-gray-900">{p.title}</h3>
+                      <div className="p-6 text-left flex-1 flex flex-col">
+                        <h3 className="font-[700] text-xl mb-3 text-gray-900">{p.title}</h3>
 
-                      <p className="text-base text-gray-600 leading-relaxed">
-                        {p.desc}
-                      </p>
+                        <p className="text-base text-gray-600 leading-relaxed">
+                          {p.desc}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 ))}

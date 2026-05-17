@@ -54,7 +54,7 @@ export default function AllProgramsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative w-full h-[600px] flex items-end overflow-hidden !px-0">
+      <section className="relative w-full flex items-end overflow-hidden !px-0 h-[100vh] min-h-[600px] max-h-[800px]">
         <img
           src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=1600"
           alt="All Programs Hero"

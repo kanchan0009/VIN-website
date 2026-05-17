@@ -108,7 +108,7 @@ export default function ArticlesPage() {
   return (
     <main className="bg-[#fcfcfc] min-h-screen font-inter">
       {/* Hero Header */}
-      <section className="relative h-[670px] flex items-end overflow-hidden">
+      <section className="relative flex items-end overflow-hidden h-[100vh] min-h-[600px] max-h-[800px]">
         <img
           src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1600&q=80"
           alt="Articles Hero"

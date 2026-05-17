@@ -1,5 +1,6 @@
 'use client';
-import { useState, use } from 'react';
+import { useState, useEffect, use } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, CheckCircle, Play, ChevronLeft, ChevronRight, Star, ArrowRight } from 'lucide-react';
 import CTABanner from '../../../components/CTABanner';
@@ -21,11 +22,71 @@ const testimonials = [
   }
 ];
 
+const projects = [
+  {
+    id: 1,
+    title: "Women’s Development in Nepal: The Myth of Empowerment",
+    slug: "myth-of-empowerment",
+    image: "https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=800&q=80",
+    desc: "Loreum ipsum dipsum lorem ipsum dipsum Loreum ipsum dipsum lorem .."
+  },
+  {
+    id: 2,
+    title: "Income Generation through Micro-credit",
+    slug: "micro-credit-income",
+    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80",
+    desc: "Loreum ipsum dipsum lorem ipsum dipsum Loreum ipsum dipsum lorem .."
+  },
+  {
+    id: 3,
+    title: "Education & Life Skills for Rural Women",
+    slug: "education-life-skills",
+    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80",
+    desc: "Loreum ipsum dipsum lorem ipsum dipsum Loreum ipsum dipsum lorem .."
+  }
+];
+
 export default function WomensEmpowermentDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
+  const router = useRouter();
   const title = slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
   const [activeIndex, setActiveIndex] = useState(0);
   const current = testimonials[activeIndex];
+  const [projectIndex, setProjectIndex] = useState(0);
+  const [visibleProjectCount, setVisibleProjectCount] = useState(1);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setVisibleProjectCount(3);
+      } else if (window.innerWidth >= 640) {
+        setVisibleProjectCount(2);
+      } else {
+        setVisibleProjectCount(1);
+      }
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const nextProject = () => {
+    setProjectIndex((prev) => (prev + 1) % projects.length);
+  };
+
+  const prevProject = () => {
+    setProjectIndex((prev) => (prev - 1 + projects.length) % projects.length);
+  };
+
+  const handleDonateClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const widget = document.getElementById("donation-widget");
+    if (widget) {
+      widget.scrollIntoView({ behavior: "smooth" });
+    } else {
+      router.push("/#donation-widget");
+    }
+  };
 
   const nextTestimonial = () => {
     setActiveIndex((prev) => (prev + 1) % testimonials.length);
@@ -38,7 +99,7 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
   return (
     <main>
       {/* Hero Image Section */}
-      <section className="w-full h-[545px] m-0 !px-0 overflow-hidden">
+      <section className="w-full m-0 !px-0 overflow-hidden h-[100vh] min-h-[600px] max-h-[800px]">
         <img 
           src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1600&q=80" 
           alt="Women's Empowerment" 
@@ -56,12 +117,12 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
             <p className="text-gray-600 text-sm lg:text-base leading-relaxed mb-6 max-w-3xl mx-auto">
               Empowering women in rural and marginalized communities of Nepal through inclusive education, rights awareness, and practical life skills — building a foundation for lasting change. Support This ProjectView Repo
             </p>
-            <Link 
-              href="/donate" 
+            <button 
+              onClick={handleDonateClick}
               className="inline-block bg-[#1e238f] text-white px-10 py-4 rounded-md font-[600] text-sm hover:bg-[#15196d] transition-all shadow-lg active:scale-95"
             >
               Support This Project
-            </Link>
+            </button>
           </div>
         </div>
       </section>
@@ -146,7 +207,7 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
             {/* CTA Button */}
             <div className="text-center mt-4">
               <Link 
-                href="/gallery" 
+                href="/program-gallery?topic=default" 
                 className="inline-block bg-[#1e238f] text-white px-10 py-3 rounded-md font-[600] text-sm hover:bg-[#15196d] transition-all shadow-lg active:scale-95"
               >
                 Explore Gallery
@@ -298,42 +359,53 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
 
           <div className="relative group">
             {/* Navigation Arrows */}
-            <button className="absolute -left-4 lg:-left-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10">
+            <button 
+              onClick={prevProject}
+              className="absolute -left-4 lg:-left-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10"
+            >
               <ChevronLeft size={20} className="text-gray-600" />
             </button>
-            <button className="absolute -right-4 lg:-right-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10">
+            <button 
+              onClick={nextProject}
+              className="absolute -right-4 lg:-right-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10"
+            >
               <ChevronRight size={20} className="text-gray-600" />
             </button>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[1, 2, 3].map((item) => (
-                <div key={item} className="rounded-[10px] overflow-hidden shadow-xl flex flex-col group/card">
-                  {/* Top Image */}
-                  <div className="relative h-[220px] overflow-hidden">
-                    <img 
-                      src="https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=800&q=80" 
-                      alt="Project" 
-                      className="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute top-4 right-4 bg-[var(--blue)] text-white text-[10px] uppercase font-bold px-4 py-1.5 rounded-sm">
-                      Women Empowerment
+            <div className="overflow-hidden">
+              <div 
+                className="flex transition-transform duration-500 ease-in-out gap-8"
+                style={{ transform: `translateX(-${projectIndex * (100 / visibleProjectCount)}%)` }}
+              >
+                {projects.map((project) => (
+                  <div key={project.id} className="min-w-full sm:min-w-[calc(50%-16px)] lg:min-w-[calc(33.333%-22px)] rounded-[10px] overflow-hidden shadow-xl flex flex-col group/card">
+                    {/* Top Image */}
+                    <div className="relative h-[220px] overflow-hidden">
+                      <img 
+                        src={project.image} 
+                        alt={project.title} 
+                        className="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute top-4 right-0 bg-[var(--blue)] text-white text-[10px] uppercase font-bold px-4 py-1.5 rounded-sm">
+                        Women Empowerment
+                      </div>
+                    </div>
+                    {/* Bottom Content */}
+                    <div className="bg-[#1e238f] p-6 flex-1 flex flex-col">
+                      <h4 className="text-white text-lg lg:text-xl font-[700] mb-3 leading-tight">
+                        {project.title}
+                      </h4>
+                      <p className="text-white/80 text-[13px] lg:text-[14px] leading-relaxed mb-4 line-clamp-2">
+                        {project.desc}
+                      </p>
+                      <Link href={`/programs/womens-empowerment/${project.slug}`} className="mt-auto text-white text-sm font-bold flex items-center gap-2 hover:translate-x-2 transition-transform">
+                        Read More 
+                        <ArrowRight size={16} />
+                      </Link>
                     </div>
                   </div>
-                  {/* Bottom Content */}
-                  <div className="bg-[#1e238f] p-6 flex-1 flex flex-col">
-                    <h4 className="text-white text-lg lg:text-xl font-[700] mb-3 leading-tight">
-                      Women’s Development in Nepal: The Myth of Empowerment
-                    </h4>
-                    <p className="text-white/80 text-[13px] lg:text-[14px] leading-relaxed mb-4 line-clamp-2">
-                      Loreum ipsum dipsum lorem ipsum dipsum Loreum ipsum dipsum lorem ..
-                    </p>
-                    <Link href="#" className="mt-auto text-white text-sm font-bold flex items-center gap-2 hover:translate-x-2 transition-transform">
-                      Read More 
-                      <ArrowRight size={16} />
-                    </Link>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -441,9 +513,6 @@ export default function WomensEmpowermentDetailPage({ params }: { params: Promis
                 <span className="text-gray-500 text-sm">420 reviews</span>
               </div>
             </div>
-            <button className="bg-[#1e40af] text-white px-8 py-3 rounded-md font-[600] text-sm hover:bg-[#1e3a8a] transition-all shadow-md active:scale-95">
-              Write A Review
-            </button>
           </div>
 
           {/* Review Cards Carousel */}

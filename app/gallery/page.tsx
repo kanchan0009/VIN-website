@@ -58,11 +58,10 @@ export default function GalleryPage() {
                   <h4 className="text-white text-lg font-[600] mb-4 leading-tight">
                     {album.title}
                   </h4>
-                  <Link 
-                    href="/program-gallery" 
-                    className="bg-[var(--blue)] text-white px-6 py-2.5 rounded-md font-[600] text-xs hover:bg-[#15196d] transition-all active:scale-95 shadow-lg inline-block"
-                  >
-                    Explore Album
+                  <Link href="/program-gallery?topic=default">
+                    <button className="bg-[var(--blue)] text-white px-10 py-4 rounded-xl font-bold text-sm hover:bg-white hover:text-[var(--blue)] transition-all shadow-lg active:scale-95">
+                      Explore Album
+                    </button>
                   </Link>
                 </div>
               </div>

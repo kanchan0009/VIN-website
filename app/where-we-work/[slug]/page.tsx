@@ -204,7 +204,7 @@ export default function LocationDetail() {
   return (
     <main className="w-full min-h-screen font-montserrat">
       {/* Hero Section */}
-      <section className="relative h-[670px] flex items-end overflow-hidden">
+      <section className="relative flex items-end overflow-hidden h-[100vh] min-h-[600px] max-h-[800px]">
         <img
           src={location.heroImage}
           alt={location.name}
@@ -505,7 +505,7 @@ export default function LocationDetail() {
                       <h4 className="text-white text-[16px] lg:text-[24px] font-bold mb-8 leading-tight ">
                         {album.title}
                       </h4>
-                      <Link href="/program-gallery">
+                      <Link href="/program-gallery?topic=default">
                         <button className="bg-[var(--blue)] text-white px-10 py-4 rounded-xl font-bold text-sm hover:bg-white hover:text-[var(--blue)] transition-all shadow-lg active:scale-95">
                           Explore Album
                         </button>

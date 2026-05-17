@@ -109,8 +109,8 @@ export default function ProgramsDetailsPage() {
       </section>
 
       {/* Hero Image Section */}
-      <section className="w-full mb-8 !px-0">
-        <div className="w-full h-[400px] md:h-[500px] overflow-hidden">
+      <section className="w-full mb-8 !px-0 h-[100vh] min-h-[600px] max-h-[800px]">
+        <div className="w-full md: overflow-hidden h-full">
           <img
             src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1600"
             alt="Women Empowerment"

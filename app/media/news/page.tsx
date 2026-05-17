@@ -95,7 +95,7 @@ export default function NewsUpdatePage() {
   return (
     <main className="text-[#1a1a2e]">
       {/* Hero */}
-      <section className="relative h-[500px] flex items-end overflow-hidden full-width-bg">
+      <section className="relative flex items-end overflow-hidden full-width-bg h-[100vh] min-h-[600px] max-h-[800px]">
         <img
           src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1600&q=80"
           alt="News Update"

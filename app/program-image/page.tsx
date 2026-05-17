@@ -4,6 +4,9 @@ import { useState } from "react";
 import Link from "next/link";
 import { ChevronDown, ArrowLeft, Maximize2, X } from "lucide-react";
 import CTABanner from "../components/CTABanner";
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
+import { topicContent } from "../data/programData";
 
 const photos = [
   // Row 1
@@ -27,7 +30,11 @@ const photos = [
   { id: 14, url: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=800", span: "col-span-2" },
 ];
 
-export default function ProgramImagePage() {
+function ProgramImageContent() {
+  const searchParams = useSearchParams();
+  const topic = searchParams.get('topic') || 'default';
+  const content = topicContent[topic] || topicContent['default'];
+
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState("Images"); // Updated to "Images" as per design
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
@@ -60,7 +67,7 @@ export default function ProgramImagePage() {
       <section className="pt-16 pb-12 text-center">
         <div className="max-w-4xl mx-auto px-6">
           <h1 className="text-3xl md:text-[44px] font-[900] text-[#1a1a1a] leading-tight mb-8">
-            Women&apos;s Trafficking Prevention<br />Gallery
+            {content.title}<br />Gallery
           </h1>
           
           {/* Filter Dropdown */}
@@ -79,7 +86,7 @@ export default function ProgramImagePage() {
                   {options.map((option) => (
                     <Link
                       key={option}
-                      href={option === "Images" ? "/program-image" : (option === "Videos" ? "/program-gallery" : "#")}
+                      href={option === "Images" ? `/program-image?topic=${topic}` : (option === "Videos" ? `/program-gallery?topic=${topic}` : "#")}
                       onClick={() => setIsOpen(false)}
                       className={`block w-full text-center px-4 py-2.5 text-sm hover:bg-gray-50 transition-colors ${
                         selected === option ? "text-[var(--blue)] font-semibold bg-gray-50" : "text-gray-600"
@@ -122,5 +129,13 @@ export default function ProgramImagePage() {
 
       <CTABanner />
     </main>
+  );
+}
+
+export default function ProgramImagePage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+      <ProgramImageContent />
+    </Suspense>
   );
 }

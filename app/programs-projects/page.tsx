@@ -1,9 +1,10 @@
 'use client';
 import { useState, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, CheckCircle, Play, ChevronLeft, ChevronRight, Star, ArrowRight } from 'lucide-react';
 import CTABanner from '../components/CTABanner';
+import { topicContent } from '../data/programData';
 
 const testimonials = [
   {
@@ -22,107 +23,29 @@ const testimonials = [
   }
 ];
 
-const topicContent: any = {
-  'child-dev-internship': {
-    title: "Child Development Internship",
-    heroImage: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1600",
-    infoTitle: "Nurturing the Next Generation",
-    infoDesc: "Gain professional experience while shaping the futures of children in underserved communities. Our internship program provides a holistic approach to early childhood education and care.",
-    realityTitle: "The Reality Children Face in Nepal",
-    realityDesc: "In rural Nepal, access to quality early childhood education is a luxury that many families cannot afford, leading to long-term developmental gaps.",
-    realityStats: [
-      { stat: "30%", text: "of children in low-income areas miss out on essential early education programs, hindering their cognitive development." },
-      { stat: "1 in 3", text: "Children do not have access to proper nutrition and health screenings during their critical first 1,000 days of life." },
-      { stat: "40%", text: "of primary schools lack the resources needed to provide a stimulating environment for early learners." },
-      { stat: "2030", text: "is the target year for VIN to ensure every child in our working areas has access to quality pre-primary education." }
-    ],
-    realitySummary: "Without structured support, children in marginalized communities struggle to catch up with their urban peers. VIN's internship program bridges this gap by bringing passionate individuals to help implement child-centered learning and care.",
-    resilientTitle: "Building Bright Futures",
-    resilientCardTitle: "Quality care for every child in Nepal",
-    resilientSkills: ["Early Learning", "Nutrition", "Creative Play", "Child Rights"],
-    resilientDesc: "Our interns work alongside local teachers to implement innovative teaching methods and ensure that every child receives the individual attention they deserve for holistic growth.",
-    deliveryTitle: "How We Deliver Change",
-    deliveryDesc: "Our strategy focuses on four key pillars that ensure sustainable child development in rural communities.",
-    deliverySteps: [
-      { num: "01", title: "Early Childhood Education", desc: "Setting up and supporting Early Childhood Development (ECD) centers with age-appropriate learning materials." },
-      { num: "02", title: "Health & Nutrition Screenings", desc: "Regular check-ups to monitor physical growth and identify any developmental delays early on." },
-      { num: "03", title: "Parental Engagement Workshops", desc: "Educating parents on the importance of early stimulation and proper nutrition at home." },
-      { num: "04", title: "Teacher Training Programs", desc: "Equipping local educators with modern, non-violent teaching techniques and classroom management skills." }
-    ],
-    impactTitle: "Our Impact on Children",
-    impactStat: "12,450+",
-    impactLabel: "Children reached through our ECD and childcare programs"
-  },
-  'kids-disabilities': {
-    title: "Kids with Disabilities",
-    heroImage: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1600",
-    infoTitle: "Inclusive Care for Every Child",
-    infoDesc: "Support children with physical or learning disabilities through inclusive education, therapy assistance, and compassionate daily care in specialized centers.",
-    realityTitle: "The Barriers to Inclusion",
-    realityDesc: "Children with disabilities in Nepal often face social stigma and a lack of specialized infrastructure, preventing them from accessing education.",
-    realityStats: [
-      { stat: "70%", text: "of children with disabilities are out of school in remote areas due to lack of accessibility and trained staff." },
-      { stat: "1 in 50", text: "Families have access to professional physical therapy for their disabled children in rural districts." },
-      { stat: "90%", text: "of parents report feeling overwhelmed and unsupported in managing their child's specialized needs." },
-      { stat: "Zero", text: "Tolerance for discrimination is our policy as we work to build an inclusive society for all children." }
-    ],
-    realitySummary: "Marginalization often starts at home for children with disabilities. VIN works to change community perceptions while providing practical therapeutic support and inclusive learning opportunities.",
-    resilientTitle: "Fostering Independence",
-    resilientCardTitle: "Empowering children of all abilities",
-    resilientSkills: ["Physiotherapy", "Speech Therapy", "Sign Language", "Adaptive Learning"],
-    resilientDesc: "We provide specialized tools and training to help children with disabilities gain independence and feel valued members of their communities.",
-    deliveryTitle: "Our Path to Inclusion",
-    deliveryDesc: "We implement a multi-faceted approach to ensure that children with disabilities receive comprehensive support.",
-    deliverySteps: [
-      { num: "01", title: "Therapy & Rehabilitation", desc: "Providing regular physiotherapy and speech therapy sessions led by trained professionals and volunteers." },
-      { num: "02", title: "Inclusive Schooling Support", desc: "Modifying local school environments and training teachers to accommodate children with diverse needs." },
-      { num: "03", title: "Assistive Device Distribution", desc: "Supplying wheelchairs, hearing aids, and other essential equipment to families in need." },
-      { num: "04", title: "Community Awareness Campaigns", desc: "Running workshops to eliminate stigma and promote the rights of people with disabilities." }
-    ],
-    impactTitle: "Inclusion Milestones",
-    impactStat: "850+",
-    impactLabel: "Children with disabilities provided with specialized care and education"
-  },
-  // Default to Women Empowerment if topic is not found or is 'women-empowerment'
-  'default': {
-    title: "Women's Education & Life Skills",
-    heroImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1600&q=80",
-    infoTitle: "Empowering Women for Change",
-    infoDesc: "Empowering women in rural and marginalized communities of Nepal through inclusive education, rights awareness, and practical life skills.",
-    realityTitle: "The Reality Nepalese Women Face",
-    realityDesc: "Despite progress, deep inequalities persist — rooted in socio-cultural norms, poverty, and systemic exclusion from education.",
-    realityStats: [
-      { stat: "1 in 4", text: "Women are enrolled in higher education in Nepal — leaving many without access to advanced learning." },
-      { stat: "9 in 10", text: "Dalit women remain uneducated, facing compounded barriers of caste, gender, and poverty." },
-      { stat: "8 in 10", text: "Women experience domestic violence in Nepal, trapping them in cycles of dependence." },
-      { stat: "3 in 10", text: "Parliamentary seats are reserved for women — a mandate that remains unfulfilled without grassroots empowerment." }
-    ],
-    realitySummary: "Rural girl children are groomed for household labour from a young age. VIN works directly within these communities to reverse these patterns through access, skills, and awareness.",
-    resilientTitle: "Building Self-Reliant Women",
-    resilientCardTitle: "Equal footing in all socio-cultural life",
-    resilientSkills: ["Rights Awareness", "Literacy", "Life Skills", "Livelihoods"],
-    resilientDesc: "The Women Education and Life Skills project empowers women to become self-reliant by providing access to relevant education and skills development.",
-    deliveryTitle: "How We Deliver Change",
-    deliveryDesc: "Five interconnected intervention streams designed to remove specific barriers women face in rural Nepal.",
-    deliverySteps: [
-      { num: "01", title: "Basic Education & Life Skills", desc: "Targeted training programs for women across different age groups, ensuring no woman is left behind." },
-      { num: "02", title: "Literacy for Marginalized Women", desc: "Foundational programs specifically designed for Dalit and marginalized women." },
-      { num: "03", title: "Rights Awareness Programs", desc: "Community workshops that inform women of their legal rights and how to advocate for themselves." },
-      { num: "04", title: "Confidence & Decision-Making", desc: "Practical training in communication, stress management, and creative thinking." }
-    ],
-    impactTitle: "Our Impact So Far",
-    impactStat: "10,055",
-    impactLabel: "Women trained through facilitated workshops & programs"
-  }
-};
+// topicContent moved to app/data/programData.ts
 
 function ProgramProjectsContent() {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const topic = searchParams.get('topic') || 'default';
   const content = topicContent[topic] || topicContent['default'];
   
   const [activeIndex, setActiveIndex] = useState(0);
   const current = testimonials[activeIndex];
+
+  const handleDonateClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const widget = document.getElementById("donation-widget");
+    if (widget) {
+      widget.scrollIntoView({ behavior: "smooth" });
+    } else {
+      router.push("/#donation-widget");
+    }
+  };
+
+  const [projectIndex, setProjectIndex] = useState(0);
+  const projects = content.focusedProjects || [];
 
   const nextTestimonial = () => {
     setActiveIndex((prev) => (prev + 1) % testimonials.length);
@@ -132,10 +55,20 @@ function ProgramProjectsContent() {
     setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
+  const nextProject = () => {
+    if (projects.length <= 3) return;
+    setProjectIndex((prev) => (prev + 1) % (projects.length - 2));
+  };
+
+  const prevProject = () => {
+    if (projects.length <= 3) return;
+    setProjectIndex((prev) => (prev - 1 + (projects.length - 2)) % (projects.length - 2));
+  };
+
   return (
     <main>
       {/* Hero Image Section */}
-      <section className="w-full h-[545px] m-0 !px-0 overflow-hidden">
+      <section className="w-full m-0 !px-0 overflow-hidden h-[100vh] min-h-[600px] max-h-[800px]">
         <img 
           src={content.heroImage} 
           alt={content.title} 
@@ -153,12 +86,12 @@ function ProgramProjectsContent() {
             <p className="text-gray-600 text-sm lg:text-base leading-relaxed mb-6 max-w-3xl mx-auto">
               {content.infoDesc}
             </p>
-            <Link 
-              href="/donate" 
+            <button 
+              onClick={handleDonateClick}
               className="inline-block bg-[#1e238f] text-white px-10 py-4 rounded-md font-[600] text-sm hover:bg-[#15196d] transition-all shadow-lg active:scale-95"
             >
               Support This Project
-            </Link>
+            </button>
           </div>
         </div>
       </section>
@@ -239,7 +172,7 @@ function ProgramProjectsContent() {
             {/* CTA Button */}
             <div className="text-center mt-4">
               <Link 
-                href="/gallery" 
+                href={`/program-gallery?topic=${topic}`} 
                 className="inline-block bg-[#1e238f] text-white px-10 py-3 rounded-md font-[600] text-sm hover:bg-[#15196d] transition-all shadow-lg active:scale-95"
               >
                 Explore Gallery
@@ -381,40 +314,55 @@ function ProgramProjectsContent() {
 
           <div className="relative group">
             {/* Navigation Arrows */}
-            <button className="absolute -left-4 lg:-left-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10">
-              <ChevronLeft size={20} className="text-gray-600" />
-            </button>
-            <button className="absolute -right-4 lg:-right-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10">
-              <ChevronRight size={20} className="text-gray-600" />
-            </button>
+            {projects.length > 3 && (
+              <>
+                <button 
+                  onClick={prevProject}
+                  className="absolute -left-4 lg:-left-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10"
+                >
+                  <ChevronLeft size={20} className="text-gray-600" />
+                </button>
+                <button 
+                  onClick={nextProject}
+                  className="absolute -right-4 lg:-right-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10"
+                >
+                  <ChevronRight size={20} className="text-gray-600" />
+                </button>
+              </>
+            )}
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[1, 2, 3].map((item) => (
-                <div key={item} className="rounded-[10px] overflow-hidden shadow-xl flex flex-col group/card">
-                  <div className="relative h-[220px] overflow-hidden">
-                    <img 
-                      src={content.heroImage} 
-                      alt="Project" 
-                      className="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute top-4 right-0 bg-[var(--blue)] text-white text-[10px] uppercase font-bold px-4 py-1.5 rounded-sm">
-                      {content.title}
+            <div className="overflow-hidden">
+              <div 
+                className="flex transition-transform duration-500 ease-in-out gap-8"
+                style={{ transform: `translateX(-${projectIndex * (100 / 3)}%)` }}
+              >
+                {projects.map((project: any, i: number) => (
+                  <div key={i} className="min-w-[calc(33.333%-22px)] rounded-[10px] overflow-hidden shadow-xl flex flex-col group/card">
+                    <div className="relative h-[220px] overflow-hidden">
+                      <img 
+                        src={project.image} 
+                        alt={project.title} 
+                        className="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute top-4 right-0 bg-[var(--blue)] text-white text-[10px] uppercase font-bold px-4 py-1.5 rounded-sm">
+                        {content.title}
+                      </div>
+                    </div>
+                    <div className="bg-[#1e238f] p-6 flex-1 flex flex-col">
+                      <h4 className="text-white text-lg lg:text-xl font-[700] mb-3 leading-tight">
+                        {project.title}
+                      </h4>
+                      <p className="text-white/80 text-[13px] lg:text-[14px] leading-relaxed mb-4 line-clamp-2">
+                        {project.desc}
+                      </p>
+                      <Link href="#" className="mt-auto text-white text-sm font-bold flex items-center gap-2 hover:translate-x-2 transition-transform">
+                        Read More 
+                        <ArrowRight size={16} />
+                      </Link>
                     </div>
                   </div>
-                  <div className="bg-[#1e238f] p-6 flex-1 flex flex-col">
-                    <h4 className="text-white text-lg lg:text-xl font-[700] mb-3 leading-tight">
-                      Supporting Community Development in Nepal
-                    </h4>
-                    <p className="text-white/80 text-[13px] lg:text-[14px] leading-relaxed mb-4 line-clamp-2">
-                      Making a measurable difference through education, healthcare, and sustainable infrastructure projects.
-                    </p>
-                    <Link href="#" className="mt-auto text-white text-sm font-bold flex items-center gap-2 hover:translate-x-2 transition-transform">
-                      Read More 
-                      <ArrowRight size={16} />
-                    </Link>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -510,9 +458,6 @@ function ProgramProjectsContent() {
                 <span className="text-gray-500 text-sm">420 reviews</span>
               </div>
             </div>
-            <button className="bg-[#1e40af] text-white px-8 py-3 rounded-md font-[600] text-sm hover:bg-[#1e3a8a] transition-all shadow-md active:scale-95">
-              Write A Review
-            </button>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[

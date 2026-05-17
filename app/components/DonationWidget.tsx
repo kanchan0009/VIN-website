@@ -86,7 +86,7 @@ export default function DonationSection() {
                       key={amt}
                       onClick={() => {
                         setSelectedAmount(amt);
-                        setCustomAmount("");
+                        setCustomAmount(amt.toString());
                       }}
                       className={`py-2.5 rounded-[6px] text-[14px] font-[700] transition-all duration-200 border ${
                         selectedAmount === amt
@@ -109,15 +109,18 @@ export default function DonationSection() {
                     >
                       <option value="USD">USD ∨</option>
                       <option value="EUR">EUR ∨</option>
-                      <option value="GBP">GBP ∨</option>
+                      <option value="GBP">NPR ∨</option>
                     </select>
                   </div>
                   <input
                     type="number"
+                    min="0"
                     placeholder="Custom amount"
                     value={customAmount}
                     onChange={(e) => {
-                      setCustomAmount(e.target.value);
+                      const val = e.target.value;
+                      if (Number(val) < 0) return;
+                      setCustomAmount(val);
                       setSelectedAmount(null);
                     }}
                     className="w-2/3 p-3 bg-[#E9EEF2] border-transparent rounded-[6px] text-[13px] font-[500] text-gray-600 outline-none focus:bg-white focus:border-[#3B82F6] transition-all"

@@ -25,7 +25,7 @@ export default function ContactPage() {
   return (
     <main className="font-montserrat">
       {/* Hero */}
-      <section className="relative h-[670px] flex items-end overflow-hidden">
+      <section className="relative flex items-end overflow-hidden h-[100vh] min-h-[600px] max-h-[800px]">
         <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1600&q=80" alt="Contact Us" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)' }} />
         <div className="relative z-10  mx-auto px-4 pb-10 w-full">

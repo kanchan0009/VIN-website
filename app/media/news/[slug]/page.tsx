@@ -1,30 +1,34 @@
 import Link from "next/link";
 import { Send } from "lucide-react";
-import CTABanner from "../components/CTABanner";
-import DonationWidget from "../components/DonationWidget";
+import CTABanner from "../../../components/CTABanner";
+import DonationWidget from "../../../components/DonationWidget";
 
 const recentPosts = [
   {
-    title: "Women's Development in Nepal: The Myth of Empowerment",
-    date: "Feb 2, 2026",
-    img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=200&q=80",
-    slug: "womens-development-nepal",
+    title: "International Volunteers Contribute 10,000+ Hours in 2024",
+    date: "December 28, 2024",
+    img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&q=80",
+    slug: "2",
   },
   {
-    title: "Women's Development in Nepal: The Myth of Empowerment",
-    date: "Feb 2, 2026",
-    img: "https://images.unsplash.com/photo-1607748862156-7c548e7e98f4?w=200&q=80",
-    slug: "womens-development-nepal-2",
+    title: "VIN Receives Grant for Disaster Resilience Project",
+    date: "December 15, 2024",
+    img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=200&q=80",
+    slug: "3",
   },
   {
-    title: "Women's Development in Nepal: The Myth of Empowerment",
-    date: "Feb 2, 2026",
-    img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=200&q=80",
-    slug: "womens-development-nepal-3",
+    title: "New School Infrastructure Completed in Kavre",
+    date: "November 30, 2024",
+    img: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=200&q=80",
+    slug: "4",
   },
 ];
 
-export default function ArticlePage() {
+export default function NewsDetailPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   return (
     <main className="font-montserrat">
       <section className=" mx-auto py-10">
@@ -35,13 +39,13 @@ export default function ArticlePage() {
             <div className="rounded-2xl overflow-hidden mb-12">
               <img
                 src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&q=80"
-                alt="Blog"
+                alt="News Update"
                 className="w-full h-auto object-cover aspect-[16/10]"
               />
             </div>
 
             <h1 className="text-3xl lg:text-4xl font-bold leading-tight text-[#1a1a1a] mb-8">
-              Women&apos;s Development in Nepal: The Myth of Empowerment
+              VIN Launches New Women's Entrepreneurship Program in Okhaldhunga
             </h1>
 
             <div className="text-gray-700 leading-relaxed space-y-6 text-[15px]">
@@ -50,14 +54,14 @@ export default function ArticlePage() {
               </p>
 
               <h2 className="text-xl font-bold text-[#1a1a1a] pt-4">
-                Why do we use it?
+                Program Overview
               </h2>
               <p>
                 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &apos;Content here, content here&apos;, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for &apos;lorem ipsum&apos; will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
               </p>
 
               <h2 className="text-xl font-bold text-[#1a1a1a] pt-4">
-                Where does it come from?
+                Future Goals
               </h2>
               <p>
                 Contrary to popular belief, Lorem ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem ipsum, &quot;Lorem ipsum dolor sit amet..&quot;, comes from a line in section 1.10.32.
@@ -74,12 +78,12 @@ export default function ArticlePage() {
             {/* Recent Posts */}
             <div>
               <h3 className="font-bold text-2xl mb-8 text-[#1a1a1a]">
-                Recent Blogs
+                Recent News
               </h3>
               <div className="space-y-6">
                 {recentPosts.map((post, idx) => (
                   <Link
-                    href={`/blogs/${post.slug}`}
+                    href={`/media/news/${post.slug}`}
                     key={idx}
                     className="flex gap-4 group items-start"
                   >
@@ -131,8 +135,8 @@ export default function ArticlePage() {
                   className="w-fit h-[40px] flex items-center justify-center gap-2 px-6 py-3  text-sm  text-white transition-opacity hover:opacity-90"
                   style={{ background: "var(--blue)" }}
                 >
-                  <Send size={14} className="rotate-[-20deg]" />
                   <span>Send Message</span>
+                  <Send size={14} className="rotate-[-20deg]" />
                 </button>
               </div>
             </div>

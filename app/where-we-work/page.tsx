@@ -48,7 +48,7 @@ export default function WhereWeWork() {
   return (
     <main className="w-full min-h-screen bg-white font-montserrat">
       {/* Hero Section */}
-      <section className="relative h-[670px] flex items-end overflow-hidden">
+      <section className="relative flex items-end overflow-hidden h-[100vh] min-h-[600px] max-h-[800px]">
         <img 
           src="https://images.unsplash.com/photo-1611591901457-b763bc0629c8?w=1600&q=80" 
           alt="Our Working Sites" 

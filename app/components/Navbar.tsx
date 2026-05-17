@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, Phone, Globe, Menu, X } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const programs = [
   { label: "Women's Empowerment", href: "/programs/womens-empowerment" },
@@ -38,6 +39,18 @@ export default function Navbar() {
   const [mobileProgramsOpen, setMobileProgramsOpen] = useState(false);
   const [mobileMediaOpen, setMobileMediaOpen] = useState(false);
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
+  const router = useRouter();
+
+  const handleDonateClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const widget = document.getElementById("donation-widget");
+    if (widget) {
+      widget.scrollIntoView({ behavior: "smooth" });
+    } else {
+      router.push("/#donation-widget");
+    }
+    setMobileOpen(false);
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full shadow-sm font-montserrat bg-white">
@@ -164,12 +177,12 @@ export default function Navbar() {
 
           {/* Action Buttons */}
           <div className="flex items-center gap-3 lg:gap-4">
-            <Link
-              href="/#donation-widget"
+            <button
+              onClick={handleDonateClick}
               className="bg-[#2A6F7C] text-white px-5 lg:px-9 py-2.5 lg:py-3.5 rounded-[4px] font-[700] text-[13px] lg:text-[15px] hover:bg-[#1e525c] transition-all shadow-md active:scale-95 whitespace-nowrap"
             >
               Donate
-            </Link>
+            </button>
             <Link
               href="/volunteer"
               className="hidden sm:flex border-2 border-[var(--blue)] text-[var(--blue)] px-5 lg:px-9 py-2 lg:py-3 rounded-[4px] font-[700] text-[13px] lg:text-[15px] hover:bg-[var(--blue)] hover:text-white transition-all active:scale-95 whitespace-nowrap"
@@ -273,13 +286,12 @@ export default function Navbar() {
             <Link href="/blogs" onClick={() => setMobileOpen(false)} className="text-lg font-[700] text-[#1D1E20] py-4 border-b border-gray-50">Blogs</Link>
 
             <div className="grid grid-cols-2 gap-4 mt-8 pb-12">
-              <Link
-                href="/#donation-widget"
-                onClick={() => setMobileOpen(false)}
+              <button
+                onClick={handleDonateClick}
                 className="bg-[#2A6F7C] text-white py-4 rounded-xl font-[700] text-center shadow-lg"
               >
                 Donate
-              </Link>
+              </button>
               <Link
                 href="/volunteer"
                 onClick={() => setMobileOpen(false)}
