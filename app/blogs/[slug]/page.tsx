@@ -135,8 +135,8 @@ export default function BlogDetailPage({
                   className="w-fit h-[40px] flex items-center justify-center gap-2 px-6 py-3  text-sm  text-white transition-opacity hover:opacity-90"
                   style={{ background: "var(--blue)" }}
                 >
-                  <Send size={14} className="rotate-[-20deg]" />
                   <span>Send Message</span>
+                  <Send size={14} className="rotate-[-20deg]" />
                 </button>
               </div>
             </div>

@@ -59,8 +59,8 @@ export default function ContactPage() {
               />
               <button className="flex items-center gap-2 px-8 py-4 rounded-full font-bold text-white transition-all hover:opacity-90 active:scale-95"
                 style={{ background: 'var(--blue)' }}>
-                <Send size={18} className="rotate-[-20deg]" />
                 <span>Send Message</span>
+                 <Send size={18} className="rotate-[-20deg]" />
               </button>
             </div>
           </div>
@@ -120,7 +120,7 @@ export default function ContactPage() {
         <div className=" mx-auto px-4">
           <div className="rounded-2xl overflow-hidden h-[400px] border border-gray-100 flex items-center justify-center bg-[#F8FAFC]">
             <div className="text-center">
-              <div className="text-6xl mb-6">📍</div>
+              
               <h3 className="text-2xl font-bold text-gray-800 mb-2">Our Location</h3>
               <p className="text-gray-500">Nayabazaar Khusibu, Kathmandu, Nepal</p>
             </div>

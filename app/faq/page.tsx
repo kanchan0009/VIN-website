@@ -43,7 +43,6 @@ export default function FAQPage() {
         <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=1600&q=80" alt="FAQ" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)' }} />
         <div className="relative z-10  mx-auto px-4 pb-10 w-full">
-          <p className="text-white/60 text-sm mb-2">Home / <span className="text-white">FAQ&apos;s</span></p>
           <h1 className="text-5xl font-bold text-white mb-2" style={{ }}>FAQ&apos;s</h1>
           <p className="text-white/70 text-sm">Lorem Ipsum Dipsum We Are Different Locations Lorem Ipsum Dipsum We Are Different Locations...</p>
         </div>
