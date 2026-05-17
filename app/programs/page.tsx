@@ -68,20 +68,19 @@ export default function ProgramsPage() {
         <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=80" alt="All Programs" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)' }} />
         <div className="relative z-10  mx-auto px-4 pb-10 w-full">
-          <p className="text-white/60 text-sm mb-2">Home / <span className="text-white">All Programs</span></p>
           <h1 className="text-5xl font-bold text-white mb-2" style={{ }}>All Programs</h1>
-          <p className="text-white/70 text-sm max-w-lg">Lorem Ipsum Dipsum: We Are Different Locations Lorem Ipsum Dipsum We Are Different</p>
+          <p className="text-white/70 text-[16px] max-w-lg">Lorem Ipsum Dipsum: We Are Different Locations Lorem Ipsum Dipsum We Are Different</p>
         </div>
       </section>
 
       {/* About Programs */}
-      <section className="py-16 bg-white">
+      <section className="py-14 bg-white">
         <div className=" mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-4" style={{ }}>Our Community Development Programs</h2>
-          <p className="text-gray-500 text-sm max-w-3xl mx-auto leading-relaxed mb-8">
+          <h2 className="text-5xl font-bold mb-4" style={{ }}>Our Community Development Programs</h2>
+          <p className="text-gray-500 text-[16px] max-w-4xl mx-auto leading-relaxed mb-8">
             Volunteers Initiative Nepal (VIN), established in 2002 by a diverse group drawn from development workers, educationalists, social activists and other professionals. VIN is officially registered under the Society Act with the District Administration Office, Kathmandu (Reg. No. 140/062/63), and affiliated with the Social Welfare Council (SWC) (Affiliation No. 20993). VIN focuses on community-based projects involving local volunteers backed-up by international volunteers in Nepal.
           </p>
-          <Link href="/about" className="inline-flex items-center gap-2 px-7 py-3 rounded-xl font-semibold text-white text-sm" style={{ background: 'var(--blue)' }}>
+          <Link href="/about" className="inline-flex items-center gap-2 px-7 py-3 rounded-[10px] font-semibold text-white text-sm" style={{ background: 'var(--blue)' }}>
             Read More <ArrowRight size={15} />
           </Link>
         </div>
@@ -113,28 +112,7 @@ export default function ProgramsPage() {
           </div>
         </div>
       </section>
-
-      {/* Donation */}
-      <section className="py-20" style={{ background: 'var(--sky)' }}>
-        <div className=" mx-auto px-4 flex flex-col lg:flex-row gap-12 items-start">
-          <div className="flex-1">
-            <h2 className="text-3xl font-bold mb-4" style={{ }}>Donate us to help empower the most marginalized rural communities in Nepal!</h2>
-            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80" alt="" className="rounded-2xl w-full h-52 object-cover mb-6" />
-            <div className="grid grid-cols-2 gap-4">
-              {[{ icon: '💰', label: 'Fund Raised & Donation Treat raised' }, { icon: '🤝', label: 'We Helping People & Donation pik' }].map(item => (
-                <div key={item.icon} className="flex items-center gap-3 p-4 bg-white rounded-xl">
-                  <span className="text-2xl">{item.icon}</span>
-                  <span className="text-sm font-medium text-gray-600">{item.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="flex-1 max-w-sm">
-            <DonationWidget />
-          </div>
-        </div>
-      </section>
-
+      <DonationWidget />
       <CTABanner />
     </main>
   );

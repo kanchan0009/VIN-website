@@ -1,5 +1,5 @@
 'use client';
-import { useState, Suspense } from 'react';
+import { useState, Suspense, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, CheckCircle, Play, ChevronLeft, ChevronRight, Star, ArrowRight } from 'lucide-react';
@@ -23,6 +23,15 @@ const testimonials = [
   }
 ];
 
+const googleReviews = [
+  { name: "John Smith", title: "Volunteer", initial: "J", date: "March 1, 2024", text: "Exceptional experience! The team exceeded our expectations and delivered a top-notch program." },
+  { name: "Sarah Johnson", title: "Intern", initial: "S", date: "February 15, 2024", text: "Working with VIN was a game-changer. Their attention to detail and community focus are unmatched!" },
+  { name: "Michael Brown", title: "Supporter", initial: "M", date: "January 10, 2024", text: "A fantastic experience from start to finish. Highly recommended for anyone looking to make an impact!" },
+  { name: "Emily Davis", title: "Volunteer", initial: "E", date: "December 20, 2023", text: "Great local support and seamless service. The team truly cares about their volunteers and the community." },
+  { name: "David Wilson", title: "Donor", initial: "D", date: "November 5, 2023", text: "A highly transparent organization. It's wonderful to see the direct impact of our contributions." },
+  { name: "Jessica Lee", title: "Volunteer", initial: "J", date: "October 12, 2023", text: "The rural immersion was life-changing. I learned so much from the local community." }
+];
+
 // topicContent moved to app/data/programData.ts
 
 function ProgramProjectsContent() {
@@ -33,6 +42,34 @@ function ProgramProjectsContent() {
   
   const [activeIndex, setActiveIndex] = useState(0);
   const current = testimonials[activeIndex];
+
+  const [reviewIndex, setReviewIndex] = useState(0);
+  const [visibleReviewCount, setVisibleReviewCount] = useState(1);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setVisibleReviewCount(4);
+      } else if (window.innerWidth >= 768) {
+        setVisibleReviewCount(2);
+      } else {
+        setVisibleReviewCount(1);
+      }
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const nextReview = () => {
+    if (googleReviews.length <= visibleReviewCount) return;
+    setReviewIndex((prev) => (prev + 1) % (googleReviews.length - visibleReviewCount + 1));
+  };
+
+  const prevReview = () => {
+    if (googleReviews.length <= visibleReviewCount) return;
+    setReviewIndex((prev) => (prev - 1 + (googleReviews.length - visibleReviewCount + 1)) % (googleReviews.length - visibleReviewCount + 1));
+  };
 
   const handleDonateClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -459,30 +496,55 @@ function ProgramProjectsContent() {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { name: "John Smith", title: "Volunteer", initial: "J", date: "March 1, 2024", text: "Exceptional experience! The team exceeded our expectations and delivered a top-notch program." },
-              { name: "Sarah Johnson", title: "Intern", initial: "S", date: "February 15, 2024", text: "Working with VIN was a game-changer. Their attention to detail and community focus are unmatched!" },
-              { name: "Michael Brown", title: "Supporter", initial: "M", date: "January 10, 2024", text: "A fantastic experience from start to finish. Highly recommended for anyone looking to make an impact!" },
-              { name: "Emily Davis", title: "Volunteer", initial: "E", date: "December 20, 2023", text: "Great local support and seamless service. The team truly cares about their volunteers and the community." }
-            ].map((review, i) => (
-              <div key={i} className="bg-[#F8F9FA] rounded-[20px] p-8 flex flex-col items-center text-center shadow-sm border border-gray-50 hover:shadow-md transition-all">
-                <div className="flex gap-1 mb-6">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <Star key={star} size={16} fill="#FFC107" className="text-[#FFC107]" />
-                  ))}
-                </div>
-                <p className="text-gray-700 text-sm leading-relaxed mb-8 h-[80px]">
-                  {review.text}
-                </p>
-                <div className="w-12 h-12 rounded-full bg-[#9333ea] flex items-center justify-center text-white font-bold text-lg mb-4">
-                  {review.initial}
-                </div>
-                <h4 className="text-gray-900 font-bold mb-1">{review.name}</h4>
-                <p className="text-gray-400 text-[12px] mb-4">{review.title}</p>
-                <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google" className="h-4 opacity-70" />
+          <div className="relative group">
+            {/* Navigation Arrows */}
+            {googleReviews.length > visibleReviewCount && (
+              <>
+                <button 
+                  onClick={prevReview}
+                  className="absolute -left-4 lg:-left-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10"
+                >
+                  <ChevronLeft size={20} className="text-gray-600" />
+                </button>
+                <button 
+                  onClick={nextReview}
+                  className="absolute -right-4 lg:-right-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10"
+                >
+                  <ChevronRight size={20} className="text-gray-600" />
+                </button>
+              </>
+            )}
+
+            <div className="overflow-hidden py-4">
+              <div 
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${reviewIndex * (100 / visibleReviewCount)}%)` }}
+              >
+                {googleReviews.map((review, i) => (
+                  <div 
+                    key={i} 
+                    className="w-full md:w-1/2 lg:w-1/4 px-3 shrink-0"
+                  >
+                    <div className="h-full bg-[#F8F9FA] rounded-[20px] p-8 flex flex-col items-center text-center shadow-sm border border-gray-50 hover:shadow-md transition-all">
+                      <div className="flex gap-1 mb-6">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <Star key={star} size={16} fill="#FFC107" className="text-[#FFC107]" />
+                        ))}
+                      </div>
+                      <p className="text-gray-700 text-sm leading-relaxed mb-8 h-[80px]">
+                        {review.text}
+                      </p>
+                      <div className="w-12 h-12 rounded-full bg-[#9333ea] flex items-center justify-center text-white font-bold text-lg mb-4">
+                        {review.initial}
+                      </div>
+                      <h4 className="text-gray-900 font-bold mb-1">{review.name}</h4>
+                      <p className="text-gray-400 text-[12px] mb-4">{review.title}</p>
+                      <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google" className="h-4 opacity-70" />
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>

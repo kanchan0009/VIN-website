@@ -40,6 +40,14 @@ const otherPrograms = [
         title: "Youth Leadership Album",
         img: "https://images.unsplash.com/photo-1570549717069-33bed1aa152b?w=800&q=80",
       },
+      {
+        title: "Women's Micro-enterprise Training",
+        img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80",
+      },
+      {
+        title: "Financial Literacy Workshops",
+        img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
+      },
     ];
 
 const testimonials = [
@@ -100,6 +108,7 @@ export default function WomensEmpowermentPage() {
   const [selectedMedia, setSelectedMedia] = useState('Types of Media');
   const [visibleMediaCount, setVisibleMediaCount] = useState(1);
   const [visibleProjectCount, setVisibleProjectCount] = useState(1);
+  const [visibleAlbumCount, setVisibleAlbumCount] = useState(1);
 
   const filteredMedia = mediaItems.filter(item => {
     if (selectedMedia === 'Types of Media') return true;
@@ -119,12 +128,15 @@ export default function WomensEmpowermentPage() {
       if (window.innerWidth >= 1024) {
         setVisibleMediaCount(4);
         setVisibleProjectCount(3);
+        setVisibleAlbumCount(2);
       } else if (window.innerWidth >= 640) {
         setVisibleMediaCount(2);
         setVisibleProjectCount(2);
+        setVisibleAlbumCount(2);
       } else {
         setVisibleMediaCount(1);
         setVisibleProjectCount(1);
+        setVisibleAlbumCount(1);
       }
     };
     handleResize();
@@ -298,28 +310,36 @@ export default function WomensEmpowermentPage() {
             Album Gallery
           </h2>
 
-          <div className="relative group">
+          <div className="relative">
             {/* Navigation Arrows */}
-            <button 
-              onClick={() => setAlbumIndex((prev) => (prev - 1 + albums.length) % albums.length)}
-              className="absolute -left-4 lg:-left-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10"
-            >
-              <ChevronLeft size={20} className="text-gray-600" />
-            </button>
-            <button 
-              onClick={() => setAlbumIndex((prev) => (prev + 1) % albums.length)}
-              className="absolute -right-4 lg:-right-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10"
-            >
-              <ChevronRight size={20} className="text-gray-600" />
-            </button>
+            {albums.length > visibleAlbumCount && (
+              <>
+                <button 
+                  onClick={() => setAlbumIndex((prev) => (prev - 1 + albums.length) % albums.length)}
+                  className="absolute -left-4 lg:-left-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10"
+                >
+                  <ChevronLeft size={20} className="text-gray-600" />
+                </button>
+                <button 
+                  onClick={() => setAlbumIndex((prev) => (prev + 1) % albums.length)}
+                  className="absolute -right-4 lg:-right-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10"
+                >
+                  <ChevronRight size={20} className="text-gray-600" />
+                </button>
+              </>
+            )}
 
             {/* Album Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 max-w-6xl mx-auto">
-              {albums.map((album, idx) => (
-                <div
-                  key={idx}
-                  className="relative rounded-[20px] overflow-hidden group w-full aspect-square shadow-xl"
-                >
+            <div className="overflow-hidden px-4 py-4 -mx-4">
+              <div 
+                className="flex transition-transform duration-500 ease-in-out gap-8 md:gap-16 lg:gap-24 max-w-6xl mx-auto"
+                style={{ transform: `translateX(-${albumIndex * (100 / visibleAlbumCount)}%)` }}
+              >
+                {albums.map((album, idx) => (
+                  <div
+                    key={idx}
+                    className="w-full md:w-[calc(50%-2rem)] lg:w-[calc(50%-3rem)] min-w-full md:min-w-[calc(50%-2rem)] lg:min-w-[calc(50%-3rem)] shrink-0 relative rounded-[20px] overflow-hidden group aspect-square shadow-xl"
+                  >
                   <img
                     src={album.img}
                     alt={album.title}
@@ -330,7 +350,7 @@ export default function WomensEmpowermentPage() {
                     <h4 className="text-white text-lg lg:text-xl font-[600] mb-6 leading-tight">
                       {album.title}
                     </h4>
-                    <Link href="/program-gallery?topic=default">
+                    <Link href="/program-gallery?topic=womens-empowerment">
                       <button className="bg-[#1e238f] text-white px-8 py-3 rounded-md font-[600] text-sm hover:bg-[#15196d] transition-all active:scale-95 shadow-lg">
                         Explore Album
                       </button>
@@ -338,6 +358,7 @@ export default function WomensEmpowermentPage() {
                   </div>
                 </div>
               ))}
+            </div>
             </div>
           </div>
         </div>
@@ -551,7 +572,7 @@ export default function WomensEmpowermentPage() {
                     <p className="text-white/80 text-[13px] lg:text-[14px] leading-relaxed mb-4 line-clamp-2">
                       {project.desc}
                     </p>
-                    <Link href={`/programs/womens-empowerment/${project.slug}`} className="mt-auto text-white text-sm font-[600] flex items-center gap-2 hover:translate-x-2 transition-transform">
+                    <Link href="/programs-projects?topic=womens-empowerment" className="mt-auto text-white text-sm font-[600] flex items-center gap-2 hover:translate-x-2 transition-transform">
                       Read More 
                       <ArrowRight size={16} />
                     </Link>

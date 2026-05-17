@@ -41,6 +41,14 @@ const albums = [
     title: "Organic Kitchen Gardening",
     img: "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=800&q=80",
   },
+  {
+    title: "River Cleanup Campaign",
+    img: "https://images.unsplash.com/photo-1618477461853-cf6ed80fbfc9?w=800&q=80",
+  },
+  {
+    title: "Eco-Education Workshops",
+    img: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&q=80",
+  },
 ];
 
 const mediaItems = [
@@ -77,6 +85,7 @@ export default function EnvironmentPage() {
   const [selectedMedia, setSelectedMedia] = useState('Types of Media');
   const [visibleMediaCount, setVisibleMediaCount] = useState(1);
   const [visibleProjectCount, setVisibleProjectCount] = useState(1);
+  const [visibleAlbumCount, setVisibleAlbumCount] = useState(1);
 
   const filteredMedia = mediaItems.filter(item => {
     if (selectedMedia === 'Types of Media') return true;
@@ -96,12 +105,15 @@ export default function EnvironmentPage() {
       if (window.innerWidth >= 1024) {
         setVisibleMediaCount(4);
         setVisibleProjectCount(3);
+        setVisibleAlbumCount(2);
       } else if (window.innerWidth >= 640) {
         setVisibleMediaCount(2);
         setVisibleProjectCount(2);
+        setVisibleAlbumCount(2);
       } else {
         setVisibleMediaCount(1);
         setVisibleProjectCount(1);
+        setVisibleAlbumCount(1);
       }
     };
     handleResize();
@@ -278,26 +290,34 @@ export default function EnvironmentPage() {
 
           <div className="relative group">
             {/* Navigation Arrows */}
-            <button 
-              onClick={() => setAlbumIndex((prev) => (prev - 1 + albums.length) % albums.length)}
-              className="absolute -left-4 lg:-left-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10"
-            >
-              <ChevronLeft size={20} className="text-gray-600" />
-            </button>
-            <button 
-              onClick={() => setAlbumIndex((prev) => (prev + 1) % albums.length)}
-              className="absolute -right-4 lg:-right-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10"
-            >
-              <ChevronRight size={20} className="text-gray-600" />
-            </button>
+            {albums.length > visibleAlbumCount && (
+              <>
+                <button 
+                  onClick={() => setAlbumIndex((prev) => (prev - 1 + albums.length) % albums.length)}
+                  className="absolute -left-4 lg:-left-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10"
+                >
+                  <ChevronLeft size={20} className="text-gray-600" />
+                </button>
+                <button 
+                  onClick={() => setAlbumIndex((prev) => (prev + 1) % albums.length)}
+                  className="absolute -right-4 lg:-right-12 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gray-200 bg-white flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10"
+                >
+                  <ChevronRight size={20} className="text-gray-600" />
+                </button>
+              </>
+            )}
 
             {/* Album Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 max-w-6xl mx-auto">
-              {albums.map((album, idx) => (
-                <div
-                  key={idx}
-                  className="relative rounded-[20px] overflow-hidden group w-full aspect-square shadow-xl"
-                >
+            <div className="overflow-hidden px-4 py-4 -mx-4">
+              <div 
+                className="flex transition-transform duration-500 ease-in-out gap-8 md:gap-16 lg:gap-24 max-w-6xl mx-auto"
+                style={{ transform: `translateX(-${albumIndex * (100 / visibleAlbumCount)}%)` }}
+              >
+                {albums.map((album, idx) => (
+                  <div
+                    key={idx}
+                    className="w-full md:w-[calc(50%-2rem)] lg:w-[calc(50%-3rem)] min-w-full md:min-w-[calc(50%-2rem)] lg:min-w-[calc(50%-3rem)] shrink-0 relative rounded-[20px] overflow-hidden group aspect-square shadow-xl"
+                  >
                   <img
                     src={album.img}
                     alt={album.title}
@@ -316,6 +336,7 @@ export default function EnvironmentPage() {
                   </div>
                 </div>
               ))}
+            </div>
             </div>
           </div>
         </div>
@@ -523,7 +544,7 @@ export default function EnvironmentPage() {
                     <p className="text-white/80 text-[13px] lg:text-[14px] leading-relaxed mb-4 line-clamp-2">
                       Planting native species to restore mountain ecosystems and ensure sustainable water flow for downstream villages.
                     </p>
-                    <Link href="#" className="mt-auto text-white text-sm font-[600] flex items-center gap-2 hover:translate-x-2 transition-transform">
+                    <Link href="/programs-projects?topic=environment" className="mt-auto text-white text-sm font-[600] flex items-center gap-2 hover:translate-x-2 transition-transform">
                       Read More 
                       <ArrowRight size={16} />
                     </Link>

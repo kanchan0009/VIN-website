@@ -7,26 +7,32 @@ const programs = [
   {
     title: "Women's Empowerment",
     img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80",
+    href: "/programs/womens-empowerment",
   },
   {
     title: "Child Development",
     img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&q=80",
+    href: "/programs/child-development",
   },
   {
     title: "Youth Empowerment",
     img: "https://images.unsplash.com/photo-1607748862156-7c548e7e98f4?w=400&q=80",
+    href: "/programs/youth-empowerment",
   },
   {
     title: "Public Health",
     img: "https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&q=80",
+    href: "/programs/public-health",
   },
   {
     title: "Environment",
     img: "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=400&q=80",
+    href: "/programs/environment",
   },
   {
     title: "Disaster Risk",
     img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&q=80",
+    href: "/programs/disaster-risk",
   },
 ];
 
@@ -118,7 +124,8 @@ export default function AboutPage() {
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-16">
             {programs.map((p) => (
-              <div
+              <Link
+                href={p.href}
                 key={p.title}
                 className="overflow-hidden group shadow-md hover:shadow-xl transition-all duration-300 flex flex-col"
               >
@@ -136,7 +143,7 @@ export default function AboutPage() {
                     {p.title}
                   </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
           <div className="space-y-6 text-gray-700 text-base leading-relaxed text-left">
