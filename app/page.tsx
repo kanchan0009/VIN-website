@@ -40,7 +40,8 @@ const testimonials = [
     name: "Ram Bahadur",
     role: "Community Leader",
     text: "Working with VIN has been a transformative experience for our village. The focus on holistic development, from education to infrastructure, has empowered us to take charge of our own future. We are grateful for the dedication and passion the volunteers bring to every project.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80",
     signature: "Ram Bahadur",
     signatureTitle: "Community Leader",
   },
@@ -49,7 +50,8 @@ const testimonials = [
     name: "Anita Kumari",
     role: "Teacher",
     text: "As a teacher, I've seen firsthand the impact of VIN's educational programs. The children are more engaged, and the resources provided have greatly enhanced our learning environment. It's inspiring to see the community coming together for the sake of the next generation.",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80",
+    image:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80",
     signature: "Anita Kumari",
     signatureTitle: "Primary School Teacher",
   },
@@ -278,18 +280,21 @@ export default function HomePage() {
     {
       title: "Women’s Empowerment Program",
       desc: "We Equip Rural Women With Non-Formal Education, Life Skills, Entrepreneurship Support, Microcredit Access, And Leadership Training — Helping Them Rise, Earn, And Live With Confidence And Dignity.",
-      image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=1600",
+      image:
+        "https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=1600",
     },
     {
       title: "Children’s Development Program",
       desc: "Ensuring every child has access to quality education, health care, and a safe environment to grow and thrive in their community.",
-      image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1600",
+      image:
+        "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1600",
     },
     {
       title: "Youth Leadership Initiative",
       desc: "Empowering the next generation with skills and opportunities to become leaders and positive change-makers in their societies.",
-      image: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1600",
-    }
+      image:
+        "https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1600",
+    },
   ];
   const currentHero = heroItems[heroIndex];
 
@@ -323,7 +328,9 @@ export default function HomePage() {
 
   useEffect(() => {
     const updateCount = () => {
-      setVisibleCount(window.innerWidth >= 1024 ? 4 : window.innerWidth >= 640 ? 2 : 1);
+      setVisibleCount(
+        window.innerWidth >= 1024 ? 4 : window.innerWidth >= 640 ? 2 : 1,
+      );
     };
     updateCount();
     window.addEventListener("resize", updateCount);
@@ -377,15 +384,19 @@ export default function HomePage() {
         />
 
         {/* Left Arrow */}
-        <button 
-          onClick={() => setHeroIndex((prev) => (prev - 1 + heroItems.length) % heroItems.length)}
+        <button
+          onClick={() =>
+            setHeroIndex(
+              (prev) => (prev - 1 + heroItems.length) % heroItems.length,
+            )
+          }
           className="absolute left-0 md:left-2 top-1/2 -translate-y-1/2 z-20 text-white/70 hover:text-white transition"
         >
           <ChevronLeft className="w-10 h-10 md:w-14 md:h-14" />
         </button>
 
         {/* Right Arrow */}
-        <button 
+        <button
           onClick={() => setHeroIndex((prev) => (prev + 1) % heroItems.length)}
           className="absolute right-0 md:right-2 top-1/2 -translate-y-1/2 z-20 text-white/70 hover:text-white transition"
         >
@@ -587,7 +598,9 @@ export default function HomePage() {
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-black/30 flex flex-col justify-end items-center pb-6 text-white translate-y-1 group-hover:translate-y-0 transition-transform">
                     <p className="text-2xl font-bold">{item.stats}</p>
-                    <p className="text-xs font-medium uppercase tracking-wider opacity-90">{item.statsLabel}</p>
+                    <p className="text-xs font-medium uppercase tracking-wider opacity-90">
+                      {item.statsLabel}
+                    </p>
                   </div>
                 </div>
 
@@ -653,28 +666,13 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Map Area */}
-            <div className="relative mt-8 flex items-center justify-center">
-              {/* Map Image */}
-              <img
-                src="/map.png"
-                alt="Map"
-                className="opacity-60 max-h-[220px] object-contain"
-              />
-
-              {/* Pins */}
-              <div className="absolute bottom-10 left-[55%] w-3 h-3 bg-blue-500 rounded-full"></div>
-              <div className="absolute bottom-14 left-[60%] w-3 h-3 bg-blue-500 rounded-full"></div>
-              <div className="absolute bottom-8 left-[65%] w-3 h-3 bg-blue-500 rounded-full"></div>
-            </div>
-
             {/* Button */}
             <div className="absolute left-8 bottom-8">
-<Link href="/where-we-work">
-  <button className="bg-white text-black text-sm px-6 py-2.5  font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-    Learn More
-  </button>
-</Link>
+              <Link href="/where-we-work">
+                <button className="bg-white text-black text-sm px-6 py-2.5  font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                  Learn More
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -693,46 +691,49 @@ export default function HomePage() {
                 title: "Women’s Trafficking Prevention",
                 img: "/images/img1.jpg",
                 desc: "The ED project aims to ensure economic independence of women by building their skills and providing the necessary support.",
-                href: "/programs-projects?topic=womens-empowerment"
+                href: "/programs-projects?topic=womens-empowerment",
               },
               {
                 title: "Entrepreneurship Development",
                 img: "/images/img2.jpg",
                 desc: "The ED project aims to ensure economic independence of women by building their skills and facilitating entrepreneurship.",
-                href: "/programs-projects?topic=womens-empowerment"
+                href: "/programs-projects?topic=womens-empowerment",
               },
               {
                 title: "Women’s Education and Life Skills",
                 img: "/images/img3.jpg",
                 desc: "This project empowers women to become self-reliant and resilient by providing relevant education and development.",
-                href: "/programs-projects?topic=womens-empowerment"
+                href: "/programs-projects?topic=womens-empowerment",
               },
               {
                 title: "Youth Empowerment Projects",
                 img: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=400&q=80",
                 desc: "Engaging youth in community development and providing them with vocational training.",
-                href: "/programs-projects?topic=youth-empowerment"
+                href: "/programs-projects?topic=youth-empowerment",
               },
               {
                 title: "Public Health & Sanitation",
                 img: "https://images.unsplash.com/photo-1607748862156-7c548e7e98f4?w=400&q=80",
                 desc: "Improving health outcomes through sanitation projects and medical outreach.",
-                href: "/programs-projects?topic=public-health"
+                href: "/programs-projects?topic=public-health",
               },
               {
                 title: "Environment & Conservation",
                 img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&q=80",
                 desc: "Promoting environmental sustainability and conservation through community action.",
-                href: "/programs-projects?topic=environment"
-              }
+                href: "/programs-projects?topic=environment",
+              },
             ];
             return (
               <>
                 {/* Dropdown */}
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full max-w-[300px] mx-auto">
                   <div className="relative w-full">
-                    <select className="flex-1 w-full px-3 py-2.5 border border-black text-[15px] text-black focus:outline-none cursor-pointer text-center appearance-none bg-white" style={{ textAlignLast: "center" }}>
-                      <option >Choose a Program</option>
+                    <select
+                      className="flex-1 w-full px-3 py-2.5 border border-black text-[15px] text-black focus:outline-none cursor-pointer text-center appearance-none bg-white"
+                      style={{ textAlignLast: "center" }}
+                    >
+                      <option>Choose a Program</option>
                       <option>Women Empowerment</option>
                       <option>Youth Empowerment</option>
                       <option>Public Health and Sanitation</option>
@@ -748,25 +749,33 @@ export default function HomePage() {
 
                 {/* Section Header */}
                 <div className="text-left mb-5">
-                  <h3 className="text-3xl font-[700]">Women’s Empowerment Projects</h3>
+                  <h3 className="text-3xl font-[700]">
+                    Women’s Empowerment Projects
+                  </h3>
                   <p className="text-[16px] text-[#454545AD] mt-2 max-w-3xl">
                     VIN aims to empower women socially and economically through
-                    education, life skills and income generation opportunities. By
-                    2030, VIN aims to benefit at least 80% of the total women in the
-                    marginalized communities of the target areas.
+                    education, life skills and income generation opportunities.
+                    By 2030, VIN aims to benefit at least 80% of the total women
+                    in the marginalized communities of the target areas.
                   </p>
                 </div>
 
                 {/* Slider Controls */}
                 <div className="flex justify-end gap-3 mb-8">
                   <button
-                    onClick={() => setLearnMoreIndex(prev => Math.max(0, prev - 1))}
+                    onClick={() =>
+                      setLearnMoreIndex((prev) => Math.max(0, prev - 1))
+                    }
                     className="w-12 h-12 flex items-center justify-center border-2 border-black rounded-full hover:bg-gray-100 transition-all duration-300 font-bold text-lg"
                   >
                     ←
                   </button>
                   <button
-                    onClick={() => setLearnMoreIndex(prev => Math.min(projectsList.length - 3, prev + 1))}
+                    onClick={() =>
+                      setLearnMoreIndex((prev) =>
+                        Math.min(projectsList.length - 3, prev + 1),
+                      )
+                    }
                     className="w-12 h-12 flex items-center justify-center border-2 border-black rounded-full hover:bg-gray-100 transition-all duration-300 font-bold text-lg"
                   >
                     →
@@ -775,8 +784,15 @@ export default function HomePage() {
 
                 {/* Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
-                  {(showAllPrograms ? projectsList : projectsList.slice(learnMoreIndex, learnMoreIndex + 3)).map((p, i) => (
-                    <Link href={p.href} key={i} className="bg-white shadow-md overflow-hidden group block hover:shadow-xl transition-shadow duration-300">
+                  {(showAllPrograms
+                    ? projectsList
+                    : projectsList.slice(learnMoreIndex, learnMoreIndex + 3)
+                  ).map((p, i) => (
+                    <Link
+                      href={p.href}
+                      key={i}
+                      className="bg-white shadow-md overflow-hidden group block hover:shadow-xl transition-shadow duration-300"
+                    >
                       <div className="relative h-56 overflow-hidden">
                         <img
                           src={p.img}
@@ -801,7 +817,7 @@ export default function HomePage() {
 
           {/* View All */}
           <div className="mt-10">
-            <button 
+            <button
               onClick={() => setShowAllPrograms(!showAllPrograms)}
               className="bg-[var(--blue)] text-white px-6 py-2 rounded-md hover:bg-[#1a1560] transition-colors"
             >
@@ -817,10 +833,7 @@ export default function HomePage() {
       <section className="py-20 bg-[#ffffff]">
         <div className=" mx-auto px-4">
           {/* Title */}
-          <h2
-            className="text-3xl md:text-4xl text-center font-[500] mb-6"
-            
-          >
+          <h2 className="text-3xl md:text-4xl text-center font-[500] mb-6">
             Our Team
           </h2>
 
@@ -846,7 +859,10 @@ export default function HomePage() {
           {/* Cards Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 ">
             {filteredTeam.map((m, i) => (
-              <div key={i} className="bg-white  border-1 border-[#9FA0A3]shadow-sm h-[344px] w-[310px]">
+              <div
+                key={i}
+                className="bg-white  border-1 border-[#9FA0A3]shadow-sm h-[344px] w-[310px]"
+              >
                 {/* Image */}
                 <div className="w-full h-[230px] overflow-hidden">
                   <img
@@ -862,13 +878,12 @@ export default function HomePage() {
                   <p className="text-[14px] text-[#221C84] mt-1">{m.role}</p>
                 </div>
               </div>
-              
             ))}
           </div>
         </div>
       </section>
 
-      <DonationWidget/>
+      <DonationWidget />
 
       <CTABanner />
 
@@ -946,7 +961,9 @@ export default function HomePage() {
               4.4<span className="text-gray-800 text-[18px]">/5</span>
             </span>
             <span className="text-[#283449] text-[18px] ml-2">|</span>
-            <span className="text-[#283449] text-[20px] font-[400]">200+ Review</span>
+            <span className="text-[#283449] text-[20px] font-[400]">
+              200+ Review
+            </span>
           </div>
 
           {/* Review Cards */}
@@ -957,9 +974,11 @@ export default function HomePage() {
                 4.5<span className="text-[20px] text-gray-500">/5</span>
               </div>
               <div className="text-xs text-gray-500 font-semibold mt-1">
-                 GREAT
+                GREAT
               </div>
-              <div className="text-[21px] text-gray-500 mt-1 font-quando">Great Non-profit</div>
+              <div className="text-[21px] text-gray-500 mt-1 font-quando">
+                Great Non-profit
+              </div>
             </div>
 
             {/* Card 2 */}
@@ -970,7 +989,9 @@ export default function HomePage() {
               <div className="text-sm font-medium text-gray-600 mt-1">
                 Google
               </div>
-              <div className="text-[21px] text-gray-500 font-quando">Google Reviews</div>
+              <div className="text-[21px] text-gray-500 font-quando">
+                Google Reviews
+              </div>
             </div>
 
             {/* Card 3 */}
@@ -979,7 +1000,9 @@ export default function HomePage() {
                 4.2<span className="text-[20px] text-gray-500">/5</span>
               </div>
               <div className="text-sm font-medium text-gray-600 mt-1">GO</div>
-              <div className="text-[21px] text-gray-500 font-quando">go overseas</div>
+              <div className="text-[21px] text-gray-500 font-quando">
+                go overseas
+              </div>
             </div>
 
             {/* Card 4 */}
@@ -990,7 +1013,9 @@ export default function HomePage() {
               <div className="text-sm font-medium text-gray-600 mt-1">
                 review centre
               </div>
-              <div className="text-[21px] text-gray-500 font-quando">Review Center</div>
+              <div className="text-[21px] text-gray-500 font-quando">
+                Review Center
+              </div>
             </div>
           </div>
         </div>
@@ -1000,13 +1025,9 @@ export default function HomePage() {
       <section className="py-20 bg-white">
         <div className=" mx-auto px-4 relative">
           {/* Heading */}
-          <h2
-            className="text-[56px] font-[600] text-center mb-2 py-4 mb-15"
-            
-          >
+          <h2 className="text-[56px] font-[600] text-center mb-2 py-4 mb-15">
             Testimonials
           </h2>
-         
 
           {/* Carousel Container */}
           <div className="flex items-center justify-center gap-2">
@@ -1028,10 +1049,7 @@ export default function HomePage() {
                   <p className="text-gray-700 text-[10px]  font-[500] md:text-base leading-relaxed mb-6 text-justify">
                     {current.text}
                   </p>
-                  <p
-                    className="font-bold text-sm md:text-base text-gray-900"
-                    
-                  >
+                  <p className="font-bold text-sm md:text-base text-gray-900">
                     {current.signature}
                   </p>
                   <p className="text-gray-500 text-xs md:text-sm mt-1">
@@ -1079,12 +1097,7 @@ export default function HomePage() {
       <section className="py-20 bg-[#e8f0fe]">
         <div className=" mx-auto px-4">
           {/* Heading */}
-          <h2
-            className="text-4xl font-[500] text-center mb-8"
-            
-          >
-            Our Media
-          </h2>
+          <h2 className="text-4xl font-[500] text-center mb-8">Our Media</h2>
 
           {/* Filters */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 w-full max-w-lg mx-auto">
@@ -1115,13 +1128,19 @@ export default function HomePage() {
                 onChange={(e) => setSelectedTopic(e.target.value)}
                 className="w-full px-4 py-2.5 border-2 border-black text-[13px] text-black focus:outline-none cursor-pointer text-center appearance-none bg-white"
                 style={{ textAlignLast: "center" }}
-              >     
+              >
                 <option value="">Topic</option>
                 <option value="womens-empowerment">Women's Empowerment</option>
-                <option value="child-development">Children's Development</option>
+                <option value="child-development">
+                  Children's Development
+                </option>
                 <option value="youth-empowerment">Youth Empowerment</option>
-                <option value="public-health">Public Health & Medical Care</option>
-                <option value="environment">Environment & Conservation Projects</option>
+                <option value="public-health">
+                  Public Health & Medical Care
+                </option>
+                <option value="environment">
+                  Environment & Conservation Projects
+                </option>
                 <option value="disaster-risk">Disaster Risk Reduction</option>
               </select>
               <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-gray-600">
@@ -1179,7 +1198,7 @@ export default function HomePage() {
                   <div className="flex-1 p-6 md:p-8 lg:p-10">
                     <h3
                       className="text-lg md:text-xl font-bold text-gray-900 mb-4"
-                      style={{ }}
+                      style={{}}
                     >
                       {currentMedia.title}
                     </h3>
@@ -1190,7 +1209,10 @@ export default function HomePage() {
 
                     <div className="flex items-center gap-4">
                       <Link
-                        href={currentMedia.readMoreLink.replace('/programs/', '/programs-projects?topic=')}
+                        href={currentMedia.readMoreLink.replace(
+                          "/programs/",
+                          "/programs-projects?topic=",
+                        )}
                         className="inline-flex items-center px-5 py-2 rounded text-white text-xs md:text-sm font-medium hover:opacity-90 transition-opacity"
                         style={{ background: "var(--blue)" }}
                       >
@@ -1233,10 +1255,7 @@ export default function HomePage() {
       <section className="py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-4">
           {/* Heading */}
-          <h2
-            className="text-[56px] font-[500] text-center mb-6"
-            
-          >
+          <h2 className="text-[56px] font-[500] text-center mb-6">
             Photos & Videos
           </h2>
 
@@ -1261,9 +1280,11 @@ export default function HomePage() {
 
             {/* Cards Slider */}
             <div className="flex-1 mx-2 md:mx-4 overflow-hidden">
-              <div 
+              <div
                 className="flex transition-transform duration-500 ease-in-out gap-4 md:gap-6"
-                style={{ transform: `translateX(-${startIndex * (100 / visibleCount)}%)` }}
+                style={{
+                  transform: `translateX(-${startIndex * (100 / visibleCount)}%)`,
+                }}
               >
                 {mediaItems.map((item, index) => (
                   <div
@@ -1276,7 +1297,12 @@ export default function HomePage() {
                     </div>
 
                     {/* Image/Video Container */}
-                    <div className="relative aspect-[3/4] overflow-hidden group cursor-pointer" onClick={() => { if(item.type !== "video") openImage(item.image); }}>
+                    <div
+                      className="relative aspect-[3/4] overflow-hidden group cursor-pointer"
+                      onClick={() => {
+                        if (item.type !== "video") openImage(item.image);
+                      }}
+                    >
                       <img
                         src={item.image}
                         alt={item.title}
@@ -1292,7 +1318,11 @@ export default function HomePage() {
                             }
                             className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full bg-white/90 backdrop-blur-sm shadow-lg hover:scale-110 transition-transform"
                           >
-                            <Play size={24} fill="currentColor" className="text-gray-800 ml-0.5" />
+                            <Play
+                              size={24}
+                              fill="currentColor"
+                              className="text-gray-800 ml-0.5"
+                            />
                           </button>
                         </div>
                       )}
@@ -1368,10 +1398,7 @@ export default function HomePage() {
       <section className="py-20 bg-white">
         <div className=" mx-auto px-4">
           {/* Heading */}
-          <h2
-            className="text-[56px] font-bold text-center mb-2"
-            style={{ }}
-          >
+          <h2 className="text-[56px] font-bold text-center mb-2" style={{}}>
             Know <span className="text-[#221C84]">Nepal</span>
           </h2>
 
@@ -1418,10 +1445,7 @@ export default function HomePage() {
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 mb-12">
             {/* Left Content */}
             <div className="lg:w-1/3 flex flex-col justify-center">
-              <h3
-                className="text-[54px] font-[600] text-gray-900 mb-6"
-               
-              >
+              <h3 className="text-[54px] font-[600] text-gray-900 mb-6">
                 {currentPlace.name}
               </h3>
 
@@ -1483,10 +1507,7 @@ export default function HomePage() {
             <div className="flex flex-col md:flex-row items-center gap-8">
               {/* Text Content */}
               <div className="md:w-1/2">
-                <h4
-                  className="text-[24px] md:text-xl font-bold text-gray-900 mb-4"
-                  
-                >
+                <h4 className="text-[24px] md:text-xl font-bold text-gray-900 mb-4">
                   Documentary video on Nepal Infography
                 </h4>
 
@@ -1510,7 +1531,11 @@ export default function HomePage() {
                       onClick={() => setActiveVideo(currentPlace.videoUrl)}
                       className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-red-600 text-white shadow-lg hover:scale-110 transition-transform"
                     >
-                      <Play size={28} fill="currentColor" className="text-white ml-1" />
+                      <Play
+                        size={28}
+                        fill="currentColor"
+                        className="text-white ml-1"
+                      />
                     </button>
                   </div>
                 </div>
@@ -1561,7 +1586,9 @@ export default function HomePage() {
             {/* Dark Blue Card */}
             <div
               className="w-full flex flex-col md:flex-row items-center justify-between p-10 md:p-16 md:pl-[520px] rounded-[20px] shadow-2xl"
-              style={{ background: "linear-gradient(to right, #1B1464, #08061E)" }}
+              style={{
+                background: "linear-gradient(to right, #1B1464, #08061E)",
+              }}
             >
               <div className="text-center md:text-left mb-8 md:mb-0">
                 <h2 className="text-white text-[36px] md:text-[40px] font-bold mb-4">
@@ -1571,7 +1598,7 @@ export default function HomePage() {
                   Any queries check our FAQ page and get your answer.
                 </p>
               </div>
-              
+
               <Link
                 href="/faq"
                 className="bg-white text-[#1B1464] px-8 py-3 rounded-lg font-bold text-[20px] md:text-xl hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95"
@@ -1585,4 +1612,3 @@ export default function HomePage() {
     </main>
   );
 }
-

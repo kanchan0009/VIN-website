@@ -62,7 +62,10 @@ const mediaItems = [
 function ProgramGalleryContent() {
   const searchParams = useSearchParams();
   const topic = searchParams.get('topic') || 'default';
+  const activityParam = searchParams.get('activity');
   const content = topicContent[topic] || topicContent['default'];
+  
+  const displayTitle = activityParam ? decodeURIComponent(activityParam) : content.title;
   
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState("Videos");
@@ -79,7 +82,7 @@ function ProgramGalleryContent() {
       <section className="pt-16 pb-4 text-center">
         <div className="max-w-4xl mx-auto px-6">
           <h1 className="text-3xl md:text-5xl font-extrabold text-[#1a1a1a] leading-tight mb-8">
-            {content.title}<br />Gallery
+            {displayTitle}<br />Gallery
           </h1>
           
           {/* Filter Dropdown */}

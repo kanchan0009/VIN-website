@@ -1,31 +1,38 @@
 import Link from "next/link";
+import { topicContent } from "../data/programData";
 import DonationWidget from "../components/DonationWidget";
 import CTABanner from "../components/CTABanner";
 
 const albums = [
   {
-    title: "Women Empowerment Album",
+    title: "Women's Empowerment",
+    slug: "womens-empowerment",
     img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80",
   },
   {
-    title: "Women Empowerment Album",
-    img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80",
+    title: "Child Development",
+    slug: "child-development",
+    img: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80",
   },
   {
-    title: "Women Empowerment Album",
-    img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80",
+    title: "Youth Empowerment",
+    slug: "youth-empowerment",
+    img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80",
   },
   {
-    title: "Women Empowerment Album",
-    img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80",
+    title: "Public Health and Medical Care",
+    slug: "public-health",
+    img: "https://images.unsplash.com/photo-1496347646636-ea12b0f9c8b2?w=800&q=80",
   },
   {
-    title: "Women Empowerment Album",
-    img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80",
+    title: "Environment and Conservation",
+    slug: "environment",
+    img: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=80",
   },
   {
-    title: "Women Empowerment Album",
-    img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80",
+    title: "Disaster Risk Reduction",
+    slug: "disaster-risk",
+    img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
   },
 ];
 
@@ -34,14 +41,12 @@ export default function GalleryPage() {
     <main className="bg-white min-h-screen">
       {/* Title */}
       <section className="pt-8 pb-7 text-center">
-        <h1 className="text-4xl font-bold text-[#1a1a1a]">
-         Programs Gallery
-        </h1>
+        <h1 className="text-4xl font-bold text-[#1a1a1a]">Programs Gallery</h1>
       </section>
 
       {/* Album Grid */}
       <section className="pb-16">
-        <div className="max-w-[1440px] mx-auto px-6">
+        <div className="max-w-360 mx-auto px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
             {albums.map((album, idx) => (
               <div
@@ -55,14 +60,25 @@ export default function GalleryPage() {
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-all" />
                 <div className="absolute inset-0 flex flex-col items-center justify-end pb-8 text-center px-6">
-                  <h4 className="text-white text-lg font-[600] mb-4 leading-tight">
+                  <h4 className="text-white text-lg font-semibold mb-4 leading-tight">
                     {album.title}
                   </h4>
-                  <Link href="/program-gallery?topic=default">
-                    <button className="bg-[var(--blue)] text-white px-10 py-4 rounded-xl font-bold text-sm hover:bg-white hover:text-[var(--blue)] transition-all shadow-lg active:scale-95">
-                      Explore Album
-                    </button>
-                  </Link>
+                  {(() => {
+                    const projectTitle =
+                      topicContent[album.slug]?.focusedProjects?.[0]?.title ||
+                      album.title;
+                    const projectParam = encodeURIComponent(projectTitle);
+                    const albumParam = encodeURIComponent(album.title);
+                    return (
+                      <Link
+                        href={`/gallery-details?topic=${album.slug}&project=${projectParam}&album=${albumParam}`}
+                      >
+                        <button className="bg-(--blue) text-white px-10 py-4 rounded-xl font-bold text-sm hover:bg-white hover:text-(--blue) transition-all shadow-lg active:scale-95">
+                          Explore Album
+                        </button>
+                      </Link>
+                    );
+                  })()}
                 </div>
               </div>
             ))}
@@ -75,5 +91,3 @@ export default function GalleryPage() {
     </main>
   );
 }
-
-

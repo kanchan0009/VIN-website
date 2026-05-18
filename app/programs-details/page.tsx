@@ -2,7 +2,14 @@
 
 import { useRef, useState, useCallback } from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Play, X, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Play,
+  X,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import CTABanner from "../components/CTABanner";
 
 const testimonialsData = [
@@ -25,7 +32,8 @@ const mediaItems = [
       "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80",
     title: "Community Cleanup",
     type: "photo",
-    description: "A short description for the blog and make it short and loreum ipsum...",
+    description:
+      "A short description for the blog and make it short and loreum ipsum...",
     readMoreLink: "/programs/environment",
     downloadLink: "/downloads/photo-1.jpg",
   },
@@ -35,7 +43,8 @@ const mediaItems = [
       "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&q=80",
     title: "Children Education",
     type: "photo",
-    description: "Providing quality education and learning opportunities to children in underserved communities.",
+    description:
+      "Providing quality education and learning opportunities to children in underserved communities.",
     readMoreLink: "/programs/child-development",
     downloadLink: "/downloads/photo-2.jpg",
   },
@@ -46,7 +55,8 @@ const mediaItems = [
     title: "Volunteer Work",
     type: "video",
     videoUrl: "https://www.youtube.com/embed/VIDEO_ID",
-    description: "Watch our dedicated volunteers in action, making a real difference in people's lives.",
+    description:
+      "Watch our dedicated volunteers in action, making a real difference in people's lives.",
     readMoreLink: "/volunteer",
     downloadLink: "/downloads/video-3.mp4",
   },
@@ -56,7 +66,8 @@ const mediaItems = [
       "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=400&q=80",
     title: "Construction Project",
     type: "photo",
-    description: "Building sustainable infrastructure to support community development and growth.",
+    description:
+      "Building sustainable infrastructure to support community development and growth.",
     readMoreLink: "/programs/disaster-risk",
     downloadLink: "/downloads/photo-4.jpg",
   },
@@ -72,7 +83,9 @@ export default function ProgramsDetailsPage() {
   };
 
   const prevTestimonial = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonialsData.length) % testimonialsData.length);
+    setCurrentIndex(
+      (prev) => (prev - 1 + testimonialsData.length) % testimonialsData.length,
+    );
   };
 
   // Media State & Logic
@@ -83,11 +96,15 @@ export default function ProgramsDetailsPage() {
   const visibleItems = mediaItems.slice(startIndex, startIndex + itemsPerPage);
 
   const nextSlide = useCallback(() => {
-    setStartIndex((prev) => (prev + itemsPerPage >= mediaItems.length ? 0 : prev + 1));
+    setStartIndex((prev) =>
+      prev + itemsPerPage >= mediaItems.length ? 0 : prev + 1,
+    );
   }, []);
 
   const prevSlide = useCallback(() => {
-    setStartIndex((prev) => (prev === 0 ? Math.max(0, mediaItems.length - itemsPerPage) : prev - 1));
+    setStartIndex((prev) =>
+      prev === 0 ? Math.max(0, mediaItems.length - itemsPerPage) : prev - 1,
+    );
   }, []);
 
   const openVideo = (url: string) => {
@@ -103,12 +120,15 @@ export default function ProgramsDetailsPage() {
       {/* Header Section */}
       <section className="pt-8 pb-4">
         <div className="">
-
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
             Women's Empowerment Program
           </h1>
           <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-            VIN aims to empower women socially and economically through education, life skills and income generation opportunities. By 2030, VIN aims to benefit at least 80% of the total women in the marginalized communities of the target areas (Kavresthali, Nuwakot and Okhaldhunga).
+            VIN aims to empower women socially and economically through
+            education, life skills and income generation opportunities. By 2030,
+            VIN aims to benefit at least 80% of the total women in the
+            marginalized communities of the target areas (Kavresthali, Nuwakot
+            and Okhaldhunga).
           </p>
         </div>
       </section>
@@ -134,25 +154,29 @@ export default function ProgramsDetailsPage() {
               </h2>
               <div className="space-y-6 text-[18px] text-[#414141]font-[400] leading-relaxed mb-12">
                 <p>
-                  We empower women both socially and economically by providing them access to
-                  education, life skills and income generation opportunities.
+                  We empower women both socially and economically by providing
+                  them access to education, life skills and income generation
+                  opportunities.
                 </p>
                 <p>
-                  Through our program we hope to build a secure and sustainable future for women
-                  by helping them become financially independent, more healthy, equal participants
-                  in household decision-making and more knowledgeable of their rights.
+                  Through our program we hope to build a secure and sustainable
+                  future for women by helping them become financially
+                  independent, more healthy, equal participants in household
+                  decision-making and more knowledgeable of their rights.
                 </p>
                 <p>
-                  We have developed and implemented multiple projects under our women
-                  empowerment program and based it on the Sustainable Development Goals (SDGs)
-                  2030 – particularly SDG 5 “Achieve gender equality and empower all women and
-                  girls”.
+                  We have developed and implemented multiple projects under our
+                  women empowerment program and based it on the Sustainable
+                  Development Goals (SDGs) 2030 – particularly SDG 5 “Achieve
+                  gender equality and empower all women and girls”.
                 </p>
                 <p>
-                  Just as the SDG 5 goal states, VIN also has made it it's mission to eliminate gender
-                  disparity in all levels of education, wage discrimination at similar work, physical and
-                  sexual violence, and all harmful practices, and raising the presence of women in the
-                  national parliament and public service decision-making positions.
+                  Just as the SDG 5 goal states, VIN also has made it it's
+                  mission to eliminate gender disparity in all levels of
+                  education, wage discrimination at similar work, physical and
+                  sexual violence, and all harmful practices, and raising the
+                  presence of women in the national parliament and public
+                  service decision-making positions.
                 </p>
               </div>
 
@@ -161,11 +185,22 @@ export default function ProgramsDetailsPage() {
               </h3>
               <ul className="space-y-2 text-[18px] text-[#414141] font-[500] list-disc pl-5 leading-relaxed">
                 <li>1 in 2 women in Nepal are illiterate.</li>
-                <li>8 in 10 Nepalese women are working in agricultural sector.</li>
-                <li>4 in 5 women do not have ownership over land or property.</li>
-                <li>Witch-hunt is common and targeted against low-caste women.</li>
-                <li>Nepal is ranked 86 out of 93 countries in Gender Empowerment Measure (GME).</li>
-                <li>30,000 females aged 8-25 are smuggled to India every year.</li>
+                <li>
+                  8 in 10 Nepalese women are working in agricultural sector.
+                </li>
+                <li>
+                  4 in 5 women do not have ownership over land or property.
+                </li>
+                <li>
+                  Witch-hunt is common and targeted against low-caste women.
+                </li>
+                <li>
+                  Nepal is ranked 86 out of 93 countries in Gender Empowerment
+                  Measure (GME).
+                </li>
+                <li>
+                  30,000 females aged 8-25 are smuggled to India every year.
+                </li>
               </ul>
             </div>
 
@@ -188,14 +223,34 @@ export default function ProgramsDetailsPage() {
         </div>
       </section>
 
-      <section className="relative py-12 bg-cover bg-center text-white text-center !px-0" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1600')" }}>
+      <section
+        className="relative py-12 bg-cover bg-center text-white text-center !px-0"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1600')",
+        }}
+      >
         <div className="absolute inset-0 bg-blue-900/80" />
         <div className="relative z-10">
           <p className="text-sm md:text-[18px] font-[400] text-[#FFFFFF] leading-relaxed mb-10">
-            Many times, women find themselves weak and violated by the culture and society. They tend to lose their value and identity. Hence, VIN focuses on the overall development of women aged 20-59 in marginalized communities. Numerous life skill development courses are given, such as leadership development, computer courses, stress management, time management etc. Micro-credit programs have been considered to put women in better financial standing. We have been providing entrepreneurship trainings focusing on both agricultural and non-agricultural business. Such initiatives help back warded women to realize their potential and work towards a better life.
+            Many times, women find themselves weak and violated by the culture
+            and society. They tend to lose their value and identity. Hence, VIN
+            focuses on the overall development of women aged 20-59 in
+            marginalized communities. Numerous life skill development courses
+            are given, such as leadership development, computer courses, stress
+            management, time management etc. Micro-credit programs have been
+            considered to put women in better financial standing. We have been
+            providing entrepreneurship trainings focusing on both agricultural
+            and non-agricultural business. Such initiatives help back warded
+            women to realize their potential and work towards a better life.
           </p>
           <p className="text-sm md:text-[18px] font-[400] text-[#FFFFFF] leading-relaxed">
-            Nepali women are born into a patriarchal society that consider Women's Rights secondary to those of men. Married early, with little or no education, no land rights or independent income, women are a voiceless section of society. They are highly dependent on men for their welfare. They bear the continued weight of socio-cultural discrimination and violence against them.
+            Nepali women are born into a patriarchal society that consider
+            Women's Rights secondary to those of men. Married early, with little
+            or no education, no land rights or independent income, women are a
+            voiceless section of society. They are highly dependent on men for
+            their welfare. They bear the continued weight of socio-cultural
+            discrimination and violence against them.
           </p>
         </div>
       </section>
@@ -206,10 +261,17 @@ export default function ProgramsDetailsPage() {
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
             {/* Left Column */}
             <div className="lg:flex-1">
-              <h2 className="text-[40px] font-[600] text-gray-900 mb-6">Goals</h2>
+              <h2 className="text-[40px] font-[600] text-gray-900 mb-6">
+                Goals
+              </h2>
               <div className="text-[18px] text-[#212121] font-[400] leading-relaxed space-y-4 mb-12">
                 <p>
-                  VIN aims to empower women socially and economically through education, life skills and income generation opportunities. By 2030, VIN aims to benefit at least 80% of the total women in the marginalized communities of the target areas (Kavresthali, Nuwakot and Okhaldhunga). Women Empowerment Program focuses its projects under three particularly important SDGs:
+                  VIN aims to empower women socially and economically through
+                  education, life skills and income generation opportunities. By
+                  2030, VIN aims to benefit at least 80% of the total women in
+                  the marginalized communities of the target areas (Kavresthali,
+                  Nuwakot and Okhaldhunga). Women Empowerment Program focuses
+                  its projects under three particularly important SDGs:
                 </p>
                 <div className="space-y-2 font-medium text-[#212121]">
                   <p>Goal 1: No Poverty</p>
@@ -218,26 +280,39 @@ export default function ProgramsDetailsPage() {
                 </div>
               </div>
 
-              <h2 className="text-[40px] font-[600] text-gray-900 mb-8">Achievements</h2>
+              <h2 className="text-[40px] font-[600] text-gray-900 mb-8">
+                Achievements
+              </h2>
               <div className="text-[18px] text-[#212121] font-[400] leading-relaxed space-y-4 mb-12">
                 <p>
-                  A total of 25,113 women benefited from the Women Empowerment Program.
+                  A total of 25,113 women benefited from the Women Empowerment
+                  Program.
                 </p>
                 <ul className="space-y-4 list-disc pl-5">
                   <li>
-                    10,055 women were provided with Education and Life Skill Development trainings. They participated in workshops on Women Rights and Domestic Violence, Health and Sanitation, Life Skills etc.
+                    10,055 women were provided with Education and Life Skill
+                    Development trainings. They participated in workshops on
+                    Women Rights and Domestic Violence, Health and Sanitation,
+                    Life Skills etc.
                   </li>
                   <li>
-                    Micro-credit Cooperative Support was rendered to 3,442 women via various activities such as Women's Group Formation, Women's Cooperatives and Excursions.
+                    Micro-credit Cooperative Support was rendered to 3,442 women
+                    via various activities such as Women's Group Formation,
+                    Women's Cooperatives and Excursions.
                   </li>
                   <li>
-                    Entrepreneurship training was provided to 7,322 women e.g., trainings on Organic Farming, Animal Husbandry, Cheese Making etc.
+                    Entrepreneurship training was provided to 7,322 women e.g.,
+                    trainings on Organic Farming, Animal Husbandry, Cheese
+                    Making etc.
                   </li>
                   <li>
-                    Trafficking Prevention Education project supported 1,294 women. They were provided with trainings such as Embroidery, Knitting, Jewellery Making etc.
+                    Trafficking Prevention Education project supported 1,294
+                    women. They were provided with trainings such as Embroidery,
+                    Knitting, Jewellery Making etc.
                   </li>
                   <li>
-                    Construction of Women Business Centre in Kavresthali, Kathmandu, benefitted 3,000 women.
+                    Construction of Women Business Centre in Kavresthali,
+                    Kathmandu, benefitted 3,000 women.
                   </li>
                 </ul>
               </div>
@@ -246,11 +321,13 @@ export default function ProgramsDetailsPage() {
                 Research/Reports
               </h2>
               <p className="text-[18px] text-[#212121] font-[400] leading-relaxed mb-8">
-                To know more about the status of women in Nepal, please go through the following reports:
+                To know more about the status of women in Nepal, please go
+                through the following reports:
               </p>
               <ul className="space-y-4 text-[#212121] font-[400] leading-relaxed list-disc pl-5">
                 <li>
-                  Women&apos;s Development in Nepal: The Myth of Empowerment – By Ishara Mahat
+                  Women&apos;s Development in Nepal: The Myth of Empowerment –
+                  By Ishara Mahat
                 </li>
                 <li>
                   Progress of the Women in Nepal Report, 1995-2015 – By UN Women
@@ -266,18 +343,43 @@ export default function ProgramsDetailsPage() {
                 </h3>
                 <div className="space-y-6">
                   {[
-                    { title: "Women's Education and Life Skills", img: "https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=400&q=80", href: "/programs/womens-empowerment/education" },
-                    { title: "Microcredit Cooperative Support", img: "https://images.unsplash.com/photo-1590233465423-40844bb147d3?w=400&q=80", href: "/programs/womens-empowerment/microcredit" },
-                    { title: "Entrepreneurship Development", img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80", href: "/programs/womens-empowerment/entrepreneurship" },
-                    { title: "Women's Trafficking Prevention", img: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&q=80", href: "/programs/womens-empowerment/trafficking" },
+                    {
+                      title: "Women's Education and Life Skills",
+                      img: "https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=400&q=80",
+                      href: "/programs-projects",
+                    },
+                    {
+                      title: "Microcredit Cooperative Support",
+                      img: "https://images.unsplash.com/photo-1590233465423-40844bb147d3?w=400&q=80",
+                      href: "/programs-projects",
+                    },
+                    {
+                      title: "Entrepreneurship Development",
+                      img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80",
+                      href: "/programs-projects",
+                    },
+                    {
+                      title: "Women's Trafficking Prevention",
+                      img: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&q=80",
+                      href: "/programs-projects",
+                    },
                   ].map((project, idx) => (
                     <div key={idx} className="flex gap-4 group">
                       <div className="w-23 h-23 shrink-0 overflow-hidden">
-                        <img src={project.img} alt={project.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <img
+                          src={project.img}
+                          alt={project.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
                       </div>
                       <div>
-                        <h4 className="text-gray-900 font-[500] text-[20px] mb-1 leading-tight">{project.title}</h4>
-                        <Link href={project.href} className="text-[var(--blue)] text-[18px] font-[700] hover:underline flex items-center gap-1">
+                        <h4 className="text-gray-900 font-[500] text-[20px] mb-1 leading-tight">
+                          {project.title}
+                        </h4>
+                        <Link
+                          href={project.href}
+                          className="text-[var(--blue)] text-[18px] font-[700] hover:underline flex items-center gap-1"
+                        >
                           View Project <ArrowRight size={14} />
                         </Link>
                       </div>
@@ -292,18 +394,43 @@ export default function ProgramsDetailsPage() {
                 </h3>
                 <div className="space-y-6">
                   {[
-                    { title: "Women's Education and Life Skills", img: "https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=400&q=80", href: "/programs/womens-empowerment/education" },
-                    { title: "Microcredit Cooperative Support", img: "https://images.unsplash.com/photo-1590233465423-40844bb147d3?w=400&q=80", href: "/programs/womens-empowerment/microcredit" },
-                    { title: "Entrepreneurship Development", img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80", href: "/programs/womens-empowerment/entrepreneurship" },
-                    { title: "Women's Trafficking Prevention", img: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&q=80", href: "/programs/womens-empowerment/trafficking" },
+                    {
+                      title: "Women's Education and Life Skills",
+                      img: "https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=400&q=80",
+                      href: "/programs-projects",
+                    },
+                    {
+                      title: "Microcredit Cooperative Support",
+                      img: "https://images.unsplash.com/photo-1590233465423-40844bb147d3?w=400&q=80",
+                      href: "/programs-projects",
+                    },
+                    {
+                      title: "Entrepreneurship Development",
+                      img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80",
+                      href: "/programs-projects",
+                    },
+                    {
+                      title: "Women's Trafficking Prevention",
+                      img: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&q=80",
+                      href: "/programs-projects",
+                    },
                   ].map((project, idx) => (
                     <div key={idx} className="flex gap-4 group">
                       <div className="w-23 h-23 shrink-0  overflow-hidden">
-                        <img src={project.img} alt={project.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <img
+                          src={project.img}
+                          alt={project.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
                       </div>
                       <div>
-                        <h4 className="text-gray-900 font-[500] text-[20px] mb-1 leading-tight">{project.title}</h4>
-                        <Link href={project.href} className="text-[var(--blue)] text-[18px] font-[700] hover:underline flex items-center gap-1">
+                        <h4 className="text-gray-900 font-[500] text-[20px] mb-1 leading-tight">
+                          {project.title}
+                        </h4>
+                        <Link
+                          href={project.href}
+                          className="text-[var(--blue)] text-[18px] font-[700] hover:underline flex items-center gap-1"
+                        >
                           View Project <ArrowRight size={14} />
                         </Link>
                       </div>
@@ -315,7 +442,6 @@ export default function ProgramsDetailsPage() {
           </div>
         </div>
       </section>
-
 
       {/* Testimonials */}
       <section className="py-12 bg-white">
@@ -400,7 +526,10 @@ export default function ProgramsDetailsPage() {
 
           {/* Description */}
           <p className="text-gray-600 text-sm md:text-base text-center mb-12 leading-relaxed">
-            VIN facilitates projects focused on the women and children of marginalized communities against this challenging backdrop. VIN believes that the empowerment of women and children will bring about positive change so desperately needed in Nepal.
+            VIN facilitates projects focused on the women and children of
+            marginalized communities against this challenging backdrop. VIN
+            believes that the empowerment of women and children will bring about
+            positive change so desperately needed in Nepal.
           </p>
 
           {/* Carousel Container */}
@@ -428,7 +557,12 @@ export default function ProgramsDetailsPage() {
                     </div>
 
                     {/* Image/Video Container */}
-                    <div className="relative aspect-[3/4] overflow-hidden group cursor-pointer" onClick={() => { if(item.type !== "video") openImage(item.image); }}>
+                    <div
+                      className="relative aspect-[3/4] overflow-hidden group cursor-pointer"
+                      onClick={() => {
+                        if (item.type !== "video") openImage(item.image);
+                      }}
+                    >
                       <img
                         src={item.image}
                         alt={item.title}
@@ -439,10 +573,16 @@ export default function ProgramsDetailsPage() {
                       {item.type === "video" && (
                         <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
                           <button
-                            onClick={() => item.videoUrl && openVideo(item.videoUrl)}
+                            onClick={() =>
+                              item.videoUrl && openVideo(item.videoUrl)
+                            }
                             className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full bg-white/90 backdrop-blur-sm shadow-lg hover:scale-110 transition-transform"
                           >
-                            <Play size={24} fill="currentColor" className="text-gray-800 ml-0.5" />
+                            <Play
+                              size={24}
+                              fill="currentColor"
+                              className="text-gray-800 ml-0.5"
+                            />
                           </button>
                         </div>
                       )}
