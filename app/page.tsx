@@ -357,7 +357,7 @@ export default function HomePage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative w-full h-[100vh] min-h-[600px] max-h-[800px] flex items-center !px-0">
+      <section className="relative w-full h-[82vh] min-h-[500px] max-h-[700px] flex items-center !px-0">
         {/* Background Images Cross-fade */}
         {heroItems.map((item, index) => (
           <div
@@ -1376,7 +1376,7 @@ export default function HomePage() {
             onClick={() => setActiveImage(null)}
           >
             <div
-              className="relative max-w-5xl max-h-[90vh] rounded-lg overflow-hidden flex items-center justify-center"
+              className="relative max-w-5xl max-h-[82vh] rounded-lg overflow-hidden flex items-center justify-center"
               onClick={(e) => e.stopPropagation()}
             >
               <img

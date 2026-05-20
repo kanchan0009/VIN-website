@@ -83,7 +83,7 @@ export default function AboutPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative flex items-end overflow-hidden h-[100vh] min-h-[600px] max-h-[800px]">
+      <section className="relative flex items-end overflow-hidden h-[75vh] min-h-[600px] max-h-[800px]">
         <img
           src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1600&q=80"
           alt="About VIN"

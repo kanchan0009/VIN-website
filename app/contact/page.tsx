@@ -49,7 +49,7 @@ export default function ContactPage() {
   return (
     <main className="font-montserrat">
       {/* Hero */}
-      <section className="relative flex items-end overflow-hidden h-[100vh] min-h-[600px] max-h-[800px]">
+      <section className="relative flex items-end overflow-hidden h-[75vh] min-h-[600px] max-h-[800px]">
         <img
           src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1600&q=80"
           alt="Contact Us"
@@ -102,7 +102,7 @@ export default function ContactPage() {
                 style={{ background: "var(--blue)" }}
               >
                 <span>Send Message</span>
-                <Send size={18} className="rotate-[-20deg]" />
+                <Send size={18} className="rotate-[25deg]" />
               </button>
             </div>
           </div>

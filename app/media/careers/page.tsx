@@ -73,7 +73,7 @@ export default function CareersPage() {
   return (
     <main className="font-montserrat">
       {/* Hero */}
-      <section className="relative flex items-end overflow-hidden h-[100vh] min-h-[600px] max-h-[800px]">
+      <section className="relative flex items-end overflow-hidden h-[75vh] min-h-[600px] max-h-[800px]">
         <img
           src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&q=80"
           alt="Careers"

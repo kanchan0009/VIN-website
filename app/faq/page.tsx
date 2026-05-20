@@ -39,7 +39,7 @@ export default function FAQPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative flex items-end overflow-hidden h-[100vh] min-h-[600px] max-h-[800px]">
+      <section className="relative flex items-end overflow-hidden h-[75vh] min-h-[600px] max-h-[800px]">
         <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=1600&q=80" alt="FAQ" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)' }} />
         <div className="relative z-10  mx-auto px-4 pb-10 w-full">

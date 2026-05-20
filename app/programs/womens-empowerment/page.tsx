@@ -191,7 +191,7 @@ export default function WomensEmpowermentPage() {
       </section>
 
       {/* Hero Image */}
-      <section className="mb-10 p-0 !px-0 h-[100vh] min-h-[600px] max-h-[800px]">
+      <section className="mb-10 p-0 !px-0 h-[75vh] min-h-[600px] max-h-[800px]">
         <div className="w-full overflow-hidden h-full">
           <img 
             src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1600&q=80" 

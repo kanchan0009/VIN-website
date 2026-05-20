@@ -134,7 +134,7 @@ export default function ProgramsDetailsPage() {
       </section>
 
       {/* Hero Image Section */}
-      <section className="w-full mb-8 !px-0 h-[100vh] min-h-[600px] max-h-[800px]">
+      <section className="w-full mb-8 !px-0 h-[75vh] min-h-[600px] max-h-[800px]">
         <div className="w-full md: overflow-hidden h-full">
           <img
             src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1600"
@@ -636,7 +636,7 @@ export default function ProgramsDetailsPage() {
             onClick={() => setActiveImage(null)}
           >
             <div
-              className="relative max-w-5xl max-h-[90vh] rounded-lg overflow-hidden flex items-center justify-center"
+              className="relative max-w-5xl max-h-[75vh] rounded-lg overflow-hidden flex items-center justify-center"
               onClick={(e) => e.stopPropagation()}
             >
               <img

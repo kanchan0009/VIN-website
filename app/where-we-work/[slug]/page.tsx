@@ -204,7 +204,7 @@ export default function LocationDetail() {
   return (
     <main className="w-full min-h-screen font-montserrat">
       {/* Hero Section */}
-      <section className="relative flex items-end overflow-hidden h-[100vh] min-h-[600px] max-h-[800px]">
+      <section className="relative flex items-end overflow-hidden h-[75vh] min-h-[600px] max-h-[800px]">
         <img
           src={location.heroImage}
           alt={location.name}

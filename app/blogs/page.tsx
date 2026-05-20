@@ -74,7 +74,7 @@ export default function BlogsPage() {
   return (
     <main className="font-montserrat">
       {/* Hero */}
-      <section className="relative flex items-end overflow-hidden h-[100vh] min-h-[600px] max-h-[800px]">
+      <section className="relative flex items-end overflow-hidden h-[75vh] min-h-[600px] max-h-[800px]">
         <img
           src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80"
           alt="Blogs"

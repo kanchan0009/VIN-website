@@ -105,7 +105,7 @@ function ProgramProjectsContent() {
   return (
     <main>
       {/* Hero Image Section */}
-      <section className="w-full m-0 !px-0 overflow-hidden h-[100vh] min-h-[600px] max-h-[800px]">
+      <section className="w-full m-0 !px-0 overflow-hidden h-[75vh] min-h-[600px] max-h-[800px]">
         <img 
           src={content.heroImage} 
           alt={content.title} 

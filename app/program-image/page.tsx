@@ -58,7 +58,7 @@ function ProgramImageContent() {
           <img 
             src={lightboxImage} 
             alt="Lightbox" 
-            className="max-w-full max-h-[90vh] object-contain rounded-sm shadow-2xl"
+            className="max-w-full max-h-[75vh] object-contain rounded-sm shadow-2xl"
           />
         </div>
       )}

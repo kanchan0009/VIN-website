@@ -7,7 +7,7 @@ export default function MissionPage() {
   return (
     <main className="text-[#1a1a2e]">
       {/* Hero Section */}
-      <section className="relative flex items-end overflow-hidden full-width-bg h-[100vh] min-h-[600px] max-h-[800px]">
+      <section className="relative flex items-end overflow-hidden full-width-bg h-[75vh] min-h-[600px] max-h-[800px]">
         <img
           src="https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?q=80&w=2070&auto=format&fit=crop"
           alt="Mission"

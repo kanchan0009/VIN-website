@@ -420,7 +420,7 @@ export default function VolunteerDetailsPage() {
   return (
     <main className="bg-white min-h-screen font-montserrat">
       {/* Hero Section */}
-      <section className="relative w-full overflow-hidden h-[100vh] min-h-[600px] max-h-[800px]">
+      <section className="relative w-full overflow-hidden h-[75vh] min-h-[600px] max-h-[800px]">
         <Image
           src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop"
           alt="Childcare Volunteer Hero"

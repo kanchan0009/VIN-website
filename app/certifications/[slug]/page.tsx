@@ -138,7 +138,7 @@ export default async function CertificationDetailPage(props: {
   return (
     <main className="bg-white font-montserrat">
       {/* Hero Section */}
-      <section className="relative flex items-end overflow-hidden h-[100vh] min-h-[600px] max-h-[800px]">
+      <section className="relative flex items-end overflow-hidden h-[75vh] min-h-[600px] max-h-[800px]">
         <img
           src="https://images.unsplash.com/photo-1594932224828-b4b059b8fe0e?w=1600&q=80"
           alt="Certified By"
