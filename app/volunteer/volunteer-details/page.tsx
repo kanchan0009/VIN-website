@@ -392,6 +392,19 @@ const expectations = [
 export default function VolunteerDetailsPage() {
   const [selectedProgram, setSelectedProgram] = useState(programs[0]);
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const searchParams = new URLSearchParams(window.location.search);
+      const programId = searchParams.get("id");
+      if (programId) {
+        const found = programs.find((p) => p.id === programId);
+        if (found) {
+          setSelectedProgram(found);
+        }
+      }
+    }
+  }, []);
+
   const getIcon = (iconName: string, size = 24, className = "text-[var(--blue)]") => {
     const iconMap: Record<string, any> = {
       Baby: <Baby size={size} className={className} />,
@@ -414,6 +427,11 @@ export default function VolunteerDetailsPage() {
 
   const handleProgramSelect = (program: any) => {
     setSelectedProgram(program);
+    if (typeof window !== "undefined") {
+      const url = new URL(window.location.href);
+      url.searchParams.set("id", program.id);
+      window.history.pushState({}, "", url.toString());
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -695,12 +713,12 @@ export default function VolunteerDetailsPage() {
                   </div>
                   <div>
                     <div className="w-full h-[1px] bg-gray-100 mb-4" />
-                    <Link 
-                      href={`/programs-projects?topic=${program.id}`}
-                      className="text-[#1a237e] text-xs font-bold flex items-center gap-1 hover:gap-2 transition-all"
+                    <button 
+                      onClick={() => handleProgramSelect(program)}
+                      className="text-[#1a237e] text-xs font-bold flex items-center gap-1 hover:gap-2 transition-all text-left"
                     >
                       Learn More <span className="text-lg leading-none">→</span>
-                    </Link>
+                    </button>
                   </div>
                 </div>
               </div>

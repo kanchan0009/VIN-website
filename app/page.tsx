@@ -23,6 +23,16 @@ import {
 import { useRef, useState, useCallback, useEffect } from "react";
 import DonationWidget from "./components/DonationWidget";
 import CTABanner from "./components/CTABanner";
+import { topicContent } from "./data/programData";
+import {
+  articles as allArticles,
+  newsItems as allNewsItems,
+  stories as allStories,
+  caseStudies as allCaseStudies,
+  openings as allOpenings,
+  interviews as allInterviews,
+  albums as allAlbums,
+} from "./data/mediaData";
 
 const testimonials = [
   {
@@ -469,11 +479,23 @@ export default function HomePage() {
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedTopic, setSelectedTopic] = useState("");
+  const [expandedCareerId, setExpandedCareerId] = useState<number | null>(null);
   const [currentPlace, setCurrentPlace] = useState(places[0]);
   const [learnMoreIndex, setLearnMoreIndex] = useState(0);
   const [showAllPrograms, setShowAllPrograms] = useState(false);
   const [selectedProgramFilter, setSelectedProgramFilter] = useState("Choose a Program");
   const [heroIndex, setHeroIndex] = useState(0);
+
+  const programToTopicMap: Record<string, string> = {
+    "Women Empowerment": "womens-empowerment",
+    "Youth Empowerment": "youth-empowerment",
+    "Public Health and Sanitation": "public-health",
+    "Education and Career Development": "child-development",
+    "Environment & Conservation Projects": "environment",
+    "Disaster Risk Reduction": "disaster-risk",
+  };
+
+  const activeTopic = selectedTopic || programToTopicMap[selectedProgramFilter] || "";
 
   const heroItems = [
     {
@@ -552,6 +574,15 @@ export default function HomePage() {
   const openImage = (url: string) => {
     setActiveImage(url);
   };
+
+  // Filter media based on activeTopic
+  const filteredArticles = allArticles.filter(item => !activeTopic || item.topic === activeTopic);
+  const filteredNews = allNewsItems.filter(item => !activeTopic || item.topic === activeTopic);
+  const filteredStories = allStories.filter(item => !activeTopic || item.topic === activeTopic);
+  const filteredCaseStudies = allCaseStudies.filter(item => !activeTopic || item.topic === activeTopic);
+  const filteredOpenings = allOpenings.filter(item => !activeTopic || item.topic === activeTopic);
+  const filteredInterviews = allInterviews.filter(item => !activeTopic || item.topic === activeTopic);
+  const filteredAlbums = allAlbums.filter(item => !activeTopic || item.topic === activeTopic);
 
   return (
     <main>
@@ -1333,87 +1364,472 @@ export default function HomePage() {
             </Link>
           </div>
 
-          {/* Carousel Container */}
-          <div className="relative flex items-center justify-center">
-            {/* Left Arrow */}
-            <button
-              onClick={prevMedia}
-              type="button"
-              className="absolute left-2 md:left-0 z-50 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full text-white hover:opacity-90 transition-opacity cursor-pointer md:-translate-x-6 shadow-md hover:shadow-lg"
-              style={{ background: "var(--blue)" }}
-              aria-label="Previous media"
-            >
-              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
-            </button>
+          {/* Dynamic Content Container */}
+          <div className="mt-8">
+            {(() => {
+              const hasContent = 
+                (selectedCategory === "gallery" && filteredAlbums.length > 0) ||
+                (selectedCategory === "articles" && filteredArticles.length > 0) ||
+                (selectedCategory === "news" && filteredNews.length > 0) ||
+                (selectedCategory === "careers" && filteredOpenings.length > 0) ||
+                (selectedCategory === "success-stories" && filteredStories.length > 0) ||
+                (selectedCategory === "case-studies" && filteredCaseStudies.length > 0) ||
+                (selectedCategory === "interviews" && filteredInterviews.length > 0) ||
+                (selectedCategory === "" && (filteredArticles.length > 0 || filteredNews.length > 0 || filteredStories.length > 0 || filteredInterviews.length > 0));
 
-            {/* Media Card */}
-            <div className="flex-1  mx-8 md:mx-16">
-              <div className=" rounded-lg overflow-hidden  border border-gray-200">
-                <div className="flex flex-col md:flex-row">
-                  {/* Image */}
-                  <div className="w-full md:w-2/5 lg:w-1/3 shrink-0">
-                    <div className="relative w-full aspect-[4/3] md:aspect-auto md:h-full overflow-hidden">
-                      <img
-                        src={currentMedia.image}
-                        alt={currentMedia.title}
-                        className="w-full h-[400px] object-cover grayscale"
-                      />
-                    </div>
+              if (!hasContent) {
+                return (
+                  <div className="text-center py-16 bg-white rounded-lg shadow-sm border border-gray-100 mx-8 md:mx-16">
+                    <p className="text-gray-500 text-lg">No media files found matching the selected filters. Please choose another topic or category.</p>
                   </div>
+                );
+              }
 
-                  {/* Content */}
-                  <div className="flex-1 p-6 md:p-8 lg:p-10">
-                    <h3
-                      className="text-lg md:text-xl font-bold text-gray-900 mb-4"
-                      style={{}}
-                    >
-                      {currentMedia.title}
-                    </h3>
+              if (selectedCategory === "gallery") {
+                return (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mx-8 md:mx-16">
+                    {filteredAlbums.map((album, idx) => {
+                      const projectTitle = topicContent[album.slug]?.focusedProjects?.[0]?.title || album.title;
+                      const projectParam = encodeURIComponent(projectTitle);
+                      const albumParam = encodeURIComponent(album.title);
+                      return (
+                        <div
+                          key={idx}
+                          className="relative rounded-[10px] overflow-hidden group w-full aspect-square shadow-md hover:shadow-lg transition-shadow"
+                        >
+                          <img
+                            src={album.img}
+                            alt={album.title}
+                            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          />
+                          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-all" />
+                          <div className="absolute inset-0 flex flex-col items-center justify-end pb-8 text-center px-6">
+                            <h4 className="text-white text-lg font-semibold mb-4 leading-tight">
+                              {album.title}
+                            </h4>
+                            <Link
+                              href={`/gallery-details?topic=${album.slug}&project=${projectParam}&album=${albumParam}`}
+                            >
+                              <button className="bg-[var(--blue)] text-white px-8 py-3 rounded-xl font-bold text-xs hover:bg-white hover:text-[var(--blue)] transition-all shadow-lg active:scale-95">
+                                Explore Album
+                              </button>
+                            </Link>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                );
+              }
 
-                    <p className="text-gray-600 text-xs md:text-sm leading-relaxed mb-6 line-clamp-6">
-                      {currentMedia.description}
-                    </p>
-
-                    <div className="flex items-center gap-4">
-                      <Link
-                        href={currentMedia.readMoreLink.replace(
-                          "/programs/",
-                          "/programs-projects?topic=",
-                        )}
-                        className="inline-flex items-center px-5 py-2 rounded text-white text-xs md:text-sm font-medium hover:opacity-90 transition-opacity"
-                        style={{ background: "var(--blue)" }}
-                      >
-                        Read More
+              if (selectedCategory === "articles") {
+                return (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-8 md:mx-16">
+                    {filteredArticles.map((article) => (
+                      <Link href="/article-blogs" key={article.id} className="block group">
+                        <article className="h-full bg-white rounded-[20px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-gray-100 flex flex-col hover:shadow-xl transition-all duration-500">
+                          <div className="relative h-48 overflow-hidden">
+                            <img 
+                              src={article.image} 
+                              alt={article.title} 
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                            />
+                          </div>
+                          <div className="p-5 flex flex-col flex-1">
+                            <span className={`text-[9px] uppercase font-[700] tracking-wider mb-2 ${article.categoryColor || 'text-[var(--blue)]'}`}>
+                              {article.category}
+                            </span>
+                            <h3 className="text-base font-[700] text-[#1D1E20] mb-2 leading-snug group-hover:text-[var(--blue)] transition-colors">
+                              {article.title}
+                            </h3>
+                            <p className="text-gray-500 text-[11px] leading-relaxed mb-4 line-clamp-2">
+                              {article.excerpt}
+                            </p>
+                            <div className="mt-auto flex items-center justify-between text-[10px] text-gray-400 font-[500] pt-3 border-t border-gray-200">
+                              <span>{article.date}</span>
+                              <span>{article.readTime}</span>
+                            </div>
+                          </div>
+                        </article>
                       </Link>
-
-                      <button
-                        onClick={() =>
-                          handleDownload(currentMedia.downloadLink)
-                        }
-                        className="inline-flex items-center px-5 py-2 rounded border text-xs md:text-sm font-medium hover:bg-gray-50 transition-colors"
-                        style={{
-                          borderColor: "var(--blue)",
-                          color: "var(--blue)",
-                        }}
-                      >
-                        Download
-                      </button>
-                    </div>
+                    ))}
                   </div>
-                </div>
-              </div>
-            </div>
+                );
+              }
 
-            {/* Right Arrow */}
-            <button
-              onClick={nextMedia}
-              type="button"
-              className="absolute right-2 md:right-0 z-50 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full text-white hover:opacity-90 transition-opacity cursor-pointer md:translate-x-6 shadow-md hover:shadow-lg"
-              style={{ background: "var(--blue)" }}
-              aria-label="Next media"
-            >
-              <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
-            </button>
+              if (selectedCategory === "news") {
+                return (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-8 md:mx-16">
+                    {filteredNews.map((news) => (
+                      <div key={news.id} className="group flex flex-col border border-gray-200 shadow-sm hover:shadow-md rounded-lg overflow-hidden h-full transition-shadow bg-white">
+                        <div className="relative aspect-[4/3] overflow-hidden">
+                          <img
+                            src={news.image}
+                            alt={news.title}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                        </div>
+                        <div className="p-6 flex flex-col flex-1">
+                          <h3 className="text-[20px] font-[600] text-[#212121] mb-2 group-hover:text-[var(--blue)] transition-colors">
+                            {news.title}
+                          </h3>
+                          <p className="text-[#4b5563] text-[16px] leading-relaxed mb-4 line-clamp-3 text-left">
+                            {news.summary}
+                          </p>
+                          <Link 
+                            href={`/media/news/${news.id}`}
+                            className="text-[var(--blue)] font-[600] flex items-center gap-2 hover:gap-3 transition-all mt-auto"
+                          >
+                            Read Full News <span className="text-xl">→</span>
+                          </Link>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                );
+              }
+
+              if (selectedCategory === "careers") {
+                return (
+                  <div className="space-y-4 w-full max-w-4xl mx-auto px-8">
+                    {filteredOpenings.map((job) => (
+                      <div key={job.id} className="border border-gray-200 overflow-hidden transition-all duration-300 rounded bg-white">
+                        {/* Accordion Header */}
+                        <button
+                          onClick={() => setExpandedCareerId(expandedCareerId === job.id ? null : job.id)}
+                          className={`w-full flex items-center justify-between px-8 py-3.5 transition-all duration-300 ${
+                            expandedCareerId === job.id 
+                              ? "bg-[var(--blue)] text-white" 
+                              : "bg-white text-[#1D1E20] hover:bg-gray-50"
+                          }`}
+                        >
+                          <span className="text-lg lg:text-xl font-[600] text-left">{job.title}</span>
+                          <div className={`transition-transform duration-300 ${expandedCareerId === job.id ? "rotate-180" : ""}`}>
+                            <ChevronDown size={24} />
+                          </div>
+                        </button>
+
+                        {/* Accordion Content */}
+                        <div 
+                          className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                            expandedCareerId === job.id ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
+                          }`}
+                        >
+                          <div className="p-8 lg:p-12 bg-white space-y-8">
+                            {/* Info Table */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2 max-w-2xl text-left">
+                              {[
+                                { label: "No. of Vacancy", value: job.vacancy },
+                                { label: "Employment Type", value: job.type },
+                                { label: "Job Location", value: job.location },
+                                { label: "Offered Salary", value: job.salary },
+                                { label: "Apply Before (Deadline)", value: job.deadline },
+                              ].map((info, idx) => (
+                                <div key={idx} className="flex gap-4 text-[15px]">
+                                  <span className="w-48 font-[600] text-[#4A4A4A]">{info.label}</span>
+                                  <span className="font-[600] text-[#4A4A4A] flex items-center">
+                                    <span className="mr-4">:</span>
+                                    {info.value}
+                                  </span>
+                                </div>
+                              ))}
+                            </div>
+
+                            {/* Job Details Lists */}
+                            <div className="space-y-10 text-left">
+                              {/* Job Description */}
+                              <div className="space-y-2">
+                                <h4 className="text-[18px] font-[700] text-[var(--blue)]">Job Description</h4>
+                                <ul className="space-y-2 pl-2">
+                                  {job.description.map((item, idx) => (
+                                    <li key={idx} className="flex items-start gap-3 text-[15px] text-[#4A4A4A] font-[500]">
+                                      <span className="mt-2 w-1.5 h-1.5 bg-[#4A4A4A] rounded-full shrink-0"></span>
+                                      {item}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+
+                              {/* Job Requirement */}
+                              <div className="space-y-2">
+                                <h4 className="text-[18px] font-[700] text-[var(--blue)]">Job Requirement</h4>
+                                <ul className="space-y-2 pl-2">
+                                  {job.requirements.map((item, idx) => (
+                                    <li key={idx} className="flex items-start gap-3 text-[15px] text-[#4A4A4A] font-[500]">
+                                      <span className="mt-2 w-1.5 h-1.5 bg-[#4A4A4A] rounded-full shrink-0"></span>
+                                      {item}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+
+                              {/* Qualifications & Skills */}
+                              <div className="space-y-2">
+                                <h4 className="text-[18px] font-[700] text-[var(--blue)]">Qualifications & Skills</h4>
+                                <ul className="space-y-2 pl-2">
+                                  {job.skills.map((item, idx) => (
+                                    <li key={idx} className="flex items-start gap-3 text-[15px] text-[#4A4A4A] font-[500]">
+                                      <span className="mt-2 w-1.5 h-1.5 bg-[#4A4A4A] rounded-full shrink-0"></span>
+                                      {item}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                );
+              }
+
+              if (selectedCategory === "success-stories") {
+                return (
+                  <div className="space-y-6 w-full max-w-5xl mx-auto px-8">
+                    {filteredStories.map((story, i) => (
+                      <div 
+                        key={story.id} 
+                        className={`p-8 md:p-10 border border-gray-300 rounded-[5px] flex flex-col md:flex-row gap-10 lg:gap-16 items-center bg-white ${
+                          i % 2 !== 0 ? "md:flex-row-reverse" : ""
+                        }`}
+                      >
+                        {/* Text Content */}
+                        <div className="flex-1 space-y-4 text-left">
+                          <p className="text-[15px] text-[#4A4A4A] leading-[1.8] font-[400]">
+                            {story.text}
+                          </p>
+                          <div>
+                            <h4 className="text-[16px] font-[700] text-[#1D1E20]">{story.name}</h4>
+                            <p className="text-[13px] text-[#9EA1A6] font-[600]">{story.location}</p>
+                          </div>
+                        </div>
+
+                        {/* Image */}
+                        <div className="w-full md:w-[300px] lg:w-[320px] shrink-0">
+                          <div className="aspect-square overflow-hidden rounded-[5px] shadow-sm">
+                            <img
+                              src={story.image}
+                              alt={story.name}
+                              className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                );
+              }
+
+              if (selectedCategory === "case-studies") {
+                return (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-8 md:mx-16">
+                    {filteredCaseStudies.map((study) => (
+                      <div key={study.id} className="group flex flex-col border border-gray-200 shadow-sm hover:shadow-md rounded-lg overflow-hidden h-full transition-shadow bg-white">
+                        <div className="relative aspect-[4/3] overflow-hidden">
+                          <img
+                            src={study.image}
+                            alt={study.title}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                        </div>
+                        <div className="p-6 flex flex-col flex-1">
+                          <h3 className="text-[24px] font-[600] text-[#212121] mb-2 group-hover:text-[var(--blue)] transition-colors">
+                            {study.title}
+                          </h3>
+                          <p className="text-[#4b5563] text-[16px] leading-relaxed mb-4 line-clamp-3 font-light text-left">
+                            {study.summary}
+                          </p>
+                          <Link 
+                            href={`/media/case-studies/${study.id}`}
+                            className="text-[var(--blue)] font-[600] flex items-center gap-2 hover:gap-3 transition-all mt-auto"
+                          >
+                            Read Case Study <span className="text-xl">→</span>
+                          </Link>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                );
+              }
+
+              if (selectedCategory === "interviews") {
+                return (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-8 md:mx-16">
+                    {filteredInterviews.map((item, idx) => (
+                      <div 
+                        key={idx} 
+                        className="relative aspect-video rounded-lg overflow-hidden group cursor-pointer shadow-sm bg-white"
+                        onClick={() => openVideo(item.videoUrl)}
+                      >
+                        <img 
+                          src={item.src} 
+                          alt={item.title} 
+                          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
+                        
+                        {/* Play Icon */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-white flex items-center justify-center group-hover:scale-110 transition-transform duration-300 drop-shadow-xl">
+                            <Play size={24} fill="currentColor" className="text-gray-900 ml-1" />
+                          </div>
+                        </div>
+                        
+                        {/* Title display */}
+                        <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent">
+                          <h4 className="text-white text-sm font-semibold truncate text-left">{item.title}</h4>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                );
+              }
+
+              // Fallback to Mixed Feed
+              const mixedFeed: Array<
+                | { type: "article"; data: typeof allArticles[0] }
+                | { type: "news"; data: typeof allNewsItems[0] }
+                | { type: "story"; data: typeof allStories[0] }
+                | { type: "video"; data: typeof allInterviews[0] }
+              > = [];
+
+              filteredArticles.slice(0, 2).forEach(item => mixedFeed.push({ type: "article", data: item }));
+              filteredNews.slice(0, 2).forEach(item => mixedFeed.push({ type: "news", data: item }));
+              filteredStories.slice(0, 1).forEach(item => mixedFeed.push({ type: "story", data: item }));
+              filteredInterviews.slice(0, 1).forEach(item => mixedFeed.push({ type: "video", data: item }));
+
+              return (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-8 md:mx-16">
+                  {mixedFeed.map((item, idx) => {
+                    if (item.type === "article") {
+                      const article = item.data;
+                      return (
+                        <Link href="/article-blogs" key={`art-${article.id}`} className="block group">
+                          <article className="h-full bg-white rounded-[20px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-gray-100 flex flex-col hover:shadow-xl transition-all duration-500">
+                            <div className="relative h-48 overflow-hidden">
+                              <img 
+                                src={article.image} 
+                                alt={article.title} 
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                              />
+                              <div className="absolute top-3 right-3 bg-indigo-600 text-white text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">
+                                Article
+                              </div>
+                            </div>
+                            <div className="p-5 flex flex-col flex-1">
+                              <span className={`text-[9px] uppercase font-[700] tracking-wider mb-2 ${article.categoryColor || 'text-[var(--blue)]'}`}>
+                                {article.category}
+                              </span>
+                              <h3 className="text-base font-[700] text-[#1D1E20] mb-2 leading-snug group-hover:text-[var(--blue)] transition-colors">
+                                {article.title}
+                              </h3>
+                              <p className="text-gray-500 text-[11px] leading-relaxed mb-4 line-clamp-2">
+                                {article.excerpt}
+                              </p>
+                              <div className="mt-auto flex items-center justify-between text-[10px] text-gray-400 font-[500] pt-3 border-t border-gray-200">
+                                <span>{article.date}</span>
+                                <span>{article.readTime}</span>
+                              </div>
+                            </div>
+                          </article>
+                        </Link>
+                      );
+                    } else if (item.type === "news") {
+                      const news = item.data;
+                      return (
+                        <div key={`news-${news.id}`} className="group flex flex-col border border-gray-200 shadow-sm hover:shadow-md rounded-lg overflow-hidden h-full transition-shadow bg-white">
+                          <div className="relative aspect-[4/3] overflow-hidden">
+                            <img
+                              src={news.image}
+                              alt={news.title}
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                            <div className="absolute top-3 right-3 bg-amber-500 text-white text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">
+                              News Update
+                            </div>
+                          </div>
+                          <div className="p-6 flex flex-col flex-1">
+                            <h3 className="text-[20px] font-[600] text-[#212121] mb-2 group-hover:text-[var(--blue)] transition-colors">
+                              {news.title}
+                            </h3>
+                            <p className="text-[#4b5563] text-[16px] leading-relaxed mb-4 line-clamp-3 text-left">
+                              {news.summary}
+                            </p>
+                            <Link 
+                              href={`/media/news/${news.id}`}
+                              className="text-[var(--blue)] font-[600] flex items-center gap-2 hover:gap-3 transition-all mt-auto"
+                            >
+                              Read Full News <span className="text-xl">→</span>
+                            </Link>
+                          </div>
+                        </div>
+                      );
+                    } else if (item.type === "story") {
+                      const story = item.data;
+                      return (
+                        <div key={`story-${story.id}`} className="group flex flex-col border border-gray-200 shadow-sm hover:shadow-md rounded-lg overflow-hidden h-full transition-shadow bg-white">
+                          <div className="relative aspect-[4/3] overflow-hidden">
+                            <img
+                              src={story.image}
+                              alt={story.name}
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                            <div className="absolute top-3 right-3 bg-emerald-600 text-white text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">
+                              Success Story
+                            </div>
+                          </div>
+                          <div className="p-6 flex flex-col flex-1">
+                            <h3 className="text-[20px] font-[600] text-[#212121] mb-2 group-hover:text-[var(--blue)] transition-colors">
+                              {story.name} ({story.location})
+                            </h3>
+                            <p className="text-[#4b5563] text-[14px] leading-relaxed mb-4 line-clamp-4 font-light text-left">
+                              {story.text}
+                            </p>
+                            <Link 
+                              href="/media/success-stories"
+                              className="text-[var(--blue)] font-[600] flex items-center gap-2 hover:gap-3 transition-all mt-auto"
+                            >
+                              View Success Stories <span className="text-xl">→</span>
+                            </Link>
+                          </div>
+                        </div>
+                      );
+                    } else if (item.type === "video") {
+                      const video = item.data;
+                      return (
+                        <div 
+                          key={`video-${video.id}`} 
+                          className="relative aspect-[4/3] rounded-lg overflow-hidden group cursor-pointer shadow-sm bg-white"
+                          onClick={() => openVideo(video.videoUrl)}
+                        >
+                          <img 
+                            src={video.src} 
+                            alt={video.title} 
+                            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                          />
+                          <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
+                          
+                          <div className="absolute top-3 right-3 bg-red-600 text-white text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">
+                            Video Interview
+                          </div>
+
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-white flex items-center justify-center group-hover:scale-110 transition-transform duration-300 drop-shadow-xl">
+                              <Play size={24} fill="currentColor" className="text-gray-900 ml-1" />
+                            </div>
+                          </div>
+                          <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent">
+                            <h4 className="text-white text-sm font-semibold truncate text-left">{video.title}</h4>
+                          </div>
+                        </div>
+                      );
+                    }
+                    return null;
+                  })}
+                </div>
+              );
+            })()}
           </div>
         </div>
       </section>

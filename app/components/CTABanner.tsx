@@ -2,45 +2,182 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-const projects = [
+interface Project {
+  title: string;
+  desc: string;
+  img: string;
+  category: string;
+  program: string;
+  topic: string;
+}
+
+const projects: Project[] = [
   {
     title: "Women's Trafficking Prevention",
     desc: "The EID project aims to ensure economic independence of women by building their skills and providing the necessary support for facilitating women entrepreneurship.",
     img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80",
+    category: "Volunteer",
+    program: "Women Empowerment",
+    topic: "womens-empowerment",
   },
   {
     title: "Entrepreneurship Development",
     desc: "The EID project aims to ensure economic independence of women by building their skills and providing the necessary support for facilitating women entrepreneurship.",
     img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&q=80",
+    category: "Internship",
+    program: "Women Empowerment",
+    topic: "womens-empowerment",
   },
   {
     title: "Women's Education and Life Skills",
     desc: "This project empowers women to become self-reliant and resilient by providing them access to relevant education and skills development.",
     img: "https://images.unsplash.com/photo-1607748862156-7c548e7e98f4?w=400&q=80",
+    category: "Volunteer",
+    program: "Women Empowerment",
+    topic: "womens-empowerment",
   },
   {
     title: "Children's Health Program",
     desc: "Ensuring every child has access to basic healthcare and nutrition in the most remote areas of Nepal.",
     img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&q=80",
+    category: "Volunteer",
+    program: "Public Health & Medical",
+    topic: "public-health",
   },
   {
     title: "Organic Farming Initiative",
     desc: "Supporting local farmers to transition to sustainable organic methods for better yield and health.",
     img: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=400&q=80",
+    category: "Internship",
+    program: "Environment Conservation",
+    topic: "environment",
   },
   {
     title: "Youth Leadership Training",
     desc: "Empowering the next generation with the skills and confidence to lead their communities.",
     img: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=400&q=80",
+    category: "Volunteer",
+    program: "Youth Empowerment",
+    topic: "youth-empowerment",
   },
+  {
+    title: "Child Sponsorship Support",
+    desc: "Direct support providing school tuition, uniforms, books, and daily nutritious meals to children in remote villages.",
+    img: "https://images.unsplash.com/photo-1503919919749-646747424564?q=80&w=800",
+    category: "Sponsor a Child",
+    program: "Children Development",
+    topic: "child-development",
+  },
+  {
+    title: "Disabled Children Special Care",
+    desc: "Providing assistive devices, therapy, and specialized educational materials for kids with disabilities in marginalized communities.",
+    img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800",
+    category: "Sponsor a Child",
+    program: "Children Development",
+    topic: "kids-disabilities",
+  },
+  {
+    title: "Disaster Preparedness Training",
+    desc: "Equipping schools and local community clubs with basic safety, first-aid, and search and rescue tools.",
+    img: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800",
+    category: "Volunteer",
+    program: "Disaster Risk Reduction",
+    topic: "disaster-risk",
+  },
+  {
+    title: "Eco-Friendly Toilets Construction",
+    desc: "Constructing safe toilets, water systems, and promoting sustainable waste management structures in rural areas.",
+    img: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?w=800&q=80",
+    category: "Internship",
+    program: "Environment Conservation",
+    topic: "environment",
+  },
+  {
+    title: "IT & Vocational Training for Youth",
+    desc: "Teaching digital skills, hardware repair, and tailoring to rural youth to prepare them for local job opportunities.",
+    img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
+    category: "Internship",
+    program: "Youth Empowerment",
+    topic: "youth-empowerment",
+  },
+  {
+    title: "Mobile Health Camp Volunteering",
+    desc: "Join our healthcare campaigns to deliver medical services, distribute medicine, and run basic sanitation drives.",
+    img: "https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&q=80",
+    category: "Volunteer",
+    program: "Public Health & Medical",
+    topic: "public-health",
+  }
 ];
+
 export default function CTABanner() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+
+  // Filter state variables
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedProgram, setSelectedProgram] = useState("all");
+  const [selectedProject, setSelectedProject] = useState("all");
+
+  // Dynamic Options derived from projects dataset (Cross-filtering)
+  const categoryOptions = Array.from(
+    new Set(
+      projects
+        .filter((p) => {
+          const progMatch = selectedProgram === "all" || p.program === selectedProgram;
+          const projMatch = selectedProject === "all" || p.title === selectedProject;
+          return progMatch && projMatch;
+        })
+        .map((p) => p.category)
+    )
+  ).sort();
+
+  const programOptions = Array.from(
+    new Set(
+      projects
+        .filter((p) => {
+          const catMatch = selectedCategory === "all" || p.category === selectedCategory;
+          const projMatch = selectedProject === "all" || p.title === selectedProject;
+          return catMatch && projMatch;
+        })
+        .map((p) => p.program)
+    )
+  ).sort();
+
+  const projectOptions = Array.from(
+    new Set(
+      projects
+        .filter((p) => {
+          const catMatch = selectedCategory === "all" || p.category === selectedCategory;
+          const progMatch = selectedProgram === "all" || p.program === selectedProgram;
+          return catMatch && progMatch;
+        })
+        .map((p) => p.title)
+    )
+  ).sort();
+
+  // Automatically reset filters that become incompatible/unavailable
+  useEffect(() => {
+    if (selectedCategory !== "all" && !categoryOptions.includes(selectedCategory)) {
+      setSelectedCategory("all");
+    }
+  }, [categoryOptions, selectedCategory]);
+
+  useEffect(() => {
+    if (selectedProgram !== "all" && !programOptions.includes(selectedProgram)) {
+      setSelectedProgram("all");
+    }
+  }, [programOptions, selectedProgram]);
+
+  useEffect(() => {
+    if (selectedProject !== "all" && !projectOptions.includes(selectedProject)) {
+      setSelectedProject("all");
+    }
+  }, [projectOptions, selectedProject]);
 
   const handleDonateClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -60,6 +197,70 @@ export default function CTABanner() {
       left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth",
     });
+  };
+
+  // Filtered projects to be rendered as cards
+  const filteredProjects = projects.filter((p) => {
+    const catMatch = selectedCategory === "all" || p.category === selectedCategory;
+    const progMatch = selectedProgram === "all" || p.program === selectedProgram;
+    const projMatch = selectedProject === "all" || p.title === selectedProject;
+    return catMatch && progMatch && projMatch;
+  });
+
+  const getCardHref = (p: Project) => {
+    // 1. If we choose a project from the dropdown
+    if (selectedProject !== "all") {
+      return `/programs-projects?topic=${p.topic}`;
+    }
+
+    // 2. If we choose a program from the dropdown
+    if (selectedProgram !== "all") {
+      return `/programs/${p.topic}`;
+    }
+
+    // 3. If we choose "Volunteer" category
+    if (selectedCategory === "Volunteer") {
+      const volunteerIds = [
+        "child-dev-internship",
+        "kids-disabilities",
+        "winter-camp",
+        "child-rights",
+        "summer-camp",
+        "child-clubs",
+        "child-protection",
+        "ecd-education",
+        "child-care",
+        "child-internship-abroad"
+      ];
+      if (volunteerIds.includes(p.topic)) {
+        return `/volunteer/volunteer-details?id=${p.topic}`;
+      }
+      return "/volunteer/volunteer-details";
+    }
+
+    // Fallback card click behavior (when no dropdown filter is active):
+    // - If the card's category is "Volunteer", direct to volunteer-details
+    if (p.category === "Volunteer") {
+      const volunteerIds = [
+        "child-dev-internship",
+        "kids-disabilities",
+        "winter-camp",
+        "child-rights",
+        "summer-camp",
+        "child-clubs",
+        "child-protection",
+        "ecd-education",
+        "child-care",
+        "child-internship-abroad"
+      ];
+      if (volunteerIds.includes(p.topic)) {
+        return `/volunteer/volunteer-details?id=${p.topic}`;
+      }
+      return "/volunteer/volunteer-details";
+    }
+
+    // - Otherwise, direct to the respective project details page
+    return `/programs-projects?topic=${p.topic}`;
   };
 
   return (
@@ -142,40 +343,61 @@ export default function CTABanner() {
           </h2>
 
           {/* FILTERS */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 w-full max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-8 w-full max-w-5xl mx-auto">
+            {/* Category Select */}
             <div className="relative w-full flex-1">
-              <select className="w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none cursor-pointer text-center appearance-none bg-white" style={{ textAlignLast: "center" }}>
-                <option>Choose a Category</option>
-                <option>Volunteer</option>
-                <option>Internship</option>
-                <option>Sponsor a Child</option>
+              <select
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+                className="w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none cursor-pointer text-center appearance-none bg-white hover:bg-gray-50 transition font-medium"
+                style={{ textAlignLast: "center" }}
+              >
+                <option value="all">Choose a Category</option>
+                {categoryOptions.map((cat) => (
+                  <option key={cat} value={cat}>
+                    {cat}
+                  </option>
+                ))}
               </select>
               <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-gray-600">
                 <ChevronDown size={16} />
               </div>
             </div>
 
+            {/* Program Select */}
             <div className="relative w-full flex-1">
-              <select className="w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none cursor-pointer text-center appearance-none bg-white" style={{ textAlignLast: "center" }}>
-                <option>Program</option>
-                <option>Women Empowerment</option>
-                <option>Children Development</option>
-                <option>Youth Empowerment</option>
-                <option>Public Health & Medical</option>
-                <option>Environment Conservation</option>
-                <option>Disaster Risk Reduction</option>
+              <select
+                value={selectedProgram}
+                onChange={(e) => setSelectedProgram(e.target.value)}
+                className="w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none cursor-pointer text-center appearance-none bg-white hover:bg-gray-50 transition font-medium"
+                style={{ textAlignLast: "center" }}
+              >
+                <option value="all">Program</option>
+                {programOptions.map((prog) => (
+                  <option key={prog} value={prog}>
+                    {prog}
+                  </option>
+                ))}
               </select>
               <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-gray-600">
                 <ChevronDown size={16} />
               </div>
             </div>
 
+            {/* Project/Topic Select */}
             <div className="relative w-full flex-1">
-              <select className="w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none cursor-pointer text-center appearance-none bg-white" style={{ textAlignLast: "center" }}>
-                <option>Project</option>
-                <option>Women's Trafficking Prevention</option>
-                <option>Entrepreneurship Development</option>
-                <option>Women's Education and Life Skills</option>
+              <select
+                value={selectedProject}
+                onChange={(e) => setSelectedProject(e.target.value)}
+                className="w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none cursor-pointer text-center appearance-none bg-white hover:bg-gray-50 transition font-medium"
+                style={{ textAlignLast: "center" }}
+              >
+                <option value="all">Project</option>
+                {projectOptions.map((proj) => (
+                  <option key={proj} value={proj}>
+                    {proj}
+                  </option>
+                ))}
               </select>
               <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-gray-600">
                 <ChevronDown size={16} />
@@ -205,28 +427,41 @@ export default function CTABanner() {
                 ref={scrollRef}
                 className="scrollbar-hide flex overflow-x-auto pb-4 snap-x snap-mandatory"
               >
-                {projects.map((p, i) => (
-                  <div key={i} className="flex-none w-full sm:w-1/2 lg:w-1/3 px-3 snap-start">
-                    <div className="bg-white border border-gray-200 shadow-md hover:shadow-xl rounded-xl overflow-hidden transition-all duration-300 h-full flex flex-col">
-                      <div className="relative h-60 w-full flex-shrink-0">
-                        <Image
-                          src={p.img}
-                          alt={p.title}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
+                {filteredProjects.length > 0 ? (
+                  filteredProjects.map((p, i) => (
+                    <Link
+                      key={i}
+                      href={getCardHref(p)}
+                      className="flex-none w-full sm:w-1/2 lg:w-1/3 px-3 snap-start block group cursor-pointer"
+                    >
+                      <div className="bg-white border border-gray-200 shadow-md group-hover:shadow-xl rounded-xl overflow-hidden transition-all duration-300 h-full flex flex-col">
+                        <div className="relative h-60 w-full flex-shrink-0 overflow-hidden">
+                          <Image
+                            src={p.img}
+                            alt={p.title}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
+                        </div>
 
-                      <div className="p-6 text-left flex-1 flex flex-col">
-                        <h3 className="font-[700] text-xl mb-3 text-gray-900">{p.title}</h3>
+                        <div className="p-6 text-left flex-1 flex flex-col">
+                          <h3 className="font-[700] text-xl mb-3 text-gray-900 group-hover:text-[var(--blue)] transition-colors">
+                            {p.title}
+                          </h3>
 
-                        <p className="text-base text-gray-600 leading-relaxed">
-                          {p.desc}
-                        </p>
+                          <p className="text-base text-gray-600 leading-relaxed">
+                            {p.desc}
+                          </p>
+                        </div>
                       </div>
-                    </div>
+                    </Link>
+                  ))
+                ) : (
+                  <div className="w-full py-16 px-4 flex flex-col items-center justify-center text-center bg-gray-50 border border-dashed border-gray-300 rounded-2xl mx-3">
+                    <p className="text-xl font-semibold text-gray-600 mb-2">No matching projects found</p>
+                    <p className="text-sm text-gray-400 max-w-md">We couldn't find any opportunities matching this combination of filters. Try exploring a different category or program.</p>
                   </div>
-                ))}
+                )}
               </div>
             </div>
           </div>
@@ -235,4 +470,3 @@ export default function CTABanner() {
     </>
   );
 }
-
