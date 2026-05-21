@@ -142,7 +142,7 @@ export default function CTABanner() {
           </h2>
 
           {/* FILTERS */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 w-full max-w-4xl mx-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 w-full max-w-5xl mx-auto">
             <div className="relative w-full flex-1">
               <select className="w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none cursor-pointer text-center appearance-none bg-white" style={{ textAlignLast: "center" }}>
                 <option>Choose a Category</option>

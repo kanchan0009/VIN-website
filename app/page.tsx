@@ -172,6 +172,204 @@ const team = [
   },
 ];
 
+const programData: Record<string, {
+  title: string;
+  desc: string;
+  projects: Array<{
+    title: string;
+    img: string;
+    desc: string;
+    href: string;
+  }>;
+}> = {
+  "Choose a Program": {
+    title: "All Community Development Projects",
+    desc: "VIN implements a complete holistic and integrated approach to community development in Nepal. Explore all our community-based projects across our pillars of empowerment.",
+    projects: [
+      {
+        title: "Women’s Trafficking Prevention",
+        img: "/images/img1.jpg",
+        desc: "The ED project aims to ensure economic independence of women by building their skills and providing the necessary support.",
+        href: "/programs-projects?topic=womens-empowerment",
+      },
+      {
+        title: "Entrepreneurship Development",
+        img: "/images/img2.jpg",
+        desc: "The ED project aims to ensure economic independence of women by building their skills and facilitating entrepreneurship.",
+        href: "/programs-projects?topic=womens-empowerment",
+      },
+      {
+        title: "Women’s Education and Life Skills",
+        img: "/images/img3.jpg",
+        desc: "This project empowers women to become self-reliant and resilient by providing relevant education and development.",
+        href: "/programs-projects?topic=womens-empowerment",
+      },
+      {
+        title: "Youth Empowerment Projects",
+        img: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=400&q=80",
+        desc: "Engaging youth in community development and providing them with vocational training.",
+        href: "/programs-projects?topic=youth-empowerment",
+      },
+      {
+        title: "Public Health & Sanitation",
+        img: "https://images.unsplash.com/photo-1607748862156-7c548e7e98f4?w=400&q=80",
+        desc: "Improving health outcomes through sanitation projects and medical outreach.",
+        href: "/programs-projects?topic=public-health",
+      },
+      {
+        title: "Environment & Conservation",
+        img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&q=80",
+        desc: "Promoting environmental sustainability and conservation through community action.",
+        href: "/programs-projects?topic=environment",
+      },
+    ]
+  },
+  "Women Empowerment": {
+    title: "Women’s Empowerment Projects",
+    desc: "VIN aims to empower women socially and economically through education, life skills and income generation opportunities. By 2030, VIN aims to benefit at least 80% of the total women in the marginalized communities of the target areas.",
+    projects: [
+      {
+        title: "Women’s Trafficking Prevention",
+        img: "/images/img1.jpg",
+        desc: "The ED project aims to ensure economic independence of women by building their skills and providing the necessary support.",
+        href: "/programs-projects?topic=womens-empowerment",
+      },
+      {
+        title: "Entrepreneurship Development",
+        img: "/images/img2.jpg",
+        desc: "The ED project aims to ensure economic independence of women by building their skills and facilitating entrepreneurship.",
+        href: "/programs-projects?topic=womens-empowerment",
+      },
+      {
+        title: "Women’s Education and Life Skills",
+        img: "/images/img3.jpg",
+        desc: "This project empowers women to become self-reliant and resilient by providing relevant education and development.",
+        href: "/programs-projects?topic=womens-empowerment",
+      },
+    ]
+  },
+  "Youth Empowerment": {
+    title: "Youth Empowerment Projects",
+    desc: "VIN engages youth in community development, leadership training, and vocational skills to make them active agents of social change in Nepal.",
+    projects: [
+      {
+        title: "Youth Leadership Projects",
+        img: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=400&q=80",
+        desc: "Engaging youth in community development and providing them with vocational training.",
+        href: "/programs-projects?topic=youth-empowerment",
+      },
+      {
+        title: "IT & Vocational Training",
+        img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&q=80",
+        desc: "Equipping young people with essential digital and professional skills for today's market.",
+        href: "/programs-projects?topic=youth-empowerment",
+      },
+      {
+        title: "Youth Club Empowerment",
+        img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&q=80",
+        desc: "Organizing and supporting youth clubs to participate in local environment and community works.",
+        href: "/programs-projects?topic=youth-empowerment",
+      }
+    ]
+  },
+  "Public Health and Sanitation": {
+    title: "Public Health & Sanitation Projects",
+    desc: "Improving health and hygiene outcomes through medical outreach camps, sanitation construction projects, and preventive education.",
+    projects: [
+      {
+        title: "Public Health & Sanitation",
+        img: "https://images.unsplash.com/photo-1607748862156-7c548e7e98f4?w=400&q=80",
+        desc: "Improving health outcomes through sanitation projects and medical outreach.",
+        href: "/programs-projects?topic=public-health",
+      },
+      {
+        title: "Mobile Health Camps",
+        img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80",
+        desc: "Conducting free health check-up camps and distributing essential medicines in remote areas.",
+        href: "/programs-projects?topic=public-health",
+      },
+      {
+        title: "Hygiene Education Campaign",
+        img: "/images/img2.jpg",
+        desc: "Raising awareness on essential handwashing, hygiene practices, and clean drinking water solutions in rural communities.",
+        href: "/programs-projects?topic=public-health",
+      },
+    ]
+  },
+  "Education and Career Development": {
+    title: "Education and Career Development Projects",
+    desc: "VIN focuses on early childhood development, teaching support, and teacher training to ensure inclusive and quality education.",
+    projects: [
+      {
+        title: "Early Childhood Development",
+        img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&q=80",
+        desc: "Providing nursery and early education support for infants and children in rural villages.",
+        href: "/programs-projects?topic=child-development",
+      },
+      {
+        title: "Teacher Training Support",
+        img: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=400&q=80",
+        desc: "Training rural educators on modern and child-friendly teaching methodologies.",
+        href: "/programs-projects?topic=child-development",
+      },
+      {
+        title: "School Infrastructure Aid",
+        img: "/images/img3.jpg",
+        desc: "Assisting schools with child-friendly classroom setups, libraries, and educational materials.",
+        href: "/programs-projects?topic=child-development",
+      },
+    ]
+  },
+  "Environment & Conservation Projects": {
+    title: "Environment & Conservation Projects",
+    desc: "Promoting environmental sustainability and conservation through tree planting, organic farming, and clean energy advocacy.",
+    projects: [
+      {
+        title: "Environment & Conservation",
+        img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&q=80",
+        desc: "Promoting environmental sustainability and conservation through community action.",
+        href: "/programs-projects?topic=environment",
+      },
+      {
+        title: "Agroforestry & Tree Plantation",
+        img: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=400&q=80",
+        desc: "Restoring local ecosystems by planting fruit trees and promoting sustainable agro-forestry.",
+        href: "/programs-projects?topic=environment",
+      },
+      {
+        title: "Organic Farming Initiatives",
+        img: "/images/img1.jpg",
+        desc: "Supporting rural families to construct plastic tunnel greenhouses and practice organic composting.",
+        href: "/programs-projects?topic=environment",
+      },
+    ]
+  },
+  "Disaster Risk Reduction": {
+    title: "Disaster Risk Reduction Projects",
+    desc: "Building resilient communities by preparing them to mitigate the impact of natural hazards and climate change.",
+    projects: [
+      {
+        title: "Disaster Preparedness Training",
+        img: "https://images.unsplash.com/photo-1607748862156-7c548e7e98f4?w=400&q=80",
+        desc: "Equipping schools and local community clubs with basic safety, first-aid, and search and rescue tools.",
+        href: "/programs-projects?topic=disaster-risk",
+      },
+      {
+        title: "Resilient Reconstruction Support",
+        img: "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=400&q=80",
+        desc: "Assisting earthquake-affected families with safe and earthquake-resistant temporary shelter construction.",
+        href: "/programs-projects?topic=disaster-risk",
+      },
+      {
+        title: "Emergency Relief Operations",
+        img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&q=80",
+        desc: "Distributing food, clothes, hygiene packages, and emergency tents post natural calamities.",
+        href: "/programs-projects?topic=disaster-risk",
+      },
+    ]
+  }
+};
+
 export default function HomePage() {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [filter, setFilter] = useState("Board of Directors");
@@ -274,6 +472,7 @@ export default function HomePage() {
   const [currentPlace, setCurrentPlace] = useState(places[0]);
   const [learnMoreIndex, setLearnMoreIndex] = useState(0);
   const [showAllPrograms, setShowAllPrograms] = useState(false);
+  const [selectedProgramFilter, setSelectedProgramFilter] = useState("Choose a Program");
   const [heroIndex, setHeroIndex] = useState(0);
 
   const heroItems = [
@@ -686,50 +885,21 @@ export default function HomePage() {
 
           {/* Projects Data */}
           {(() => {
-            const projectsList = [
-              {
-                title: "Women’s Trafficking Prevention",
-                img: "/images/img1.jpg",
-                desc: "The ED project aims to ensure economic independence of women by building their skills and providing the necessary support.",
-                href: "/programs-projects?topic=womens-empowerment",
-              },
-              {
-                title: "Entrepreneurship Development",
-                img: "/images/img2.jpg",
-                desc: "The ED project aims to ensure economic independence of women by building their skills and facilitating entrepreneurship.",
-                href: "/programs-projects?topic=womens-empowerment",
-              },
-              {
-                title: "Women’s Education and Life Skills",
-                img: "/images/img3.jpg",
-                desc: "This project empowers women to become self-reliant and resilient by providing relevant education and development.",
-                href: "/programs-projects?topic=womens-empowerment",
-              },
-              {
-                title: "Youth Empowerment Projects",
-                img: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=400&q=80",
-                desc: "Engaging youth in community development and providing them with vocational training.",
-                href: "/programs-projects?topic=youth-empowerment",
-              },
-              {
-                title: "Public Health & Sanitation",
-                img: "https://images.unsplash.com/photo-1607748862156-7c548e7e98f4?w=400&q=80",
-                desc: "Improving health outcomes through sanitation projects and medical outreach.",
-                href: "/programs-projects?topic=public-health",
-              },
-              {
-                title: "Environment & Conservation",
-                img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&q=80",
-                desc: "Promoting environmental sustainability and conservation through community action.",
-                href: "/programs-projects?topic=environment",
-              },
-            ];
+            const activeProgram = programData[selectedProgramFilter] || programData["Choose a Program"];
+            const projectsList = activeProgram.projects;
+            const maxIndex = Math.max(0, projectsList.length - 3);
+
             return (
               <>
                 {/* Dropdown */}
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full max-w-[300px] mx-auto">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full max-w-[400px] mx-auto">
                   <div className="relative w-full">
                     <select
+                      value={selectedProgramFilter}
+                      onChange={(e) => {
+                        setSelectedProgramFilter(e.target.value);
+                        setLearnMoreIndex(0);
+                      }}
                       className="flex-1 w-full px-3 py-2.5 border border-black text-[15px] text-black focus:outline-none cursor-pointer text-center appearance-none bg-white"
                       style={{ textAlignLast: "center" }}
                     >
@@ -750,13 +920,10 @@ export default function HomePage() {
                 {/* Section Header */}
                 <div className="text-left mb-5">
                   <h3 className="text-3xl font-[700]">
-                    Women’s Empowerment Projects
+                    {activeProgram.title}
                   </h3>
                   <p className="text-[16px] text-[#454545AD] mt-2 max-w-3xl">
-                    VIN aims to empower women socially and economically through
-                    education, life skills and income generation opportunities.
-                    By 2030, VIN aims to benefit at least 80% of the total women
-                    in the marginalized communities of the target areas.
+                    {activeProgram.desc}
                   </p>
                 </div>
 
@@ -773,7 +940,7 @@ export default function HomePage() {
                   <button
                     onClick={() =>
                       setLearnMoreIndex((prev) =>
-                        Math.min(projectsList.length - 3, prev + 1),
+                        Math.min(maxIndex, prev + 1),
                       )
                     }
                     className="w-12 h-12 flex items-center justify-center border-2 border-black rounded-full hover:bg-gray-100 transition-all duration-300 font-bold text-lg"
@@ -811,19 +978,19 @@ export default function HomePage() {
                     </Link>
                   ))}
                 </div>
+
+                {/* View All */}
+                <div className="mt-10">
+                  <button
+                    onClick={() => setShowAllPrograms(!showAllPrograms)}
+                    className="bg-[var(--blue)] text-white px-6 py-2 rounded-md hover:bg-[#1a1560] transition-colors"
+                  >
+                    {showAllPrograms ? "Show Less" : "View All"}
+                  </button>
+                </div>
               </>
             );
           })()}
-
-          {/* View All */}
-          <div className="mt-10">
-            <button
-              onClick={() => setShowAllPrograms(!showAllPrograms)}
-              className="bg-[var(--blue)] text-white px-6 py-2 rounded-md hover:bg-[#1a1560] transition-colors"
-            >
-              {showAllPrograms ? "Show Less" : "View All"}
-            </button>
-          </div>
         </div>
 
         {/* Hide scrollbar */}
@@ -838,7 +1005,7 @@ export default function HomePage() {
           </h2>
 
           {/* Dropdown */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full max-w-[250px] mx-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full max-w-[350px] mx-auto">
             <div className="relative w-full">
               <select
                 value={filter}
@@ -1100,7 +1267,7 @@ export default function HomePage() {
           <h2 className="text-4xl font-[500] text-center mb-8">Our Media</h2>
 
           {/* Filters */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 w-full max-w-lg mx-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 w-full max-w-2xl mx-auto">
             <div className="relative w-full flex-1">
               <select
                 value={selectedCategory}
@@ -1126,7 +1293,7 @@ export default function HomePage() {
               <select
                 value={selectedTopic}
                 onChange={(e) => setSelectedTopic(e.target.value)}
-                className="w-full px-4 py-2.5 border-2 border-black text-[13px] text-black focus:outline-none cursor-pointer text-center appearance-none bg-white"
+                className="w-full px-4 py-2.5 border-2 border-black text-[15px] text-black focus:outline-none cursor-pointer text-center appearance-none bg-white"
                 style={{ textAlignLast: "center" }}
               >
                 <option value="">Topic</option>
@@ -1403,7 +1570,7 @@ export default function HomePage() {
           </h2>
 
           {/* Filters */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full max-w-lg mx-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full max-w-2xl mx-auto">
             <div className="relative w-full flex-1">
               <select
                 value={selectedCategory}
