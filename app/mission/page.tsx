@@ -17,7 +17,7 @@ export default function MissionPage() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 40%, transparent 100%)",
+              "linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)",
           }}
         />
         <div className="relative z-10 w-full mx-auto px-4 md:px-[60px] pb-10">
