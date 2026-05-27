@@ -55,8 +55,8 @@ export default function WhereWeWork() {
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)' }} />
-        <div className="relative z-10  mx-auto px-4 pb-16 w-full">
-          <h1 className="text-5xl lg:text-5xl font-bold text-white mb-2">
+        <div className="relative z-10  mx-auto px-4 pb-8 md:pb-16 w-full">
+          <h1 className="text-3xl md:text-5xl lg:text-5xl font-bold text-white mb-2">
             Our Working Sites
           </h1>
           <p className="text-white/80 max-w-4xl text-lg leading-relaxed">
@@ -66,13 +66,13 @@ export default function WhereWeWork() {
       </section>
 
       {/* Info Section */}
-      <section className="py-24 bg-white">
+      <section className="py-10 md:py-24 bg-white">
         <div className=" mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-16 items-start">
+          <div className="flex flex-col lg:flex-row gap-8 md:gap-16 items-start">
             
             {/* Left Content */}
             <div className="flex-1">
-              <h2 className="text-4xl lg:text-5xl font-bold text-[#1a1a1a] mb-10 leading-tight">
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-[#1a1a1a] mb-5 md:mb-10 leading-tight">
                 Volunteer Placement Sites Across Nepal
               </h2>
               <div className="space-y-6 text-gray-500 text-[15px] leading-relaxed max-w-xl">
@@ -87,10 +87,10 @@ export default function WhereWeWork() {
 
             {/* Right Info Box */}
             <div className="lg:w-[554px] w-full">
-              <div className="bg-[#F8FAFC] border border-gray-200 rounded-3xl p-10 divide-y divide-gray-200/60">
+              <div className="bg-[#F8FAFC] border border-gray-200 rounded-3xl p-5 md:p-10 divide-y divide-gray-200/60">
                 
                 {/* Item 1 */}
-                <div className="flex gap-5 pb-10">
+                <div className="flex gap-5 pb-5 md:pb-10">
                   <div className="w-12 h-12 bg-[var(--blue)] rounded-xl flex items-center justify-center shrink-0">
                     <Briefcase className="text-white" size={24} />
                   </div>
@@ -103,7 +103,7 @@ export default function WhereWeWork() {
                 </div>
 
                 {/* Item 2 */}
-                <div className="flex gap-5 py-10">
+                <div className="flex gap-5 py-5 md:py-10">
                   <div className="w-12 h-12 bg-[var(--blue)] rounded-xl flex items-center justify-center shrink-0">
                     <Home className="text-white" size={24} />
                   </div>
@@ -116,7 +116,7 @@ export default function WhereWeWork() {
                 </div>
 
                 {/* Item 3 */}
-                <div className="flex gap-5 pt-10">
+                <div className="flex gap-5 pt-5 md:pt-10">
                   <div className="w-12 h-12 bg-[var(--blue)] rounded-xl flex items-center justify-center shrink-0">
                     <Calendar className="text-white" size={24} />
                   </div>
@@ -135,13 +135,13 @@ export default function WhereWeWork() {
       </section>
 
       {/* Locations Grid */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-10 md:py-20 px-6 bg-white">
         <div className=" mx-auto">
-          <div className="mb-16">
-            <h2 className="text-[36px] font-[700] text-[var(--blue)]">Our Working Sites</h2>
+          <div className="mb-8 md:mb-16">
+            <h2 className="text-2xl md:text-[36px] font-[700] text-[var(--blue)]">Our Working Sites</h2>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-4 md:gap-8">
             {locations.map((loc) => (
               <div key={loc.id} className="bg-white rounded-[2rem] border border-gray-100 overflow-hidden flex flex-col shadow-sm">
                 {/* Image Section */}
@@ -164,7 +164,7 @@ export default function WhereWeWork() {
                 </div>
 
                 {/* Content Section */}
-                <div className="p-8 flex-1 flex flex-col">
+                <div className="p-4 md:p-8 flex-1 flex flex-col">
                   <h3 className="text-2xl font-bold text-[#1a1a1a] mb-2 leading-tight">
                     {loc.name}
                   </h3>

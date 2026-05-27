@@ -108,8 +108,8 @@ export default function NewsUpdatePage() {
               "linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)",
           }}
         />
-        <div className="relative z-10 mx-auto px-4 md:px-[60px] pb-10 w-full">
-          <h1 className="text-5xl md:text-6xl font-bold text-white">
+        <div className="relative z-10 mx-auto px-4 md:px-[60px] pb-5 md:pb-10 w-full">
+          <h1 className="text-3xl md:text-5xl md:text-6xl font-bold text-white">
             News Update
           </h1>
           <p className="text-white/80 max-w-4xl text-lg mt-4">
@@ -119,7 +119,7 @@ export default function NewsUpdatePage() {
       </section>
 
       {/* News Grid Section */}
-      <section className="py-20 bg-white">
+      <section className="py-10 md:py-20 bg-white">
         <div className="mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
             {currentItems.map((news, i) => (
@@ -150,7 +150,7 @@ export default function NewsUpdatePage() {
           </div>
 
           {/* Pagination */}
-          <div className="mt-24 flex items-center justify-start gap-4">
+          <div className="mt-10 md:mt-24 flex items-center justify-start gap-4">
             <button 
               onClick={() => goToPage(Math.max(1, currentPage - 1))}
               disabled={currentPage === 1}

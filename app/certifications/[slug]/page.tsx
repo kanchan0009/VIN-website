@@ -125,9 +125,9 @@ export default async function CertificationDetailPage(props: {
   if (!org) {
     return (
       <main className="min-h-screen bg-white">
-        <div className=" mx-auto px-4 py-20 text-center">
-          <h1 className="text-4xl font-bold mb-4">Certification Not Found</h1>
-          <p className="text-gray-600 mb-8">
+        <div className=" mx-auto px-4 py-10 md:py-20 text-center">
+          <h1 className="text-2xl md:text-4xl font-bold mb-4">Certification Not Found</h1>
+          <p className="text-gray-600 mb-4 md:mb-8">
             Could not find certification for slug: <span className="font-mono font-bold text-red-500">{slug}</span>
           </p>
         </div>
@@ -150,8 +150,8 @@ export default async function CertificationDetailPage(props: {
             background: "linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 100%)",
           }}
         />
-        <div className="relative z-10  mx-auto px-3 pb-8 w-full text-left">
-          <h1 className="text-[56px] font-[800] text-white mb-3">
+        <div className="relative z-10  mx-auto px-3 pb-4 md:pb-8 w-full text-left">
+          <h1 className="text-2xl md:text-[56px] font-[800] text-white mb-3">
             Certified By
           </h1>
           <p className="text-white/90 text-[20px] max-w-6xl font-[400] leading-tight">
@@ -162,10 +162,10 @@ export default async function CertificationDetailPage(props: {
       </section>
 
       {/* Logo Section */}
-      <section className="py-20 bg-white">
+      <section className="py-10 md:py-20 bg-white">
         <div className=" mx-auto px-4 flex flex-col items-center">
           {/* Main Logo Container */}
-          <div className="flex items-center justify-center mb-10 w-full">
+          <div className="flex items-center justify-center mb-5 md:mb-10 w-full">
             <img 
               src="/european-commission-logo.png" 
               alt={org.name}
@@ -173,7 +173,7 @@ export default async function CertificationDetailPage(props: {
             />
           </div>
 
-          <h2 className="text-5xl font-[600] text-[#333] mb-12 text-center">
+          <h2 className="text-3xl md:text-5xl font-[600] text-[#333] mb-6 md:mb-12 text-center">
             {org.name}
           </h2>
 
@@ -196,13 +196,13 @@ export default async function CertificationDetailPage(props: {
       </section>
 
       {/* Stats and Image Section */}
-      <section className="pb-24 bg-white">
+      <section className="pb-10 md:pb-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_0.9fr] gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_0.9fr] gap-6 md:gap-12 items-start">
             {/* Left: Stats */}
             <div className="space-y-6">
               {/* Stat 1 */}
-              <div className="bg-[#DFF0FF] h-[255px] p-8 flex items-center gap-6 border border-blue-50/50">
+              <div className="bg-[#DFF0FF] h-[255px] p-4 md:p-8 flex items-center gap-6 border border-blue-50/50">
                 <div className="w-16 h-16 rounded-full border-2 border-dashed border-[var(--blue)] flex items-center justify-center shrink-0">
                   <Clock size={24} className="text-[var(--blue)]" />
                 </div>
@@ -216,7 +216,7 @@ export default async function CertificationDetailPage(props: {
               </div>
 
               {/* Stat 2 */}
-              <div className="bg-[#DFF0FF] h-[255px] p-8 flex items-center gap-6 border border-blue-50/50">
+              <div className="bg-[#DFF0FF] h-[255px] p-4 md:p-8 flex items-center gap-6 border border-blue-50/50">
                 <div className="w-16 h-16 bg-[var(--blue)] rounded-full flex items-center justify-center shrink-0">
                   <Users className="text-white" size={28} />
                 </div>
@@ -245,10 +245,10 @@ export default async function CertificationDetailPage(props: {
 
 
       {/* Our Commitment Section */}
-      <section className="pt-0 pb-16 bg-white">
+      <section className="pt-0 pb-8 md:pb-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="w-full text-left mb-16">
-            <h2 className="text-5xl font-[600] text-[#1a1a1a] mb-10 text-center">Our Commitment</h2>
+          <div className="w-full text-left mb-8 md:mb-16">
+            <h2 className="text-3xl md:text-5xl font-[600] text-[#1a1a1a] mb-5 md:mb-10 text-center">Our Commitment</h2>
             <div className="space-y-5 text-black text-[18px] leading-relaxed font-[400]">
               <p className="text-left">
                 At VIN, We Believe In Empowering Communities Rather Than Creating Dependency. Our 
@@ -263,7 +263,7 @@ export default async function CertificationDetailPage(props: {
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-center gap-8">
+          <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-8">
             <div className="w-full md:w-[365px] h-[450px] overflow-hidden shadow-sm">
               <img 
                 src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80" 

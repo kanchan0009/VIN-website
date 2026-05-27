@@ -266,7 +266,7 @@ export default function CTABanner() {
   return (
     <>
       {/* CTA SECTION */}
-      <section className="relative mt-32 py-20 bg-gradient-to-r from-[var(--blue)] to-[#CFCCFF]">
+      <section className="relative mt-16 md:mt-32 py-10 md:py-20 bg-gradient-to-r from-[var(--blue)] to-[#CFCCFF]">
         {/* 🔥 S-SHAPE VECTOR */}
         <div className="absolute top-[-40px] right-[-40px] rotate-[5.9deg] opacity-40 pointer-events-none">
           <svg
@@ -336,14 +336,14 @@ export default function CTABanner() {
       </section>
 
       {/* PROJECT SECTION */}
-      <section className="py-16 bg-white">
+      <section className="py-8 md:py-16 bg-white">
         <div className=" mx-auto px-4 ">
-          <h2 className="text-[50px] font-[500] text-center mb-4">
+          <h2 className="text-2xl md:text-[50px] font-[500] text-center mb-4">
             Choose Ways To Get Involved With Us
           </h2>
 
           {/* FILTERS */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-8 w-full max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-4 md:mb-8 w-full max-w-5xl mx-auto">
             {/* Category Select */}
             <div className="relative w-full flex-1">
               <select
@@ -404,7 +404,7 @@ export default function CTABanner() {
               </div>
             </div>
           </div>
-          <div className="w-full mt-8">
+          <div className="w-full mt-4 md:mt-8">
             {/* Slider Controls */}
             <div className="flex justify-end gap-3 mb-6">
               <button
@@ -457,7 +457,7 @@ export default function CTABanner() {
                     </Link>
                   ))
                 ) : (
-                  <div className="w-full py-16 px-4 flex flex-col items-center justify-center text-center bg-gray-50 border border-dashed border-gray-300 rounded-2xl mx-3">
+                  <div className="w-full py-8 md:py-16 px-4 flex flex-col items-center justify-center text-center bg-gray-50 border border-dashed border-gray-300 rounded-2xl mx-3">
                     <p className="text-xl font-semibold text-gray-600 mb-2">No matching projects found</p>
                     <p className="text-sm text-gray-400 max-w-md">We couldn't find any opportunities matching this combination of filters. Try exploring a different category or program.</p>
                   </div>

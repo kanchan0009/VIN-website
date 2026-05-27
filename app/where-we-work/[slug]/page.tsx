@@ -212,7 +212,7 @@ export default function LocationDetail() {
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10  mx-auto px-4 pb-5 w-full">
-          <h1 className="text-[32px] lg:text-[50px] font-[800] text-white mb-3 drop-shadow-lg">
+          <h1 className="text-2xl md:text-[32px] lg:text-[50px] font-[800] text-white mb-3 drop-shadow-lg">
             {location.name}
           </h1>
           <p className="text-white/90 max-w-4xl lg:text-[16px] font-[400] leading-relaxed">
@@ -222,13 +222,13 @@ export default function LocationDetail() {
       </section>
 
       {/* Main Content Area */}
-      <div className=" mx-auto px-4 py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-20">
+      <div className=" mx-auto px-4 py-10 md:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-10 md:gap-20">
           {/* Left Column */}
           <div className="space-y-16">
             {/* Header and Description */}
             <div className="space-y-8">
-              <h2 className="text-4xl font-bold text-[#1a1a1a] leading-tight max-w-2xl">
+              <h2 className="text-2xl md:text-4xl font-bold text-[#1a1a1a] leading-tight max-w-2xl">
                 {location.mainHeading}
               </h2>
               <p className="text-gray-500 text-base leading-relaxed text-justify">
@@ -238,7 +238,7 @@ export default function LocationDetail() {
 
             {/* Quick Info Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-[#F8F9FB] rounded-2xl p-8 flex flex-col items-start shadow-sm border border-gray-50 hover:shadow-md transition-all">
+              <div className="bg-[#F8F9FB] rounded-2xl p-4 md:p-8 flex flex-col items-start shadow-sm border border-gray-50 hover:shadow-md transition-all">
                 <div className="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center mb-4">
                   <MapPin size={20} className="text-[#e33e33]" />
                 </div>
@@ -250,7 +250,7 @@ export default function LocationDetail() {
                 </p>
               </div>
 
-              <div className="bg-[#F8F9FB] rounded-2xl p-8 flex flex-col items-start shadow-sm border border-gray-50 hover:shadow-md transition-all">
+              <div className="bg-[#F8F9FB] rounded-2xl p-4 md:p-8 flex flex-col items-start shadow-sm border border-gray-50 hover:shadow-md transition-all">
                 <div className="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center mb-4">
                   <PenTool
                     size={20}
@@ -265,7 +265,7 @@ export default function LocationDetail() {
                 </p>
               </div>
 
-              <div className="bg-[#F8F9FB] rounded-2xl p-8 flex flex-col items-start shadow-sm border border-gray-50 hover:shadow-md transition-all">
+              <div className="bg-[#F8F9FB] rounded-2xl p-4 md:p-8 flex flex-col items-start shadow-sm border border-gray-50 hover:shadow-md transition-all">
                 <div className="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center mb-4">
                   <Calendar size={20} className="text-[#e33e33]" />
                 </div>
@@ -277,7 +277,7 @@ export default function LocationDetail() {
                 </p>
               </div>
 
-              <div className="bg-[#F8F9FB] rounded-2xl p-8 flex flex-col items-start shadow-sm border border-gray-50 hover:shadow-md transition-all">
+              <div className="bg-[#F8F9FB] rounded-2xl p-4 md:p-8 flex flex-col items-start shadow-sm border border-gray-50 hover:shadow-md transition-all">
                 <div className="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center mb-4">
                   <Puzzle size={20} className="text-green-500" />
                 </div>
@@ -322,8 +322,8 @@ export default function LocationDetail() {
             </div>
 
             {/* Volunteer Guidelines Section */}
-            <div className="bg-[#E8E7F3] rounded-[1.5rem] p-12 border border-gray-100">
-              <div className="flex items-center gap-3 mb-10">
+            <div className="bg-[#E8E7F3] rounded-[1.5rem] p-6 md:p-12 border border-gray-100">
+              <div className="flex items-center gap-3 mb-5 md:mb-10">
                 <ClipboardList className="text-[var(--blue)]" size={24} />
                 <h3 className="text-[19px] font-[800] text-[#0F0D40]">
                   Volunteer Guidelines at This Site
@@ -353,11 +353,11 @@ export default function LocationDetail() {
           {/* Right Column (Sidebar) */}
           <div className="lg:pt-2 space-y-8">
             {/* Apply Now Card */}
-            <div className="bg-[var(--blue)] rounded-[2rem] p-10 flex flex-col items-start text-left border border-white/10">
+            <div className="bg-[var(--blue)] rounded-[2rem] p-5 md:p-10 flex flex-col items-start text-left border border-white/10">
               <h3 className="text-2xl font-bold text-white mb-6">
                 Volunteer at This Site
               </h3>
-              <p className="text-white/90 text-sm leading-relaxed mb-10">
+              <p className="text-white/90 text-sm leading-relaxed mb-5 md:mb-10">
                 {location.sidebarDesc}
               </p>
               <Link
@@ -369,7 +369,7 @@ export default function LocationDetail() {
             </div>
 
             {/* What's Included Card */}
-            <div className="bg-[#F8FAFC] rounded-[2rem] p-10 border border-gray-200">
+            <div className="bg-[#F8FAFC] rounded-[2rem] p-5 md:p-10 border border-gray-200">
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-6 h-6 bg-[#f39c12]/20 rounded flex items-center justify-center">
                   <Star
@@ -446,12 +446,12 @@ export default function LocationDetail() {
             </div>
 
             {/* Testimonial Card */}
-            <div className="bg-[var(--blue)] rounded-[1.5rem] p-10  relative overflow-hidden">
-              <span className="text-4xl text-[#f39c12] absolute top-8 left-8">
+            <div className="bg-[var(--blue)] rounded-[1.5rem] p-5 md:p-10  relative overflow-hidden">
+              <span className="text-2xl md:text-4xl text-[#f39c12] absolute top-8 left-8">
                 &quot;
               </span>
               <div className="relative z-10">
-                <p className="text-white/90 text-[15px] leading-relaxed mb-10 pt-6">
+                <p className="text-white/90 text-[15px] leading-relaxed mb-5 md:mb-10 pt-6">
                   {location.testimonial}
                 </p>
                 <div className="flex items-center gap-4">
@@ -470,8 +470,8 @@ export default function LocationDetail() {
           </div>
 
           {/* Life at the Site Section (Back Inside Grid for Perfect Alignment) */}
-          <section className="lg:col-span-full mt-5 pt-10 relative">
-            <h2 className="text-[24px] font-[700] text-[#0F0D40] mb-12">
+          <section className="lg:col-span-full mt-5 pt-5 md:pt-10 relative">
+            <h2 className="text-[24px] font-[700] text-[#0F0D40] mb-6 md:mb-12">
               Life at the Site
             </h2>
 
@@ -489,7 +489,7 @@ export default function LocationDetail() {
               </div>
 
               {/* Album Grid (Covers Width of Grid) */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 lg:gap-20">
                 {location.albums.map((album, idx) => (
                   <div
                     key={idx}
@@ -501,12 +501,12 @@ export default function LocationDetail() {
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all" />
-                    <div className="absolute inset-0 flex flex-col items-center justify-end pb-12 text-center px-8">
-                      <h4 className="text-white text-[16px] lg:text-[24px] font-bold mb-8 leading-tight ">
+                    <div className="absolute inset-0 flex flex-col items-center justify-end pb-6 md:pb-12 text-center px-4 md:px-8">
+                      <h4 className="text-white text-[16px] lg:text-[24px] font-bold mb-4 md:mb-8 leading-tight ">
                         {album.title}
                       </h4>
                       <Link href="/program-gallery?topic=default">
-                        <button className="bg-[var(--blue)] text-white px-10 py-4 rounded-xl font-bold text-sm hover:bg-white hover:text-[var(--blue)] transition-all shadow-lg active:scale-95">
+                        <button className="bg-[var(--blue)] text-white px-5 md:px-10 py-4 rounded-xl font-bold text-sm hover:bg-white hover:text-[var(--blue)] transition-all shadow-lg active:scale-95">
                           Explore Album
                         </button>
                       </Link>

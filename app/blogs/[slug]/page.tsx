@@ -31,12 +31,12 @@ export default function BlogDetailPage({
 }) {
   return (
     <main className="font-montserrat">
-      <section className=" mx-auto py-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-16">
+      <section className=" mx-auto py-5 md:py-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-8 md:gap-16">
           
           {/* Main content */}
           <article className="flex-1">
-            <div className="rounded-2xl overflow-hidden mb-12">
+            <div className="rounded-2xl overflow-hidden mb-6 md:mb-12">
               <img
                 src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&q=80"
                 alt="Blog"
@@ -44,7 +44,7 @@ export default function BlogDetailPage({
               />
             </div>
 
-            <h1 className="text-3xl lg:text-4xl font-bold leading-tight text-[#1a1a1a] mb-8">
+            <h1 className="text-xl md:text-3xl lg:text-4xl font-bold leading-tight text-[#1a1a1a] mb-4 md:mb-8">
               Women&apos;s Development in Nepal: The Myth of Empowerment
             </h1>
 
@@ -77,7 +77,7 @@ export default function BlogDetailPage({
             
             {/* Recent Posts */}
             <div>
-              <h3 className="font-bold text-2xl mb-8 text-[#1a1a1a]">
+              <h3 className="font-bold text-2xl mb-4 md:mb-8 text-[#1a1a1a]">
                 Recent Blogs
               </h3>
               <div className="space-y-6">
@@ -107,7 +107,7 @@ export default function BlogDetailPage({
 
             {/* Contact Us Sidebar Form */}
             <div>
-              <h3 className="font-bold text-2xl mb-8 text-[var(--blue)]">
+              <h3 className="font-bold text-2xl mb-4 md:mb-8 text-[var(--blue)]">
                 Contact Us
               </h3>
               <div className="space-y-4">

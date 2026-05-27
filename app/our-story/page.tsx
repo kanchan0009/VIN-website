@@ -81,9 +81,9 @@ export default function OurStoryPage() {
               "linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.25) 100%)",
           }}
         />
-        <div className="relative z-10  mx-auto px-4 pb-10 w-full">
+        <div className="relative z-10  mx-auto px-4 pb-5 md:pb-10 w-full">
           <h1
-            className="text-[56px] font-bold text-white"
+            className="text-2xl md:text-[56px] font-bold text-white"
           >
             Our Story
           </h1>
@@ -95,10 +95,10 @@ export default function OurStoryPage() {
       </section>
 
       {/* Origin Story Intro */}
-      <section className="py-16 bg-white">
+      <section className="py-8 md:py-16 bg-white">
         <div className=" mx-auto px-4 text-center">
           <h2
-            className="text-[56px] font-[600] text-gray-900 mb-3"
+            className="text-2xl md:text-[56px] font-[600] text-gray-900 mb-3"
           >
             THE ORIGIN STORY OF VOLUNTEERS INITIATIVE NEPAL (VIN)
           </h2>
@@ -118,7 +118,7 @@ export default function OurStoryPage() {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-24 bg-white overflow-hidden">
+      <section className="py-10 md:py-24 bg-white overflow-hidden">
         <div className=" mx-auto px-4 relative">
           {/* Background Vertical Line (Light) */}
           <div className="absolute left-1/2 top-[40px] bottom-[40px] w-[2px] bg-gray-100 transform -translate-x-1/2 hidden lg:block" />
@@ -138,7 +138,7 @@ export default function OurStoryPage() {
                 key={i}
                 ref={(el) => { sectionRefs.current[i] = el; }}
                 onMouseEnter={() => setActiveIndex(i)}
-                className={`relative flex flex-col lg:flex-row items-center gap-12 lg:gap-24 transition-all duration-500 ${
+                className={`relative flex flex-col lg:flex-row items-center gap-6 md:gap-12 lg:gap-24 transition-all duration-500 ${
                   i % 2 === 1 ? "lg:flex-row-reverse" : ""
                 } ${activeIndex >= i ? "opacity-100" : "opacity-50"}`}
               >
@@ -171,7 +171,7 @@ export default function OurStoryPage() {
                     <span className="text-[var(--blue)] font-bold text-xl mb-2 block">
                       {m.year}
                     </span>
-                    <h3 className="text-3xl font-bold text-gray-900 mb-6 leading-tight">
+                    <h3 className="text-xl md:text-3xl font-bold text-gray-900 mb-6 leading-tight">
                       {m.title}
                     </h3>
                     <div className="space-y-4 text-gray-600 text-[15px] leading-relaxed">
@@ -190,15 +190,15 @@ export default function OurStoryPage() {
       </section>
 
       {/* Founder's Message */}
-      <section className="py-16 pb-24" style={{ background: "#DFF0FF" }}>
+      <section className="py-8 md:py-16 pb-10 md:pb-24" style={{ background: "#DFF0FF" }}>
         <div className=" mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-start">
+          <div className="flex flex-col lg:flex-row gap-5 md:gap-10 lg:gap-20 items-start">
             {/* Left Content */}
             <div className="flex-1 order-2 lg:order-1">
-              <h2 className="text-[56px] font-bold text-gray-900 mb-2 leading-tight">
+              <h2 className="text-2xl md:text-[56px] font-bold text-gray-900 mb-2 leading-tight">
                 Founder&apos;s Message
               </h2>
-              <p className="text-[20px] font-medium text-[#221C84] mb-8">From Bhupi</p>
+              <p className="text-[20px] font-medium text-[#221C84] mb-4 md:mb-8">From Bhupi</p>
 
               <div className="space-y-6 text-[#212121] text-[16px] leading-[1.7] font-[400]">
                 <p>
@@ -242,7 +242,7 @@ export default function OurStoryPage() {
                   <p>And this journey has only just begun.</p>
                 </div>
 
-                <div className="pt-8">
+                <div className="pt-4 md:pt-8">
                   <p className="text-gray-600 mb-1">Warm regards,</p>
                   <p className="font-bold text-[20px] text-[#221C84] mb-0">Bhupendra &quot;Bhupi&quot; Ghimire</p>
                   <p className="text-gray-500 text-sm">Founder / President</p>

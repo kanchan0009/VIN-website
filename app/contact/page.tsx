@@ -62,8 +62,8 @@ export default function ContactPage() {
               "linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)",
           }}
         />
-        <div className="relative z-10  mx-auto px-4 pb-10 w-full">
-          <h1 className="text-5xl font-bold text-white mb-2">Contact Us</h1>
+        <div className="relative z-10  mx-auto px-4 pb-5 md:pb-10 w-full">
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-2">Contact Us</h1>
           <p className="text-white/80 text-lg max-w-4xl">
             Lorem Ipsum Dipsum We Are Different Locations Lorem Ipsum Dipsum We
             Are Different Locations Lorem Ipsum Dipsum We Are Different L
@@ -72,14 +72,14 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form + Info */}
-      <section className="py-24 bg-white">
-        <div className=" mx-auto px-4 flex flex-col lg:flex-row gap-16 items-start">
+      <section className="py-10 md:py-24 bg-white">
+        <div className=" mx-auto px-4 flex flex-col lg:flex-row gap-8 md:gap-16 items-start">
           {/* Form */}
           <div className="flex-1 w-full max-w-xl">
-            <h2 className="text-4xl font-bold mb-4 text-[#1a1a1a]">
+            <h2 className="text-2xl md:text-4xl font-bold mb-4 text-[#1a1a1a]">
               Stay In Touch!
             </h2>
-            <p className="text-gray-600 text-lg mb-10 leading-relaxed">
+            <p className="text-gray-600 text-lg mb-5 md:mb-10 leading-relaxed">
               Learn More about your next tour destination and make the best
               decision with Tyrolean Adventures
             </p>
@@ -98,7 +98,7 @@ export default function ContactPage() {
                 className="w-full bg-[#F5F7F9] border-none rounded-lg px-6 py-5 text-gray-700 placeholder-gray-400 focus:ring-2 focus:ring-[var(--blue)]/20 outline-none transition-all resize-none"
               />
               <button
-                className="flex items-center gap-2 px-8 py-4 rounded-full font-bold text-white transition-all hover:opacity-90 active:scale-95"
+                className="flex items-center gap-2 px-4 md:px-8 py-4 rounded-full font-bold text-white transition-all hover:opacity-90 active:scale-95"
                 style={{ background: "var(--blue)" }}
               >
                 <span>Send Message</span>
@@ -109,8 +109,8 @@ export default function ContactPage() {
 
           {/* Info Section */}
           <div className="lg:w-[600px] w-full flex-none">
-            <div className="bg-[#EBF5FF] rounded-none p-12 lg:p-16">
-              <h3 className="text-3xl font-bold mb-12 text-[#1a1a1a]">
+            <div className="bg-[#EBF5FF] rounded-none p-6 md:p-12 lg:p-16">
+              <h3 className="text-xl md:text-3xl font-bold mb-6 md:mb-12 text-[#1a1a1a]">
                 How can we help you?
               </h3>
 
@@ -171,7 +171,7 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="pb-24 bg-white">
+      <section className="pb-10 md:pb-24 bg-white">
         <div className=" mx-auto px-4">
           <div className="rounded-2xl overflow-hidden h-[400px] border border-gray-100 flex items-center justify-center bg-[#F8FAFC]">
             <iframe

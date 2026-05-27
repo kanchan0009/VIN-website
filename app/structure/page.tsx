@@ -7,13 +7,13 @@ export default function StructurePage() {
   return (
     <main className="text-[#1a1a2e]">
       {/* Structure Image Section */}
-      <section className="py-20 bg-white">
+      <section className="py-10 md:py-20 bg-white">
         <div className="mx-auto px-4 text-center">
-          <h2 className="text-[50px] font-[700] mb-12 text-[#212121]">
+          <h2 className="text-2xl md:text-[50px] font-[700] mb-6 md:mb-12 text-[#212121]">
             Organization Structure
           </h2>
           
-          <div className=" mx-auto mb-12">
+          <div className=" mx-auto mb-6 md:mb-12">
             <img 
               src="/structure.png" 
               alt="VIN Organization Structure" 

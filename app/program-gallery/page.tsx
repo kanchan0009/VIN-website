@@ -79,14 +79,14 @@ function ProgramGalleryContent() {
   return (
     <main className="bg-white min-h-screen">
       {/* Title Section */}
-      <section className="pt-16 pb-4 text-center">
+      <section className="pt-8 md:pt-16 pb-4 text-center">
         <div className="max-w-4xl mx-auto px-6">
-          <h1 className="text-3xl md:text-5xl font-extrabold text-[#1a1a1a] leading-tight mb-8">
+          <h1 className="text-xl md:text-3xl md:text-5xl font-extrabold text-[#1a1a1a] leading-tight mb-4 md:mb-8">
             {displayTitle}<br />Gallery
           </h1>
           
           {/* Filter Dropdown */}
-          <div className="flex justify-center mb-10 relative">
+          <div className="flex justify-center mb-5 md:mb-10 relative">
             <div className="relative inline-block text-left">
               <button 
                 onClick={() => setIsOpen(!isOpen)}
@@ -121,7 +121,7 @@ function ProgramGalleryContent() {
       </section>
 
       {/* Media Grid Section */}
-      <div className="flex flex-col gap-6 md:gap-10 pb-24">
+      <div className="flex flex-col gap-6 md:gap-10 pb-10 md:pb-24">
         {/* Top Row - Slightly Smaller */}
         <section className="p-0 !px-0">
           <div className="max-w-6xl mx-auto px-6">

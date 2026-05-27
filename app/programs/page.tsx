@@ -67,17 +67,17 @@ export default function ProgramsPage() {
       <section className="relative flex items-end overflow-hidden h-[75vh] min-h-[600px] max-h-[800px]">
         <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=80" alt="All Programs" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)' }} />
-        <div className="relative z-10  mx-auto px-4 pb-10 w-full">
-          <h1 className="text-5xl font-bold text-white mb-2" style={{ }}>All Programs</h1>
+        <div className="relative z-10  mx-auto px-4 pb-5 md:pb-10 w-full">
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-2" style={{ }}>All Programs</h1>
           <p className="text-white/70 text-[16px] max-w-lg">Lorem Ipsum Dipsum: We Are Different Locations Lorem Ipsum Dipsum We Are Different</p>
         </div>
       </section>
 
       {/* About Programs */}
-      <section className="py-14 bg-white">
+      <section className="py-6 md:py-14 bg-white">
         <div className=" mx-auto px-4 text-center">
-          <h2 className="text-5xl font-bold mb-4" style={{ }}>Our Community Development Programs</h2>
-          <p className="text-gray-500 text-[16px] max-w-4xl mx-auto leading-relaxed mb-8">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4" style={{ }}>Our Community Development Programs</h2>
+          <p className="text-gray-500 text-[16px] max-w-4xl mx-auto leading-relaxed mb-4 md:mb-8">
             Volunteers Initiative Nepal (VIN), established in 2002 by a diverse group drawn from development workers, educationalists, social activists and other professionals. VIN is officially registered under the Society Act with the District Administration Office, Kathmandu (Reg. No. 140/062/63), and affiliated with the Social Welfare Council (SWC) (Affiliation No. 20993). VIN focuses on community-based projects involving local volunteers backed-up by international volunteers in Nepal.
           </p>
           <Link href="/about" className="inline-flex items-center gap-2 px-7 py-3 rounded-[10px] font-semibold text-white text-sm" style={{ background: 'var(--blue)' }}>
@@ -87,7 +87,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* Programs Grid */}
-      <section className="py-10 pb-20 bg-white">
+      <section className="py-5 md:py-10 pb-10 md:pb-20 bg-white">
         <div className=" mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
             {programs.map(p => (

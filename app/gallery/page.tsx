@@ -40,14 +40,14 @@ export default function GalleryPage() {
   return (
     <main className="bg-white min-h-screen">
       {/* Title */}
-      <section className="pt-8 pb-7 text-center">
-        <h1 className="text-4xl font-bold text-[#1a1a1a]">Programs Gallery</h1>
+      <section className="pt-4 md:pt-8 pb-7 text-center">
+        <h1 className="text-2xl md:text-4xl font-bold text-[#1a1a1a]">Programs Gallery</h1>
       </section>
 
       {/* Album Grid */}
-      <section className="pb-16">
+      <section className="pb-8 md:pb-16">
         <div className="max-w-360 mx-auto px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10 lg:gap-12">
             {albums.map((album, idx) => (
               <div
                 key={idx}
@@ -59,7 +59,7 @@ export default function GalleryPage() {
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-all" />
-                <div className="absolute inset-0 flex flex-col items-center justify-end pb-8 text-center px-6">
+                <div className="absolute inset-0 flex flex-col items-center justify-end pb-4 md:pb-8 text-center px-6">
                   <h4 className="text-white text-lg font-semibold mb-4 leading-tight">
                     {album.title}
                   </h4>
@@ -73,7 +73,7 @@ export default function GalleryPage() {
                       <Link
                         href={`/gallery-details?topic=${album.slug}&project=${projectParam}&album=${albumParam}`}
                       >
-                        <button className="bg-(--blue) text-white px-10 py-4 rounded-xl font-bold text-sm hover:bg-white hover:text-(--blue) transition-all shadow-lg active:scale-95">
+                        <button className="bg-(--blue) text-white px-5 md:px-10 py-4 rounded-xl font-bold text-sm hover:bg-white hover:text-(--blue) transition-all shadow-lg active:scale-95">
                           Explore Album
                         </button>
                       </Link>

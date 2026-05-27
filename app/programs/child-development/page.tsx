@@ -132,9 +132,9 @@ export default function ChildDevelopmentPage() {
   return (
     <main>
       {/* Header Section */}
-      <section className="bg-white pt-10 pb-6">
+      <section className="bg-white pt-5 md:pt-10 pb-6">
         <div className=" mx-auto px-6">
-          <h1 className="text-4xl lg:text-5xl font-[700] text-[#1a1a1a] mb-3 leading-tight">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-[700] text-[#1a1a1a] mb-3 leading-tight">
             Child Development Program
           </h1>
           <div className="">
@@ -160,7 +160,7 @@ export default function ChildDevelopmentPage() {
       </section>
 
       {/* Hero Image */}
-      <section className="mb-10 p-0 !px-0 h-[75vh] min-h-[600px] max-h-[800px]">
+      <section className="mb-5 md:mb-10 p-0 !px-0 h-[75vh] min-h-[600px] max-h-[800px]">
         <div className="w-full overflow-hidden h-full">
           <img 
             src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=80" 
@@ -171,17 +171,17 @@ export default function ChildDevelopmentPage() {
       </section>
 
       {/* Why + Vision Section */}
-      <section className="pb-10 bg-white">
+      <section className="pb-5 md:pb-10 bg-white">
         <div className=" mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-6">
             {/* Left Content: Why Section */}
             <div className="lg:w-2/3">
-              <h2 className="text-3xl lg:text-[40px] font-[600] text-[#1a1a1a] mb-6">
+              <h2 className="text-xl md:text-3xl lg:text-[40px] font-[600] text-[#1a1a1a] mb-6">
                 Why Child Development Programs
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl">
                 {whyItems.map((item, idx) => (
-                  <div key={idx} className="h-[325px] p-10 rounded-[10px] border border-[#D9D9D9] shadow-sm hover:shadow-md transition-all duration-300 bg-white">
+                  <div key={idx} className="h-[325px] p-5 md:p-10 rounded-[10px] border border-[#D9D9D9] shadow-sm hover:shadow-md transition-all duration-300 bg-white">
                     <div className="w-12 h-12 rounded-lg bg-[#E6F4FE] flex items-center justify-center mb-4 text-2xl">
                       {item.icon}
                     </div>
@@ -197,7 +197,7 @@ export default function ChildDevelopmentPage() {
             {/* Right Sidebar */}
             <div className="lg:w-[35%] space-y-6">
               {/* Vision Box */}
-              <div className="bg-[#DFF0FF] pt-10 pb-8 px-6 rounded-[10px] text-center shadow-sm">
+              <div className="bg-[#DFF0FF] pt-5 md:pt-10 pb-4 md:pb-8 px-6 rounded-[10px] text-center shadow-sm">
                 <h3 className="text-xl lg:text-[32px] font-[700] text-[#1a1a1a] mb-6 leading-tight">
                   Holistic Growth <br /> we envision for children
                 </h3>
@@ -224,16 +224,16 @@ export default function ChildDevelopmentPage() {
       </section>
 
       {/* Current Situation */}
-      <section className="py-12 bg-[#E6F4FE]">
+      <section className="py-6 md:py-12 bg-[#E6F4FE]">
         <div className=" mx-auto px-6">
-          <h2 className="text-3xl lg:text-4xl font-[700] text-[#1a1a1a] mb-8">
+          <h2 className="text-xl md:text-3xl lg:text-4xl font-[700] text-[#1a1a1a] mb-4 md:mb-8">
             Current Situation
           </h2>
           
-          <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-32">
+          <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-16 lg:gap-32">
             {/* Left Stat Card */}
-            <div className="w-full lg:w-[400px] h-[350px] bg-[#B2D2FF] rounded-[10px] flex flex-col items-center justify-center p-12 text-center shadow-sm">
-              <div className="text-7xl lg:text-7xl font-[700] text-[var(--blue)] mb-8">
+            <div className="w-full lg:w-[400px] h-[350px] bg-[#B2D2FF] rounded-[10px] flex flex-col items-center justify-center p-6 md:p-12 text-center shadow-sm">
+              <div className="text-5xl md:text-7xl lg:text-7xl font-[700] text-[var(--blue)] mb-4 md:mb-8">
                 42 %
               </div>
               <p className="text-xl lg:text-2xl font-[600] text-[#1a1a1a] leading-snug">
@@ -252,7 +252,7 @@ export default function ChildDevelopmentPage() {
               ].map((item, i) => (
                 <div 
                   key={i} 
-                  className={`flex gap-8 py-4 items-start ${i !== 4 ? 'border-b border-gray-300' : ''}`}
+                  className={`flex gap-4 md:gap-8 py-4 items-start ${i !== 4 ? 'border-b border-gray-300' : ''}`}
                 >
                   <div className="w-4 h-4 rounded-full bg-[var(--blue)] mt-2 shrink-0" />
                   <p className="text-gray-700 text-[15px] lg:text-[16px] leading-relaxed">
@@ -266,7 +266,7 @@ export default function ChildDevelopmentPage() {
       </section>
 
       {/* Video */}
-      <section className="py-16 bg-white">
+      <section className="py-8 md:py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4">
           <div className="relative rounded-[10px] overflow-hidden h-[450px] bg-black flex items-center justify-center cursor-pointer group">
             <img 
@@ -282,9 +282,9 @@ export default function ChildDevelopmentPage() {
       </section>
 
       {/* Album Gallery Section */}
-      <section className="py-20 bg-white overflow-hidden">
+      <section className="py-10 md:py-20 bg-white overflow-hidden">
         <div className=" mx-auto px-6 relative">
-          <h2 className="text-3xl lg:text-4xl font-[700] text-[#1a1a1a] text-center mb-16">
+          <h2 className="text-xl md:text-3xl lg:text-4xl font-[700] text-[#1a1a1a] text-center mb-8 md:mb-16">
             Album Gallery
           </h2>
 
@@ -310,7 +310,7 @@ export default function ChildDevelopmentPage() {
             {/* Album Grid */}
             <div className="overflow-hidden px-4 py-4 -mx-4">
               <div 
-                className="flex transition-transform duration-500 ease-in-out gap-8 md:gap-16 lg:gap-24 max-w-6xl mx-auto"
+                className="flex transition-transform duration-500 ease-in-out gap-4 md:gap-8 md:gap-16 lg:gap-24 max-w-6xl mx-auto"
                 style={{ transform: `translateX(-${albumIndex * (100 / visibleAlbumCount)}%)` }}
               >
                 {albums.map((album, idx) => (
@@ -324,12 +324,12 @@ export default function ChildDevelopmentPage() {
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-all" />
-                  <div className="absolute inset-0 flex flex-col items-center justify-end pb-10 text-center px-6">
+                  <div className="absolute inset-0 flex flex-col items-center justify-end pb-5 md:pb-10 text-center px-6">
                     <h4 className="text-white text-lg lg:text-xl font-[600] mb-6 leading-tight">
                       {album.title}
                     </h4>
                     <Link href="/program-gallery?topic=child-development">
-                      <button className="bg-[#1e238f] text-white px-8 py-3 rounded-md font-[600] text-sm hover:bg-[#15196d] transition-all active:scale-95 shadow-lg">
+                      <button className="bg-[#1e238f] text-white px-4 md:px-8 py-3 rounded-md font-[600] text-sm hover:bg-[#15196d] transition-all active:scale-95 shadow-lg">
                         Explore Album
                       </button>
                     </Link>
@@ -343,12 +343,12 @@ export default function ChildDevelopmentPage() {
       </section>
 
       {/* Goals Section */}
-      <section className="py-20 bg-white">
+      <section className="py-10 md:py-20 bg-white">
         <div className=" mx-auto px-6">
-          <h2 className="text-3xl lg:text-4xl font-[700] text-[#1a1a1a] mb-4">
+          <h2 className="text-xl md:text-3xl lg:text-4xl font-[700] text-[#1a1a1a] mb-4">
             What we're working toward
           </h2>
-          <p className="text-gray-600 text-[14px] lg:text-[15px] max-w-3xl mb-12">
+          <p className="text-gray-600 text-[14px] lg:text-[15px] max-w-3xl mb-6 md:mb-12">
             Our Child Development program is focused on creating sustainable changes in children's lives through targeted interventions.
           </p>
 
@@ -356,9 +356,9 @@ export default function ChildDevelopmentPage() {
             {goals.map((goal, idx) => (
               <div 
                 key={idx} 
-                className="flex items-center gap-8 px-8 py-5 lg:px-10 lg:py-6 rounded-[20px] border border-gray-100 shadow-sm hover:shadow-md transition-shadow bg-white"
+                className="flex items-center gap-4 md:gap-8 px-4 md:px-8 py-5 lg:px-10 lg:py-6 rounded-[20px] border border-gray-100 shadow-sm hover:shadow-md transition-shadow bg-white"
               >
-                <div className="text-4xl lg:text-5xl font-[800] text-[var(--blue)] shrink-0 w-20">
+                <div className="text-2xl md:text-4xl lg:text-5xl font-[800] text-[var(--blue)] shrink-0 w-20">
                   {goal.num}
                 </div>
                 <div>
@@ -376,19 +376,19 @@ export default function ChildDevelopmentPage() {
       </section>
 
       {/* Achievements Section */}
-      <section className="py-12 bg-[#E6F4FE]">
+      <section className="py-6 md:py-12 bg-[#E6F4FE]">
         <div className=" mx-auto px-6">
-          <h2 className="text-3xl lg:text-4xl font-[700] text-[#1a1a1a] mb-12">
+          <h2 className="text-xl md:text-3xl lg:text-4xl font-[700] text-[#1a1a1a] mb-6 md:mb-12">
             Our Achievements
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-4 md:mb-8">
             {stats.map((stat, idx) => (
               <div 
                 key={idx} 
-                className="bg-[#BFD9FF] p-8 rounded-[20px] text-center flex flex-col items-center justify-center min-h-[180px] shadow-sm"
+                className="bg-[#BFD9FF] p-4 md:p-8 rounded-[20px] text-center flex flex-col items-center justify-center min-h-[180px] shadow-sm"
               >
-                <div className="text-5xl font-[800] text-[var(--blue)] mb-2">
+                <div className="text-3xl md:text-5xl font-[800] text-[var(--blue)] mb-2">
                   {stat.value}
                 </div>
                 <p className="text-gray-700 text-[14px] lg:text-[15px] font-[500] leading-snug max-w-[200px]">
@@ -398,7 +398,7 @@ export default function ChildDevelopmentPage() {
             ))}
           </div>
 
-          <div className="bg-white p-8 lg:p-12 rounded-[25px] shadow-sm border-l-2 border-[#221C84]">
+          <div className="bg-white p-4 md:p-8 lg:p-12 rounded-[25px] shadow-sm border-l-2 border-[#221C84]">
             <p className="text-gray-600 text-[15px] lg:text-[17px] leading-relaxed max-w-5xl mx-auto text-center">
               Since its inception, the Child Development Program has impacted thousands of lives, ensuring that children from the most remote areas of Nepal have the opportunity to learn, grow, and thrive in a safe environment.
             </p>
@@ -407,9 +407,9 @@ export default function ChildDevelopmentPage() {
       </section>
 
       {/* Related Media */}
-      <section className="py-10 bg-white overflow-hidden">
-        <div className=" mx-auto px-6 text-center mb-10">
-          <h2 className="text-3xl lg:text-[50px] font-[500] text-[#1a1a1a] mb-5">
+      <section className="py-5 md:py-10 bg-white overflow-hidden">
+        <div className=" mx-auto px-6 text-center mb-5 md:mb-10">
+          <h2 className="text-xl md:text-3xl lg:text-[50px] font-[500] text-[#1a1a1a] mb-5">
             Related Media
           </h2>
           
@@ -417,7 +417,7 @@ export default function ChildDevelopmentPage() {
           <div className="inline-block relative mb-5">
             <button 
               onClick={() => setIsMediaDropdownOpen(!isMediaDropdownOpen)}
-              className="flex items-center gap-4 px-10 py-3 border border-gray-400 rounded-[5px] text-gray-700 font-[500] hover:bg-gray-50 transition-all min-w-[200px] justify-between"
+              className="flex items-center gap-4 px-5 md:px-10 py-3 border border-gray-400 rounded-[5px] text-gray-700 font-[500] hover:bg-gray-50 transition-all min-w-[200px] justify-between"
             >
               {selectedMedia}
               <ChevronDown size={16} className={`transition-transform duration-300 ${isMediaDropdownOpen ? 'rotate-180' : ''}`} />
@@ -497,12 +497,12 @@ export default function ChildDevelopmentPage() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-12 bg-white">
+      <section className="py-6 md:py-12 bg-white">
         <div className=" mx-auto px-6 relative">
-           <h2 className="text-3xl lg:text-4xl font-[700] text-[#1a1a1a] mb-4">
+           <h2 className="text-xl md:text-3xl lg:text-4xl font-[700] text-[#1a1a1a] mb-4">
             Child Development Projects
           </h2>
-          <p className="text-gray-600 text-[14px] lg:text-[15px] max-w-3xl mb-12">
+          <p className="text-gray-600 text-[14px] lg:text-[15px] max-w-3xl mb-6 md:mb-12">
             Explore our specific projects that address the diverse needs of children in marginalized communities.
           </p>
 
@@ -522,7 +522,7 @@ export default function ChildDevelopmentPage() {
 
             <div className="overflow-hidden">
               <div 
-                className="flex transition-transform duration-500 ease-in-out gap-8"
+                className="flex transition-transform duration-500 ease-in-out gap-4 md:gap-8"
                 style={{ transform: `translateX(-${projectIndex * (100 / visibleProjectCount)}%)` }}
               >
                 {[1, 2, 3].map((item) => (
@@ -558,9 +558,9 @@ export default function ChildDevelopmentPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-12 bg-white border-t border-gray-50">
+      <section className="py-6 md:py-12 bg-white border-t border-gray-50">
         <div className=" mx-auto px-6 relative">
-          <h2 className="text-3xl lg:text-5xl font-[700] text-[#1a1a1a] text-center mb-12">
+          <h2 className="text-xl md:text-3xl lg:text-5xl font-[700] text-[#1a1a1a] text-center mb-6 md:mb-12">
             Testimonials
           </h2>
 
@@ -574,7 +574,7 @@ export default function ChildDevelopmentPage() {
             </button>
 
             <div className="flex-1 max-w-10xl">
-              <div className="flex flex-col md:flex-row items-start gap-8 md:gap-12">
+              <div className="flex flex-col md:flex-row items-start gap-4 md:gap-8 md:gap-12">
                 <div className="flex-1 order-2 md:order-1">
                   <p className="text-gray-700 text-[10px] font-[500] md:text-base leading-relaxed mb-6 text-justify">
                     {current.text}
@@ -607,7 +607,7 @@ export default function ChildDevelopmentPage() {
             </button>
           </div>
 
-          <div className="flex justify-end mt-8 md:mt-12 mx-auto px-4 md:pr-16">
+          <div className="flex justify-end mt-4 md:mt-8 md:mt-12 mx-auto px-4 md:pr-16">
             <Link
               href="/testimonials"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] font-[700] text-white text-base hover:opacity-90 transition-opacity"
@@ -620,10 +620,10 @@ export default function ChildDevelopmentPage() {
       </section>
 
       {/* Other Programs */}
-      <section className="py-20 bg-[#e6f4fe]">
+      <section className="py-10 md:py-20 bg-[#e6f4fe]">
         <div className=" mx-auto px-6">
-          <div className="mb-12">
-            <h2 className="text-4xl font-[700] text-[#1a1a1a] mb-2">Other Programs</h2>
+          <div className="mb-6 md:mb-12">
+            <h2 className="text-2xl md:text-4xl font-[700] text-[#1a1a1a] mb-2">Other Programs</h2>
             <p className="text-gray-600">Explore our other initiatives making a difference in Nepal.</p>
           </div>
 
@@ -637,7 +637,7 @@ export default function ChildDevelopmentPage() {
                     <span className="text-white/80 text-[11px] uppercase tracking-wider">{p.label}</span>
                   </div>
                 </div>
-                <div className="p-8 flex flex-col items-center text-center flex-1">
+                <div className="p-4 md:p-8 flex flex-col items-center text-center flex-1">
                   <h3 className="text-[#1a1a1a] font-[700] text-lg mb-4 leading-tight group-hover:text-[var(--blue)] transition-colors">{p.title}</h3>
                   <p className="text-gray-500 text-[13px] leading-relaxed">
                     {p.desc}
@@ -647,8 +647,8 @@ export default function ChildDevelopmentPage() {
             ))}
           </div>
 
-          <div className="text-center mt-16">
-            <Link href="/programs" className="bg-[#1e238f] text-white px-10 py-3 rounded-md font-[600] text-sm hover:bg-[#15196d] transition-all shadow-lg active:scale-95 inline-block">
+          <div className="text-center mt-8 md:mt-16">
+            <Link href="/programs" className="bg-[#1e238f] text-white px-5 md:px-10 py-3 rounded-md font-[600] text-sm hover:bg-[#15196d] transition-all shadow-lg active:scale-95 inline-block">
               View All Programs
             </Link>
           </div>

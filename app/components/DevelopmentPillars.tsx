@@ -71,16 +71,16 @@ export default function DevelopmentPillars() {
   const content = tabContent[activeTab as keyof typeof tabContent];
 
   return (
-    <section className={`bg-[#DFF0FF] py-12 lg:py-24 ${montserrat.className}`}>
+    <section className={`bg-[#DFF0FF] py-6 md:py-12 lg:py-24 ${montserrat.className}`}>
       <div className=" mx-auto px-6">
         {/* Header */}
-        <h1 className="text-2xl lg:text-4xl font-[800] text-[#1D1E20] mb-12 lg:mb-16 leading-tight lg:leading-[1.1] max-w-5xl text-center mx-auto">
+        <h1 className="text-2xl lg:text-4xl font-[800] text-[#1D1E20] mb-6 md:mb-12 lg:mb-16 leading-tight lg:leading-[1.1] max-w-5xl text-center mx-auto">
           Four areas of development resembling pillars of the house are Education,
           Health & Environment, Economy and Basic infrastructure
         </h1>
 
         {/* Tab Navigation - Scrolling on Mobile */}
-        <div className="overflow-x-auto scrollbar-hide -mx-6 px-6 mb-10">
+        <div className="overflow-x-auto scrollbar-hide -mx-6 px-6 mb-5 md:mb-10">
           <div className="flex lg:justify-between items-center border-b border-gray-200 min-w-max lg:min-w-0">
             {tabs.map((tab) => (
               <button
@@ -99,7 +99,7 @@ export default function DevelopmentPillars() {
         </div>
 
         {/* Hero Content Container */}
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-5 md:gap-10">
           {/* Hero Image with Title Overlay */}
           <div className="relative w-full aspect-video lg:h-[450px] rounded-[30px] lg:rounded-[40px] overflow-hidden shadow-2xl">
             <img
@@ -107,8 +107,8 @@ export default function DevelopmentPillars() {
               alt={content.title}
               className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end justify-center pb-8 lg:pb-12">
-              <h2 className="text-3xl lg:text-5xl font-[700] text-white tracking-tight">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end justify-center pb-4 md:pb-8 lg:pb-12">
+              <h2 className="text-xl md:text-3xl lg:text-5xl font-[700] text-white tracking-tight">
                 {content.title}
               </h2>
             </div>

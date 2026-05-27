@@ -87,8 +87,8 @@ export default function BlogsPage() {
               "linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)",
           }}
         />
-        <div className="relative z-10  mx-auto px-4 pb-10 w-full text-center lg:text-left">
-          <h1 className="text-5xl lg:text-6xl font-bold text-white mb-4">Blogs</h1>
+        <div className="relative z-10  mx-auto px-4 pb-5 md:pb-10 w-full text-center lg:text-left">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4">Blogs</h1>
           <p className="text-white/80 text-lg max-w-4xl mx-auto lg:mx-0">
             Lorem Ipsum Dipsum We Are Different Locations Lorem Ipsum Dipsum We
             Are...
@@ -96,11 +96,11 @@ export default function BlogsPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-10 md:py-20 bg-white">
         <div className=" mx-auto px-4">
           
           {/* Search Bar centered at top */}
-          <div className="flex justify-center mb-16">
+          <div className="flex justify-center mb-8 md:mb-16">
             <div className="relative w-full max-w-md">
               <Search
                 size={18}
@@ -109,17 +109,17 @@ export default function BlogsPage() {
               <input
                 type="text"
                 placeholder="Search"
-                className="w-full pl-12 pr-4 py-2 border-1 border-gray-400 rounded focus:outline-none focus:border-black transition-colors text-gray-700"
+                className="w-full pl-6 md:pl-12 pr-4 py-2 border-1 border-gray-400 rounded focus:outline-none focus:border-black transition-colors text-gray-700"
               />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-8 md:gap-16">
             {/* Blog List */}
             <div className="space-y-10">
               {currentPosts.map((post, idx) => (
-                <div key={idx} className="group border-b-1 border-[#D9D9D9] pb-12 last:border-0">
-                  <div className="flex flex-col md:flex-row gap-8 items-start">
+                <div key={idx} className="group border-b-1 border-[#D9D9D9] pb-6 md:pb-12 last:border-0">
+                  <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-start">
                     <div className="flex-1">
                       <p className="text-[#C3161C] text-[16px] font-[500] mb-3">{post.date}</p>
                       <Link href={`/blogs/${post.slug}`}>
@@ -146,7 +146,7 @@ export default function BlogsPage() {
               ))}
 
               {/* Pagination */}
-              <div className="flex items-center gap-4 pt-8">
+              <div className="flex items-center gap-4 pt-4 md:pt-8">
                 <button 
                   onClick={() => paginate(Math.max(1, currentPage - 1))}
                   disabled={currentPage === 1}
@@ -181,7 +181,7 @@ export default function BlogsPage() {
 
             {/* Sidebar */}
             <aside>
-              <h2 className="text-[30px] font-[800] text-[#333333] mb-8">Recent Blogs</h2>
+              <h2 className="text-2xl md:text-[30px] font-[800] text-[#333333] mb-4 md:mb-8">Recent Blogs</h2>
               <div className="space-y-0">
                 {recentPosts.map((post, i) => (
                   <div key={i} className="py-6 border-b border-[#D9D9D9] last:border-0 first:pt-0">

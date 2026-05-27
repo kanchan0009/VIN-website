@@ -249,13 +249,13 @@ export default function GalleryDetailsPage({
 
   return (
     <main className="bg-white min-h-screen">
-      <section className="pt-8 pb-10 text-center">
-        <h1 className="text-4xl font-bold text-[#1a1a1a]">{programName}</h1>
+      <section className="pt-4 md:pt-8 pb-5 md:pb-10 text-center">
+        <h1 className="text-2xl md:text-4xl font-bold text-[#1a1a1a]">{programName}</h1>
       </section>
 
-      <section className="pb-16">
+      <section className="pb-8 md:pb-16">
         <div className="max-w-360 mx-auto px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10 lg:gap-12">
             {items.map((activity, idx) => (
               <div
                 key={idx}
@@ -267,20 +267,20 @@ export default function GalleryDetailsPage({
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-all" />
-                <div className="absolute inset-0 flex flex-col items-center justify-end pb-8 text-center px-6">
+                <div className="absolute inset-0 flex flex-col items-center justify-end pb-4 md:pb-8 text-center px-6">
                   <h4 className="text-white text-lg font-semibold mb-2 leading-tight">
                     {activity.title}
                   </h4>
                   {activity.isPlaceholder ? (
                     <button
                       disabled
-                      className="bg-(--blue) text-white/60 px-10 py-4 rounded-xl font-bold text-sm opacity-60 cursor-not-allowed"
+                      className="bg-(--blue) text-white/60 px-5 md:px-10 py-4 rounded-xl font-bold text-sm opacity-60 cursor-not-allowed"
                     >
                       Coming Soon
                     </button>
                   ) : (
                     <Link href={`/program-gallery?topic=${topic}&activity=${encodeURIComponent(activity.title)}`}>
-                      <button className="bg-(--blue) text-white px-10 py-4 rounded-xl font-bold text-sm hover:bg-white hover:text-(--blue) transition-all shadow-lg active:scale-95">
+                      <button className="bg-(--blue) text-white px-5 md:px-10 py-4 rounded-xl font-bold text-sm hover:bg-white hover:text-(--blue) transition-all shadow-lg active:scale-95">
                         Explore Album
                       </button>
                     </Link>

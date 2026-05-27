@@ -633,7 +633,7 @@ export default function HomePage() {
           <ChevronRight className="w-10 h-10 md:w-14 md:h-14" />
         </button>
 
-        <div className="relative z-10 w-full h-full pb-2.5 pt-24 flex flex-col px-[60px]">
+        <div className="relative z-10 w-full h-full pb-2.5 pt-10 md:pt-24 flex flex-col px-4 md:px-[60px]">
           <div className=" mx-auto w-full h-full flex flex-col justify-end flex-grow relative">
             {/* Stats Grid */}
             <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2">
@@ -655,8 +655,8 @@ export default function HomePage() {
             </div>
 
             {/* Bottom Content */}
-            <div className="mt-auto mb-8">
-              <h1 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-white leading-tight mb-4 transition-all duration-500">
+            <div className="mt-auto mb-4 md:mb-8">
+              <h1 className="text-xl md:text-3xl md:text-4xl lg:text-[40px] font-bold text-white leading-tight mb-4 transition-all duration-500">
                 {currentHero.title}
               </h1>
 
@@ -666,7 +666,7 @@ export default function HomePage() {
                 </p>
 
                 <Link href="/programs-details">
-                  <button className="shrink-0 px-8 py-3 rounded text-sm font-semibold text-white bg-[var(--blue)] hover:bg-indigo-700 transition shadow-lg">
+                  <button className="shrink-0 px-4 md:px-8 py-3 rounded text-sm font-semibold text-white bg-[var(--blue)] hover:bg-indigo-700 transition shadow-lg">
                     View Program
                   </button>
                 </Link>
@@ -676,7 +676,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="w-full bg-white py-20">
+      <section className="w-full bg-white py-10 md:py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-medium text-[#1a1a2e] leading-snug mb-6">
             A leader in implementing a complete holistic and integrated
@@ -684,7 +684,7 @@ export default function HomePage() {
             Approach to Community Development in Nepal
           </h2>
 
-          <p className="text-gray-600 text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-10">
+          <p className="text-gray-600 text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-5 md:mb-10">
             At our core, we strive to foster holistic, inclusive and equitable
             development in Nepal. Together, we envision a future where every
             community thrives through collaboration and empowerment.
@@ -694,14 +694,14 @@ export default function HomePage() {
           <div className="flex items-center justify-center gap-4">
             {/* Primary Button */}
             <Link href="/our-story">
-              <button className="px-8 py-2.5 text-sm font-semibold rounded text-white bg-[var(--blue)] hover:bg-indigo-800 transition-all duration-300">
+              <button className="px-4 md:px-8 py-2.5 text-sm font-semibold rounded text-white bg-[var(--blue)] hover:bg-indigo-800 transition-all duration-300">
                 Our Story
               </button>
             </Link>
 
             {/* Outline Button */}
             <Link href="/our-approach">
-              <button className="px-8 py-2.5 text-sm font-semibold rounded border border-[var(--blue)] text-[var(--blue)] hover:bg-indigo-50 transition-all duration-300">
+              <button className="px-4 md:px-8 py-2.5 text-sm font-semibold rounded border border-[var(--blue)] text-[var(--blue)] hover:bg-indigo-50 transition-all duration-300">
                 Our Approach
               </button>
             </Link>
@@ -710,17 +710,17 @@ export default function HomePage() {
       </section>
 
       {/* Welcome Section */}
-      <section className="w-full bg-[#ffffff] py-10 md:py-24">
+      <section className="w-full bg-[#ffffff] py-5 md:py-10 md:py-24">
         <div className="max-w-[1440px] mx-auto px-0 md:px-[60px]">
           {/* Heading */}
-          <h2 className="text-xl md:text-5xl font-bold text-gray-900 leading-snug mb-12 text-center">
+          <h2 className="text-xl md:text-5xl font-bold text-gray-900 leading-snug mb-6 md:mb-12 text-center">
             Welcome to{" "}
             <span className="text-[var(--blue)]">Volunteers Initiative</span>
             <br />
             <span className="text-[var(--blue)]">Nepal</span> ( VIN )
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-12 items-stretch">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-stretch">
             {/* LEFT CONTENT */}
             <div className="flex flex-col justify-center">
               {/* Paragraph */}
@@ -753,7 +753,7 @@ export default function HomePage() {
               {/* Button */}
               <div>
                 <Link href="/about">
-                  <button className="px-8 py-3 text-base font-semibold rounded-lg text-white bg-[var(--blue)] hover:bg-[var(--blue)] transition-all duration-300 shadow-md hover:shadow-lg">
+                  <button className="px-4 md:px-8 py-3 text-base font-semibold rounded-lg text-white bg-[var(--blue)] hover:bg-[var(--blue)] transition-all duration-300 shadow-md hover:shadow-lg">
                     Learn More
                   </button>
                 </Link>
@@ -771,7 +771,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="w-full flex justify-center py-10 bg-gray-100">
+      <section className="w-full flex justify-center py-5 md:py-10 bg-gray-100">
         <div className="relative w-full max-w-4xl h-96 overflow-hidden shadow-lg translate-x-4 md:translate-x-12">
           {/* Background Image */}
           <img
@@ -784,7 +784,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-black/40"></div>
 
           {/* Content */}
-          <div className="absolute inset-0 flex flex-col items-center justify-end pb-8 text-white text-center px-4">
+          <div className="absolute inset-0 flex flex-col items-center justify-end pb-4 md:pb-8 text-white text-center px-4">
             <p className="text-sm md:text-base mb-3">
               “VIN has helped a lot for disable women like us”
             </p>
@@ -799,10 +799,10 @@ export default function HomePage() {
       </section>
 
       {/* Programs grid */}
-      <section className="bg-white py-10 md:py-24">
+      <section className="bg-white py-5 md:py-10 md:py-24">
         <div className="max-w-[1440px] mx-auto px-0 md:px-[60px] text-center">
           {/* Heading */}
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
+          <h2 className="text-2xl md:text-4xl md:text-5xl font-bold text-gray-900 mb-3">
             What We Do
           </h2>
           <p className="text-gray-600 mt-2 text-base font-medium">
@@ -810,7 +810,7 @@ export default function HomePage() {
           </p>
 
           {/* Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-5 md:mt-10">
             {data.map((item, index) => (
               <Link
                 key={index}
@@ -835,7 +835,7 @@ export default function HomePage() {
                 </div>
 
                 {/* Content */}
-                <div className="p-8">
+                <div className="p-4 md:p-8">
                   <h3 className="font-bold text-gray-900 text-lg mb-3 group-hover:text-[var(--blue)] transition-colors">
                     {item.title}
                   </h3>
@@ -848,10 +848,10 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-10 md:py-24">
+      <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-5 md:py-10 md:py-24">
         <div className="max-w-[1440px] mx-auto px-0 md:px-[60px] text-center">
           {/* Heading */}
-          <h2 className="text-4xl md:text-5xl font-[600] text-gray-900 mb-3">
+          <h2 className="text-2xl md:text-4xl md:text-5xl font-[600] text-gray-900 mb-3">
             Where We Work
           </h2>
 
@@ -865,14 +865,14 @@ export default function HomePage() {
           </p>
 
           {/* Dark Card */}
-          <div className="mt-10 bg-gradient-to-r from-[#1c1f1d] to-[#1f2a24] rounded-md p-8 text-white relative overflow-hidden">
+          <div className="mt-5 md:mt-10 bg-gradient-to-r from-[#1c1f1d] to-[#1f2a24] rounded-md p-4 md:p-8 text-white relative overflow-hidden">
             {/* Top Row */}
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between border-b border-white/20 pb-8">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between border-b border-white/20 pb-4 md:pb-8">
               <h3 className="text-2xl md:text-3xl font-bold text-left">
                 Location We Worked
               </h3>
 
-              <div className="flex gap-8 mt-6 md:mt-0 text-center">
+              <div className="flex gap-4 md:gap-8 mt-6 md:mt-0 text-center">
                 <div className="border-l border-white/20 pl-6">
                   <p className="font-bold text-2xl">100,549</p>
                   <p className="text-sm text-white/80 mt-1 font-medium">
@@ -907,10 +907,10 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="bg-[#DFF0FF] py-24 px-4 md:px-12">
+      <section className="bg-[#DFF0FF] py-10 md:py-24 px-4 md:px-12">
         <div className=" mx-auto text-center">
           {/* learn more section */}
-          <h2 className="text-4xl md:text-[50px] font-[500] text-gray-900 mb-8">
+          <h2 className="text-2xl md:text-4xl md:text-[50px] font-[500] text-gray-900 mb-4 md:mb-8">
             Learn More About Our Programs
           </h2>
 
@@ -923,7 +923,7 @@ export default function HomePage() {
             return (
               <>
                 {/* Dropdown */}
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full max-w-[400px] mx-auto">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 md:mb-12 w-full max-w-[400px] mx-auto">
                   <div className="relative w-full">
                     <select
                       value={selectedProgramFilter}
@@ -950,7 +950,7 @@ export default function HomePage() {
 
                 {/* Section Header */}
                 <div className="text-left mb-5">
-                  <h3 className="text-3xl font-[700]">
+                  <h3 className="text-xl md:text-3xl font-[700]">
                     {activeProgram.title}
                   </h3>
                   <p className="text-[16px] text-[#454545AD] mt-2 max-w-3xl">
@@ -959,7 +959,7 @@ export default function HomePage() {
                 </div>
 
                 {/* Slider Controls */}
-                <div className="flex justify-end gap-3 mb-8">
+                <div className="flex justify-end gap-3 mb-4 md:mb-8">
                   <button
                     onClick={() =>
                       setLearnMoreIndex((prev) => Math.max(0, prev - 1))
@@ -1011,7 +1011,7 @@ export default function HomePage() {
                 </div>
 
                 {/* View All */}
-                <div className="mt-10">
+                <div className="mt-5 md:mt-10">
                   <button
                     onClick={() => setShowAllPrograms(!showAllPrograms)}
                     className="bg-[var(--blue)] text-white px-6 py-2 rounded-md hover:bg-[#1a1560] transition-colors"
@@ -1028,15 +1028,15 @@ export default function HomePage() {
       </section>
       {/* Team Section */}
 
-      <section className="py-20 bg-[#ffffff]">
+      <section className="py-10 md:py-20 bg-[#ffffff]">
         <div className=" mx-auto px-4">
           {/* Title */}
-          <h2 className="text-3xl md:text-4xl text-center font-[500] mb-6">
+          <h2 className="text-xl md:text-3xl md:text-4xl text-center font-[500] mb-6">
             Our Team
           </h2>
 
           {/* Dropdown */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full max-w-[350px] mx-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 md:mb-12 w-full max-w-[350px] mx-auto">
             <div className="relative w-full">
               <select
                 value={filter}
@@ -1086,15 +1086,15 @@ export default function HomePage() {
       <CTABanner />
 
       {/* CERTIFICATION  */}
-      <section className="w-full bg-[#f3f3f3] py-16 px-4">
+      <section className="w-full bg-[#f3f3f3] py-8 md:py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
           {/* Heading */}
-          <h2 className="text-7xl font-[500] md:text-[28px] font-medium text-[#1D1E20] mb-10">
+          <h2 className="text-5xl md:text-7xl font-[500] md:text-[28px] font-medium text-[#1D1E20] mb-5 md:mb-10">
             Certification, Membership & Affiliation
           </h2>
 
           {/* Logos Row */}
-          <div className="flex flex-wrap items-center justify-center gap-10 md:gap-14 mb-10">
+          <div className="flex flex-wrap items-center justify-center gap-5 md:gap-10 md:gap-14 mb-5 md:mb-10">
             <img
               src="/logos/eu.png"
               alt="European Commission"
@@ -1137,7 +1137,7 @@ export default function HomePage() {
         </div>
       </section>
       {/* Affiliate program */}
-      <section className="w-full bg-[#D5F5FF] py-16 px-4">
+      <section className="w-full bg-[#D5F5FF] py-8 md:py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
           {/* Heading */}
           <h2 className="text-[26px] md:text-[56px] font-bold text-gray-900 mb-4">
@@ -1145,7 +1145,7 @@ export default function HomePage() {
           </h2>
 
           {/* Overall Rating */}
-          <div className="flex items-center justify-center gap-2 mb-10">
+          <div className="flex items-center justify-center gap-2 mb-5 md:mb-10">
             <div className="flex gap-1">
               {[...Array(5)].map((_, i) => (
                 <Star
@@ -1155,7 +1155,7 @@ export default function HomePage() {
                 />
               ))}
             </div>
-            <span className="text-[42px] font-[600] text-[#283449]">
+            <span className="text-2xl md:text-[42px] font-[600] text-[#283449]">
               4.4<span className="text-gray-800 text-[18px]">/5</span>
             </span>
             <span className="text-[#283449] text-[18px] ml-2">|</span>
@@ -1168,7 +1168,7 @@ export default function HomePage() {
           <div className="flex flex-wrap items-center justify-between">
             {/* Card 1 (highlighted) */}
             <div className="px-6 py-5 w-[220px] text-center cursor-pointer transition-all duration-300 rounded-[10px] hover:bg-white hover:shadow-md">
-              <div className="text-[41px] font-semibold text-gray-800">
+              <div className="text-2xl md:text-[41px] font-semibold text-gray-800">
                 4.5<span className="text-[20px] text-gray-500">/5</span>
               </div>
               <div className="text-xs text-gray-500 font-semibold mt-1">
@@ -1181,7 +1181,7 @@ export default function HomePage() {
 
             {/* Card 2 */}
             <div className="px-6 py-5 w-[220px] text-center cursor-pointer transition-all duration-300 rounded-[10px] hover:bg-white hover:shadow-md">
-              <div className="text-[41px] font-semibold text-gray-800">
+              <div className="text-2xl md:text-[41px] font-semibold text-gray-800">
                 4.2<span className="text-[20px] text-gray-500">/5</span>
               </div>
               <div className="text-sm font-medium text-gray-600 mt-1">
@@ -1194,7 +1194,7 @@ export default function HomePage() {
 
             {/* Card 3 */}
             <div className="px-6 py-5 w-[220px] text-center cursor-pointer transition-all duration-300 rounded-[10px] hover:bg-white hover:shadow-md">
-              <div className="text-[41px] font-semibold text-gray-800">
+              <div className="text-2xl md:text-[41px] font-semibold text-gray-800">
                 4.2<span className="text-[20px] text-gray-500">/5</span>
               </div>
               <div className="text-sm font-medium text-gray-600 mt-1">GO</div>
@@ -1205,7 +1205,7 @@ export default function HomePage() {
 
             {/* Card 4 */}
             <div className="px-6 py-5 w-[220px] text-center cursor-pointer transition-all duration-300 rounded-[10px] hover:bg-white hover:shadow-md">
-              <div className="text-[41px] font-semibold text-gray-800">
+              <div className="text-2xl md:text-[41px] font-semibold text-gray-800">
                 4.2<span className="text-[20px] text-gray-500">/5</span>
               </div>
               <div className="text-sm font-medium text-gray-600 mt-1">
@@ -1220,10 +1220,10 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-white">
+      <section className="py-10 md:py-20 bg-white">
         <div className=" mx-auto px-4 relative">
           {/* Heading */}
-          <h2 className="text-[56px] font-[600] text-center mb-2 py-4 mb-15">
+          <h2 className="text-2xl md:text-[56px] font-[600] text-center mb-2 py-4 mb-15">
             Testimonials
           </h2>
 
@@ -1241,7 +1241,7 @@ export default function HomePage() {
 
             {/* Testimonial Card */}
             <div className="flex-1 max-w-10xl">
-              <div className="flex flex-col md:flex-row items-start gap-8 md:gap-12">
+              <div className="flex flex-col md:flex-row items-start gap-4 md:gap-8 md:gap-12">
                 {/* Text Content */}
                 <div className="flex-1 order-2 md:order-1">
                   <p className="text-gray-700 text-[10px]  font-[500] md:text-base leading-relaxed mb-6 text-justify">
@@ -1280,7 +1280,7 @@ export default function HomePage() {
           </div>
 
           {/* View All Button */}
-          <div className="flex justify-end mt-8 md:mt-12  mx-auto px-4 md:pr-16">
+          <div className="flex justify-end mt-4 md:mt-8 md:mt-12  mx-auto px-4 md:pr-16">
             <Link
               href="/testimonials"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] font-[700] text-white text-base hover:opacity-90 transition-opacity"
@@ -1292,10 +1292,10 @@ export default function HomePage() {
         </div>
       </section>
       {/* Our Media */}
-      <section className="py-20 bg-[#e8f0fe]">
+      <section className="py-10 md:py-20 bg-[#e8f0fe]">
         <div className=" mx-auto px-4">
           {/* Heading */}
-          <h2 className="text-4xl font-[500] text-center mb-8">Our Media</h2>
+          <h2 className="text-2xl md:text-4xl font-[500] text-center mb-4 md:mb-8">Our Media</h2>
 
           {/* Filters */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 w-full max-w-2xl mx-auto">
@@ -1348,7 +1348,7 @@ export default function HomePage() {
           </div>
 
           {/* View All Link */}
-          <div className="flex justify-end mb-8 mx-8 md:mx-16">
+          <div className="flex justify-end mb-4 md:mb-8 mx-4 md:mx-8 md:mx-16">
             <Link
               href={(() => {
                 let path = "/media";
@@ -1365,7 +1365,7 @@ export default function HomePage() {
           </div>
 
           {/* Dynamic Content Container */}
-          <div className="mt-8">
+          <div className="mt-4 md:mt-8">
             {(() => {
               const hasContent = 
                 (selectedCategory === "gallery" && filteredAlbums.length > 0) ||
@@ -1379,7 +1379,7 @@ export default function HomePage() {
 
               if (!hasContent) {
                 return (
-                  <div className="text-center py-16 bg-white rounded-lg shadow-sm border border-gray-100 mx-8 md:mx-16">
+                  <div className="text-center py-8 md:py-16 bg-white rounded-lg shadow-sm border border-gray-100 mx-4 md:mx-8 md:mx-16">
                     <p className="text-gray-500 text-lg">No media files found matching the selected filters. Please choose another topic or category.</p>
                   </div>
                 );
@@ -1387,7 +1387,7 @@ export default function HomePage() {
 
               if (selectedCategory === "gallery") {
                 return (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mx-8 md:mx-16">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mx-4 md:mx-8 md:mx-16">
                     {filteredAlbums.map((album, idx) => {
                       const projectTitle = topicContent[album.slug]?.focusedProjects?.[0]?.title || album.title;
                       const projectParam = encodeURIComponent(projectTitle);
@@ -1403,14 +1403,14 @@ export default function HomePage() {
                             className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                           />
                           <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-all" />
-                          <div className="absolute inset-0 flex flex-col items-center justify-end pb-8 text-center px-6">
+                          <div className="absolute inset-0 flex flex-col items-center justify-end pb-4 md:pb-8 text-center px-6">
                             <h4 className="text-white text-lg font-semibold mb-4 leading-tight">
                               {album.title}
                             </h4>
                             <Link
                               href={`/gallery-details?topic=${album.slug}&project=${projectParam}&album=${albumParam}`}
                             >
-                              <button className="bg-[var(--blue)] text-white px-8 py-3 rounded-xl font-bold text-xs hover:bg-white hover:text-[var(--blue)] transition-all shadow-lg active:scale-95">
+                              <button className="bg-[var(--blue)] text-white px-4 md:px-8 py-3 rounded-xl font-bold text-xs hover:bg-white hover:text-[var(--blue)] transition-all shadow-lg active:scale-95">
                                 Explore Album
                               </button>
                             </Link>
@@ -1424,7 +1424,7 @@ export default function HomePage() {
 
               if (selectedCategory === "articles") {
                 return (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-8 md:mx-16">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mx-4 md:mx-8 md:mx-16">
                     {filteredArticles.map((article) => (
                       <Link href="/article-blogs" key={article.id} className="block group">
                         <article className="h-full bg-white rounded-[20px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-gray-100 flex flex-col hover:shadow-xl transition-all duration-500">
@@ -1459,7 +1459,7 @@ export default function HomePage() {
 
               if (selectedCategory === "news") {
                 return (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-8 md:mx-16">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mx-4 md:mx-8 md:mx-16">
                     {filteredNews.map((news) => (
                       <div key={news.id} className="group flex flex-col border border-gray-200 shadow-sm hover:shadow-md rounded-lg overflow-hidden h-full transition-shadow bg-white">
                         <div className="relative aspect-[4/3] overflow-hidden">
@@ -1491,13 +1491,13 @@ export default function HomePage() {
 
               if (selectedCategory === "careers") {
                 return (
-                  <div className="space-y-4 w-full max-w-4xl mx-auto px-8">
+                  <div className="space-y-4 w-full max-w-4xl mx-auto px-4 md:px-8">
                     {filteredOpenings.map((job) => (
                       <div key={job.id} className="border border-gray-200 overflow-hidden transition-all duration-300 rounded bg-white">
                         {/* Accordion Header */}
                         <button
                           onClick={() => setExpandedCareerId(expandedCareerId === job.id ? null : job.id)}
-                          className={`w-full flex items-center justify-between px-8 py-3.5 transition-all duration-300 ${
+                          className={`w-full flex items-center justify-between px-4 md:px-8 py-3.5 transition-all duration-300 ${
                             expandedCareerId === job.id 
                               ? "bg-[var(--blue)] text-white" 
                               : "bg-white text-[#1D1E20] hover:bg-gray-50"
@@ -1515,7 +1515,7 @@ export default function HomePage() {
                             expandedCareerId === job.id ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
                           }`}
                         >
-                          <div className="p-8 lg:p-12 bg-white space-y-8">
+                          <div className="p-4 md:p-8 lg:p-12 bg-white space-y-8">
                             {/* Info Table */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2 max-w-2xl text-left">
                               {[
@@ -1586,11 +1586,11 @@ export default function HomePage() {
 
               if (selectedCategory === "success-stories") {
                 return (
-                  <div className="space-y-6 w-full max-w-5xl mx-auto px-8">
+                  <div className="space-y-6 w-full max-w-5xl mx-auto px-4 md:px-8">
                     {filteredStories.map((story, i) => (
                       <div 
                         key={story.id} 
-                        className={`p-8 md:p-10 border border-gray-300 rounded-[5px] flex flex-col md:flex-row gap-10 lg:gap-16 items-center bg-white ${
+                        className={`p-4 md:p-8 md:p-10 border border-gray-300 rounded-[5px] flex flex-col md:flex-row gap-5 md:gap-10 lg:gap-16 items-center bg-white ${
                           i % 2 !== 0 ? "md:flex-row-reverse" : ""
                         }`}
                       >
@@ -1623,7 +1623,7 @@ export default function HomePage() {
 
               if (selectedCategory === "case-studies") {
                 return (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-8 md:mx-16">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mx-4 md:mx-8 md:mx-16">
                     {filteredCaseStudies.map((study) => (
                       <div key={study.id} className="group flex flex-col border border-gray-200 shadow-sm hover:shadow-md rounded-lg overflow-hidden h-full transition-shadow bg-white">
                         <div className="relative aspect-[4/3] overflow-hidden">
@@ -1655,7 +1655,7 @@ export default function HomePage() {
 
               if (selectedCategory === "interviews") {
                 return (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-8 md:mx-16">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mx-4 md:mx-8 md:mx-16">
                     {filteredInterviews.map((item, idx) => (
                       <div 
                         key={idx} 
@@ -1700,7 +1700,7 @@ export default function HomePage() {
               filteredInterviews.slice(0, 1).forEach(item => mixedFeed.push({ type: "video", data: item }));
 
               return (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-8 md:mx-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mx-4 md:mx-8 md:mx-16">
                   {mixedFeed.map((item, idx) => {
                     if (item.type === "article") {
                       const article = item.data;
@@ -1835,15 +1835,15 @@ export default function HomePage() {
       </section>
 
       {/* Photos & Videos */}
-      <section className="py-20 bg-white">
+      <section className="py-10 md:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-4">
           {/* Heading */}
-          <h2 className="text-[56px] font-[500] text-center mb-6">
+          <h2 className="text-2xl md:text-[56px] font-[500] text-center mb-6">
             Photos & Videos
           </h2>
 
           {/* Description */}
-          <p className="text-gray-600 text-sm md:text-base text-center max-w-3xl mx-auto mb-12 leading-relaxed">
+          <p className="text-gray-600 text-sm md:text-base text-center max-w-3xl mx-auto mb-6 md:mb-12 leading-relaxed">
             VIN facilitates projects focused on the women and children of
             marginalized communities against this challenging backdrop. VIN
             believes that the empowerment of women and children will bring about
@@ -1978,15 +1978,15 @@ export default function HomePage() {
         )}
       </section>
       {/* Know Nepal */}
-      <section className="py-20 bg-white">
+      <section className="py-10 md:py-20 bg-white">
         <div className=" mx-auto px-4">
           {/* Heading */}
-          <h2 className="text-[56px] font-bold text-center mb-2" style={{}}>
+          <h2 className="text-2xl md:text-[56px] font-bold text-center mb-2" style={{}}>
             Know <span className="text-[#221C84]">Nepal</span>
           </h2>
 
           {/* Filters */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full max-w-2xl mx-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 md:mb-12 w-full max-w-2xl mx-auto">
             <div className="relative w-full flex-1">
               <select
                 value={selectedCategory}
@@ -2025,14 +2025,14 @@ export default function HomePage() {
           </div>
 
           {/* Place Info + Gallery */}
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 mb-12">
+          <div className="flex flex-col lg:flex-row gap-4 md:gap-8 lg:gap-12 mb-6 md:mb-12">
             {/* Left Content */}
             <div className="lg:w-1/3 flex flex-col justify-center">
-              <h3 className="text-[54px] font-[600] text-gray-900 mb-6">
+              <h3 className="text-2xl md:text-[54px] font-[600] text-gray-900 mb-6">
                 {currentPlace.name}
               </h3>
 
-              <p className="text-gray-600 text-sm leading-relaxed mb-8">
+              <p className="text-gray-600 text-sm leading-relaxed mb-4 md:mb-8">
                 {currentPlace.description}
               </p>
 
@@ -2066,7 +2066,7 @@ export default function HomePage() {
               </div>
 
               {/* Right Column of Gallery */}
-              <div className="flex flex-col gap-4 pt-8 md:pt-12">
+              <div className="flex flex-col gap-4 pt-4 md:pt-8 md:pt-12">
                 <div className="relative overflow-hidden aspect-[4/3]">
                   <img
                     src={currentPlace.images[2]}
@@ -2087,7 +2087,7 @@ export default function HomePage() {
 
           {/* Documentary Video Section */}
           <div className="bg-[#D5F5FF] rounded-lg p-6 md:p-10">
-            <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
               {/* Text Content */}
               <div className="md:w-1/2">
                 <h4 className="text-[24px] md:text-xl font-bold text-gray-900 mb-4">
@@ -2155,9 +2155,9 @@ export default function HomePage() {
       </section>
       {/*FAQ section*/}
 
-      <section className="w-full bg-white pt-24">
+      <section className="w-full bg-white pt-10 md:pt-24">
         <div className="max-w-[1400px] mx-auto px-4">
-          <div className="relative flex items-end pt-32">
+          <div className="relative flex items-end pt-16 md:pt-32">
             <div className="absolute left-4 md:left-12 bottom-0 translate-y-[9px] md:translate-y-[13px] z-10 w-[300px] md:w-[480px] h-[350px] md:h-[500px]">
               <img
                 src="/faq.png"
@@ -2168,13 +2168,13 @@ export default function HomePage() {
 
             {/* Dark Blue Card */}
             <div
-              className="w-full flex flex-col md:flex-row items-center justify-between p-10 md:p-16 md:pl-[520px] rounded-[20px] shadow-2xl"
+              className="w-full flex flex-col md:flex-row items-center justify-between p-5 md:p-10 md:p-16 md:pl-[520px] rounded-[20px] shadow-2xl"
               style={{
                 background: "linear-gradient(to right, #1B1464, #08061E)",
               }}
             >
-              <div className="text-center md:text-left mb-8 md:mb-0">
-                <h2 className="text-white text-[36px] md:text-[40px] font-bold mb-4">
+              <div className="text-center md:text-left mb-4 md:mb-8 md:mb-0">
+                <h2 className="text-white text-2xl md:text-[36px] md:text-[40px] font-bold mb-4">
                   Any Question?
                 </h2>
                 <p className="text-gray-300 text-[14px] md:text-[14px] font-light">
@@ -2184,7 +2184,7 @@ export default function HomePage() {
 
               <Link
                 href="/faq"
-                className="bg-white text-[#1B1464] px-8 py-3 rounded-lg font-bold text-[20px] md:text-xl hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95"
+                className="bg-white text-[#1B1464] px-4 md:px-8 py-3 rounded-lg font-bold text-[20px] md:text-xl hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95"
               >
                 Visit FAQ
               </Link>

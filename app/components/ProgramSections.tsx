@@ -119,7 +119,7 @@ const sections: SectionData[] = [
 
 function BulletList({ items }: { items: string[] }) {
   return (
-    <ul className="mt-8 space-y-2">
+    <ul className="mt-4 md:mt-8 space-y-2">
       {items.filter(Boolean).map((item, i) => (
         <li
           key={i}
@@ -141,13 +141,13 @@ function Section({ section }: { section: SectionData }) {
   return (
     <section 
       style={{ backgroundColor: bgColor }}
-      className={`py-10 lg:py-12 ${montserrat.className}`}
+      className={`py-5 md:py-10 lg:py-12 ${montserrat.className}`}
     >
       <div className=" mx-auto px-6">
         <div 
           className={`flex flex-col ${
             imageLeft ? "lg:flex-row" : "lg:flex-row-reverse"
-          } gap-12 lg:gap-24 items-center`}
+          } gap-6 md:gap-12 lg:gap-24 items-center`}
         >
           {/* Image */}
           <div className="w-full lg:w-1/2">

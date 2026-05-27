@@ -42,17 +42,17 @@ export default function FAQPage() {
       <section className="relative flex items-end overflow-hidden h-[75vh] min-h-[600px] max-h-[800px]">
         <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=1600&q=80" alt="FAQ" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)' }} />
-        <div className="relative z-10  mx-auto px-4 pb-10 w-full">
-          <h1 className="text-5xl font-bold text-white mb-2" style={{ }}>FAQ&apos;s</h1>
+        <div className="relative z-10  mx-auto px-4 pb-5 md:pb-10 w-full">
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-2" style={{ }}>FAQ&apos;s</h1>
           <p className="text-white/70 text-sm">Lorem Ipsum Dipsum We Are Different Locations Lorem Ipsum Dipsum We Are Different Locations...</p>
         </div>
       </section>
 
       {/* FAQ List */}
-      <section className="py-20 bg-white">
+      <section className="py-10 md:py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-3" style={{ }}>FAQ&apos;s</h2>
-          <p className="text-center text-gray-500 text-sm mb-12">Everything you need to know about Volunteering in Nepal with VIN</p>
+          <h2 className="text-2xl md:text-4xl font-bold text-center mb-3" style={{ }}>FAQ&apos;s</h2>
+          <p className="text-center text-gray-500 text-sm mb-6 md:mb-12">Everything you need to know about Volunteering in Nepal with VIN</p>
 
           <div className="space-y-3">
             {faqs.map((faq, i) => (

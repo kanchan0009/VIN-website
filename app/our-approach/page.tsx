@@ -20,10 +20,10 @@ export default function OurApproachPage() {
               "linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)",
           }}
         />
-        <div className="relative z-10  mx-auto px-4 pb-10 w-full">
+        <div className="relative z-10  mx-auto px-4 pb-5 md:pb-10 w-full">
           
           <h1
-            className="text-5xl font-bold text-white"
+            className="text-3xl md:text-5xl font-bold text-white"
             style={{ }}
           >
             Our Approach
@@ -35,14 +35,14 @@ export default function OurApproachPage() {
       </section>
 
       {/* House of VIN */}
-      <section className="py-20 bg-white">
+      <section className="py-10 md:py-20 bg-white">
         <div className=" mx-auto px-6 text-center">
-          <h2 className="text-4xl lg:text-[52px] font-[600] text-[#1a1a1a] mb-16 leading-tight">
+          <h2 className="text-2xl md:text-4xl lg:text-[52px] font-[600] text-[#1a1a1a] mb-8 md:mb-16 leading-tight">
             A Holistic Approach to Community <br/> Development
           </h2>
 
           {/* House Diagram Image */}
-          <div className="max-w-4xl mx-auto mb-16">
+          <div className="max-w-4xl mx-auto mb-8 md:mb-16">
             <img 
               src="/pillar.png" 
               alt="House of VIN - Community Empowerment Strategy" 

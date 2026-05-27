@@ -117,7 +117,7 @@ function ProgramProjectsContent() {
       <section className="py-6 lg:py-10 bg-white">
         <div className=" mx-auto px-6">
           <div className="bg-[#DFF0FF] border border-[#1D1E20]/10 rounded-[20px] p-6 lg:p-10 text-center shadow-sm">
-            <h1 className="text-3xl lg:text-5xl font-[600] text-[#1D1E20] mb-4">
+            <h1 className="text-xl md:text-3xl lg:text-5xl font-[600] text-[#1D1E20] mb-4">
               {content.infoTitle}
             </h1>
             <p className="text-gray-600 text-sm lg:text-base leading-relaxed mb-6 max-w-3xl mx-auto">
@@ -125,7 +125,7 @@ function ProgramProjectsContent() {
             </p>
             <button 
               onClick={handleDonateClick}
-              className="inline-block bg-[#1e238f] text-white px-10 py-4 rounded-md font-[600] text-sm hover:bg-[#15196d] transition-all shadow-lg active:scale-95"
+              className="inline-block bg-[#1e238f] text-white px-5 md:px-10 py-4 rounded-md font-[600] text-sm hover:bg-[#15196d] transition-all shadow-lg active:scale-95"
             >
               Support This Project
             </button>
@@ -134,10 +134,10 @@ function ProgramProjectsContent() {
       </section>
 
       {/* The Reality Section */}
-      <section className="py-10 bg-white">
+      <section className="py-5 md:py-10 bg-white">
         <div className=" mx-auto px-6">
-          <div className="max-w-3xl mb-8">
-            <h2 className="text-4xl lg:text-[50px] font-[600] text-[#1D1E20] mb-4 leading-tight">
+          <div className="max-w-3xl mb-4 md:mb-8">
+            <h2 className="text-2xl md:text-4xl lg:text-[50px] font-[600] text-[#1D1E20] mb-4 leading-tight">
               {content.realityTitle}
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed">
@@ -145,10 +145,10 @@ function ProgramProjectsContent() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mb-4 md:mb-8">
             {content.realityStats.map((item: any, i: number) => (
-              <div key={i} className="bg-[#DFF0FF] p-8 lg:p-10 rounded-[20px] transition-transform hover:scale-[1.02] duration-300">
-                <div className="text-[#1e238f] text-5xl lg:text-5xl font-[600] mb-4">
+              <div key={i} className="bg-[#DFF0FF] p-4 md:p-8 lg:p-10 rounded-[20px] transition-transform hover:scale-[1.02] duration-300">
+                <div className="text-[#1e238f] text-3xl md:text-5xl lg:text-5xl font-[600] mb-4">
                   {item.stat}
                 </div>
                 <p className="text-gray-900 text-[17px] lg:text-[18px] leading-relaxed">
@@ -168,9 +168,9 @@ function ProgramProjectsContent() {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-20 bg-white">
+      <section className="py-10 md:py-20 bg-white">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-4 md:gap-8">
             {/* Video Player */}
             <div className="relative aspect-video bg-gray-900 rounded-[10px] overflow-hidden flex items-center justify-center cursor-pointer group shadow-2xl">
               <img src={content.heroImage} alt="Video thumbnail" className="absolute inset-0 w-full h-full object-cover opacity-60" />
@@ -180,7 +180,7 @@ function ProgramProjectsContent() {
             </div>
 
             {/* Photo Grid */}
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-2 gap-4 md:gap-8">
               <div className="aspect-square rounded-[10px] overflow-hidden shadow-lg">
                 <img 
                   src={content.heroImage} 
@@ -210,7 +210,7 @@ function ProgramProjectsContent() {
             <div className="text-center mt-4">
               <Link 
                 href={`/program-gallery?topic=${topic}`} 
-                className="inline-block bg-[#1e238f] text-white px-10 py-3 rounded-md font-[600] text-sm hover:bg-[#15196d] transition-all shadow-lg active:scale-95"
+                className="inline-block bg-[#1e238f] text-white px-5 md:px-10 py-3 rounded-md font-[600] text-sm hover:bg-[#15196d] transition-all shadow-lg active:scale-95"
               >
                 Explore Gallery
               </Link>
@@ -220,18 +220,18 @@ function ProgramProjectsContent() {
       </section>
 
       {/* Resilient Section */}
-      <section className="py-12 lg:py-16 bg-[#DFF0FF]">
+      <section className="py-6 md:py-12 lg:py-16 bg-[#DFF0FF]">
         <div className=" mx-auto px-6">
-          <h2 className="text-3xl lg:text-[40px] font-[700] text-[#1a1a1a] mb-12 leading-tight">
+          <h2 className="text-xl md:text-3xl lg:text-[40px] font-[700] text-[#1a1a1a] mb-6 md:mb-12 leading-tight">
             {content.resilientTitle}
           </h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-5 items-center">
             {/* Left: Navy Card */}
-            <div className="bg-[var(--blue)] rounded-[6px] p-10 lg:py-24 lg:px-16 relative overflow-hidden w-120">
+            <div className="bg-[var(--blue)] rounded-[6px] p-5 md:p-10 lg:py-24 lg:px-16 relative overflow-hidden w-120">
               <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-white/5 rounded-full" />
               <div className="relative z-10">
-                <h3 className="text-3xl lg:text-4xl font-[600] text-white mb-8 leading-tight">
+                <h3 className="text-xl md:text-3xl lg:text-4xl font-[600] text-white mb-4 md:mb-8 leading-tight">
                   {content.resilientCardTitle}
                 </h3>
                 
@@ -254,7 +254,7 @@ function ProgramProjectsContent() {
                 {content.resilientDesc}
               </p>
               
-              <div className="bg-white rounded-[20px] p-8 lg:p-10 shadow-[0_10px_40px_rgba(0,0,0,0.04)] border-l-2 border-[#221C84]">
+              <div className="bg-white rounded-[20px] p-4 md:p-8 lg:p-10 shadow-[0_10px_40px_rgba(0,0,0,0.04)] border-l-2 border-[#221C84]">
                 <p className="text-gray-600 text-xm leading-relaxed">
                   <span className="text-[var(--blue)] font-[700]">Our Commitment:</span> We ensure sustainable impact through professional guidance and community-led initiatives.
                 </p>
@@ -265,10 +265,10 @@ function ProgramProjectsContent() {
       </section>
 
       {/* How We Deliver Change Section */}
-      <section className="py-8 bg-white">
+      <section className="py-4 md:py-8 bg-white">
         <div className=" mx-auto px-6">
           <div className="max-w-3xl mb-6">
-            <h2 className="text-4xl lg:text-[46px] font-[600] text-[#1a1a1a] mb-4 leading-tight">
+            <h2 className="text-2xl md:text-4xl lg:text-[46px] font-[600] text-[#1a1a1a] mb-4 leading-tight">
               {content.deliveryTitle}
             </h2>
             <p className="text-gray-500 text-xm leading-relaxed">
@@ -279,7 +279,7 @@ function ProgramProjectsContent() {
           <div className="space-y-3 max-w-6xl">
             {content.deliverySteps.map((step: any, i: number) => (
               <div key={i} className="flex flex-col md:flex-row items-center md:items-start gap-6 lg:gap-10 bg-white border border-gray-300 rounded-[10px] p-4 lg:p-6 transition-all hover:shadow-xl hover:border-transparent group">
-                <div className="text-[var(--blue)] text-4xl lg:text-5xl font-[700] opacity-90 group-hover:opacity-100 transition-opacity">
+                <div className="text-[var(--blue)] text-2xl md:text-4xl lg:text-5xl font-[700] opacity-90 group-hover:opacity-100 transition-opacity">
                   {step.num}
                 </div>
                 <div className="flex-1 text-center md:text-left">
@@ -297,16 +297,16 @@ function ProgramProjectsContent() {
       </section>
       
       {/* Our Impact Section */}
-      <section className="py-8 bg-[#eef8ff]">
+      <section className="py-4 md:py-8 bg-[#eef8ff]">
         <div className=" mx-auto px-6">
-          <h2 className="text-[50px] lg:text-[46px] font-[600] text-[#1a1a1a] mb-8 leading-tight">
+          <h2 className="text-2xl md:text-[50px] lg:text-[46px] font-[600] text-[#1a1a1a] mb-4 md:mb-8 leading-tight">
             {content.impactTitle}
           </h2>
 
           <div className="flex flex-col gap-4 max-w-5xl mx-auto">
-            <div className="bg-[var(--blue)] rounded-[20px] p-8 lg:py-10 lg:px-12 text-center text-white shadow-xl relative overflow-hidden">
+            <div className="bg-[var(--blue)] rounded-[20px] p-4 md:p-8 lg:py-10 lg:px-12 text-center text-white shadow-xl relative overflow-hidden">
               <div className="relative z-10">
-                <div className="text-4xl lg:text-6xl font-[700] mb-8 tracking-tight">{content.impactStat}</div>
+                <div className="text-2xl md:text-4xl lg:text-6xl font-[700] mb-4 md:mb-8 tracking-tight">{content.impactStat}</div>
                 <div className="text-xl lg:text-2xl font-[600] mb-3 max-w-3xl mx-auto leading-relaxed">
                   {content.impactLabel}
                 </div>
@@ -324,7 +324,7 @@ function ProgramProjectsContent() {
                 { stat: "2030", label: "Alignment with Global SDGs" }
               ].map((item, i) => (
                 <div key={i} className="bg-white rounded-[20px] p-6 text-center shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-white">
-                  <div className="text-[var(--blue)] text-3xl lg:text-4xl font-[700] mb-2">
+                  <div className="text-[var(--blue)] text-xl md:text-3xl lg:text-4xl font-[700] mb-2">
                     {item.stat}
                   </div>
                   <div className="text-gray-500 text-xs lg:text-sm leading-relaxed font-[400] max-w-[180px] mx-auto">
@@ -338,10 +338,10 @@ function ProgramProjectsContent() {
       </section>
 
       {/* Projects Carousel */}
-      <section className="py-12 bg-white">
+      <section className="py-6 md:py-12 bg-white">
         <div className=" mx-auto px-6 relative">
-          <div className="mb-8">
-            <h2 className="text-3xl lg:text-5xl font-[600] text-[#1a1a1a] mb-6">
+          <div className="mb-4 md:mb-8">
+            <h2 className="text-xl md:text-3xl lg:text-5xl font-[600] text-[#1a1a1a] mb-6">
               Our Focused Projects
             </h2>
             <p className="text-gray-600 text-[14px] lg:text-[16px] max-w-3xl leading-relaxed">
@@ -370,7 +370,7 @@ function ProgramProjectsContent() {
 
             <div className="overflow-hidden">
               <div 
-                className="flex transition-transform duration-500 ease-in-out gap-8"
+                className="flex transition-transform duration-500 ease-in-out gap-4 md:gap-8"
                 style={{ transform: `translateX(-${projectIndex * (100 / 3)}%)` }}
               >
                 {projects.map((project: any, i: number) => (
@@ -406,9 +406,9 @@ function ProgramProjectsContent() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-white">
+      <section className="py-10 md:py-20 bg-white">
         <div className=" mx-auto px-4 relative">
-          <h2 className="text-[56px] font-[600] text-center mb-15 py-4">
+          <h2 className="text-2xl md:text-[56px] font-[600] text-center mb-15 py-4">
             Testimonials
           </h2>
 
@@ -422,7 +422,7 @@ function ProgramProjectsContent() {
             </button>
 
             <div className="flex-1 max-w-10xl">
-              <div className="flex flex-col md:flex-row items-start gap-8 md:gap-12">
+              <div className="flex flex-col md:flex-row items-start gap-4 md:gap-8 md:gap-12">
                 <div className="flex-1 order-2 md:order-1">
                   <p className="text-gray-700 text-[10px] font-[500] md:text-base leading-relaxed mb-6 text-justify">
                     {current.text}
@@ -456,7 +456,7 @@ function ProgramProjectsContent() {
             </button>
           </div>
 
-          <div className="flex justify-end mt-8 md:mt-12  mx-auto px-4 md:pr-16">
+          <div className="flex justify-end mt-4 md:mt-8 md:mt-12  mx-auto px-4 md:pr-16">
             <Link
               href="/testimonials"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] font-[700] text-white text-base hover:opacity-90 transition-opacity"
@@ -469,17 +469,17 @@ function ProgramProjectsContent() {
       </section>
 
       {/* Google Review Section (Static) */}
-      <section className="py-20 bg-white">
+      <section className="py-10 md:py-20 bg-white">
         <div className=" mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-6xl font-[600] text-[#1a1a1a] mb-4">
+          <div className="text-center mb-6 md:mb-12">
+            <h2 className="text-xl md:text-3xl lg:text-6xl font-[600] text-[#1a1a1a] mb-4">
               Google Review Wall of Love
             </h2>
             <p className="text-gray-500 text-lg">
               A heartfelt collection of appreciation from our amazing community.
             </p>
           </div>
-          <div className="bg-[#F8F9FA] rounded-[15px] p-6 mb-16 flex flex-col md:flex-row items-center justify-between gap-6 border border-gray-100">
+          <div className="bg-[#F8F9FA] rounded-[15px] p-6 mb-8 md:mb-16 flex flex-col md:flex-row items-center justify-between gap-6 border border-gray-100">
             <div className="flex flex-col md:flex-row items-center gap-4">
               <div className="flex items-center gap-2">
                 <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google" className="h-6" />
@@ -525,13 +525,13 @@ function ProgramProjectsContent() {
                     key={i} 
                     className="w-full md:w-1/2 lg:w-1/4 px-3 shrink-0"
                   >
-                    <div className="h-full bg-[#F8F9FA] rounded-[20px] p-8 flex flex-col items-center text-center shadow-sm border border-gray-50 hover:shadow-md transition-all">
+                    <div className="h-full bg-[#F8F9FA] rounded-[20px] p-4 md:p-8 flex flex-col items-center text-center shadow-sm border border-gray-50 hover:shadow-md transition-all">
                       <div className="flex gap-1 mb-6">
                         {[1, 2, 3, 4, 5].map((star) => (
                           <Star key={star} size={16} fill="#FFC107" className="text-[#FFC107]" />
                         ))}
                       </div>
-                      <p className="text-gray-700 text-sm leading-relaxed mb-8 h-[80px]">
+                      <p className="text-gray-700 text-sm leading-relaxed mb-4 md:mb-8 h-[80px]">
                         {review.text}
                       </p>
                       <div className="w-12 h-12 rounded-full bg-[#9333ea] flex items-center justify-center text-white font-bold text-lg mb-4">

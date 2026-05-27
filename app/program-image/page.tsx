@@ -64,14 +64,14 @@ function ProgramImageContent() {
       )}
 
       {/* Header Section */}
-      <section className="pt-16 pb-12 text-center">
+      <section className="pt-8 md:pt-16 pb-6 md:pb-12 text-center">
         <div className="max-w-4xl mx-auto px-6">
-          <h1 className="text-3xl md:text-[44px] font-[900] text-[#1a1a1a] leading-tight mb-8">
+          <h1 className="text-xl md:text-3xl md:text-[44px] font-[900] text-[#1a1a1a] leading-tight mb-4 md:mb-8">
             {content.title}<br />Gallery
           </h1>
           
           {/* Filter Dropdown */}
-          <div className="flex justify-center mb-12">
+          <div className="flex justify-center mb-6 md:mb-12">
             <div className="relative inline-block text-left">
               <button 
                 onClick={() => setIsOpen(!isOpen)}
@@ -103,7 +103,7 @@ function ProgramImageContent() {
       </section>
 
       {/* Grid Section */}
-      <section className="pb-24">
+      <section className="pb-10 md:pb-24">
         <div className="max-w-[1440px] mx-auto px-6">
           <div className="grid grid-cols-6 gap-4 md:gap-6">
             {photos.map((photo) => (

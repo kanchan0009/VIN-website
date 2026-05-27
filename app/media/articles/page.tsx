@@ -124,8 +124,8 @@ export default function ArticlesPage() {
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 max-w-[1440px] mx-auto px-6 pb-10 w-full">
-          <h1 className="text-5xl lg:text-7xl font-[800] text-white tracking-tight">
+        <div className="relative z-10 max-w-[1440px] mx-auto px-6 pb-5 md:pb-10 w-full">
+          <h1 className="text-3xl md:text-5xl lg:text-7xl font-[800] text-white tracking-tight">
             Articles
           </h1>
           <p className="text-white/80 max-w-4xl text-lg mt-4">
@@ -136,9 +136,9 @@ export default function ArticlesPage() {
 
 
 
-      <section className="py-12 lg:py-16">
+      <section className="py-6 md:py-12 lg:py-16">
         <div className="max-w-[1440px] mx-auto px-6">
-          <div className="flex flex-col lg:flex-row gap-10">
+          <div className="flex flex-col lg:flex-row gap-5 md:gap-10">
             {/* Main Content Area */}
             <div className="lg:w-3/4 space-y-12">
               
@@ -220,10 +220,10 @@ export default function ArticlesPage() {
 
               {/* Load More */}
               {visibleCount < articles.length && (
-                <div className="text-center pt-8">
+                <div className="text-center pt-4 md:pt-8">
                   <button 
                     onClick={handleLoadMore}
-                    className="px-10 py-3 rounded-xl border border-[var(--blue)] text-[var(--blue)] font-[700] text-sm hover:bg-[var(--blue)] hover:text-white transition-all active:scale-95"
+                    className="px-5 md:px-10 py-3 rounded-xl border border-[var(--blue)] text-[var(--blue)] font-[700] text-sm hover:bg-[var(--blue)] hover:text-white transition-all active:scale-95"
                   >
                     Load More Articles →
                   </button>
@@ -233,8 +233,8 @@ export default function ArticlesPage() {
 
             {/* Sidebar */}
             <div className="lg:w-1/4 space-y-8">
-              <div className="bg-[#E7E2D8] rounded-[20px] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-gray-50">
-                <h3 className="text-xl font-[700] text-[#1D1E20] mb-8">Explore Topics</h3>
+              <div className="bg-[#E7E2D8] rounded-[20px] p-4 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-gray-50">
+                <h3 className="text-xl font-[700] text-[#1D1E20] mb-4 md:mb-8">Explore Topics</h3>
                 <div className="space-y-4">
                   {topics.map((topic, i) => (
                     <div key={i} className="flex items-center gap-4 cursor-pointer group pb-4 border-b border-gray-300 last:border-0 last:pb-0">
@@ -250,7 +250,7 @@ export default function ArticlesPage() {
                 </div>
 
                 {/* Learning Quote Box */}
-                <div className="mt-12 bg-[#F2F7E9] rounded-[20px] p-6 border border-[#d1fae5]">
+                <div className="mt-6 md:mt-12 bg-[#F2F7E9] rounded-[20px] p-6 border border-[#d1fae5]">
                   <h4 className="text-[#065f46] font-[700] text-lg mb-2 leading-tight">
                     Knowledge shared is impact multiplied.
                   </h4>

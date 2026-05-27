@@ -105,8 +105,8 @@ export default function CertificationsPage() {
           className="absolute inset-0"
           
         />
-        <div className="relative z-10  mx-auto px-4 pb-12 w-full">
-          <h1 className="text-5xl font-[800] text-white leading-tight">
+        <div className="relative z-10  mx-auto px-4 pb-6 md:pb-12 w-full">
+          <h1 className="text-3xl md:text-5xl font-[800] text-white leading-tight">
             Certification, Membership,& Partnership
           </h1>
           <p className="text-white/80 text-lg mt-4 max-w-xl font-[400] leading-tight">
@@ -128,11 +128,11 @@ export default function CertificationsPage() {
           );
 
         return (
-          <section key={sIdx} className={`${section.bg} py-24 relative overflow-hidden`}>
+          <section key={sIdx} className={`${section.bg} py-10 md:py-24 relative overflow-hidden`}>
             <div className=" mx-auto px-4">
               {/* Header */}
-              <div className="text-center mb-16">
-                <h2 className={`text-[42px] font-[700] ${section.textColor} mb-8`}>
+              <div className="text-center mb-8 md:mb-16">
+                <h2 className={`text-2xl md:text-[42px] font-[700] ${section.textColor} mb-4 md:mb-8`}>
                   {section.title}
                 </h2>
                 
@@ -144,7 +144,7 @@ export default function CertificationsPage() {
                   <input
                     type="text"
                     placeholder="Search Country"
-                    className="w-full bg-white border-none py-3 pl-12 pr-4 rounded-md shadow-sm text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-[#f39c12] transition-all"
+                    className="w-full bg-white border-none py-3 pl-6 md:pl-12 pr-4 rounded-md shadow-sm text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-[#f39c12] transition-all"
                     value={searchTerms[section.title] || ""}
                     onChange={(e) => handleSearchChange(section.title, e.target.value)}
                   />
@@ -152,7 +152,7 @@ export default function CertificationsPage() {
               </div>
 
               {/* Cards Carousel Container */}
-              <div className="relative px-12">
+              <div className="relative px-6 md:px-12">
                 {/* Navigation Arrows */}
                 <button className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-gray-50 transition-all z-10">
                   <ChevronLeft className="text-[#0F0D40]" size={20} />
@@ -162,14 +162,14 @@ export default function CertificationsPage() {
                 </button>
 
                 {/* Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
                   {filteredOrgs.map((org, idx) => (
                     <div 
                       key={idx} 
-                      className={`${section.cardBg} rounded-[0.5rem] p-8  flex flex-col h-[500px] border border-transparent hover:border-[#f39c12]/20 transition-all group`}
+                      className={`${section.cardBg} rounded-[0.5rem] p-4 md:p-8  flex flex-col h-[500px] border border-transparent hover:border-[#f39c12]/20 transition-all group`}
                     >
                       {/* Logo Container */}
-                      <div className="h-40 flex items-center justify-center mb-8 p-4">
+                      <div className="h-40 flex items-center justify-center mb-4 md:mb-8 p-4">
                         <img 
                           src={org.logo} 
                           alt={org.name} 
@@ -228,7 +228,7 @@ export default function CertificationsPage() {
                       {/* Action */}
                       <Link 
                         href="/certifications/european-commission"
-                        className="mt-10 w-40 mx-auto bg-[var(--blue)] hover:bg-[#1a1563] text-white py-3 rounded-md font-bold text-sm transition-all shadow-lg active:scale-95 flex items-center justify-center"
+                        className="mt-5 md:mt-10 w-40 mx-auto bg-[var(--blue)] hover:bg-[#1a1563] text-white py-3 rounded-md font-bold text-sm transition-all shadow-lg active:scale-95 flex items-center justify-center"
                       >
                         Explore More
                       </Link>
@@ -238,8 +238,8 @@ export default function CertificationsPage() {
               </div>
 
               {/* View More Button */}
-              <div className="text-center mt-16">
-                <button className="bg-white text-[#0F0D40] px-10 py-3 rounded-md font-bold text-sm shadow-md hover:shadow-lg transition-all active:scale-95 border border-gray-100">
+              <div className="text-center mt-8 md:mt-16">
+                <button className="bg-white text-[#0F0D40] px-5 md:px-10 py-3 rounded-md font-bold text-sm shadow-md hover:shadow-lg transition-all active:scale-95 border border-gray-100">
                   View More
                 </button>
               </div>

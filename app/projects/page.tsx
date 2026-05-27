@@ -25,20 +25,20 @@ export default function DonatePage() {
       <section className="relative flex items-end overflow-hidden h-[75vh] min-h-[600px] max-h-[800px]">
         <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=80" alt="Donate" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)' }} />
-        <div className="relative z-10  mx-auto px-4 pb-10 w-full">
-          <h1 className="text-5xl font-bold text-white mb-2" style={{ }}>Make a Difference Today</h1>
+        <div className="relative z-10  mx-auto px-4 pb-5 md:pb-10 w-full">
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-2" style={{ }}>Make a Difference Today</h1>
           <p className="text-white/70 text-sm max-w-lg">Your donation directly supports families and communities in Nepal.</p>
         </div>
       </section>
 
       {/* Donation form */}
-      <section className="py-20 bg-white">
+      <section className="py-10 md:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-12">
+          <div className="flex flex-col lg:flex-row gap-6 md:gap-12">
             {/* Form */}
             <div className="flex-1">
               {/* Frequency */}
-              <div className="flex gap-2 mb-8">
+              <div className="flex gap-2 mb-4 md:mb-8">
                 {(['once', 'monthly'] as const).map(f => (
                   <button key={f} onClick={() => setFrequency(f)}
                     className="flex-1 py-3 rounded-xl text-sm font-semibold transition-all capitalize"
@@ -68,7 +68,7 @@ export default function DonatePage() {
                 className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-indigo-400 mb-6" />
 
               <p className="font-semibold text-sm mb-3">Choose Project</p>
-              <div className="grid grid-cols-1 gap-2 mb-8">
+              <div className="grid grid-cols-1 gap-2 mb-4 md:mb-8">
                 {projects.map(p => (
                   <label key={p} className="flex items-center gap-3 p-3 rounded-xl cursor-pointer border transition-all"
                     style={{ borderColor: project === p ? 'var(--blue)' : '#e5e7eb', background: project === p ? 'var(--sky)' : 'white' }}>
@@ -80,7 +80,7 @@ export default function DonatePage() {
 
               <div className="rounded-2xl p-5 border border-gray-100 mb-6" style={{ background: 'var(--sky)' }}>
                 <p className="font-semibold text-sm mb-1">Your Donation Summary</p>
-                <p className="text-3xl font-bold" style={{ color: 'var(--navy)' }}>
+                <p className="text-xl md:text-3xl font-bold" style={{ color: 'var(--navy)' }}>
                   ${custom || selected} {frequency === 'monthly' && <span className="text-base text-gray-500">/month</span>}
                 </p>
                 {project && <p className="text-sm text-gray-500 mt-1">For: {project}</p>}

@@ -96,9 +96,9 @@ export default function AboutPage() {
               "linear-gradient(to top, rgba(20,10,70,0.85) 50%, rgba(0,0,0,0.2) 100%)",
           }}
         />
-        <div className="relative z-10  mx-auto px-4 pb-10 w-full">
+        <div className="relative z-10  mx-auto px-4 pb-5 md:pb-10 w-full">
           <h1
-            className="text-5xl font-bold text-white mb-2"
+            className="text-3xl md:text-5xl font-bold text-white mb-2"
           >
             About Us
           </h1>
@@ -109,20 +109,20 @@ export default function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="py-20 bg-white">
+      <section className="py-10 md:py-20 bg-white">
         <div className=" mx-auto px-4">
           <h2
-            className="text-4xl md:text-[56px] font-[600] text-gray-900 text-left mb-4"
+            className="text-2xl md:text-4xl md:text-[56px] font-[600] text-gray-900 text-left mb-4"
           >
             Our Mission
           </h2>
-          <p className="text-left text-gray-600 text-base leading-relaxed mb-16">
+          <p className="text-left text-gray-600 text-base leading-relaxed mb-8 md:mb-16">
             Our mission is to provide community empowerment through education,
             livelihood, health, and environment development programs,
             implemented through sustainable community-development programme
             approaches.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 mb-8 md:mb-16">
             {programs.map((p) => (
               <Link
                 href={p.href}
@@ -174,9 +174,9 @@ export default function AboutPage() {
       </section>
 
       {/* Volunteer Programs */}
-      <section className="py-24" >
+      <section className="py-10 md:py-24" >
         <div className=" mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-12 items-center">
+          <div className="flex flex-col lg:flex-row gap-6 md:gap-12 items-center">
             {/* Left Image */}
             <div className="flex-1">
               <img
@@ -189,7 +189,7 @@ export default function AboutPage() {
             {/* Right Content */}
             <div className="flex-1">
               <h2
-                className="text-[36px] font-[700] text-gray-900 mb-6"
+                className="text-2xl md:text-[36px] font-[700] text-gray-900 mb-6"
               >
                 Volunteer programs
               </h2>
@@ -204,7 +204,7 @@ export default function AboutPage() {
                   So, when you join VIN either as a donor, sponsor or volunteer or an intern, you can be sure you will be part of long-term, positive change for Nepal. Whether we have volunteers / interns or not, our projects continuously run by our local full-time staff. This is just one of the great reasons to choose to work with VIN.
                 </p>
               </div>
-              <div className="mt-8">
+              <div className="mt-4 md:mt-8">
                 <Link
                   href="/volunteer"
                   className="inline-flex items-center gap-2 px-6 py-3  font-semibold text-white text-sm hover:scale-105 transition-transform"
@@ -231,7 +231,7 @@ export default function AboutPage() {
         
         {/* Content */}
         <div className="relative z-10 max-w-6xl mx-auto px-4 text-center text-white">
-          <h2 className="text-[32px] md:text-[42px] font-bold mb-10 leading-tight">
+          <h2 className="text-2xl md:text-[32px] md:text-[42px] font-bold mb-5 md:mb-10 leading-tight">
             Volunteer in Nepal with the most trusted <br className="hidden md:block" /> local volunteer organization
           </h2>
           
@@ -247,15 +247,15 @@ export default function AboutPage() {
       </section>
 
       {/* 10 best programs */}
-      <section className="py-24 bg-white">
+      <section className="py-10 md:py-24 bg-white">
         <div className=" mx-auto px-4">
           <h2
-            className="text-[56px] font-[500] text-gray-900 text-center mb-3"
+            className="text-2xl md:text-[56px] font-[500] text-gray-900 text-center mb-3"
             
           >
             10 best volunteer programs in <br />Nepal includes 
           </h2>
-          <p className="text-center text-gray-700 text-base mb-12 max-w-5xl mx-auto">
+          <p className="text-center text-gray-700 text-base mb-6 md:mb-12 max-w-5xl mx-auto">
             Thanks to our dedicated staff, VIN can ensure these projects run consistently, building the trust of the communities and relationships with our partners.  However, our international and national volunteers are a huge asset to our projects. You may participate in our sustainable development programmes as a volunteer or intern.  We also organise group volunteering, family volunteering, work-camp opportunities and Adventure Volunteer Projects.  All that we ask is adaptability, flexibility & positive attitude. Apply to volunteer today and be part of making a real difference.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
@@ -306,7 +306,7 @@ export default function AboutPage() {
                   />
                   {/* Bottom Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end pb-3">
-                    <p className="text-white font-bold text-[30px] leading-none">32,035</p>
+                    <p className="text-white font-bold text-2xl md:text-[30px] leading-none">32,035</p>
                     <p className="text-white/80 text-[16px] uppercase tracking-tighter mt-1">Women's Life Impacted</p>
                   </div>
                 </div>
@@ -327,13 +327,13 @@ export default function AboutPage() {
       </section>
 
       {/* Nepal's Challenge */}
-      <section className="py-24 bg-white">
+      <section className="py-10 md:py-24 bg-white">
         <div className=" mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-12 mb-10">
+          <div className="flex flex-col lg:flex-row gap-6 md:gap-12 mb-5 md:mb-10">
             {/* Left Content (Part 1) */}
             <div className="flex-1">
               <h2
-                className="text-5xl font-bold text-gray-900 text-left mb-10"
+                className="text-3xl md:text-5xl font-bold text-gray-900 text-left mb-5 md:mb-10"
               >
                 Nepal's Challenge
               </h2>
@@ -399,7 +399,7 @@ export default function AboutPage() {
       </section>
 
       {/* Financial Transparency */}
-      <section className="relative min-h-[400px] flex items-center overflow-hidden py-16 mb-24">
+      <section className="relative min-h-[400px] flex items-center overflow-hidden py-8 md:py-16 mb-10 md:mb-24">
         {/* Background Image */}
         <img
           src="/images/financial_transparency.png"
@@ -411,7 +411,7 @@ export default function AboutPage() {
         
         <div className="relative z-10  mx-auto px-4 w-full">
           <div className="max-w-5xl">
-            <h2 className="text-[52px] font-[500] text-white mb-6">
+            <h2 className="text-2xl md:text-[52px] font-[500] text-white mb-6">
               Financial transparency
             </h2>
             <div className="space-y-4 text-white text-base leading-relaxed">

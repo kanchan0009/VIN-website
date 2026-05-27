@@ -59,7 +59,13 @@ select {
 }
 
 section {
-  padding-inline: 60px;
+  padding-inline: 16px;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding-inline: 60px;
+  }
 }
 
 .full-width-bg {

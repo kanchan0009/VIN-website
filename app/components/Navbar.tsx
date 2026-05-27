@@ -212,7 +212,7 @@ export default function Navbar() {
 
         {/* Mobile menu Overlay */}
         <div className={`xl:hidden fixed inset-0 top-[75px] bg-white z-[100] transition-transform duration-500 transform ${mobileOpen ? "translate-x-0" : "translate-x-full"}`}>
-          <div className="h-full overflow-y-auto px-6 py-8 flex flex-col gap-2">
+          <div className="h-full overflow-y-auto px-6 py-4 md:py-8 flex flex-col gap-2">
             <Link href="/" onClick={() => setMobileOpen(false)} className="text-lg font-[700] text-[#1D1E20] py-4 border-b border-gray-50">Home</Link>
             
             {/* Mobile About Us */}
@@ -295,7 +295,7 @@ export default function Navbar() {
             <Link href="/contact" onClick={() => setMobileOpen(false)} className="text-lg font-[700] text-[#1D1E20] py-4 border-b border-gray-50">Contact Us</Link>
             <Link href="/blogs" onClick={() => setMobileOpen(false)} className="text-lg font-[700] text-[#1D1E20] py-4 border-b border-gray-50">Blogs</Link>
 
-            <div className="grid grid-cols-2 gap-4 mt-8 pb-12">
+            <div className="grid grid-cols-2 gap-4 mt-4 md:mt-8 pb-6 md:pb-12">
               <button
                 onClick={handleDonateClick}
                 className="bg-[#2A6F7C] text-white py-4 rounded-xl font-[700] text-center shadow-lg"

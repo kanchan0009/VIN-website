@@ -85,8 +85,8 @@ export default function CareersPage() {
             background: "linear-gradient(to top, rgba(20,10,70,0.85) 40%, rgba(0,0,0,0.2) 100%)",
           }}
         />
-        <div className="relative z-10  mx-auto px-6 pb-10 w-full">
-          <h1 className="text-5xl lg:text-6xl font-[800] text-white">Careers</h1>
+        <div className="relative z-10  mx-auto px-6 pb-5 md:pb-10 w-full">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-[800] text-white">Careers</h1>
           <p className="text-xl text-white/90 mt-5 max-w-3xl font-[400] leading-relaxed">
             Join our mission to empower marginalized communities in Nepal. 
             We offer meaningful careers where your work creates lasting impact.
@@ -97,9 +97,9 @@ export default function CareersPage() {
 
 
       {/* Open Positions Section */}
-      <section className="py-20 bg-white">
+      <section className="py-10 md:py-20 bg-white">
         <div className=" mx-auto px-6 lg:px-8">
-          <h2 className="text-4xl lg:text-[42px] font-[600] text-[#1D1E20] text-center mb-16">
+          <h2 className="text-2xl md:text-4xl lg:text-[42px] font-[600] text-[#1D1E20] text-center mb-8 md:mb-16">
             Open Positions
           </h2>
 
@@ -109,7 +109,7 @@ export default function CareersPage() {
                 {/* Accordion Header */}
                 <button
                   onClick={() => setExpandedId(expandedId === job.id ? null : job.id)}
-                  className={`w-full flex items-center justify-between px-8 py-3.5 transition-all duration-300 ${
+                  className={`w-full flex items-center justify-between px-4 md:px-8 py-3.5 transition-all duration-300 ${
                     expandedId === job.id 
                       ? "bg-[var(--blue)] text-white" 
                       : "bg-white text-[#1D1E20] hover:bg-gray-50"
@@ -127,7 +127,7 @@ export default function CareersPage() {
                     expandedId === job.id ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
                   }`}
                 >
-                  <div className="p-8 lg:p-12 bg-white space-y-8">
+                  <div className="p-4 md:p-8 lg:p-12 bg-white space-y-8">
                     {/* Info Table */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2 max-w-2xl">
                       {[

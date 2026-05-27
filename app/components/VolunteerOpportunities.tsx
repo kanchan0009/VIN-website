@@ -106,15 +106,15 @@ function OpportunityCard({ item }: { item: Opportunity }) {
 
 export default function VolunteerOpportunities() {
   return (
-    <section className="py-14 bg-white">
+    <section className="py-6 md:py-14 bg-white">
       <div className=" mx-auto px-6">
         {/* Page Title */}
-        <h2 className="text-center text-3xl lg:text-[38px] font-[600] text-[#1D1E20] mb-12 font-montserrat tracking-tight">
+        <h2 className="text-center text-xl md:text-3xl lg:text-[38px] font-[600] text-[#1D1E20] mb-6 md:mb-12 font-montserrat tracking-tight">
           Volunteer Opportunities
         </h2>
 
         {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 lg:gap-10">
           {opportunities.map((item) => (
             <OpportunityCard key={item.id} item={item} />
           ))}

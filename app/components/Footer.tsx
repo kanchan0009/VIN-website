@@ -4,10 +4,10 @@ import { Phone, Mail } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="bg-[#fcfcfc] text-gray-800 border-t border-gray-200 font-sans">
-      <div className=" mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div className=" mx-auto px-4 py-8 md:py-16 grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-12">
         {/* Brand */}
         <div>
-          <div className="mb-8">
+          <div className="mb-4 md:mb-8">
             {/* Replace with actual logo path */}
             <img
               src="/logo.png"

@@ -449,7 +449,7 @@ export default function VolunteerDetailsPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
         <div className="absolute bottom-0 left-0 w-full p-5 md:p-10 md:pb-10">
           <div className=" mx-auto">
-            <h1 className="text-white text-5xl md:text-[60px] font-bold mb-2 leading-tight">
+            <h1 className="text-white text-3xl md:text-5xl md:text-[60px] font-bold mb-2 leading-tight">
               {selectedProgram.heroTitle}
             </h1>
             <p className="text-white/80 text-lg md:text-xl max-w-4xl leading-relaxed">
@@ -463,8 +463,8 @@ export default function VolunteerDetailsPage() {
 
       {/* Features Bar */}
       <div className="bg-white border-b border-gray-100">
-        <div className=" mx-auto px-6 md:px-16 py-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className=" mx-auto px-6 md:px-16 py-4 md:py-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             {features.map((feature, idx) => (
               <div key={idx} className="flex items-start gap-3">
                 <div className="mt-1">{feature.icon}</div>
@@ -479,9 +479,9 @@ export default function VolunteerDetailsPage() {
       </div>
 
       {/* Main Content Section */}
-      <section className="py-16 md:py-24">
+      <section className="py-8 md:py-16 md:py-24">
         <div className=" mx-auto px-6 md:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-start">
             
             {/* Left Column */}
             <div className="space-y-8">
@@ -489,7 +489,7 @@ export default function VolunteerDetailsPage() {
                 <p className="text-[#f15b2d] text-[11px] font-bold tracking-[0.2em] uppercase mb-4">
                   {selectedProgram.aboutSubtitle}
                 </p>
-                <h2 className="text-[#1a237e] text-[40px] md:text-[44px] font-[900] leading-[1.1] mb-6">
+                <h2 className="text-[#1a237e] text-2xl md:text-[40px] md:text-[44px] font-[900] leading-[1.1] mb-6">
                   {selectedProgram.aboutTitle}
                 </h2>
                 <div className="flex w-16 h-[2px]">
@@ -505,13 +505,13 @@ export default function VolunteerDetailsPage() {
               </div>
 
               {/* Divider */}
-              <div className="w-full h-[1px] bg-gray-100 mt-8 mb-4" />
+              <div className="w-full h-[1px] bg-gray-100 mt-4 md:mt-8 mb-4" />
 
               {/* Stats Grid */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
                 {selectedProgram.stats.map((stat, idx) => (
-                  <div key={idx} className="bg-[#f3f4f9] p-8 rounded-[24px] flex flex-col items-center text-center">
-                    <span className="text-[#1a237e] text-[36px] font-[1000] mb-3 leading-none">{stat.value}</span>
+                  <div key={idx} className="bg-[#f3f4f9] p-4 md:p-8 rounded-[24px] flex flex-col items-center text-center">
+                    <span className="text-[#1a237e] text-2xl md:text-[36px] font-[1000] mb-3 leading-none">{stat.value}</span>
                     <p className="text-[#6b7280] text-[11px] leading-[1.4] font-medium max-w-[150px]">
                       {stat.label}
                     </p>
@@ -521,7 +521,7 @@ export default function VolunteerDetailsPage() {
             </div>
 
             {/* Right Column - Image Collage */}
-            <div className="relative mt-12 lg:mt-[130px]">
+            <div className="relative mt-6 md:mt-12 lg:mt-[130px]">
               <div className="relative w-full aspect-[4/3.5] rounded-[10px] overflow-visible">
                 {/* Main Image */}
                 <div className="relative w-full h-full rounded-[10px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
@@ -534,9 +534,9 @@ export default function VolunteerDetailsPage() {
                 </div>
                 
                 {/* Overlay Badge - Bottom Left */}
-                <div className="absolute -bottom-8 -left-8 w-[240px] bg-[#1a237e] p-8 rounded-[30px] shadow-[0_20px_40px_rgba(26,35,126,0.3)] z-20">
+                <div className="absolute -bottom-8 -left-8 w-[240px] bg-[#1a237e] p-4 md:p-8 rounded-[30px] shadow-[0_20px_40px_rgba(26,35,126,0.3)] z-20">
                   <div className="text-white">
-                    <span className="text-[48px] font-[1000] leading-none block mb-3 flex items-center gap-2">
+                    <span className="text-2xl md:text-[48px] font-[1000] leading-none block mb-3 flex items-center gap-2">
                       {selectedProgram.experienceBadge === "❤️" ? (
                         <Heart className="w-10 h-10 text-[#f15b2d]" fill="currentColor" />
                       ) : selectedProgram.experienceBadge === "GraduationCap" ? (
@@ -575,19 +575,19 @@ export default function VolunteerDetailsPage() {
 
 
       {/* Mission & Vision Section */}
-      <section className="bg-[#f8faff] py-24">
+      <section className="bg-[#f8faff] py-10 md:py-24">
         <div className=" mx-auto px-6 md:px-10 text-center">
           <p className="text-[#f15b2d] text-[11px] font-bold tracking-[0.2em] uppercase mb-4">
             OUR MISSION & VISION
           </p>
-          <h2 className="text-[#0D0A35] text-[40px] md:text-[44px] font-[900] leading-[1.1] mb-16">
+          <h2 className="text-[#0D0A35] text-2xl md:text-[40px] md:text-[44px] font-[900] leading-[1.1] mb-8 md:mb-16">
             What Drives Everything We Do
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10">
             {/* Mission Card */}
-            <div className="bg-white p-12 rounded-[40px] shadow-[0_15px_50px_rgba(0,0,0,0.03)] border-t-[6px] border-[#1a237e] text-left">
-              <div className="w-14 h-14 bg-[#f3f4ff] rounded-2xl flex items-center justify-center mb-8">
+            <div className="bg-white p-6 md:p-12 rounded-[40px] shadow-[0_15px_50px_rgba(0,0,0,0.03)] border-t-[6px] border-[#1a237e] text-left">
+              <div className="w-14 h-14 bg-[#f3f4ff] rounded-2xl flex items-center justify-center mb-4 md:mb-8">
                 <Target className="w-7 h-7 text-[#1a237e]" />
               </div>
               <h3 className="text-[#0D0A35] text-2xl font-black mb-6">Our Mission</h3>
@@ -597,8 +597,8 @@ export default function VolunteerDetailsPage() {
             </div>
 
             {/* Vision Card */}
-            <div className="bg-white p-12 rounded-[40px] shadow-[0_15px_50px_rgba(0,0,0,0.03)] border-t-[6px] border-[#f15b2d] text-left">
-              <div className="w-14 h-14 bg-[#fff9f4] rounded-2xl flex items-center justify-center mb-8">
+            <div className="bg-white p-6 md:p-12 rounded-[40px] shadow-[0_15px_50px_rgba(0,0,0,0.03)] border-t-[6px] border-[#f15b2d] text-left">
+              <div className="w-14 h-14 bg-[#fff9f4] rounded-2xl flex items-center justify-center mb-4 md:mb-8">
                 <Star className="w-7 h-7 text-[#f15b2d]" />
               </div>
               <h3 className="text-[#0D0A35] text-2xl font-black mb-6">Our Vision</h3>
@@ -616,10 +616,10 @@ export default function VolunteerDetailsPage() {
           <p className="text-[#f15b2d] text-[11px] font-bold tracking-[0.2em] uppercase mb-4">
             LIFE ON THE GROUND
           </p>
-          <h2 className="text-white text-[40px] md:text-[44px] font-[900] leading-[1.1] mb-6">
+          <h2 className="text-white text-2xl md:text-[40px] md:text-[44px] font-[900] leading-[1.1] mb-6">
             Real Moments, Real Impact
           </h2>
-          <p className="text-white/70 text-lg max-w-2xl mx-auto mb-12 font-light">
+          <p className="text-white/70 text-lg max-w-2xl mx-auto mb-6 md:mb-12 font-light">
             Every photo tells a story of connection, growth and transformation — join us and become part of it.
           </p>
 
@@ -679,15 +679,15 @@ export default function VolunteerDetailsPage() {
       </section>
 
       {/* Explore Volunteer Programs Section */}
-      <section className="bg-white py-24">
+      <section className="bg-white py-10 md:py-24">
         <div className=" mx-auto px-6 md:px-10 text-center">
           <p className="text-[#f15b2d] text-[11px] font-bold tracking-[0.2em] uppercase mb-4">
             VOLUNTEER PROGRAMS
           </p>
-          <h2 className="text-[#0D0A35] text-[40px] md:text-[44px] font-[900] leading-[1.1] mb-6">
+          <h2 className="text-[#0D0A35] text-2xl md:text-[40px] md:text-[44px] font-[900] leading-[1.1] mb-6">
             Explore Our Volunteer Programs
           </h2>
-          <p className="text-gray-500 text-sm max-w-2xl mx-auto mb-16 leading-relaxed">
+          <p className="text-gray-500 text-sm max-w-2xl mx-auto mb-8 md:mb-16 leading-relaxed">
             We offer a diverse range of specialized projects catering to different interests and expertise within childcare. Each program addresses key aspects of child development and support services in Nepal.
           </p>
 
@@ -728,9 +728,9 @@ export default function VolunteerDetailsPage() {
       </section>
 
       {/* Additional Offerings Section */}
-      <section className="bg-white pb-24">
+      <section className="bg-white pb-10 md:pb-24">
         <div className=" mx-auto px-6 md:px-10">
-          <div className="bg-[#F7F7FC] border-1 border-[#E5E2F0] rounded-[32px] p-10 md:p-16">
+          <div className="bg-[#F7F7FC] border-1 border-[#E5E2F0] rounded-[32px] p-5 md:p-10 md:p-16">
             <h2 className="text-[#0D0A35] text-[24px] md:text-[28px] font-[700] mb-6">
               Additional Offerings
             </h2>
@@ -738,7 +738,7 @@ export default function VolunteerDetailsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {additionalOfferings.map((offering, idx) => (
                 <div key={idx} className="bg-white p-6 rounded-[14px]  border border-gray-50 flex flex-col items-start hover:shadow-md transition-shadow">
-                  <div className="text-3xl mb-6">{getIcon(offering.icon, 32)}</div>
+                  <div className="text-xl md:text-3xl mb-6">{getIcon(offering.icon, 32)}</div>
                   <h3 className="text-[#0D0A35] text-[13px] font-bold mb-2 leading-tight">
                     {offering.title}
                   </h3>
@@ -753,9 +753,9 @@ export default function VolunteerDetailsPage() {
       </section>
 
       {/* Impact & Testimonials Section */}
-      <section className="bg-white py-24">
+      <section className="bg-white py-10 md:py-24">
         <div className=" mx-auto px-6 md:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 items-start">
             
             {/* Left Column - Impact & Benefits */}
             <div className="space-y-12">
@@ -763,10 +763,10 @@ export default function VolunteerDetailsPage() {
                 <p className="text-[#f15b2d] text-[11px] font-bold tracking-[0.2em] uppercase mb-4">
                   IMPACT & BENEFITS
                 </p>
-                <h2 className="text-[#0D0A35] text-[40px] md:text-[44px] font-[900] leading-[1.1] mb-8">
+                <h2 className="text-[#0D0A35] text-2xl md:text-[40px] md:text-[44px] font-[900] leading-[1.1] mb-4 md:mb-8">
                   Why Volunteer <br /> with VIN?
                 </h2>
-                <div className="w-16 h-[2px] bg-[#1a237e] mb-10" />
+                <div className="w-16 h-[2px] bg-[#1a237e] mb-5 md:mb-10" />
                 <p className="text-[#4E4A72] text-lg leading-relaxed max-w-lg">
                   Volunteering with our programs is more than just an activity — it's a life-changing experience that benefits both the community and the volunteer.
                 </p>
@@ -775,7 +775,7 @@ export default function VolunteerDetailsPage() {
               <div className="space-y-6">
                 {benefits.map((benefit, idx) => (
                   <div key={idx} className="bg-white p-6 rounded-[14px] border-1 border-gray-200 flex gap-6 hover:shadow-md transition-shadow">
-                    <div className="text-3xl flex-shrink-0 bg-[#f8faff] w-14 h-14 rounded-xl flex items-center justify-center">
+                    <div className="text-xl md:text-3xl flex-shrink-0 bg-[#f8faff] w-14 h-14 rounded-xl flex items-center justify-center">
                       {getIcon(benefit.icon, 32)}
                     </div>
                     <div>
@@ -797,7 +797,7 @@ export default function VolunteerDetailsPage() {
                 <p className="text-[#f15b2d] text-[11px] font-bold tracking-[0.2em] uppercase mb-4">
                   REAL STORIES, REAL IMPACT
                 </p>
-                <h2 className="text-[#0D0A35] text-[30px] md:text-[24px] font-[900] leading-[1.1] mb-1 ">
+                <h2 className="text-[#0D0A35] text-2xl md:text-[30px] md:text-[24px] font-[900] leading-[1.1] mb-1 ">
                   What Our Volunteers Say
                 </h2>
               </div>
@@ -810,7 +810,7 @@ export default function VolunteerDetailsPage() {
                         <Star key={i} className="w-4 h-4 fill-current" />
                       ))}
                     </div>
-                    <p className="text-[#4E4A72] text-[15px] leading-relaxed mb-8 ">
+                    <p className="text-[#4E4A72] text-[15px] leading-relaxed mb-4 md:mb-8 ">
                       "{t.quote}"
                     </p>
                     <div className="w-full h-[1px] bg-gray-100 mb-6" />
@@ -831,10 +831,10 @@ export default function VolunteerDetailsPage() {
                 ))}
 
                 {/* Impact Stat Box */}
-                <div className="bg-[#1a237e] p-12 rounded-[22px] text-white">
+                <div className="bg-[#1a237e] p-6 md:p-12 rounded-[22px] text-white">
                   <div className="flex items-center gap-1 mb-2">
-                    <span className="text-[48px] font-black leading-none">30%</span>
-                    <span className="text-[52px] font-black text-[#F7941D] leading-none">+</span>
+                    <span className="text-2xl md:text-[48px] font-black leading-none">30%</span>
+                    <span className="text-2xl md:text-[52px] font-black text-[#F7941D] leading-none">+</span>
                   </div>
                   <p className="text-white/80 text-sm leading-relaxed max-w-[220px]">
                     School enrollment increase in VIN supported communities
@@ -848,12 +848,12 @@ export default function VolunteerDetailsPage() {
       </section>
 
       {/* How It Works Section */}
-      <section className="bg-white py-12">
+      <section className="bg-white py-6 md:py-12">
         <div className=" mx-auto px-6 md:px-16 text-center">
           <p className="text-[#f15b2d] text-[11px] font-bold tracking-[0.2em] uppercase mb-4">
             GET INVOLVED TODAY
           </p>
-          <h2 className="text-[#0D0A35] text-[40px] md:text-[50px] font-[700] leading-[1.1] mb-6">
+          <h2 className="text-[#0D0A35] text-2xl md:text-[40px] md:text-[50px] font-[700] leading-[1.1] mb-6">
             How It Works
           </h2>
           <p className="text-[#4E4A72] text-[17px] max-w-2xl mx-auto mb-18 leading-relaxed">
@@ -861,17 +861,17 @@ export default function VolunteerDetailsPage() {
           </p>
 
           {/* Process Steps */}
-          <div className="relative mb-32">
+          <div className="relative mb-16 md:mb-32">
             {/* Connecting Line */}
             <div className="absolute top-10 left-0 w-full h-[2px] bg-[#ffffff] hidden md:block">
               <div className="absolute top-0 left-0 w-[75%] h-full bg-[#1a237e]" />
               <div className="absolute top-0 left-[75%] w-[25%] h-full bg-[#f15b2d]" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-12 relative z-10">
               {steps.map((step, idx) => (
                 <div key={idx} className="flex flex-col items-center">
-                  <div className={`w-20 h-20 ${step.color} rounded-full flex items-center justify-center text-white text-2xl font-black mb-8 border-4 border-white`}>
+                  <div className={`w-20 h-20 ${step.color} rounded-full flex items-center justify-center text-white text-2xl font-black mb-4 md:mb-8 border-4 border-white`}>
                     {step.num}
                   </div>
                   <h3 className="text-[#0D0A35] text-xl font-bold mb-3">{step.title}</h3>
@@ -888,7 +888,7 @@ export default function VolunteerDetailsPage() {
             <h2 className="text-[#0D0A35] text-[22px] md:text-[26px] font-[900] mb-6">
               What to Expect on the Ground
             </h2>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-10">
               {expectations.map((exp, idx) => (
                 <div key={idx} className="flex gap-6">
                   <div className="w-14 h-14 bg-[#1a237e] rounded-xl flex-shrink-0 flex items-center justify-center text-2xl">

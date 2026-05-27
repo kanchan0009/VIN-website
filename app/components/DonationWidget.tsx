@@ -14,7 +14,7 @@ export default function DonationSection() {
   const amounts = [25, 50, 100, 150];
 
   return (
-    <section id="donation-widget" className="py-12 lg:py-16 bg-white">
+    <section id="donation-widget" className="py-6 md:py-12 lg:py-16 bg-white">
       <div className=" mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-2 items-center">
           
@@ -61,8 +61,8 @@ export default function DonationSection() {
           </div>
 
           {/* ── RIGHT COLUMN (Donation Box) ── */}
-          <div className="w-full lg:w-1/2 flex justify-center lg:justify-end mt-16 lg:mt-0">
-            <div className="w-full max-w-[480px] bg-white p-8 lg:p-10 shadow-sm border-[3px] border-[#3B82F6] flex flex-col gap-6 lg:gap-8 rounded-lg">
+          <div className="w-full lg:w-1/2 flex justify-center lg:justify-end mt-8 md:mt-16 lg:mt-0">
+            <div className="w-full max-w-[480px] bg-white p-4 md:p-8 lg:p-10 shadow-sm border-[3px] border-[#3B82F6] flex flex-col gap-6 lg:gap-8 rounded-lg">
               {/* Heading */}
               <div className="space-y-1">
                 <h3 className="text-[28px] lg:text-[32px] font-[700] text-[#1D1E20] leading-tight">

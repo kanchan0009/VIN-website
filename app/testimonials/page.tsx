@@ -111,17 +111,17 @@ export default function TestimonialsPage() {
   return (
     <main>
       {/* Testimonials Section */}
-      <section className="py-16 bg-white">
+      <section className="py-8 md:py-16 bg-white">
         <div className="max-w-[1440px] mx-auto px-4 md:px-[60px]">
           {/* Header */}
-          <div className="flex items-center justify-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-[700] text-[#1a1a2e]">
+          <div className="flex items-center justify-center mb-6 md:mb-12">
+            <h2 className="text-2xl md:text-4xl md:text-5xl font-[700] text-[#1a1a2e]">
               Testimonials
             </h2>
           </div>
 
           {/* Filter Dropdown */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 w-full max-w-[300px] mx-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 md:mb-12 w-full max-w-[300px] mx-auto">
             <div className="relative w-full">
               <select
                 value={filter}
@@ -148,7 +148,7 @@ export default function TestimonialsPage() {
             {filteredStories.map((story, i) => (
               <div 
                 key={story.id} 
-                className={`p-8 md:p-10 border border-gray-300 rounded-[5px] flex flex-col md:flex-row gap-10 lg:gap-16 items-center ${
+                className={`p-4 md:p-8 md:p-10 border border-gray-300 rounded-[5px] flex flex-col md:flex-row gap-5 md:gap-10 lg:gap-16 items-center ${
                   i % 2 !== 0 ? "md:flex-row-reverse" : ""
                 }`}
               >
@@ -186,7 +186,7 @@ export default function TestimonialsPage() {
 
           {/* Pagination */}
           {filteredStories.length > 5 && (
-            <div className="mt-16 flex items-center justify-center gap-3">
+            <div className="mt-8 md:mt-16 flex items-center justify-center gap-3">
               <button className="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-[var(--blue)] transition-colors">
                 <ChevronLeft size={20} />
               </button>

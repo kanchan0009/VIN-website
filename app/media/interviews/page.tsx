@@ -101,8 +101,8 @@ export default function InterviewsPage() {
               "linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)",
           }}
         />
-        <div className="relative z-10 mx-auto px-4 md:px-[60px] pb-10 w-full">
-          <h1 className="text-5xl md:text-6xl font-bold text-white">
+        <div className="relative z-10 mx-auto px-4 md:px-[60px] pb-5 md:pb-10 w-full">
+          <h1 className="text-3xl md:text-5xl md:text-6xl font-bold text-white">
             Interviews
           </h1>
           <p className="text-white/80 max-w-4xl text-lg mt-4">
@@ -112,7 +112,7 @@ export default function InterviewsPage() {
       </section>
 
       {/* Media Grid Section - EXACT CLONE of program-gallery */}
-      <div className="flex flex-col gap-6 md:gap-10 pb-24 bg-white pt-10">
+      <div className="flex flex-col gap-6 md:gap-10 pb-10 md:pb-24 bg-white pt-5 md:pt-10">
         {/* Top Row - Slightly Smaller */}
         <section className="p-0 !px-0">
           <div className="max-w-5xl mx-auto px-6">
@@ -189,7 +189,7 @@ export default function InterviewsPage() {
         </section>
 
         {/* Pagination */}
-        <div className="mt-24 px-4 md:px-[60px] flex items-center justify-start gap-4">
+        <div className="mt-10 md:mt-24 px-4 md:px-[60px] flex items-center justify-start gap-4">
           <button 
             onClick={() => goToPage(Math.max(1, currentPage - 1))}
             disabled={currentPage === 1}

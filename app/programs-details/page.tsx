@@ -118,9 +118,9 @@ export default function ProgramsDetailsPage() {
   return (
     <main className="bg-white min-h-screen">
       {/* Header Section */}
-      <section className="pt-8 pb-4">
+      <section className="pt-4 md:pt-8 pb-4">
         <div className="">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+          <h1 className="text-2xl md:text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
             Women's Empowerment Program
           </h1>
           <p className="text-sm md:text-base text-gray-600 leading-relaxed">
@@ -134,7 +134,7 @@ export default function ProgramsDetailsPage() {
       </section>
 
       {/* Hero Image Section */}
-      <section className="w-full mb-8 !px-0 h-[75vh] min-h-[600px] max-h-[800px]">
+      <section className="w-full mb-4 md:mb-8 !px-0 h-[75vh] min-h-[600px] max-h-[800px]">
         <div className="w-full md: overflow-hidden h-full">
           <img
             src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1600"
@@ -144,15 +144,15 @@ export default function ProgramsDetailsPage() {
         </div>
       </section>
 
-      <section className="pb-12">
+      <section className="pb-6 md:pb-12">
         <div className="">
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
+          <div className="flex flex-col lg:flex-row gap-6 md:gap-12 lg:gap-20">
             {/* Left Column */}
             <div className="lg:flex-1">
-              <h2 className="text-[40px] font-[600] text-gray-900 mb-8">
+              <h2 className="text-2xl md:text-[40px] font-[600] text-gray-900 mb-4 md:mb-8">
                 Why Women Empowerment Programs
               </h2>
-              <div className="space-y-6 text-[18px] text-[#414141]font-[400] leading-relaxed mb-12">
+              <div className="space-y-6 text-[18px] text-[#414141]font-[400] leading-relaxed mb-6 md:mb-12">
                 <p>
                   We empower women both socially and economically by providing
                   them access to education, life skills and income generation
@@ -180,7 +180,7 @@ export default function ProgramsDetailsPage() {
                 </p>
               </div>
 
-              <h3 className="text-[40px] font-[600] text-gray-900 mb-8">
+              <h3 className="text-2xl md:text-[40px] font-[600] text-gray-900 mb-4 md:mb-8">
                 Current Situation
               </h3>
               <ul className="space-y-2 text-[18px] text-[#414141] font-[500] list-disc pl-5 leading-relaxed">
@@ -206,8 +206,8 @@ export default function ProgramsDetailsPage() {
 
             {/* Right Column (Sidebar) */}
             <div className="lg:w-[410px] shrink-0">
-              <div className="bg-[#DFF0FF] pt-12 px-5 pb-16 rounded-xl shadow-sm">
-                <h3 className="text-[28px] font-[700] text-gray-900 mb-10 text-center leading-tight">
+              <div className="bg-[#DFF0FF] pt-6 md:pt-12 px-5 pb-8 md:pb-16 rounded-xl shadow-sm">
+                <h3 className="text-[28px] font-[700] text-gray-900 mb-5 md:mb-10 text-center leading-tight">
                   Empowered women <br /> we envision to be
                 </h3>
                 <div className="relative aspect-square w-full max-w-[300px] mx-auto">
@@ -224,7 +224,7 @@ export default function ProgramsDetailsPage() {
       </section>
 
       <section
-        className="relative py-12 bg-cover bg-center text-white text-center !px-0"
+        className="relative py-6 md:py-12 bg-cover bg-center text-white text-center !px-0"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1600')",
@@ -232,7 +232,7 @@ export default function ProgramsDetailsPage() {
       >
         <div className="absolute inset-0 bg-blue-900/80" />
         <div className="relative z-10">
-          <p className="text-sm md:text-[18px] font-[400] text-[#FFFFFF] leading-relaxed mb-10">
+          <p className="text-sm md:text-[18px] font-[400] text-[#FFFFFF] leading-relaxed mb-5 md:mb-10">
             Many times, women find themselves weak and violated by the culture
             and society. They tend to lose their value and identity. Hence, VIN
             focuses on the overall development of women aged 20-59 in
@@ -256,15 +256,15 @@ export default function ProgramsDetailsPage() {
       </section>
 
       {/* Goals, Achievements & Research Section */}
-      <section className="py-12 bg-white">
+      <section className="py-6 md:py-12 bg-white">
         <div className="">
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
+          <div className="flex flex-col lg:flex-row gap-6 md:gap-12 lg:gap-20">
             {/* Left Column */}
             <div className="lg:flex-1">
-              <h2 className="text-[40px] font-[600] text-gray-900 mb-6">
+              <h2 className="text-2xl md:text-[40px] font-[600] text-gray-900 mb-6">
                 Goals
               </h2>
-              <div className="text-[18px] text-[#212121] font-[400] leading-relaxed space-y-4 mb-12">
+              <div className="text-[18px] text-[#212121] font-[400] leading-relaxed space-y-4 mb-6 md:mb-12">
                 <p>
                   VIN aims to empower women socially and economically through
                   education, life skills and income generation opportunities. By
@@ -280,10 +280,10 @@ export default function ProgramsDetailsPage() {
                 </div>
               </div>
 
-              <h2 className="text-[40px] font-[600] text-gray-900 mb-8">
+              <h2 className="text-2xl md:text-[40px] font-[600] text-gray-900 mb-4 md:mb-8">
                 Achievements
               </h2>
-              <div className="text-[18px] text-[#212121] font-[400] leading-relaxed space-y-4 mb-12">
+              <div className="text-[18px] text-[#212121] font-[400] leading-relaxed space-y-4 mb-6 md:mb-12">
                 <p>
                   A total of 25,113 women benefited from the Women Empowerment
                   Program.
@@ -317,10 +317,10 @@ export default function ProgramsDetailsPage() {
                 </ul>
               </div>
 
-              <h2 className="text-[40px] font-[600] text-gray-900 mb-8">
+              <h2 className="text-2xl md:text-[40px] font-[600] text-gray-900 mb-4 md:mb-8">
                 Research/Reports
               </h2>
-              <p className="text-[18px] text-[#212121] font-[400] leading-relaxed mb-8">
+              <p className="text-[18px] text-[#212121] font-[400] leading-relaxed mb-4 md:mb-8">
                 To know more about the status of women in Nepal, please go
                 through the following reports:
               </p>
@@ -336,9 +336,9 @@ export default function ProgramsDetailsPage() {
             </div>
 
             {/* Right Column (Sidebars) */}
-            <div className="lg:w-[410px] shrink-0 flex flex-col gap-12 h-full">
-              <div className="bg-[#DFF0FF] pl-4 pr-8 pt-10 pb-16 rounded-xl shadow-sm flex-1">
-                <h3 className="text-[26px] font-[700] text-gray-900 mb-10 leading-tight">
+            <div className="lg:w-[410px] shrink-0 flex flex-col gap-6 md:gap-12 h-full">
+              <div className="bg-[#DFF0FF] pl-4 pr-4 md:pr-8 pt-5 md:pt-10 pb-8 md:pb-16 rounded-xl shadow-sm flex-1">
+                <h3 className="text-[26px] font-[700] text-gray-900 mb-5 md:mb-10 leading-tight">
                   Women's Empowerment Projects
                 </h3>
                 <div className="space-y-6">
@@ -388,8 +388,8 @@ export default function ProgramsDetailsPage() {
                 </div>
               </div>
 
-              <div className="bg-[#DFF0FF] pl-4 pr-8 pt-10 pb-16 rounded-xl shadow-sm">
-                <h3 className="text-2xl font-bold text-gray-900 mb-10 leading-tight">
+              <div className="bg-[#DFF0FF] pl-4 pr-4 md:pr-8 pt-5 md:pt-10 pb-8 md:pb-16 rounded-xl shadow-sm">
+                <h3 className="text-2xl font-bold text-gray-900 mb-5 md:mb-10 leading-tight">
                   Other Programs
                 </h3>
                 <div className="space-y-6">
@@ -444,10 +444,10 @@ export default function ProgramsDetailsPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-12 bg-white">
+      <section className="py-6 md:py-12 bg-white">
         <div className="relative">
           {/* Heading */}
-          <h2 className="text-[56px] font-[600] text-center mb-2 py-4 mb-15">
+          <h2 className="text-2xl md:text-[56px] font-[600] text-center mb-2 py-4 mb-15">
             Testimonials
           </h2>
 
@@ -465,7 +465,7 @@ export default function ProgramsDetailsPage() {
 
             {/* Testimonial Card */}
             <div className="flex-1">
-              <div className="flex flex-col md:flex-row items-start gap-8 md:gap-12">
+              <div className="flex flex-col md:flex-row items-start gap-4 md:gap-8 md:gap-12">
                 {/* Text Content */}
                 <div className="flex-1 order-2 md:order-1">
                   <p className="text-gray-700 text-[10px] font-[500] md:text-base leading-relaxed mb-6 text-justify">
@@ -504,7 +504,7 @@ export default function ProgramsDetailsPage() {
           </div>
 
           {/* View All Button */}
-          <div className="flex justify-end mt-8 md:mt-12 pr-16">
+          <div className="flex justify-end mt-4 md:mt-8 md:mt-12 pr-8 md:pr-16">
             <Link
               href="/testimonials"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-[5px] font-[700] text-white text-base hover:opacity-90 transition-opacity"
@@ -517,15 +517,15 @@ export default function ProgramsDetailsPage() {
       </section>
 
       {/* Photos & Videos */}
-      <section className="py-12 bg-white">
+      <section className="py-6 md:py-12 bg-white">
         <div className="">
           {/* Heading */}
-          <h2 className="text-[56px] font-[500] text-center mb-6">
+          <h2 className="text-2xl md:text-[56px] font-[500] text-center mb-6">
             Photos & Videos
           </h2>
 
           {/* Description */}
-          <p className="text-gray-600 text-sm md:text-base text-center mb-12 leading-relaxed">
+          <p className="text-gray-600 text-sm md:text-base text-center mb-6 md:mb-12 leading-relaxed">
             VIN facilitates projects focused on the women and children of
             marginalized communities against this challenging backdrop. VIN
             believes that the empowerment of women and children will bring about

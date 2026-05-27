@@ -81,7 +81,7 @@ export default function SuccessStoriesPage() {
       <section className="py-18 bg-white">
         <div className=" mx-auto px-6 lg:px-8">
           {/* Section Title */}
-          <h2 className="text-center text-4xl lg:text-[45px] font-[800] text-[#1D1E20] mb-20 tracking-tight">
+          <h2 className="text-center text-2xl md:text-4xl lg:text-[45px] font-[800] text-[#1D1E20] mb-10 md:mb-20 tracking-tight">
             Success Story
           </h2>
 
@@ -90,7 +90,7 @@ export default function SuccessStoriesPage() {
             {currentStories.map((story, i) => (
               <div 
                 key={story.id} 
-                className={`p-8 md:p-10 border border-gray-300 rounded-[5px] flex flex-col md:flex-row gap-10 lg:gap-16 items-center ${
+                className={`p-4 md:p-8 md:p-10 border border-gray-300 rounded-[5px] flex flex-col md:flex-row gap-5 md:gap-10 lg:gap-16 items-center ${
                   i % 2 !== 0 ? "md:flex-row-reverse" : ""
                 }`}
               >
@@ -120,7 +120,7 @@ export default function SuccessStoriesPage() {
           </div>
 
           {/* Pagination */}
-          <div className="mt-16 flex items-center justify-center gap-3">
+          <div className="mt-8 md:mt-16 flex items-center justify-center gap-3">
             <button 
               onClick={() => goToPage(Math.max(1, currentPage - 1))}
               disabled={currentPage === 1}
