@@ -122,7 +122,7 @@ export default function AboutPage() {
             implemented through sustainable community-development programme
             approaches.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 mb-8 md:mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 mb-8 md:mb-16">
             {programs.map((p) => (
               <Link
                 href={p.href}
@@ -178,11 +178,11 @@ export default function AboutPage() {
         <div className=" mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-6 md:gap-12 items-center">
             {/* Left Image */}
-            <div className="flex-1">
+            <div className="flex-1 w-full">
               <img
                 src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80"
                 alt="Volunteer in Nepal"
-                className=" w-full h-[700px] object-cover shadow-xl"
+                className="w-full h-[350px] md:h-[500px] lg:h-[700px] object-cover shadow-xl rounded-md"
               />
             </div>
 
@@ -219,7 +219,7 @@ export default function AboutPage() {
       </section>
 
       {/* Most Trusted */}
-      <section className="relative h-[422px] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[400px] md:min-h-[422px] py-12 md:py-16 flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <img
           src="/images/volunteers_trusted.png"
@@ -258,7 +258,7 @@ export default function AboutPage() {
           <p className="text-center text-gray-700 text-base mb-6 md:mb-12 max-w-5xl mx-auto">
             Thanks to our dedicated staff, VIN can ensure these projects run consistently, building the trust of the communities and relationships with our partners.  However, our international and national volunteers are a huge asset to our projects. You may participate in our sustainable development programmes as a volunteer or intern.  We also organise group volunteering, family volunteering, work-camp opportunities and Adventure Volunteer Projects.  All that we ask is adaptability, flexibility & positive attitude. Apply to volunteer today and be part of making a real difference.
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
             {[
               {
                 title: "Women's Empowerment",

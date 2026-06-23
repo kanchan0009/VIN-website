@@ -592,9 +592,8 @@ export default function HomePage() {
         {heroItems.map((item, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              index === heroIndex ? "opacity-100 z-0" : "opacity-0 z-[-1]"
-            }`}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === heroIndex ? "opacity-100 z-0" : "opacity-0 z-[-1]"
+              }`}
           >
             <img
               src={item.image}
@@ -865,9 +864,9 @@ export default function HomePage() {
           </p>
 
           {/* Dark Card */}
-          <div className="mt-5 md:mt-10 bg-gradient-to-r from-[#1c1f1d] to-[#1f2a24] rounded-md p-4 md:p-8 text-white relative overflow-hidden">
+          <div className="mt-5 md:mt-10 bg-gradient-to-r from-[#121412] to-[#171c19] rounded-md p-4 md:p-8 text-white relative overflow-hidden">
             {/* Top Row */}
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between border-b border-white/20 pb-4 md:pb-8">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between bg-gradient-to-r from-[#121412] to-[#171c19] border-b border-white/20 pb-4 md:pb-8">
               <h3 className="text-2xl md:text-3xl font-bold text-left">
                 Location We Worked
               </h3>
@@ -896,10 +895,55 @@ export default function HomePage() {
               </div>
             </div>
 
+            {/* Map Image */}
+            <div className="-mx-4 md:-mx-8 relative overflow-hidden flex justify-center items-center h-[350px] md:h-[550px]">
+              <img
+                src="/map.jpg"
+                alt="Map of locations"
+                className="absolute inset-0 w-full h-full object-cover object-center"
+              />
+
+              {/* Pins Container (acts as a coordinate system locked to the image container) */}
+              <div className="absolute inset-0 w-full h-full pointer-events-none">
+                {/* Nuwakot */}
+                <div className="absolute top-[58%] left-[58%] transform -translate-x-1/2 -translate-y-1/2 group cursor-pointer pointer-events-auto">
+                  <svg width="24" height="32" viewBox="0 0 24 24" fill="#1c2b82" stroke="none" className="drop-shadow-lg hover:scale-110 transition-transform">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3" fill="#4f62c4"></circle>
+                  </svg>
+                  <div className="absolute opacity-0 group-hover:opacity-100 transition-opacity bg-white text-black text-xs font-bold px-2 py-1 rounded top-full left-1/2 -translate-x-1/2 mt-1 pointer-events-none whitespace-nowrap z-10 shadow-lg">
+                    Nuwakot
+                  </div>
+                </div>
+
+                {/* Kathmandu */}
+                <div className="absolute top-[64%] left-[63%] transform -translate-x-1/2 -translate-y-1/2 group cursor-pointer pointer-events-auto">
+                  <svg width="24" height="32" viewBox="0 0 24 24" fill="#1c2b82" stroke="none" className="drop-shadow-lg hover:scale-110 transition-transform">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3" fill="#4f62c4"></circle>
+                  </svg>
+                  <div className="absolute opacity-0 group-hover:opacity-100 transition-opacity bg-white text-black text-xs font-bold px-2 py-1 rounded top-full left-1/2 -translate-x-1/2 mt-1 pointer-events-none whitespace-nowrap z-10 shadow-lg">
+                    Kathmandu
+                  </div>
+                </div>
+
+                {/* Okhaldhunga */}
+                <div className="absolute top-[70%] left-[71%] transform -translate-x-1/2 -translate-y-1/2 group cursor-pointer pointer-events-auto">
+                  <svg width="24" height="32" viewBox="0 0 24 24" fill="#1c2b82" stroke="none" className="drop-shadow-lg hover:scale-110 transition-transform">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3" fill="#4f62c4"></circle>
+                  </svg>
+                  <div className="absolute opacity-0 group-hover:opacity-100 transition-opacity bg-white text-black text-xs font-bold px-2 py-1 rounded top-full left-1/2 -translate-x-1/2 mt-1 pointer-events-none whitespace-nowrap z-10 shadow-lg">
+                    Okhaldhunga
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Button */}
-            <div className="absolute left-8 bottom-8">
+            <div className="mt-6 md:mt-10 flex justify-start">
               <Link href="/where-we-work">
-                <button className="bg-white text-black text-sm px-6 py-2.5  font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                <button className="bg-white text-black text-sm px-6 py-2.5 rounded-[4px] font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
                   Learn More
                 </button>
               </Link>
@@ -1089,41 +1133,40 @@ export default function HomePage() {
       <section className="w-full bg-[#f3f3f3] py-8 md:py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
           {/* Heading */}
-          <h2 className="text-5xl md:text-7xl font-[500] md:text-[28px] font-medium text-[#1D1E20] mb-5 md:mb-10">
+          <h2 className="text-5xl md:text-7xl font-[500] md:text-[50px] font-medium text-[#1D1E20] mb-5 md:mb-10">
             Certification, Membership & Affiliation
           </h2>
 
-          {/* Logos Row */}
-          <div className="flex flex-wrap items-center justify-center gap-5 md:gap-10 md:gap-14 mb-5 md:mb-10">
+          <div className="flex flex-wrap items-center justify-between gap-6 md:gap-8 mb-5 md:mb-10 w-full">
             <img
-              src="/logos/eu.png"
+              src="/logoc.png"
               alt="European Commission"
-              className="h-10 object-contain grayscale"
+              className="h-20 object-contain grayscale"
             />
             <img
-              src="/logos/startup.png"
+              src="/logoc.png"
               alt="Startup India"
-              className="h-12 object-contain grayscale"
+              className="h-20 object-contain grayscale"
             />
             <img
-              src="/logos/association.png"
+              src="/logoc.png"
               alt="Association"
-              className="h-12 object-contain grayscale"
+              className="h-20 object-contain grayscale"
             />
             <img
-              src="/logos/forum.png"
+              src="/logoc.png"
               alt="Forum"
-              className="h-10 object-contain grayscale"
+              className="h-20 object-contain grayscale"
             />
             <img
-              src="/logos/ccivs.png"
+              src="/logoc.png"
               alt="CCIVS"
-              className="h-10 object-contain grayscale"
+              className="h-20 object-contain grayscale"
             />
             <img
-              src="/logos/nvda.png"
+              src="/logoc.png"
               alt="NVDA"
-              className="h-10 object-contain grayscale"
+              className="h-20 object-contain grayscale"
             />
           </div>
 
@@ -1367,7 +1410,7 @@ export default function HomePage() {
           {/* Dynamic Content Container */}
           <div className="mt-4 md:mt-8">
             {(() => {
-              const hasContent = 
+              const hasContent =
                 (selectedCategory === "gallery" && filteredAlbums.length > 0) ||
                 (selectedCategory === "articles" && filteredArticles.length > 0) ||
                 (selectedCategory === "news" && filteredNews.length > 0) ||
@@ -1429,10 +1472,10 @@ export default function HomePage() {
                       <Link href="/article-blogs" key={article.id} className="block group">
                         <article className="h-full bg-white rounded-[20px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-gray-100 flex flex-col hover:shadow-xl transition-all duration-500">
                           <div className="relative h-48 overflow-hidden">
-                            <img 
-                              src={article.image} 
-                              alt={article.title} 
-                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                            <img
+                              src={article.image}
+                              alt={article.title}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                             />
                           </div>
                           <div className="p-5 flex flex-col flex-1">
@@ -1476,7 +1519,7 @@ export default function HomePage() {
                           <p className="text-[#4b5563] text-[16px] leading-relaxed mb-4 line-clamp-3 text-left">
                             {news.summary}
                           </p>
-                          <Link 
+                          <Link
                             href={`/media/news/${news.id}`}
                             className="text-[var(--blue)] font-[600] flex items-center gap-2 hover:gap-3 transition-all mt-auto"
                           >
@@ -1497,11 +1540,10 @@ export default function HomePage() {
                         {/* Accordion Header */}
                         <button
                           onClick={() => setExpandedCareerId(expandedCareerId === job.id ? null : job.id)}
-                          className={`w-full flex items-center justify-between px-4 md:px-8 py-3.5 transition-all duration-300 ${
-                            expandedCareerId === job.id 
-                              ? "bg-[var(--blue)] text-white" 
-                              : "bg-white text-[#1D1E20] hover:bg-gray-50"
-                          }`}
+                          className={`w-full flex items-center justify-between px-4 md:px-8 py-3.5 transition-all duration-300 ${expandedCareerId === job.id
+                            ? "bg-[var(--blue)] text-white"
+                            : "bg-white text-[#1D1E20] hover:bg-gray-50"
+                            }`}
                         >
                           <span className="text-lg lg:text-xl font-[600] text-left">{job.title}</span>
                           <div className={`transition-transform duration-300 ${expandedCareerId === job.id ? "rotate-180" : ""}`}>
@@ -1510,10 +1552,9 @@ export default function HomePage() {
                         </button>
 
                         {/* Accordion Content */}
-                        <div 
-                          className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                            expandedCareerId === job.id ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
-                          }`}
+                        <div
+                          className={`transition-all duration-500 ease-in-out overflow-hidden ${expandedCareerId === job.id ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
+                            }`}
                         >
                           <div className="p-4 md:p-8 lg:p-12 bg-white space-y-8">
                             {/* Info Table */}
@@ -1588,11 +1629,10 @@ export default function HomePage() {
                 return (
                   <div className="space-y-6 w-full max-w-5xl mx-auto px-4 md:px-8">
                     {filteredStories.map((story, i) => (
-                      <div 
-                        key={story.id} 
-                        className={`p-4 md:p-8 md:p-10 border border-gray-300 rounded-[5px] flex flex-col md:flex-row gap-5 md:gap-10 lg:gap-16 items-center bg-white ${
-                          i % 2 !== 0 ? "md:flex-row-reverse" : ""
-                        }`}
+                      <div
+                        key={story.id}
+                        className={`p-4 md:p-8 md:p-10 border border-gray-300 rounded-[5px] flex flex-col md:flex-row gap-5 md:gap-10 lg:gap-16 items-center bg-white ${i % 2 !== 0 ? "md:flex-row-reverse" : ""
+                          }`}
                       >
                         {/* Text Content */}
                         <div className="flex-1 space-y-4 text-left">
@@ -1640,7 +1680,7 @@ export default function HomePage() {
                           <p className="text-[#4b5563] text-[16px] leading-relaxed mb-4 line-clamp-3 font-light text-left">
                             {study.summary}
                           </p>
-                          <Link 
+                          <Link
                             href={`/media/case-studies/${study.id}`}
                             className="text-[var(--blue)] font-[600] flex items-center gap-2 hover:gap-3 transition-all mt-auto"
                           >
@@ -1657,25 +1697,25 @@ export default function HomePage() {
                 return (
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mx-4 md:mx-8 md:mx-16">
                     {filteredInterviews.map((item, idx) => (
-                      <div 
-                        key={idx} 
+                      <div
+                        key={idx}
                         className="relative aspect-video rounded-lg overflow-hidden group cursor-pointer shadow-sm bg-white"
                         onClick={() => openVideo(item.videoUrl)}
                       >
-                        <img 
-                          src={item.src} 
-                          alt={item.title} 
+                        <img
+                          src={item.src}
+                          alt={item.title}
                           className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
-                        
+
                         {/* Play Icon */}
                         <div className="absolute inset-0 flex items-center justify-center">
                           <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-white flex items-center justify-center group-hover:scale-110 transition-transform duration-300 drop-shadow-xl">
                             <Play size={24} fill="currentColor" className="text-gray-900 ml-1" />
                           </div>
                         </div>
-                        
+
                         {/* Title display */}
                         <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent">
                           <h4 className="text-white text-sm font-semibold truncate text-left">{item.title}</h4>
@@ -1708,10 +1748,10 @@ export default function HomePage() {
                         <Link href="/article-blogs" key={`art-${article.id}`} className="block group">
                           <article className="h-full bg-white rounded-[20px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-gray-100 flex flex-col hover:shadow-xl transition-all duration-500">
                             <div className="relative h-48 overflow-hidden">
-                              <img 
-                                src={article.image} 
-                                alt={article.title} 
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                              <img
+                                src={article.image}
+                                alt={article.title}
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                               />
                               <div className="absolute top-3 right-3 bg-indigo-600 text-white text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">
                                 Article
@@ -1756,7 +1796,7 @@ export default function HomePage() {
                             <p className="text-[#4b5563] text-[16px] leading-relaxed mb-4 line-clamp-3 text-left">
                               {news.summary}
                             </p>
-                            <Link 
+                            <Link
                               href={`/media/news/${news.id}`}
                               className="text-[var(--blue)] font-[600] flex items-center gap-2 hover:gap-3 transition-all mt-auto"
                             >
@@ -1786,7 +1826,7 @@ export default function HomePage() {
                             <p className="text-[#4b5563] text-[14px] leading-relaxed mb-4 line-clamp-4 font-light text-left">
                               {story.text}
                             </p>
-                            <Link 
+                            <Link
                               href="/media/success-stories"
                               className="text-[var(--blue)] font-[600] flex items-center gap-2 hover:gap-3 transition-all mt-auto"
                             >
@@ -1798,18 +1838,18 @@ export default function HomePage() {
                     } else if (item.type === "video") {
                       const video = item.data;
                       return (
-                        <div 
-                          key={`video-${video.id}`} 
+                        <div
+                          key={`video-${video.id}`}
                           className="relative aspect-[4/3] rounded-lg overflow-hidden group cursor-pointer shadow-sm bg-white"
                           onClick={() => openVideo(video.videoUrl)}
                         >
-                          <img 
-                            src={video.src} 
-                            alt={video.title} 
+                          <img
+                            src={video.src}
+                            alt={video.title}
                             className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                           />
                           <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
-                          
+
                           <div className="absolute top-3 right-3 bg-red-600 text-white text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">
                             Video Interview
                           </div>

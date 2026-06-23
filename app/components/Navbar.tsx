@@ -58,27 +58,32 @@ export default function Navbar() {
       <div className="hidden lg:block bg-[#F1F6FF] text-[#353535] text-[16px] py-1.5">
         <div className="mx-auto px-4 md:px-[60px] flex items-center justify-between">
           <div className="flex gap-6 font-[500]">
-            <Link href="/volunteer" className="hover:text-[var(--blue)] transition-colors">Volunteer</Link>
-            <Link href="/partner" className="hover:text-[var(--blue)] transition-colors">Partner with Us</Link>
-            <Link href="/sponsor" className="hover:text-[var(--blue)] transition-colors">Sponsor a Child</Link>
-            <Link href="/faq" className="hover:text-[var(--blue)] transition-colors">FAQ</Link>
+            <Link
+              href="/volunteer"
+              className="hover:text-[var(--blue)] transition-colors"
+            >
+              Volunteer
+            </Link>
+            <Link
+              href="/partner"
+              className="hover:text-[var(--blue)] transition-colors"
+            >
+              Partner with Us
+            </Link>
+            <Link
+              href="/sponsor"
+              className="hover:text-[var(--blue)] transition-colors"
+            >
+              Sponsor a Child
+            </Link>
+            <Link
+              href="/faq"
+              className="hover:text-[var(--blue)] transition-colors"
+            >
+              FAQ
+            </Link>
           </div>
           <div className="flex items-center gap-6">
-            <div className="relative group cursor-pointer">
-              <div className="flex items-center gap-1.5 hover:text-[var(--blue)] transition-colors py-1">
-                <Map size={13} />
-                <span className="font-[600]">NP</span>
-                <ChevronDown size={11} />
-              </div>
-              
-              {/* Dropdown Menu */}
-              <div className="absolute top-full right-0 w-32 bg-white rounded-md shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <div className="py-2 text-sm text-[#353535] font-medium">
-                  <div className="px-4 py-2 hover:bg-gray-50 hover:text-[var(--blue)] transition-colors">NP - Nepali</div>
-                  <div className="px-4 py-2 hover:bg-gray-50 hover:text-[var(--blue)] transition-colors">EN - English</div>
-                </div>
-              </div>
-            </div>
             <div className="flex items-center gap-1.5">
               <Phone size={13} className="text-[var(--blue)]" />
               <span className="font-[600]">+977 (1) 4362560</span>
@@ -93,8 +98,8 @@ export default function Navbar() {
           {/* Logo Section */}
           <Link href="/" className="flex items-center shrink-0 py-2">
             <div className="relative h-[50px] w-[155px] lg:h-[65px] lg:w-[210px]">
-              <Image 
-                src="/vin-logo.png" 
+              <Image
+                src="/vin-logo.png"
                 alt="Volunteers Initiative Nepal Logo"
                 fill
                 className="object-contain"
@@ -105,28 +110,39 @@ export default function Navbar() {
 
           {/* Desktop Links */}
           <div className="hidden xl:flex items-center gap-6 px-4">
-            <Link href="/" className="text-[18px] font-[500] text-[#353535] hover:text-[var(--blue)] transition-colors">Home</Link>
-            
+            <Link
+              href="/"
+              className="text-[18px] font-[500] text-[#353535] hover:text-[var(--blue)] transition-colors"
+            >
+              Home
+            </Link>
+
             {/* About Us Dropdown */}
-            <div 
+            <div
               className="relative h-full flex items-center group"
               onMouseEnter={() => setAboutOpen(true)}
               onMouseLeave={() => setAboutOpen(false)}
             >
               <button className="text-[18px] font-[500] text-[#353535] group-hover:text-[var(--blue)] transition-colors flex items-center gap-1 py-4">
-                About Us <ChevronDown size={14} className={`transition-transform duration-300 ${aboutOpen ? "rotate-180" : ""}`} />
+                About Us{" "}
+                <ChevronDown
+                  size={14}
+                  className={`transition-transform duration-300 ${aboutOpen ? "rotate-180" : ""}`}
+                />
               </button>
-              
-              <div className={`absolute top-full left-0 w-64 bg-white shadow-2xl border-t-2 border-[var(--blue)] py-3 transition-all duration-300 ${aboutOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2"}`}>
-                <Link 
+
+              <div
+                className={`absolute top-full left-0 w-64 bg-white shadow-2xl border-t-2 border-[var(--blue)] py-3 transition-all duration-300 ${aboutOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2"}`}
+              >
+                <Link
                   href="/about"
                   className="block px-6 py-3 text-sm text-[#4A4A4A] font-[700] hover:bg-[#F1F6FF] hover:text-[var(--blue)] transition-all border-b border-gray-50"
                 >
                   Overview
                 </Link>
                 {aboutLinks.map((link) => (
-                  <Link 
-                    key={link.href} 
+                  <Link
+                    key={link.href}
                     href={link.href}
                     className="block px-6 py-3 text-sm text-[#4A4A4A] font-[500] hover:bg-[#F1F6FF] hover:text-[var(--blue)] transition-all"
                   >
@@ -135,21 +151,27 @@ export default function Navbar() {
                 ))}
               </div>
             </div>
-            
+
             {/* Programs Dropdown */}
-            <div 
+            <div
               className="relative h-full flex items-center group"
               onMouseEnter={() => setProgramsOpen(true)}
               onMouseLeave={() => setProgramsOpen(false)}
             >
               <button className="text-[18px] font-[500] text-[#353535] group-hover:text-[var(--blue)] transition-colors flex items-center gap-1 py-4">
-                Programs <ChevronDown size={14} className={`transition-transform duration-300 ${programsOpen ? "rotate-180" : ""}`} />
+                Programs{" "}
+                <ChevronDown
+                  size={14}
+                  className={`transition-transform duration-300 ${programsOpen ? "rotate-180" : ""}`}
+                />
               </button>
-              
-              <div className={`absolute top-full left-0 w-72 bg-white shadow-2xl border-t-2 border-[var(--blue)] py-3 transition-all duration-300 ${programsOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2"}`}>
+
+              <div
+                className={`absolute top-full left-0 w-72 bg-white shadow-2xl border-t-2 border-[var(--blue)] py-3 transition-all duration-300 ${programsOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2"}`}
+              >
                 {programs.map((prog) => (
-                  <Link 
-                    key={prog.href} 
+                  <Link
+                    key={prog.href}
                     href={prog.href}
                     className="block px-6 py-3 text-sm text-[#4A4A4A] font-[500] hover:bg-[#F1F6FF] hover:text-[var(--blue)] transition-all"
                   >
@@ -159,19 +181,25 @@ export default function Navbar() {
               </div>
             </div>
 
-            <div 
+            <div
               className="relative h-full flex items-center group"
               onMouseEnter={() => setMediaOpen(true)}
               onMouseLeave={() => setMediaOpen(false)}
             >
               <button className="text-[18px] font-[500] text-[#353535] group-hover:text-[var(--blue)] transition-colors flex items-center gap-1 py-4">
-                Media <ChevronDown size={14} className={`transition-transform duration-300 ${mediaOpen ? "rotate-180" : ""}`} />
+                Media{" "}
+                <ChevronDown
+                  size={14}
+                  className={`transition-transform duration-300 ${mediaOpen ? "rotate-180" : ""}`}
+                />
               </button>
-              
-              <div className={`absolute top-full left-0 w-64 bg-white shadow-2xl border-t-2 border-[var(--blue)] py-3 transition-all duration-300 ${mediaOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2"}`}>
+
+              <div
+                className={`absolute top-full left-0 w-64 bg-white shadow-2xl border-t-2 border-[var(--blue)] py-3 transition-all duration-300 ${mediaOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2"}`}
+              >
                 {media.map((m) => (
-                  <Link 
-                    key={m.href} 
+                  <Link
+                    key={m.href}
                     href={m.href}
                     className="block px-6 py-3 text-sm text-[#4A4A4A] font-[500] hover:bg-[#F1F6FF] hover:text-[var(--blue)] transition-all"
                   >
@@ -181,8 +209,18 @@ export default function Navbar() {
               </div>
             </div>
 
-            <Link href="/contact" className="text-[18px] font-[500] text-[#353535] hover:text-[var(--blue)] transition-colors whitespace-nowrap">Contact Us</Link>
-            <Link href="/blogs" className="text-[18px] font-[500] text-[#353535] hover:text-[var(--blue)] transition-colors">Blogs</Link>
+            <Link
+              href="/contact"
+              className="text-[18px] font-[500] text-[#353535] hover:text-[var(--blue)] transition-colors whitespace-nowrap"
+            >
+              Contact Us
+            </Link>
+            <Link
+              href="/blogs"
+              className="text-[18px] font-[500] text-[#353535] hover:text-[var(--blue)] transition-colors"
+            >
+              Blogs
+            </Link>
           </div>
 
           {/* Action Buttons */}
@@ -211,21 +249,35 @@ export default function Navbar() {
         </div>
 
         {/* Mobile menu Overlay */}
-        <div className={`xl:hidden fixed inset-0 top-[75px] bg-white z-[100] transition-transform duration-500 transform ${mobileOpen ? "translate-x-0" : "translate-x-full"}`}>
+        <div
+          className={`xl:hidden fixed inset-0 top-[75px] bg-white z-[100] transition-transform duration-500 transform ${mobileOpen ? "translate-x-0" : "translate-x-full"}`}
+        >
           <div className="h-full overflow-y-auto px-6 py-4 md:py-8 flex flex-col gap-2">
-            <Link href="/" onClick={() => setMobileOpen(false)} className="text-lg font-[700] text-[#1D1E20] py-4 border-b border-gray-50">Home</Link>
-            
+            <Link
+              href="/"
+              onClick={() => setMobileOpen(false)}
+              className="text-lg font-[700] text-[#1D1E20] py-4 border-b border-gray-50"
+            >
+              Home
+            </Link>
+
             {/* Mobile About Us */}
             <div className="border-b border-gray-50">
-              <button 
+              <button
                 onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
                 className="w-full flex items-center justify-between text-lg font-[700] text-[#1D1E20] py-4"
               >
-                About Us <ChevronDown size={20} className={`transition-transform duration-300 ${mobileAboutOpen ? "rotate-180" : ""}`} />
+                About Us{" "}
+                <ChevronDown
+                  size={20}
+                  className={`transition-transform duration-300 ${mobileAboutOpen ? "rotate-180" : ""}`}
+                />
               </button>
-              <div className={`overflow-hidden transition-all duration-300 ${mobileAboutOpen ? "max-h-[500px] mb-4" : "max-h-0"}`}>
+              <div
+                className={`overflow-hidden transition-all duration-300 ${mobileAboutOpen ? "max-h-[500px] mb-4" : "max-h-0"}`}
+              >
                 <div className="flex flex-col gap-3 pl-4">
-                  <Link 
+                  <Link
                     href="/about"
                     onClick={() => setMobileOpen(false)}
                     className="text-[#555] font-[700] text-base py-1 hover:text-[var(--blue)]"
@@ -233,8 +285,8 @@ export default function Navbar() {
                     Overview
                   </Link>
                   {aboutLinks.map((link) => (
-                    <Link 
-                      key={link.href} 
+                    <Link
+                      key={link.href}
                       href={link.href}
                       onClick={() => setMobileOpen(false)}
                       className="text-[#555] font-[500] text-base py-1 hover:text-[var(--blue)]"
@@ -245,19 +297,25 @@ export default function Navbar() {
                 </div>
               </div>
             </div>
-            
+
             <div className="border-b border-gray-50">
-              <button 
+              <button
                 onClick={() => setMobileProgramsOpen(!mobileProgramsOpen)}
                 className="w-full flex items-center justify-between text-lg font-[700] text-[#1D1E20] py-4"
               >
-                Programs <ChevronDown size={20} className={`transition-transform duration-300 ${mobileProgramsOpen ? "rotate-180" : ""}`} />
+                Programs{" "}
+                <ChevronDown
+                  size={20}
+                  className={`transition-transform duration-300 ${mobileProgramsOpen ? "rotate-180" : ""}`}
+                />
               </button>
-              <div className={`overflow-hidden transition-all duration-300 ${mobileProgramsOpen ? "max-h-[500px] mb-4" : "max-h-0"}`}>
+              <div
+                className={`overflow-hidden transition-all duration-300 ${mobileProgramsOpen ? "max-h-[500px] mb-4" : "max-h-0"}`}
+              >
                 <div className="flex flex-col gap-3 pl-4">
                   {programs.map((prog) => (
-                    <Link 
-                      key={prog.href} 
+                    <Link
+                      key={prog.href}
                       href={prog.href}
                       onClick={() => setMobileOpen(false)}
                       className="text-[#555] font-[500] text-base py-1 hover:text-[var(--blue)]"
@@ -270,17 +328,23 @@ export default function Navbar() {
             </div>
 
             <div className="border-b border-gray-50">
-              <button 
+              <button
                 onClick={() => setMobileMediaOpen(!mobileMediaOpen)}
                 className="w-full flex items-center justify-between text-lg font-[700] text-[#1D1E20] py-4"
               >
-                Media <ChevronDown size={20} className={`transition-transform duration-300 ${mobileMediaOpen ? "rotate-180" : ""}`} />
+                Media{" "}
+                <ChevronDown
+                  size={20}
+                  className={`transition-transform duration-300 ${mobileMediaOpen ? "rotate-180" : ""}`}
+                />
               </button>
-              <div className={`overflow-hidden transition-all duration-300 ${mobileMediaOpen ? "max-h-[500px] mb-4" : "max-h-0"}`}>
+              <div
+                className={`overflow-hidden transition-all duration-300 ${mobileMediaOpen ? "max-h-[500px] mb-4" : "max-h-0"}`}
+              >
                 <div className="flex flex-col gap-3 pl-4">
                   {media.map((m) => (
-                    <Link 
-                      key={m.href} 
+                    <Link
+                      key={m.href}
                       href={m.href}
                       onClick={() => setMobileOpen(false)}
                       className="text-[#555] font-[500] text-base py-1 hover:text-[var(--blue)]"
@@ -292,8 +356,20 @@ export default function Navbar() {
               </div>
             </div>
 
-            <Link href="/contact" onClick={() => setMobileOpen(false)} className="text-lg font-[700] text-[#1D1E20] py-4 border-b border-gray-50">Contact Us</Link>
-            <Link href="/blogs" onClick={() => setMobileOpen(false)} className="text-lg font-[700] text-[#1D1E20] py-4 border-b border-gray-50">Blogs</Link>
+            <Link
+              href="/contact"
+              onClick={() => setMobileOpen(false)}
+              className="text-lg font-[700] text-[#1D1E20] py-4 border-b border-gray-50"
+            >
+              Contact Us
+            </Link>
+            <Link
+              href="/blogs"
+              onClick={() => setMobileOpen(false)}
+              className="text-lg font-[700] text-[#1D1E20] py-4 border-b border-gray-50"
+            >
+              Blogs
+            </Link>
 
             <div className="grid grid-cols-2 gap-4 mt-4 md:mt-8 pb-6 md:pb-12">
               <button

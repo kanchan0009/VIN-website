@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="mb-4 md:mb-8">
             {/* Replace with actual logo path */}
             <img
-              src="/logo.png"
+              src="/vin-logo.png"
               alt="Volunteers Initiative Nepal"
               className="h-20 object-contain"
             />

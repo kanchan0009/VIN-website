@@ -4,14 +4,29 @@ import { useState } from "react";
 import { HandCoins, Home, ChevronDown } from "lucide-react";
 
 export default function DonationSection() {
+  type Currency = "USD" | "EUR" | "NPR";
+  const currencyData: Record<Currency, { symbol: string; amounts: number[] }> = {
+    USD: { symbol: "$", amounts: [25, 50, 100, 150] },
+    EUR: { symbol: "€", amounts: [25, 50, 100, 150] },
+    NPR: { symbol: "₹", amounts: [3000, 6000, 12000, 18000] },
+  };
+
+  const [currency, setCurrency] = useState<Currency>("USD");
   const [selectedAmount, setSelectedAmount] = useState<number | null>(25);
   const [customAmount, setCustomAmount] = useState("");
-  const [currency, setCurrency] = useState("USD");
   const [project, setProject] = useState("");
   const [hoveredAmt, setHoveredAmt] = useState<number | null>(null);
   const [donateHovered, setDonateHovered] = useState(false);
 
-  const amounts = [25, 50, 100, 150];
+  const currentCurrency = currencyData[currency];
+  const amounts = currentCurrency.amounts;
+
+  const handleCurrencyChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newCurrency = e.target.value as Currency;
+    setCurrency(newCurrency);
+    setSelectedAmount(currencyData[newCurrency].amounts[0]);
+    setCustomAmount("");
+  };
 
   return (
     <section id="donation-widget" className="py-6 md:py-12 lg:py-16 bg-white">
@@ -94,7 +109,7 @@ export default function DonationSection() {
                           : "bg-[#E9EEF2] border-transparent text-[#1a237e] hover:bg-[#dce4eb]"
                       }`}
                     >
-                      $ {amt}
+                      {currentCurrency.symbol} {amt}
                     </button>
                   ))}
                 </div>
@@ -104,12 +119,12 @@ export default function DonationSection() {
                   <div className="relative w-1/3">
                     <select
                       value={currency}
-                      onChange={(e) => setCurrency(e.target.value)}
+                      onChange={handleCurrencyChange}
                       className="w-full p-3 bg-[#E9EEF2] border-transparent rounded-[6px] text-[13px] font-[600] text-gray-600 appearance-none outline-none cursor-pointer"
                     >
                       <option value="USD">USD ∨</option>
                       <option value="EUR">EUR ∨</option>
-                      <option value="GBP">NPR ∨</option>
+                      <option value="NPR">NPR ∨</option>
                     </select>
                   </div>
                   <input

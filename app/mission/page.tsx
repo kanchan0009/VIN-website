@@ -20,8 +20,8 @@ export default function MissionPage() {
               "linear-gradient(to top, rgba(20,10,70,0.88) 50%, rgba(0,0,0,0.2) 100%)",
           }}
         />
-        <div className="relative z-10 w-full mx-auto px-4 md:px-[60px] pb-5 md:pb-10">
-          <h1 className="text-3xl md:text-5xl md:text-6xl font-bold text-white mb-4">
+        <div className="relative z-10 w-full mx-auto px-4 md:px-[60px] pb-10">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
             Mission, Vision, Goal
           </h1>
           <p className="text-white text-lg md:text-xl opacity-90 max-w-4xl">
@@ -31,9 +31,9 @@ export default function MissionPage() {
       </section>
 
       {/* Introducing Section */}
-      <section className="py-10 md:py-20 bg-white">
+      <section className="py-20 bg-white">
         <div className="mx-auto px-4">
-          <h2 className="text-2xl md:text-[50px] font-[600] mb-5 md:mb-10 text-[#1a1a2e]">
+          <h2 className="text-[50px] font-[600] mb-10 text-[#1a1a2e]">
             Introducing
           </h2>
           <div className="space-y-3 text-[18px] text-[#4b5563] leading-[1.7]">
@@ -64,15 +64,15 @@ export default function MissionPage() {
       </section>
 
       {/* Vision, Mission, Values Cards */}
-      <section className="py-8 md:py-16 bg-white">
+      <section className="py-16 bg-white">
         <div className="mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Vision Card */}
-            <div className="bg-[#DFF0FF] p-5 md:p-10 flex flex-col items-center text-center transition-all hover:shadow-md duration-300">
-              <div className="w-20 h-20 bg-white rounded-xl flex items-center justify-center mb-4 md:mb-8 shadow-sm">
+            <div className="bg-[#DFF0FF] p-10 flex flex-col items-center text-center transition-all hover:shadow-md duration-300">
+              <div className="w-20 h-20 bg-white rounded-xl flex items-center justify-center mb-8 shadow-sm">
                 <Binoculars className="w-10 h-10 text-[#221C84]" />
               </div>
-              <h3 className="text-2xl md:text-[34px] font-[700] mb-4 text-[#1a1a2e]">
+              <h3 className="text-[34px] font-[700] mb-4 text-[#1a1a2e]">
                 Vision
               </h3>
               <p className="text-[#4b5563] leading-relaxed">
@@ -81,11 +81,11 @@ export default function MissionPage() {
             </div>
 
             {/* Mission Card */}
-            <div className="bg-[#DFF0FF] p-5 md:p-10 flex flex-col items-center text-center transition-all hover:shadow-md duration-300">
-              <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mb-4 md:mb-8 shadow-sm">
+            <div className="bg-[#DFF0FF] p-10 flex flex-col items-center text-center transition-all hover:shadow-md duration-300">
+              <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm">
                 <Target className="w-10 h-10 text-[#221C84]" />
               </div>
-              <h3 className="text-2xl md:text-[34px] font-[700] mb-4 text-[#1a1a2e]">
+              <h3 className="text-[34px] font-[700] mb-4 text-[#1a1a2e]">
                 Mission
               </h3>
               <p className="text-[#4b5563] leading-relaxed">
@@ -95,11 +95,11 @@ export default function MissionPage() {
             </div>
 
             {/* Values Card */}
-            <div className="bg-[#DFF0FF] p-5 md:p-10 flex flex-col items-center text-center transition-all hover:shadow-md duration-300">
-              <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mb-4 md:mb-8 shadow-sm">
+            <div className="bg-[#DFF0FF] p-10 flex flex-col items-center text-center transition-all hover:shadow-md duration-300">
+              <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm">
                 <Gem className="w-10 h-10 text-[#221C84]" />
               </div>
-              <h3 className="text-2xl md:text-[34px] font-[700] mb-6 text-[#1a1a2e]">
+              <h3 className="text-[34px] font-[700] mb-6 text-[#1a1a2e]">
                 Values and Principal
               </h3>
               <p className="text-[#4b5563] leading-relaxed text-[15px]">
@@ -114,9 +114,9 @@ export default function MissionPage() {
       </section>
 
       {/* Community Empowerment Programmes Section */}
-      <section className="py-10 md:py-24 bg-white">
+      <section className="py-24 bg-white">
         <div className="mx-auto px-4">
-          <h2 className="text-2xl md:text-[50px] font-[600] mb-5 md:mb-10 text-[#1a1a2e]">
+          <h2 className="text-[50px] font-[600] mb-10 text-[#1a1a2e]">
             Community Empowerment Programmes
           </h2>
           <div className="space-y-3 text-[18px] text-[#4b5563] leading-[1.7]">
